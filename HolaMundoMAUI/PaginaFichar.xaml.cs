@@ -16,6 +16,8 @@ public partial class PaginaFichar : ContentPage
 	public PaginaFichar(string username)
     {
 		InitializeComponent();
+		if (username.Equals(""))
+			user = 0;
 		user = Int32.Parse(username);
 		MyTimer = Reloj.Dispatcher.CreateTimer();
 		MyTimer.Interval = TimeSpan.FromSeconds(1);
