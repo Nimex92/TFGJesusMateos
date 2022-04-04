@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.MainPage"
+             Title="MainPage"
+             BackgroundColor="White">
+
+
+    <StackLayout>
+        <StackLayout 
+            x:Name="LayoutTitulo"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0,5,0,0">
+            <Label
+                Margin="0,105,0,0"
+                HorizontalTextAlignment="Center"
+                x:Name="LabelTitulo"
+                Text="Tech Talent &#10; control de presencia"
+                FontAttributes="Bold"
+                FontSize="30"
+                />
+        </StackLayout>
+        <StackLayout 
+            BackgroundColor="Black" 
+            WidthRequest="320" 
+            HeightRequest="2"
+            Margin="0,5,0,0"
+            HorizontalOptions="Center"/>
+
+        <StackLayout x:Name="LayoutCampos"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0,10,0,0"
+                     WidthRequest="320"
+                     HeightRequest="170"
+                     BackgroundColor="#828282">
+            <Entry x:Name="CampoUsuario"
+               Placeholder="Introduce usuario:"
+               PlaceholderColor="Black"
+               Margin="0,15,0,0"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               WidthRequest="300"
+               BackgroundColor="White"
+               TextColor="Black"
+               ClearButtonVisibility="WhileEditing"/>
+        
+        <Entry x:Name="CampoContraseña"
+               Keyboard="Chat"
+               Placeholder="Introduce Contraseña:"
+               PlaceholderColor="Black"
+               Margin="0,15,0,0"
+               IsPassword="true"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               WidthRequest="300"
+               BackgroundColor="White"
+               TextColor="Black"
+               ClearButtonVisibility="WhileEditing"/>
+
+        <Button
+            x:Name="irPaginaFichar"
+            Text="Iniciar sesión"
+            Margin="0,15,0,0"
+            Clicked="CambiaFichar"
+            WidthRequest="300"
+            HeightRequest="30"
+            HorizontalOptions="Center"/>
+        
+        </StackLayout>
+        <StackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+            <Button x:Name="ContrasenaOlvidada"
+                   Text="¿Olvidaste la contraseña?"
+                   FontSize="12"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   Margin="0,0,30,0"
+                   Clicked="CambiaFichar"
+                   />
+            <Button x:Name="NuevoUsuario"
+                 Text="Registrarse"
+                 FontSize="14"
+                 HorizontalOptions="Center"
+                 Margin="30,0,0,0"
+                 BackgroundColor="White"
+                 Clicked="AltaUsuario"
+                 TextColor="Black"                    />
+            </HorizontalStackLayout>
+            
+            <Label
+                x:Name="MensajeError"
+                Text="Error, Usuario o contraseña erroreos.."
+                TextColor="Red"
+                FontSize="14"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                IsVisible="false"/>
+                
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

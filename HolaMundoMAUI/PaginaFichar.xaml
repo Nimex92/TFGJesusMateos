@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.PaginaFichar"
+             BackgroundColor="White"
+             WidthRequest="500"
+             HeightRequest="500">
+
+    
+    <StackLayout>
+        <Label 
+                Text="Tech Talent &#10; control de presencia"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="24"
+                HorizontalOptions="Center"
+                x:Name="TituloEmpresa"
+            />
+        <Button
+                x:Name="BotonFichar"
+                Text="Comenzar &#10; jornada"
+                TextColor="White"
+                FontSize="24"
+                Clicked="ComienzaJornada"
+                FontAttributes="Bold"
+                BackgroundColor="DarkRed"
+                WidthRequest="150" 
+                HeightRequest="150"
+                HorizontalOptions="Center"
+                />
+
+        <Button
+                    x:Name="irPaginaMain"
+                    Text="Cerrar Sesion"
+                    Clicked="irMainPage"
+                    WidthRequest="300"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+            />
+        <Label
+                x:Name="Reloj"
+                Text="00:00:00"
+                FontSize="28"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="90"
+                Margin="50,50,50,50"
+               />
+
+
+        
+    </StackLayout>
+ 
+
+
+</ContentPage>

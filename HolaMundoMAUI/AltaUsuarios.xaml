@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AltaUsuarios"
+             Title="Alta Usuarios"
+             BackgroundColor="White">
+    <AbsoluteLayout>
+        <StackLayout
+                Margin="420,50">
+            
+            <Label  
+                Text="Tech Talent &#10;Alta de usuario"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <StackLayout 
+                BackgroundColor="Black" 
+                WidthRequest="300" 
+                HeightRequest="2"
+                Margin="0,5,0,0"
+                HorizontalOptions="Center"/>
+            <StackLayout>
+                <StackLayout x:Name="LayoutCampos"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0,10,0,0"
+                     WidthRequest="320"
+                     HeightRequest="250"
+                     BackgroundColor="#828282">
+                    <Entry x:Name="CampoUsuario"
+                        Placeholder="Introduce usuario:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Entry x:Name="CampoContrasena"
+                        Keyboard="Chat"
+                        Placeholder="Introduce Contraseña:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        IsPassword="true"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Entry x:Name="CampoRepiteContrasena"
+                        Keyboard="Chat"
+                        Placeholder="Repite Contraseña:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        IsPassword="true"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Button 
+                        Text="Registrar"
+                        x:Name="BotonRegistrar"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="RegistrarNuevoUsuario"
+                        WidthRequest="300"/>
+                </StackLayout>
+                <Button
+                Text="Cerrar Sesion"
+                Margin="0,15,0,0"
+                BackgroundColor="Black"
+                x:Name="BotonCerrarSesion"
+                Clicked="VolverAlMain"
+                WidthRequest="300"
+                HeightRequest="30"
+                HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+                <Label
+                    Text="Este es el label de avisos"
+                    x:Name="LabelAvisos"
+                    WidthRequest="300"
+                    HeightRequest="120"
+                    HorizontalOptions="Center"
+                    FontSize="16"
+                    Margin="50,0,0,0"/>
+            </StackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+    
+</ContentPage>
