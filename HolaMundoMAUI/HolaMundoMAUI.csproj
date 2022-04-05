@@ -56,19 +56,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="PaginaAdmin.xaml.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <CodeAnalysisDictionary Include="PaginaAdmin.xaml.cs">
-	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
-	  </CodeAnalysisDictionary>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -90,6 +80,9 @@
 	  </Compile>
 	  <Compile Update="AltaUsuarios.xaml.cs">
 	    <DependentUpon>AltaUsuarios.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="PaginaAdmin.xaml.cs">
+	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="PaginaFichar.xaml.cs">
 	    <DependentUpon>PaginaFichar.xaml</DependentUpon>

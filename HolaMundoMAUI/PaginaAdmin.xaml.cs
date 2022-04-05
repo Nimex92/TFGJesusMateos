@@ -5,16 +5,16 @@ public partial class PaginaAdmin : ContentPage
     private string nombreUsuario;
 
     public PaginaAdmin()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
     public PaginaAdmin(string nombreUsuario)
     {
         InitializeComponent();
         this.nombreUsuario = nombreUsuario;
     }
-    public void NuevoUsuario(object sender,EventArgs e)
+    public void NuevoUsuario(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaUsuarios());
     }
@@ -32,3 +32,4 @@ public partial class PaginaAdmin : ContentPage
         App.Current.MainPage = new NavigationPage(new MainPage());
     }
 }
+

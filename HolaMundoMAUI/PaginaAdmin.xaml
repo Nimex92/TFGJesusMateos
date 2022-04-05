@@ -116,5 +116,5 @@
                 HeightRequest="30"
                 HorizontalOptions="Center"/>
     </StackLayout>
-    
+
 </ContentPage>
