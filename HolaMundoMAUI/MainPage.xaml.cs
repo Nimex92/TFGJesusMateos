@@ -21,7 +21,7 @@ public partial class MainPage : ContentPage
             if (usuario.esAdmin == true)
             {
 				MensajeError.IsVisible = false;
-				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+				App.Current.MainPage = new NavigationPage(new PaginaAdmin());
 			}
             else
             {
