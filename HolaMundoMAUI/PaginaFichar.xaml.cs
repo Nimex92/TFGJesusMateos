@@ -10,15 +10,14 @@ namespace HolaMundoMAUI;
 public partial class PaginaFichar : ContentPage
 {
 	bool FicharActivado=false;
+	string username;
     public IDispatcherTimer MyTimer { get; set; }
-	int user;
 	PresenciaContext presenciaContext = new PresenciaContext();
 	public PaginaFichar(string username)
     {
 		InitializeComponent();
-		if (username.Equals(""))
-			user = 0;
-		user = Int32.Parse(username);
+
+		this.username = username;
 		MyTimer = Reloj.Dispatcher.CreateTimer();
 		MyTimer.Interval = TimeSpan.FromSeconds(1);
 		MyTimer.IsRepeating = true;
@@ -69,24 +68,23 @@ public partial class PaginaFichar : ContentPage
 		{
 			FicharActivado = true;
 			BotonFichar.Background = new SolidColorBrush(Colors.Green);
+			//var query = presenciaContext.Trabajador //(REFERENCIA A LA TABLA) SELECT DE SQL (Lista de trabajadores)
+			//	.Where(x => x.numero_tarjeta == user) // WHERE DE SQL (Argumentos)
+			//	.Include(x => x.grupo)				//Lo que quieres incluir (JOIN DE SQL)
+			//	.OrderBy(x => x.numero_tarjeta);	// ORDER BY DE SQL
+			//	//.Select(x=>x.numero_tarjeta);		// CON LO QUE ME QUIERO QUEDAR EN LA VARIABLE
+			//var trabajador = query.First();			//(Accionar la consulta)Como darle al enter en la consola de mysql
+			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
+			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Entrada");
 
-			var query = presenciaContext.Trabajador //(REFERENCIA A LA TABLA) SELECT DE SQL (Lista de trabajadores)
-				.Where(x => x.numero_tarjeta == user) // WHERE DE SQL (Argumentos)
-				.Include(x => x.grupo)				//Lo que quieres incluir (JOIN DE SQL)
-				.OrderBy(x => x.numero_tarjeta);	// ORDER BY DE SQL
-				//.Select(x=>x.numero_tarjeta);		// CON LO QUE ME QUIERO QUEDAR EN LA VARIABLE
-
-			var trabajador = query.First();			//(Accionar la consulta)Como darle al enter en la consola de mysql
-
-			int idGrupo = trabajador.grupo.IdGrupo;
-			OperacionesDBContext.insertaFichaje(user,idGrupo, "Entrada");
-        }
-        else
+		}
+		else
         {
 			FicharActivado = false;
 			BotonFichar.Background = new SolidColorBrush(Colors.Red);
-			var Trabajador = presenciaContext.Trabajador.Find(user);
-			OperacionesDBContext.insertaFichaje(user, Trabajador.grupo.IdGrupo, "Salida");
+			var trabajador = presenciaContext.Trabajador.Where(x=>x.usuario.Username == username).FirstOrDefault();
+			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
+			
 		}
 	}
 }

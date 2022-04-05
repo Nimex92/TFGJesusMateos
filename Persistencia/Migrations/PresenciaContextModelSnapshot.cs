@@ -55,9 +55,14 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("usuarioIdUser")
+                        .HasColumnType("int");
+
                     b.HasKey("numero_tarjeta");
 
                     b.HasIndex("grupoIdGrupo");
+
+                    b.HasIndex("usuarioIdUser");
 
                     b.ToTable("Trabajador");
                 });
@@ -75,6 +80,9 @@ namespace Persistencia.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<bool>("esAdmin")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("IdUser");
 
@@ -117,7 +125,15 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Bibliotec.Usuarios", "usuario")
+                        .WithMany()
+                        .HasForeignKey("usuarioIdUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("grupo");
+
+                    b.Navigation("usuario");
                 });
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>

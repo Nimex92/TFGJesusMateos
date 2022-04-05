@@ -2,6 +2,7 @@
 using ClassLibrary1;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,18 +16,27 @@ namespace Persistencia
 
         }
 
-        public static void insertaTrabajador(string Name, int Grup)
+        public static void insertaTrabajador(string Name,int Grup,string user)
         {
-            using var presenciaContext = new PresenciaContext();
-            var Grupo = presenciaContext.Grupo_Trabajo.Find(Grup);
-            
-            Trabajador trabajador = new Trabajador()
+            PresenciaContext presenciaContext = new PresenciaContext();
+
+            var Grupo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Grup).FirstOrDefault();
+            var Us = presenciaContext.Usuarios.Where(x => x.Username == user).FirstOrDefault();
+
+            if (Us is not null)
             {
-                nombre = Name,
-                grupo = Grupo
-            };
-            presenciaContext.Trabajador.Add(trabajador);
-            presenciaContext.SaveChanges();
+                Trabajador trab = new Trabajador(Name, Grupo, Us);
+                presenciaContext.Add(trab);
+                presenciaContext.SaveChanges();
+            }
+            else
+            {
+                Us =new Usuarios(user, "default");
+                Trabajador trab = new Trabajador(Name, Grupo, Us);
+                presenciaContext.Add(trab);
+                presenciaContext.SaveChanges();
+            }
+            
         }
         public static void insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
         {
@@ -40,24 +50,18 @@ namespace Persistencia
             using var presenciaContext = new PresenciaContext();
             Trabajador trab = presenciaContext.Trabajador.Find(Trabajador);
             Grupo_Trabajo grupo = presenciaContext.Grupo_Trabajo.Find(GrupoTrabajo);
-            if (grupo == null)
-            {
+
                 //Grupo_Trabajo grupo = new Grupo_Trabajo(2, "Tarde", "14:00", "22:00");
                 DateTime fechaFichaje = DateTime.Now;
                 Fichajes fich = new Fichajes(trab, grupo, fechaFichaje, Entrada_Salida);
 
                 presenciaContext.TablaFichajes.Add(fich);
                 presenciaContext.SaveChanges();
-            }
-            else
-            {
-                //El trabajador ya existe
-            }
         }
-        public static void insertaUsuario(string username, string password)
+        public static void insertaUsuario(string username, string password,bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
-            Usuarios us = new Usuarios(username, password);
+            Usuarios us = new Usuarios(username, password, esAdmin);
             presenciaContext.Usuarios.Add(us);
             presenciaContext.SaveChanges();
         }
@@ -105,10 +109,10 @@ namespace Persistencia
             presenciaContext.Update(GrupoTrabajo);
             presenciaContext.SaveChanges();
         }
-        public static void actualizaUsuario(int id,string username, string password)
+        public static void actualizaUsuario(int id,string username, string password, bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
-            Usuarios us = new Usuarios(id,username, password);
+            Usuarios us = new Usuarios(id,username, password,esAdmin);
             presenciaContext.Update(us);
             presenciaContext.SaveChanges();
         }

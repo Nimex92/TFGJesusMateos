@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.PaginaAdmin"
+             Title="PaginaAdmin"
+             BackgroundColor="White">
+    <StackLayout
+        Margin="0,20,0,0">
+        <Label 
+                Text="Tech Talent &#10; Página de administracion"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="20"
+                HorizontalOptions="Center"
+                x:Name="TituloEmpresa"/>
+        <StackLayout
+            BackgroundColor="Black"
+            WidthRequest="300"
+            HeightRequest="2"
+            HorizontalOptions="Center"
+            Margin="0,10,0,10"/>
+        <StackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    BackgroundColor="#007032"
+                    Clicked="NuevoUsuario"
+                    Text="      Registrar&#10; nuevo usuario"
+                    x:Name="RegistrarNuevoUsuario"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#083f5e"
+                    Text="Modificar&#10; usuario"
+                    x:Name="ModificarUsuario"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#5c1616"
+                    Text="Eliminar&#10; usuario"
+                    x:Name="EliminarUsuario"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                     BackgroundColor="#007032"
+                    FontAttributes="Bold"
+                    Clicked="NuevoTrabajador"
+                    Text="        Registrar&#10; nuevo trabajador"
+                    x:Name="RegistrarNuevoTrabajador"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#083f5e"
+                    Text="  Modificar&#10; trabajador"
+                    x:Name="ModificarTrabajador"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#5c1616"
+                    Text="    Eliminar&#10; trabajador"
+                    x:Name="EliminarTrabajador"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#007032"
+                    Text=" Registra nuevo &#10;grupo de trabajo"
+                    x:Name="RegistrarNuevoGrupoTrabajo"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#083f5e"
+                    Text="       Modificar&#10; grupo de trabajo"
+                    x:Name="ModificarGrupoTrabajo"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#5c1616"
+                    Text="         Eliminar&#10; grupo de trabajo"
+                    x:Name="EliminarGrupoTrabajo"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+        <Button
+                Text="Volver"
+                Margin="0,15,0,0"
+                BackgroundColor="Black"
+                x:Name="BotonCerrarSesionAdmin"
+                Clicked="VolverAlMainAdmin"
+                WidthRequest="300"
+                HeightRequest="30"
+                HorizontalOptions="Center"/>
+    </StackLayout>
+    
+</ContentPage>

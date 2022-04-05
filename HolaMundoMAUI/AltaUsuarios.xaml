@@ -6,7 +6,7 @@
              BackgroundColor="White">
     <AbsoluteLayout>
         <StackLayout
-                Margin="420,50">
+                Margin="450,30">
             
             <Label  
                 Text="Tech Talent &#10;Alta de usuario"
@@ -27,7 +27,7 @@
                      VerticalOptions="Center"
                      Margin="0,10,0,0"
                      WidthRequest="320"
-                     HeightRequest="250"
+                     HeightRequest="280"
                      BackgroundColor="#828282">
                     <Entry x:Name="CampoUsuario"
                         Placeholder="Introduce usuario:"
@@ -66,9 +66,24 @@
                         BackgroundColor="White"
                         TextColor="Black"
                         ClearButtonVisibility="WhileEditing"/>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="160,10,0,0"
+                        BackgroundColor="White"
+                        WidthRequest="130">
+                        <Label
+                            Text="¿Es admin?"
+                            FontSize="18"
+                            Margin="10,0,5,0"/>
+                        <CheckBox 
+                            x:Name="BotonEsAdmin"
+                            IsChecked="false"
+                            />
+                    </HorizontalStackLayout>
                     <Button 
                         Text="Registrar"
-                        x:Name="BotonRegistrar"
+                        x:Name="BotonRegistrarAdmin"
                         HorizontalOptions="Center"
                         Margin="0,10,0,0"
                         BackgroundColor="Black"
@@ -76,10 +91,10 @@
                         WidthRequest="300"/>
                 </StackLayout>
                 <Button
-                Text="Cerrar Sesion"
+                Text="Volver"
                 Margin="0,15,0,0"
                 BackgroundColor="Black"
-                x:Name="BotonCerrarSesion"
+                x:Name="BotonCerrarSesionAdmin"
                 Clicked="VolverAlMain"
                 WidthRequest="300"
                 HeightRequest="30"
@@ -90,10 +105,10 @@
                     Text="Este es el label de avisos"
                     x:Name="LabelAvisos"
                     WidthRequest="300"
-                    HeightRequest="120"
+                    HeightRequest="130"
                     HorizontalOptions="Center"
                     FontSize="16"
-                    Margin="50,0,0,0"/>
+                    Margin="30,0,0,0"/>
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>

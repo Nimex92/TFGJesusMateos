@@ -6,7 +6,6 @@
              WidthRequest="500"
              HeightRequest="500">
 
-    
     <StackLayout>
         <Label 
                 Text="Tech Talent &#10; control de presencia"
@@ -25,7 +24,7 @@
                 FontSize="24"
                 Clicked="ComienzaJornada"
                 FontAttributes="Bold"
-                BackgroundColor="DarkRed"
+                BackgroundColor="Red"
                 WidthRequest="150" 
                 HeightRequest="150"
                 HorizontalOptions="Center"
@@ -50,11 +49,10 @@
                 HeightRequest="90"
                 Margin="50,50,50,50"
                />
-
-
         
+
+
     </StackLayout>
- 
 
 
 </ContentPage>

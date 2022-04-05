@@ -36,38 +36,37 @@
                      HeightRequest="170"
                      BackgroundColor="#828282">
             <Entry x:Name="CampoUsuario"
-               Placeholder="Introduce usuario:"
-               PlaceholderColor="Black"
-               Margin="0,15,0,0"
-               FontSize="24"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               WidthRequest="300"
-               BackgroundColor="White"
-               TextColor="Black"
-               ClearButtonVisibility="WhileEditing"/>
-        
-        <Entry x:Name="CampoContraseña"
-               Keyboard="Chat"
-               Placeholder="Introduce Contraseña:"
-               PlaceholderColor="Black"
-               Margin="0,15,0,0"
-               IsPassword="true"
-               FontSize="24"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               WidthRequest="300"
-               BackgroundColor="White"
-               TextColor="Black"
-               ClearButtonVisibility="WhileEditing"/>
+                   Placeholder="Introduce usuario:"
+                   PlaceholderColor="Black"
+                   Margin="0,15,0,0"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   BackgroundColor="White"
+                   TextColor="Black"/>
 
-        <Button
+            <Entry x:Name="CampoContraseña"
+                   Placeholder="Introduce Contraseña:"
+                   PlaceholderColor="Black"
+                   Margin="0,15,0,0"
+                   IsPassword="False"
+                   CursorPosition="5"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   />
+
+            <Button
             x:Name="irPaginaFichar"
             Text="Iniciar sesión"
             Margin="0,15,0,0"
             Clicked="CambiaFichar"
             WidthRequest="300"
-            HeightRequest="30"
+            HeightRequest="35"
             HorizontalOptions="Center"/>
         
         </StackLayout>

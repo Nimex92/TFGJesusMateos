@@ -17,9 +17,18 @@ public partial class MainPage : ContentPage
         var usuario = presenciaContext.Usuarios
 							.Where(b => b.Username == NombreUsuario && b.Password == ContrasenaUsuario).FirstOrDefault();
 		
-		if (usuario is not null) { 
-			MensajeError.IsVisible = false;
-			App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
+		if (usuario is not null) {
+            if (usuario.esAdmin == true)
+            {
+				MensajeError.IsVisible = false;
+				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+			}
+            else
+            {
+				MensajeError.IsVisible = false;
+				App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
+            }
+			
 
         }
         else
