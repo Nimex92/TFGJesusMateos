@@ -37,6 +37,5 @@ public partial class AltaTrabajador : ContentPage
 	public void VolverAlMain(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
-
 	}
 }

@@ -87,7 +87,8 @@
                     FontAttributes="Bold"
                      BackgroundColor="#007032"
                     Text=" Registra nuevo &#10;grupo de trabajo"
-                    x:Name="RegistrarNuevoGrupoTrabajo"/>
+                    x:Name="RegistrarNuevoGrupoTrabajo"
+                    Clicked="NuevoGrupoTrabajo"/>
                 <Button
                     WidthRequest="250"
                     HeightRequest="100"

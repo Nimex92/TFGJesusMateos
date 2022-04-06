@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p4ZWhsFpiNZnQeIWKgwIc/6bllF6Tdb2rWIOXKe6rBg1QRs0iZcuImuAR8e4xumG339tdXSLPFUTi3GP3zZBXA==",
+  "dgSpecHash": "YXRCqq2Eh17qLodwCAP90V7O1WckEDdqLIG1xDvj07fT3zt2HKTVqETVhnRU+0VfiLlkOR4IrPn3ezpVRpQ5fA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\googlegson\\2.8.8.2\\googlegson.2.8.8.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",

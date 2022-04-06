@@ -24,7 +24,7 @@ public partial class PaginaAdmin : ContentPage
     }
     public void NuevoGrupoTrabajo(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador());
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo());
     }
 
     public void VolverAlMainAdmin(object sender, EventArgs e)

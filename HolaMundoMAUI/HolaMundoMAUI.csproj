@@ -56,6 +56,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Page Remove="AltaGrupoTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
@@ -81,6 +82,9 @@
 	  <Compile Update="AltaUsuarios.xaml.cs">
 	    <DependentUpon>AltaUsuarios.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
 	  </Compile>
@@ -98,6 +102,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AltaUsuarios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">
