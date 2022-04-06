@@ -67,6 +67,7 @@
                     HeightRequest="100"
                     FontSize="24"
                     FontAttributes="Bold"
+                    Clicked="ModificaTrabajador"
                      BackgroundColor="#083f5e"
                     Text="  Modificar&#10; trabajador"
                     x:Name="ModificarTrabajador"/>

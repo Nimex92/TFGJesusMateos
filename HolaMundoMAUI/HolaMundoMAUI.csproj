@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
@@ -60,6 +60,7 @@
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
 	  <Page Remove="ModificarUsuario.xaml" />
+	  <Page Remove="ModificaTrabajador.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
 	</ItemGroup>
 
@@ -86,6 +87,9 @@
 	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="ModificaTrabajador.xaml.cs">
+	    <DependentUpon>ModificaTrabajador.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ModificarUsuario.xaml.cs">
 	    <DependentUpon>ModificarUsuario.xaml</DependentUpon>
 	  </Compile>
@@ -109,6 +113,10 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ModificaTrabajador.xaml">
+	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ModificarUsuario.xaml">

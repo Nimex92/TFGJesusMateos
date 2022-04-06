@@ -45,6 +45,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarUsu
 build_metadata.AdditionalFiles.TargetPath = ModificarUsuario.xaml
 build_metadata.AdditionalFiles.RelativePath = ModificarUsuario.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificaTrabajador.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificaTrabajador.xaml
+build_metadata.AdditionalFiles.TargetPath = ModificaTrabajador.xaml
+build_metadata.AdditionalFiles.RelativePath = ModificaTrabajador.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/PaginaAdmin.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaAdmin.xaml
