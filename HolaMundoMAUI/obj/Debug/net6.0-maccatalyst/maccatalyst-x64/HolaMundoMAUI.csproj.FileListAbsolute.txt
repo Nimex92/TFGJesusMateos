@@ -33,3 +33,6 @@ C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\_ProcessedBundleResourcesPath.items
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\_ProcessedContentPath.items
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\HolaMundoMAUI.csproj.AssemblyReference.cache
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\editar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\editar@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\editar@3x.png

@@ -7,45 +7,51 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HolaMundoMAUI
-build_property.ProjectDir = C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\
+build_property.ProjectDir = C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/AltaGrupoTrabajo.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaGrupoTrabajo.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaGrupoTrabajo.xaml
 build_metadata.AdditionalFiles.TargetPath = AltaGrupoTrabajo.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaGrupoTrabajo.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/AltaTrabajador.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaTrabajador.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTrabajador.xaml
 build_metadata.AdditionalFiles.TargetPath = AltaTrabajador.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaTrabajador.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/AltaUsuarios.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaUsuarios.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaUsuarios.xaml
 build_metadata.AdditionalFiles.TargetPath = AltaUsuarios.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaUsuarios.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/App.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/MainPage.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/PaginaAdmin.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = ModificarUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = ModificarUsuario.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/PaginaAdmin.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaAdmin.xaml
 build_metadata.AdditionalFiles.TargetPath = PaginaAdmin.xaml
 build_metadata.AdditionalFiles.RelativePath = PaginaAdmin.xaml
 
-[C:/Users/jesus/OneDrive/Documentos/GitHub/APP_MAUI/HolaMundoMAUI/PaginaFichar.xaml]
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/PaginaFichar.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaFichar.xaml
 build_metadata.AdditionalFiles.TargetPath = PaginaFichar.xaml

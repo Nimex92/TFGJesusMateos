@@ -958,3 +958,8 @@ C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\R.tx
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\R.cs.flag
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\HolaMundoMAUI.dll
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\HolaMundoMAUI.pdb
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\editar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\editar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\editar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\editar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\editar.png

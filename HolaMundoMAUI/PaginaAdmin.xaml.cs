@@ -26,6 +26,10 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo());
     }
+    public void ModificaUsuario(object sender , EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new ModificarUsuario());
+    }
 
     public void VolverAlMainAdmin(object sender, EventArgs e)
     {

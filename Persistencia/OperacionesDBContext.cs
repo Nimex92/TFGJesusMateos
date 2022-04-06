@@ -31,7 +31,7 @@ namespace Persistencia
             }
             else
             {
-                Us =new Usuarios(user, "default");
+                Us =new Usuarios(user, "1");
                 Trabajador trab = new Trabajador(Name, Grupo, Us);
                 presenciaContext.Add(trab);
                 presenciaContext.SaveChanges();
@@ -109,10 +109,14 @@ namespace Persistencia
             presenciaContext.Update(GrupoTrabajo);
             presenciaContext.SaveChanges();
         }
-        public static void actualizaUsuario(int id,string username, string password, bool esAdmin)
+        public static void actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
-            Usuarios us = new Usuarios(id,username, password,esAdmin);
+            var us = presenciaContext.Usuarios.Where(x=>x.Username== usernamebusca).FirstOrDefault();
+            us.Username = usernamebusca;
+            us.Password = password;
+            us.esAdmin = esAdmin;
+
             presenciaContext.Update(us);
             presenciaContext.SaveChanges();
         }
