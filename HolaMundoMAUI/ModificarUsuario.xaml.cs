@@ -78,7 +78,7 @@ public partial class ModificarUsuario : ContentPage
 		}
 	}
 
-	public void GuardarCambios(object sender, EventArgs e)
+	public async void GuardarCambios(object sender, EventArgs e)
     {
 		var os = us;
 		var nombre = CampoUsuario.Text;
@@ -99,13 +99,15 @@ public partial class ModificarUsuario : ContentPage
 			LabelPruebas.IsVisible = true;
 			LabelPruebas.Text = "Usuario actualizado correctamente.";
 			LabelPruebas.TextColor = Colors.Green;
-        }
+			await DisplayAlert("Alert", "Los cambios se guardaron correctamente", "OK");
+		}
         else
         {
 			LabelPruebas.IsEnabled = true;
 			LabelPruebas.IsVisible = true;
 			LabelPruebas.Text = "Las contraseñas deben coincidir.";
 			LabelPruebas.TextColor = Colors.Red;
+			await DisplayAlert("Alert", "Los cambios no se han podido aplicar", "OK");
 		}
 		
     }

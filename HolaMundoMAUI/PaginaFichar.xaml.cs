@@ -74,9 +74,10 @@ public partial class PaginaFichar : ContentPage
 			//	.OrderBy(x => x.numero_tarjeta);	// ORDER BY DE SQL
 			//	//.Select(x=>x.numero_tarjeta);		// CON LO QUE ME QUIERO QUEDAR EN LA VARIABLE
 			//var trabajador = query.First();			//(Accionar la consulta)Como darle al enter en la consola de mysql
-			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
+			var user = presenciaContext.Usuarios.Where(x => x.Username == username).FirstOrDefault();
+			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == user.Username).Include(x=>x.grupo).Include(x=>x.usuario).FirstOrDefault();
+			Debug.WriteLine(trabajador.numero_tarjeta);
 			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Entrada");
-
 		}
 		else
         {

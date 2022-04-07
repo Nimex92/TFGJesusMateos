@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.PaginaFichar"
-             BackgroundColor="White"
-             WidthRequest="500"
-             HeightRequest="500">
+             BackgroundColor="White">
 
     <StackLayout>
         <Label 
@@ -15,8 +13,26 @@
                 SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="24"
                 HorizontalOptions="Center"
-                x:Name="TituloEmpresa"
-            />
+                x:Name="TituloEmpresa"/>
+        <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="320"
+                     HorizontalOptions="Center"/>
+        <StackLayout
+            Margin="120,0,0,0"
+            HorizontalOptions="Center">
+        <Label
+                x:Name="Reloj"
+                Text="00:00:00"
+                FontSize="28"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="90"
+                Margin="15,10,0,0"
+               />
+        </StackLayout>
         <Button
                 x:Name="BotonFichar"
                 Text="Comenzar &#10; jornada"
@@ -38,17 +54,7 @@
                     HeightRequest="30"
                     HorizontalOptions="Center"
             />
-        <Label
-                x:Name="Reloj"
-                Text="00:00:00"
-                FontSize="28"
-                TextColor="Black"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                WidthRequest="300"
-                HeightRequest="90"
-                Margin="50,50,50,50"
-               />
+
         
 
 

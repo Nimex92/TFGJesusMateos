@@ -27,6 +27,7 @@ public partial class AltaUsuarios : ContentPage
 			if (CampoUsuario.Text == us.Username)
 			{
 				//El usuario existe, activamos el label de error
+				await DisplayAlert("Alert","El usuario "+Username+" ya existe, por favor pruebe otro","OK");
 				LabelAvisos.Text = "El nombre de usuario ya existe...";
 				LabelAvisos.TextColor = Colors.Red;
 				LabelAvisos.IsVisible = true;
@@ -68,4 +69,10 @@ public partial class AltaUsuarios : ContentPage
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
 
 	}
+	public void gaga(object sender, EventArgs e)
+    {
+		CampoContrasena.IsPassword = true;
+		CampoRepiteContrasena.IsPassword = true;
+
+    }
 }

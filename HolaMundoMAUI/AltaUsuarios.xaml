@@ -41,31 +41,32 @@
                         TextColor="Black"
                         ClearButtonVisibility="WhileEditing"/>
                     <Entry x:Name="CampoContrasena"
-                        Keyboard="Chat"
                         Placeholder="Introduce Contraseña:"
                         PlaceholderColor="Black"
                         Margin="0,15,0,0"
-                        IsPassword="true"
+                        IsPassword="False"
                         FontSize="24"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="300"
                         BackgroundColor="White"
                         TextColor="Black"
-                        ClearButtonVisibility="WhileEditing"/>
+                        Completed="gaga"
+                        />
                     <Entry x:Name="CampoRepiteContrasena"
                         Keyboard="Chat"
                         Placeholder="Repite Contraseña:"
                         PlaceholderColor="Black"
                         Margin="0,15,0,0"
-                        IsPassword="true"
+                        IsPassword="False"
                         FontSize="24"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="300"
                         BackgroundColor="White"
                         TextColor="Black"
-                        ClearButtonVisibility="WhileEditing"/>
+                        Completed="gaga"
+                        />
                     <HorizontalStackLayout
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
@@ -102,7 +103,7 @@
             </StackLayout>
             <StackLayout>
                 <Label
-                    Text="Este es el label de avisos"
+                    Text=""
                     x:Name="LabelAvisos"
                     WidthRequest="300"
                     HeightRequest="130"

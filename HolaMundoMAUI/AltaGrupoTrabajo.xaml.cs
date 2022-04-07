@@ -14,31 +14,42 @@ public partial class AltaGrupoTrabajo : ContentPage
 		SelectorHoraSalida.ItemsSource = GeneraHoras();
 		SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
 		SelectorMinutoSalida.ItemsSource = GeneraMinutos();
+		SelectorHoraEntrada.SelectedIndex = 0;
+		SelectorMinutoEntrada.SelectedIndex = 0;
+		SelectorHoraSalida.SelectedIndex = 0;
+		SelectorMinutoSalida.SelectedIndex = 0;
 	}
-	public void RegistraNuevoGrupoTrabajo(object sender , EventArgs e)
+	public async void RegistraNuevoGrupoTrabajo(object sender , EventArgs e)
     {
 		PresenciaContext presenciaContext = new PresenciaContext();
 		string NombreGrupo = CampoNombre.Text;
-		string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
-		string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
-		string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
-		string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
-		string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
-		string TiempoSalida = HoraSalida + ":" + MinutoSalida;
-		Debug.WriteLine(TiempoEntrada + " " + TiempoSalida);
-
-		var GrupoExiste = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == NombreGrupo).FirstOrDefault();
-		if(GrupoExiste is not null)
+		if(NombreGrupo is not null)
         {
-			LabelAvisos.Text = "Error, el grupo de trabajo ya existe.";
-			LabelAvisos.TextColor = Colors.Red;
+			string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
+			string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
+			string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
+			string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
+			string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
+			string TiempoSalida = HoraSalida + ":" + MinutoSalida;
+
+			var GrupoExiste = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == NombreGrupo).FirstOrDefault();
+			if (GrupoExiste is not null)
+			{
+				LabelAvisos.Text = "Error, el grupo de trabajo ya existe.";
+				LabelAvisos.TextColor = Colors.Red;
+			}
+			else
+			{
+				OperacionesDBContext.insertarGrupoTrabajo(NombreGrupo, TiempoEntrada, TiempoSalida);
+				LabelAvisos.Text = "Grupo de trabajo creado satisfactoriamente.";
+				LabelAvisos.TextColor = Colors.Green;
+			}
         }
         else
         {
-			OperacionesDBContext.insertarGrupoTrabajo(NombreGrupo, TiempoEntrada, TiempoSalida);
-			LabelAvisos.Text = "Grupo de trabajo creado satisfactoriamente.";
-			LabelAvisos.TextColor = Colors.Green;
-		}
+			await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
+        }
+		
 
 	}
 	public List<string> GeneraHoras()

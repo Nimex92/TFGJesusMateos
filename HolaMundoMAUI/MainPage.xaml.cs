@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
-	public void CambiaFichar(object sender, EventArgs e)
+	public async void CambiaFichar(object sender, EventArgs e)
     {
 		string NombreUsuario = CampoUsuario.Text;
 		string ContrasenaUsuario = CampoContraseña.Text;
@@ -36,6 +36,7 @@ public partial class MainPage : ContentPage
 			MensajeError.Text = "El usuario o la contraseña son incorrectos.";
 			usuario = new("", "");
 			MensajeError.IsVisible = true;
+			await DisplayAlert("Alert", "El usuario o la contraseña son incorrectos.", "OK");
 		}
 	}
 	public void AltaUsuario(object sender, EventArgs e)

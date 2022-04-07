@@ -123,7 +123,7 @@ public partial class ModificarGrupoTrabajo
 		}	
 	}
 
-	public void GuardarCambios(object sender, EventArgs e)
+	public async void GuardarCambios(object sender, EventArgs e)
     {
 		var HoraEntrada = SelectorHoraEntrada.SelectedItem + ":" + SelectorMinutoEntrada.SelectedItem;
 		var HoraSalida = SelectorHoraSalida.SelectedItem + ":" + SelectorMinutoSalida.SelectedItem;
@@ -132,13 +132,16 @@ public partial class ModificarGrupoTrabajo
 		bool inserta =OperacionesDBContext.actualizarGrupoTrabajo(CampoUsuario.Text, HoraEntrada, HoraSalida);
         if (inserta == true)
         {
+			await DisplayAlert("Alert","Los cambios se guardaron correctamente","OK");
 			LabelAvisos.Text = "Los cambios se han guardado correctamente.";
 			LabelAvisos.TextColor = Colors.Green;
+			
         }
         else
         {
 			LabelAvisos.Text = "No se realizaron los cambios.";
 			LabelAvisos.TextColor = Colors.Red;
+			await DisplayAlert("Alert", "Los cambios no se han podido aplicar", "OK");
 		}
     }
 }

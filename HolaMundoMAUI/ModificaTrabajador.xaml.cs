@@ -81,7 +81,7 @@ public partial class ModificarTrabajador {
 		}
 	}
 
-	public void GuardarCambios(object sender, EventArgs e)
+	public async void GuardarCambios(object sender, EventArgs e)
     {
 		var NombreTrabajador = CampoUsuario.Text;
 		var turno = Selector.SelectedItem.ToString();
@@ -92,11 +92,13 @@ public partial class ModificarTrabajador {
 		{
 			LabelAvisos.Text = "Se han realizado los cambios";
 			LabelAvisos.TextColor = Colors.Green;
-        }
+			await DisplayAlert("Alert", "Los cambios se guardaron correctamente", "OK");
+		}
         else
         {
 			LabelAvisos.Text = "Error al guardar los cambios";
 			LabelAvisos.TextColor = Colors.Red;
+			await DisplayAlert("Alert", "Los cambios no se han podido aplicar", "OK");
 		}
     }
 }

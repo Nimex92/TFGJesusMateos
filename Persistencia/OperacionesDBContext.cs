@@ -20,16 +20,27 @@ namespace Persistencia
         public static bool insertaTrabajador(string Name,int Grup,string user)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
-
-            var Grupo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Grup).FirstOrDefault();
-            var Us = presenciaContext.Usuarios.Where(x => x.Username == user).FirstOrDefault();
-
-            if (Us is not null)
+            var trab = presenciaContext.Trabajador.Where(x => x.nombre == Name).FirstOrDefault();
+            var grup = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Grup).FirstOrDefault();
+            var us = presenciaContext.Usuarios.Where(x => x.Username == user).FirstOrDefault();
+            if (trab == null)
             {
-                Trabajador trab = new Trabajador(Name, Grupo, Us);
-                presenciaContext.Add(trab);
-                presenciaContext.SaveChanges();
-                return true;
+                if(us is null)
+                {
+                    Trabajador t1 = new Trabajador(Name, grup, new Usuarios(user, "1"));
+                    presenciaContext.Add(t1);
+                    presenciaContext.SaveChanges();
+                    return true;
+                }
+                else
+                { 
+                    user = "0"+user;
+                    Trabajador t1 = new Trabajador(Name, grup, new Usuarios(user, "1"));
+                    presenciaContext.Add(t1);
+                    presenciaContext.SaveChanges();
+                    return true;
+
+                }
             }
             else
             {
