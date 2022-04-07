@@ -59,6 +59,7 @@
 	  <Page Remove="AltaGrupoTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
+	  <Page Remove="ModificaGrupoTrabajo.xaml" />
 	  <Page Remove="ModificarUsuario.xaml" />
 	  <Page Remove="ModificaTrabajador.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
@@ -87,6 +88,9 @@
 	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="ModificaGrupoTrabajo.xaml.cs">
+	    <DependentUpon>ModificaGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ModificaTrabajador.xaml.cs">
 	    <DependentUpon>ModificaTrabajador.xaml</DependentUpon>
 	  </Compile>
@@ -113,6 +117,10 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ModificaGrupoTrabajo.xaml">
+	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ModificaTrabajador.xaml">

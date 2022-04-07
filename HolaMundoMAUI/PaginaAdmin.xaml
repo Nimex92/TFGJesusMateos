@@ -98,7 +98,8 @@
                     FontAttributes="Bold"
                      BackgroundColor="#083f5e"
                     Text="       Modificar&#10; grupo de trabajo"
-                    x:Name="ModificarGrupoTrabajo"/>
+                    x:Name="ModificarGrupoTrabajo"
+                    Clicked="ModificaGrupoTrabajo"/>
                 <Button
                     WidthRequest="250"
                     HeightRequest="100"

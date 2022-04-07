@@ -36,6 +36,11 @@ public partial class PaginaAdmin : ContentPage
         App.Current.MainPage = new NavigationPage(new ModificarTrabajador());
     }
 
+    public void ModificaGrupoTrabajo(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new ModificarGrupoTrabajo());
+    }
+
     public void VolverAlMainAdmin(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new MainPage());

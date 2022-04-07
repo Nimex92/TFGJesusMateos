@@ -1,5 +1,6 @@
 ﻿using Bibliotec;
 using ClassLibrary1;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -65,7 +66,6 @@ namespace Persistencia
             presenciaContext.Usuarios.Add(us);
             presenciaContext.SaveChanges();
         }
-
         public static void borraTrabajador(int NumeroTarjeta)
         {
             using var presenciaContext = new PresenciaContext();
@@ -94,20 +94,25 @@ namespace Persistencia
             presenciaContext.Remove(us);
             presenciaContext.SaveChanges();
         }
-
-        public static void actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
+        public static bool actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
         {
             using var presenciaContext = new PresenciaContext();
             Trabajador trabajador = new Trabajador(Id, Nombre, presenciaContext.Grupo_Trabajo.Find(GrupoTrabajo));
             presenciaContext.Update(trabajador);
             presenciaContext.SaveChanges();
+            return true;
         }
-        public static void actualizarGrupoTrabajo(int idGrupo, string Nombre, string HoraEntrada, string HoraSalida)
+
+        public static bool actualizarGrupoTrabajo(string Nombre, string HoraEntrada, string HoraSalida)
         {
             using var presenciaContext = new PresenciaContext();
-            Grupo_Trabajo GrupoTrabajo = new Grupo_Trabajo(idGrupo, Nombre, HoraEntrada, HoraSalida);
+            var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Nombre).FirstOrDefault();
+            GrupoTrabajo.Turno = Nombre;
+            GrupoTrabajo.HoraEntrada=HoraEntrada;
+            GrupoTrabajo.HoraSalida = HoraSalida;
             presenciaContext.Update(GrupoTrabajo);
             presenciaContext.SaveChanges();
+            return true;
         }
         public static void actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
         {

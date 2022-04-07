@@ -24,6 +24,9 @@
     <MauiXaml Update="AltaGrupoTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ModificaGrupoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ModificaTrabajador.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
