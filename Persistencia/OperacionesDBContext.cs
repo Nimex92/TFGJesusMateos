@@ -17,7 +17,7 @@ namespace Persistencia
 
         }
 
-        public static void insertaTrabajador(string Name,int Grup,string user)
+        public static bool insertaTrabajador(string Name,int Grup,string user)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
 
@@ -29,13 +29,11 @@ namespace Persistencia
                 Trabajador trab = new Trabajador(Name, Grupo, Us);
                 presenciaContext.Add(trab);
                 presenciaContext.SaveChanges();
+                return true;
             }
             else
             {
-                Us =new Usuarios(user, "1");
-                Trabajador trab = new Trabajador(Name, Grupo, Us);
-                presenciaContext.Add(trab);
-                presenciaContext.SaveChanges();
+                return false;
             }
             
         }
@@ -59,40 +57,83 @@ namespace Persistencia
                 presenciaContext.TablaFichajes.Add(fich);
                 presenciaContext.SaveChanges();
         }
-        public static void insertaUsuario(string username, string password,bool esAdmin)
+        public static bool insertaUsuario(string username, string password,bool esAdmin)
         {
-            using var presenciaContext = new PresenciaContext();
-            Usuarios us = new Usuarios(username, password, esAdmin);
-            presenciaContext.Usuarios.Add(us);
-            presenciaContext.SaveChanges();
+            if (username is not null)
+            {
+                if(password is not null) { 
+                using var presenciaContext = new PresenciaContext();
+                Usuarios us = new Usuarios(username, password, esAdmin);
+                presenciaContext.Usuarios.Add(us);
+                presenciaContext.SaveChanges();
+                return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
-        public static void borraTrabajador(int NumeroTarjeta)
+        public static bool borraTrabajador(int NumeroTarjeta)
         {
             using var presenciaContext = new PresenciaContext();
             Trabajador trabajador = presenciaContext.Trabajador.Find(NumeroTarjeta);
-            presenciaContext.Remove(trabajador);
-            presenciaContext.SaveChanges();
+            if (trabajador is not null)
+            {
+                presenciaContext.Remove(trabajador);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
-        public static void borraGrupoTrabajo(int IdGrupo)
+        public static bool borraGrupoTrabajo(int IdGrupo)
         {
             using var presenciaContext = new PresenciaContext();
             Grupo_Trabajo grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
-            presenciaContext.Remove(grupo);
-            presenciaContext.SaveChanges();
+            if(grupo is not null) { 
+                presenciaContext.Remove(grupo);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public static void borraFichaje(int Id)
+        public static bool borraFichaje(int Id)
         {
             using var presenciaContext = new PresenciaContext();
             Fichajes fich = presenciaContext.TablaFichajes.Find(Id);
-            presenciaContext.Remove(fich);
-            presenciaContext.SaveChanges();
+            if(fich is not null) { 
+                presenciaContext.Remove(fich);
+                presenciaContext.SaveChanges();
+                return true;
+            }else
+            {
+                return false;
+            }
         }
-        public static void borraUsuario(int Id)
+        public static bool borraUsuario(int Id)
         {
             using var presenciaContext = new PresenciaContext();
             Usuarios us = presenciaContext.Usuarios.Find(Id);
-            presenciaContext.Remove(us);
-            presenciaContext.SaveChanges();
+            if (us != null)
+            {
+                presenciaContext.Remove(us);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public static bool actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
         {

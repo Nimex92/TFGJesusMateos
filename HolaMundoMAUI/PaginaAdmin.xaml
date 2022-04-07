@@ -49,7 +49,8 @@
                     FontAttributes="Bold"
                      BackgroundColor="#5c1616"
                     Text="Eliminar&#10; usuario"
-                    x:Name="EliminarUsuario"/>
+                    x:Name="EliminarUsuario"
+                    Clicked="EliminaUsuario"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout
                 HorizontalOptions="Center">
@@ -78,7 +79,8 @@
                     FontAttributes="Bold"
                      BackgroundColor="#5c1616"
                     Text="    Eliminar&#10; trabajador"
-                    x:Name="EliminarTrabajador"/>
+                    x:Name="ElimineTrabajador"
+                    Clicked="EliminarTrabajador"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout
                 HorizontalOptions="Center">
@@ -107,7 +109,8 @@
                     FontAttributes="Bold"
                      BackgroundColor="#5c1616"
                     Text="         Eliminar&#10; grupo de trabajo"
-                    x:Name="EliminarGrupoTrabajo"/>
+                    x:Name="EliminaGrupoTrabajo"
+                    Clicked="EliminarGrupoTrabajador"/>
             </HorizontalStackLayout>
         </StackLayout>
         <Button

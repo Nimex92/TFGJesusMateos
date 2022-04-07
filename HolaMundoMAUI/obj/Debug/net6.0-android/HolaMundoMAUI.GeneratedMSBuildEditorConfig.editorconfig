@@ -33,6 +33,24 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminarGrupoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminarGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = EliminarGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = EliminarGrupoTrabajo.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminarTrabajador.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminarTrabajador.xaml
+build_metadata.AdditionalFiles.TargetPath = EliminarTrabajador.xaml
+build_metadata.AdditionalFiles.RelativePath = EliminarTrabajador.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminaUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminaUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = EliminaUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = EliminaUsuario.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.MainPage.xaml

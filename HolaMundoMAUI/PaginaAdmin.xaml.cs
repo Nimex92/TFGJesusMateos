@@ -41,9 +41,25 @@ public partial class PaginaAdmin : ContentPage
         App.Current.MainPage = new NavigationPage(new ModificarGrupoTrabajo());
     }
 
-    public void VolverAlMainAdmin(object sender, EventArgs e)
+    public void EliminaUsuario(object sender, EventArgs e)
     {
+        App.Current.MainPage = new NavigationPage(new EliminaUsuario());
+    }
+
+    public void EliminarTrabajador(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new EliminarTrabajador());
+    }
+    public void EliminarGrupoTrabajador(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new EliminarGrupoTrabajo());
+    }
+
+    public async void VolverAlMainAdmin(object sender, EventArgs e)
+    {
+        await DisplayAlert("Alert", "Hasta luego, "+nombreUsuario, "OK");
         App.Current.MainPage = new NavigationPage(new MainPage());
+       
     }
 }
 

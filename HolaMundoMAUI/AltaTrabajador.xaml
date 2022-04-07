@@ -74,13 +74,14 @@
             </StackLayout>
             <StackLayout>
                 <Label
-                    Text="Este es el label de avisos"
+                    Text=""
                     x:Name="LabelAvisos"
                     WidthRequest="300"
                     HeightRequest="130"
                     HorizontalOptions="Center"
                     FontSize="16"
-                    Margin="30,0,0,0"/>
+                    Margin="30,0,0,0"
+                    />
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>

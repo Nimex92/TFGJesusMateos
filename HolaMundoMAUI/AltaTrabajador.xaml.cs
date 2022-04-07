@@ -32,6 +32,9 @@ public partial class AltaTrabajador : ContentPage
 		var seleccionado = Selector.SelectedItem.ToString().Trim();
 		var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == seleccionado).FirstOrDefault();
 		OperacionesDBContext.insertaTrabajador(nombre,grupo.IdGrupo,user);
+	
+		
+		
 	}   
 
 	public void VolverAlMain(object sender, EventArgs e)

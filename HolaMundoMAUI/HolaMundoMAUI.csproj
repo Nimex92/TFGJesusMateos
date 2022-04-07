@@ -59,6 +59,9 @@
 	  <Page Remove="AltaGrupoTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
+	  <Page Remove="EliminarGrupoTrabajo.xaml" />
+	  <Page Remove="EliminarTrabajador.xaml" />
+	  <Page Remove="EliminaUsuario.xaml" />
 	  <Page Remove="ModificaGrupoTrabajo.xaml" />
 	  <Page Remove="ModificarUsuario.xaml" />
 	  <Page Remove="ModificaTrabajador.xaml" />
@@ -88,14 +91,23 @@
 	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="EliminarGrupoTrabajo.xaml.cs">
+	    <DependentUpon>EliminarGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="ModificaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>ModificaGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="EliminaUsuario.xaml.cs">
+	    <DependentUpon>EliminaUsuario.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="ModificaTrabajador.xaml.cs">
 	    <DependentUpon>ModificaTrabajador.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="ModificarUsuario.xaml.cs">
 	    <DependentUpon>ModificarUsuario.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="EliminarTrabajador.xaml.cs">
+	    <DependentUpon>EliminarTrabajador.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
@@ -119,7 +131,15 @@
 	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="EliminarGrupoTrabajo.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ModificaGrupoTrabajo.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EliminaUsuario.xaml">
 	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -128,6 +148,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ModificarUsuario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EliminarTrabajador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">

@@ -24,13 +24,22 @@
     <MauiXaml Update="AltaGrupoTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="EliminarGrupoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ModificaGrupoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="EliminaUsuario.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="ModificaTrabajador.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="ModificarUsuario.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="EliminarTrabajador.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">

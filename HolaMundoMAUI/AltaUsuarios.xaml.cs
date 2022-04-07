@@ -12,7 +12,7 @@ public partial class AltaUsuarios : ContentPage
 		InitializeComponent();
 	}
 
-	public void RegistrarNuevoUsuario(object sender, EventArgs e)
+	public async void RegistrarNuevoUsuario(object sender, EventArgs e)
 	{
 		string Username = CampoUsuario.Text;                    //Recojo el usuario de la interfaz
 		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
@@ -41,11 +41,17 @@ public partial class AltaUsuarios : ContentPage
 					esAdmin = true;
 
 				//Inserto usuario
-				OperacionesDBContext.insertaUsuario(Username, Password,esAdmin);
-				//Activo label de aceptacion, se ha insertado.
-				LabelAvisos.Text = "Usuario insertado correctamente.";
-				LabelAvisos.TextColor = Colors.Green;
-				LabelAvisos.IsVisible = true;
+				bool inserta = OperacionesDBContext.insertaUsuario(Username, Password,esAdmin);
+                if (inserta == true) 
+				{
+					//Activo label de aceptacion, se ha insertado.
+					await DisplayAlert("Alert", "Usuario "+Username+" insertado correctamente.", "OK");
+				}
+                else
+                {
+					await DisplayAlert("Alert", "Error al insertar el usuario "+Username+".", "OK");
+                }
+
 			}
 			else
 			{
