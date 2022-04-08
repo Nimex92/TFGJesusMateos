@@ -6,12 +6,10 @@ namespace HolaMundoMAUI;
 
 public partial class EliminaUsuario : ContentPage
 {
-	bool activado;
 	Usuarios us = new();
 	public EliminaUsuario()
 	{
 		InitializeComponent();
-		activado = false;
 		SetListView();
     }
 	public void VolverAlMain(object sender, EventArgs e)

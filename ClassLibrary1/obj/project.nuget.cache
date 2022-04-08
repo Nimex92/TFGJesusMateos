@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KU6PeulmP49bPMmrnvP6uhn4RKIKRbVKqNhhzuaLJlOCifmKr8Tf1zo+UMR86SRj6SrMceCkP6JLcvckLPjH9A==",
+  "dgSpecHash": "T6QwC7nt3n+9FP/I+HPXQaYFQzKKa3hBXukHp+a+B8ttrrv9Zr0wUVfqr2pzqhr9+lUYouS4uGhePylGeMM9bg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",

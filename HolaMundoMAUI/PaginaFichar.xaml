@@ -30,7 +30,7 @@
                 VerticalOptions="Center"
                 WidthRequest="300"
                 HeightRequest="90"
-                Margin="15,10,0,0"
+                Margin="65,10,0,0"
                />
         </StackLayout>
         <Button
@@ -38,14 +38,66 @@
                 Text="Comenzar &#10; jornada"
                 TextColor="White"
                 FontSize="24"
-                Clicked="ComienzaJornada"
+                Clicked="BotonFichar_Clicked"
                 FontAttributes="Bold"
                 BackgroundColor="Red"
                 WidthRequest="150" 
                 HeightRequest="150"
                 HorizontalOptions="Center"
-                />
-
+                Margin="0,-50,0,0"
+                IsEnabled="True"
+                IsVisible="True"/>
+        <Button
+                x:Name="BotonPlegar"
+                Text="Terminar &#10; jornada"
+                TextColor="White"
+                FontSize="24"
+                Clicked="BotonPlegar_Clicked"
+                FontAttributes="Bold"
+                BackgroundColor="Green"
+                WidthRequest="150" 
+                HeightRequest="150"
+                HorizontalOptions="Center"
+                Margin="0,-50,0,0"
+                IsEnabled="False"
+                IsVisible="False"/>
+        <VerticalStackLayout
+            HorizontalOptions="Center">
+            <Label
+                Text="Tarea:"
+                IsEnabled="False"
+                IsVisible="False"/>
+            <Picker
+                x:Name="SelectorTareas"
+                BackgroundColor="Black"
+                WidthRequest="300"
+                SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                IsEnabled="False"
+                IsVisible="False"
+               />
+        </VerticalStackLayout>
+        <HorizontalStackLayout
+            HorizontalOptions="Center"
+            Margin="70,10,0,0">
+            <Button
+                x:Name="BotonIniciarTarea"
+                Text="Iniciar"
+                BackgroundColor="Green"
+                WidthRequest="100"
+                IsEnabled="False"
+                IsVisible="False"
+                Clicked="BotonIniciarTarea_Clicked"
+                Margin="130,0,0,0"/>
+            <Button
+                x:Name="BotonAcabarTarea"
+                Text="Acabar"
+                BackgroundColor="Red"
+                WidthRequest="100"
+                IsEnabled="False"
+                IsVisible="False"
+                Clicked="BotonAcabarTarea_Clicked"
+                Margin="130,0,0,0"/>
+        </HorizontalStackLayout>
         <Button
                     x:Name="irPaginaMain"
                     Text="Cerrar Sesion"
@@ -53,11 +105,8 @@
                     WidthRequest="300"
                     HeightRequest="30"
                     HorizontalOptions="Center"
+                    Margin="0,10,0,0"
             />
-
-        
-
-
     </StackLayout>
 
 

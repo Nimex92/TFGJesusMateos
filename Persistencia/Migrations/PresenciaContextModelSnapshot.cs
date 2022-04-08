@@ -42,6 +42,63 @@ namespace Persistencia.Migrations
                     b.ToTable("Grupo_Trabajo");
                 });
 
+            modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FinTarea")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<double>("HorasUsadas")
+                        .HasColumnType("double");
+
+                    b.Property<DateTime>("InicioTarea")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("grupoIdGrupo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("tareaIdTarea")
+                        .HasColumnType("int");
+
+                    b.Property<int>("trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("grupoIdGrupo");
+
+                    b.HasIndex("tareaIdTarea");
+
+                    b.HasIndex("trabajadornumero_tarjeta");
+
+                    b.ToTable("TareasRealizadas");
+                });
+
+            modelBuilder.Entity("Bibliotec.Tareas", b =>
+                {
+                    b.Property<int>("IdTarea")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("NombreTarea")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("TiempoEstimado")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdTarea");
+
+                    b.ToTable("Tareas");
+                });
+
             modelBuilder.Entity("Bibliotec.Trabajador", b =>
                 {
                     b.Property<int>("numero_tarjeta")
@@ -115,6 +172,33 @@ namespace Persistencia.Migrations
                     b.HasIndex("Trabajadornumero_tarjeta");
 
                     b.ToTable("TablaFichajes");
+                });
+
+            modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
+                {
+                    b.HasOne("Bibliotec.Grupo_Trabajo", "grupo")
+                        .WithMany()
+                        .HasForeignKey("grupoIdGrupo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Tareas", "tarea")
+                        .WithMany()
+                        .HasForeignKey("tareaIdTarea")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Trabajador", "trabajador")
+                        .WithMany()
+                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("grupo");
+
+                    b.Navigation("tarea");
+
+                    b.Navigation("trabajador");
                 });
 
             modelBuilder.Entity("Bibliotec.Trabajador", b =>

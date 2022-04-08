@@ -42,6 +42,9 @@
     <MauiXaml Update="EliminarTrabajador.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="CalendarioLalboral.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

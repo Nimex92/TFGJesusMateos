@@ -177,5 +177,18 @@ namespace Persistencia
             presenciaContext.Update(us);
             presenciaContext.SaveChanges();
         }
+
+        public static bool insertaTareaRealizada(string NombreTarea, int NumeroTarjeta, int IdGrupo, DateTime init, DateTime end)
+        {
+            using var presenciaContext = new PresenciaContext();
+            var operacion = end.Subtract(init).TotalHours;
+            var tareas = presenciaContext.Tareas.Where(x => x.NombreTarea == NombreTarea).FirstOrDefault(); ;
+            var trabajador = presenciaContext.Trabajador.Find(NumeroTarjeta);
+            var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
+            TareaRealizada tarea = new TareaRealizada(tareas,trabajador,grupo,init,end,operacion);
+            presenciaContext.Add(tarea);
+            presenciaContext.SaveChanges();
+            return true;
+        }
     }
 }

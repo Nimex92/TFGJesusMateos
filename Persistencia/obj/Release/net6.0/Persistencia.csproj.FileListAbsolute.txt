@@ -1,0 +1,17 @@
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Persistencia.deps.json
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Persistencia.runtimeconfig.json
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Persistencia.dll
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Persistencia.pdb
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Bibliotec.dll
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Release\net6.0\Bibliotec.pdb
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.AssemblyInfo.cs
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.csproj.CopyComplete
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.dll
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\refint\Persistencia.dll
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.pdb
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\Persistencia.genruntimeconfig.cache
+C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\obj\Release\net6.0\ref\Persistencia.dll

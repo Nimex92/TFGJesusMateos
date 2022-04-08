@@ -4,20 +4,27 @@ using System.Diagnostics;
 using Persistencia;
 using ClassLibrary1;
 using Microsoft.EntityFrameworkCore;
+using Bibliotec;
 
 namespace HolaMundoMAUI;
 
 public partial class PaginaFichar : ContentPage
 {
-	bool FicharActivado=false;
 	string username;
+	Trabajador trabajador;
     public IDispatcherTimer MyTimer { get; set; }
 	PresenciaContext presenciaContext = new PresenciaContext();
+	DateTime dt = DateTime.Now;
+	DateTime HoraEntrada;
 	public PaginaFichar(string username)
     {
 		InitializeComponent();
 
 		this.username = username;
+		var trab = presenciaContext.Trabajador.Where(x => x.usuario.Username == username)
+			.Include(x => x.grupo).Include(x => x.usuario).FirstOrDefault();
+		trabajador = trab;
+
 		MyTimer = Reloj.Dispatcher.CreateTimer();
 		MyTimer.Interval = TimeSpan.FromSeconds(1);
 		MyTimer.IsRepeating = true;
@@ -33,6 +40,11 @@ public partial class PaginaFichar : ContentPage
 		};
 
 		MyTimer.Start();
+		var tareas = presenciaContext.Tareas;
+		foreach (Tareas t in tareas)
+		{
+			SelectorTareas.Items.Add(t.NombreTarea);
+		}
 	}
     public PaginaFichar()
 	{
@@ -53,7 +65,13 @@ public partial class PaginaFichar : ContentPage
 		};
 
 		MyTimer.Start();
-		
+		var tareas = presenciaContext.Tareas;
+		foreach (Tareas t in tareas)
+		{
+			SelectorTareas.Items.Add(t.NombreTarea);
+		}
+
+
 	}
 
 
@@ -62,31 +80,69 @@ public partial class PaginaFichar : ContentPage
 		App.Current.MainPage = new NavigationPage(new MainPage());
 
 	}
-	private void ComienzaJornada(object sendeer, EventArgs e)
-    {
-		if (FicharActivado == false)
-		{
-			FicharActivado = true;
-			BotonFichar.Background = new SolidColorBrush(Colors.Green);
-			//var query = presenciaContext.Trabajador //(REFERENCIA A LA TABLA) SELECT DE SQL (Lista de trabajadores)
-			//	.Where(x => x.numero_tarjeta == user) // WHERE DE SQL (Argumentos)
-			//	.Include(x => x.grupo)				//Lo que quieres incluir (JOIN DE SQL)
-			//	.OrderBy(x => x.numero_tarjeta);	// ORDER BY DE SQL
-			//	//.Select(x=>x.numero_tarjeta);		// CON LO QUE ME QUIERO QUEDAR EN LA VARIABLE
-			//var trabajador = query.First();			//(Accionar la consulta)Como darle al enter en la consola de mysql
-			var user = presenciaContext.Usuarios.Where(x => x.Username == username).FirstOrDefault();
-			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == user.Username).Include(x=>x.grupo).Include(x=>x.usuario).FirstOrDefault();
-			Debug.WriteLine(trabajador.numero_tarjeta);
-			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Entrada");
-		}
-		else
+	private void BotonFichar_Clicked(object sender, EventArgs e)
+	{
+		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
+		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Entrada");
+		BotonFichar.IsVisible = false;
+		BotonFichar.IsEnabled = false;
+		BotonPlegar.IsVisible = true;
+		BotonPlegar.IsEnabled = true;
+		SelectorTareas.IsEnabled = true;
+		SelectorTareas.IsVisible = true;
+	}
+	private void BotonPlegar_Clicked(object sender, EventArgs e)
+	{
+		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.grupo).FirstOrDefault();
+		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
+		BotonFichar.IsVisible = true;
+		BotonFichar.IsEnabled = true;
+		BotonPlegar.IsVisible = false;
+		BotonPlegar.IsEnabled = false;
+		SelectorTareas.IsEnabled = false;
+		SelectorTareas.IsVisible = false;
+		if(SelectorTareas.IsVisible == false)
         {
-			FicharActivado = false;
-			BotonFichar.Background = new SolidColorBrush(Colors.Red);
-			var trabajador = presenciaContext.Trabajador.Where(x=>x.usuario.Username == username).FirstOrDefault();
-			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
-			
+			BotonIniciarTarea.IsVisible = false;
+			BotonIniciarTarea.IsEnabled = false;
+			BotonAcabarTarea.IsVisible = false;
+			BotonAcabarTarea.IsEnabled = false;
 		}
 	}
+	void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+	{
+		int selectedIndex = SelectorTareas.SelectedIndex;
+
+		if (selectedIndex != -1)
+		{
+			BotonIniciarTarea.IsVisible = true;
+			BotonIniciarTarea.IsEnabled = true;
+		}
+	}
+
+    private void BotonIniciarTarea_Clicked(object sender, EventArgs e)
+    {
+		BotonAcabarTarea.IsEnabled = true;
+		BotonAcabarTarea.IsVisible = true;
+		BotonIniciarTarea.IsEnabled = false;
+		BotonIniciarTarea.IsVisible = false;
+
+		HoraEntrada = DateTime.Now;
+	}
+
+    private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
+    {
+		BotonAcabarTarea.IsEnabled = false;
+		BotonAcabarTarea.IsVisible = false;
+		BotonIniciarTarea.IsEnabled = true;
+		BotonIniciarTarea.IsVisible = true;
+		var tareaActual = SelectorTareas.SelectedItem.ToString();
+		var tarea = presenciaContext.Tareas.Where(x=>x.NombreTarea == tareaActual).FirstOrDefault();
+		var grupo = presenciaContext.Grupo_Trabajo.Find(trabajador.grupo.IdGrupo);
+		OperacionesDBContext.insertaTareaRealizada(tarea.NombreTarea,trabajador.numero_tarjeta, grupo.IdGrupo ,HoraEntrada,DateTime.Now);
+		
+	}
+
+
 }
 
