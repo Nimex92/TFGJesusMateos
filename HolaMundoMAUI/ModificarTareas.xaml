@@ -162,7 +162,6 @@
                         x:Name="BotonRegistrarAdmin"
                         HorizontalOptions="Center"
                         Margin="0,10,0,0"
-                            
                         BackgroundColor="Black"
                         WidthRequest="300"/>
                 </StackLayout>

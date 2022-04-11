@@ -71,5 +71,20 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new ModificarTareas());
     }
+
+    private void EliminaTareaTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new BorraTareas());
+    }
+
+    private void RegistrarNuevaZona_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaZona());
+    }
+
+    private void ModificarZona_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new ModificarZona());
+    }
 }
 

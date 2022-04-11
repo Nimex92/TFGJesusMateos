@@ -51,6 +51,15 @@
     <MauiXaml Update="ModificarTareas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="BorraTareas.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="AltaZona.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="ModificarZona.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

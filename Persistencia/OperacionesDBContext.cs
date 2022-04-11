@@ -204,5 +204,22 @@ namespace Persistencia
             grupo.Tareas.Add(new Tareas(NombreTarea, Descripcion,TiempoEstimado));
             return true;
         }
+        public static bool insertaZona(string NombreZona)
+        {
+            using var presenciaContext = new PresenciaContext();
+            presenciaContext.Zonas.Add(new Zonas(NombreZona));
+            presenciaContext.SaveChanges();
+            return true;
+        }
+
+        public static bool ActualizaZona(string OldName, string NewName)
+        {
+            using var presenciaContext = new PresenciaContext();
+            var Zona = presenciaContext.Zonas.Where(x => x.Nombre == OldName).FirstOrDefault();
+            Zona.Nombre = NewName;
+            presenciaContext.Zonas.Update(Zona);
+            presenciaContext.SaveChanges();
+            return true;
+        }
     }
 }

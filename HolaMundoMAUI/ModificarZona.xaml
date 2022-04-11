@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.ModificarZona"
+             Title="Modificar Zona"
+             BackgroundColor="White">
+    <StackLayout
+        Margin="0,20,0,0">
+        <Label 
+                Text="Tech Talent &#10; Modificar trabajador"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="20"
+                HorizontalOptions="Center"
+                x:Name="TituloEmpresa"/>
+        <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+        <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+            <ListView 
+                x:Name="ListViewUsuarios" 
+                WidthRequest="700"  
+                HorizontalOptions="Center" 
+                ItemSelected="OnItemSelected"
+                SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                       Text="Zona: " 
+                                       Margin="205,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"
+                                    />
+                                <Label 
+                                       WidthRequest="150"
+                                       VerticalOptions="Center"
+                                       Text="{Binding Nombre}" 
+                                       Margin="260,0,0,0" 
+                                       FontSize="16"/>
+
+                                <Button
+                                       Text="Editar"
+                                       Clicked="MostrarEditar"
+                                       WidthRequest="100"
+                                       HeightRequest="35"
+                                       Margin="400,0,0,0"
+                                       x:Name="BotonEditar"
+                                       VerticalOptions="Center"
+                                    />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+        <StackLayout
+            HorizontalOptions="Center"
+            Margin="0,10,0,10">
+            <StackLayout>
+                <StackLayout x:Name="LayoutCampos"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Margin="0,10,0,0"
+                             WidthRequest="320"
+                             HeightRequest="120"
+                             BackgroundColor="#828282"
+                             IsEnabled="False"
+                             IsVisible="False">
+                    <Entry x:Name="CampoNombre"
+                        Placeholder="Nombre de tarea:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="22"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    
+                    <Button 
+                        Text="Registrar"
+                        x:Name="BotonRegistrarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        WidthRequest="300"
+                        Clicked="RegistrANuevaZona"/>
+                </StackLayout>
+                <Label
+                x:Name="LabelAvisos"/>
+            </StackLayout>
+
+            <Button
+                Text="Volver"
+                Clicked="VolverAlMain"
+                WidthRequest="320"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

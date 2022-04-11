@@ -33,11 +33,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaUsuarios
 build_metadata.AdditionalFiles.TargetPath = AltaUsuarios.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaUsuarios.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaZona.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaZona.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaZona.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaZona.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/BorraTareas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.BorraTareas.xaml
+build_metadata.AdditionalFiles.TargetPath = BorraTareas.xaml
+build_metadata.AdditionalFiles.RelativePath = BorraTareas.xaml
 
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/CalendarioLalboral.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -86,6 +98,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarUsuario.xaml
 build_metadata.AdditionalFiles.TargetPath = ModificarUsuario.xaml
 build_metadata.AdditionalFiles.RelativePath = ModificarUsuario.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarZona.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarZona.xaml
+build_metadata.AdditionalFiles.TargetPath = ModificarZona.xaml
+build_metadata.AdditionalFiles.RelativePath = ModificarZona.xaml
 
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificaTrabajador.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

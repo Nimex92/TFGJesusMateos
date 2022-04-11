@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.PaginaFichar"
              BackgroundColor="White">
-
+    <ScrollView>
     <StackLayout>
         <Label 
                 Text="Tech Talent &#10; control de presencia"
@@ -109,5 +109,5 @@
             />
     </StackLayout>
 
-
+    </ScrollView>
 </ContentPage>

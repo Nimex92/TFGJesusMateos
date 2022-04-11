@@ -20,5 +20,6 @@
         <StackLayout
             HorizontalOptions="Center">
         </StackLayout>
+        
     </StackLayout>
 </ContentPage>
