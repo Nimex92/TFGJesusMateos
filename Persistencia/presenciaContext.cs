@@ -22,6 +22,7 @@ namespace Persistencia
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Tareas> Tareas { get; set; }
         public DbSet<TareaRealizada> TareasRealizadas { get; set; }
+        public DbSet<Zonas> Zonas { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseMySql("server=localhost;port=3306;uid=root;pwd='';database=pruebas;", new MySqlServerVersion(new Version(8, 0, 28)));

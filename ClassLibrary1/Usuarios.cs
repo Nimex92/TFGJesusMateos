@@ -21,6 +21,7 @@ namespace Bibliotec
         public bool esAdmin { get; set; }
 
 
+
         public Usuarios(int IdUser ,string Username, string Password, bool esAdmin)
         {
             this.IdUser = IdUser;

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p4ZWhsFpiNZnQeIWKgwIc/6bllF6Tdb2rWIOXKe6rBg1QRs0iZcuImuAR8e4xumG339tdXSLPFUTi3GP3zZBXA==",
+  "dgSpecHash": "ebhCMe8RyjoxCT8bxTnVk9y6onKeXIQlDfcpAgSzu0edKvHBcfjap5AymavZuf9dLkWeg5WVkyAODIXq2tHmmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
@@ -19,13 +19,13 @@
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.graphics.win2d\\1.0.1\\microsoft.graphics.win2d.1.0.1.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.graphics.win2d\\1.0.0.30\\microsoft.graphics.win2d.1.0.0.30.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.dependencies\\6.0.200-preview.14.5099\\microsoft.maui.dependencies.6.0.200-preview.14.5099.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.extensions\\6.0.200-preview.14.5099\\microsoft.maui.extensions.6.0.200-preview.14.5099.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics\\6.0.200-preview.14.1092\\microsoft.maui.graphics.6.0.200-preview.14.1092.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.200-preview.14.1092\\microsoft.maui.graphics.win2d.winui.desktop.6.0.200-preview.14.1092.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsappsdk\\1.0.1\\microsoft.windowsappsdk.1.0.1.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsappsdk\\1.0.0\\microsoft.windowsappsdk.1.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

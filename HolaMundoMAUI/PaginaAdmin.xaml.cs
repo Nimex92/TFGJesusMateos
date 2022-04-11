@@ -61,5 +61,15 @@ public partial class PaginaAdmin : ContentPage
         App.Current.MainPage = new NavigationPage(new MainPage());
        
     }
+
+    private void RegistrarNuevaTareaTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo());
+    }
+
+    private void ModificarTareaTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new ModificarTareas());
+    }
 }
 

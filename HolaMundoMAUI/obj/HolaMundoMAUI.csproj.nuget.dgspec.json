@@ -170,10 +170,6 @@
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
           "dependencies": {
-            "Microsoft.Graphics.Win2D": {
-              "target": "Package",
-              "version": "[1.0.1, )"
-            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
@@ -183,10 +179,6 @@
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
               "autoReferenced": true
-            },
-            "Microsoft.WindowsAppSDK": {
-              "target": "Package",
-              "version": "[1.0.1, )"
             }
           },
           "imports": [
@@ -239,10 +231,6 @@
         "net6.0-ios15.2": {
           "targetAlias": "net6.0-ios",
           "dependencies": {
-            "Microsoft.Graphics.Win2D": {
-              "target": "Package",
-              "version": "[1.0.1, )"
-            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
@@ -252,10 +240,6 @@
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
               "autoReferenced": true
-            },
-            "Microsoft.WindowsAppSDK": {
-              "target": "Package",
-              "version": "[1.0.1, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -294,10 +278,6 @@
         "net6.0-maccatalyst15.2": {
           "targetAlias": "net6.0-maccatalyst",
           "dependencies": {
-            "Microsoft.Graphics.Win2D": {
-              "target": "Package",
-              "version": "[1.0.1, )"
-            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
@@ -307,10 +287,6 @@
               "target": "Package",
               "version": "[6.0.200-preview.14.5099, )",
               "autoReferenced": true
-            },
-            "Microsoft.WindowsAppSDK": {
-              "target": "Package",
-              "version": "[1.0.1, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -352,7 +328,7 @@
           "dependencies": {
             "Microsoft.Graphics.Win2D": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.0.30, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
@@ -366,7 +342,7 @@
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

@@ -31,11 +31,11 @@ public partial class PaginaFichar : ContentPage
 		MyTimer.Tick += (x, y) =>
 		{
 			DateTime dt = DateTime.Now;
+
 			Reloj.Text =
 				dt.Hour.ToString("00") + ":" +
 				dt.Minute.ToString("00") + ":" +
 				dt.Second.ToString("00");
-
 			//return true; // return true to repeat counting, false to stop timer
 		};
 
@@ -93,6 +93,13 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void BotonPlegar_Clicked(object sender, EventArgs e)
 	{
+		//var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == 1).Include(x => x.Tareas).FirstOrDefault();
+  //      foreach (var tarea in grupo.Tareas)
+  //      {
+		//	Debug.WriteLine(tarea.Descripcion);
+  //      }
+		//grupo.Tareas.Add(new Tareas());
+
 		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.grupo).FirstOrDefault();
 		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
 		BotonFichar.IsVisible = true;

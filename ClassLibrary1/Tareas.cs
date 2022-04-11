@@ -13,13 +13,15 @@ namespace Bibliotec
         public int IdTarea { get; set; }
         public string NombreTarea { get; set; }
         public string Descripcion { get; set; }
-        public int TiempoEstimado { get; set; }
+        public double TiempoEstimado { get; set; }
+
+        public ICollection<Grupo_Trabajo> GruposTrabajo { get; set; } = new List<Grupo_Trabajo>();
 
         public Tareas()
         {
-
+            
         }
-        public Tareas(string NombreTarea,string Descripcion,int TiempoEstimado)
+        public Tareas(string NombreTarea,string Descripcion,double TiempoEstimado)
         {
             this.NombreTarea = NombreTarea;
             this.Descripcion = Descripcion;

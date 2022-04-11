@@ -18,6 +18,10 @@ namespace Bibliotec
         public string Turno { get; set; }
         public string HoraEntrada { get; set; }
         public string HoraSalida { get; set; }
+        public ICollection<Tareas> Tareas { get; set; } = new List<Tareas>();
+
+        public ICollection<Zonas> Zonas { get; set; } = new List<Zonas>();
+
 
         public Grupo_Trabajo(string turno, string h_entr, string h_sal)
         {

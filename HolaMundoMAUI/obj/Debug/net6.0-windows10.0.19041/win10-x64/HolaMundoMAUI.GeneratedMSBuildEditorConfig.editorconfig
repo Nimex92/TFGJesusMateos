@@ -15,6 +15,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaGrupoTra
 build_metadata.AdditionalFiles.TargetPath = AltaGrupoTrabajo.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaGrupoTrabajo.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaTareaTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTareaTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaTareaTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaTareaTrabajo.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AltaTrabajador.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTrabajador.xaml
@@ -68,6 +74,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificaGrupoTrabajo.xaml
 build_metadata.AdditionalFiles.TargetPath = ModificaGrupoTrabajo.xaml
 build_metadata.AdditionalFiles.RelativePath = ModificaGrupoTrabajo.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarTareas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarTareas.xaml
+build_metadata.AdditionalFiles.TargetPath = ModificarTareas.xaml
+build_metadata.AdditionalFiles.RelativePath = ModificarTareas.xaml
 
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarUsuario.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

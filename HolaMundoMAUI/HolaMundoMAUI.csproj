@@ -57,6 +57,7 @@
 
 	<ItemGroup>
 	  <Page Remove="AltaGrupoTrabajo.xaml" />
+	  <Page Remove="AltaTareaTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
 	  <Page Remove="CalendarioLalboral.xaml" />
@@ -70,8 +71,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />
-	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1" />
+	  <!--<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />-->
+	  <!--<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.2" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -112,6 +113,12 @@
 	  </Compile>
 	  <Compile Update="CalendarioLalboral.xaml.cs">
 	    <DependentUpon>CalendarioLalboral.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AltaTareaTrabajo.xaml.cs">
+	    <DependentUpon>AltaTareaTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ModificarTareas.xaml.cs">
+	    <DependentUpon>ModificarTareas.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
@@ -158,6 +165,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="CalendarioLalboral.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaTareaTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ModificarTareas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">

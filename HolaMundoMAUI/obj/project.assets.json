@@ -197,32 +197,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -256,37 +230,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
         }
       },
       "MySqlConnector/2.1.2": {
@@ -1590,18 +1533,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -1635,23 +1566,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -2955,18 +2869,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -3000,23 +2902,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -4320,18 +4205,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -4365,23 +4238,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -5685,18 +5541,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -5730,23 +5574,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -7050,18 +6877,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -7095,23 +6910,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -8415,18 +8213,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -8460,23 +8246,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -9780,21 +9549,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -9828,26 +9582,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -11151,21 +10885,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -11199,26 +10918,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -12522,21 +12221,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -12570,26 +12254,6 @@
         },
         "runtime": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -13884,32 +13548,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -13934,37 +13572,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
         }
       },
       "MySqlConnector/2.1.2": {
@@ -14255,18 +13862,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -14291,23 +13886,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -14598,18 +14176,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -14634,23 +14200,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -14941,18 +14490,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -14977,23 +14514,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -15284,18 +14804,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -15320,23 +14828,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -15627,18 +15118,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -15663,23 +15142,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -15970,18 +15432,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -16006,23 +15456,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -16313,21 +15746,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -16352,26 +15770,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -16662,21 +16060,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -16701,26 +16084,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -17011,21 +16374,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -17050,26 +16398,6 @@
         },
         "runtime": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -17360,32 +16688,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -17410,37 +16712,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-arm64"
-          },
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          }
         }
       },
       "MySqlConnector/2.1.2": {
@@ -17731,18 +17002,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -17767,23 +17026,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -18074,18 +17316,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -18110,23 +17340,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -18417,18 +17630,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -18453,23 +17654,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -18760,18 +17944,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -18796,23 +17968,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -19103,18 +18258,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -19139,23 +18282,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -19446,18 +18572,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -19482,23 +18596,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -19789,21 +18886,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -19828,26 +18910,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -20138,21 +19200,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -20177,26 +19224,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -20487,21 +19514,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
-        }
-      },
       "Microsoft.Maui.Dependencies/6.0.200-preview.14.5099": {
         "type": "package",
         "dependencies": {
@@ -20526,26 +19538,6 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
-        }
-      },
-      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Windows.SDK.BuildTools.props": {},
-          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
-        }
-      },
-      "Microsoft.WindowsAppSDK/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
-        },
-        "native": {
-          "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -20836,7 +19828,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -20910,7 +19902,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -20936,8 +19928,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         },
         "runtimeTargets": {
           "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
@@ -21236,7 +20228,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -21296,7 +20288,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -21322,8 +20314,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -21608,7 +20600,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -21668,7 +20660,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -21694,8 +20686,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -21980,7 +20972,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -22040,7 +21032,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -22066,8 +21058,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -22352,7 +21344,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -22412,7 +21404,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -22438,8 +21430,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -22724,7 +21716,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -22784,7 +21776,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -22810,8 +21802,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -23096,7 +22088,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -23156,7 +22148,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -23182,8 +22174,8 @@
           "lib/net5.0-windows10.0.18362.0/Microsoft.WindowsAppRuntime.Bootstrap.Net.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -23468,7 +22460,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -23531,7 +22523,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -23560,8 +22552,8 @@
           "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -23846,7 +22838,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -23909,7 +22901,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -23938,8 +22930,8 @@
           "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -24224,7 +23216,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Graphics.Win2D/1.0.1": {
+      "Microsoft.Graphics.Win2D/1.0.0.30": {
         "type": "package",
         "compile": {
           "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll": {}
@@ -24287,7 +23279,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.1": {
+      "Microsoft.WindowsAppSDK/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -24316,8 +23308,8 @@
           "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {}
         },
         "build": {
-          "buildTransitive/Microsoft.WindowsAppSDK.props": {},
-          "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+          "build/Microsoft.WindowsAppSDK.props": {},
+          "build/Microsoft.WindowsAppSDK.targets": {}
         }
       },
       "MySqlConnector/2.1.2": {
@@ -24736,10 +23728,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Graphics.Win2D/1.0.1": {
-      "sha512": "Zgd8qtMOL34PrXORcQj7BNF/AgOtN2M+ManHO+QrV85UOraHZZSMSo2ea9jmWbzwgbP9ym6zF8afkd6AESVoIw==",
+    "Microsoft.Graphics.Win2D/1.0.0.30": {
+      "sha512": "pEGf7FSx2dRWJuoaSoXk+WYkZfYwhWoJKOyyo0XLRU6V2Ul02MjxRhoxggrzGz6jVFiT7R2NdPdV8M6N1F+QfA==",
       "type": "package",
-      "path": "microsoft.graphics.win2d/1.0.1",
+      "path": "microsoft.graphics.win2d/1.0.0.30",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -24759,7 +23751,7 @@
         "lib/net5.0-windows10.0.18362.0/Microsoft.Graphics.Canvas.Interop.dll",
         "lib/netcoreapp3.0/Microsoft.Graphics.Canvas.winmd",
         "lib/uap10.0/Microsoft.Graphics.Canvas.winmd",
-        "microsoft.graphics.win2d.1.0.1.nupkg.sha512",
+        "microsoft.graphics.win2d.1.0.0.30.nupkg.sha512",
         "microsoft.graphics.win2d.nuspec",
         "runtimes/win10-arm64/native/Microsoft.Graphics.Canvas.dll",
         "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll",
@@ -24970,10 +23962,10 @@
         "schemas/10.0.22000.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
-    "Microsoft.WindowsAppSDK/1.0.1": {
-      "sha512": "JpGOsTzW6jQ29DZxxGyelgZ/8GvLdhbh/KKgAbIofZvRWIA/h/eMxhUdlYA5QJJyzOVN/MmBueiJF8GTS5+HhQ==",
+    "Microsoft.WindowsAppSDK/1.0.0": {
+      "sha512": "nQRK4KuaRDWk9YX78k4Vn1D9w2Z07ki1mTmuT+4oCIEJNM01c40A7DUC6GiBdTjmHJbBq4hm7EyFQUb+kBSW8A==",
       "type": "package",
-      "path": "microsoft.windowsappsdk/1.0.1",
+      "path": "microsoft.windowsappsdk/1.0.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -25013,6 +24005,9 @@
         "build/Microsoft.InteractiveExperiences.Common.targets",
         "build/Microsoft.InteractiveExperiences.props",
         "build/Microsoft.InteractiveExperiences.targets",
+        "build/Microsoft.ProjectReunion.WinUI.Build.props",
+        "build/Microsoft.ProjectReunion.WinUI.props",
+        "build/Microsoft.ProjectReunion.WinUI.targets",
         "build/Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
         "build/Microsoft.UI.Xaml.Markup.Compiler.props",
         "build/Microsoft.UI.Xaml.Markup.Compiler.targets",
@@ -25024,6 +24019,7 @@
         "build/Microsoft.WinUI.targets",
         "build/Microsoft.WindowsAppSDK.AppXReference.props",
         "build/Microsoft.WindowsAppSDK.Bootstrap.CS.targets",
+        "build/Microsoft.WindowsAppSDK.Bootstrap.targets",
         "build/Microsoft.WindowsAppSDK.Common.props",
         "build/Microsoft.WindowsAppSDK.DWrite.ProjectCapabilities.props",
         "build/Microsoft.WindowsAppSDK.DWrite.props",
@@ -25036,7 +24032,6 @@
         "build/Microsoft.WindowsAppSDK.Metapackage.props",
         "build/Microsoft.WindowsAppSDK.SelfContained.props",
         "build/Microsoft.WindowsAppSDK.SelfContained.targets",
-        "build/Microsoft.WindowsAppSDK.WinUI.Build.props",
         "build/Microsoft.WindowsAppSDK.WinUI.props",
         "build/Microsoft.WindowsAppSDK.WinUI.targets",
         "build/Microsoft.WindowsAppSDK.props",
@@ -25108,6 +24103,8 @@
         "build/native/Microsoft.FrameworkUdk.targets",
         "build/native/Microsoft.InteractiveExperiences.props",
         "build/native/Microsoft.InteractiveExperiences.targets",
+        "build/native/Microsoft.ProjectReunion.WinUI.props",
+        "build/native/Microsoft.ProjectReunion.WinUI.targets",
         "build/native/Microsoft.WinUI.References.targets",
         "build/native/Microsoft.WinUI.props",
         "build/native/Microsoft.WinUI.targets",
@@ -25125,73 +24122,6 @@
         "build/native/WindowsAppSDK-Nuget-Native.Bootstrap.targets",
         "build/native/WindowsAppSDK-Nuget-Native.C.props",
         "build/native/WindowsAppSDK-Nuget-Native.WinRt.props",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.ps1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/cs-CZ/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/de-DE/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/en-US/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/es-ES/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/fr-FR/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/it-IT/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/ja-JP/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/ko-KR/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/pl-PL/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/pt-BR/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/ru-RU/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/tr-TR/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/zh-CN/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Add-AppDevPackage.resources/zh-TW/Add-AppDevPackage.psd1",
-        "buildTransitive/AppDevPackageScripts/Install.ps1",
-        "buildTransitive/AppDevPackageScripts/LogSideloadingTelemetry.ps1",
-        "buildTransitive/Microsoft.Build.Msix.Common.props",
-        "buildTransitive/Microsoft.Build.Msix.Cpp.props",
-        "buildTransitive/Microsoft.Build.Msix.Cpp.targets",
-        "buildTransitive/Microsoft.Build.Msix.DesignTime.targets",
-        "buildTransitive/Microsoft.Build.Msix.Packaging.targets",
-        "buildTransitive/Microsoft.Build.Msix.Pri.targets",
-        "buildTransitive/Microsoft.Build.Msix.props",
-        "buildTransitive/Microsoft.Build.Msix.targets",
-        "buildTransitive/Microsoft.InteractiveExperiences.Capabilities.props",
-        "buildTransitive/Microsoft.InteractiveExperiences.Capabilities.targets",
-        "buildTransitive/Microsoft.InteractiveExperiences.Common.props",
-        "buildTransitive/Microsoft.InteractiveExperiences.Common.targets",
-        "buildTransitive/Microsoft.InteractiveExperiences.props",
-        "buildTransitive/Microsoft.InteractiveExperiences.targets",
-        "buildTransitive/Microsoft.UI.Xaml.Markup.Compiler.interop.targets",
-        "buildTransitive/Microsoft.UI.Xaml.Markup.Compiler.props",
-        "buildTransitive/Microsoft.UI.Xaml.Markup.Compiler.targets",
-        "buildTransitive/Microsoft.WinUI.AppX.targets",
-        "buildTransitive/Microsoft.WinUI.NET.Markup.Compiler.targets",
-        "buildTransitive/Microsoft.WinUI.ProjectCapabilities.props",
-        "buildTransitive/Microsoft.WinUI.References.targets",
-        "buildTransitive/Microsoft.WinUI.props",
-        "buildTransitive/Microsoft.WinUI.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.AppXReference.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.Bootstrap.CS.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.Common.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.DWrite.ProjectCapabilities.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.DWrite.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.DWrite.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.Foundation.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.Foundation.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.InteractiveExperiences.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.InteractiveExperiences.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.MddCommon.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.Metapackage.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.SelfContained.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.SelfContained.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.WinUI.Build.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.WinUI.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.WinUI.targets",
-        "buildTransitive/Microsoft.WindowsAppSDK.props",
-        "buildTransitive/Microsoft.WindowsAppSDK.targets",
-        "buildTransitive/Microsoft.Xaml.Tooling.targets",
-        "buildTransitive/MicrosoftWindowsAppSDKFoundationAppXVersion.props",
-        "buildTransitive/MrtCore.PriGen.targets",
-        "buildTransitive/MrtCore.References.targets",
-        "buildTransitive/MrtCore.props",
-        "buildTransitive/MrtCore.targets",
-        "buildTransitive/README.md",
         "buildTransitive/Rules/MsixPackageDebugPropertyPage.xaml",
         "buildTransitive/Rules/af-ZA/MsixPackageDebugPropertyPage.xaml",
         "buildTransitive/Rules/ar-SA/MsixPackageDebugPropertyPage.xaml",
@@ -25248,27 +24178,6 @@
         "buildTransitive/Rules/vi-VN/MsixPackageDebugPropertyPage.xaml",
         "buildTransitive/Rules/zh-CN/MsixPackageDebugPropertyPage.xaml",
         "buildTransitive/Rules/zh-TW/MsixPackageDebugPropertyPage.xaml",
-        "buildTransitive/native/LiftedWinRTClassRegistrations.xml",
-        "buildTransitive/native/Microsoft.FrameworkUdk.targets",
-        "buildTransitive/native/Microsoft.InteractiveExperiences.props",
-        "buildTransitive/native/Microsoft.InteractiveExperiences.targets",
-        "buildTransitive/native/Microsoft.WinUI.References.targets",
-        "buildTransitive/native/Microsoft.WinUI.props",
-        "buildTransitive/native/Microsoft.WinUI.targets",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.Foundation.props",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.Foundation.targets",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.InteractiveExperiences.props",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.InteractiveExperiences.targets",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.WinUI.props",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.WinUI.targets",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.props",
-        "buildTransitive/native/Microsoft.WindowsAppSDK.targets",
-        "buildTransitive/native/MrtCore.C.props",
-        "buildTransitive/native/MrtCore.props",
-        "buildTransitive/native/MrtCore.targets",
-        "buildTransitive/native/WindowsAppSDK-Nuget-Native.Bootstrap.targets",
-        "buildTransitive/native/WindowsAppSDK-Nuget-Native.C.props",
-        "buildTransitive/native/WindowsAppSDK-Nuget-Native.WinRt.props",
         "include/MRM.h",
         "include/MddBootstrap.h",
         "include/MddBootstrapAutoInitializer.cpp",
@@ -25375,7 +24284,8 @@
         "license.txt",
         "manifests/Microsoft.InteractiveExperiences.manifest",
         "manifests/Microsoft.WindowsAppSdk.Foundation.manifest",
-        "microsoft.windowsappsdk.1.0.1.nupkg.sha512",
+        "manifests/Microsoft.WindowsAppSdk.WinUI.manifest",
+        "microsoft.windowsappsdk.1.0.0.nupkg.sha512",
         "microsoft.windowsappsdk.nuspec",
         "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
         "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
@@ -25396,132 +24306,17 @@
         "tools/MSIX/win10-x86/Microsoft.WindowsAppRuntime.Main.1.0.msix",
         "tools/MSIX/win10-x86/Microsoft.WindowsAppRuntime.Singleton.1.0.msix",
         "tools/Microsoft.Build.Framework.dll",
+        "tools/Microsoft.Build.Msix.dll",
         "tools/Microsoft.Build.Utilities.Core.dll",
+        "tools/Microsoft.Diagnostics.Tracing.EventSource.dll",
         "tools/Microsoft.UI.Xaml.Markup.Compiler.MSBuildInterop.dll",
         "tools/Microsoft.UI.Xaml.Markup.Compiler.dll",
+        "tools/Microsoft.VisualStudio.RemoteControl.dll",
+        "tools/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
+        "tools/Microsoft.VisualStudio.Telemetry.dll",
+        "tools/Microsoft.VisualStudio.Utilities.Internal.dll",
+        "tools/Newtonsoft.Json.dll",
         "tools/arm64/GenXbf.dll",
-        "tools/net472/Microsoft.Build.Msix.dll",
-        "tools/net472/Microsoft.Diagnostics.Tracing.EventSource.dll",
-        "tools/net472/Microsoft.VisualStudio.RemoteControl.dll",
-        "tools/net472/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
-        "tools/net472/Microsoft.VisualStudio.Telemetry.dll",
-        "tools/net472/Microsoft.VisualStudio.Utilities.Internal.dll",
-        "tools/net472/Newtonsoft.Json.dll",
-        "tools/net472/af-ZA/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ar-SA/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/az-Latn-AZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/bg-BG/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/bs-Latn-BA/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ca-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/cs-CZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/cy-GB/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/da-DK/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/de-DE/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/el-GR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/en-GB/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/es-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/es-MX/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/et-EE/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/eu-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/fa-IR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/fi-FI/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/fr-CA/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/fr-FR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/gl-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/he-IL/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/hi-IN/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/hr-HR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/hu-HU/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/id-ID/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/is-IS/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/it-IT/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ja-JP/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ka-GE/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/kk-KZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ko-KR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/lt-LT/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/lv-LV/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ms-MY/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/nb-NO/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/nl-NL/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/nn-NO/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/pl-PL/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/pt-BR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/pt-PT/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ro-RO/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/ru-RU/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sk-SK/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sl-SI/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sq-AL/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sr-Cyrl-RS/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sr-Latn-RS/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/sv-SE/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/th-TH/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/tr-TR/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/uk-UA/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/vi-VN/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/zh-CN/Microsoft.Build.Msix.resources.dll",
-        "tools/net472/zh-TW/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/Microsoft.Build.Msix.dll",
-        "tools/net6.0/Microsoft.VisualStudio.RemoteControl.dll",
-        "tools/net6.0/Microsoft.VisualStudio.Telemetry.dll",
-        "tools/net6.0/Microsoft.VisualStudio.Utilities.Internal.dll",
-        "tools/net6.0/Newtonsoft.Json.dll",
-        "tools/net6.0/af-ZA/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ar-SA/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/az-Latn-AZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/bg-BG/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/bs-Latn-BA/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ca-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/cs-CZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/cy-GB/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/da-DK/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/de-DE/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/el-GR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/en-GB/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/es-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/es-MX/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/et-EE/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/eu-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/fa-IR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/fi-FI/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/fr-CA/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/fr-FR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/gl-ES/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/he-IL/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/hi-IN/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/hr-HR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/hu-HU/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/id-ID/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/is-IS/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/it-IT/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ja-JP/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ka-GE/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/kk-KZ/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ko-KR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/lt-LT/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/lv-LV/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ms-MY/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/nb-NO/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/nl-NL/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/nn-NO/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/pl-PL/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/pt-BR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/pt-PT/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ro-RO/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/ru-RU/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sk-SK/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sl-SI/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sq-AL/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sr-Cyrl-RS/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sr-Latn-RS/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/sv-SE/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/th-TH/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/tr-TR/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/uk-UA/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/vi-VN/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/zh-CN/Microsoft.Build.Msix.resources.dll",
-        "tools/net6.0/zh-TW/Microsoft.Build.Msix.resources.dll",
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
       ]
@@ -27047,36 +25842,30 @@
   "projectFileDependencyGroups": {
     "net6.0-android31.0": [
       "Bibliotec >= 1.0.0",
-      "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.200-preview.14.5099",
       "Microsoft.Maui.Extensions >= 6.0.200-preview.14.5099",
-      "Microsoft.WindowsAppSDK >= 1.0.1",
       "Persistencia >= 1.0.0"
     ],
     "net6.0-ios15.2": [
       "Bibliotec >= 1.0.0",
-      "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.200-preview.14.5099",
       "Microsoft.Maui.Extensions >= 6.0.200-preview.14.5099",
-      "Microsoft.WindowsAppSDK >= 1.0.1",
       "Persistencia >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
     "net6.0-maccatalyst15.2": [
       "Bibliotec >= 1.0.0",
-      "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.200-preview.14.5099",
       "Microsoft.Maui.Extensions >= 6.0.200-preview.14.5099",
-      "Microsoft.WindowsAppSDK >= 1.0.1",
       "Persistencia >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
     "net6.0-windows10.0.19041": [
       "Bibliotec >= 1.0.0",
-      "Microsoft.Graphics.Win2D >= 1.0.1",
+      "Microsoft.Graphics.Win2D >= 1.0.0.30",
       "Microsoft.Maui.Dependencies >= 6.0.200-preview.14.5099",
       "Microsoft.Maui.Extensions >= 6.0.200-preview.14.5099",
-      "Microsoft.WindowsAppSDK >= 1.0.1",
+      "Microsoft.WindowsAppSDK >= 1.0.0",
       "Persistencia >= 1.0.0"
     ]
   },
@@ -27169,10 +25958,6 @@
       "net6.0-android31.0": {
         "targetAlias": "net6.0-android",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
@@ -27182,10 +25967,6 @@
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
             "autoReferenced": true
-          },
-          "Microsoft.WindowsAppSDK": {
-            "target": "Package",
-            "version": "[1.0.1, )"
           }
         },
         "imports": [
@@ -27238,10 +26019,6 @@
       "net6.0-ios15.2": {
         "targetAlias": "net6.0-ios",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
@@ -27251,10 +26028,6 @@
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
             "autoReferenced": true
-          },
-          "Microsoft.WindowsAppSDK": {
-            "target": "Package",
-            "version": "[1.0.1, )"
           },
           "System.Runtime.InteropServices.NFloat.Internal": {
             "target": "Package",
@@ -27293,10 +26066,6 @@
       "net6.0-maccatalyst15.2": {
         "targetAlias": "net6.0-maccatalyst",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": {
-            "target": "Package",
-            "version": "[1.0.1, )"
-          },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
@@ -27306,10 +26075,6 @@
             "target": "Package",
             "version": "[6.0.200-preview.14.5099, )",
             "autoReferenced": true
-          },
-          "Microsoft.WindowsAppSDK": {
-            "target": "Package",
-            "version": "[1.0.1, )"
           },
           "System.Runtime.InteropServices.NFloat.Internal": {
             "target": "Package",
@@ -27351,7 +26116,7 @@
         "dependencies": {
           "Microsoft.Graphics.Win2D": {
             "target": "Package",
-            "version": "[1.0.1, )"
+            "version": "[1.0.0.30, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
@@ -27365,7 +26130,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.0.1, )"
+            "version": "[1.0.0, )"
           }
         },
         "imports": [

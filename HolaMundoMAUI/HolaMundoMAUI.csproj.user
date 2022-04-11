@@ -45,6 +45,12 @@
     <MauiXaml Update="CalendarioLalboral.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="AltaTareaTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="ModificarTareas.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

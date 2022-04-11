@@ -50,7 +50,7 @@
                    Placeholder="Introduce Contraseña:"
                    PlaceholderColor="Black"
                    Margin="0,15,0,0"
-                   IsPassword="False"
+                   IsPassword="True"
                    CursorPosition="5"
                    FontSize="24"
                    HorizontalOptions="Center"

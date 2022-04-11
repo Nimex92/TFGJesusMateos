@@ -48,6 +48,9 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<bool>("EnHora")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<DateTime>("FinTarea")
                         .HasColumnType("datetime(6)");
 
@@ -91,8 +94,8 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("TiempoEstimado")
-                        .HasColumnType("int");
+                    b.Property<double>("TiempoEstimado")
+                        .HasColumnType("double");
 
                     b.HasKey("IdTarea");
 
@@ -146,6 +149,21 @@ namespace Persistencia.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("Bibliotec.Zonas", b =>
+                {
+                    b.Property<int>("IdZona")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("IdZona");
+
+                    b.ToTable("Zonas");
+                });
+
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
                 {
                     b.Property<int>("Id")
@@ -172,6 +190,36 @@ namespace Persistencia.Migrations
                     b.HasIndex("Trabajadornumero_tarjeta");
 
                     b.ToTable("TablaFichajes");
+                });
+
+            modelBuilder.Entity("Grupo_TrabajoTareas", b =>
+                {
+                    b.Property<int>("GruposTrabajoIdGrupo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TareasIdTarea")
+                        .HasColumnType("int");
+
+                    b.HasKey("GruposTrabajoIdGrupo", "TareasIdTarea");
+
+                    b.HasIndex("TareasIdTarea");
+
+                    b.ToTable("Grupo_TrabajoTareas");
+                });
+
+            modelBuilder.Entity("Grupo_TrabajoZonas", b =>
+                {
+                    b.Property<int>("GruposTrabajoIdGrupo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ZonasIdZona")
+                        .HasColumnType("int");
+
+                    b.HasKey("GruposTrabajoIdGrupo", "ZonasIdZona");
+
+                    b.HasIndex("ZonasIdZona");
+
+                    b.ToTable("Grupo_TrabajoZonas");
                 });
 
             modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
@@ -237,6 +285,36 @@ namespace Persistencia.Migrations
                     b.Navigation("Grupo_Trabajo");
 
                     b.Navigation("Trabajador");
+                });
+
+            modelBuilder.Entity("Grupo_TrabajoTareas", b =>
+                {
+                    b.HasOne("Bibliotec.Grupo_Trabajo", null)
+                        .WithMany()
+                        .HasForeignKey("GruposTrabajoIdGrupo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Tareas", null)
+                        .WithMany()
+                        .HasForeignKey("TareasIdTarea")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Grupo_TrabajoZonas", b =>
+                {
+                    b.HasOne("Bibliotec.Grupo_Trabajo", null)
+                        .WithMany()
+                        .HasForeignKey("GruposTrabajoIdGrupo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Zonas", null)
+                        .WithMany()
+                        .HasForeignKey("ZonasIdZona")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

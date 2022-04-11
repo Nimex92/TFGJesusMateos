@@ -5,7 +5,7 @@
              Title="PaginaAdmin"
              BackgroundColor="White">
     <StackLayout
-        Margin="0,20,0,0">
+        Margin="0,-45,0,0">
         <Label 
                 Text="Tech Talent &#10; Página de administracion"
                 TextColor="Black"
@@ -15,6 +15,7 @@
                 FontSize="20"
                 HorizontalOptions="Center"
                 x:Name="TituloEmpresa"/>
+
         <StackLayout
             BackgroundColor="Black"
             WidthRequest="300"
@@ -112,6 +113,36 @@
                     x:Name="EliminaGrupoTrabajo"
                     Clicked="EliminarGrupoTrabajador"/>
             </HorizontalStackLayout>
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#007032"
+                    Text=" Registra nueva &#10;Tarea de trabajo"
+                    x:Name="RegistrarNuevaTareaTrabajo"
+                    Clicked="RegistrarNuevaTareaTrabajo_Clicked"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#083f5e"
+                    Text="       Modificar&#10; Tarea de trabajo"
+                    x:Name="ModificarTareaTrabajo"
+                    Clicked="ModificarTareaTrabajo_Clicked"/>
+                <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#5c1616"
+                    Text="         Eliminar&#10; Tarea de trabajo"
+                    x:Name="EliminaTareaTrabajo"
+                    Clicked="EliminarGrupoTrabajador"/>
+            </HorizontalStackLayout>
         </StackLayout>
         <Button
                 Text="Volver"
@@ -120,8 +151,10 @@
                 x:Name="BotonCerrarSesionAdmin"
                 Clicked="VolverAlMainAdmin"
                 WidthRequest="300"
-                HeightRequest="30"
+                HeightRequest="35"
                 HorizontalOptions="Center"/>
     </StackLayout>
+
+
 
 </ContentPage>

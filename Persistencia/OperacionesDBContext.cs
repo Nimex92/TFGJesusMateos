@@ -154,7 +154,6 @@ namespace Persistencia
             presenciaContext.SaveChanges();
             return true;
         }
-
         public static bool actualizarGrupoTrabajo(string Nombre, string HoraEntrada, string HoraSalida)
         {
             using var presenciaContext = new PresenciaContext();
@@ -177,17 +176,32 @@ namespace Persistencia
             presenciaContext.Update(us);
             presenciaContext.SaveChanges();
         }
-
         public static bool insertaTareaRealizada(string NombreTarea, int NumeroTarjeta, int IdGrupo, DateTime init, DateTime end)
         {
             using var presenciaContext = new PresenciaContext();
-            var operacion = end.Subtract(init).TotalHours;
+            bool enHora = true;
+            var operacion = end.Subtract(init).TotalSeconds;
+            
             var tareas = presenciaContext.Tareas.Where(x => x.NombreTarea == NombreTarea).FirstOrDefault(); ;
             var trabajador = presenciaContext.Trabajador.Find(NumeroTarjeta);
             var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
-            TareaRealizada tarea = new TareaRealizada(tareas,trabajador,grupo,init,end,operacion);
+            TareaRealizada tarea = new TareaRealizada(tareas,trabajador,grupo,init,end,operacion,enHora);
             presenciaContext.Add(tarea);
             presenciaContext.SaveChanges();
+            return true;
+        }
+        public static bool insertaTareas(string NombreTarea, string Descripcion, double TiempoEstimado)
+        {
+            PresenciaContext presenciaContext = new PresenciaContext();
+            presenciaContext.Add(new Tareas(NombreTarea, Descripcion, TiempoEstimado));
+            presenciaContext.SaveChanges();
+            return true;
+        }
+        public static bool insertaTareaEnGrupo(int IdGrupo,string NombreTarea,string Descripcion,int TiempoEstimado)
+        {
+            var presenciaContext = new PresenciaContext();
+            var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
+            grupo.Tareas.Add(new Tareas(NombreTarea, Descripcion,TiempoEstimado));
             return true;
         }
     }

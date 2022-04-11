@@ -15,12 +15,13 @@ namespace Bibliotec
         public DateTime InicioTarea { get; set; }
         public DateTime FinTarea { get; set; }
         public double HorasUsadas { get; set; }
+        public bool EnHora { get; set; }
 
         public TareaRealizada()
         {
 
         }
-        public TareaRealizada(Tareas t,Trabajador tr,Grupo_Trabajo gr,DateTime Init,DateTime End,double Usadas)
+        public TareaRealizada(Tareas t,Trabajador tr,Grupo_Trabajo gr,DateTime Init,DateTime End,double Usadas, bool enHora)
         {
             this.tarea = t;
             this.trabajador = tr;
@@ -28,6 +29,7 @@ namespace Bibliotec
             this.InicioTarea = Init;
             this.FinTarea = End;
             this.HorasUsadas = Usadas;
+            this.EnHora = enHora;
         }
     }
 }
