@@ -221,5 +221,14 @@ namespace Persistencia
             presenciaContext.SaveChanges();
             return true;
         }
+
+        public static bool BorraZona(int id)
+        {
+            using var presenciaContext = new PresenciaContext();
+            var Zona = presenciaContext.Zonas.Find(id);
+            presenciaContext.Zonas.Remove(Zona);
+            presenciaContext.SaveChanges();
+            return true;
+        }
     }
 }

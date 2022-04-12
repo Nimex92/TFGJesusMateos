@@ -129,6 +129,15 @@
 	  <Compile Update="ModificarZona.xaml.cs">
 	    <DependentUpon>ModificarZona.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="BorraZonas.xaml.cs">
+	    <DependentUpon>BorraZonas.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadeTareasAGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AnadeTareasAGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadirZonaAGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AnadirZonaAGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
 	  </Compile>
@@ -189,6 +198,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ModificarZona.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="BorraZonas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadeTareasAGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadirZonaAGrupoTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">

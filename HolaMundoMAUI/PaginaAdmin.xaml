@@ -172,10 +172,42 @@
                     FontAttributes="Bold"
                      BackgroundColor="#5c1616"
                     Text="         Eliminar&#10; Zona de trabajo"
-                    x:Name="EliminaTareaZona"
-                    Clicked="EliminaTareaTrabajo_Clicked"/>
+                    x:Name="EliminaZona"
+                    Clicked="EliminaZona_Clicked"/>
             </HorizontalStackLayout>
-        </StackLayout>
+                <HorizontalStackLayout
+                HorizontalOptions="Center">
+                    <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#462f4f"
+                    Text="    Añadir tareas&#10;a grupo de trabajo"
+                    x:Name="AnadeTareasGrupo"
+                    Clicked="AnadeTareasGrupo_Clicked"
+                    />
+                    <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#462f4f"
+                    Text="      Añadir zonas&#10;a grupo de trabajo"
+                    x:Name="AnadirZonaGrupo"
+                    Clicked="AnadirZonaGrupo_Clicked"
+                    />
+                    <Button
+                    WidthRequest="250"
+                    HeightRequest="100"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                     BackgroundColor="#462f4f"
+                    Text=""
+                    x:Name="BotonSinNada"
+                    />
+                </HorizontalStackLayout>
+            </StackLayout>
         <Button
                 Text="Volver"
                 Margin="0,15,0,0"

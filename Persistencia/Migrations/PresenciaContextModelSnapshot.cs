@@ -42,6 +42,25 @@ namespace Persistencia.Migrations
                     b.ToTable("Grupo_Trabajo");
                 });
 
+            modelBuilder.Entity("Bibliotec.Log", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("DescripcionEvento")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TipoEvento")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logs");
+                });
+
             modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
                 {
                     b.Property<int>("id")

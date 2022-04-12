@@ -80,14 +80,7 @@
                    Margin="0,0,30,0"
                    Clicked="CambiaFichar"
                    />
-            <Button x:Name="NuevoUsuario"
-                 Text="Registrarse"
-                 FontSize="14"
-                 HorizontalOptions="Center"
-                 Margin="30,0,0,0"
-                 BackgroundColor="White"
-                 Clicked="AltaUsuario"
-                 TextColor="Black"                    />
+            
             </HorizontalStackLayout>
             
             <Label

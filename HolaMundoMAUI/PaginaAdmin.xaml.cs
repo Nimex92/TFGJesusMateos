@@ -86,5 +86,20 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new ModificarZona());
     }
+
+    private void EliminaZona_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new BorraZonas());
+    }
+
+    private void AnadeTareasGrupo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo());
+    }
+
+    private void AnadirZonaGrupo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo());
+    }
 }
 

@@ -33,1021 +33,1105 @@ app_environment_variables:
 	.global	app_system_properties
 app_system_properties:
 	.size	app_system_properties, 0
-	# Bundled assembly name buffers, all 72 bytes long
+	# Bundled assembly name buffers, all 77 bytes long
 
 	.section	.bss.bundled_assembly_names, "aw", @nobits
 	.type	.L.env.buf.0, @object
 .L.env.buf.0:
-	.zero	72
-	.size	.L.env.buf.0, 72
+	.zero	77
+	.size	.L.env.buf.0, 77
 	.type	.L.env.buf.1, @object
 .L.env.buf.1:
-	.zero	72
-	.size	.L.env.buf.1, 72
+	.zero	77
+	.size	.L.env.buf.1, 77
 	.type	.L.env.buf.2, @object
 .L.env.buf.2:
-	.zero	72
-	.size	.L.env.buf.2, 72
+	.zero	77
+	.size	.L.env.buf.2, 77
 	.type	.L.env.buf.3, @object
 .L.env.buf.3:
-	.zero	72
-	.size	.L.env.buf.3, 72
+	.zero	77
+	.size	.L.env.buf.3, 77
 	.type	.L.env.buf.4, @object
 .L.env.buf.4:
-	.zero	72
-	.size	.L.env.buf.4, 72
+	.zero	77
+	.size	.L.env.buf.4, 77
 	.type	.L.env.buf.5, @object
 .L.env.buf.5:
-	.zero	72
-	.size	.L.env.buf.5, 72
+	.zero	77
+	.size	.L.env.buf.5, 77
 	.type	.L.env.buf.6, @object
 .L.env.buf.6:
-	.zero	72
-	.size	.L.env.buf.6, 72
+	.zero	77
+	.size	.L.env.buf.6, 77
 	.type	.L.env.buf.7, @object
 .L.env.buf.7:
-	.zero	72
-	.size	.L.env.buf.7, 72
+	.zero	77
+	.size	.L.env.buf.7, 77
 	.type	.L.env.buf.8, @object
 .L.env.buf.8:
-	.zero	72
-	.size	.L.env.buf.8, 72
+	.zero	77
+	.size	.L.env.buf.8, 77
 	.type	.L.env.buf.9, @object
 .L.env.buf.9:
-	.zero	72
-	.size	.L.env.buf.9, 72
+	.zero	77
+	.size	.L.env.buf.9, 77
 	.type	.L.env.buf.10, @object
 .L.env.buf.10:
-	.zero	72
-	.size	.L.env.buf.10, 72
+	.zero	77
+	.size	.L.env.buf.10, 77
 	.type	.L.env.buf.11, @object
 .L.env.buf.11:
-	.zero	72
-	.size	.L.env.buf.11, 72
+	.zero	77
+	.size	.L.env.buf.11, 77
 	.type	.L.env.buf.12, @object
 .L.env.buf.12:
-	.zero	72
-	.size	.L.env.buf.12, 72
+	.zero	77
+	.size	.L.env.buf.12, 77
 	.type	.L.env.buf.13, @object
 .L.env.buf.13:
-	.zero	72
-	.size	.L.env.buf.13, 72
+	.zero	77
+	.size	.L.env.buf.13, 77
 	.type	.L.env.buf.14, @object
 .L.env.buf.14:
-	.zero	72
-	.size	.L.env.buf.14, 72
+	.zero	77
+	.size	.L.env.buf.14, 77
 	.type	.L.env.buf.15, @object
 .L.env.buf.15:
-	.zero	72
-	.size	.L.env.buf.15, 72
+	.zero	77
+	.size	.L.env.buf.15, 77
 	.type	.L.env.buf.16, @object
 .L.env.buf.16:
-	.zero	72
-	.size	.L.env.buf.16, 72
+	.zero	77
+	.size	.L.env.buf.16, 77
 	.type	.L.env.buf.17, @object
 .L.env.buf.17:
-	.zero	72
-	.size	.L.env.buf.17, 72
+	.zero	77
+	.size	.L.env.buf.17, 77
 	.type	.L.env.buf.18, @object
 .L.env.buf.18:
-	.zero	72
-	.size	.L.env.buf.18, 72
+	.zero	77
+	.size	.L.env.buf.18, 77
 	.type	.L.env.buf.19, @object
 .L.env.buf.19:
-	.zero	72
-	.size	.L.env.buf.19, 72
+	.zero	77
+	.size	.L.env.buf.19, 77
 	.type	.L.env.buf.20, @object
 .L.env.buf.20:
-	.zero	72
-	.size	.L.env.buf.20, 72
+	.zero	77
+	.size	.L.env.buf.20, 77
 	.type	.L.env.buf.21, @object
 .L.env.buf.21:
-	.zero	72
-	.size	.L.env.buf.21, 72
+	.zero	77
+	.size	.L.env.buf.21, 77
 	.type	.L.env.buf.22, @object
 .L.env.buf.22:
-	.zero	72
-	.size	.L.env.buf.22, 72
+	.zero	77
+	.size	.L.env.buf.22, 77
 	.type	.L.env.buf.23, @object
 .L.env.buf.23:
-	.zero	72
-	.size	.L.env.buf.23, 72
+	.zero	77
+	.size	.L.env.buf.23, 77
 	.type	.L.env.buf.24, @object
 .L.env.buf.24:
-	.zero	72
-	.size	.L.env.buf.24, 72
+	.zero	77
+	.size	.L.env.buf.24, 77
 	.type	.L.env.buf.25, @object
 .L.env.buf.25:
-	.zero	72
-	.size	.L.env.buf.25, 72
+	.zero	77
+	.size	.L.env.buf.25, 77
 	.type	.L.env.buf.26, @object
 .L.env.buf.26:
-	.zero	72
-	.size	.L.env.buf.26, 72
+	.zero	77
+	.size	.L.env.buf.26, 77
 	.type	.L.env.buf.27, @object
 .L.env.buf.27:
-	.zero	72
-	.size	.L.env.buf.27, 72
+	.zero	77
+	.size	.L.env.buf.27, 77
 	.type	.L.env.buf.28, @object
 .L.env.buf.28:
-	.zero	72
-	.size	.L.env.buf.28, 72
+	.zero	77
+	.size	.L.env.buf.28, 77
 	.type	.L.env.buf.29, @object
 .L.env.buf.29:
-	.zero	72
-	.size	.L.env.buf.29, 72
+	.zero	77
+	.size	.L.env.buf.29, 77
 	.type	.L.env.buf.30, @object
 .L.env.buf.30:
-	.zero	72
-	.size	.L.env.buf.30, 72
+	.zero	77
+	.size	.L.env.buf.30, 77
 	.type	.L.env.buf.31, @object
 .L.env.buf.31:
-	.zero	72
-	.size	.L.env.buf.31, 72
+	.zero	77
+	.size	.L.env.buf.31, 77
 	.type	.L.env.buf.32, @object
 .L.env.buf.32:
-	.zero	72
-	.size	.L.env.buf.32, 72
+	.zero	77
+	.size	.L.env.buf.32, 77
 	.type	.L.env.buf.33, @object
 .L.env.buf.33:
-	.zero	72
-	.size	.L.env.buf.33, 72
+	.zero	77
+	.size	.L.env.buf.33, 77
 	.type	.L.env.buf.34, @object
 .L.env.buf.34:
-	.zero	72
-	.size	.L.env.buf.34, 72
+	.zero	77
+	.size	.L.env.buf.34, 77
 	.type	.L.env.buf.35, @object
 .L.env.buf.35:
-	.zero	72
-	.size	.L.env.buf.35, 72
+	.zero	77
+	.size	.L.env.buf.35, 77
 	.type	.L.env.buf.36, @object
 .L.env.buf.36:
-	.zero	72
-	.size	.L.env.buf.36, 72
+	.zero	77
+	.size	.L.env.buf.36, 77
 	.type	.L.env.buf.37, @object
 .L.env.buf.37:
-	.zero	72
-	.size	.L.env.buf.37, 72
+	.zero	77
+	.size	.L.env.buf.37, 77
 	.type	.L.env.buf.38, @object
 .L.env.buf.38:
-	.zero	72
-	.size	.L.env.buf.38, 72
+	.zero	77
+	.size	.L.env.buf.38, 77
 	.type	.L.env.buf.39, @object
 .L.env.buf.39:
-	.zero	72
-	.size	.L.env.buf.39, 72
+	.zero	77
+	.size	.L.env.buf.39, 77
 	.type	.L.env.buf.40, @object
 .L.env.buf.40:
-	.zero	72
-	.size	.L.env.buf.40, 72
+	.zero	77
+	.size	.L.env.buf.40, 77
 	.type	.L.env.buf.41, @object
 .L.env.buf.41:
-	.zero	72
-	.size	.L.env.buf.41, 72
+	.zero	77
+	.size	.L.env.buf.41, 77
 	.type	.L.env.buf.42, @object
 .L.env.buf.42:
-	.zero	72
-	.size	.L.env.buf.42, 72
+	.zero	77
+	.size	.L.env.buf.42, 77
 	.type	.L.env.buf.43, @object
 .L.env.buf.43:
-	.zero	72
-	.size	.L.env.buf.43, 72
+	.zero	77
+	.size	.L.env.buf.43, 77
 	.type	.L.env.buf.44, @object
 .L.env.buf.44:
-	.zero	72
-	.size	.L.env.buf.44, 72
+	.zero	77
+	.size	.L.env.buf.44, 77
 	.type	.L.env.buf.45, @object
 .L.env.buf.45:
-	.zero	72
-	.size	.L.env.buf.45, 72
+	.zero	77
+	.size	.L.env.buf.45, 77
 	.type	.L.env.buf.46, @object
 .L.env.buf.46:
-	.zero	72
-	.size	.L.env.buf.46, 72
+	.zero	77
+	.size	.L.env.buf.46, 77
 	.type	.L.env.buf.47, @object
 .L.env.buf.47:
-	.zero	72
-	.size	.L.env.buf.47, 72
+	.zero	77
+	.size	.L.env.buf.47, 77
 	.type	.L.env.buf.48, @object
 .L.env.buf.48:
-	.zero	72
-	.size	.L.env.buf.48, 72
+	.zero	77
+	.size	.L.env.buf.48, 77
 	.type	.L.env.buf.49, @object
 .L.env.buf.49:
-	.zero	72
-	.size	.L.env.buf.49, 72
+	.zero	77
+	.size	.L.env.buf.49, 77
 	.type	.L.env.buf.50, @object
 .L.env.buf.50:
-	.zero	72
-	.size	.L.env.buf.50, 72
+	.zero	77
+	.size	.L.env.buf.50, 77
 	.type	.L.env.buf.51, @object
 .L.env.buf.51:
-	.zero	72
-	.size	.L.env.buf.51, 72
+	.zero	77
+	.size	.L.env.buf.51, 77
 	.type	.L.env.buf.52, @object
 .L.env.buf.52:
-	.zero	72
-	.size	.L.env.buf.52, 72
+	.zero	77
+	.size	.L.env.buf.52, 77
 	.type	.L.env.buf.53, @object
 .L.env.buf.53:
-	.zero	72
-	.size	.L.env.buf.53, 72
+	.zero	77
+	.size	.L.env.buf.53, 77
 	.type	.L.env.buf.54, @object
 .L.env.buf.54:
-	.zero	72
-	.size	.L.env.buf.54, 72
+	.zero	77
+	.size	.L.env.buf.54, 77
 	.type	.L.env.buf.55, @object
 .L.env.buf.55:
-	.zero	72
-	.size	.L.env.buf.55, 72
+	.zero	77
+	.size	.L.env.buf.55, 77
 	.type	.L.env.buf.56, @object
 .L.env.buf.56:
-	.zero	72
-	.size	.L.env.buf.56, 72
+	.zero	77
+	.size	.L.env.buf.56, 77
 	.type	.L.env.buf.57, @object
 .L.env.buf.57:
-	.zero	72
-	.size	.L.env.buf.57, 72
+	.zero	77
+	.size	.L.env.buf.57, 77
 	.type	.L.env.buf.58, @object
 .L.env.buf.58:
-	.zero	72
-	.size	.L.env.buf.58, 72
+	.zero	77
+	.size	.L.env.buf.58, 77
 	.type	.L.env.buf.59, @object
 .L.env.buf.59:
-	.zero	72
-	.size	.L.env.buf.59, 72
+	.zero	77
+	.size	.L.env.buf.59, 77
 	.type	.L.env.buf.60, @object
 .L.env.buf.60:
-	.zero	72
-	.size	.L.env.buf.60, 72
+	.zero	77
+	.size	.L.env.buf.60, 77
 	.type	.L.env.buf.61, @object
 .L.env.buf.61:
-	.zero	72
-	.size	.L.env.buf.61, 72
+	.zero	77
+	.size	.L.env.buf.61, 77
 	.type	.L.env.buf.62, @object
 .L.env.buf.62:
-	.zero	72
-	.size	.L.env.buf.62, 72
+	.zero	77
+	.size	.L.env.buf.62, 77
 	.type	.L.env.buf.63, @object
 .L.env.buf.63:
-	.zero	72
-	.size	.L.env.buf.63, 72
+	.zero	77
+	.size	.L.env.buf.63, 77
 	.type	.L.env.buf.64, @object
 .L.env.buf.64:
-	.zero	72
-	.size	.L.env.buf.64, 72
+	.zero	77
+	.size	.L.env.buf.64, 77
 	.type	.L.env.buf.65, @object
 .L.env.buf.65:
-	.zero	72
-	.size	.L.env.buf.65, 72
+	.zero	77
+	.size	.L.env.buf.65, 77
 	.type	.L.env.buf.66, @object
 .L.env.buf.66:
-	.zero	72
-	.size	.L.env.buf.66, 72
+	.zero	77
+	.size	.L.env.buf.66, 77
 	.type	.L.env.buf.67, @object
 .L.env.buf.67:
-	.zero	72
-	.size	.L.env.buf.67, 72
+	.zero	77
+	.size	.L.env.buf.67, 77
 	.type	.L.env.buf.68, @object
 .L.env.buf.68:
-	.zero	72
-	.size	.L.env.buf.68, 72
+	.zero	77
+	.size	.L.env.buf.68, 77
 	.type	.L.env.buf.69, @object
 .L.env.buf.69:
-	.zero	72
-	.size	.L.env.buf.69, 72
+	.zero	77
+	.size	.L.env.buf.69, 77
 	.type	.L.env.buf.70, @object
 .L.env.buf.70:
-	.zero	72
-	.size	.L.env.buf.70, 72
+	.zero	77
+	.size	.L.env.buf.70, 77
 	.type	.L.env.buf.71, @object
 .L.env.buf.71:
-	.zero	72
-	.size	.L.env.buf.71, 72
+	.zero	77
+	.size	.L.env.buf.71, 77
 	.type	.L.env.buf.72, @object
 .L.env.buf.72:
-	.zero	72
-	.size	.L.env.buf.72, 72
+	.zero	77
+	.size	.L.env.buf.72, 77
 	.type	.L.env.buf.73, @object
 .L.env.buf.73:
-	.zero	72
-	.size	.L.env.buf.73, 72
+	.zero	77
+	.size	.L.env.buf.73, 77
 	.type	.L.env.buf.74, @object
 .L.env.buf.74:
-	.zero	72
-	.size	.L.env.buf.74, 72
+	.zero	77
+	.size	.L.env.buf.74, 77
 	.type	.L.env.buf.75, @object
 .L.env.buf.75:
-	.zero	72
-	.size	.L.env.buf.75, 72
+	.zero	77
+	.size	.L.env.buf.75, 77
 	.type	.L.env.buf.76, @object
 .L.env.buf.76:
-	.zero	72
-	.size	.L.env.buf.76, 72
+	.zero	77
+	.size	.L.env.buf.76, 77
 	.type	.L.env.buf.77, @object
 .L.env.buf.77:
-	.zero	72
-	.size	.L.env.buf.77, 72
+	.zero	77
+	.size	.L.env.buf.77, 77
 	.type	.L.env.buf.78, @object
 .L.env.buf.78:
-	.zero	72
-	.size	.L.env.buf.78, 72
+	.zero	77
+	.size	.L.env.buf.78, 77
 	.type	.L.env.buf.79, @object
 .L.env.buf.79:
-	.zero	72
-	.size	.L.env.buf.79, 72
+	.zero	77
+	.size	.L.env.buf.79, 77
 	.type	.L.env.buf.80, @object
 .L.env.buf.80:
-	.zero	72
-	.size	.L.env.buf.80, 72
+	.zero	77
+	.size	.L.env.buf.80, 77
 	.type	.L.env.buf.81, @object
 .L.env.buf.81:
-	.zero	72
-	.size	.L.env.buf.81, 72
+	.zero	77
+	.size	.L.env.buf.81, 77
 	.type	.L.env.buf.82, @object
 .L.env.buf.82:
-	.zero	72
-	.size	.L.env.buf.82, 72
+	.zero	77
+	.size	.L.env.buf.82, 77
 	.type	.L.env.buf.83, @object
 .L.env.buf.83:
-	.zero	72
-	.size	.L.env.buf.83, 72
+	.zero	77
+	.size	.L.env.buf.83, 77
 	.type	.L.env.buf.84, @object
 .L.env.buf.84:
-	.zero	72
-	.size	.L.env.buf.84, 72
+	.zero	77
+	.size	.L.env.buf.84, 77
 	.type	.L.env.buf.85, @object
 .L.env.buf.85:
-	.zero	72
-	.size	.L.env.buf.85, 72
+	.zero	77
+	.size	.L.env.buf.85, 77
 	.type	.L.env.buf.86, @object
 .L.env.buf.86:
-	.zero	72
-	.size	.L.env.buf.86, 72
+	.zero	77
+	.size	.L.env.buf.86, 77
 	.type	.L.env.buf.87, @object
 .L.env.buf.87:
-	.zero	72
-	.size	.L.env.buf.87, 72
+	.zero	77
+	.size	.L.env.buf.87, 77
 	.type	.L.env.buf.88, @object
 .L.env.buf.88:
-	.zero	72
-	.size	.L.env.buf.88, 72
+	.zero	77
+	.size	.L.env.buf.88, 77
 	.type	.L.env.buf.89, @object
 .L.env.buf.89:
-	.zero	72
-	.size	.L.env.buf.89, 72
+	.zero	77
+	.size	.L.env.buf.89, 77
 	.type	.L.env.buf.90, @object
 .L.env.buf.90:
-	.zero	72
-	.size	.L.env.buf.90, 72
+	.zero	77
+	.size	.L.env.buf.90, 77
 	.type	.L.env.buf.91, @object
 .L.env.buf.91:
-	.zero	72
-	.size	.L.env.buf.91, 72
+	.zero	77
+	.size	.L.env.buf.91, 77
 	.type	.L.env.buf.92, @object
 .L.env.buf.92:
-	.zero	72
-	.size	.L.env.buf.92, 72
+	.zero	77
+	.size	.L.env.buf.92, 77
 	.type	.L.env.buf.93, @object
 .L.env.buf.93:
-	.zero	72
-	.size	.L.env.buf.93, 72
+	.zero	77
+	.size	.L.env.buf.93, 77
 	.type	.L.env.buf.94, @object
 .L.env.buf.94:
-	.zero	72
-	.size	.L.env.buf.94, 72
+	.zero	77
+	.size	.L.env.buf.94, 77
 	.type	.L.env.buf.95, @object
 .L.env.buf.95:
-	.zero	72
-	.size	.L.env.buf.95, 72
+	.zero	77
+	.size	.L.env.buf.95, 77
 	.type	.L.env.buf.96, @object
 .L.env.buf.96:
-	.zero	72
-	.size	.L.env.buf.96, 72
+	.zero	77
+	.size	.L.env.buf.96, 77
 	.type	.L.env.buf.97, @object
 .L.env.buf.97:
-	.zero	72
-	.size	.L.env.buf.97, 72
+	.zero	77
+	.size	.L.env.buf.97, 77
 	.type	.L.env.buf.98, @object
 .L.env.buf.98:
-	.zero	72
-	.size	.L.env.buf.98, 72
+	.zero	77
+	.size	.L.env.buf.98, 77
 	.type	.L.env.buf.99, @object
 .L.env.buf.99:
-	.zero	72
-	.size	.L.env.buf.99, 72
+	.zero	77
+	.size	.L.env.buf.99, 77
 	.type	.L.env.buf.100, @object
 .L.env.buf.100:
-	.zero	72
-	.size	.L.env.buf.100, 72
+	.zero	77
+	.size	.L.env.buf.100, 77
 	.type	.L.env.buf.101, @object
 .L.env.buf.101:
-	.zero	72
-	.size	.L.env.buf.101, 72
+	.zero	77
+	.size	.L.env.buf.101, 77
 	.type	.L.env.buf.102, @object
 .L.env.buf.102:
-	.zero	72
-	.size	.L.env.buf.102, 72
+	.zero	77
+	.size	.L.env.buf.102, 77
 	.type	.L.env.buf.103, @object
 .L.env.buf.103:
-	.zero	72
-	.size	.L.env.buf.103, 72
+	.zero	77
+	.size	.L.env.buf.103, 77
 	.type	.L.env.buf.104, @object
 .L.env.buf.104:
-	.zero	72
-	.size	.L.env.buf.104, 72
+	.zero	77
+	.size	.L.env.buf.104, 77
 	.type	.L.env.buf.105, @object
 .L.env.buf.105:
-	.zero	72
-	.size	.L.env.buf.105, 72
+	.zero	77
+	.size	.L.env.buf.105, 77
 	.type	.L.env.buf.106, @object
 .L.env.buf.106:
-	.zero	72
-	.size	.L.env.buf.106, 72
+	.zero	77
+	.size	.L.env.buf.106, 77
 	.type	.L.env.buf.107, @object
 .L.env.buf.107:
-	.zero	72
-	.size	.L.env.buf.107, 72
+	.zero	77
+	.size	.L.env.buf.107, 77
 	.type	.L.env.buf.108, @object
 .L.env.buf.108:
-	.zero	72
-	.size	.L.env.buf.108, 72
+	.zero	77
+	.size	.L.env.buf.108, 77
 	.type	.L.env.buf.109, @object
 .L.env.buf.109:
-	.zero	72
-	.size	.L.env.buf.109, 72
+	.zero	77
+	.size	.L.env.buf.109, 77
 	.type	.L.env.buf.110, @object
 .L.env.buf.110:
-	.zero	72
-	.size	.L.env.buf.110, 72
+	.zero	77
+	.size	.L.env.buf.110, 77
 	.type	.L.env.buf.111, @object
 .L.env.buf.111:
-	.zero	72
-	.size	.L.env.buf.111, 72
+	.zero	77
+	.size	.L.env.buf.111, 77
 	.type	.L.env.buf.112, @object
 .L.env.buf.112:
-	.zero	72
-	.size	.L.env.buf.112, 72
+	.zero	77
+	.size	.L.env.buf.112, 77
 	.type	.L.env.buf.113, @object
 .L.env.buf.113:
-	.zero	72
-	.size	.L.env.buf.113, 72
+	.zero	77
+	.size	.L.env.buf.113, 77
 	.type	.L.env.buf.114, @object
 .L.env.buf.114:
-	.zero	72
-	.size	.L.env.buf.114, 72
+	.zero	77
+	.size	.L.env.buf.114, 77
 	.type	.L.env.buf.115, @object
 .L.env.buf.115:
-	.zero	72
-	.size	.L.env.buf.115, 72
+	.zero	77
+	.size	.L.env.buf.115, 77
 	.type	.L.env.buf.116, @object
 .L.env.buf.116:
-	.zero	72
-	.size	.L.env.buf.116, 72
+	.zero	77
+	.size	.L.env.buf.116, 77
 	.type	.L.env.buf.117, @object
 .L.env.buf.117:
-	.zero	72
-	.size	.L.env.buf.117, 72
+	.zero	77
+	.size	.L.env.buf.117, 77
 	.type	.L.env.buf.118, @object
 .L.env.buf.118:
-	.zero	72
-	.size	.L.env.buf.118, 72
+	.zero	77
+	.size	.L.env.buf.118, 77
 	.type	.L.env.buf.119, @object
 .L.env.buf.119:
-	.zero	72
-	.size	.L.env.buf.119, 72
+	.zero	77
+	.size	.L.env.buf.119, 77
 	.type	.L.env.buf.120, @object
 .L.env.buf.120:
-	.zero	72
-	.size	.L.env.buf.120, 72
+	.zero	77
+	.size	.L.env.buf.120, 77
 	.type	.L.env.buf.121, @object
 .L.env.buf.121:
-	.zero	72
-	.size	.L.env.buf.121, 72
+	.zero	77
+	.size	.L.env.buf.121, 77
 	.type	.L.env.buf.122, @object
 .L.env.buf.122:
-	.zero	72
-	.size	.L.env.buf.122, 72
+	.zero	77
+	.size	.L.env.buf.122, 77
 	.type	.L.env.buf.123, @object
 .L.env.buf.123:
-	.zero	72
-	.size	.L.env.buf.123, 72
+	.zero	77
+	.size	.L.env.buf.123, 77
 	.type	.L.env.buf.124, @object
 .L.env.buf.124:
-	.zero	72
-	.size	.L.env.buf.124, 72
+	.zero	77
+	.size	.L.env.buf.124, 77
 	.type	.L.env.buf.125, @object
 .L.env.buf.125:
-	.zero	72
-	.size	.L.env.buf.125, 72
+	.zero	77
+	.size	.L.env.buf.125, 77
 	.type	.L.env.buf.126, @object
 .L.env.buf.126:
-	.zero	72
-	.size	.L.env.buf.126, 72
+	.zero	77
+	.size	.L.env.buf.126, 77
 	.type	.L.env.buf.127, @object
 .L.env.buf.127:
-	.zero	72
-	.size	.L.env.buf.127, 72
+	.zero	77
+	.size	.L.env.buf.127, 77
 	.type	.L.env.buf.128, @object
 .L.env.buf.128:
-	.zero	72
-	.size	.L.env.buf.128, 72
+	.zero	77
+	.size	.L.env.buf.128, 77
 	.type	.L.env.buf.129, @object
 .L.env.buf.129:
-	.zero	72
-	.size	.L.env.buf.129, 72
+	.zero	77
+	.size	.L.env.buf.129, 77
 	.type	.L.env.buf.130, @object
 .L.env.buf.130:
-	.zero	72
-	.size	.L.env.buf.130, 72
+	.zero	77
+	.size	.L.env.buf.130, 77
 	.type	.L.env.buf.131, @object
 .L.env.buf.131:
-	.zero	72
-	.size	.L.env.buf.131, 72
+	.zero	77
+	.size	.L.env.buf.131, 77
 	.type	.L.env.buf.132, @object
 .L.env.buf.132:
-	.zero	72
-	.size	.L.env.buf.132, 72
+	.zero	77
+	.size	.L.env.buf.132, 77
 	.type	.L.env.buf.133, @object
 .L.env.buf.133:
-	.zero	72
-	.size	.L.env.buf.133, 72
+	.zero	77
+	.size	.L.env.buf.133, 77
 	.type	.L.env.buf.134, @object
 .L.env.buf.134:
-	.zero	72
-	.size	.L.env.buf.134, 72
+	.zero	77
+	.size	.L.env.buf.134, 77
 	.type	.L.env.buf.135, @object
 .L.env.buf.135:
-	.zero	72
-	.size	.L.env.buf.135, 72
+	.zero	77
+	.size	.L.env.buf.135, 77
 	.type	.L.env.buf.136, @object
 .L.env.buf.136:
-	.zero	72
-	.size	.L.env.buf.136, 72
+	.zero	77
+	.size	.L.env.buf.136, 77
 	.type	.L.env.buf.137, @object
 .L.env.buf.137:
-	.zero	72
-	.size	.L.env.buf.137, 72
+	.zero	77
+	.size	.L.env.buf.137, 77
 	.type	.L.env.buf.138, @object
 .L.env.buf.138:
-	.zero	72
-	.size	.L.env.buf.138, 72
+	.zero	77
+	.size	.L.env.buf.138, 77
 	.type	.L.env.buf.139, @object
 .L.env.buf.139:
-	.zero	72
-	.size	.L.env.buf.139, 72
+	.zero	77
+	.size	.L.env.buf.139, 77
 	.type	.L.env.buf.140, @object
 .L.env.buf.140:
-	.zero	72
-	.size	.L.env.buf.140, 72
+	.zero	77
+	.size	.L.env.buf.140, 77
 	.type	.L.env.buf.141, @object
 .L.env.buf.141:
-	.zero	72
-	.size	.L.env.buf.141, 72
+	.zero	77
+	.size	.L.env.buf.141, 77
 	.type	.L.env.buf.142, @object
 .L.env.buf.142:
-	.zero	72
-	.size	.L.env.buf.142, 72
+	.zero	77
+	.size	.L.env.buf.142, 77
 	.type	.L.env.buf.143, @object
 .L.env.buf.143:
-	.zero	72
-	.size	.L.env.buf.143, 72
+	.zero	77
+	.size	.L.env.buf.143, 77
 	.type	.L.env.buf.144, @object
 .L.env.buf.144:
-	.zero	72
-	.size	.L.env.buf.144, 72
+	.zero	77
+	.size	.L.env.buf.144, 77
 	.type	.L.env.buf.145, @object
 .L.env.buf.145:
-	.zero	72
-	.size	.L.env.buf.145, 72
+	.zero	77
+	.size	.L.env.buf.145, 77
 	.type	.L.env.buf.146, @object
 .L.env.buf.146:
-	.zero	72
-	.size	.L.env.buf.146, 72
+	.zero	77
+	.size	.L.env.buf.146, 77
 	.type	.L.env.buf.147, @object
 .L.env.buf.147:
-	.zero	72
-	.size	.L.env.buf.147, 72
+	.zero	77
+	.size	.L.env.buf.147, 77
 	.type	.L.env.buf.148, @object
 .L.env.buf.148:
-	.zero	72
-	.size	.L.env.buf.148, 72
+	.zero	77
+	.size	.L.env.buf.148, 77
 	.type	.L.env.buf.149, @object
 .L.env.buf.149:
-	.zero	72
-	.size	.L.env.buf.149, 72
+	.zero	77
+	.size	.L.env.buf.149, 77
 	.type	.L.env.buf.150, @object
 .L.env.buf.150:
-	.zero	72
-	.size	.L.env.buf.150, 72
+	.zero	77
+	.size	.L.env.buf.150, 77
 	.type	.L.env.buf.151, @object
 .L.env.buf.151:
-	.zero	72
-	.size	.L.env.buf.151, 72
+	.zero	77
+	.size	.L.env.buf.151, 77
 	.type	.L.env.buf.152, @object
 .L.env.buf.152:
-	.zero	72
-	.size	.L.env.buf.152, 72
+	.zero	77
+	.size	.L.env.buf.152, 77
 	.type	.L.env.buf.153, @object
 .L.env.buf.153:
-	.zero	72
-	.size	.L.env.buf.153, 72
+	.zero	77
+	.size	.L.env.buf.153, 77
 	.type	.L.env.buf.154, @object
 .L.env.buf.154:
-	.zero	72
-	.size	.L.env.buf.154, 72
+	.zero	77
+	.size	.L.env.buf.154, 77
 	.type	.L.env.buf.155, @object
 .L.env.buf.155:
-	.zero	72
-	.size	.L.env.buf.155, 72
+	.zero	77
+	.size	.L.env.buf.155, 77
 	.type	.L.env.buf.156, @object
 .L.env.buf.156:
-	.zero	72
-	.size	.L.env.buf.156, 72
+	.zero	77
+	.size	.L.env.buf.156, 77
 	.type	.L.env.buf.157, @object
 .L.env.buf.157:
-	.zero	72
-	.size	.L.env.buf.157, 72
+	.zero	77
+	.size	.L.env.buf.157, 77
 	.type	.L.env.buf.158, @object
 .L.env.buf.158:
-	.zero	72
-	.size	.L.env.buf.158, 72
+	.zero	77
+	.size	.L.env.buf.158, 77
 	.type	.L.env.buf.159, @object
 .L.env.buf.159:
-	.zero	72
-	.size	.L.env.buf.159, 72
+	.zero	77
+	.size	.L.env.buf.159, 77
 	.type	.L.env.buf.160, @object
 .L.env.buf.160:
-	.zero	72
-	.size	.L.env.buf.160, 72
+	.zero	77
+	.size	.L.env.buf.160, 77
 	.type	.L.env.buf.161, @object
 .L.env.buf.161:
-	.zero	72
-	.size	.L.env.buf.161, 72
+	.zero	77
+	.size	.L.env.buf.161, 77
 	.type	.L.env.buf.162, @object
 .L.env.buf.162:
-	.zero	72
-	.size	.L.env.buf.162, 72
+	.zero	77
+	.size	.L.env.buf.162, 77
 	.type	.L.env.buf.163, @object
 .L.env.buf.163:
-	.zero	72
-	.size	.L.env.buf.163, 72
+	.zero	77
+	.size	.L.env.buf.163, 77
 	.type	.L.env.buf.164, @object
 .L.env.buf.164:
-	.zero	72
-	.size	.L.env.buf.164, 72
+	.zero	77
+	.size	.L.env.buf.164, 77
 	.type	.L.env.buf.165, @object
 .L.env.buf.165:
-	.zero	72
-	.size	.L.env.buf.165, 72
+	.zero	77
+	.size	.L.env.buf.165, 77
 	.type	.L.env.buf.166, @object
 .L.env.buf.166:
-	.zero	72
-	.size	.L.env.buf.166, 72
+	.zero	77
+	.size	.L.env.buf.166, 77
 	.type	.L.env.buf.167, @object
 .L.env.buf.167:
-	.zero	72
-	.size	.L.env.buf.167, 72
+	.zero	77
+	.size	.L.env.buf.167, 77
 	.type	.L.env.buf.168, @object
 .L.env.buf.168:
-	.zero	72
-	.size	.L.env.buf.168, 72
+	.zero	77
+	.size	.L.env.buf.168, 77
 	.type	.L.env.buf.169, @object
 .L.env.buf.169:
-	.zero	72
-	.size	.L.env.buf.169, 72
+	.zero	77
+	.size	.L.env.buf.169, 77
 	.type	.L.env.buf.170, @object
 .L.env.buf.170:
-	.zero	72
-	.size	.L.env.buf.170, 72
+	.zero	77
+	.size	.L.env.buf.170, 77
 	.type	.L.env.buf.171, @object
 .L.env.buf.171:
-	.zero	72
-	.size	.L.env.buf.171, 72
+	.zero	77
+	.size	.L.env.buf.171, 77
 	.type	.L.env.buf.172, @object
 .L.env.buf.172:
-	.zero	72
-	.size	.L.env.buf.172, 72
+	.zero	77
+	.size	.L.env.buf.172, 77
 	.type	.L.env.buf.173, @object
 .L.env.buf.173:
-	.zero	72
-	.size	.L.env.buf.173, 72
+	.zero	77
+	.size	.L.env.buf.173, 77
 	.type	.L.env.buf.174, @object
 .L.env.buf.174:
-	.zero	72
-	.size	.L.env.buf.174, 72
+	.zero	77
+	.size	.L.env.buf.174, 77
 	.type	.L.env.buf.175, @object
 .L.env.buf.175:
-	.zero	72
-	.size	.L.env.buf.175, 72
+	.zero	77
+	.size	.L.env.buf.175, 77
 	.type	.L.env.buf.176, @object
 .L.env.buf.176:
-	.zero	72
-	.size	.L.env.buf.176, 72
+	.zero	77
+	.size	.L.env.buf.176, 77
 	.type	.L.env.buf.177, @object
 .L.env.buf.177:
-	.zero	72
-	.size	.L.env.buf.177, 72
+	.zero	77
+	.size	.L.env.buf.177, 77
 	.type	.L.env.buf.178, @object
 .L.env.buf.178:
-	.zero	72
-	.size	.L.env.buf.178, 72
+	.zero	77
+	.size	.L.env.buf.178, 77
 	.type	.L.env.buf.179, @object
 .L.env.buf.179:
-	.zero	72
-	.size	.L.env.buf.179, 72
+	.zero	77
+	.size	.L.env.buf.179, 77
 	.type	.L.env.buf.180, @object
 .L.env.buf.180:
-	.zero	72
-	.size	.L.env.buf.180, 72
+	.zero	77
+	.size	.L.env.buf.180, 77
 	.type	.L.env.buf.181, @object
 .L.env.buf.181:
-	.zero	72
-	.size	.L.env.buf.181, 72
+	.zero	77
+	.size	.L.env.buf.181, 77
 	.type	.L.env.buf.182, @object
 .L.env.buf.182:
-	.zero	72
-	.size	.L.env.buf.182, 72
+	.zero	77
+	.size	.L.env.buf.182, 77
 	.type	.L.env.buf.183, @object
 .L.env.buf.183:
-	.zero	72
-	.size	.L.env.buf.183, 72
+	.zero	77
+	.size	.L.env.buf.183, 77
 	.type	.L.env.buf.184, @object
 .L.env.buf.184:
-	.zero	72
-	.size	.L.env.buf.184, 72
+	.zero	77
+	.size	.L.env.buf.184, 77
 	.type	.L.env.buf.185, @object
 .L.env.buf.185:
-	.zero	72
-	.size	.L.env.buf.185, 72
+	.zero	77
+	.size	.L.env.buf.185, 77
 	.type	.L.env.buf.186, @object
 .L.env.buf.186:
-	.zero	72
-	.size	.L.env.buf.186, 72
+	.zero	77
+	.size	.L.env.buf.186, 77
 	.type	.L.env.buf.187, @object
 .L.env.buf.187:
-	.zero	72
-	.size	.L.env.buf.187, 72
+	.zero	77
+	.size	.L.env.buf.187, 77
 	.type	.L.env.buf.188, @object
 .L.env.buf.188:
-	.zero	72
-	.size	.L.env.buf.188, 72
+	.zero	77
+	.size	.L.env.buf.188, 77
 	.type	.L.env.buf.189, @object
 .L.env.buf.189:
-	.zero	72
-	.size	.L.env.buf.189, 72
+	.zero	77
+	.size	.L.env.buf.189, 77
 	.type	.L.env.buf.190, @object
 .L.env.buf.190:
-	.zero	72
-	.size	.L.env.buf.190, 72
+	.zero	77
+	.size	.L.env.buf.190, 77
 	.type	.L.env.buf.191, @object
 .L.env.buf.191:
-	.zero	72
-	.size	.L.env.buf.191, 72
+	.zero	77
+	.size	.L.env.buf.191, 77
 	.type	.L.env.buf.192, @object
 .L.env.buf.192:
-	.zero	72
-	.size	.L.env.buf.192, 72
+	.zero	77
+	.size	.L.env.buf.192, 77
 	.type	.L.env.buf.193, @object
 .L.env.buf.193:
-	.zero	72
-	.size	.L.env.buf.193, 72
+	.zero	77
+	.size	.L.env.buf.193, 77
 	.type	.L.env.buf.194, @object
 .L.env.buf.194:
-	.zero	72
-	.size	.L.env.buf.194, 72
+	.zero	77
+	.size	.L.env.buf.194, 77
 	.type	.L.env.buf.195, @object
 .L.env.buf.195:
-	.zero	72
-	.size	.L.env.buf.195, 72
+	.zero	77
+	.size	.L.env.buf.195, 77
 	.type	.L.env.buf.196, @object
 .L.env.buf.196:
-	.zero	72
-	.size	.L.env.buf.196, 72
+	.zero	77
+	.size	.L.env.buf.196, 77
 	.type	.L.env.buf.197, @object
 .L.env.buf.197:
-	.zero	72
-	.size	.L.env.buf.197, 72
+	.zero	77
+	.size	.L.env.buf.197, 77
 	.type	.L.env.buf.198, @object
 .L.env.buf.198:
-	.zero	72
-	.size	.L.env.buf.198, 72
+	.zero	77
+	.size	.L.env.buf.198, 77
 	.type	.L.env.buf.199, @object
 .L.env.buf.199:
-	.zero	72
-	.size	.L.env.buf.199, 72
+	.zero	77
+	.size	.L.env.buf.199, 77
 	.type	.L.env.buf.200, @object
 .L.env.buf.200:
-	.zero	72
-	.size	.L.env.buf.200, 72
+	.zero	77
+	.size	.L.env.buf.200, 77
 	.type	.L.env.buf.201, @object
 .L.env.buf.201:
-	.zero	72
-	.size	.L.env.buf.201, 72
+	.zero	77
+	.size	.L.env.buf.201, 77
 	.type	.L.env.buf.202, @object
 .L.env.buf.202:
-	.zero	72
-	.size	.L.env.buf.202, 72
+	.zero	77
+	.size	.L.env.buf.202, 77
 	.type	.L.env.buf.203, @object
 .L.env.buf.203:
-	.zero	72
-	.size	.L.env.buf.203, 72
+	.zero	77
+	.size	.L.env.buf.203, 77
 	.type	.L.env.buf.204, @object
 .L.env.buf.204:
-	.zero	72
-	.size	.L.env.buf.204, 72
+	.zero	77
+	.size	.L.env.buf.204, 77
 	.type	.L.env.buf.205, @object
 .L.env.buf.205:
-	.zero	72
-	.size	.L.env.buf.205, 72
+	.zero	77
+	.size	.L.env.buf.205, 77
 	.type	.L.env.buf.206, @object
 .L.env.buf.206:
-	.zero	72
-	.size	.L.env.buf.206, 72
+	.zero	77
+	.size	.L.env.buf.206, 77
 	.type	.L.env.buf.207, @object
 .L.env.buf.207:
-	.zero	72
-	.size	.L.env.buf.207, 72
+	.zero	77
+	.size	.L.env.buf.207, 77
 	.type	.L.env.buf.208, @object
 .L.env.buf.208:
-	.zero	72
-	.size	.L.env.buf.208, 72
+	.zero	77
+	.size	.L.env.buf.208, 77
 	.type	.L.env.buf.209, @object
 .L.env.buf.209:
-	.zero	72
-	.size	.L.env.buf.209, 72
+	.zero	77
+	.size	.L.env.buf.209, 77
 	.type	.L.env.buf.210, @object
 .L.env.buf.210:
-	.zero	72
-	.size	.L.env.buf.210, 72
+	.zero	77
+	.size	.L.env.buf.210, 77
 	.type	.L.env.buf.211, @object
 .L.env.buf.211:
-	.zero	72
-	.size	.L.env.buf.211, 72
+	.zero	77
+	.size	.L.env.buf.211, 77
 	.type	.L.env.buf.212, @object
 .L.env.buf.212:
-	.zero	72
-	.size	.L.env.buf.212, 72
+	.zero	77
+	.size	.L.env.buf.212, 77
 	.type	.L.env.buf.213, @object
 .L.env.buf.213:
-	.zero	72
-	.size	.L.env.buf.213, 72
+	.zero	77
+	.size	.L.env.buf.213, 77
 	.type	.L.env.buf.214, @object
 .L.env.buf.214:
-	.zero	72
-	.size	.L.env.buf.214, 72
+	.zero	77
+	.size	.L.env.buf.214, 77
 	.type	.L.env.buf.215, @object
 .L.env.buf.215:
-	.zero	72
-	.size	.L.env.buf.215, 72
+	.zero	77
+	.size	.L.env.buf.215, 77
 	.type	.L.env.buf.216, @object
 .L.env.buf.216:
-	.zero	72
-	.size	.L.env.buf.216, 72
+	.zero	77
+	.size	.L.env.buf.216, 77
 	.type	.L.env.buf.217, @object
 .L.env.buf.217:
-	.zero	72
-	.size	.L.env.buf.217, 72
+	.zero	77
+	.size	.L.env.buf.217, 77
 	.type	.L.env.buf.218, @object
 .L.env.buf.218:
-	.zero	72
-	.size	.L.env.buf.218, 72
+	.zero	77
+	.size	.L.env.buf.218, 77
 	.type	.L.env.buf.219, @object
 .L.env.buf.219:
-	.zero	72
-	.size	.L.env.buf.219, 72
+	.zero	77
+	.size	.L.env.buf.219, 77
 	.type	.L.env.buf.220, @object
 .L.env.buf.220:
-	.zero	72
-	.size	.L.env.buf.220, 72
+	.zero	77
+	.size	.L.env.buf.220, 77
 	.type	.L.env.buf.221, @object
 .L.env.buf.221:
-	.zero	72
-	.size	.L.env.buf.221, 72
+	.zero	77
+	.size	.L.env.buf.221, 77
 	.type	.L.env.buf.222, @object
 .L.env.buf.222:
-	.zero	72
-	.size	.L.env.buf.222, 72
+	.zero	77
+	.size	.L.env.buf.222, 77
 	.type	.L.env.buf.223, @object
 .L.env.buf.223:
-	.zero	72
-	.size	.L.env.buf.223, 72
+	.zero	77
+	.size	.L.env.buf.223, 77
 	.type	.L.env.buf.224, @object
 .L.env.buf.224:
-	.zero	72
-	.size	.L.env.buf.224, 72
+	.zero	77
+	.size	.L.env.buf.224, 77
 	.type	.L.env.buf.225, @object
 .L.env.buf.225:
-	.zero	72
-	.size	.L.env.buf.225, 72
+	.zero	77
+	.size	.L.env.buf.225, 77
 	.type	.L.env.buf.226, @object
 .L.env.buf.226:
-	.zero	72
-	.size	.L.env.buf.226, 72
+	.zero	77
+	.size	.L.env.buf.226, 77
 	.type	.L.env.buf.227, @object
 .L.env.buf.227:
-	.zero	72
-	.size	.L.env.buf.227, 72
+	.zero	77
+	.size	.L.env.buf.227, 77
 	.type	.L.env.buf.228, @object
 .L.env.buf.228:
-	.zero	72
-	.size	.L.env.buf.228, 72
+	.zero	77
+	.size	.L.env.buf.228, 77
 	.type	.L.env.buf.229, @object
 .L.env.buf.229:
-	.zero	72
-	.size	.L.env.buf.229, 72
+	.zero	77
+	.size	.L.env.buf.229, 77
 	.type	.L.env.buf.230, @object
 .L.env.buf.230:
-	.zero	72
-	.size	.L.env.buf.230, 72
+	.zero	77
+	.size	.L.env.buf.230, 77
 	.type	.L.env.buf.231, @object
 .L.env.buf.231:
-	.zero	72
-	.size	.L.env.buf.231, 72
+	.zero	77
+	.size	.L.env.buf.231, 77
 	.type	.L.env.buf.232, @object
 .L.env.buf.232:
-	.zero	72
-	.size	.L.env.buf.232, 72
+	.zero	77
+	.size	.L.env.buf.232, 77
 	.type	.L.env.buf.233, @object
 .L.env.buf.233:
-	.zero	72
-	.size	.L.env.buf.233, 72
+	.zero	77
+	.size	.L.env.buf.233, 77
 	.type	.L.env.buf.234, @object
 .L.env.buf.234:
-	.zero	72
-	.size	.L.env.buf.234, 72
+	.zero	77
+	.size	.L.env.buf.234, 77
 	.type	.L.env.buf.235, @object
 .L.env.buf.235:
-	.zero	72
-	.size	.L.env.buf.235, 72
+	.zero	77
+	.size	.L.env.buf.235, 77
 	.type	.L.env.buf.236, @object
 .L.env.buf.236:
-	.zero	72
-	.size	.L.env.buf.236, 72
+	.zero	77
+	.size	.L.env.buf.236, 77
 	.type	.L.env.buf.237, @object
 .L.env.buf.237:
-	.zero	72
-	.size	.L.env.buf.237, 72
+	.zero	77
+	.size	.L.env.buf.237, 77
 	.type	.L.env.buf.238, @object
 .L.env.buf.238:
-	.zero	72
-	.size	.L.env.buf.238, 72
+	.zero	77
+	.size	.L.env.buf.238, 77
 	.type	.L.env.buf.239, @object
 .L.env.buf.239:
-	.zero	72
-	.size	.L.env.buf.239, 72
+	.zero	77
+	.size	.L.env.buf.239, 77
 	.type	.L.env.buf.240, @object
 .L.env.buf.240:
-	.zero	72
-	.size	.L.env.buf.240, 72
+	.zero	77
+	.size	.L.env.buf.240, 77
 	.type	.L.env.buf.241, @object
 .L.env.buf.241:
-	.zero	72
-	.size	.L.env.buf.241, 72
+	.zero	77
+	.size	.L.env.buf.241, 77
 	.type	.L.env.buf.242, @object
 .L.env.buf.242:
-	.zero	72
-	.size	.L.env.buf.242, 72
+	.zero	77
+	.size	.L.env.buf.242, 77
 	.type	.L.env.buf.243, @object
 .L.env.buf.243:
-	.zero	72
-	.size	.L.env.buf.243, 72
+	.zero	77
+	.size	.L.env.buf.243, 77
 	.type	.L.env.buf.244, @object
 .L.env.buf.244:
-	.zero	72
-	.size	.L.env.buf.244, 72
+	.zero	77
+	.size	.L.env.buf.244, 77
 	.type	.L.env.buf.245, @object
 .L.env.buf.245:
-	.zero	72
-	.size	.L.env.buf.245, 72
+	.zero	77
+	.size	.L.env.buf.245, 77
 	.type	.L.env.buf.246, @object
 .L.env.buf.246:
-	.zero	72
-	.size	.L.env.buf.246, 72
+	.zero	77
+	.size	.L.env.buf.246, 77
 	.type	.L.env.buf.247, @object
 .L.env.buf.247:
-	.zero	72
-	.size	.L.env.buf.247, 72
+	.zero	77
+	.size	.L.env.buf.247, 77
 	.type	.L.env.buf.248, @object
 .L.env.buf.248:
-	.zero	72
-	.size	.L.env.buf.248, 72
+	.zero	77
+	.size	.L.env.buf.248, 77
 	.type	.L.env.buf.249, @object
 .L.env.buf.249:
-	.zero	72
-	.size	.L.env.buf.249, 72
+	.zero	77
+	.size	.L.env.buf.249, 77
 	.type	.L.env.buf.250, @object
 .L.env.buf.250:
-	.zero	72
-	.size	.L.env.buf.250, 72
+	.zero	77
+	.size	.L.env.buf.250, 77
 	.type	.L.env.buf.251, @object
 .L.env.buf.251:
-	.zero	72
-	.size	.L.env.buf.251, 72
+	.zero	77
+	.size	.L.env.buf.251, 77
 	.type	.L.env.buf.252, @object
 .L.env.buf.252:
-	.zero	72
-	.size	.L.env.buf.252, 72
+	.zero	77
+	.size	.L.env.buf.252, 77
+	.type	.L.env.buf.253, @object
+.L.env.buf.253:
+	.zero	77
+	.size	.L.env.buf.253, 77
+	.type	.L.env.buf.254, @object
+.L.env.buf.254:
+	.zero	77
+	.size	.L.env.buf.254, 77
+	.type	.L.env.buf.255, @object
+.L.env.buf.255:
+	.zero	77
+	.size	.L.env.buf.255, 77
+	.type	.L.env.buf.256, @object
+.L.env.buf.256:
+	.zero	77
+	.size	.L.env.buf.256, 77
+	.type	.L.env.buf.257, @object
+.L.env.buf.257:
+	.zero	77
+	.size	.L.env.buf.257, 77
+	.type	.L.env.buf.258, @object
+.L.env.buf.258:
+	.zero	77
+	.size	.L.env.buf.258, 77
+	.type	.L.env.buf.259, @object
+.L.env.buf.259:
+	.zero	77
+	.size	.L.env.buf.259, 77
+	.type	.L.env.buf.260, @object
+.L.env.buf.260:
+	.zero	77
+	.size	.L.env.buf.260, 77
+	.type	.L.env.buf.261, @object
+.L.env.buf.261:
+	.zero	77
+	.size	.L.env.buf.261, 77
+	.type	.L.env.buf.262, @object
+.L.env.buf.262:
+	.zero	77
+	.size	.L.env.buf.262, 77
+	.type	.L.env.buf.263, @object
+.L.env.buf.263:
+	.zero	77
+	.size	.L.env.buf.263, 77
+	.type	.L.env.buf.264, @object
+.L.env.buf.264:
+	.zero	77
+	.size	.L.env.buf.264, 77
+	.type	.L.env.buf.265, @object
+.L.env.buf.265:
+	.zero	77
+	.size	.L.env.buf.265, 77
+	.type	.L.env.buf.266, @object
+.L.env.buf.266:
+	.zero	77
+	.size	.L.env.buf.266, 77
+	.type	.L.env.buf.267, @object
+.L.env.buf.267:
+	.zero	77
+	.size	.L.env.buf.267, 77
+	.type	.L.env.buf.268, @object
+.L.env.buf.268:
+	.zero	77
+	.size	.L.env.buf.268, 77
+	.type	.L.env.buf.269, @object
+.L.env.buf.269:
+	.zero	77
+	.size	.L.env.buf.269, 77
+	.type	.L.env.buf.270, @object
+.L.env.buf.270:
+	.zero	77
+	.size	.L.env.buf.270, 77
+	.type	.L.env.buf.271, @object
+.L.env.buf.271:
+	.zero	77
+	.size	.L.env.buf.271, 77
+	.type	.L.env.buf.272, @object
+.L.env.buf.272:
+	.zero	77
+	.size	.L.env.buf.272, 77
+	.type	.L.env.buf.273, @object
+.L.env.buf.273:
+	.zero	77
+	.size	.L.env.buf.273, 77
 	# Bundled assemblies data
 
 	.type	bundled_assemblies, @object
@@ -3333,7 +3417,196 @@ bundled_assemblies:
 	.zero	4
 	.quad	.L.env.buf.252	# name
 
-	.size	bundled_assemblies, 10120
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.253	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.254	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.255	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.256	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.257	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.258	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.259	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.260	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.261	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.262	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.263	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.264	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.265	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.266	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.267	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.268	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.269	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.270	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.271	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.272	# name
+
+	.long	0xffffffff	# apk_fd
+	.long	0x0	# data_offset
+	.long	0x0	# data_size
+	.zero	4
+	.quad	0x0	# data
+	.long	0x0	# name_length
+	.zero	4
+	.quad	.L.env.buf.273	# name
+
+	.size	bundled_assemblies, 10960
 	# Assembly store individual assembly data
 	.type	assembly_store_bundled_assemblies, @object
 	.global	assembly_store_bundled_assemblies
@@ -3568,8 +3841,8 @@ application_config:
 	.long	0x3	# package_naming_policy
 	.long	0xc	# environment_variable_count
 	.long	0x0	# system_property_count
-	.long	0xfd	# number_of_assemblies_in_apk
-	.long	0x48	# bundled_assembly_name_width
+	.long	0x112	# number_of_assemblies_in_apk
+	.long	0x4d	# bundled_assembly_name_width
 	.long	0x2	# number_of_assembly_store_files
 	.long	0x20	# number_of_dso_cache_entries
 	.long	0x3	# mono_components_mask
@@ -3621,7 +3894,7 @@ application_config:
 
 	.type	.L.autostr.8, @object
 .L.autostr.8:
-	.asciz	"97deee03-fa81-4998-b11c-ff7accd124bd"
+	.asciz	"f690eda5-760b-4561-bac2-56164a4f346b"
 	.size	.L.autostr.8, 37
 
 	.type	.L.autostr.9, @object

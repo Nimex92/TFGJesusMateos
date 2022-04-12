@@ -14,6 +14,9 @@ public partial class PaginaFichar : ContentPage
 	Trabajador trabajador;
     public IDispatcherTimer MyTimer { get; set; }
 	PresenciaContext presenciaContext = new PresenciaContext();
+	Grupo_Trabajo gt;
+	DateTime Entrada;
+	DateTime Salida;
 	DateTime dt = DateTime.Now;
 	DateTime HoraEntrada;
 	public PaginaFichar(string username)
@@ -40,42 +43,54 @@ public partial class PaginaFichar : ContentPage
 		};
 
 		MyTimer.Start();
-		var tareas = presenciaContext.Tareas;
-		foreach (Tareas t in tareas)
-		{
+
+		var Trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
+		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Trabajador.grupo.IdGrupo).Include(x => x.Tareas).FirstOrDefault();
+		var tareas = GrupoTrabajo.Tareas;
+		foreach(Tareas t in tareas)
+        {
 			SelectorTareas.Items.Add(t.NombreTarea);
-		}
-	}
-    public PaginaFichar()
-	{
-		InitializeComponent();
-
-		MyTimer = Reloj.Dispatcher.CreateTimer();
-		MyTimer.Interval = TimeSpan.FromSeconds(1);
-		MyTimer.IsRepeating = true;
-		MyTimer.Tick += (x, y) =>
-		{
-			DateTime dt = DateTime.Now;
-			Reloj.Text =
-				dt.Hour.ToString("00") + ":" +
-				dt.Minute.ToString("00") + ":" +
-				dt.Second.ToString("00");
-			
-			//return true; // return true to repeat counting, false to stop timer
-		};
-
-		MyTimer.Start();
-		var tareas = presenciaContext.Tareas;
-		foreach (Tareas t in tareas)
-		{
-			SelectorTareas.Items.Add(t.NombreTarea);
-		}
-
-
+        }
+		string EntradaCompleta = GrupoTrabajo.HoraEntrada;
+		string HoraEntrada = EntradaCompleta.Substring(0, 2);
+		string MinutosEntrada = EntradaCompleta.Substring(3, 2);
+		string SalidaCompleta = GrupoTrabajo.HoraSalida;
+		string HoraSalida = SalidaCompleta.Substring(0, 2);
+		string MinutosSalida = SalidaCompleta.Substring(3, 2);
+		int HorEnt, MinEnt, HorSal, MinSal;
+		HorEnt = int.Parse(HoraEntrada);
+		MinEnt = int.Parse(MinutosEntrada);
+		HorSal = int.Parse(HoraSalida);
+		MinSal = int.Parse(MinutosSalida);
+		Entrada = DateTime.Today.AddHours(HorEnt).AddMinutes(MinEnt);
+		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
 	}
 
-
-    public void irMainPage(object sender, EventArgs e)
+	private void CompruebaFichajes()
+    {
+		var HaFichado = presenciaContext.TablaFichajes;
+		foreach (Fichajes fich in HaFichado)
+		{
+			if (DateTime.Now.Date == fich.FechaFichaje.Date && fich.Entrada_Salida == "Entrada")
+			{
+				BotonFichar.IsEnabled = false;
+				BotonFichar.IsVisible = false;
+				BotonPlegar.IsEnabled = true;
+				BotonPlegar.IsVisible = true;
+			}
+			else
+			{
+				if (DateTime.Now.Date == fich.FechaFichaje.Date && fich.Entrada_Salida == "Salida")
+				{
+					BotonFichar.IsEnabled = true;
+					BotonFichar.IsVisible = true;
+					BotonPlegar.IsEnabled = false;
+					BotonPlegar.IsVisible = false;
+				}
+			}
+		}
+	}
+	public void irMainPage(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new MainPage());
 
@@ -90,6 +105,17 @@ public partial class PaginaFichar : ContentPage
 		BotonPlegar.IsEnabled = true;
 		SelectorTareas.IsEnabled = true;
 		SelectorTareas.IsVisible = true;
+
+		if(dt > Entrada.AddMinutes(5))
+        {
+			var operacion = Entrada- dt;
+			presenciaContext.Logs.Add(new Log("Retraso", "El trabajador" + trabajador.numero_tarjeta + " Ha llegado "+operacion.TotalMinutes+"m tarde."));
+        }
+        else
+        {
+			presenciaContext.Logs.Add(new Log("En hora", "El trabajador" + trabajador.numero_tarjeta + " Ha llegado a tiempo"));
+		}
+		presenciaContext.SaveChanges();
 	}
 	private void BotonPlegar_Clicked(object sender, EventArgs e)
 	{
@@ -115,6 +141,25 @@ public partial class PaginaFichar : ContentPage
 			BotonAcabarTarea.IsVisible = false;
 			BotonAcabarTarea.IsEnabled = false;
 		}
+		if (dt <= Salida.AddMinutes(5))
+		{
+			if(dt < Salida)
+            {
+				presenciaContext.Logs.Add(new Log("En hora", "El trabajador"+trabajador.numero_tarjeta + " Ha salido en hora."));
+			}
+            else
+            {
+				var operacion = Salida - dt;
+				presenciaContext.Logs.Add(new Log("Sale pronto", "El trabajador" +trabajador.numero_tarjeta + " Ha salido "+operacion.TotalMinutes+"m tarde."));
+            }
+				
+		}
+		else
+		{
+			var operacion = dt - Salida;
+			presenciaContext.Logs.Add(new Log("Sale Tarde", "El trabajador" + trabajador.numero_tarjeta + " Ha salido "+operacion.TotalMinutes));
+		}
+		presenciaContext.SaveChanges();
 	}
 	void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 	{
@@ -133,7 +178,6 @@ public partial class PaginaFichar : ContentPage
 		BotonAcabarTarea.IsVisible = true;
 		BotonIniciarTarea.IsEnabled = false;
 		BotonIniciarTarea.IsVisible = false;
-
 		HoraEntrada = DateTime.Now;
 	}
 

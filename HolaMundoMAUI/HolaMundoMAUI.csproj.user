@@ -60,6 +60,15 @@
     <MauiXaml Update="ModificarZona.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="BorraZonas.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="AnadeTareasAGrupoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="AnadirZonaAGrupoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

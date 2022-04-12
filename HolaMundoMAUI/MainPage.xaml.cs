@@ -1,4 +1,5 @@
 using Persistencia;
+using System.Diagnostics;
 
 namespace HolaMundoMAUI;
 

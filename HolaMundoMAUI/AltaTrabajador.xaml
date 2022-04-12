@@ -41,16 +41,17 @@
                         TextColor="Black"
                         ClearButtonVisibility="WhileEditing"/>
                     <HorizontalStackLayout
-                        Margin="40,10,0,0"
+                        Margin="0,10,0,0"
                         WidthRequest="300">
                         <Label Text="Selecciona Turno: " TextColor="White" FontAttributes="Bold"
-                               VerticalOptions="Start"/>
+                               HorizontalOptions="Start" Margin="10,0,0,0"
+                               />
                         <Picker
-                            WidthRequest="150"
+                            WidthRequest="180"
                             x:Name="Selector"
                             BackgroundColor="White"
                             TextColor="Black"
-                            HorizontalTextAlignment="Center"/>
+                            />
                     </HorizontalStackLayout>
                    
                     <Button 
@@ -63,7 +64,7 @@
                         WidthRequest="300"/>
                 </StackLayout>
                 <Button
-                Text="Cerrar Sesion"
+                Text="Volver"
                 Margin="0,15,0,0"
                 BackgroundColor="Black"
                 x:Name="BotonCerrarSesionAdmin"
