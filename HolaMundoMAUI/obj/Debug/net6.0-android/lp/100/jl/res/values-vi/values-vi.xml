@@ -57,5 +57,5 @@
     <string name="mtrl_picker_toggle_to_day_selection">Nhấn để chuyển sang chế độ chọn một ngày</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Chuyển sang chế độ nhập văn bản</string>
     <string name="mtrl_picker_toggle_to_year_selection">Nhấn để chuyển sang chế độ chọn một năm</string>
-    <string name="password_toggle_content_description">Hiển thị mật khẩu</string>
+    <string name="password_toggle_content_description">Hiện mật khẩu</string>
 </resources>

@@ -22,6 +22,8 @@ public partial class PaginaFichar : ContentPage
 	public PaginaFichar(string username)
     {
 		InitializeComponent();
+		CompruebaFichajes(username);
+		CompruebaTareas();
 
 		this.username = username;
 		var trab = presenciaContext.Trabajador.Where(x => x.usuario.Username == username)
@@ -47,7 +49,8 @@ public partial class PaginaFichar : ContentPage
 		var Trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
 		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Trabajador.grupo.IdGrupo).Include(x => x.Tareas).FirstOrDefault();
 		var tareas = GrupoTrabajo.Tareas;
-		foreach(Tareas t in tareas)
+
+		foreach (Tareas t in tareas)
         {
 			SelectorTareas.Items.Add(t.NombreTarea);
         }
@@ -66,30 +69,28 @@ public partial class PaginaFichar : ContentPage
 		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
 	}
 
-	private void CompruebaFichajes()
+	private void CompruebaFichajes(string user)
     {
-		var HaFichado = presenciaContext.TablaFichajes;
-		foreach (Fichajes fich in HaFichado)
-		{
-			if (DateTime.Now.Date == fich.FechaFichaje.Date && fich.Entrada_Salida == "Entrada")
-			{
-				BotonFichar.IsEnabled = false;
+			var Trabajador = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador.usuario.Username == user).FirstOrDefault();
+			if(Trabajador is not null)
+            {
 				BotonFichar.IsVisible = false;
-				BotonPlegar.IsEnabled = true;
+				BotonFichar.IsEnabled = false;
 				BotonPlegar.IsVisible = true;
+				BotonPlegar.IsEnabled = true;
 			}
-			else
+            else
 			{
-				if (DateTime.Now.Date == fich.FechaFichaje.Date && fich.Entrada_Salida == "Salida")
-				{
-					BotonFichar.IsEnabled = true;
-					BotonFichar.IsVisible = true;
-					BotonPlegar.IsEnabled = false;
-					BotonPlegar.IsVisible = false;
-				}
+				BotonFichar.IsVisible = true;
+				BotonFichar.IsEnabled = true;
+				BotonPlegar.IsVisible = false;
+				BotonPlegar.IsEnabled = false;
 			}
-		}
 	}
+	private void CompruebaTareas()
+	{	
+		   
+    }
 	public void irMainPage(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new MainPage());
@@ -97,14 +98,20 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
+		//var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
 		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Entrada");
-		BotonFichar.IsVisible = false;
+		Fichajes fich = new Fichajes(trabajador, trabajador.grupo, dt, "Entrada");
+
+		presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
+        presenciaContext.SaveChanges();
+        BotonFichar.IsVisible = false;
 		BotonFichar.IsEnabled = false;
 		BotonPlegar.IsVisible = true;
 		BotonPlegar.IsEnabled = true;
 		SelectorTareas.IsEnabled = true;
 		SelectorTareas.IsVisible = true;
+		BotonIniciarTarea.IsEnabled = true;
+		BotonIniciarTarea.IsVisible = true;
 
 		if(dt > Entrada.AddMinutes(5))
         {
@@ -128,6 +135,9 @@ public partial class PaginaFichar : ContentPage
 
 		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.grupo).FirstOrDefault();
 		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
+		var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
+		presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
+		presenciaContext.SaveChanges();
 		BotonFichar.IsVisible = true;
 		BotonFichar.IsEnabled = true;
 		BotonPlegar.IsVisible = false;
@@ -165,12 +175,25 @@ public partial class PaginaFichar : ContentPage
 	{
 		int selectedIndex = SelectorTareas.SelectedIndex;
 
-		if (selectedIndex != -1)
-		{
-			BotonIniciarTarea.IsVisible = true;
+        var tareaActual = SelectorTareas.SelectedItem.ToString();
+        var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
+		var TareaIniciada = presenciaContext.TareasComenzadas.Where(x => x.tarea.NombreTarea == tarea.NombreTarea && x.InicioTarea.Date == dt.Date).OrderBy(x => x.InicioTarea).LastOrDefault();
+		
+        if (TareaIniciada is not null)
+        {
+            BotonAcabarTarea.IsEnabled = true;
+            BotonAcabarTarea.IsVisible = true;
+            BotonIniciarTarea.IsEnabled = false;
+            BotonIniciarTarea.IsVisible = false;
+        }
+        else
+        {
+			BotonAcabarTarea.IsEnabled = false;
+			BotonAcabarTarea.IsVisible = false;
 			BotonIniciarTarea.IsEnabled = true;
+			BotonIniciarTarea.IsVisible = true;
 		}
-	}
+    }
 
     private void BotonIniciarTarea_Clicked(object sender, EventArgs e)
     {
@@ -178,7 +201,13 @@ public partial class PaginaFichar : ContentPage
 		BotonAcabarTarea.IsVisible = true;
 		BotonIniciarTarea.IsEnabled = false;
 		BotonIniciarTarea.IsVisible = false;
-		HoraEntrada = DateTime.Now;
+		HoraEntrada = dt;
+		var tareaActual = SelectorTareas.SelectedItem.ToString();
+		var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
+		var grupo = presenciaContext.Grupo_Trabajo.Find(trabajador.grupo.IdGrupo);
+		
+		presenciaContext.Add(new TareaComenzada(tarea, trabajador, grupo, dt));
+		presenciaContext.SaveChanges();
 	}
 
     private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
@@ -189,9 +218,18 @@ public partial class PaginaFichar : ContentPage
 		BotonIniciarTarea.IsVisible = true;
 		var tareaActual = SelectorTareas.SelectedItem.ToString();
 		var tarea = presenciaContext.Tareas.Where(x=>x.NombreTarea == tareaActual).FirstOrDefault();
+		var TareaIniciada = presenciaContext.TareasComenzadas.Where(x => x.tarea.NombreTarea == tarea.NombreTarea).Where(x=>x.InicioTarea.Date == dt.Date).OrderBy(x=>x.InicioTarea).Last();
 		var grupo = presenciaContext.Grupo_Trabajo.Find(trabajador.grupo.IdGrupo);
-		OperacionesDBContext.insertaTareaRealizada(tarea.NombreTarea,trabajador.numero_tarjeta, grupo.IdGrupo ,HoraEntrada,DateTime.Now);
-		
+		var HorasUsadas = (DateTime.Now - TareaIniciada.InicioTarea).TotalHours;
+		bool EnHora=false;
+        if (HorasUsadas <= tarea.TiempoEstimado)
+        {
+			EnHora = true;
+        }
+        
+		presenciaContext.TareasFinalizadas.Add(new TareaFinalizada(tarea,trabajador,grupo,TareaIniciada.InicioTarea,dt,HorasUsadas,EnHora));
+		presenciaContext.TareasComenzadas.Remove(TareaIniciada);
+		presenciaContext.SaveChanges();
 	}
 
 

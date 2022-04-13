@@ -18,10 +18,12 @@ namespace Persistencia
 
         public DbSet<Fichajes> TablaFichajes { get; set; }
         public DbSet<Trabajador> Trabajador { get; set; }
+        public DbSet<TrabajadorEnTurno> TrabajadorEnTurno { get; set; } 
         public DbSet<Grupo_Trabajo> Grupo_Trabajo { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Tareas> Tareas { get; set; }
-        public DbSet<TareaRealizada> TareasRealizadas { get; set; }
+        public DbSet<TareaComenzada> TareasComenzadas { get; set; }
+        public DbSet<TareaFinalizada> TareasFinalizadas { get; set; }
         public DbSet<Zonas> Zonas { get; set; }
         public DbSet<Log> Logs { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)

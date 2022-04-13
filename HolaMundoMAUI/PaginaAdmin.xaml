@@ -5,8 +5,7 @@
              Title="PaginaAdmin"
              BackgroundColor="White">
     <ScrollView>
-    <StackLayout
-        Margin="0,-45,0,0">
+    <StackLayout>
         <Label 
                 Text="Tech Talent &#10; Página de administracion"
                 TextColor="Black"
@@ -202,9 +201,10 @@
                     HeightRequest="100"
                     FontSize="24"
                     FontAttributes="Bold"
-                     BackgroundColor="#462f4f"
-                    Text=""
+                    Text="Trabajadores&#10;   En turno" 
+                    BackgroundColor="#462f4f"
                     x:Name="BotonSinNada"
+                    Clicked="BotonSinNada_Clicked"
                     />
                 </HorizontalStackLayout>
             </StackLayout>

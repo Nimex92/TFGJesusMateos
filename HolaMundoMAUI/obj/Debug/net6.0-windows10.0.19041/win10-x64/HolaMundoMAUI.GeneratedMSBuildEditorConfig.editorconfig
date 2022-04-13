@@ -140,3 +140,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaFichar.xaml
 build_metadata.AdditionalFiles.TargetPath = PaginaFichar.xaml
 build_metadata.AdditionalFiles.RelativePath = PaginaFichar.xaml
+
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/TrabajadoresEnTurno.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.TrabajadoresEnTurno.xaml
+build_metadata.AdditionalFiles.TargetPath = TrabajadoresEnTurno.xaml
+build_metadata.AdditionalFiles.RelativePath = TrabajadoresEnTurno.xaml

@@ -14,7 +14,7 @@ namespace HolaMundoMAUI
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.99.106")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.3.99.4")]
 	public partial class Resource
 	{
 		
@@ -25,33 +25,21 @@ namespace HolaMundoMAUI
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Animation.enterfromleft = global::HolaMundoMAUI.Resource.Animation.enterfromleft;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Animation.enterfromright = global::HolaMundoMAUI.Resource.Animation.enterfromright;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Animation.exittoleft = global::HolaMundoMAUI.Resource.Animation.exittoleft;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Animation.exittoright = global::HolaMundoMAUI.Resource.Animation.exittoright;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Attribute.actionBarSize = global::HolaMundoMAUI.Resource.Attribute.actionBarSize;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Attribute.collectionViewStyle = global::HolaMundoMAUI.Resource.Attribute.collectionViewStyle;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Attribute.scrollViewStyle = global::HolaMundoMAUI.Resource.Attribute.scrollViewStyle;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Drawable.abc_ic_clear_material = global::HolaMundoMAUI.Resource.Drawable.abc_ic_clear_material;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Drawable.abc_ic_search_api_material = global::HolaMundoMAUI.Resource.Drawable.abc_ic_search_api_material;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.main_appbar = global::HolaMundoMAUI.Resource.Id.main_appbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.bottomtab_navarea = global::HolaMundoMAUI.Resource.Id.bottomtab_navarea;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.bottomtab_tabbar = global::HolaMundoMAUI.Resource.Id.bottomtab_tabbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.flyoutcontent_appbar = global::HolaMundoMAUI.Resource.Id.flyoutcontent_appbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.main_tablayout = global::HolaMundoMAUI.Resource.Id.main_tablayout;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.main_viewpager = global::HolaMundoMAUI.Resource.Id.main_viewpager;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.main_toolbar = global::HolaMundoMAUI.Resource.Id.main_toolbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.shellcontent_toolbar = global::HolaMundoMAUI.Resource.Id.shellcontent_toolbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Id.shellcontent_appbar = global::HolaMundoMAUI.Resource.Id.shellcontent_appbar;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.bottomtablayout = global::HolaMundoMAUI.Resource.Layout.bottomtablayout;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.flyoutcontent = global::HolaMundoMAUI.Resource.Layout.flyoutcontent;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.rootlayout = global::HolaMundoMAUI.Resource.Layout.rootlayout;
-			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.shellcontent = global::HolaMundoMAUI.Resource.Layout.shellcontent;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.tabbar = global::HolaMundoMAUI.Resource.Layout.tabbar;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Layout.toolbar = global::HolaMundoMAUI.Resource.Layout.toolbar;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Style.collectionViewTheme = global::HolaMundoMAUI.Resource.Style.collectionViewTheme;
 			global::Microsoft.Maui.Controls.Compatibility.Resource.Style.scrollViewTheme = global::HolaMundoMAUI.Resource.Style.scrollViewTheme;
+			global::Microsoft.Maui.Controls.Resource.Animation.enterfromleft = global::HolaMundoMAUI.Resource.Animation.enterfromleft;
+			global::Microsoft.Maui.Controls.Resource.Animation.enterfromright = global::HolaMundoMAUI.Resource.Animation.enterfromright;
+			global::Microsoft.Maui.Controls.Resource.Animation.exittoleft = global::HolaMundoMAUI.Resource.Animation.exittoleft;
+			global::Microsoft.Maui.Controls.Resource.Animation.exittoright = global::HolaMundoMAUI.Resource.Animation.exittoright;
 			global::Microsoft.Maui.Controls.Resource.Attribute.actionBarSize = global::HolaMundoMAUI.Resource.Attribute.actionBarSize;
+			global::Microsoft.Maui.Controls.Resource.Attribute.appBarLayoutStyle = global::HolaMundoMAUI.Resource.Attribute.appBarLayoutStyle;
 			global::Microsoft.Maui.Controls.Resource.Attribute.toolbarStyle = global::HolaMundoMAUI.Resource.Attribute.toolbarStyle;
 			global::Microsoft.Maui.Controls.Resource.Drawable.abc_ic_clear_material = global::HolaMundoMAUI.Resource.Drawable.abc_ic_clear_material;
 			global::Microsoft.Maui.Controls.Resource.Drawable.abc_ic_menu_overflow_material = global::HolaMundoMAUI.Resource.Drawable.abc_ic_menu_overflow_material;
@@ -59,8 +47,16 @@ namespace HolaMundoMAUI
 			global::Microsoft.Maui.Controls.Resource.Id.navigationlayout_bottomtabs = global::HolaMundoMAUI.Resource.Id.navigationlayout_bottomtabs;
 			global::Microsoft.Maui.Controls.Resource.Id.navigationlayout_content = global::HolaMundoMAUI.Resource.Id.navigationlayout_content;
 			global::Microsoft.Maui.Controls.Resource.Id.navigationlayout_toptabs = global::HolaMundoMAUI.Resource.Id.navigationlayout_toptabs;
+			global::Microsoft.Maui.Controls.Resource.Id.shellcontent_toolbar = global::HolaMundoMAUI.Resource.Id.shellcontent_toolbar;
+			global::Microsoft.Maui.Controls.Resource.Id.shellcontent_appbar = global::HolaMundoMAUI.Resource.Id.shellcontent_appbar;
+			global::Microsoft.Maui.Controls.Resource.Id.bottomtab_navarea = global::HolaMundoMAUI.Resource.Id.bottomtab_navarea;
+			global::Microsoft.Maui.Controls.Resource.Id.bottomtab_tabbar = global::HolaMundoMAUI.Resource.Id.bottomtab_tabbar;
+			global::Microsoft.Maui.Controls.Resource.Id.flyoutcontent_appbar = global::HolaMundoMAUI.Resource.Id.flyoutcontent_appbar;
 			global::Microsoft.Maui.Controls.Resource.Layout.fragment_backstack = global::HolaMundoMAUI.Resource.Layout.fragment_backstack;
+			global::Microsoft.Maui.Controls.Resource.Layout.flyoutcontent = global::HolaMundoMAUI.Resource.Layout.flyoutcontent;
+			global::Microsoft.Maui.Controls.Resource.Layout.shellcontent = global::HolaMundoMAUI.Resource.Layout.shellcontent;
 			global::Microsoft.Maui.Controls.Resource.Dimension.design_bottom_navigation_height = global::HolaMundoMAUI.Resource.Dimension.design_bottom_navigation_height;
+			global::Microsoft.Maui.Controls.Resource.Style.ThemeOverlay_AppCompat_Light = global::HolaMundoMAUI.Resource.Style.ThemeOverlay_AppCompat_Light;
 			global::Microsoft.Maui.Controls.Resource.Styleable.Toolbar = global::HolaMundoMAUI.Resource.Styleable.Toolbar;
 			global::Microsoft.Maui.Controls.Resource.Styleable.Toolbar_titleTextColor = global::HolaMundoMAUI.Resource.Styleable.Toolbar_titleTextColor;
 			global::Microsoft.Maui.Controls.Resource.String.nav_app_bar_navigate_up_description = global::HolaMundoMAUI.Resource.String.nav_app_bar_navigate_up_description;
@@ -79,17 +75,16 @@ namespace HolaMundoMAUI
 			global::Microsoft.Maui.Resource.Id.navigationlayout_appbar = global::HolaMundoMAUI.Resource.Id.navigationlayout_appbar;
 			global::Microsoft.Maui.Resource.Id.navigationlayout_bottomtabs = global::HolaMundoMAUI.Resource.Id.navigationlayout_bottomtabs;
 			global::Microsoft.Maui.Resource.Id.navigationlayout_content = global::HolaMundoMAUI.Resource.Id.navigationlayout_content;
-			global::Microsoft.Maui.Resource.Id.maui_toolbar = global::HolaMundoMAUI.Resource.Id.maui_toolbar;
 			global::Microsoft.Maui.Resource.Id.navigationlayout_toptabs = global::HolaMundoMAUI.Resource.Id.navigationlayout_toptabs;
 			global::Microsoft.Maui.Resource.Id.nav_host = global::HolaMundoMAUI.Resource.Id.nav_host;
 			global::Microsoft.Maui.Resource.Id.nav_host_fragment_container = global::HolaMundoMAUI.Resource.Id.nav_host_fragment_container;
 			global::Microsoft.Maui.Resource.Id.search_button = global::HolaMundoMAUI.Resource.Id.search_button;
 			global::Microsoft.Maui.Resource.Id.search_close_btn = global::HolaMundoMAUI.Resource.Id.search_close_btn;
 			global::Microsoft.Maui.Resource.Layout.drawer_layout = global::HolaMundoMAUI.Resource.Layout.drawer_layout;
-			global::Microsoft.Maui.Resource.Layout.maui_toolbar = global::HolaMundoMAUI.Resource.Layout.maui_toolbar;
 			global::Microsoft.Maui.Resource.Layout.navigationlayout = global::HolaMundoMAUI.Resource.Layout.navigationlayout;
 			global::Microsoft.Maui.Resource.Layout.fragment_backstack = global::HolaMundoMAUI.Resource.Layout.fragment_backstack;
 			global::Microsoft.Maui.Resource.Style.Maui_MainTheme_NoActionBar = global::HolaMundoMAUI.Resource.Style.Maui_MainTheme_NoActionBar;
+			global::Microsoft.Maui.Resource.Style.ThemeOverlay_AppCompat_Light = global::HolaMundoMAUI.Resource.Style.ThemeOverlay_AppCompat_Light;
 			global::Microsoft.Maui.Resource.Style.scrollViewTheme = global::HolaMundoMAUI.Resource.Style.scrollViewTheme;
 		}
 		

@@ -68,11 +68,12 @@
 	  <Page Remove="ModificarUsuario.xaml" />
 	  <Page Remove="ModificaTrabajador.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
+	  <Page Remove="TrabajadoresEnTurno.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <!--<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />-->
-	  <!--<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.2" />-->
+	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />
+	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -210,6 +211,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TrabajadoresEnTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -8,3 +8,5 @@ anim/enterfromright.xml;anim/enterfromright.xml
 anim/exittoleft.xml;anim/exittoleft.xml
 anim/exittoright.xml;anim/exittoright.xml
 values/strings.xml;values/strings.xml
+Compatibility/Android/Resources/Layout/flyoutcontent.axml;layout/flyoutcontent.xml
+Compatibility/Android/Resources/Layout/shellcontent.axml;layout/shellcontent.xml

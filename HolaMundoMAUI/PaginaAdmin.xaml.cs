@@ -101,5 +101,11 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo());
     }
+
+    private void BotonSinNada_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno());
+    }
+
 }
 

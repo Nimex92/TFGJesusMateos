@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item format="float" name="m3_sys_state_dragged_state_layer_opacity" type="dimen">0.32</item>
+    <item format="float" name="m3_sys_state_focus_state_layer_opacity" type="dimen">0.24</item>
+    <item format="float" name="m3_sys_state_hover_state_layer_opacity" type="dimen">0.16</item>
+    <item format="float" name="m3_sys_state_pressed_state_layer_opacity" type="dimen">0.24</item>
     <dimen name="mtrl_calendar_pre_l_text_clip_padding">0dp</dimen>
     <dimen name="mtrl_exposed_dropdown_menu_popup_vertical_offset">1dp</dimen>
     <item format="float" name="mtrl_high_ripple_default_alpha" type="dimen">0.48</item>
@@ -14,6 +18,7 @@
     <style name="Base.Theme.MaterialComponents.Dialog" parent="Base.V21.Theme.MaterialComponents.Dialog"/>
     <style name="Base.Theme.MaterialComponents.Light" parent="Base.V21.Theme.MaterialComponents.Light"/>
     <style name="Base.Theme.MaterialComponents.Light.Dialog" parent="Base.V21.Theme.MaterialComponents.Light.Dialog"/>
+    <style name="Base.ThemeOverlay.Material3.BottomSheetDialog" parent="Base.V21.ThemeOverlay.Material3.BottomSheetDialog"/>
     <style name="Base.ThemeOverlay.MaterialComponents.Dialog" parent="Base.V14.ThemeOverlay.MaterialComponents.Dialog">
     <item name="android:windowBackground">@drawable/mtrl_dialog_background</item>
   </style>
@@ -34,6 +39,9 @@
   </style>
     <style name="Base.V21.Theme.MaterialComponents.Light.Dialog" parent="Base.V14.Theme.MaterialComponents.Light.Dialog">
     <item name="android:alertDialogTheme">@style/ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework</item>
+  </style>
+    <style name="Base.V21.ThemeOverlay.Material3.BottomSheetDialog" parent="Base.V14.ThemeOverlay.Material3.BottomSheetDialog">
+    <item name="android:statusBarColor">@android:color/transparent</item>
   </style>
     <style name="Base.V21.ThemeOverlay.MaterialComponents.BottomSheetDialog" parent="Base.V14.ThemeOverlay.MaterialComponents.BottomSheetDialog">
     <item name="android:statusBarColor">@android:color/transparent</item>
@@ -64,6 +72,26 @@
     <item name="shapeAppearance">?attr/shapeAppearanceMediumComponent</item>
     <item name="android:datePickerMode">spinner</item>
   </style>
+    <style name="TextAppearance.Material3.LabelLarge" parent="Base.TextAppearance.Material3.LabelLarge">
+    <!-- Roboto Medium was added in this api level -->
+    <item name="android:textStyle">normal</item>
+  </style>
+    <style name="TextAppearance.Material3.LabelMedium" parent="Base.TextAppearance.Material3.LabelMedium">
+    <!-- Roboto Medium was added in this api level -->
+    <item name="android:textStyle">normal</item>
+  </style>
+    <style name="TextAppearance.Material3.LabelSmall" parent="Base.TextAppearance.Material3.LabelSmall">
+    <!-- Roboto Medium was added in this api level -->
+    <item name="android:textStyle">normal</item>
+  </style>
+    <style name="TextAppearance.Material3.TitleMedium" parent="Base.TextAppearance.Material3.TitleMedium">
+    <!-- Roboto Medium was added in this api level -->
+    <item name="android:textStyle">normal</item>
+  </style>
+    <style name="TextAppearance.Material3.TitleSmall" parent="Base.TextAppearance.Material3.TitleSmall">
+    <!-- Roboto Medium was added in this api level -->
+    <item name="android:textStyle">normal</item>
+  </style>
     <style name="TextAppearance.MaterialComponents.Badge" parent="Base.TextAppearance.MaterialComponents.Badge">
     <!-- Roboto Medium was added in this api level -->
     <item name="fontFamily">sans-serif-medium</item>
@@ -88,6 +116,14 @@
     <item name="android:fontFamily">sans-serif-medium</item>
     <item name="android:textStyle">normal</item>
   </style>
+    <style name="ThemeOverlay.Material3.Dialog.Alert.Framework" parent="ThemeOverlay.MaterialComponents.Dialog.Alert.Framework">
+    <item name="android:windowElevation">@dimen/m3_alert_dialog_elevation</item>
+    <item name="android:buttonBarButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog.Flush</item>
+  </style>
+    <style name="ThemeOverlay.Material3.Light.Dialog.Alert.Framework" parent="ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework">
+    <item name="android:windowElevation">@dimen/m3_alert_dialog_elevation</item>
+    <item name="android:buttonBarButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog.Flush</item>
+  </style>
     <style name="ThemeOverlay.MaterialComponents.BottomSheetDialog" parent="Base.V21.ThemeOverlay.MaterialComponents.BottomSheetDialog"/>
     <style name="ThemeOverlay.MaterialComponents.Dialog.Alert.Framework" parent="Base.ThemeOverlay.MaterialComponents.Dialog.Alert.Framework"/>
     <style name="ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework" parent="Base.ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework"/>
@@ -106,6 +142,12 @@
   </style>
     <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date.Spinner">
     <item name="android:datePickerStyle">@style/MaterialAlertDialog.MaterialComponents.Picker.Date.Spinner</item>
+  </style>
+    <style name="Widget.Material3.TabLayout" parent="Base.Widget.Material3.TabLayout">
+    <item name="android:background">@drawable/m3_tabs_background</item>
+  </style>
+    <style name="Widget.Material3.TabLayout.Secondary" parent="Base.Widget.Material3.TabLayout.Secondary">
+    <item name="android:background">@drawable/m3_tabs_background</item>
   </style>
     <style name="Widget.MaterialComponents.PopupMenu" parent="Base.Widget.MaterialComponents.PopupMenu">
     <item name="android:popupBackground">?attr/popupMenuBackground</item>

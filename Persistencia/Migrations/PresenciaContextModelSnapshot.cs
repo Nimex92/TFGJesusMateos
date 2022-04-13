@@ -16,7 +16,7 @@ namespace Persistencia.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.3")
+                .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Bibliotec.Grupo_Trabajo", b =>
@@ -61,20 +61,11 @@ namespace Persistencia.Migrations
                     b.ToTable("Logs");
                 });
 
-            modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
+            modelBuilder.Entity("Bibliotec.TareaComenzada", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<bool>("EnHora")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTime>("FinTarea")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<double>("HorasUsadas")
-                        .HasColumnType("double");
 
                     b.Property<DateTime>("InicioTarea")
                         .HasColumnType("datetime(6)");
@@ -96,7 +87,45 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("trabajadornumero_tarjeta");
 
-                    b.ToTable("TareasRealizadas");
+                    b.ToTable("TareasComenzadas");
+                });
+
+            modelBuilder.Entity("Bibliotec.TareaFinalizada", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EnHora")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("FinTarea")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<double>("HorasUsadas")
+                        .HasColumnType("double");
+
+                    b.Property<int>("grupoIdGrupo")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("inicioTarea")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("tareaIdTarea")
+                        .HasColumnType("int");
+
+                    b.Property<int>("trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("grupoIdGrupo");
+
+                    b.HasIndex("tareaIdTarea");
+
+                    b.HasIndex("trabajadornumero_tarjeta");
+
+                    b.ToTable("TareasFinalizadas");
                 });
 
             modelBuilder.Entity("Bibliotec.Tareas", b =>
@@ -144,6 +173,27 @@ namespace Persistencia.Migrations
                     b.HasIndex("usuarioIdUser");
 
                     b.ToTable("Trabajador");
+                });
+
+            modelBuilder.Entity("Bibliotec.TrabajadorEnTurno", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("fichajeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("fichajeId");
+
+                    b.HasIndex("trabajadornumero_tarjeta");
+
+                    b.ToTable("TrabajadorEnTurno");
                 });
 
             modelBuilder.Entity("Bibliotec.Usuarios", b =>
@@ -241,7 +291,34 @@ namespace Persistencia.Migrations
                     b.ToTable("Grupo_TrabajoZonas");
                 });
 
-            modelBuilder.Entity("Bibliotec.TareaRealizada", b =>
+            modelBuilder.Entity("Bibliotec.TareaComenzada", b =>
+                {
+                    b.HasOne("Bibliotec.Grupo_Trabajo", "grupo")
+                        .WithMany()
+                        .HasForeignKey("grupoIdGrupo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Tareas", "tarea")
+                        .WithMany()
+                        .HasForeignKey("tareaIdTarea")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Trabajador", "trabajador")
+                        .WithMany()
+                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("grupo");
+
+                    b.Navigation("tarea");
+
+                    b.Navigation("trabajador");
+                });
+
+            modelBuilder.Entity("Bibliotec.TareaFinalizada", b =>
                 {
                     b.HasOne("Bibliotec.Grupo_Trabajo", "grupo")
                         .WithMany()
@@ -285,6 +362,25 @@ namespace Persistencia.Migrations
                     b.Navigation("grupo");
 
                     b.Navigation("usuario");
+                });
+
+            modelBuilder.Entity("Bibliotec.TrabajadorEnTurno", b =>
+                {
+                    b.HasOne("ClassLibrary1.Fichajes", "fichaje")
+                        .WithMany()
+                        .HasForeignKey("fichajeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Trabajador", "trabajador")
+                        .WithMany()
+                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("fichaje");
+
+                    b.Navigation("trabajador");
                 });
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
