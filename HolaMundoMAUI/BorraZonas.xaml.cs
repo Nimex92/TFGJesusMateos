@@ -7,10 +7,13 @@ public partial class BorraZonas : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
 	Zonas zone;
-	public BorraZonas()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public BorraZonas(string user)
 	{
 		InitializeComponent();
 		SetListView();
+		NombreUsuario = user;
 	}
 	public void SetListView()
 	{
@@ -24,7 +27,7 @@ public partial class BorraZonas : ContentPage
 	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	private async void BotonBorrar_Clicked(object sender, EventArgs e)
     {
@@ -33,8 +36,10 @@ public partial class BorraZonas : ContentPage
         if (answer==true)
         {
 			await DisplayAlert("Alert", "Se ha borrado correctamente " + zone.Nombre, "OK");
+			presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminar " + zone.Nombre + " - " + dt));
+			presenciaContext.SaveChanges();
 			OperacionesDBContext.BorraZona(zone.IdZona);
-			App.Current.MainPage = new NavigationPage(new BorraZonas());
+			App.Current.MainPage = new NavigationPage(new BorraZonas(NombreUsuario));
 			
         }
         else

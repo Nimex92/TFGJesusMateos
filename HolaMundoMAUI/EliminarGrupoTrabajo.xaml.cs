@@ -10,15 +10,18 @@ public partial class EliminarGrupoTrabajo
 	bool activado;
 	Grupo_Trabajo gr = new();
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public EliminarGrupoTrabajo()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public EliminarGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		activado = false;
 		SetListView();
+		NombreUsuario = user;
 	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	public void SetListView()
     {
@@ -34,7 +37,9 @@ public partial class EliminarGrupoTrabajo
 	public async void BorrarGrupoTrabajo(object sender, EventArgs e)
     {
 		OperacionesDBContext.borraGrupoTrabajo(gr.IdGrupo);
+		presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado grupo de trabajo " + gr.Turno + " - " + dt));
+		presenciaContext.SaveChanges();
 		await Task.Delay(1000);
-		App.Current.MainPage = new NavigationPage(new EliminarGrupoTrabajo());
+		App.Current.MainPage = new NavigationPage(new EliminarGrupoTrabajo(NombreUsuario));
 	}
 }

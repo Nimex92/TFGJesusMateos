@@ -7,10 +7,12 @@ public partial class ModificarZona : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
 	string NombreZona;
-	public ModificarZona()
+	string NombreUsuario;
+	public ModificarZona(string user)
 	{
 		InitializeComponent();
 		SetListView();
+		NombreUsuario = user;
 	}
 	public void SetListView()
 	{
@@ -35,7 +37,7 @@ public partial class ModificarZona : ContentPage
 	}
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
     }
 	public async void RegistrANuevaZona(object sender, EventArgs e)
 	{
@@ -43,7 +45,7 @@ public partial class ModificarZona : ContentPage
 		if(inserta == true)
         {
 			await DisplayAlert("Alert", "Se ha insertado nueva zona.", "OK");
-			App.Current.MainPage = new NavigationPage(new ModificarZona());
+			App.Current.MainPage = new NavigationPage(new ModificarZona(NombreUsuario));
 		}
         else
         {

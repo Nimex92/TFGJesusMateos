@@ -14,7 +14,7 @@
           "Microsoft.Maui.Dependencies": "6.0.300-rc.1.5355",
           "Microsoft.Maui.Extensions": "6.0.300-rc.1.5355",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
-          "Microsoft.WindowsAppSDK": "1.0.2",
+          "Microsoft.WindowsAppSDK": "1.0.3",
           "Persistencia": "1.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.3",
           "runtimepack.Microsoft.Maui.Core.Runtime.win": "6.0.300-rc.1.5355",
@@ -1073,7 +1073,7 @@
           "Microsoft.Graphics.Win2D": "1.0.1",
           "Microsoft.Maui.Graphics": "6.0.300-rc.1.1215",
           "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.1.1215",
-          "Microsoft.WindowsAppSDK": "1.0.2"
+          "Microsoft.WindowsAppSDK": "1.0.3"
         }
       },
       "Microsoft.Maui.Extensions/6.0.300-rc.1.5355": {
@@ -1096,7 +1096,7 @@
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.1",
           "Microsoft.Maui.Graphics": "6.0.300-rc.1.1215",
-          "Microsoft.WindowsAppSDK": "1.0.2"
+          "Microsoft.WindowsAppSDK": "1.0.3"
         },
         "runtime": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {
@@ -1106,7 +1106,7 @@
         }
       },
       "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {},
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
         },
@@ -1374,12 +1374,12 @@
       "path": "microsoft.windows.sdk.buildtools/10.0.22000.194",
       "hashPath": "microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.0.2": {
+    "Microsoft.WindowsAppSDK/1.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1frlcyTPP8l+6GfslYXveEvkL9w0JuugSVUeKxmrZNS0Dg2uuNAczasuEqNd8M+nFFjlmAVMz9CsbQSFyb2Q4A==",
-      "path": "microsoft.windowsappsdk/1.0.2",
-      "hashPath": "microsoft.windowsappsdk.1.0.2.nupkg.sha512"
+      "sha512": "sha512-lz0MF9OjrUaPZ11GOi1lu/GaoQrWVVojb2uZ4sly7FdkYtGeNZcKNVlhHU7fng9HQkprOLJgn4v2oAwaexV4Sw==",
+      "path": "microsoft.windowsappsdk/1.0.3",
+      "hashPath": "microsoft.windowsappsdk.1.0.3.nupkg.sha512"
     },
     "MySqlConnector/2.1.2": {
       "type": "package",

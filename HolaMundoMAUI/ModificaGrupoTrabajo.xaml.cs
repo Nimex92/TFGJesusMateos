@@ -10,11 +10,14 @@ public partial class ModificarGrupoTrabajo
 	bool activado;
 	Grupo_Trabajo gr = new();
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public ModificarGrupoTrabajo()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public ModificarGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		activado = false;
 		SetListView();
+		NombreUsuario = user;
 		//Recojo todos los Turnos de la tabla de MySql
 		var Horas= new List<string>();
 		var Minutos = new List<string>();
@@ -49,7 +52,7 @@ public partial class ModificarGrupoTrabajo
 	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	public void SetListView()
     {
@@ -130,11 +133,11 @@ public partial class ModificarGrupoTrabajo
 		LabelAvisos.Text = CampoUsuario.Text+""+HoraEntrada + " " + HoraSalida;
 
 		bool inserta =OperacionesDBContext.actualizarGrupoTrabajo(CampoUsuario.Text, HoraEntrada, HoraSalida);
-        if (inserta == true)
+		presenciaContext.Logs.Add(new Log("Modificar", NombreUsuario + " ha modificado grupo trabajo " + CampoUsuario.Text + " - " + dt));
+		presenciaContext.SaveChanges();
+		if (inserta == true)
         {
 			await DisplayAlert("Alert","Los cambios se guardaron correctamente","OK");
-			LabelAvisos.Text = "Los cambios se han guardado correctamente.";
-			LabelAvisos.TextColor = Colors.Green;
 			
         }
         else

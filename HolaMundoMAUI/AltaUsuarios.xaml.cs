@@ -7,9 +7,12 @@ namespace HolaMundoMAUI;
 public partial class AltaUsuarios : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public AltaUsuarios()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public AltaUsuarios(string user)
 	{
 		InitializeComponent();
+		NombreUsuario = user;
 	}
 
 	public async void RegistrarNuevoUsuario(object sender, EventArgs e)
@@ -26,11 +29,7 @@ public partial class AltaUsuarios : ContentPage
 		{
 			if (CampoUsuario.Text == us.Username)
 			{
-				//El usuario existe, activamos el label de error
 				await DisplayAlert("Alert","El usuario "+Username+" ya existe, por favor pruebe otro","OK");
-				LabelAvisos.Text = "El nombre de usuario ya existe...";
-				LabelAvisos.TextColor = Colors.Red;
-				LabelAvisos.IsVisible = true;
 			}
         }
         else
@@ -43,7 +42,9 @@ public partial class AltaUsuarios : ContentPage
 
 				//Inserto usuario
 				bool inserta = OperacionesDBContext.insertaUsuario(Username, Password,esAdmin);
-                if (inserta == true) 
+				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt));
+				presenciaContext.SaveChanges();
+				if (inserta == true) 
 				{
 					//Activo label de aceptacion, se ha insertado.
 					await DisplayAlert("Alert", "Usuario "+Username+" insertado correctamente.", "OK");
@@ -57,22 +58,13 @@ public partial class AltaUsuarios : ContentPage
 			else
 			{
 				//Activa label error, no coinciden las contraseñas
-				LabelAvisos.Text = "Las contraseñas deben coincidir.";
-				LabelAvisos.TextColor = Colors.Red;
-				LabelAvisos.IsVisible = true;
+				await DisplayAlert("Alert", "Las contraseñas deben coincidir.", "OK");
 			}
 		}
 	}   
 
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
-
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
-	public void gaga(object sender, EventArgs e)
-    {
-		CampoContrasena.IsPassword = true;
-		CampoRepiteContrasena.IsPassword = true;
-
-    }
 }

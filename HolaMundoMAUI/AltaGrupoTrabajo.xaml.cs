@@ -1,12 +1,14 @@
 using Persistencia;
+using Bibliotec;
 using System.Diagnostics;
 
 namespace HolaMundoMAUI;
 
 public partial class AltaGrupoTrabajo : ContentPage
 {
-
-	public AltaGrupoTrabajo()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public AltaGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		
@@ -35,14 +37,14 @@ public partial class AltaGrupoTrabajo : ContentPage
 			var GrupoExiste = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == NombreGrupo).FirstOrDefault();
 			if (GrupoExiste is not null)
 			{
-				LabelAvisos.Text = "Error, el grupo de trabajo ya existe.";
-				LabelAvisos.TextColor = Colors.Red;
+				await DisplayAlert("Alert", "El grupo de trabajo ya existe.", "OK");
 			}
 			else
 			{
 				OperacionesDBContext.insertarGrupoTrabajo(NombreGrupo, TiempoEntrada, TiempoSalida);
-				LabelAvisos.Text = "Grupo de trabajo creado satisfactoriamente.";
-				LabelAvisos.TextColor = Colors.Green;
+				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreGrupo+" - "+dt));
+				presenciaContext.SaveChanges();
+				await DisplayAlert("Alert", "El grupo de trabajo se ha añadido correctamente.", "OK");
 			}
         }
         else
@@ -87,6 +89,6 @@ public partial class AltaGrupoTrabajo : ContentPage
 
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
     }
 }

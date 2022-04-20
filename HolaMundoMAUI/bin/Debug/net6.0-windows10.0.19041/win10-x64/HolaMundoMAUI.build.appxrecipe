@@ -772,28 +772,28 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\6.0.300-rc.1.1215\lib\net6.0-windows10.0.18362\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
       <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.WinUI.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.WinUI.dll">
       <PackagePath>Microsoft.WinUI.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.AppLifecycle.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.AppLifecycle.Projection.dll">
       <PackagePath>Microsoft.Windows.AppLifecycle.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.Resources.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.System.Power.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.Windows.System.Power.Projection.dll">
       <PackagePath>Microsoft.Windows.System.Power.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\lib\net5.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\mysqlconnector\2.1.2\lib\net6.0\MySqlConnector.dll">
@@ -802,7 +802,7 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\pomelo.entityframeworkcore.mysql\6.0.1\lib\net6.0\Pomelo.EntityFrameworkCore.MySql.dll">
       <PackagePath>Pomelo.EntityFrameworkCore.MySql.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.graphics.win2d\1.0.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
@@ -961,6 +961,51 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-400.png">
       <PackagePath>editar.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout .scale-100.png">
+      <PackagePath>logout .scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout .scale-125.png">
+      <PackagePath>logout .scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout .scale-150.png">
+      <PackagePath>logout .scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout .scale-200.png">
+      <PackagePath>logout .scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout .scale-400.png">
+      <PackagePath>logout .scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-100.png">
+      <PackagePath>logout.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-125.png">
+      <PackagePath>logout.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-150.png">
+      <PackagePath>logout.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-200.png">
+      <PackagePath>logout.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-400.png">
+      <PackagePath>logout.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\user.scale-100.png">
+      <PackagePath>user.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\user.scale-125.png">
+      <PackagePath>user.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\user.scale-150.png">
+      <PackagePath>user.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\user.scale-200.png">
+      <PackagePath>user.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\user.scale-400.png">
+      <PackagePath>user.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
     </AppxPackagedFile>
@@ -978,36 +1023,36 @@
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix">
+    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix">
       <Name>Microsoft.WindowsAppRuntime.1.0</Name>
-      <Version>2.460.358.0</Version>
+      <Version>3.469.1654.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 2.460.358.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 3.469.1654.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
       <MoreInfo></MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix">
+    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix">
       <Name>Microsoft.WindowsAppRuntime.1.0</Name>
-      <Version>2.460.358.0</Version>
+      <Version>3.469.1654.0</Version>
       <Architecture>win32</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 2.460.358.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 3.469.1654.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
       <MoreInfo></MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.0.msix">
+    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.0.msix">
       <Name>Microsoft.WindowsAppRuntime.1.0</Name>
-      <Version>2.460.358.0</Version>
+      <Version>3.469.1654.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 2.460.358.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 3.469.1654.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
       <MoreInfo></MoreInfo>
     </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.0.msix">
+    <ResolvedSDKReference Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.0.msix">
       <Name>Microsoft.WindowsAppRuntime.1.0</Name>
-      <Version>2.460.358.0</Version>
+      <Version>3.469.1654.0</Version>
       <Architecture>arm64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 2.460.358.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
-      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.2\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.0, MinVersion = 3.469.1654.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.0.msix</AppxLocation>
       <MoreInfo></MoreInfo>
     </ResolvedSDKReference>
   </ItemGroup>

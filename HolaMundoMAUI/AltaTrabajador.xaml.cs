@@ -8,9 +8,12 @@ namespace HolaMundoMAUI;
 public partial class AltaTrabajador : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public AltaTrabajador()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public AltaTrabajador(string user)
 	{
-		InitializeComponent();	
+		InitializeComponent();
+		NombreUsuario = user;
 		//Recojo todos los Turnos de la tabla de MySql
 		var Turno = presenciaContext.Grupo_Trabajo;
 		//Creo una lista para guardar todos los turnos existentes
@@ -33,15 +36,17 @@ public partial class AltaTrabajador : ContentPage
 		var seleccionado = Selector.SelectedItem.ToString().Trim();
 		var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == seleccionado).FirstOrDefault();
 		bool inserta = OperacionesDBContext.insertaTrabajador(nombre,grupo.IdGrupo,user);
-		if(inserta == true)
+		presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido trabajador " + nombre + " - " + dt));
+		presenciaContext.SaveChanges();
+		if (inserta == true)
         {
 			await DisplayAlert("Alert", "Se ha insertado correctamente el trabajador " + nombre, "OK");
-			LabelAvisos.Text = "Se ha insertado correctamente el trabajador " + nombre;
+			
 		}
         else
         {
 			await DisplayAlert("Alert", "Error al insertar el trabajador " + nombre, "OK");
-			LabelAvisos.Text = "Error al insertar el trabajador " + nombre;
+			
 		}
 	
 		
@@ -50,6 +55,6 @@ public partial class AltaTrabajador : ContentPage
 
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 }

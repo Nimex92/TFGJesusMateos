@@ -1,15 +1,20 @@
 using Persistencia;
+using Bibliotec;
 
 namespace HolaMundoMAUI;
 
 public partial class AltaTareaTrabajo : ContentPage
 {
-	public AltaTareaTrabajo()
+    string NombreUsuario;
+    DateTime dt = DateTime.Now;
+    PresenciaContext presenciaContext = new PresenciaContext();
+
+    public AltaTareaTrabajo(string user)
 	{
 		InitializeComponent();
+        NombreUsuario = user;
         step.ValueChanged += (sender, e) =>
         {
-
             LabelHoras.Text = e.NewValue.ToString();
         };
     }
@@ -20,9 +25,11 @@ public partial class AltaTareaTrabajo : ContentPage
         string descripcion=CampoDescripcion.Text;
         double numerohoras=step.Value;
         bool inserta = OperacionesDBContext.insertaTareas(nombre, descripcion, numerohoras);
-        if(inserta = true)
+        presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido tarea de trabajo " + nombre + " - " + dt));
+        presenciaContext.SaveChanges();
+        if (inserta == true)
         {
-            await DisplayAlert("Alert", "Se ha insertado una tarea.", "OK");
+            await DisplayAlert("Alert", "Se ha insertado tarea "+nombre+".", "OK");
         }
         else
         {
@@ -31,6 +38,6 @@ public partial class AltaTareaTrabajo : ContentPage
     }
 	private void IrAlMain(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
     }
 }

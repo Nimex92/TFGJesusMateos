@@ -6,10 +6,13 @@ namespace HolaMundoMAUI;
 public partial class AnadeTareasGrupoTrabajo : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public AnadeTareasGrupoTrabajo()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public AnadeTareasGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		SetPickers();
+		NombreUsuario = user;
 	}
 	private void SetPickers()
     {
@@ -37,7 +40,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 	}
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
     }
 
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
@@ -51,6 +54,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
         {
 			grupo.Tareas.Add(tarea);
 			await DisplayAlert("Alert", "Se ha añadido '" + tarea.NombreTarea + "' a grupo: "+grupo.Turno, "OK");
+			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.NombreTarea +" a grupo "+grupo.Turno+ " - " + dt));
 			presenciaContext.SaveChanges();
         }
         else

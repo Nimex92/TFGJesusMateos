@@ -51,7 +51,7 @@
                         WidthRequest="300"
                         BackgroundColor="White"
                         TextColor="Black"
-                        Completed="gaga"
+                        
                         />
                     <Entry x:Name="CampoRepiteContrasena"
                         Keyboard="Chat"
@@ -65,7 +65,7 @@
                         WidthRequest="300"
                         BackgroundColor="White"
                         TextColor="Black"
-                        Completed="gaga"
+                        
                         />
                     <HorizontalStackLayout
                         HorizontalOptions="Center"

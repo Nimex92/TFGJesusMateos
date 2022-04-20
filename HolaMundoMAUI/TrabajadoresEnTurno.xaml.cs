@@ -7,14 +7,17 @@ namespace HolaMundoMAUI;
 public partial class TrabajadoresEnTurno : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public TrabajadoresEnTurno()
+	string NombreUsuario;
+
+	public TrabajadoresEnTurno(string user)
 	{
 		InitializeComponent();
 		SetListView();
+		NombreUsuario = user;
 	}
-	private static void actualiza()
+	private void actualiza()
 	{
-		App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno());
+		App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(NombreUsuario));
 	}
 	public void SetListView()
 	{
@@ -23,13 +26,11 @@ public partial class TrabajadoresEnTurno : ContentPage
 	}
 	public void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	{
-		//Trabajador item = e.SelectedItem as Trabajador;
-		//tr = item;
+		
 	}
 
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
-		actualiza = false;
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
     }
 }

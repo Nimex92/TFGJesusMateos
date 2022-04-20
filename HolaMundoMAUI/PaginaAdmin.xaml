@@ -6,6 +6,30 @@
              BackgroundColor="White">
     <ScrollView>
     <StackLayout>
+        <HorizontalStackLayout
+            HorizontalOptions="End"
+            Margin="0,0,200,0">
+                <Image
+                    x:Name="User_png"
+                    Image.Source="user.png"
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    />
+                <Label
+                    x:Name="Label_NameUser"
+                    VerticalTextAlignment="Center"
+                    FontSize="14"
+                    />
+                <ImageButton
+                    x:Name="Logout_png"
+                    Source="logout.png"
+                    WidthRequest="25"
+                    HeightRequest="25"
+                    Clicked="Logout_png_Clicked"
+                    Margin="5,0,0,0"
+                />
+
+            </HorizontalStackLayout>
         <Label 
                 Text="Tech Talent &#10; Página de administracion"
                 TextColor="Black"

@@ -8,15 +8,17 @@ public partial class ModificarUsuario : ContentPage
 {
 	bool activado;
 	Usuarios us = new();
-	public ModificarUsuario()
+	string NombreUsuario;
+	public ModificarUsuario(string user)
 	{
 		InitializeComponent();
 		activado = false;
 		SetListView();
-    }
+		NombreUsuario = user;
+	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	public void SetListView()
     {

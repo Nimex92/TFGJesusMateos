@@ -10,10 +10,13 @@ public partial class ModificarTrabajador {
 	Trabajador tr = new();
 	Grupo_Trabajo gr = new();
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public ModificarTrabajador()
+	DateTime dt = DateTime.Now;
+	string NombreUsuario;
+	public ModificarTrabajador(string user)
 	{
 		InitializeComponent();
 		activado = false;
+		NombreUsuario = user;
 		SetListView();
 		//Recojo todos los Turnos de la tabla de MySql
 		var Turno = presenciaContext.Grupo_Trabajo;
@@ -27,7 +30,7 @@ public partial class ModificarTrabajador {
 	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	public void SetListView()
     {
@@ -88,16 +91,14 @@ public partial class ModificarTrabajador {
 		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == turno).FirstOrDefault();
 		int grupo = GrupoTrabajo.IdGrupo;
 		bool inserta = OperacionesDBContext.actualizaTrabajador(tr.numero_tarjeta,NombreTrabajador, grupo);
+		presenciaContext.Logs.Add(new Log("Modificar", NombreUsuario + " ha modificado grupo trabajo " + tr.nombre + " - " + dt));
+		presenciaContext.SaveChanges();
 		if (inserta == true)
 		{
-			LabelAvisos.Text = "Se han realizado los cambios";
-			LabelAvisos.TextColor = Colors.Green;
 			await DisplayAlert("Alert", "Los cambios se guardaron correctamente", "OK");
 		}
         else
         {
-			LabelAvisos.Text = "Error al guardar los cambios";
-			LabelAvisos.TextColor = Colors.Red;
 			await DisplayAlert("Alert", "Los cambios no se han podido aplicar", "OK");
 		}
     }

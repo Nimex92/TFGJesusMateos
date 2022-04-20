@@ -265,7 +265,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -2011,7 +2011,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -3743,7 +3743,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -5475,7 +5475,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -7207,7 +7207,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -8689,7 +8689,7 @@
         }
       }
     },
-    "net6.0-android31.0/iossimulator-x64": {
+    "net6.0-android31.0/ios-arm64": {
       "GoogleGson/2.8.8.2": {
         "type": "package",
         "compile": {
@@ -8939,7 +8939,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -10671,7 +10671,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -12406,7 +12406,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -14137,7 +14137,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -14494,7 +14494,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -14837,7 +14837,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -15180,7 +15180,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -15523,7 +15523,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -15634,7 +15634,7 @@
         }
       }
     },
-    "net6.0-ios15.4/iossimulator-x64": {
+    "net6.0-ios15.4/ios-arm64": {
       "Microsoft.EntityFrameworkCore/6.0.4": {
         "type": "package",
         "dependencies": {
@@ -15866,7 +15866,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -16209,7 +16209,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -16555,7 +16555,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -16915,7 +16915,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -17272,7 +17272,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -17615,7 +17615,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -17958,7 +17958,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -18301,7 +18301,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -18412,7 +18412,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/iossimulator-x64": {
+    "net6.0-maccatalyst15.4/ios-arm64": {
       "Microsoft.EntityFrameworkCore/6.0.4": {
         "type": "package",
         "dependencies": {
@@ -18644,7 +18644,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -18987,7 +18987,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -19333,7 +19333,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -19708,7 +19708,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -20094,7 +20094,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -20466,7 +20466,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -20838,7 +20838,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -21210,7 +21210,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -21335,7 +21335,7 @@
         }
       }
     },
-    "net6.0-windows10.0.19041/iossimulator-x64": {
+    "net6.0-windows10.0.19041/ios-arm64": {
       "Microsoft.EntityFrameworkCore/6.0.4": {
         "type": "package",
         "dependencies": {
@@ -21582,7 +21582,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -21954,7 +21954,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -22329,7 +22329,7 @@
           "build/Microsoft.Windows.SDK.BuildTools.targets": {}
         }
       },
-      "Microsoft.WindowsAppSDK/1.0.2": {
+      "Microsoft.WindowsAppSDK/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194"
@@ -23012,10 +23012,10 @@
         "schemas/10.0.22000.0/winrt/UapManifestSchema_v8.xsd"
       ]
     },
-    "Microsoft.WindowsAppSDK/1.0.2": {
-      "sha512": "1frlcyTPP8l+6GfslYXveEvkL9w0JuugSVUeKxmrZNS0Dg2uuNAczasuEqNd8M+nFFjlmAVMz9CsbQSFyb2Q4A==",
+    "Microsoft.WindowsAppSDK/1.0.3": {
+      "sha512": "lz0MF9OjrUaPZ11GOi1lu/GaoQrWVVojb2uZ4sly7FdkYtGeNZcKNVlhHU7fng9HQkprOLJgn4v2oAwaexV4Sw==",
       "type": "package",
-      "path": "microsoft.windowsappsdk/1.0.2",
+      "path": "microsoft.windowsappsdk/1.0.3",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -23431,7 +23431,7 @@
         "license.txt",
         "manifests/Microsoft.InteractiveExperiences.manifest",
         "manifests/Microsoft.WindowsAppSdk.Foundation.manifest",
-        "microsoft.windowsappsdk.1.0.2.nupkg.sha512",
+        "microsoft.windowsappsdk.1.0.3.nupkg.sha512",
         "microsoft.windowsappsdk.nuspec",
         "runtimes/win10-arm64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
         "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll",
@@ -25599,7 +25599,7 @@
       "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.300-rc.1.5355",
       "Microsoft.Maui.Extensions >= 6.0.300-rc.1.5355",
-      "Microsoft.WindowsAppSDK >= 1.0.2",
+      "Microsoft.WindowsAppSDK >= 1.0.3",
       "Persistencia >= 1.0.0"
     ],
     "net6.0-ios15.4": [
@@ -25607,7 +25607,7 @@
       "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.300-rc.1.5355",
       "Microsoft.Maui.Extensions >= 6.0.300-rc.1.5355",
-      "Microsoft.WindowsAppSDK >= 1.0.2",
+      "Microsoft.WindowsAppSDK >= 1.0.3",
       "Persistencia >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
@@ -25616,7 +25616,7 @@
       "Microsoft.Graphics.Win2D >= 1.0.1",
       "Microsoft.Maui.Dependencies >= 6.0.300-rc.1.5355",
       "Microsoft.Maui.Extensions >= 6.0.300-rc.1.5355",
-      "Microsoft.WindowsAppSDK >= 1.0.2",
+      "Microsoft.WindowsAppSDK >= 1.0.3",
       "Persistencia >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
@@ -25626,7 +25626,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.300-rc.1.5355",
       "Microsoft.Maui.Extensions >= 6.0.300-rc.1.5355",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
-      "Microsoft.WindowsAppSDK >= 1.0.2",
+      "Microsoft.WindowsAppSDK >= 1.0.3",
       "Persistencia >= 1.0.0"
     ]
   },
@@ -25735,7 +25735,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.3, )"
           }
         },
         "imports": [
@@ -25816,7 +25816,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.3, )"
           },
           "System.Runtime.InteropServices.NFloat.Internal": {
             "target": "Package",
@@ -25886,7 +25886,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.3, )"
           },
           "System.Runtime.InteropServices.NFloat.Internal": {
             "target": "Package",
@@ -25963,7 +25963,7 @@
           },
           "Microsoft.WindowsAppSDK": {
             "target": "Package",
-            "version": "[1.0.2, )"
+            "version": "[1.0.3, )"
           }
         },
         "imports": [
@@ -26043,7 +26043,7 @@
       "android-x86": {
         "#import": []
       },
-      "iossimulator-x64": {
+      "ios-arm64": {
         "#import": []
       },
       "maccatalyst-x64": {

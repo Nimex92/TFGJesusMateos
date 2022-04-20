@@ -7,10 +7,13 @@ public partial class BorraTareas : ContentPage
 {
 	string NombreTarea;
 	PresenciaContext presenciaContext = new PresenciaContext();
-	public BorraTareas()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public BorraTareas(string user)
 	{
 		InitializeComponent();
 		SetListView();
+		NombreUsuario = user;
 	}
 	public void SetListView()
 	{
@@ -27,12 +30,13 @@ public partial class BorraTareas : ContentPage
     {
 		var tarea = presenciaContext.Tareas.Where(x=>x.NombreTarea == NombreTarea).FirstOrDefault();
 		presenciaContext.Remove(tarea);
+		presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado tarea " + tarea.NombreTarea + " - " + dt));
 		presenciaContext.SaveChanges();
-		App.Current.MainPage = new NavigationPage(new BorraTareas());
+		App.Current.MainPage = new NavigationPage(new BorraTareas(NombreUsuario));
 	}
 	private void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 
 }

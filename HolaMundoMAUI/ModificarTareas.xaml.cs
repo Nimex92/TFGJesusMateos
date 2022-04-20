@@ -7,10 +7,13 @@ public partial class ModificarTareas : ContentPage
 {
 	PresenciaContext presenciaContext = new PresenciaContext();
 	string NombreTarea;
-	public ModificarTareas()
+	string NombreUsuario;
+	DateTime dt = DateTime.Now;
+	public ModificarTareas(string user)
 	{
 		InitializeComponent();
 		SetListView();
+		NombreUsuario = user;
 		step.ValueChanged += (sender, e) =>
 		{
 
@@ -44,11 +47,16 @@ public partial class ModificarTareas : ContentPage
 	}
 	public void VolverAlMain(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
 	public void GuardarCambios(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin());
+		var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == NombreTarea).FirstOrDefault();
+		tarea.NombreTarea = CampoNombre.Text;
+		tarea.Descripcion = CampoDescripcion.Text;
+		presenciaContext.Update(tarea);
+		presenciaContext.Logs.Add(new Log("Modificar", NombreUsuario + " ha modificado tarea " + CampoNombre.Text + " - " + dt));
+		presenciaContext.SaveChanges();
 	}
 
 }
