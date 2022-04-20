@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-04-20T14:04:53.357</Modified>
+      <Modified>2022-04-20T14:20:41.512</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-04-20T14:04:52.693</Modified>
+      <Modified>2022-04-20T14:20:39.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json">
       <PackagePath>HolaMundoMAUI.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll">
       <PackagePath>HolaMundoMAUI.dll</PackagePath>
-      <Modified>2022-04-20T14:04:50.944</Modified>
+      <Modified>2022-04-20T14:20:37.466</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\apphost.exe">
       <PackagePath>HolaMundoMAUI.exe</PackagePath>
-      <Modified>2022-04-20T14:04:50.967</Modified>
+      <Modified>2022-04-20T14:20:37.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1087,11 +1087,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json">
       <PackagePath>HolaMundoMAUI.deps.json</PackagePath>
-      <Modified>2022-04-20T14:04:53.184</Modified>
+      <Modified>2022-04-20T14:20:40.856</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf">
       <PackagePath>Platforms\Windows\App.xbf</PackagePath>
-      <Modified>2022-04-20T14:04:50.531</Modified>
+      <Modified>2022-04-20T14:20:37.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

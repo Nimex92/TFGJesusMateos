@@ -70,6 +70,7 @@ public partial class PaginaFichar : ContentPage
 		Entrada = DateTime.Today.AddHours(HorEnt).AddMinutes(MinEnt);
 		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
 		BotonIniciarTarea.IsVisible = false;
+		Label_NameUser.Text = username;
 	}
 
 	private void CompruebaFichajes(string user)
@@ -259,6 +260,9 @@ public partial class PaginaFichar : ContentPage
 			presenciaContext.SaveChanges();
 		}
 
-
-	} 
+	private void Logout_png_Clicked(object sender, EventArgs e)
+	{
+		App.Current.MainPage = new NavigationPage(new MainPage());
+	}
+}
 

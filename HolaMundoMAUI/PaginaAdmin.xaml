@@ -19,7 +19,7 @@
                     x:Name="Label_NameUser"
                     VerticalTextAlignment="Center"
                     FontSize="14"
-                    />
+                    FontAttributes="Bold"/>
                 <ImageButton
                     x:Name="Logout_png"
                     Source="logout.png"
@@ -46,10 +46,10 @@
             HeightRequest="2"
             HorizontalOptions="Center"
             Margin="0,10,0,10"/>
-        <StackLayout>
-            <HorizontalStackLayout
+            <StackLayout>
+                <HorizontalStackLayout
                 HorizontalOptions="Center">
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -58,7 +58,7 @@
                     Clicked="NuevoUsuario"
                     Text="      Registrar&#10; nuevo usuario"
                     x:Name="RegistrarNuevoUsuario"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -67,7 +67,7 @@
                     Text="Modificar&#10; usuario"
                     Clicked="ModificaUsuario"
                     x:Name="ModificarUsuario"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -76,10 +76,10 @@
                     Text="Eliminar&#10; usuario"
                     x:Name="EliminarUsuario"
                     Clicked="EliminaUsuario"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
                 HorizontalOptions="Center">
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -88,7 +88,7 @@
                     Clicked="NuevoTrabajador"
                     Text="        Registrar&#10; nuevo trabajador"
                     x:Name="RegistrarNuevoTrabajador"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -97,7 +97,7 @@
                      BackgroundColor="#083f5e"
                     Text="  Modificar&#10; trabajador"
                     x:Name="ModificarTrabajador"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -106,10 +106,10 @@
                     Text="    Eliminar&#10; trabajador"
                     x:Name="ElimineTrabajador"
                     Clicked="EliminarTrabajador"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
                 HorizontalOptions="Center">
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -118,7 +118,7 @@
                     Text=" Registra nuevo &#10;grupo de trabajo"
                     x:Name="RegistrarNuevoGrupoTrabajo"
                     Clicked="NuevoGrupoTrabajo"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -127,7 +127,7 @@
                     Text="       Modificar&#10; grupo de trabajo"
                     x:Name="ModificarGrupoTrabajo"
                     Clicked="ModificaGrupoTrabajo"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -136,10 +136,10 @@
                     Text="         Eliminar&#10; grupo de trabajo"
                     x:Name="EliminaGrupoTrabajo"
                     Clicked="EliminarGrupoTrabajador"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
                 HorizontalOptions="Center">
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -148,7 +148,7 @@
                     Text=" Registra nueva &#10;Tarea de trabajo"
                     x:Name="RegistrarNuevaTareaTrabajo"
                     Clicked="RegistrarNuevaTareaTrabajo_Clicked"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -157,7 +157,7 @@
                     Text="       Modificar&#10; Tarea de trabajo"
                     x:Name="ModificarTareaTrabajo"
                     Clicked="ModificarTareaTrabajo_Clicked"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -166,10 +166,10 @@
                     Text="         Eliminar&#10; Tarea de trabajo"
                     x:Name="EliminaTareaTrabajo"
                     Clicked="EliminaTareaTrabajo_Clicked"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
                 HorizontalOptions="Center">
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -179,7 +179,7 @@
                     x:Name="RegistrarNuevaZona"
                     Clicked="RegistrarNuevaZona_Clicked"
 />
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -188,7 +188,7 @@
                     Text="       Modificar&#10; Zona de trabajo"
                     x:Name="ModificarZona"
                     Clicked="ModificarZona_Clicked"/>
-                <Button
+                    <Button
                     WidthRequest="250"
                     HeightRequest="100"
                     FontSize="24"
@@ -197,7 +197,7 @@
                     Text="         Eliminar&#10; Zona de trabajo"
                     x:Name="EliminaZona"
                     Clicked="EliminaZona_Clicked"/>
-            </HorizontalStackLayout>
+                </HorizontalStackLayout>
                 <HorizontalStackLayout
                 HorizontalOptions="Center">
                     <Button
@@ -232,16 +232,7 @@
                     />
                 </HorizontalStackLayout>
             </StackLayout>
-        <Button
-                Text="Volver"
-                Margin="0,15,0,0"
-                BackgroundColor="Black"
-                x:Name="BotonCerrarSesionAdmin"
-                Clicked="VolverAlMainAdmin"
-                WidthRequest="300"
-                HeightRequest="35"
-                HorizontalOptions="Center"/>
-    </StackLayout>
+        </StackLayout>
 
 
     </ScrollView>
