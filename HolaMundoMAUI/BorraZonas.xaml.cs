@@ -32,7 +32,7 @@ public partial class BorraZonas : ContentPage
 	private async void BotonBorrar_Clicked(object sender, EventArgs e)
     {
 		if(zone is not null) { 
-		bool answer = await DisplayAlert("Question?", "¿Desea Borrar la zona "+zone.Nombre+"?", "Si", "No");
+		bool answer = await DisplayAlert("Question?", "¿Desea Borrar la zona \""+zone.Nombre+"\"?", "Si", "No");
         if (answer==true)
         {
 			await DisplayAlert("Alert", "Se ha borrado correctamente " + zone.Nombre, "OK");

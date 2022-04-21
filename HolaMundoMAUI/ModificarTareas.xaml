@@ -40,7 +40,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label 
                                        Text="Tarea: " 
-                                       Margin="5,0,0,0" 
+                                       Margin="-600,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
@@ -50,11 +50,11 @@
                                        WidthRequest="150"
                                        VerticalOptions="Center"
                                        Text="{Binding NombreTarea}" 
-                                       Margin="60,0,0,0" 
+                                       Margin="-450,0,0,0" 
                                        FontSize="16"/>
                                 <Label  
                                        Text="Descripcion: " 
-                                       Margin="150,0,0,0" 
+                                       Margin="-190,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="170"
@@ -63,19 +63,19 @@
                                        WidthRequest="150"
                                        VerticalOptions="Center"
                                        Text="{Binding Descripcion}" 
-                                       Margin="250,0,0,0" 
+                                       Margin="-10,0,0,0" 
                                        FontSize="16"/>
                                 <Label  
                                        Text="Horas estimadas: "
                                        VerticalOptions="Center"
-                                       Margin="400,0,0,0" 
+                                       Margin="300,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="170"/>
                                 <Label 
                                        WidthRequest="150"
                                        Text="{Binding TiempoEstimado}" 
-                                       Margin="540,0,0,0" 
+                                       Margin="550,0,0,0" 
                                        FontSize="16"
                                        VerticalOptions="Center"/>
 

@@ -32,7 +32,7 @@ public partial class EliminaUsuario : ContentPage
 		Usuarios item = e.SelectedItem as Usuarios;
 		us = item;
 	}
-	public async void BorrarUsuario(object sender, EventArgs e)
+	public async void BotonBorrar_Clicked(object sender, EventArgs e)
     {
 		bool answer = await DisplayAlert("Question?", "¿Estas seguro?", "Si", "No");
 		var IdUser = us.IdUser;

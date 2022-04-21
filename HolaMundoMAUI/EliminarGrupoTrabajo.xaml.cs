@@ -34,12 +34,14 @@ public partial class EliminarGrupoTrabajo
 		gr = item;
 
 	}
-	public async void BorrarGrupoTrabajo(object sender, EventArgs e)
+	public async void BotonBorrar_Clicked(object sender, EventArgs e)
     {
+		bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \""+gr.Turno+"\"?", "Si", "No");
+		if(answer == true) { 
 		OperacionesDBContext.borraGrupoTrabajo(gr.IdGrupo);
 		presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado grupo de trabajo " + gr.Turno + " - " + dt));
 		presenciaContext.SaveChanges();
-		await Task.Delay(1000);
 		App.Current.MainPage = new NavigationPage(new EliminarGrupoTrabajo(NombreUsuario));
+		}
 	}
 }

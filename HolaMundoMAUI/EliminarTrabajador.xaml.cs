@@ -32,12 +32,13 @@ public partial class EliminarTrabajador
 		Trabajador item = e.SelectedItem as Trabajador;
 		tr = item;
 	}
-	public async void BorrarTrabajador(object sender, EventArgs e)
+	public async void BotonBorrar_Clicked(object sender, EventArgs e)
 	{
-		if(tr is not null) { 
+		bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \""+tr.nombre+"\"?", "Si", "No");
+		if (tr is not null && answer==true) { 
 			var NumeroTarjeta = tr.numero_tarjeta;
 			OperacionesDBContext.borraTrabajador(NumeroTarjeta);
-			presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado trabajador " + tr.nombre + " - " + dt));
+			presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado trabajador \"" + tr.nombre + "\" - " + dt));
 			presenciaContext.SaveChanges();
 			await Task.Delay(1000);
 			App.Current.MainPage = new NavigationPage(new EliminarTrabajador(NombreUsuario));

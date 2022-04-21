@@ -48,6 +48,7 @@ public partial class AltaUsuarios : ContentPage
 				{
 					//Activo label de aceptacion, se ha insertado.
 					await DisplayAlert("Alert", "Usuario "+Username+" insertado correctamente.", "OK");
+					App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,1));
 				}
                 else
                 {
@@ -65,6 +66,6 @@ public partial class AltaUsuarios : ContentPage
 
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,1));
 	}
 }

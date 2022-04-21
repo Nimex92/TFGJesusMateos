@@ -26,9 +26,11 @@ public partial class BorraTareas : ContentPage
 		NombreTarea = item.NombreTarea;
 	}
 
-	private void BotonEditar_Clicked(object sender, EventArgs e)
+	private async void BotonBorrar_Clicked(object sender, EventArgs e)
     {
+		
 		var tarea = presenciaContext.Tareas.Where(x=>x.NombreTarea == NombreTarea).FirstOrDefault();
+		bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar la tarea " + tarea.NombreTarea + "\"?", "Si", "No");
 		presenciaContext.Remove(tarea);
 		presenciaContext.Logs.Add(new Log("Eliminar", NombreUsuario + " ha eliminado tarea " + tarea.NombreTarea + " - " + dt));
 		presenciaContext.SaveChanges();

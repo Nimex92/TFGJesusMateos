@@ -22,7 +22,7 @@
         <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
             <ListView 
                 x:Name="ListViewUsuarios" 
-                WidthRequest="620"  
+                WidthRequest="700"  
                 HorizontalOptions="Center" 
                 ItemSelected="OnItemSelected"
                 SeparatorColor="Black">
@@ -40,7 +40,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label 
                                        Text="Nombre:" 
-                                       Margin="5,0,0,0" 
+                                       Margin="-310,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
@@ -48,37 +48,37 @@
                                 <Label 
                                        WidthRequest="150"
                                        Text="{Binding nombre}" 
-                                       Margin="80,0,0,0" 
+                                       Margin="-120,0,0,0" 
                                        FontSize="16"/>
                                 <Label  
                                        Text="Turno:" 
-                                       Margin="200,0,0,0" 
+                                       Margin="0,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="100"/>
                                 <Label 
                                        Text="{Binding grupo.Turno}" 
-                                       Margin="260,0,0,0" 
+                                       Margin="110,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"/>
                                 <Label  
                                        Text="Usuario:" 
-                                       Margin="340,0,0,0" 
+                                       Margin="240,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="100"/>
                                 <Label 
                                        Text="{Binding usuario.Username}" 
-                                       Margin="410,0,0,0" 
+                                       Margin="380,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"/>
                                 <Button
                                        Text="Borrar"
-                                       Clicked="BorrarTrabajador"
+                                       Clicked="BotonBorrar_Clicked"
                                        VerticalOptions="Center"
                                        WidthRequest="100"
                                        HeightRequest="35"
-                                       Margin="520,0,0,0"
+                                       Margin="590,0,0,0"
                                        x:Name="BotonEditar"
                                     />
 

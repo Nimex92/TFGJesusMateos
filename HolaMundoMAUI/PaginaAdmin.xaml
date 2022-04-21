@@ -4,236 +4,451 @@
              x:Class="HolaMundoMAUI.PaginaAdmin"
              Title="PaginaAdmin"
              BackgroundColor="White">
-    <ScrollView>
-    <StackLayout>
-        <HorizontalStackLayout
-            HorizontalOptions="End"
-            Margin="0,0,200,0">
-                <Image
-                    x:Name="User_png"
-                    Image.Source="user.png"
-                    WidthRequest="45"
-                    HeightRequest="45"
-                    />
-                <Label
+    <FlexLayout BackgroundColor="White">
+        <StackLayout x:Name="MenuLateral" 
+                     WidthRequest="130" 
+                     HeightRequest="550" 
+                     BackgroundColor="#b9b6bf"
+                     Margin="0,-32,0,0"
+                     HorizontalOptions="StartAndExpand">
+            
+            <Label
                     x:Name="Label_NameUser"
                     VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
                     FontSize="14"
-                    FontAttributes="Bold"/>
-                <ImageButton
-                    x:Name="Logout_png"
-                    Source="logout.png"
-                    WidthRequest="25"
-                    HeightRequest="25"
-                    Clicked="Logout_png_Clicked"
-                    Margin="5,0,0,0"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,0"/>
+            <ImageButton
+                x:Name="BtnUsuarios"
+                Source="user.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,10,0,0"
+                Clicked="BtnUsuarios_Clicked"/>
+            <Label
+                Text="Usuarios"
+                FontAttributes="Bold"
+                FontSize="12"
+                Margin="35,-10,0,0"
                 />
-
-            </HorizontalStackLayout>
-        <Label 
+            <ImageButton
+                x:Name="BtnTrabajadores"
+                Source="trabajador.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,15,0,0"/>
+            <Label
+                Text="Trabajadores"
+                FontAttributes="Bold"
+                FontSize="12"
+                Margin="25,0,0,0"/>
+            <ImageButton
+                x:Name="BtnGruposTrabajo"
+                Source="grupos.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,15,0,0"/>
+            <Label
+                Text="Grupos de trabajo"
+                FontAttributes="Bold"
+                FontSize="12"
+                Margin="10,-10,0,0"/>
+            <ImageButton
+                x:Name="BtnZonas"
+                Source="zonas.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,15,0,0"/>
+            <Label
+                Text="Zonas de trabajo"
+                FontAttributes="Bold"
+                FontSize="12"
+                Margin="10 ,0,0,0"/>
+            <ImageButton
+                x:Name="BtnTareas"
+                Source="tareas.png"
+                WidthRequest="70"
+                HeightRequest="70"
+                Margin="0,15,0,0"/>
+            <Label
+                Text="Tareas"
+                FontAttributes="Bold"
+                FontSize="12"
+                Margin="35 ,0,0,0"/>
+        </StackLayout >
+        <StackLayout x:Name="ContenedorVentana">
+            <StackLayout x:Name="ListViewUsers" 
+                         IsVisible="False"
+                         >
+                <Label x:Name="LabelTitulo"
                 Text="Tech Talent &#10; Página de administracion"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
                 SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="20"
-                HorizontalOptions="Center"
-                x:Name="TituloEmpresa"/>
+                HorizontalOptions="Center"/>
+                <StackLayout x:Name="BarraDivisoraTituloArriba"
+                            BackgroundColor="Black"
+                            WidthRequest="500"
+                            HeightRequest="2"
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,10"/>
+                <ListView 
+                x:Name="ListViewUsuarios" 
+                WidthRequest="520"  
+                HeightRequest="300"
+                ItemSelected="OnItemSelectedUsuarios">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                       Text="Usuario:" 
+                                       Margin="-325,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"
+                                    />
+                                    <Label 
+                                       WidthRequest="100"
+                                       Text="{Binding Username}" 
+                                       Margin="-180,0,0,0" 
+                                       FontSize="16"
+                                       VerticalOptions="Center"/>
+                                    <Label  
+                                       Text="Contraseña:" 
+                                       Margin="50,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"/>
+                                    <Label 
+                                       Text="{Binding Password}" 
+                                       Margin="240,0,0,0" 
+                                       FontSize="16"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"/>
+                                    <ImageButton
+                                       Source="editar.png"
+                                       
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="390,0,0,0"
+                                       x:Name="BotonEditar"
+                                        Clicked="BotonEditarUsuarios_Clicked"/>
+                                    <ImageButton
+                                       Source="borrar.png"
+                                       Clicked="BotonBorrarUsuarios_Clicked"
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="460,0,0,0"
+                                       x:Name="BotonBorrar"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout x:Name="BarraDivisoraTituloAbajo"
+                    BackgroundColor="Black"
+                    WidthRequest="500"
+                    HeightRequest="2"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,10"/>
+                <StackLayout x:Name="AnadirUsuarios"
+                             WidthRequest="150"
+                             HeightRequest="40">
+                    <ImageButton x:Name="AddUsuarios"
+                                 Source="adduser.png"
+                                 HorizontalOptions="Start"
+                                 Clicked="NuevoUsuario"/>
+                    <Label Text="Añadir usuario"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="35,-25,0,0"
+                           FontAttributes="Bold"/>
 
-        <StackLayout
-            BackgroundColor="Black"
-            WidthRequest="300"
-            HeightRequest="2"
-            HorizontalOptions="Center"
-            Margin="0,10,0,10"/>
-            <StackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                    BackgroundColor="#007032"
-                    Clicked="NuevoUsuario"
-                    Text="      Registrar&#10; nuevo usuario"
-                    x:Name="RegistrarNuevoUsuario"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#083f5e"
-                    Text="Modificar&#10; usuario"
-                    Clicked="ModificaUsuario"
-                    x:Name="ModificarUsuario"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#5c1616"
-                    Text="Eliminar&#10; usuario"
-                    x:Name="EliminarUsuario"
-                    Clicked="EliminaUsuario"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                     BackgroundColor="#007032"
-                    FontAttributes="Bold"
-                    Clicked="NuevoTrabajador"
-                    Text="        Registrar&#10; nuevo trabajador"
-                    x:Name="RegistrarNuevoTrabajador"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                    Clicked="ModificaTrabajador"
-                     BackgroundColor="#083f5e"
-                    Text="  Modificar&#10; trabajador"
-                    x:Name="ModificarTrabajador"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#5c1616"
-                    Text="    Eliminar&#10; trabajador"
-                    x:Name="ElimineTrabajador"
-                    Clicked="EliminarTrabajador"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#007032"
-                    Text=" Registra nuevo &#10;grupo de trabajo"
-                    x:Name="RegistrarNuevoGrupoTrabajo"
-                    Clicked="NuevoGrupoTrabajo"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#083f5e"
-                    Text="       Modificar&#10; grupo de trabajo"
-                    x:Name="ModificarGrupoTrabajo"
-                    Clicked="ModificaGrupoTrabajo"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#5c1616"
-                    Text="         Eliminar&#10; grupo de trabajo"
-                    x:Name="EliminaGrupoTrabajo"
-                    Clicked="EliminarGrupoTrabajador"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#007032"
-                    Text=" Registra nueva &#10;Tarea de trabajo"
-                    x:Name="RegistrarNuevaTareaTrabajo"
-                    Clicked="RegistrarNuevaTareaTrabajo_Clicked"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#083f5e"
-                    Text="       Modificar&#10; Tarea de trabajo"
-                    x:Name="ModificarTareaTrabajo"
-                    Clicked="ModificarTareaTrabajo_Clicked"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#5c1616"
-                    Text="         Eliminar&#10; Tarea de trabajo"
-                    x:Name="EliminaTareaTrabajo"
-                    Clicked="EliminaTareaTrabajo_Clicked"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#007032"
-                    Text=" Registra nueva &#10;Zona de trabajo"
-                    x:Name="RegistrarNuevaZona"
-                    Clicked="RegistrarNuevaZona_Clicked"
-/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#083f5e"
-                    Text="       Modificar&#10; Zona de trabajo"
-                    x:Name="ModificarZona"
-                    Clicked="ModificarZona_Clicked"/>
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#5c1616"
-                    Text="         Eliminar&#10; Zona de trabajo"
-                    x:Name="EliminaZona"
-                    Clicked="EliminaZona_Clicked"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center">
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#462f4f"
-                    Text="    Añadir tareas&#10;a grupo de trabajo"
-                    x:Name="AnadeTareasGrupo"
-                    Clicked="AnadeTareasGrupo_Clicked"
-                    />
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                     BackgroundColor="#462f4f"
-                    Text="      Añadir zonas&#10;a grupo de trabajo"
-                    x:Name="AnadirZonaGrupo"
-                    Clicked="AnadirZonaGrupo_Clicked"
-                    />
-                    <Button
-                    WidthRequest="250"
-                    HeightRequest="100"
-                    FontSize="24"
-                    FontAttributes="Bold"
-                    Text="Trabajadores&#10;   En turno" 
-                    BackgroundColor="#462f4f"
-                    x:Name="BotonSinNada"
-                    Clicked="BotonSinNada_Clicked"
-                    />
-                </HorizontalStackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="GrupoDeBotones">
+                <StackLayout x:Name="GrupoBotonesPrincipal" HorizontalOptions="Center" Margin="25,0,0,0" IsEnabled="False" IsVisible="False">
+                    <HorizontalStackLayout>
+                        <Button
+                        x:Name="BtnAñadir"
+                        Text="Añadir"
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        BackgroundColor="#787774"
+                        Clicked="BtnAñadir_Clicked"/>
+                        <Button
+                        x:Name="BtnModificar"
+                        Text="Modificar"
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        BackgroundColor="#787774"
+                        Clicked="BtnModificar_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        x:Name="BtnEliminar"
+                        Text="Eliminar"
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        BackgroundColor="#787774"
+                        Clicked="BtnEliminar_Clicked"/>
+                        <Button
+                        x:Name="BtnAlterno"
+                        Text="Mas Opciones"
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        BackgroundColor="#787774"
+                        Clicked="BtnAlterno_Clicked"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <StackLayout x:Name="GrupoAnadir" IsEnabled="False" IsVisible="False" Margin="25,0,0,0" HorizontalOptions="Center">
+                    <HorizontalStackLayout >
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        BackgroundColor="#007032"
+                        Clicked="NuevoUsuario"
+                        Text="      Registrar&#10; nuevo usuario"
+                        x:Name="RegistrarNuevoUsuario"/>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                         BackgroundColor="#007032"
+                        FontAttributes="Bold"
+                        Clicked="NuevoTrabajador"
+                        Text="        Registrar&#10; nuevo trabajador"
+                        x:Name="RegistrarNuevoTrabajador"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#007032"
+                        Text=" Registra nuevo &#10;grupo de trabajo"
+                        x:Name="RegistrarNuevoGrupoTrabajo"
+                        Clicked="NuevoGrupoTrabajo"/>
+
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#007032"
+                        Text=" Registra nueva &#10;Tarea de trabajo"
+                        x:Name="RegistrarNuevaTareaTrabajo"
+                        Clicked="RegistrarNuevaTareaTrabajo_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                            WidthRequest="250"
+                            HeightRequest="100"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                             BackgroundColor="#007032"
+                            Text=" Registra nueva &#10;Zona de trabajo"
+                            x:Name="RegistrarNuevaZona"
+                            Clicked="RegistrarNuevaZona_Clicked"/>
+                        <Button
+                            WidthRequest="250"
+                            HeightRequest="100"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            BackgroundColor="#787774"
+                            Text=" Volver"
+                            Clicked="VolverGrupoBotonesPrincipales_Clicked"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <StackLayout x:Name="GrupoModificar" IsEnabled="False" IsVisible="False" Margin="25,0,0,0" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#083f5e"
+                        Text="Modificar&#10; usuario"
+                        Clicked="ModificaUsuario"
+                        x:Name="ModificarUsuario"/>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        Clicked="ModificaTrabajador"
+                         BackgroundColor="#083f5e"
+                        Text="  Modificar&#10; trabajador"
+                        x:Name="ModificarTrabajador"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#083f5e"
+                        Text="       Modificar&#10; grupo de trabajo"
+                        x:Name="ModificarGrupoTrabajo"
+                        Clicked="ModificaGrupoTrabajo"/>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#083f5e"
+                        Text="       Modificar&#10; Tarea de trabajo"
+                        x:Name="ModificarTareaTrabajo"
+                        Clicked="ModificarTareaTrabajo_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#083f5e"
+                        Text="       Modificar&#10; Zona de trabajo"
+                        x:Name="ModificarZona"
+                        Clicked="ModificarZona_Clicked"/>
+                        <Button
+                            WidthRequest="250"
+                            HeightRequest="100"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            BackgroundColor="#787774"
+                            Text=" Volver"
+                            Clicked="VolverGrupoBotonesPrincipales_Clicked"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <StackLayout x:Name="GrupoEliminar" IsEnabled="False" IsVisible="False" Margin="25,0,0,0" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#5c1616"
+                        Text="Eliminar&#10; usuario"
+                        x:Name="EliminarUsuario"
+                        Clicked="EliminaUsuario"/>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#5c1616"
+                        Text="    Eliminar&#10; trabajador"
+                        x:Name="ElimineTrabajador"
+                        Clicked="EliminarTrabajador"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#5c1616"
+                        Text="         Eliminar&#10; grupo de trabajo"
+                        x:Name="EliminaGrupoTrabajo"
+                        Clicked="EliminarGrupoTrabajador"/>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#5c1616"
+                        Text="         Eliminar&#10; Tarea de trabajo"
+                        x:Name="EliminaTareaTrabajo"
+                        Clicked="EliminaTareaTrabajo_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#5c1616"
+                        Text="         Eliminar&#10; Zona de trabajo"
+                        x:Name="EliminaZona"
+                        Clicked="EliminaZona_Clicked"/>
+                        <Button
+                            WidthRequest="250"
+                            HeightRequest="100"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            BackgroundColor="#787774"
+                            Text=" Volver"
+                            Clicked="VolverGrupoBotonesPrincipales_Clicked"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <StackLayout x:Name="GrupoAlterno" IsEnabled="False" IsVisible="False" Margin="25,0,0,0" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#462f4f"
+                        Text="    Añadir tareas&#10;a grupo de trabajo"
+                        x:Name="AnadeTareasGrupo"
+                        Clicked="AnadeTareasGrupo_Clicked"
+                        />
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                         BackgroundColor="#462f4f"
+                        Text="      Añadir zonas&#10;a grupo de trabajo"
+                        x:Name="AnadirZonaGrupo"
+                        Clicked="AnadirZonaGrupo_Clicked"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Button
+                        WidthRequest="250"
+                        HeightRequest="100"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        Text="Trabajadores&#10;   En turno" 
+                        BackgroundColor="#462f4f"
+                        x:Name="BotonSinNada"
+                        Clicked="BotonSinNada_Clicked"
+                        />
+                        <Button
+                            WidthRequest="250"
+                            HeightRequest="100"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            BackgroundColor="#787774"
+                            Text=" Volver"
+                            Clicked="VolverGrupoBotonesPrincipales_Clicked"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
-
-
-    </ScrollView>
+    </FlexLayout>
 </ContentPage>

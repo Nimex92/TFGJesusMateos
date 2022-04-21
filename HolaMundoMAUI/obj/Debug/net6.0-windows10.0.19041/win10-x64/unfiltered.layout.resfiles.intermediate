@@ -1,4 +1,9 @@
 OpenSans-Regular.ttf
+adduser.scale-100.png
+adduser.scale-125.png
+adduser.scale-150.png
+adduser.scale-200.png
+adduser.scale-400.png
 appiconLargeTile.scale-100.png
 appiconLargeTile.scale-125.png
 appiconLargeTile.scale-150.png
@@ -29,6 +34,11 @@ appiconWideTile.scale-125.png
 appiconWideTile.scale-150.png
 appiconWideTile.scale-200.png
 appiconWideTile.scale-400.png
+borrar.scale-100.png
+borrar.scale-125.png
+borrar.scale-150.png
+borrar.scale-200.png
+borrar.scale-400.png
 dotnet_bot.scale-100.png
 dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
@@ -39,6 +49,16 @@ editar.scale-125.png
 editar.scale-150.png
 editar.scale-200.png
 editar.scale-400.png
+group.scale-100.png
+group.scale-125.png
+group.scale-150.png
+group.scale-200.png
+group.scale-400.png
+grupos.scale-100.png
+grupos.scale-125.png
+grupos.scale-150.png
+grupos.scale-200.png
+grupos.scale-400.png
 logout .scale-100.png
 logout .scale-125.png
 logout .scale-150.png
@@ -49,11 +69,36 @@ logout.scale-125.png
 logout.scale-150.png
 logout.scale-200.png
 logout.scale-400.png
+tareas.scale-100.png
+tareas.scale-125.png
+tareas.scale-150.png
+tareas.scale-200.png
+tareas.scale-400.png
+trabajador.scale-100.png
+trabajador.scale-125.png
+trabajador.scale-150.png
+trabajador.scale-200.png
+trabajador.scale-400.png
 user.scale-100.png
 user.scale-125.png
 user.scale-150.png
 user.scale-200.png
 user.scale-400.png
+usuario.scale-100.png
+usuario.scale-125.png
+usuario.scale-150.png
+usuario.scale-200.png
+usuario.scale-400.png
+worker.scale-100.png
+worker.scale-125.png
+worker.scale-150.png
+worker.scale-200.png
+worker.scale-400.png
+zonas.scale-100.png
+zonas.scale-125.png
+zonas.scale-150.png
+zonas.scale-200.png
+zonas.scale-400.png
 appiconfgSplashScreen.scale-100.png
 appiconfgSplashScreen.scale-125.png
 appiconfgSplashScreen.scale-150.png

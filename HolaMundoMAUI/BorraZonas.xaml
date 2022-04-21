@@ -40,24 +40,26 @@
                                 </Grid.ColumnDefinitions>
                                 <Label 
                                        Text="Zona: " 
-                                       Margin="205,0,0,0" 
+                                       Margin="105,0,0,0" 
                                        FontSize="16"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
-                                       VerticalOptions="Center"/>
+                                       VerticalOptions="Center"
+                                    />
                                 <Label 
                                        WidthRequest="150"
                                        VerticalOptions="Center"
                                        Text="{Binding Nombre}" 
-                                       Margin="260,0,0,0" 
+                                       Margin="250,0,0,0" 
                                        FontSize="16"/>
+
                                 <Button
                                        Text="Borrar"
                                        Clicked="BotonBorrar_Clicked"
                                        WidthRequest="100"
                                        HeightRequest="35"
                                        Margin="400,0,0,0"
-                                       x:Name="BotonBorrar"
+                                       x:Name="BotonEditar"
                                        VerticalOptions="Center"
                                     />
                             </Grid>
