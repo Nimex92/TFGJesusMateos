@@ -1,5 +1,6 @@
 using Persistencia;
 using Bibliotec;
+using Microsoft.EntityFrameworkCore;
 
 namespace HolaMundoMAUI;
 
@@ -9,20 +10,36 @@ public partial class PaginaAdmin : ContentPage
     PresenciaContext presenciaContext = new PresenciaContext();
     DateTime dt = DateTime.Now;
     Usuarios us;
-    Boolean UsActivo;
+    Trabajador tr;
+    Grupo_Trabajo gr;
+    Zonas zn;
+    Boolean UsActivo,TrActivo,GrActivo,ZnActivo;
     public PaginaAdmin(string nombreUsuario)
     {
         UsActivo = false;
+        TrActivo = false;
+        GrActivo = false;
+        ZnActivo = false;
         InitializeComponent();
         SetListViewUsuarios();
+        SetListViewTrabajadores();
+        SetListViewGruposTrabajo();
+        SetListViewZonas();
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@, " + Environment.NewLine + nombreUsuario;
+        
     }
     public PaginaAdmin(string nombreUsuario,int interfaz)
     {
         UsActivo = false;
+        TrActivo = false;
+        GrActivo = false;
+        ZnActivo = false;
         InitializeComponent();
         SetListViewUsuarios();
+        SetListViewTrabajadores();
+        SetListViewGruposTrabajo();
+        SetListViewZonas();
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@,"+ Environment.NewLine +""+ nombreUsuario;
         switch (interfaz)
@@ -31,7 +48,28 @@ public partial class PaginaAdmin : ContentPage
                 ListViewUsers.IsVisible = true;
                 ListViewUsers.IsEnabled = true;
                 UsActivo = true;
-                LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "Página de administracion";
+                LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestíon de usuarios";
+                break;
+            case 2:
+                ListViewWorkers.IsVisible = true;
+                ListViewWorkers.IsEnabled = true;
+                TrActivo = true;
+                LabelTitulo2.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
+                break;
+            case 3:
+                ListViewGroups.IsVisible = true;
+                ListViewGroups.IsEnabled = true;
+                GrActivo = true;
+                LabelTitulo3.Text = "Tech Talent" + Environment.NewLine + "gestión de grupos de trabajo";
+                break;
+            case 4:
+                ListViewZones.IsVisible = true;
+                ListViewZones.IsEnabled = true;
+                ZnActivo = true;
+                LabelTitulo4.Text = "Tech Talent" + Environment.NewLine + "gestión de Zonas de trabajo";
+                break;
+            case 5:
+
                 break;
         }
     }
@@ -43,7 +81,7 @@ public partial class PaginaAdmin : ContentPage
     }
     public void NuevoTrabajador(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(nombreUsuario));
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(nombreUsuario,0));
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Registrar trabajador' - " + dt));
         presenciaContext.SaveChanges();
     }
@@ -151,12 +189,10 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt));
         presenciaContext.SaveChanges();
     }
-
     private void Logout_png_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new MainPage());
     }
-
     private void BtnAñadir_Clicked(object sender, EventArgs e)
     {
         GrupoBotonesPrincipal.IsVisible = false;
@@ -227,35 +263,200 @@ public partial class PaginaAdmin : ContentPage
         PresenciaContext presenciaContext = new PresenciaContext();
         var users = presenciaContext.Usuarios.ToList();
         ListViewUsuarios.ItemsSource = users;
+        ListViewUsuarios.SelectedItem = users[0];
+    }
+    public void SetListViewGruposTrabajo()
+    {
+        PresenciaContext presenciaContext = new PresenciaContext();
+        var grupos = presenciaContext.Grupo_Trabajo.ToList();
+        ListViewGrupos.ItemsSource = grupos;
+        ListViewGrupos.SelectedItem = grupos[0];
+    }
+    public void SetListViewTrabajadores()
+    {
+        PresenciaContext presenciaContext = new PresenciaContext();
+        var workers = presenciaContext.Trabajador.Include(x => x.grupo).Include(x => x.usuario).ToList();
+        ListViewTrabajadores.ItemsSource = workers;
+        ListViewTrabajadores.SelectedItem = workers[0];
+    }
+    public void SetListViewZonas()
+    {
+        PresenciaContext presenciaContext = new PresenciaContext();
+        var zones = presenciaContext.Zonas.ToList();
+        ListViewZonas.ItemsSource = zones;
+        ListViewZonas.SelectedItem = zones[0];
     }
     public void OnItemSelectedUsuarios(object sender, SelectedItemChangedEventArgs e)
     {
         Usuarios item = e.SelectedItem as Usuarios;
         us = item;
     }
+    public void OnItemSelectedTrabajadores(object sender, SelectedItemChangedEventArgs e)
+    {
+        Trabajador item = e.SelectedItem as Trabajador;
+        tr = item;
+    }
+    public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
+    {
+        Grupo_Trabajo item = e.SelectedItem as Grupo_Trabajo;
+        gr = item;
+    }
+    public void OnItemSelectedZonas(object sender, SelectedItemChangedEventArgs e)
+    {
+        Zonas item = e.SelectedItem as Zonas;
+        zn = item;
+    }
     private void BtnUsuarios_Clicked(object sender, EventArgs e)
     {
         if (UsActivo == false)
         {
             ListViewUsers.IsVisible = true;
-            
-            UsActivo = true;
-            LabelTitulo.Text="Tech Talent"+ Environment.NewLine+"Página de administracion";
+            ListViewUsers.IsEnabled = true;
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
 
+            UsActivo = true;
+            TrActivo = false;
+            GrActivo = false;
+            ZnActivo = false;
+            LabelTitulo.Text="Tech Talent"+ Environment.NewLine+ "gestión de usuarios";
         }
         else
         {
             ListViewUsers.IsVisible = false;
-            
+            ListViewUsers.IsEnabled = false;
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            UsActivo = false;
+            TrActivo = false;
+            GrActivo = false;
+            ZnActivo = false;
+            LabelTitulo.Text = "";
+        }
+    }
+    private void BtnTrabajadores_Clicked(object sender, EventArgs e)
+    {
+        if (TrActivo == false)
+        {
+            ListViewWorkers.IsVisible = true;
+            ListViewWorkers.IsEnabled = true;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+
+            TrActivo = true;
+            UsActivo = false;
+            GrActivo = false;
+            ZnActivo = false;
+            LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
+        }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+
+            TrActivo = false;
+            UsActivo = false;
+            GrActivo = false;
+            ZnActivo = false;
+            LabelTitulo.Text = "";
+        }
+    }
+    private void BtnGruposTrabajo_Clicked(object sender, EventArgs e)
+    {
+        if (GrActivo == false)
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = true;
+            ListViewGroups.IsEnabled = true;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+
+            GrActivo = true;
+            UsActivo = false;
+            TrActivo = false;
+            LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
+        }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+
+            GrActivo = false;
+            TrActivo = false;
             UsActivo = false;
             LabelTitulo.Text = "";
         }
     }
+    private void BtnZonas_Clicked(object sender, EventArgs e)
+    {
+        if (ZnActivo == false)
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = true;
+            ListViewZones.IsEnabled = true;
 
+            ZnActivo = true;
+            GrActivo = false;
+            UsActivo = false;
+            TrActivo = false;
+            
+            LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de zonas de trabajo";
+        }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            UsActivo = false;
+
+            LabelTitulo.Text = "";
+        }
+    }
     private async void BotonBorrarUsuarios_Clicked(object sender, EventArgs e)
     {
-        bool answer = await DisplayAlert("Question?", "¿Estas seguro?", "Si", "No");
-        var IdUser = us.IdUser; 
+        bool answer = await DisplayAlert("Question?", "¿Estas seguro de eliminar el trabajador \""+nombreUsuario+"\"?", "Si", "No");
+        var IdUser = us.IdUser;
         
         
         if (answer == true)
@@ -273,10 +474,81 @@ public partial class PaginaAdmin : ContentPage
             }
         }
     }
-
     private void BotonEditarUsuarios_Clicked(object sender, EventArgs e)
     {
+        App.Current.MainPage = new NavigationPage(new AltaUsuarios(us.Username,1));
+    }
+    private async void BotonBorrarTrabajadores_Clicked(object sender, EventArgs e)
+    {
+        bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + tr.nombre + "\"?", "Si", "No");
+        if (tr is not null && answer == true)
+        {
+            var NumeroTarjeta = tr.numero_tarjeta;
+            OperacionesDBContext.borraTrabajador(NumeroTarjeta);
+            presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.nombre + "\" - " + dt));
+            presenciaContext.SaveChanges();
+            App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,2));
+        }
+        else
+        {
+            await DisplayAlert("Alert", "Error!", "OK");
+        }
+    }
+    private async void BotonBorrarGruposTrabajo_Clicked(object sender, EventArgs e)
+    {
+        bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Turno + "\"?", "Si", "No");
+        if (answer == true)
+        {
+            OperacionesDBContext.borraGrupoTrabajo(gr.IdGrupo);
+            presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Turno + " - " + dt));
+            presenciaContext.SaveChanges();
+            App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,3));
+        }
+    }
+    private void BotonEditarZonas_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,zn.Nombre,1));
+    }
+    private async void BotonBorrarZonas_Clicked(object sender, EventArgs e)
+    {
+        if (zn is not null)
+        {
+            bool answer = await DisplayAlert("Question?", "¿Desea Borrar la zona \"" + zn.Nombre + "\"?", "Si", "No");
+            if (answer == true)
+            {
+                await DisplayAlert("Alert", "Se ha borrado correctamente " + zn.Nombre, "OK");
+                presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminar " + zn.Nombre + " - " + dt));
+                presenciaContext.SaveChanges();
+                OperacionesDBContext.BorraZona(zn.IdZona);
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,4));
+            }
+            else
+            {
+                await DisplayAlert("Alert", "No se han realizado cambios ", "OK");
+            }
+        }
+        else
+        {
+            await DisplayAlert("Alert", "Por favor, Seleccione un elemento primero", "OK");
+        }
+    }
 
+    private void BotonAnadeZona_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0));
+    }
+
+    private void BotonEditarGruposTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,gr.Turno,1));
+    }
+    private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 1));
+    }
+    private void BtnAnadeTrabajador_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 0));
     }
 }
 

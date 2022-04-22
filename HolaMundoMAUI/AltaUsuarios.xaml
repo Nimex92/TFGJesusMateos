@@ -82,6 +82,7 @@
                             IsChecked="false"
                             />
                     </HorizontalStackLayout>
+                    <HorizontalStackLayout>
                     <Button 
                         Text="Registrar"
                         x:Name="BotonRegistrarAdmin"
@@ -90,6 +91,17 @@
                         BackgroundColor="Black"
                         Clicked="RegistrarNuevoUsuario"
                         WidthRequest="300"/>
+                        <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        WidthRequest="300"
+                        IsVisible="False"
+                        IsEnabled="False"/>
+                    </HorizontalStackLayout>
                 </StackLayout>
                 <Button
                 Text="Volver"

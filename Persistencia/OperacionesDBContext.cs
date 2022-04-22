@@ -165,7 +165,7 @@ namespace Persistencia
             presenciaContext.SaveChanges();
             return true;
         }
-        public static void actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
+        public static bool actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
             var us = presenciaContext.Usuarios.Where(x=>x.Username== usernamebusca).FirstOrDefault();
@@ -175,8 +175,8 @@ namespace Persistencia
 
             presenciaContext.Update(us);
             presenciaContext.SaveChanges();
-        }
-       
+            return true;
+        }    
         public static bool insertaTareas(string NombreTarea, string Descripcion, double TiempoEstimado)
         {
             PresenciaContext presenciaContext = new PresenciaContext();

@@ -18,21 +18,21 @@ public partial class EliminarTrabajador
 		SetListView();
 		NombreUsuario = user;
 	}
-	public void VolverAlMain(object sender, EventArgs e)
+	private void VolverAlMain(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 	}
-	public void SetListView()
+	private void SetListView()
 	{
 		var trabajador = presenciaContext.Trabajador.Include(x => x.grupo).Include(x => x.usuario).ToList();
 		ListViewUsuarios.ItemsSource = trabajador;
 	}
-	public void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+	private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	{
 		Trabajador item = e.SelectedItem as Trabajador;
 		tr = item;
 	}
-	public async void BotonBorrar_Clicked(object sender, EventArgs e)
+	private async void BotonBorrar_Clicked(object sender, EventArgs e)
 	{
 		bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \""+tr.nombre+"\"?", "Si", "No");
 		if (tr is not null && answer==true) { 

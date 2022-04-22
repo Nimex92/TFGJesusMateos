@@ -30,25 +30,27 @@
                 Text="Usuarios"
                 FontAttributes="Bold"
                 FontSize="12"
-                Margin="35,-10,0,0"
+                Margin="40,-10,0,0"
                 />
             <ImageButton
                 x:Name="BtnTrabajadores"
                 Source="trabajador.png"
                 WidthRequest="70"
                 HeightRequest="70"
-                Margin="0,15,0,0"/>
+                Margin="0,15,0,0"
+                Clicked="BtnTrabajadores_Clicked"/>
             <Label
                 Text="Trabajadores"
                 FontAttributes="Bold"
                 FontSize="12"
-                Margin="25,0,0,0"/>
+                Margin="25,-10,0,0"/>
             <ImageButton
                 x:Name="BtnGruposTrabajo"
                 Source="grupos.png"
                 WidthRequest="70"
                 HeightRequest="70"
-                Margin="0,15,0,0"/>
+                Margin="0,15,0,0"
+                Clicked="BtnGruposTrabajo_Clicked"/>
             <Label
                 Text="Grupos de trabajo"
                 FontAttributes="Bold"
@@ -59,12 +61,13 @@
                 Source="zonas.png"
                 WidthRequest="70"
                 HeightRequest="70"
-                Margin="0,15,0,0"/>
+                Margin="0,15,0,0"
+                Clicked="BtnZonas_Clicked"/>
             <Label
                 Text="Zonas de trabajo"
                 FontAttributes="Bold"
                 FontSize="12"
-                Margin="10 ,0,0,0"/>
+                Margin="15,-10,0,0"/>
             <ImageButton
                 x:Name="BtnTareas"
                 Source="tareas.png"
@@ -75,11 +78,12 @@
                 Text="Tareas"
                 FontAttributes="Bold"
                 FontSize="12"
-                Margin="35 ,0,0,0"/>
+                Margin="45,-10,0,0"/>
         </StackLayout >
         <StackLayout x:Name="ContenedorVentana">
             <StackLayout x:Name="ListViewUsers" 
                          IsVisible="False"
+                         IsEnabled="False"
                          >
                 <Label x:Name="LabelTitulo"
                 Text="Tech Talent &#10; Página de administracion"
@@ -140,8 +144,7 @@
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                     <ImageButton
-                                       Source="editar.png"
-                                       
+                                       Source="editar.png"  
                                        WidthRequest="50"
                                        HeightRequest="50"
                                        VerticalOptions="Center"
@@ -182,6 +185,338 @@
 
                 </StackLayout>
             </StackLayout>
+            <StackLayout x:Name="ListViewWorkers" 
+                HorizontalOptions="Center" Margin="0,10,0,0" IsEnabled="False" IsVisible="False">
+                <Label x:Name="LabelTitulo2"
+                    Text="Tech Talent &#10; Página de administracion &#10;de trabajadores"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.Description="Tech Talent Fiching System"
+                    FontSize="20"
+                    HorizontalOptions="Center"/>
+                <StackLayout x:Name="BarraDivisoraTituloArriba2"
+                            BackgroundColor="Black"
+                            WidthRequest="700"
+                            HeightRequest="2"
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,10"/>
+                <ListView 
+                    x:Name="ListViewTrabajadores" 
+                    WidthRequest="700"  
+                    HorizontalOptions="Center" 
+                    ItemSelected="OnItemSelectedTrabajadores"
+                    SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                       Text="Nombre:" 
+                                       Margin="-310,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"
+                                    />
+                                    <Label 
+                                       WidthRequest="150"
+                                       Text="{Binding nombre}" 
+                                       Margin="-120,0,0,0" 
+                                       FontSize="16"
+                                       VerticalOptions="Center"/>
+                                    <Label  
+                                       Text="Turno:" 
+                                       Margin="-20,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"/>
+                                    <Label 
+                                       Text="{Binding grupo.Turno}" 
+                                       Margin="90,0,0,0" 
+                                       FontSize="16"
+                                       WidthRequest="100"
+                                       VerticalOptions="Center"/>
+                                    <Label  
+                                       Text="Usuario:" 
+                                       Margin="240,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                        VerticalOptions="Center"/>
+                                    <Label 
+                                       Text="{Binding usuario.Username}" 
+                                       Margin="380,0,0,0" 
+                                       FontSize="16"
+                                       WidthRequest="100"
+                                        VerticalOptions="Center"/>
+                                    <ImageButton
+                                       Source="editar.png"  
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="510,0,0,0"
+                                       x:Name="BotonEditarTrabajadores"
+                                       Clicked="BotonEditarTrabajadores_Clicked"/>
+                                    <ImageButton
+                                       Source="borrar.png"
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="580,0,0,0"
+                                       x:Name="BotonBorrarTrabajadores"
+                                       Clicked="BotonBorrarTrabajadores_Clicked"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout x:Name="BarraDivisoraTituloAbajo2"
+                    BackgroundColor="Black"
+                    WidthRequest="700"
+                    HeightRequest="2"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,10"/>
+                <HorizontalStackLayout x:Name="GrupoAnadeTrabajador" WidthRequest="150"
+                             HeightRequest="50">
+                    <ImageButton x:Name="AddTrabajadores"
+                                 Source="addworker.png"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"
+                                 Clicked="NuevoTrabajador"/>
+                    <Label Text="Añadir trabajador"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="5,10,0,0"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+            <StackLayout x:Name="ListViewGroups" 
+                         IsVisible="False" IsEnabled="False">
+            <Label 
+                Text="Tech Talent &#10; Gestion de turnos"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"
+                x:Name="LabelTitulo3"/>
+            <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+            <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+                <ListView 
+                x:Name="ListViewGrupos" 
+                WidthRequest="700"  
+                HorizontalOptions="Center" 
+                ItemSelected="OnItemSelectedGruposTrabajo"
+                SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                       Text="Turno:" 
+                                       Margin="-410,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="100"
+                                        VerticalOptions="Center"
+                                    />
+                                    <Label 
+                                       WidthRequest="150"
+                                       Text="{Binding Turno}" 
+                                       Margin="-250,0,0,0" 
+                                       FontSize="16"
+                                        VerticalOptions="Center"/>
+                                    <Label  
+                                       Text="Hora de entrada:" 
+                                       Margin="-100,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="170"
+                                        VerticalOptions="Center"/>
+                                    <Label 
+                                       Text="{Binding HoraEntrada}" 
+                                       Margin="90,0,0,0" 
+                                       FontSize="16"
+                                       WidthRequest="100"
+                                        VerticalOptions="Center"/>
+                                    <Label  
+                                       Text="Hora de salida:" 
+                                       Margin="240,0,0,0" 
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       WidthRequest="130"
+                                        VerticalOptions="Center"/>
+                                    <Label 
+                                       Text="{Binding HoraSalida}" 
+                                       Margin="440,0,0,0" 
+                                       FontSize="16"
+                                       WidthRequest="100"
+                                        VerticalOptions="Center"/>
+                                        <ImageButton
+                                       Source="editar.png"  
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="510,0,0,0"
+                                       x:Name="BotonEditarGruposTrabajo"
+                                       Clicked="BotonEditarGruposTrabajo_Clicked"/>
+                                        <ImageButton
+                                       Source="borrar.png"
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="580,0,0,0"
+                                       x:Name="BotonBorrarGruposTrabajo"
+                                       Clicked="BotonBorrarGruposTrabajo_Clicked"/>
+                                    </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+                <HorizontalStackLayout HorizontalOptions="Center" WidthRequest="150"
+                             HeightRequest="50" Margin="-30,0,0,0">
+                    <ImageButton x:Name="AddGrupos"
+                                 Source="addgroups.png"
+                                 HorizontalOptions="Start"
+                                 Clicked="NuevoGrupoTrabajo"
+                                 VerticalOptions="Center"/>
+                    <Label Text="Añadir grupo de trabajo"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="5,0,0,0"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                    
+                </HorizontalStackLayout>
+            </StackLayout>
+            <StackLayout x:Name="ListViewZones"
+                         IsVisible="False" IsEnabled="False">
+                <Label 
+                Text="Tech Talent &#10; Gestion de zonas"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="20"
+                HorizontalOptions="Center"
+                x:Name="LabelTitulo4"/>
+                <HorizontalStackLayout x:Name="NombresColumnas">
+                    <Label Text="Nombre Zona:"
+                           Margin="445,0,0,0"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+                    <ListView 
+                x:Name="ListViewZonas" 
+                WidthRequest="700"  
+                HorizontalOptions="Center" 
+                ItemSelected="OnItemSelectedZonas"
+                SeparatorColor="Black">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label 
+                                       WidthRequest="150"
+                                       VerticalOptions="Center"
+                                       Text="{Binding Nombre}" 
+                                       Margin="25,0,0,0" 
+                                       FontSize="16"/>
+                                        <ImageButton
+                                       Source="editar.png"  
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="510,0,0,0"
+                                       x:Name="BotonEditarZonas"
+                                       Clicked="BotonEditarZonas_Clicked"/>
+                                        <ImageButton
+                                       Source="borrar.png"
+                                       WidthRequest="50"
+                                       HeightRequest="50"
+                                       VerticalOptions="Center"
+                                       Margin="580,0,0,0"
+                                       x:Name="BotonBorrarZonas"
+                                       Clicked="BotonBorrarZonas_Clicked"/>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="800"
+                     HorizontalOptions="Center"/>
+                <HorizontalStackLayout x:Name="BotonesZonaInferior" 
+                             HorizontalOptions="Center" WidthRequest="150"
+                             HeightRequest="50" Margin="-240,0,0,0">
+                    <ImageButton x:Name="BotonAnadeZona"
+                                 Source="addzonas.png"
+                                 Clicked="BotonAnadeZona_Clicked"/>
+                    <Label Text="Añadir nueva zona de trabajo"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="5,0,0,0"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                    <ImageButton x:Name="AddZonasGrupos"
+                                 Source="addzonasgrupotrabajo.png"
+                                 HorizontalOptions="Start"
+                                 Clicked="NuevoGrupoTrabajo"
+                                 VerticalOptions="Center"/>
+                    <Label Text="Añadir zona a grupo de trabajo"
+                           FontSize="16"
+                           TextColor="Black"
+                           Margin="5,0,0,0"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+            
             <StackLayout x:Name="GrupoDeBotones">
                 <StackLayout x:Name="GrupoBotonesPrincipal" HorizontalOptions="Center" Margin="25,0,0,0" IsEnabled="False" IsVisible="False">
                     <HorizontalStackLayout>

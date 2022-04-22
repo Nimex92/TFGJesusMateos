@@ -7,7 +7,7 @@
     <StackLayout
         Margin="0,20,0,0">
         <Label 
-                Text="Tech Talent &#10; Modificar trabajador"
+                Text="Tech Talent &#10; Gestion de turnos"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"

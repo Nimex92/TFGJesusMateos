@@ -10,7 +10,7 @@ public partial class AltaTrabajador : ContentPage
 	PresenciaContext presenciaContext = new PresenciaContext();
 	string NombreUsuario;
 	DateTime dt = DateTime.Now;
-	public AltaTrabajador(string user)
+	public AltaTrabajador(string user,int actualiza)
 	{
 		InitializeComponent();
 		NombreUsuario = user;
@@ -25,6 +25,24 @@ public partial class AltaTrabajador : ContentPage
 			Selector.Items.Add(grupo.Turno);
 		}
 		Selector.SelectedIndex = 0;
+		switch(actualiza)
+		{
+			case 0:
+				BotonActualizarAdmin.IsVisible = false;
+				BotonActualizarAdmin.IsEnabled = false;
+				BotonRegistrarAdmin.IsVisible = true;
+				BotonRegistrarAdmin.IsEnabled = true;
+				break;
+			case 1:
+				BotonActualizarAdmin.IsVisible = true;
+				BotonActualizarAdmin.IsEnabled = true;
+				BotonRegistrarAdmin.IsVisible = false;
+				BotonRegistrarAdmin.IsEnabled = false;
+				CampoNombre.Text = user;
+				var trab = presenciaContext.Trabajador.Where(x => x.nombre == user).Include(x => x.grupo).FirstOrDefault();
+				Selector.SelectedItem = trab.grupo.Turno;
+				break;
+        }
 		
 	}
 
@@ -41,20 +59,40 @@ public partial class AltaTrabajador : ContentPage
 		if (inserta == true)
         {
 			await DisplayAlert("Alert", "Se ha insertado correctamente el trabajador " + nombre, "OK");
-			
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 2));
 		}
         else
         {
 			await DisplayAlert("Alert", "Error al insertar el trabajador " + nombre, "OK");
 			
+		}	
+	}
+	private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
+	{
+		Random r = new Random();
+		string nombre = CampoNombre.Text;
+		var user = presenciaContext.Trabajador.Where(x => x.usuario.Username == NombreUsuario).Include(x => x.usuario).Include(x => x.grupo).FirstOrDefault();
+		var seleccionado = Selector.SelectedItem.ToString().Trim();
+		var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == seleccionado).FirstOrDefault();
+		bool inserta = OperacionesDBContext.actualizaTrabajador(user.numero_tarjeta, nombre, grupo.IdGrupo);
+		presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha modificado trabajador " + nombre + " - " + dt));
+		presenciaContext.SaveChanges();
+		if (inserta == true)
+		{
+			await DisplayAlert("Alert", "Se ha modificado correctamente el trabajador " + nombre, "OK");
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 2));
 		}
-	
-		
-		
-	}   
+		else
+		{
+			await DisplayAlert("Alert", "Error al insertar el trabajador " + nombre, "OK");
+
+		}
+	}
 
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,2));
 	}
+
+
 }

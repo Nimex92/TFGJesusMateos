@@ -47,7 +47,7 @@
                                HorizontalOptions="Start" Margin="10,0,0,0"
                                />
                         <Picker
-                            WidthRequest="180"
+                            WidthRequest="170"
                             x:Name="Selector"
                             BackgroundColor="White"
                             TextColor="Black"
@@ -62,6 +62,15 @@
                         BackgroundColor="Black"
                         Clicked="RegistrarNuevoTrabajador"
                         WidthRequest="300"/>
+                    <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        WidthRequest="300"/>
+                    
                 </StackLayout>
                 <Button
                 Text="Volver"
