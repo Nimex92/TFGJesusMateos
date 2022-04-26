@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8Gx7lgz966Db5jhEHW247d1sRwx8Vj07i7TXc/GZeiJgt3Sd/2h/B8JyqM8cPIuzOt0xMTrQivblRELGcVSLqw==",
+  "dgSpecHash": "P+1FRBu/EGzAVdCN/jGSECE/fDKORND5OmUh2/AJRhjv1muarGhKzNHupYzC/gedFoVMQyLZqZ1bgbqp2vUCQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
@@ -24,9 +24,12 @@
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.extensions\\6.0.300-rc.1.5355\\microsoft.maui.extensions.6.0.300-rc.1.5355.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics\\6.0.300-rc.1.1215\\microsoft.maui.graphics.6.0.300-rc.1.1215.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.300-rc.1.1215\\microsoft.maui.graphics.win2d.winui.desktop.6.0.300-rc.1.1215.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsappsdk\\1.0.3\\microsoft.windowsappsdk.1.0.3.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

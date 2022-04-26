@@ -74,6 +74,7 @@
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />
 	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.3" />
+	  <PackageReference Include="NUnit" Version="3.13.3" />
 	</ItemGroup>
 
 	<ItemGroup>

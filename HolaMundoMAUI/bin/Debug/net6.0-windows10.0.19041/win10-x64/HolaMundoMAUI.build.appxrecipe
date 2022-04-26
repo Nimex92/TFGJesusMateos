@@ -799,6 +799,9 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\mysqlconnector\2.1.2\lib\net6.0\MySqlConnector.dll">
       <PackagePath>MySqlConnector.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\nunit\3.13.3\lib\netstandard2.0\nunit.framework.dll">
+      <PackagePath>nunit.framework.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\pomelo.entityframeworkcore.mysql\6.0.1\lib\net6.0\Pomelo.EntityFrameworkCore.MySql.dll">
       <PackagePath>Pomelo.EntityFrameworkCore.MySql.dll</PackagePath>
     </AppxPackagedFile>

@@ -721,12 +721,10 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
     }
-
     private void AddZonasGrupos_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
     }
-
     private async void ImageButton_Clicked(object sender, EventArgs e)
     {
         BotonCerrarSession.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -736,7 +734,6 @@ public partial class PaginaAdmin : ContentPage
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
-
     private void BotonEditarTareas_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario,ta.NombreTarea,1));

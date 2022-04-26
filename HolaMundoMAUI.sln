@@ -5,9 +5,11 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolaMundoMAUI", "HolaMundoMAUI\HolaMundoMAUI.csproj", "{FB18D0D1-067E-45FC-870C-2072D3C367D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bibliotec", "ClassLibrary1\Bibliotec.csproj", "{12D5F37C-0B9A-43A5-B255-B9059154B0F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bibliotec", "ClassLibrary1\Bibliotec.csproj", "{12D5F37C-0B9A-43A5-B255-B9059154B0F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{AE923FA3-EC4F-46F6-9472-2B1D7016A632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistencia", "Persistencia\Persistencia.csproj", "{AE923FA3-EC4F-46F6-9472-2B1D7016A632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenciaTests", "PersistenciaTests\PersistenciaTests.csproj", "{F4F62B8C-A9A3-44D9-AAB3-FAB00DE92D73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{AE923FA3-EC4F-46F6-9472-2B1D7016A632}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE923FA3-EC4F-46F6-9472-2B1D7016A632}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE923FA3-EC4F-46F6-9472-2B1D7016A632}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F62B8C-A9A3-44D9-AAB3-FAB00DE92D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F62B8C-A9A3-44D9-AAB3-FAB00DE92D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F62B8C-A9A3-44D9-AAB3-FAB00DE92D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F62B8C-A9A3-44D9-AAB3-FAB00DE92D73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

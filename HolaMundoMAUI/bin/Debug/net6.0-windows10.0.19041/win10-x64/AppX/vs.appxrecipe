@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-04-25T13:51:06.451</Modified>
+      <Modified>2022-04-26T08:19:49.942</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-04-25T13:51:05.961</Modified>
+      <Modified>2022-04-26T08:19:49.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json">
       <PackagePath>HolaMundoMAUI.runtimeconfig.json</PackagePath>
-      <Modified>2022-04-20T08:26:03.430</Modified>
+      <Modified>2022-04-26T07:02:51.163</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll">
       <PackagePath>HolaMundoMAUI.dll</PackagePath>
-      <Modified>2022-04-25T13:51:04.011</Modified>
+      <Modified>2022-04-26T08:16:49.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\apphost.exe">
       <PackagePath>HolaMundoMAUI.exe</PackagePath>
-      <Modified>2022-04-25T13:51:04.019</Modified>
+      <Modified>2022-04-26T08:16:49.954</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1065,6 +1065,10 @@
       <PackagePath>MySqlConnector.dll</PackagePath>
       <Modified>2021-12-23T03:43:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\nunit\3.13.3\lib\netstandard2.0\nunit.framework.dll">
+      <PackagePath>nunit.framework.dll</PackagePath>
+      <Modified>2022-03-20T17:47:42.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\pomelo.entityframeworkcore.mysql\6.0.1\lib\net6.0\Pomelo.EntityFrameworkCore.MySql.dll">
       <PackagePath>Pomelo.EntityFrameworkCore.MySql.dll</PackagePath>
       <Modified>2022-01-22T18:54:30.000</Modified>
@@ -1079,19 +1083,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\ClassLibrary1\bin\Debug\net6.0\Bibliotec.dll">
       <PackagePath>Bibliotec.dll</PackagePath>
-      <Modified>2022-04-25T12:56:32.303</Modified>
+      <Modified>2022-04-26T07:02:36.936</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Debug\net6.0\Persistencia.dll">
       <PackagePath>Persistencia.dll</PackagePath>
-      <Modified>2022-04-25T12:56:32.831</Modified>
+      <Modified>2022-04-26T08:00:13.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json">
       <PackagePath>HolaMundoMAUI.deps.json</PackagePath>
-      <Modified>2022-04-25T13:51:06.241</Modified>
+      <Modified>2022-04-26T08:19:49.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf">
       <PackagePath>Platforms\Windows\App.xbf</PackagePath>
-      <Modified>2022-04-25T13:51:03.508</Modified>
+      <Modified>2022-04-26T08:19:49.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
