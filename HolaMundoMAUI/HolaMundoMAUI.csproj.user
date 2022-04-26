@@ -28,43 +28,13 @@
     <MauiXaml Update="AltaGrupoTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="EliminarGrupoTrabajo.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="ModificaGrupoTrabajo.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="EliminaUsuario.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="ModificaTrabajador.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="ModificarUsuario.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="EliminarTrabajador.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="CalendarioLalboral.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="AltaTareaTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="ModificarTareas.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="BorraTareas.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
     <MauiXaml Update="AltaZona.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="ModificarZona.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="BorraZonas.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="AnadeTareasAGrupoTrabajo.xaml">

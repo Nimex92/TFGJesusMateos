@@ -40,9 +40,8 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 	}
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,5));
     }
-
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
 		var TurnoGrupo = SelectorGruposTrabajo.SelectedItem;
@@ -56,7 +55,8 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 			await DisplayAlert("Alert", "Se ha añadido '" + tarea.NombreTarea + "' a grupo: "+grupo.Turno, "OK");
 			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.NombreTarea +" a grupo "+grupo.Turno+ " - " + dt));
 			presenciaContext.SaveChanges();
-        }
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
+		}
         else
         {
 			await DisplayAlert("Alert", "Error al añadir tareas.", "OK");

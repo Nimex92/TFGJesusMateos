@@ -61,12 +61,8 @@
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
 	  <Page Remove="CalendarioLalboral.xaml" />
-	  <Page Remove="EliminarGrupoTrabajo.xaml" />
 	  <Page Remove="EliminarTrabajador.xaml" />
-	  <Page Remove="EliminaUsuario.xaml" />
 	  <Page Remove="ModificaGrupoTrabajo.xaml" />
-	  <Page Remove="ModificarUsuario.xaml" />
-	  <Page Remove="ModificaTrabajador.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
 	  <Page Remove="TrabajadoresEnTurno.xaml" />
 	</ItemGroup>
@@ -95,20 +91,8 @@
 	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="EliminarGrupoTrabajo.xaml.cs">
-	    <DependentUpon>EliminarGrupoTrabajo.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="ModificaGrupoTrabajo.xaml.cs">
 	    <DependentUpon>ModificaGrupoTrabajo.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="EliminaUsuario.xaml.cs">
-	    <DependentUpon>EliminaUsuario.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="ModificaTrabajador.xaml.cs">
-	    <DependentUpon>ModificaTrabajador.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="ModificarUsuario.xaml.cs">
-	    <DependentUpon>ModificarUsuario.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="EliminarTrabajador.xaml.cs">
 	    <DependentUpon>EliminarTrabajador.xaml</DependentUpon>
@@ -119,20 +103,11 @@
 	  <Compile Update="AltaTareaTrabajo.xaml.cs">
 	    <DependentUpon>AltaTareaTrabajo.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="ModificarTareas.xaml.cs">
-	    <DependentUpon>ModificarTareas.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="BorraTareas.xaml.cs">
-	    <DependentUpon>BorraTareas.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="AltaZona.xaml.cs">
 	    <DependentUpon>AltaZona.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="ModificarZona.xaml.cs">
 	    <DependentUpon>ModificarZona.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="BorraZonas.xaml.cs">
-	    <DependentUpon>BorraZonas.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="AnadeTareasAGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AnadeTareasAGrupoTrabajo.xaml</DependentUpon>
@@ -162,23 +137,8 @@
 	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EliminarGrupoTrabajo.xaml">
-	    <SubType>Designer</SubType>
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="ModificaGrupoTrabajo.xaml">
 	    <SubType>Designer</SubType>
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="EliminaUsuario.xaml">
-	    <SubType>Designer</SubType>
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="ModificaTrabajador.xaml">
-	    <SubType>Designer</SubType>
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="ModificarUsuario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="EliminarTrabajador.xaml">
@@ -190,19 +150,10 @@
 	  <MauiXaml Update="AltaTareaTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ModificarTareas.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="BorraTareas.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="AltaZona.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ModificarZona.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="BorraZonas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AnadeTareasAGrupoTrabajo.xaml">

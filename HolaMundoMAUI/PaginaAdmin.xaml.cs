@@ -31,7 +31,6 @@ public partial class PaginaAdmin : ContentPage
         SetListViewZonas();
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@, " + Environment.NewLine + nombreUsuario;
-        
     }
     public PaginaAdmin(string nombreUsuario,int interfaz)
     {
@@ -101,42 +100,6 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Registrar grupo de trabajo' - " + dt));
         presenciaContext.SaveChanges();
     }
-    public void ModificaUsuario(object sender , EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new ModificarUsuario(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Modificar usuario' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    public void ModificaTrabajador(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new ModificarTrabajador(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Moridicar trabajador' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    public void ModificaGrupoTrabajo(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new ModificarGrupoTrabajo(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Modificar grupo de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    public void EliminaUsuario(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new EliminaUsuario(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Eliminar usuario' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    public void EliminarTrabajador(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new EliminarTrabajador(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Eliminar trabajador' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    public void EliminarGrupoTrabajador(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new EliminarGrupoTrabajo(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Eliminar grupo de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
     public async void VolverAlMainAdmin(object sender, EventArgs e)
     {
         await DisplayAlert("Alert", "Hasta luego, "+nombreUsuario, "OK");
@@ -151,34 +114,10 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo' - " + dt));
         presenciaContext.SaveChanges();
     }
-    private void ModificarTareaTrabajo_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new ModificarTareas(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Modificar tareas de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    private void EliminaTareaTrabajo_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new BorraTareas(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Borrar tareas de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
     private void RegistrarNuevaZona_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario));
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    private void ModificarZona_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new ModificarZona(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Modificar zona de trabajo' - " + dt));
-        presenciaContext.SaveChanges();
-    }
-    private void EliminaZona_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new BorraZonas(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Borrar zona de trabajo' - " + dt));
         presenciaContext.SaveChanges();
     }
     private void AnadeTareasGrupo_Clicked(object sender, EventArgs e)
@@ -202,71 +141,8 @@ public partial class PaginaAdmin : ContentPage
     private void Logout_png_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new MainPage());
-    }
-    private void BtnAñadir_Clicked(object sender, EventArgs e)
-    {
-        GrupoBotonesPrincipal.IsVisible = false;
-        GrupoBotonesPrincipal.IsEnabled = false;
-        GrupoAnadir.IsEnabled = true;
-        GrupoAnadir.IsVisible = true;
-        GrupoModificar.IsEnabled = false;
-        GrupoModificar.IsVisible = false;
-        GrupoEliminar.IsEnabled = false;
-        GrupoEliminar.IsVisible = false;
-        GrupoAlterno.IsEnabled = false;
-        GrupoAlterno.IsVisible = false;
-    }
-    private void BtnModificar_Clicked(object sender, EventArgs e)
-    {
-        GrupoBotonesPrincipal.IsVisible = false;
-        GrupoBotonesPrincipal.IsEnabled = false;
-        GrupoAnadir.IsEnabled = false;
-        GrupoAnadir.IsVisible = false;
-        GrupoModificar.IsEnabled = true;
-        GrupoModificar.IsVisible = true;
-        GrupoEliminar.IsEnabled = false;
-        GrupoEliminar.IsVisible = false;
-        GrupoAlterno.IsEnabled = false;
-        GrupoAlterno.IsVisible = false;
-    }
-    private void BtnEliminar_Clicked(object sender, EventArgs e)
-    {
-        GrupoBotonesPrincipal.IsVisible = false;
-        GrupoBotonesPrincipal.IsEnabled = false;
-        GrupoAnadir.IsEnabled = false;
-        GrupoAnadir.IsVisible = false;
-        GrupoModificar.IsEnabled = false;
-        GrupoModificar.IsVisible = false;
-        GrupoEliminar.IsEnabled = true;
-        GrupoEliminar.IsVisible = true;
-        GrupoAlterno.IsEnabled = false;
-        GrupoAlterno.IsVisible = false;
-    }
-    private void VolverGrupoBotonesPrincipales_Clicked(object sender, EventArgs e)
-    {
-        GrupoBotonesPrincipal.IsVisible = true;
-        GrupoBotonesPrincipal.IsEnabled = true;
-        GrupoAnadir.IsEnabled = false;
-        GrupoAnadir.IsVisible = false;
-        GrupoModificar.IsEnabled = false;
-        GrupoModificar.IsVisible = false;
-        GrupoEliminar.IsEnabled = false;
-        GrupoEliminar.IsVisible = false;
-        GrupoAlterno.IsEnabled = false;
-        GrupoAlterno.IsVisible = false;
-    }
-    private void BtnAlterno_Clicked(object sender, EventArgs e)
-    {
-        GrupoBotonesPrincipal.IsVisible = false;
-        GrupoBotonesPrincipal.IsEnabled = false;
-        GrupoAnadir.IsEnabled = false;
-        GrupoAnadir.IsVisible = false;
-        GrupoModificar.IsEnabled = false;
-        GrupoModificar.IsVisible = false;
-        GrupoEliminar.IsEnabled = false;
-        GrupoEliminar.IsVisible = false;
-        GrupoAlterno.IsEnabled = true;
-        GrupoAlterno.IsVisible = true;
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario+" Ha cerrado sesión"));
+        presenciaContext.SaveChanges();
     }
     public void SetListViewUsuarios()
     {
@@ -699,15 +575,6 @@ public partial class PaginaAdmin : ContentPage
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0));
     }
-    private async void BotonBorrarTareas_Clicked(object sender, EventArgs e)
-    {
-        var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == ta.NombreTarea).FirstOrDefault();
-        bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar la tarea " + tarea.NombreTarea + "\"?", "Si", "No");
-        presenciaContext.Remove(tarea);
-        presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado tarea " + tarea.NombreTarea + " - " + dt));
-        presenciaContext.SaveChanges();
-        App.Current.MainPage = new NavigationPage(new BorraTareas(nombreUsuario));
-    }
     private void BtnAnadeTarea_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
@@ -734,6 +601,24 @@ public partial class PaginaAdmin : ContentPage
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
+    private async void BotonBorrarTareas_Clicked(object sender, EventArgs e)
+    {
+        bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar la tarea \"" + ta.NombreTarea + "\"?", "Si", "No");
+        if (answer == true)
+        {
+            if (ta is not null)
+            {
+                presenciaContext.Tareas.Remove(ta);
+                presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado la tarea " + ta.NombreTarea + " - " + dt));
+                presenciaContext.SaveChanges();
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 5));
+            }
+            else
+            {
+                await DisplayAlert("Alert", "Error!", "OK");
+            }
+        }
+    }
     private void BotonEditarTareas_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario,ta.NombreTarea,1));
@@ -741,10 +626,14 @@ public partial class PaginaAdmin : ContentPage
     private void BotonEditarGruposTrabajo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,gr.Turno,1));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar grupo de trabajo '+"+gr.Turno+" - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 1));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.nombre + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void BtnAnadeTrabajador_Clicked(object sender, EventArgs e)
     {

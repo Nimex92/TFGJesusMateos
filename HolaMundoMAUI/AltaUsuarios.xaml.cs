@@ -29,6 +29,11 @@ public partial class AltaUsuarios : ContentPage
 				BotonActualizarAdmin.IsVisible = true;
 				BotonRegistrarAdmin.IsEnabled = false;
 				BotonRegistrarAdmin.IsVisible = false;
+				LabelUsuario.Text = usuario.Username;
+				LabelUsuario.IsVisible = true;
+				LabelUsuario.IsEnabled = true;
+				CampoUsuario.IsEnabled = false;
+				CampoUsuario.IsVisible = false;
 				break;
         }
 	}
@@ -101,10 +106,11 @@ public partial class AltaUsuarios : ContentPage
 			{
 				bool esAdmin = false;
 				if (BotonEsAdmin.IsChecked)
+                {
 					esAdmin = true;
+                }
+					
 
-				//Inserto usuario
-				//bool inserta = OperacionesDBContext.insertaUsuario(Username, Password, esAdmin);
 				bool inserta = OperacionesDBContext.actualizaUsuario(us.Username, Username, Password, esAdmin);
 				presenciaContext.Logs.Add(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt));
 				presenciaContext.SaveChanges();

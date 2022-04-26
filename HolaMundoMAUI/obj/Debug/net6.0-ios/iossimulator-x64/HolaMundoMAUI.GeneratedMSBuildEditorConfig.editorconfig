@@ -57,77 +57,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/BorraTareas.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.BorraTareas.xaml
-build_metadata.AdditionalFiles.TargetPath = BorraTareas.xaml
-build_metadata.AdditionalFiles.RelativePath = BorraTareas.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/BorraZonas.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.BorraZonas.xaml
-build_metadata.AdditionalFiles.TargetPath = BorraZonas.xaml
-build_metadata.AdditionalFiles.RelativePath = BorraZonas.xaml
-
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/CalendarioLalboral.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.CalendarioLalboral.xaml
 build_metadata.AdditionalFiles.TargetPath = CalendarioLalboral.xaml
 build_metadata.AdditionalFiles.RelativePath = CalendarioLalboral.xaml
 
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminarGrupoTrabajo.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminarGrupoTrabajo.xaml
-build_metadata.AdditionalFiles.TargetPath = EliminarGrupoTrabajo.xaml
-build_metadata.AdditionalFiles.RelativePath = EliminarGrupoTrabajo.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminarTrabajador.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminarTrabajador.xaml
-build_metadata.AdditionalFiles.TargetPath = EliminarTrabajador.xaml
-build_metadata.AdditionalFiles.RelativePath = EliminarTrabajador.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/EliminaUsuario.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.EliminaUsuario.xaml
-build_metadata.AdditionalFiles.TargetPath = EliminaUsuario.xaml
-build_metadata.AdditionalFiles.RelativePath = EliminaUsuario.xaml
-
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificaGrupoTrabajo.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificaGrupoTrabajo.xaml
-build_metadata.AdditionalFiles.TargetPath = ModificaGrupoTrabajo.xaml
-build_metadata.AdditionalFiles.RelativePath = ModificaGrupoTrabajo.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarTareas.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarTareas.xaml
-build_metadata.AdditionalFiles.TargetPath = ModificarTareas.xaml
-build_metadata.AdditionalFiles.RelativePath = ModificarTareas.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarUsuario.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarUsuario.xaml
-build_metadata.AdditionalFiles.TargetPath = ModificarUsuario.xaml
-build_metadata.AdditionalFiles.RelativePath = ModificarUsuario.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificarZona.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificarZona.xaml
-build_metadata.AdditionalFiles.TargetPath = ModificarZona.xaml
-build_metadata.AdditionalFiles.RelativePath = ModificarZona.xaml
-
-[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/ModificaTrabajador.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.ModificaTrabajador.xaml
-build_metadata.AdditionalFiles.TargetPath = ModificaTrabajador.xaml
-build_metadata.AdditionalFiles.RelativePath = ModificaTrabajador.xaml
 
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/PaginaAdmin.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

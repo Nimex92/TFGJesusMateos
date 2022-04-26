@@ -40,7 +40,7 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 	}
 	private void BotonVolver_Clicked(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,5));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,4));
 	}
 
 	private async void BotonRegistrar_Clicked(object sender, EventArgs e)
@@ -55,7 +55,7 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 			grupo.Zonas.Add(zona);
 			await DisplayAlert("Alert", "Se ha añadido '" + zona.Nombre + "' a grupo: " + grupo.Turno, "OK");
 			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido "+grupo.Zonas+"a " + grupo.Turno + " - " + dt));
-			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 4));
 		}
 		else
 		{

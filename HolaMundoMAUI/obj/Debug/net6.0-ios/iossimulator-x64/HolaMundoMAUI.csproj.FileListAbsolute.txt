@@ -355,3 +355,15 @@ C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimul
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\zonas.png
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\zonas@2x.png
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\zonas@3x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareas.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareas@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareas@3x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareasgrupotrabajo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareasgrupotrabajo@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\addtareasgrupotrabajo@3x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\copiar.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\copiar@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\copiar@3x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\ver.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\ver@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-ios\iossimulator-x64\resizetizer\r\ver@3x.png
