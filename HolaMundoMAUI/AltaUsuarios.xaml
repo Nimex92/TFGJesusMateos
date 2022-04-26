@@ -4,7 +4,7 @@
              x:Class="HolaMundoMAUI.AltaUsuarios"
              Title="Alta Usuarios"
              BackgroundColor="White">
-    <AbsoluteLayout>
+    <StackLayout>
         <StackLayout
                 Margin="450,30">
             
@@ -124,6 +124,6 @@
                     Margin="30,0,0,0"/>
             </StackLayout>
         </StackLayout>
-    </AbsoluteLayout>
+    </StackLayout>
     
 </ContentPage>

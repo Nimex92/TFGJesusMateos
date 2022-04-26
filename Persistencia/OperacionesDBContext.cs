@@ -48,12 +48,19 @@ namespace Persistencia
             }
             
         }
-        public static void insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
+        public static bool insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
         {
             using var presenciaContext = new PresenciaContext();
             Grupo_Trabajo grupo = new Grupo_Trabajo(nombre, horaEntrada, horaSalida);
-            presenciaContext.Grupo_Trabajo.Add(grupo);
-            presenciaContext.SaveChanges();
+            if(nombre is not null && horaEntrada is not null && horaSalida is not null) { 
+                presenciaContext.Grupo_Trabajo.Add(grupo);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public static void insertaFichaje(int Trabajador, int GrupoTrabajo, string Entrada_Salida)
         {
@@ -158,45 +165,81 @@ namespace Persistencia
         {
             using var presenciaContext = new PresenciaContext();
             var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Nombre).FirstOrDefault();
-            GrupoTrabajo.Turno = Nombre;
-            GrupoTrabajo.HoraEntrada=HoraEntrada;
-            GrupoTrabajo.HoraSalida = HoraSalida;
-            presenciaContext.Update(GrupoTrabajo);
-            presenciaContext.SaveChanges();
-            return true;
+            if (Nombre is not null && HoraEntrada is not null && HoraSalida is not null)
+            {
+                GrupoTrabajo.Turno = Nombre;
+                GrupoTrabajo.HoraEntrada=HoraEntrada;
+                GrupoTrabajo.HoraSalida = HoraSalida;
+                presenciaContext.Update(GrupoTrabajo);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
         public static bool actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
             var us = presenciaContext.Usuarios.Where(x=>x.Username== usernamebusca).FirstOrDefault();
-            us.Username = usernamebusca;
-            us.Password = password;
-            us.esAdmin = esAdmin;
-
-            presenciaContext.Update(us);
-            presenciaContext.SaveChanges();
-            return true;
+            if(usernamebusca is not null) { 
+                us.Username = usernamebusca;
+                us.Password = password;
+                us.esAdmin = esAdmin;
+                presenciaContext.Update(us);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }    
         public static bool insertaTareas(string NombreTarea, string Descripcion, double TiempoEstimado)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
-            presenciaContext.Add(new Tareas(NombreTarea, Descripcion, TiempoEstimado));
-            presenciaContext.SaveChanges();
-            return true;
+            if(NombreTarea is not null && Descripcion is not null)
+            {
+                presenciaContext.Add(new Tareas(NombreTarea, Descripcion, TiempoEstimado));
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public static bool insertaTareaEnGrupo(int IdGrupo,string NombreTarea,string Descripcion,int TiempoEstimado)
         {
-            var presenciaContext = new PresenciaContext();
-            var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
-            grupo.Tareas.Add(new Tareas(NombreTarea, Descripcion,TiempoEstimado));
-            return true;
+            if(IdGrupo != null && NombreTarea is not null && Descripcion is not null && TiempoEstimado != null)
+            {
+                var presenciaContext = new PresenciaContext();
+                var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
+                grupo.Tareas.Add(new Tareas(NombreTarea, Descripcion,TiempoEstimado));
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
         public static bool insertaZona(string NombreZona)
         {
-            using var presenciaContext = new PresenciaContext();
-            presenciaContext.Zonas.Add(new Zonas(NombreZona));
-            presenciaContext.SaveChanges();
-            return true;
+            if(NombreZona is null || NombreZona.Equals(""))
+            {
+                return false;
+            }
+            else
+            {
+                using var presenciaContext = new PresenciaContext();
+                presenciaContext.Zonas.Add(new Zonas(NombreZona));
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            
         }
 
         public static bool ActualizaZona(string OldName, string NewName)
@@ -213,9 +256,17 @@ namespace Persistencia
         {
             using var presenciaContext = new PresenciaContext();
             var Zona = presenciaContext.Zonas.Find(id);
-            presenciaContext.Zonas.Remove(Zona);
-            presenciaContext.SaveChanges();
-            return true;
+            if(Zona is not null)
+            {
+                presenciaContext.Zonas.Remove(Zona);
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

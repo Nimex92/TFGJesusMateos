@@ -78,6 +78,16 @@
                         Clicked="RegistraNuevaTarea"
                         BackgroundColor="Black"
                         WidthRequest="300"/>
+                <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        BackgroundColor="Black"
+                        WidthRequest="300"
+                        IsEnabled="False"
+                        IsVisible="False"/>
             </StackLayout>
             <Button
                 Text="Volver"

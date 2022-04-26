@@ -28,13 +28,22 @@ public partial class AltaGrupoTrabajo : ContentPage
 		InitializeComponent();
 		Turno = grupo;
 		NombreUsuario = user;
-		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == user).FirstOrDefault();
+		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == grupo).FirstOrDefault();
+		if(CampoNombre.Text is not null)
 		CampoNombre.Text = GrupoTrabajo.Turno;
 		string HoraEntrada = GrupoTrabajo.HoraEntrada.Substring(0, 2);
 		string HoraSalida = GrupoTrabajo.HoraSalida.Substring(0, 2);
 		string MinutoEntrada = GrupoTrabajo.HoraEntrada.Substring(3, 2);
 		string MinutoSalida = GrupoTrabajo.HoraEntrada.Substring(3, 2);
-		
+		SelectorHoraEntrada.ItemsSource = GeneraHoras();
+		SelectorHoraSalida.ItemsSource = GeneraHoras();
+		SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
+		SelectorMinutoSalida.ItemsSource = GeneraMinutos();
+		SelectorHoraEntrada.SelectedItem = HoraEntrada;
+		SelectorHoraSalida.SelectedItem = HoraSalida;
+		SelectorMinutoEntrada.SelectedItem = MinutoEntrada;
+		SelectorMinutoSalida.SelectedItem = MinutoSalida;
+
 
 		switch (actualiza)
         {
@@ -95,13 +104,17 @@ public partial class AltaGrupoTrabajo : ContentPage
 	}
 	private void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Turno).FirstOrDefault();
-		GrupoTrabajo.Turno = CampoNombre.Text;
-		GrupoTrabajo.HoraEntrada = (SelectorHoraEntrada.SelectedItem.ToString() + ":" + SelectorMinutoEntrada.SelectedItem.ToString()).Trim();
-		GrupoTrabajo.HoraSalida = (SelectorHoraSalida.SelectedItem.ToString() + ":" + SelectorMinutoSalida.SelectedItem.ToString()).Trim();
-		presenciaContext.Grupo_Trabajo.Update(GrupoTrabajo);
-		presenciaContext.SaveChanges();
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
+		if(Turno is not null)
+		{
+			var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Turno).FirstOrDefault();
+			GrupoTrabajo.Turno = CampoNombre.Text;
+			GrupoTrabajo.HoraEntrada = (SelectorHoraEntrada.SelectedItem.ToString() + ":" + SelectorMinutoEntrada.SelectedItem.ToString()).Trim();
+			GrupoTrabajo.HoraSalida = (SelectorHoraSalida.SelectedItem.ToString() + ":" + SelectorMinutoSalida.SelectedItem.ToString()).Trim();
+			presenciaContext.Grupo_Trabajo.Update(GrupoTrabajo);
+			presenciaContext.SaveChanges();
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
+		}
+		
     }
 
 	

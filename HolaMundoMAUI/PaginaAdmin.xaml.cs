@@ -13,17 +13,21 @@ public partial class PaginaAdmin : ContentPage
     Trabajador tr;
     Grupo_Trabajo gr;
     Zonas zn;
-    Boolean UsActivo,TrActivo,GrActivo,ZnActivo;
+    Tareas ta;
+    Boolean UsActivo,TrActivo,GrActivo,ZnActivo,TaActivo;
     public PaginaAdmin(string nombreUsuario)
     {
         UsActivo = false;
         TrActivo = false;
         GrActivo = false;
         ZnActivo = false;
+        TaActivo = false;
+
         InitializeComponent();
         SetListViewUsuarios();
         SetListViewTrabajadores();
         SetListViewGruposTrabajo();
+        SetListViewTareas();
         SetListViewZonas();
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@, " + Environment.NewLine + nombreUsuario;
@@ -35,11 +39,14 @@ public partial class PaginaAdmin : ContentPage
         TrActivo = false;
         GrActivo = false;
         ZnActivo = false;
+        TaActivo=false;
+
         InitializeComponent();
         SetListViewUsuarios();
         SetListViewTrabajadores();
         SetListViewGruposTrabajo();
         SetListViewZonas();
+        SetListViewTareas();
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@,"+ Environment.NewLine +""+ nombreUsuario;
         switch (interfaz)
@@ -69,7 +76,10 @@ public partial class PaginaAdmin : ContentPage
                 LabelTitulo4.Text = "Tech Talent" + Environment.NewLine + "gestión de Zonas de trabajo";
                 break;
             case 5:
-
+                ListViewTasks.IsVisible = true;
+                ListViewTasks.IsEnabled = true;
+                TaActivo = true;
+                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de Zonas de tareas";
                 break;
         }
     }
@@ -263,6 +273,7 @@ public partial class PaginaAdmin : ContentPage
         PresenciaContext presenciaContext = new PresenciaContext();
         var users = presenciaContext.Usuarios.ToList();
         ListViewUsuarios.ItemsSource = users;
+        if(users.Count > 0)
         ListViewUsuarios.SelectedItem = users[0];
     }
     public void SetListViewGruposTrabajo()
@@ -270,6 +281,7 @@ public partial class PaginaAdmin : ContentPage
         PresenciaContext presenciaContext = new PresenciaContext();
         var grupos = presenciaContext.Grupo_Trabajo.ToList();
         ListViewGrupos.ItemsSource = grupos;
+        if(grupos.Count > 0)
         ListViewGrupos.SelectedItem = grupos[0];
     }
     public void SetListViewTrabajadores()
@@ -277,6 +289,7 @@ public partial class PaginaAdmin : ContentPage
         PresenciaContext presenciaContext = new PresenciaContext();
         var workers = presenciaContext.Trabajador.Include(x => x.grupo).Include(x => x.usuario).ToList();
         ListViewTrabajadores.ItemsSource = workers;
+        if(workers.Count > 0)
         ListViewTrabajadores.SelectedItem = workers[0];
     }
     public void SetListViewZonas()
@@ -284,8 +297,19 @@ public partial class PaginaAdmin : ContentPage
         PresenciaContext presenciaContext = new PresenciaContext();
         var zones = presenciaContext.Zonas.ToList();
         ListViewZonas.ItemsSource = zones;
+        if(zones.Count > 0)
         ListViewZonas.SelectedItem = zones[0];
     }
+    public void SetListViewTareas()
+    {
+        PresenciaContext presenciaContext = new PresenciaContext();
+        var tareas = presenciaContext.Tareas.ToList();
+        ListViewTareas.ItemsSource = tareas;
+        if (tareas.Count > 0) 
+        { 
+            ListViewTareas.SelectedItem = tareas[0];
+        }
+    }    
     public void OnItemSelectedUsuarios(object sender, SelectedItemChangedEventArgs e)
     {
         Usuarios item = e.SelectedItem as Usuarios;
@@ -306,6 +330,11 @@ public partial class PaginaAdmin : ContentPage
         Zonas item = e.SelectedItem as Zonas;
         zn = item;
     }
+    public void OnItemSelectedTareas(object sender, SelectedItemChangedEventArgs e)
+    {
+        Tareas item = e.SelectedItem as Tareas;
+        ta = item;
+    }
     private void BtnUsuarios_Clicked(object sender, EventArgs e)
     {
         if (UsActivo == false)
@@ -318,11 +347,20 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#ffa73b");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
 
             UsActivo = true;
             TrActivo = false;
             GrActivo = false;
             ZnActivo = false;
+            TaActivo = false;
+
             LabelTitulo.Text="Tech Talent"+ Environment.NewLine+ "gestión de usuarios";
         }
         else
@@ -335,10 +373,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
+
             UsActivo = false;
             TrActivo = false;
             GrActivo = false;
             ZnActivo = false;
+            TaActivo = false;
+
             LabelTitulo.Text = "";
         }
     }
@@ -354,11 +403,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#ffa73b");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
 
             TrActivo = true;
             UsActivo = false;
             GrActivo = false;
             ZnActivo = false;
+            TaActivo = false;
+
             LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
         }
         else
@@ -371,11 +430,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
 
             TrActivo = false;
             UsActivo = false;
             GrActivo = false;
             ZnActivo = false;
+            TaActivo = false;
+
             LabelTitulo.Text = "";
         }
     }
@@ -391,10 +460,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = true;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#ffa73b");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
 
             GrActivo = true;
             UsActivo = false;
             TrActivo = false;
+            TaActivo = false;
+            ZnActivo = false;
+
             LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
         }
         else
@@ -407,10 +487,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
 
             GrActivo = false;
             TrActivo = false;
             UsActivo = false;
+            TaActivo = false;
+            ZnActivo = false;
+
             LabelTitulo.Text = "";
         }
     }
@@ -426,12 +517,21 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = true;
             ListViewZones.IsEnabled = true;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#ffa73b");
+
 
             ZnActivo = true;
             GrActivo = false;
             UsActivo = false;
             TrActivo = false;
-            
+            TaActivo = false;
+
             LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de zonas de trabajo";
         }
         else
@@ -444,7 +544,70 @@ public partial class PaginaAdmin : ContentPage
             ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
             ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
 
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            UsActivo = false;
+            TaActivo = false;
+
+            LabelTitulo.Text = "";
+        }
+    }
+    private void BtnTareas_Clicked(object sender, EventArgs e)
+    {
+        if (TaActivo == false)
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = true;
+            ListViewTasks.IsEnabled = true;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#ffa73b");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
+            ZnActivo = false;
+            GrActivo = false;
+            UsActivo = false;
+            TrActivo = false;
+            TaActivo = true;
+
+            LabelTitulo.Text = "Tech Talent" + Environment.NewLine + "gestión de zonas de trabajo";
+        }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewUsers.IsVisible = false;
+            ListViewUsers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonTareas.BackgroundColor = Color.FromRgba("#b9b6bf");
+            BotonZonas.BackgroundColor = Color.FromRgba("#b9b6bf");
+
+            TaActivo = false;
             ZnActivo = false;
             GrActivo = false;
             TrActivo = false;
@@ -532,12 +695,52 @@ public partial class PaginaAdmin : ContentPage
             await DisplayAlert("Alert", "Por favor, Seleccione un elemento primero", "OK");
         }
     }
-
     private void BotonAnadeZona_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0));
     }
+    private async void BotonBorrarTareas_Clicked(object sender, EventArgs e)
+    {
+        var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == ta.NombreTarea).FirstOrDefault();
+        bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar la tarea " + tarea.NombreTarea + "\"?", "Si", "No");
+        presenciaContext.Remove(tarea);
+        presenciaContext.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado tarea " + tarea.NombreTarea + " - " + dt));
+        presenciaContext.SaveChanges();
+        App.Current.MainPage = new NavigationPage(new BorraTareas(nombreUsuario));
+    }
+    private void BtnAnadeTarea_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
+    }
+    private void BotonCopiar_Clicked(object sender, EventArgs e)
+    {
+        if (us.Password != "")
+            Clipboard.SetTextAsync(us.Password);
+    }
+    private void BtnAnadeTareaGrupoTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
+    }
 
+    private void AddZonasGrupos_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
+    }
+
+    private async void ImageButton_Clicked(object sender, EventArgs e)
+    {
+        BotonCerrarSession.BackgroundColor = Color.FromRgba("#b9b6bf");
+        bool answer = await DisplayAlert("Question?","¿Deseas cerrar sesión?","Si","No");
+        if(answer == true)
+        {
+            App.Current.MainPage = new NavigationPage(new MainPage());
+        }
+    }
+
+    private void BotonEditarTareas_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario,ta.NombreTarea,1));
+    }
     private void BotonEditarGruposTrabajo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,gr.Turno,1));
