@@ -16,7 +16,7 @@ namespace Persistencia
         {
 
         }
-
+        //Metodo para insertar un trabajador a la base de datos
         public static bool insertaTrabajador(string Name, int Grup, string user)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
@@ -48,6 +48,7 @@ namespace Persistencia
             }
 
         }
+        //Metodo para insertar un grupo de trabajo a la base de datos
         public static bool insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
         {
             using var presenciaContext = new PresenciaContext();
@@ -62,6 +63,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para insertar un fichaje en la base de datos
         public static bool insertaFichaje(int Trabajador, int GrupoTrabajo, string Entrada_Salida)
         {
             using var presenciaContext = new PresenciaContext();
@@ -83,6 +85,7 @@ namespace Persistencia
             }
 
         }
+        //Metodo para insertar un usuario en la base de datos
         public static bool insertaUsuario(string username, string password, bool esAdmin)
         {
             if (username is not null)
@@ -104,6 +107,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para insertar una tarea en la base de datos
         public static bool insertaTareas(string NombreTarea, string Descripcion, double TiempoEstimado)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
@@ -118,6 +122,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //MEtodo para insertar una tarea determinada en un grupo de trabajo existente
         public static bool insertaTareaEnGrupo(int IdGrupo, string NombreTarea, string Descripcion, int TiempoEstimado)
         {
             if (IdGrupo != null && NombreTarea is not null && Descripcion is not null && TiempoEstimado != null)
@@ -133,6 +138,7 @@ namespace Persistencia
             }
 
         }
+        //Metodo para insertar una zona en la base de datos
         public static bool insertaZona(string NombreZona)
         {
             if (NombreZona is null || NombreZona.Equals(""))
@@ -148,6 +154,7 @@ namespace Persistencia
             }
 
         }
+        //Metodo para borrar un trabajador existente de la base de datos
         public static bool borraTrabajador(int NumeroTarjeta)
         {
             using var presenciaContext = new PresenciaContext();
@@ -163,6 +170,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para borrar un grupo de trabajo existente de la base de datos
         public static bool borraGrupoTrabajo(int IdGrupo)
         {
             using var presenciaContext = new PresenciaContext();
@@ -177,6 +185,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para borrar un fichaje concreto de la base de datos
         public static bool borraFichaje(int Id)
         {
             using var presenciaContext = new PresenciaContext();
@@ -190,6 +199,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para borrar un usuario concreto de la base de datos
         public static bool borraUsuario(int Id)
         {
             using var presenciaContext = new PresenciaContext();
@@ -205,6 +215,7 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para borrar una zona concreta de la base de datos
         public static bool BorraZona(int id)
         {
             using var presenciaContext = new PresenciaContext();
@@ -220,6 +231,7 @@ namespace Persistencia
                 return false;
             }
         } 
+        //Metodo para actualizar un trabajador existente de la base de datos
         public static bool actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
         {
             using var presenciaContext = new PresenciaContext();
@@ -228,6 +240,7 @@ namespace Persistencia
             presenciaContext.SaveChanges();
             return true;
         }
+        //Metodo para actualizar un grupo existente de la base de datos
         public static bool actualizarGrupoTrabajo(string Nombre, string HoraEntrada, string HoraSalida)
         {
             using var presenciaContext = new PresenciaContext();
@@ -247,6 +260,10 @@ namespace Persistencia
             }
             
         }
+        /*Metodo para actualizar un usuario existente en la base de datos, aunque realmente no se usa
+          ya que por seguridad no se necesita la modificacion del nombre de usuario por lo que solo podremos
+        modificar las contraseñas y si es o no admin(En la interfaz)
+         */
         public static bool actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
         {
             using var presenciaContext = new PresenciaContext();
@@ -264,18 +281,24 @@ namespace Persistencia
                 return false;
             }
         }    
+        //Metodo para actualizar una zona existente en la base de datos
         public static bool ActualizaZona(string OldName, string NewName)
         {
             using var presenciaContext = new PresenciaContext();
             var Zona = presenciaContext.Zonas.Where(x => x.Nombre == OldName).FirstOrDefault();
-            Zona.Nombre = NewName;
-            presenciaContext.Zonas.Update(Zona);
-            presenciaContext.SaveChanges();
-            return true;
+            if (Zona is not null)
+            {
+                Zona.Nombre = NewName;
+                presenciaContext.Zonas.Update(Zona);
+                presenciaContext.Logs.Add(new Log("Update", "Se ha actualizado la zona \""+OldName+"\" a \""+NewName+"\""));
+                presenciaContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-
-
-            
         }
     }
 

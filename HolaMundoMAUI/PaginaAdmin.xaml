@@ -100,6 +100,9 @@
             </HorizontalStackLayout>
         </StackLayout >
         <StackLayout x:Name="ContenedorVentana">
+            <StackLayout x:Name="PaginaPrincipal">
+
+            </StackLayout>
             <StackLayout x:Name="ListViewUsers" 
                          IsVisible="False"
                          IsEnabled="False">

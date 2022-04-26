@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-04-26T11:35:19.739</Modified>
+      <Modified>2022-04-26T14:17:26.541</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-04-26T11:35:18.390</Modified>
+      <Modified>2022-04-26T14:17:25.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json">
       <PackagePath>HolaMundoMAUI.runtimeconfig.json</PackagePath>
-      <Modified>2022-04-26T09:59:30.623</Modified>
+      <Modified>2022-04-26T12:09:41.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll">
       <PackagePath>HolaMundoMAUI.dll</PackagePath>
-      <Modified>2022-04-26T11:35:16.507</Modified>
+      <Modified>2022-04-26T14:17:23.995</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\apphost.exe">
       <PackagePath>HolaMundoMAUI.exe</PackagePath>
-      <Modified>2022-04-26T11:35:16.537</Modified>
+      <Modified>2022-04-26T14:17:24.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1083,19 +1083,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\ClassLibrary1\bin\Debug\net6.0\Bibliotec.dll">
       <PackagePath>Bibliotec.dll</PackagePath>
-      <Modified>2022-04-26T09:58:44.075</Modified>
+      <Modified>2022-04-26T13:58:50.647</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\Persistencia\bin\Debug\net6.0\Persistencia.dll">
       <PackagePath>Persistencia.dll</PackagePath>
-      <Modified>2022-04-26T09:58:44.614</Modified>
+      <Modified>2022-04-26T13:59:53.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json">
       <PackagePath>HolaMundoMAUI.deps.json</PackagePath>
-      <Modified>2022-04-26T11:35:19.539</Modified>
+      <Modified>2022-04-26T14:17:26.354</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf">
       <PackagePath>Platforms\Windows\App.xbf</PackagePath>
-      <Modified>2022-04-26T11:35:16.037</Modified>
+      <Modified>2022-04-26T14:17:23.532</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -1103,23 +1103,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-100.png">
       <PackagePath>appiconfgSplashScreen.scale-100.png</PackagePath>
-      <Modified>2022-04-26T09:59:27.737</Modified>
+      <Modified>2022-04-26T12:08:46.586</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-125.png">
       <PackagePath>appiconfgSplashScreen.scale-125.png</PackagePath>
-      <Modified>2022-04-26T09:59:27.753</Modified>
+      <Modified>2022-04-26T12:08:46.604</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-150.png">
       <PackagePath>appiconfgSplashScreen.scale-150.png</PackagePath>
-      <Modified>2022-04-26T09:59:27.775</Modified>
+      <Modified>2022-04-26T12:08:46.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-200.png">
       <PackagePath>appiconfgSplashScreen.scale-200.png</PackagePath>
-      <Modified>2022-04-26T09:59:27.805</Modified>
+      <Modified>2022-04-26T12:08:46.656</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\sp\appiconfgSplashScreen.scale-400.png">
       <PackagePath>appiconfgSplashScreen.scale-400.png</PackagePath>
-      <Modified>2022-04-26T09:59:27.921</Modified>
+      <Modified>2022-04-26T12:08:46.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -1127,463 +1127,503 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-100.png">
       <PackagePath>addgroups.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.443</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-125.png">
       <PackagePath>addgroups.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.448</Modified>
+      <Modified>2022-04-26T12:19:05.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-150.png">
       <PackagePath>addgroups.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.452</Modified>
+      <Modified>2022-04-26T12:19:05.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-200.png">
       <PackagePath>addgroups.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.455</Modified>
+      <Modified>2022-04-26T12:19:05.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-400.png">
       <PackagePath>addgroups.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.461</Modified>
+      <Modified>2022-04-26T12:19:05.086</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareas.scale-100.png">
       <PackagePath>addtareas.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.065</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareas.scale-125.png">
       <PackagePath>addtareas.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareas.scale-150.png">
       <PackagePath>addtareas.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.450</Modified>
+      <Modified>2022-04-26T12:19:05.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareas.scale-200.png">
       <PackagePath>addtareas.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.455</Modified>
+      <Modified>2022-04-26T12:19:05.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareas.scale-400.png">
       <PackagePath>addtareas.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.461</Modified>
+      <Modified>2022-04-26T12:19:05.085</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareasgrupotrabajo.scale-100.png">
       <PackagePath>addtareasgrupotrabajo.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.444</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareasgrupotrabajo.scale-125.png">
       <PackagePath>addtareasgrupotrabajo.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.448</Modified>
+      <Modified>2022-04-26T12:19:05.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareasgrupotrabajo.scale-150.png">
       <PackagePath>addtareasgrupotrabajo.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.452</Modified>
+      <Modified>2022-04-26T12:19:05.075</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareasgrupotrabajo.scale-200.png">
       <PackagePath>addtareasgrupotrabajo.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.456</Modified>
+      <Modified>2022-04-26T12:19:05.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addtareasgrupotrabajo.scale-400.png">
       <PackagePath>addtareasgrupotrabajo.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.463</Modified>
+      <Modified>2022-04-26T12:19:05.086</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\adduser.scale-100.png">
       <PackagePath>adduser.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\adduser.scale-125.png">
       <PackagePath>adduser.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\adduser.scale-150.png">
       <PackagePath>adduser.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.450</Modified>
+      <Modified>2022-04-26T12:19:05.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\adduser.scale-200.png">
       <PackagePath>adduser.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.455</Modified>
+      <Modified>2022-04-26T12:19:05.083</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\adduser.scale-400.png">
       <PackagePath>adduser.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.462</Modified>
+      <Modified>2022-04-26T12:19:05.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addworker.scale-100.png">
       <PackagePath>addworker.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.443</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addworker.scale-125.png">
       <PackagePath>addworker.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.447</Modified>
+      <Modified>2022-04-26T12:19:05.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addworker.scale-150.png">
       <PackagePath>addworker.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.452</Modified>
+      <Modified>2022-04-26T12:19:05.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addworker.scale-200.png">
       <PackagePath>addworker.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.456</Modified>
+      <Modified>2022-04-26T12:19:05.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addworker.scale-400.png">
       <PackagePath>addworker.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.461</Modified>
+      <Modified>2022-04-26T12:19:05.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonas.scale-100.png">
       <PackagePath>addzonas.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.443</Modified>
+      <Modified>2022-04-26T12:19:05.065</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonas.scale-125.png">
       <PackagePath>addzonas.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.195</Modified>
+      <Modified>2022-04-26T12:19:04.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonas.scale-150.png">
       <PackagePath>addzonas.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.217</Modified>
+      <Modified>2022-04-26T12:19:04.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonas.scale-200.png">
       <PackagePath>addzonas.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.219</Modified>
+      <Modified>2022-04-26T12:19:04.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonas.scale-400.png">
       <PackagePath>addzonas.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.224</Modified>
+      <Modified>2022-04-26T12:19:04.816</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-100.png">
       <PackagePath>addzonasgrupotrabajo.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.444</Modified>
+      <Modified>2022-04-26T12:19:05.067</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-125.png">
       <PackagePath>addzonasgrupotrabajo.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.448</Modified>
+      <Modified>2022-04-26T12:19:05.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-150.png">
       <PackagePath>addzonasgrupotrabajo.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.452</Modified>
+      <Modified>2022-04-26T12:19:05.076</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-200.png">
       <PackagePath>addzonasgrupotrabajo.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.458</Modified>
+      <Modified>2022-04-26T12:19:05.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-400.png">
       <PackagePath>addzonasgrupotrabajo.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.463</Modified>
+      <Modified>2022-04-26T12:19:05.086</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.760</Modified>
+      <Modified>2022-04-26T12:20:31.664</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.771</Modified>
+      <Modified>2022-04-26T12:20:31.677</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.780</Modified>
+      <Modified>2022-04-26T12:20:31.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.796</Modified>
+      <Modified>2022-04-26T12:20:31.706</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.857</Modified>
+      <Modified>2022-04-26T12:20:31.781</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.607</Modified>
+      <Modified>2022-04-26T12:20:31.474</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.610</Modified>
+      <Modified>2022-04-26T12:20:31.477</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.613</Modified>
+      <Modified>2022-04-26T12:20:31.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.616</Modified>
+      <Modified>2022-04-26T12:20:31.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.620</Modified>
+      <Modified>2022-04-26T12:20:31.488</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.660</Modified>
+      <Modified>2022-04-26T12:20:31.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.665</Modified>
+      <Modified>2022-04-26T12:20:31.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.670</Modified>
+      <Modified>2022-04-26T12:20:31.550</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.678</Modified>
+      <Modified>2022-04-26T12:20:31.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.692</Modified>
+      <Modified>2022-04-26T12:20:31.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.639</Modified>
+      <Modified>2022-04-26T12:20:31.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.642</Modified>
+      <Modified>2022-04-26T12:20:31.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.645</Modified>
+      <Modified>2022-04-26T12:20:31.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.649</Modified>
+      <Modified>2022-04-26T12:20:31.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.656</Modified>
+      <Modified>2022-04-26T12:20:31.531</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.623</Modified>
+      <Modified>2022-04-26T12:20:31.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.625</Modified>
+      <Modified>2022-04-26T12:20:31.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.628</Modified>
+      <Modified>2022-04-26T12:20:31.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.631</Modified>
+      <Modified>2022-04-26T12:20:31.501</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.636</Modified>
+      <Modified>2022-04-26T12:20:31.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.697</Modified>
+      <Modified>2022-04-26T12:20:31.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.703</Modified>
+      <Modified>2022-04-26T12:20:31.590</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.711</Modified>
+      <Modified>2022-04-26T12:20:31.601</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.722</Modified>
+      <Modified>2022-04-26T12:20:31.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.752</Modified>
+      <Modified>2022-04-26T12:20:31.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\borrar.scale-100.png">
       <PackagePath>borrar.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\borrar.scale-125.png">
       <PackagePath>borrar.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.447</Modified>
+      <Modified>2022-04-26T12:19:05.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\borrar.scale-150.png">
       <PackagePath>borrar.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.452</Modified>
+      <Modified>2022-04-26T12:19:05.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\borrar.scale-200.png">
       <PackagePath>borrar.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.456</Modified>
+      <Modified>2022-04-26T12:19:05.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\borrar.scale-400.png">
       <PackagePath>borrar.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.461</Modified>
+      <Modified>2022-04-26T12:19:05.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-100.png">
       <PackagePath>copiar.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-125.png">
       <PackagePath>copiar.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.067</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-150.png">
       <PackagePath>copiar.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.449</Modified>
+      <Modified>2022-04-26T12:19:05.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-200.png">
       <PackagePath>copiar.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.454</Modified>
+      <Modified>2022-04-26T12:19:05.075</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-400.png">
       <PackagePath>copiar.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.458</Modified>
+      <Modified>2022-04-26T12:19:05.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-100.png">
       <PackagePath>editar.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-125.png">
       <PackagePath>editar.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-150.png">
       <PackagePath>editar.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.450</Modified>
+      <Modified>2022-04-26T12:19:05.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-200.png">
       <PackagePath>editar.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.453</Modified>
+      <Modified>2022-04-26T12:19:05.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-400.png">
       <PackagePath>editar.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.458</Modified>
+      <Modified>2022-04-26T12:19:05.083</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-100.png">
       <PackagePath>grupos.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.443</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-125.png">
       <PackagePath>grupos.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.449</Modified>
+      <Modified>2022-04-26T12:19:05.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-150.png">
       <PackagePath>grupos.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.455</Modified>
+      <Modified>2022-04-26T12:19:05.078</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-200.png">
       <PackagePath>grupos.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.462</Modified>
+      <Modified>2022-04-26T12:19:05.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-400.png">
       <PackagePath>grupos.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.472</Modified>
+      <Modified>2022-04-26T12:19:05.091</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-100.png">
       <PackagePath>logout.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.442</Modified>
+      <Modified>2022-04-26T12:19:05.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-125.png">
       <PackagePath>logout.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-150.png">
       <PackagePath>logout.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.450</Modified>
+      <Modified>2022-04-26T12:19:05.076</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-200.png">
       <PackagePath>logout.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.454</Modified>
+      <Modified>2022-04-26T12:19:05.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-400.png">
       <PackagePath>logout.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.459</Modified>
+      <Modified>2022-04-26T12:19:05.085</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-100.png">
+      <PackagePath>redcircle.scale-100.png</PackagePath>
+      <Modified>2022-04-26T12:20:31.452</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-125.png">
+      <PackagePath>redcircle.scale-125.png</PackagePath>
+      <Modified>2022-04-26T12:20:31.457</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-150.png">
+      <PackagePath>redcircle.scale-150.png</PackagePath>
+      <Modified>2022-04-26T12:20:31.459</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-200.png">
+      <PackagePath>redcircle.scale-200.png</PackagePath>
+      <Modified>2022-04-26T12:20:31.460</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-400.png">
+      <PackagePath>redcircle.scale-400.png</PackagePath>
+      <Modified>2022-04-26T12:20:31.461</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\red_circle.scale-100.gif">
+      <PackagePath>red_circle.scale-100.gif</PackagePath>
+      <Modified>2022-04-26T12:19:04.808</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\red_circle.scale-125.gif">
+      <PackagePath>red_circle.scale-125.gif</PackagePath>
+      <Modified>2022-04-26T12:19:04.817</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\red_circle.scale-150.gif">
+      <PackagePath>red_circle.scale-150.gif</PackagePath>
+      <Modified>2022-04-26T12:19:04.829</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\red_circle.scale-200.gif">
+      <PackagePath>red_circle.scale-200.gif</PackagePath>
+      <Modified>2022-04-26T12:19:04.880</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\red_circle.scale-400.gif">
+      <PackagePath>red_circle.scale-400.gif</PackagePath>
+      <Modified>2022-04-26T12:19:04.983</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\tareas.scale-100.png">
       <PackagePath>tareas.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.444</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\tareas.scale-125.png">
       <PackagePath>tareas.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.449</Modified>
+      <Modified>2022-04-26T12:19:05.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\tareas.scale-150.png">
       <PackagePath>tareas.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.455</Modified>
+      <Modified>2022-04-26T12:19:05.076</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\tareas.scale-200.png">
       <PackagePath>tareas.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.460</Modified>
+      <Modified>2022-04-26T12:19:05.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\tareas.scale-400.png">
       <PackagePath>tareas.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.469</Modified>
+      <Modified>2022-04-26T12:19:05.093</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-100.png">
       <PackagePath>trabajador.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.443</Modified>
+      <Modified>2022-04-26T12:19:05.066</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-125.png">
       <PackagePath>trabajador.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.196</Modified>
+      <Modified>2022-04-26T12:19:04.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-150.png">
       <PackagePath>trabajador.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.212</Modified>
+      <Modified>2022-04-26T12:19:04.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-200.png">
       <PackagePath>trabajador.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.214</Modified>
+      <Modified>2022-04-26T12:19:04.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-400.png">
       <PackagePath>trabajador.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.217</Modified>
+      <Modified>2022-04-26T12:19:04.817</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\usuario.scale-100.png">
       <PackagePath>usuario.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.603</Modified>
+      <Modified>2022-04-26T12:19:05.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\usuario.scale-125.png">
       <PackagePath>usuario.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.604</Modified>
+      <Modified>2022-04-26T12:19:05.068</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\usuario.scale-150.png">
       <PackagePath>usuario.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.604</Modified>
+      <Modified>2022-04-26T12:19:05.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\usuario.scale-200.png">
       <PackagePath>usuario.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.606</Modified>
+      <Modified>2022-04-26T12:19:05.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\usuario.scale-400.png">
       <PackagePath>usuario.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:11:10.608</Modified>
+      <Modified>2022-04-26T12:19:05.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\ver.scale-100.png">
       <PackagePath>ver.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.441</Modified>
+      <Modified>2022-04-26T12:19:05.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\ver.scale-125.png">
       <PackagePath>ver.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.446</Modified>
+      <Modified>2022-04-26T12:19:05.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\ver.scale-150.png">
       <PackagePath>ver.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.450</Modified>
+      <Modified>2022-04-26T12:19:05.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\ver.scale-200.png">
       <PackagePath>ver.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.453</Modified>
+      <Modified>2022-04-26T12:19:05.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\ver.scale-400.png">
       <PackagePath>ver.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.459</Modified>
+      <Modified>2022-04-26T12:19:05.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-100.png">
       <PackagePath>zonas.scale-100.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.444</Modified>
+      <Modified>2022-04-26T12:19:05.067</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-125.png">
       <PackagePath>zonas.scale-125.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.192</Modified>
+      <Modified>2022-04-26T12:19:04.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-150.png">
       <PackagePath>zonas.scale-150.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.193</Modified>
+      <Modified>2022-04-26T12:19:04.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-200.png">
       <PackagePath>zonas.scale-200.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.194</Modified>
+      <Modified>2022-04-26T12:19:04.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-400.png">
       <PackagePath>zonas.scale-400.png</PackagePath>
-      <Modified>2022-04-26T10:09:36.218</Modified>
+      <Modified>2022-04-26T12:19:04.815</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

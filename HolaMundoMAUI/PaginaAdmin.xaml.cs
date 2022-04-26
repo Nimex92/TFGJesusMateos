@@ -15,6 +15,9 @@ public partial class PaginaAdmin : ContentPage
     Zonas zn;
     Tareas ta;
     Boolean UsActivo,TrActivo,GrActivo,ZnActivo,TaActivo;
+    int UsersActivos;
+
+
     public PaginaAdmin(string nombreUsuario)
     {
         UsActivo = false;
@@ -22,13 +25,14 @@ public partial class PaginaAdmin : ContentPage
         GrActivo = false;
         ZnActivo = false;
         TaActivo = false;
-
+        
         InitializeComponent();
         SetListViewUsuarios();
         SetListViewTrabajadores();
         SetListViewGruposTrabajo();
         SetListViewTareas();
         SetListViewZonas();
+
         this.nombreUsuario = nombreUsuario;
         Label_NameUser.Text = "Bienvenid@, " + Environment.NewLine + nombreUsuario;
     }
@@ -138,12 +142,6 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt));
         presenciaContext.SaveChanges();
     }
-    private void Logout_png_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new MainPage());
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario+" Ha cerrado sesión"));
-        presenciaContext.SaveChanges();
-    }
     public void SetListViewUsuarios()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
@@ -225,6 +223,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#ffa73b");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -251,6 +250,8 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -281,6 +282,8 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#ffa73b");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -308,6 +311,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -338,6 +342,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#ffa73b");
@@ -365,6 +370,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -395,6 +401,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = true;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -422,6 +429,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -451,6 +459,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = true;
             ListViewTasks.IsEnabled = true;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -477,6 +486,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
             ListViewTasks.IsEnabled = false;
+
             BotonUser.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonTrabajador.BackgroundColor = Color.FromRgba("#b9b6bf");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#b9b6bf");
@@ -574,23 +584,33 @@ public partial class PaginaAdmin : ContentPage
     private void BotonAnadeZona_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonas de trabajo:'" + zn.Nombre + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void BtnAnadeTarea_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo:'" + ta.NombreTarea + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void BotonCopiar_Clicked(object sender, EventArgs e)
     {
         if (us.Password != "")
             Clipboard.SetTextAsync(us.Password);
+            presenciaContext.Logs.Add(new Log("Password", nombreUsuario + " ha copiado la contraseña del usuario:'" + tr.nombre + " - " + dt));
+            presenciaContext.SaveChanges();
     }
     private void BtnAnadeTareaGrupoTrabajo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tarea a grupo de trabajo:'" + ta.NombreTarea + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void AddZonasGrupos_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonasa grupo de trabajo:'" + zn.Nombre + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private async void ImageButton_Clicked(object sender, EventArgs e)
     {
@@ -622,11 +642,13 @@ public partial class PaginaAdmin : ContentPage
     private void BotonEditarTareas_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario,ta.NombreTarea,1));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar tarea de trabajo '+" + ta.NombreTarea + " - " + dt));
+        presenciaContext.SaveChanges();
     }
     private void BotonEditarGruposTrabajo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,gr.Turno,1));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar grupo de trabajo '+"+gr.Turno+" - " + dt));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar grupo de trabajo' "+gr.Turno+" - " + dt));
         presenciaContext.SaveChanges();
     }
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
@@ -635,9 +657,4 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.nombre + " - " + dt));
         presenciaContext.SaveChanges();
     }
-    private void BtnAnadeTrabajador_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 0));
-    }
 }
-
