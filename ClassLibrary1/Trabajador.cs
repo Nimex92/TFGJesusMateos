@@ -16,7 +16,7 @@ namespace Bibliotec
         [Key]
         public int numero_tarjeta { get; set; }
         public string nombre { get; set; }
-        public virtual Grupo_Trabajo grupo { get; set; }
+        public virtual Turnos grupo { get; set; }
         public virtual Usuarios usuario { get; set; }
 
         public Trabajador(string nombre, int grupo_trabajo)
@@ -24,7 +24,7 @@ namespace Bibliotec
             this.nombre = nombre;
             this.grupo.IdGrupo = grupo_trabajo;
         }
-        public Trabajador(string nombre, Grupo_Trabajo grupo,Usuarios user)
+        public Trabajador(string nombre, Turnos grupo,Usuarios user)
         {
             this.nombre = nombre;
             this.grupo = grupo;
@@ -36,7 +36,7 @@ namespace Bibliotec
             this.grupo.IdGrupo = grupo;
             this.usuario.Username = user;
         }
-        public Trabajador(int numero_tarjeta, string nombre, Grupo_Trabajo grupo)
+        public Trabajador(int numero_tarjeta, string nombre, Turnos grupo)
         {
             this.numero_tarjeta = numero_tarjeta;
             this.nombre = nombre;

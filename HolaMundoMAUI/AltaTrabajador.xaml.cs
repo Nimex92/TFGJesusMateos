@@ -20,7 +20,7 @@ public partial class AltaTrabajador : ContentPage
 		var listaTurnos = new List<string>();
 		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
 		Selector.Items.Add("-- Selecciona un turno de trabajo.");
-		foreach (Grupo_Trabajo grupo in Turno)
+		foreach (Turnos grupo in Turno)
         {
 			Selector.Items.Add(grupo.Turno);
 		}

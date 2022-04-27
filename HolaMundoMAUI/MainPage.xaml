@@ -44,7 +44,17 @@
                    VerticalOptions="Center"
                    WidthRequest="300"
                    BackgroundColor="White"
-                   TextColor="Black"/>
+                   TextColor="Black">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry"
+                         Property="IsFocused"
+                         Value="True">
+                        <Setter Property="TextColor"
+                                Value="DarkGrey" />
+                        <!-- Multiple Setter elements are allowed -->
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
 
             <Entry x:Name="CampoContraseña"
                    Placeholder="Introduce Contraseña:"

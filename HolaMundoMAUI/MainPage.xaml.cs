@@ -10,8 +10,6 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		
-
 	}
 	public async void CambiaFichar(object sender, EventArgs e)
     {

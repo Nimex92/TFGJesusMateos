@@ -14,7 +14,7 @@ public partial class PaginaFichar : ContentPage
 	Trabajador trabajador;
 	public IDispatcherTimer MyTimer { get; set; }
 	PresenciaContext presenciaContext = new PresenciaContext();
-	Grupo_Trabajo gt;
+	Turnos gt;
 	DateTime Entrada;
 	DateTime Salida;
 	DateTime dt = DateTime.Now;
@@ -25,7 +25,7 @@ public partial class PaginaFichar : ContentPage
 		CompruebaFichajes(username);
 		CompruebaTareas(username);
 
-
+		
 		this.username = username;
 		var trab = presenciaContext.Trabajador.Where(x => x.usuario.Username == username)
 			.Include(x => x.grupo).Include(x => x.usuario).FirstOrDefault();
@@ -70,9 +70,17 @@ public partial class PaginaFichar : ContentPage
 		Entrada = DateTime.Today.AddHours(HorEnt).AddMinutes(MinEnt);
 		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
 		BotonIniciarTarea.IsVisible = false;
-		Label_NameUser.Text = username;
 	}
 
+	private async void ImageButton_Clicked(object sender, EventArgs e)
+	{
+		BotonCerrarSession.BackgroundColor = Color.FromRgba("#b9b6bf");
+		bool answer = await DisplayAlert("Question?", "¿Deseas cerrar sesión?", "Si", "No");
+		if (answer == true)
+		{
+			App.Current.MainPage = new NavigationPage(new MainPage());
+		}
+	}
 	private void CompruebaFichajes(string user)
 	{
 		var Trabajador = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador.usuario.Username == user).FirstOrDefault();
@@ -153,7 +161,7 @@ public partial class PaginaFichar : ContentPage
 		}
 		presenciaContext.SaveChanges();
 		}
-		private async void BotonPlegar_Clicked(object sender, EventArgs e)
+	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
 			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.grupo).FirstOrDefault();
 			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.grupo.IdGrupo, "Salida");
@@ -190,8 +198,7 @@ public partial class PaginaFichar : ContentPage
 		}
 		presenciaContext.SaveChanges();
 	}
-
-		private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+	private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 		{
 			int selectedIndex = SelectorTareas.SelectedIndex;
 
@@ -214,7 +221,7 @@ public partial class PaginaFichar : ContentPage
 				BotonIniciarTarea.IsVisible = true;
 			}
 		}
-		private async void BotonIniciarTarea_Clicked(object sender, EventArgs e)
+	private async void BotonIniciarTarea_Clicked(object sender, EventArgs e)
 		{
 			BotonAcabarTarea.IsEnabled = true;
 			BotonAcabarTarea.IsVisible = true;
@@ -237,7 +244,7 @@ public partial class PaginaFichar : ContentPage
 			}
 
 		}
-		private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
+	private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
 		{
 			BotonAcabarTarea.IsEnabled = false;
 			BotonAcabarTarea.IsVisible = false;
@@ -259,10 +266,14 @@ public partial class PaginaFichar : ContentPage
 			presenciaContext.Logs.Add(new Log("Tareas", username + " ha finalizado tarea " + tarea.NombreTarea + " - " + dt));
 			presenciaContext.SaveChanges();
 		}
-
 	private void Logout_png_Clicked(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new MainPage());
 	}
+
+    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+
+    }
 }
 

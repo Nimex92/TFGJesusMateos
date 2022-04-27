@@ -11,7 +11,7 @@ public partial class PaginaAdmin : ContentPage
     DateTime dt = DateTime.Now;
     Usuarios us;
     Trabajador tr;
-    Grupo_Trabajo gr;
+    Turnos gr;
     Zonas zn;
     Tareas ta;
     Boolean UsActivo,TrActivo,GrActivo,ZnActivo,TaActivo;
@@ -196,7 +196,7 @@ public partial class PaginaAdmin : ContentPage
     }
     public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
     {
-        Grupo_Trabajo item = e.SelectedItem as Grupo_Trabajo;
+        Turnos item = e.SelectedItem as Turnos;
         gr = item;
     }
     public void OnItemSelectedZonas(object sender, SelectedItemChangedEventArgs e)

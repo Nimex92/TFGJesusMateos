@@ -39,7 +39,7 @@ namespace Persistencia.Tests
         [TestMethod()]
         public void insertarGrupoTrabajoTest()
         {
-            Grupo_Trabajo g = new Grupo_Trabajo()
+            Turnos g = new Turnos()
             {
                 Turno = "4to turno",
                 HoraEntrada = "09:45",
@@ -93,7 +93,7 @@ namespace Persistencia.Tests
         public void borraGrupoTrabajoTest()
         {
             PresenciaContext p = new PresenciaContext();
-            Grupo_Trabajo g = p.Grupo_Trabajo.Find(1);
+            Turnos g = p.Grupo_Trabajo.Find(1);
             bool borra = OperacionesDBContext.borraGrupoTrabajo(g.IdGrupo);
             Assert.IsTrue(borra);
         }
@@ -133,7 +133,7 @@ namespace Persistencia.Tests
         {
             PresenciaContext p = new PresenciaContext();
             var grupos = p.Grupo_Trabajo.ToList();
-            Grupo_Trabajo g = grupos[0];
+            Turnos g = grupos[0];
             g.Turno = "Mañana";
             g.HoraEntrada = "00:00";
             g.HoraSalida = "00:00";
@@ -174,7 +174,7 @@ namespace Persistencia.Tests
             PresenciaContext p = new PresenciaContext();
             var tareas = p.Tareas.ToList();
             var grupos = p.Grupo_Trabajo.ToList();
-            Grupo_Trabajo g = grupos[0];
+            Turnos g = grupos[0];
             Tareas t = tareas[0];
             bool actualiza = OperacionesDBContext.insertaTareaEnGrupo(g.IdGrupo, t.NombreTarea, t.Descripcion, 7);
             Assert.IsTrue(actualiza);

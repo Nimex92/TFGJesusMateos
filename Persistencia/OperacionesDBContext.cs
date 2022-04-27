@@ -52,7 +52,7 @@ namespace Persistencia
         public static bool insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
         {
             using var presenciaContext = new PresenciaContext();
-            Grupo_Trabajo grupo = new Grupo_Trabajo(nombre, horaEntrada, horaSalida);
+            Turnos grupo = new Turnos(nombre, horaEntrada, horaSalida);
             if (nombre is not null && horaEntrada is not null && horaSalida is not null) {
                 presenciaContext.Grupo_Trabajo.Add(grupo);
                 presenciaContext.SaveChanges();
@@ -68,7 +68,7 @@ namespace Persistencia
         {
             using var presenciaContext = new PresenciaContext();
             Trabajador trab = presenciaContext.Trabajador.Find(Trabajador);
-            Grupo_Trabajo grupo = presenciaContext.Grupo_Trabajo.Find(GrupoTrabajo);
+            Turnos grupo = presenciaContext.Grupo_Trabajo.Find(GrupoTrabajo);
 
             //Grupo_Trabajo grupo = new Grupo_Trabajo(2, "Tarde", "14:00", "22:00");
             DateTime fechaFichaje = DateTime.Now;
@@ -174,7 +174,7 @@ namespace Persistencia
         public static bool borraGrupoTrabajo(int IdGrupo)
         {
             using var presenciaContext = new PresenciaContext();
-            Grupo_Trabajo grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
+            Turnos grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
             if (grupo is not null) {
                 presenciaContext.Remove(grupo);
                 presenciaContext.SaveChanges();

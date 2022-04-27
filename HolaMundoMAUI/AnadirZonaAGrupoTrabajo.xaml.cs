@@ -26,7 +26,7 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
 		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");
 		SelectorZonas.Items.Add("-- Selecciona zona.");
-		foreach (Grupo_Trabajo grupo in grupos)
+		foreach (Turnos grupo in grupos)
 		{
 			SelectorGruposTrabajo.Items.Add(grupo.Turno);
 		}

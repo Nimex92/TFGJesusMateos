@@ -19,6 +19,43 @@ namespace Persistencia.Migrations
                 .HasAnnotation("ProductVersion", "6.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Bibliotec.Calendario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Trabajadornumero_tarjeta");
+
+                    b.ToTable("Calendario");
+                });
+
+            modelBuilder.Entity("Bibliotec.DiaLibre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EsFestivo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Motivo")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DiaLibre");
+                });
+
             modelBuilder.Entity("Bibliotec.Grupo_Trabajo", b =>
                 {
                     b.Property<int>("IdGrupo")
@@ -233,6 +270,21 @@ namespace Persistencia.Migrations
                     b.ToTable("Zonas");
                 });
 
+            modelBuilder.Entity("CalendarioDiaLibre", b =>
+                {
+                    b.Property<int>("CalendarioPerteneceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DiasDelCalendarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CalendarioPerteneceId", "DiasDelCalendarioId");
+
+                    b.HasIndex("DiasDelCalendarioId");
+
+                    b.ToTable("CalendarioDiaLibre");
+                });
+
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
                 {
                     b.Property<int>("Id")
@@ -289,6 +341,17 @@ namespace Persistencia.Migrations
                     b.HasIndex("ZonasIdZona");
 
                     b.ToTable("Grupo_TrabajoZonas");
+                });
+
+            modelBuilder.Entity("Bibliotec.Calendario", b =>
+                {
+                    b.HasOne("Bibliotec.Trabajador", "Trabajador")
+                        .WithMany()
+                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Trabajador");
                 });
 
             modelBuilder.Entity("Bibliotec.TareaComenzada", b =>
@@ -381,6 +444,21 @@ namespace Persistencia.Migrations
                     b.Navigation("fichaje");
 
                     b.Navigation("trabajador");
+                });
+
+            modelBuilder.Entity("CalendarioDiaLibre", b =>
+                {
+                    b.HasOne("Bibliotec.Calendario", null)
+                        .WithMany()
+                        .HasForeignKey("CalendarioPerteneceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.DiaLibre", null)
+                        .WithMany()
+                        .HasForeignKey("DiasDelCalendarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>

@@ -79,7 +79,7 @@
             <StackLayout x:Name="BotonTareas">
                 <ImageButton
                 x:Name="BtnTareas"
-                Source="tareas.png"
+                Source="calendar.png"
                 WidthRequest="70"
                 HeightRequest="70"
                 Margin="0,-10,0,0"
