@@ -56,6 +56,21 @@ namespace Persistencia.Migrations
                     b.ToTable("DiaLibre");
                 });
 
+            modelBuilder.Entity("Bibliotec.EquipoTrabajo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EquipoTrabajo");
+                });
+
             modelBuilder.Entity("Bibliotec.Grupo_Trabajo", b =>
                 {
                     b.Property<int>("IdGrupo")
@@ -193,9 +208,6 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("grupoIdGrupo")
-                        .HasColumnType("int");
-
                     b.Property<string>("nombre")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -204,8 +216,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("numero_tarjeta");
-
-                    b.HasIndex("grupoIdGrupo");
 
                     b.HasIndex("usuarioIdUser");
 
@@ -231,6 +241,52 @@ namespace Persistencia.Migrations
                     b.HasIndex("trabajadornumero_tarjeta");
 
                     b.ToTable("TrabajadorEnTurno");
+                });
+
+            modelBuilder.Entity("Bibliotec.Turno", b =>
+                {
+                    b.Property<string>("Nombre")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsDomingo")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsJueves")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsLunes")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsMartes")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsMiercoles")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsSabado")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("EsViernes")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("HoraEntrada")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("HoraSalida")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ValidoDesde")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("ValidoHasta")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Nombre");
+
+                    b.ToTable("Turno");
                 });
 
             modelBuilder.Entity("Bibliotec.Usuarios", b =>
@@ -295,22 +351,52 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("EquipoTrabajoId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("FechaFichaje")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("Grupo_TrabajoIdGrupo")
-                        .HasColumnType("int");
 
                     b.Property<int>("Trabajadornumero_tarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Grupo_TrabajoIdGrupo");
+                    b.HasIndex("EquipoTrabajoId");
 
                     b.HasIndex("Trabajadornumero_tarjeta");
 
                     b.ToTable("TablaFichajes");
+                });
+
+            modelBuilder.Entity("EquipoTrabajoTrabajador", b =>
+                {
+                    b.Property<int>("Trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("equipoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Trabajadornumero_tarjeta", "equipoId");
+
+                    b.HasIndex("equipoId");
+
+                    b.ToTable("EquipoTrabajoTrabajador");
+                });
+
+            modelBuilder.Entity("EquipoTrabajoTurno", b =>
+                {
+                    b.Property<int>("EquiposDeTrabajoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TurnosNombre")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("EquiposDeTrabajoId", "TurnosNombre");
+
+                    b.HasIndex("TurnosNombre");
+
+                    b.ToTable("EquipoTrabajoTurno");
                 });
 
             modelBuilder.Entity("Grupo_TrabajoTareas", b =>
@@ -410,19 +496,11 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Bibliotec.Trabajador", b =>
                 {
-                    b.HasOne("Bibliotec.Grupo_Trabajo", "grupo")
-                        .WithMany()
-                        .HasForeignKey("grupoIdGrupo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Bibliotec.Usuarios", "usuario")
                         .WithMany()
                         .HasForeignKey("usuarioIdUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("grupo");
 
                     b.Navigation("usuario");
                 });
@@ -463,9 +541,9 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
                 {
-                    b.HasOne("Bibliotec.Grupo_Trabajo", "Grupo_Trabajo")
+                    b.HasOne("Bibliotec.EquipoTrabajo", "EquipoTrabajo")
                         .WithMany()
-                        .HasForeignKey("Grupo_TrabajoIdGrupo")
+                        .HasForeignKey("EquipoTrabajoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -475,9 +553,39 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Grupo_Trabajo");
+                    b.Navigation("EquipoTrabajo");
 
                     b.Navigation("Trabajador");
+                });
+
+            modelBuilder.Entity("EquipoTrabajoTrabajador", b =>
+                {
+                    b.HasOne("Bibliotec.Trabajador", null)
+                        .WithMany()
+                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.EquipoTrabajo", null)
+                        .WithMany()
+                        .HasForeignKey("equipoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EquipoTrabajoTurno", b =>
+                {
+                    b.HasOne("Bibliotec.EquipoTrabajo", null)
+                        .WithMany()
+                        .HasForeignKey("EquiposDeTrabajoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Turno", null)
+                        .WithMany()
+                        .HasForeignKey("TurnosNombre")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Grupo_TrabajoTareas", b =>

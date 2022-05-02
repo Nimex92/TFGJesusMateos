@@ -241,7 +241,7 @@
                     x:Name="SelectorTareas"
                     BackgroundColor="Black"
                     WidthRequest="300"
-                    SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                    
                     IsEnabled="False"
                     IsVisible="False"
                    />
@@ -256,7 +256,7 @@
                     WidthRequest="100"
                     IsEnabled="False"
                     IsVisible="False"
-                    Clicked="BotonIniciarTarea_Clicked"
+                   
                     Margin="130,0,0,0"/>
                 <Button
                     x:Name="BotonAcabarTarea"
@@ -265,7 +265,7 @@
                     WidthRequest="100"
                     IsEnabled="False"
                     IsVisible="False"
-                    Clicked="BotonAcabarTarea_Clicked"
+                    
                     Margin="130,0,0,0"/>
             </HorizontalStackLayout>
             <Button
