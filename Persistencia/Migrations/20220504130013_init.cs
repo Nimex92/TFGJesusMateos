@@ -46,25 +46,6 @@ namespace Persistencia.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Grupo_Trabajo",
-                columns: table => new
-                {
-                    IdGrupo = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Turno = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HoraEntrada = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    HoraSalida = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Grupo_Trabajo", x => x.IdGrupo);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Logs",
                 columns: table => new
                 {
@@ -158,23 +139,23 @@ namespace Persistencia.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Grupo_TrabajoTareas",
+                name: "EquipoTrabajoTareas",
                 columns: table => new
                 {
-                    GruposTrabajoIdGrupo = table.Column<int>(type: "int", nullable: false),
+                    EquipoTrabajoId = table.Column<int>(type: "int", nullable: false),
                     TareasIdTarea = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grupo_TrabajoTareas", x => new { x.GruposTrabajoIdGrupo, x.TareasIdTarea });
+                    table.PrimaryKey("PK_EquipoTrabajoTareas", x => new { x.EquipoTrabajoId, x.TareasIdTarea });
                     table.ForeignKey(
-                        name: "FK_Grupo_TrabajoTareas_Grupo_Trabajo_GruposTrabajoIdGrupo",
-                        column: x => x.GruposTrabajoIdGrupo,
-                        principalTable: "Grupo_Trabajo",
-                        principalColumn: "IdGrupo",
+                        name: "FK_EquipoTrabajoTareas_EquipoTrabajo_EquipoTrabajoId",
+                        column: x => x.EquipoTrabajoId,
+                        principalTable: "EquipoTrabajo",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Grupo_TrabajoTareas_Tareas_TareasIdTarea",
+                        name: "FK_EquipoTrabajoTareas_Tareas_TareasIdTarea",
                         column: x => x.TareasIdTarea,
                         principalTable: "Tareas",
                         principalColumn: "IdTarea",
@@ -216,6 +197,8 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nombre = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    perteneceaturnos = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     usuarioIdUser = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -231,23 +214,23 @@ namespace Persistencia.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Grupo_TrabajoZonas",
+                name: "EquipoTrabajoZonas",
                 columns: table => new
                 {
-                    GruposTrabajoIdGrupo = table.Column<int>(type: "int", nullable: false),
+                    EquiposTrabajoId = table.Column<int>(type: "int", nullable: false),
                     ZonasIdZona = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grupo_TrabajoZonas", x => new { x.GruposTrabajoIdGrupo, x.ZonasIdZona });
+                    table.PrimaryKey("PK_EquipoTrabajoZonas", x => new { x.EquiposTrabajoId, x.ZonasIdZona });
                     table.ForeignKey(
-                        name: "FK_Grupo_TrabajoZonas_Grupo_Trabajo_GruposTrabajoIdGrupo",
-                        column: x => x.GruposTrabajoIdGrupo,
-                        principalTable: "Grupo_Trabajo",
-                        principalColumn: "IdGrupo",
+                        name: "FK_EquipoTrabajoZonas_EquipoTrabajo_EquiposTrabajoId",
+                        column: x => x.EquiposTrabajoId,
+                        principalTable: "EquipoTrabajo",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Grupo_TrabajoZonas_Zonas_ZonasIdZona",
+                        name: "FK_EquipoTrabajoZonas_Zonas_ZonasIdZona",
                         column: x => x.ZonasIdZona,
                         principalTable: "Zonas",
                         principalColumn: "IdZona",
@@ -279,12 +262,12 @@ namespace Persistencia.Migrations
                 name: "EquipoTrabajoTrabajador",
                 columns: table => new
                 {
-                    Trabajadornumero_tarjeta = table.Column<int>(type: "int", nullable: false),
+                    Trabajadoresnumero_tarjeta = table.Column<int>(type: "int", nullable: false),
                     equipoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EquipoTrabajoTrabajador", x => new { x.Trabajadornumero_tarjeta, x.equipoId });
+                    table.PrimaryKey("PK_EquipoTrabajoTrabajador", x => new { x.Trabajadoresnumero_tarjeta, x.equipoId });
                     table.ForeignKey(
                         name: "FK_EquipoTrabajoTrabajador_EquipoTrabajo_equipoId",
                         column: x => x.equipoId,
@@ -292,8 +275,8 @@ namespace Persistencia.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EquipoTrabajoTrabajador_Trabajador_Trabajadornumero_tarjeta",
-                        column: x => x.Trabajadornumero_tarjeta,
+                        name: "FK_EquipoTrabajoTrabajador_Trabajador_Trabajadoresnumero_tarjeta",
+                        column: x => x.Trabajadoresnumero_tarjeta,
                         principalTable: "Trabajador",
                         principalColumn: "numero_tarjeta",
                         onDelete: ReferentialAction.Cascade);
@@ -338,18 +321,11 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     tareaIdTarea = table.Column<int>(type: "int", nullable: false),
                     trabajadornumero_tarjeta = table.Column<int>(type: "int", nullable: false),
-                    grupoIdGrupo = table.Column<int>(type: "int", nullable: false),
                     InicioTarea = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TareasComenzadas", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_TareasComenzadas_Grupo_Trabajo_grupoIdGrupo",
-                        column: x => x.grupoIdGrupo,
-                        principalTable: "Grupo_Trabajo",
-                        principalColumn: "IdGrupo",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TareasComenzadas_Tareas_tareaIdTarea",
                         column: x => x.tareaIdTarea,
@@ -373,7 +349,6 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     tareaIdTarea = table.Column<int>(type: "int", nullable: false),
                     trabajadornumero_tarjeta = table.Column<int>(type: "int", nullable: false),
-                    grupoIdGrupo = table.Column<int>(type: "int", nullable: false),
                     inicioTarea = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     FinTarea = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     HorasUsadas = table.Column<double>(type: "double", nullable: false),
@@ -382,12 +357,6 @@ namespace Persistencia.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TareasFinalizadas", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_TareasFinalizadas_Grupo_Trabajo_grupoIdGrupo",
-                        column: x => x.grupoIdGrupo,
-                        principalTable: "Grupo_Trabajo",
-                        principalColumn: "IdGrupo",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_TareasFinalizadas_Tareas_tareaIdTarea",
                         column: x => x.tareaIdTarea,
@@ -466,6 +435,11 @@ namespace Persistencia.Migrations
                 column: "DiasDelCalendarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_EquipoTrabajoTareas_TareasIdTarea",
+                table: "EquipoTrabajoTareas",
+                column: "TareasIdTarea");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_EquipoTrabajoTrabajador_equipoId",
                 table: "EquipoTrabajoTrabajador",
                 column: "equipoId");
@@ -476,13 +450,8 @@ namespace Persistencia.Migrations
                 column: "TurnosNombre");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Grupo_TrabajoTareas_TareasIdTarea",
-                table: "Grupo_TrabajoTareas",
-                column: "TareasIdTarea");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Grupo_TrabajoZonas_ZonasIdZona",
-                table: "Grupo_TrabajoZonas",
+                name: "IX_EquipoTrabajoZonas_ZonasIdZona",
+                table: "EquipoTrabajoZonas",
                 column: "ZonasIdZona");
 
             migrationBuilder.CreateIndex(
@@ -496,11 +465,6 @@ namespace Persistencia.Migrations
                 column: "Trabajadornumero_tarjeta");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TareasComenzadas_grupoIdGrupo",
-                table: "TareasComenzadas",
-                column: "grupoIdGrupo");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TareasComenzadas_tareaIdTarea",
                 table: "TareasComenzadas",
                 column: "tareaIdTarea");
@@ -509,11 +473,6 @@ namespace Persistencia.Migrations
                 name: "IX_TareasComenzadas_trabajadornumero_tarjeta",
                 table: "TareasComenzadas",
                 column: "trabajadornumero_tarjeta");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TareasFinalizadas_grupoIdGrupo",
-                table: "TareasFinalizadas",
-                column: "grupoIdGrupo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TareasFinalizadas_tareaIdTarea",
@@ -547,16 +506,16 @@ namespace Persistencia.Migrations
                 name: "CalendarioDiaLibre");
 
             migrationBuilder.DropTable(
+                name: "EquipoTrabajoTareas");
+
+            migrationBuilder.DropTable(
                 name: "EquipoTrabajoTrabajador");
 
             migrationBuilder.DropTable(
                 name: "EquipoTrabajoTurno");
 
             migrationBuilder.DropTable(
-                name: "Grupo_TrabajoTareas");
-
-            migrationBuilder.DropTable(
-                name: "Grupo_TrabajoZonas");
+                name: "EquipoTrabajoZonas");
 
             migrationBuilder.DropTable(
                 name: "Logs");
@@ -581,9 +540,6 @@ namespace Persistencia.Migrations
 
             migrationBuilder.DropTable(
                 name: "Zonas");
-
-            migrationBuilder.DropTable(
-                name: "Grupo_Trabajo");
 
             migrationBuilder.DropTable(
                 name: "Tareas");

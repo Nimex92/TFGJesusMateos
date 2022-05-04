@@ -54,11 +54,16 @@ public partial class AltaTrabajador : ContentPage
 	public async void RegistrarNuevoTrabajador(object sender, EventArgs e)
 	{
 		Random r = new Random();
+		Trabajador t = new Trabajador();
 		string nombre = CampoNombre.Text;
 		string user = nombre+r.Next(0,9)+r.Next(0, 9)+r.Next(0, 9)+r.Next(0, 9);
-		var seleccionado = Selector.SelectedItem.ToString().Trim();
+		var seleccionado = Selector.SelectedItem.ToString();
 		var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == seleccionado).FirstOrDefault();
-		bool inserta = OperacionesDBContext.insertaTrabajador(nombre,equipo.Id,user);
+		t.nombre = nombre;
+		t.usuario = new Usuarios(user, "1"); 
+		t.equipo.Add(equipo);
+		t.perteneceaturnos = equipo.Nombre;
+		bool inserta = OperacionesDBContext.InsertaTrabajador(t);
 		presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido trabajador " + nombre + " - " + dt));
 		presenciaContext.SaveChanges();
 		if (inserta == true)

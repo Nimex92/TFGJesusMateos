@@ -6,6 +6,7 @@ namespace HolaMundoMAUI;
 public partial class MainPage : ContentPage
 {	
 	PresenciaContext presenciaContext = new PresenciaContext();
+	DateTime dt = DateTime.Now;
 	string user;
 	public MainPage()
 	{
@@ -24,7 +25,7 @@ public partial class MainPage : ContentPage
             {
 				MensajeError.IsVisible = false;
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
-				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion"));
+				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
 				presenciaContext.SaveChanges();
 				user = NombreUsuario;
 			}
@@ -32,7 +33,7 @@ public partial class MainPage : ContentPage
             {
 				MensajeError.IsVisible = false;
 				App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
-				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion"));
+				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
 				presenciaContext.SaveChanges();
 			}
 			

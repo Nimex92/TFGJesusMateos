@@ -36,20 +36,7 @@ namespace Persistencia.Tests
 
             */
         }
-
-        [TestMethod()]
-        public void insertarGrupoTrabajoTest()
-        {
-            Grupo_Trabajo g = new Grupo_Trabajo()
-            {
-                Turno = "4to turno",
-                HoraEntrada = "09:45",
-                HoraSalida = "18:55"
-            };
-            bool inserta = OperacionesDBContext.insertarGrupoTrabajo(g.Turno, g.HoraEntrada, g.HoraSalida);
-            Assert.IsTrue(inserta);
-
-        }
+        
         /*
         [TestMethod()]
         public void insertaFichajeTest()

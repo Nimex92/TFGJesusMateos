@@ -60,6 +60,7 @@
 	  <Page Remove="AltaTareaTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
+	  <Page Remove="AnadirTrabajadorEquipoTrabajo.xaml" />
 	  <Page Remove="CalendarioLalboral.xaml" />
 	  <Page Remove="EliminarTrabajador.xaml" />
 	  <Page Remove="ModificaGrupoTrabajo.xaml" />
@@ -115,6 +116,9 @@
 	  <Compile Update="AnadirZonaAGrupoTrabajo.xaml.cs">
 	    <DependentUpon>AnadirZonaAGrupoTrabajo.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="AnadirTrabajadorEquipoTrabajo.xaml.cs">
+	    <DependentUpon>AnadirTrabajadorEquipoTrabajo.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
 	  </Compile>
@@ -160,6 +164,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AnadirZonaAGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadirTrabajadorEquipoTrabajo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">

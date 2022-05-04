@@ -14,7 +14,6 @@ public partial class PaginaFichar : ContentPage
 	Trabajador trabajador;
 	public IDispatcherTimer MyTimer { get; set; }
 	PresenciaContext presenciaContext = new PresenciaContext();
-	Grupo_Trabajo gt;
 	DateTime Entrada;
 	DateTime Salida;
 	DateTime dt = DateTime.Now;
@@ -133,10 +132,10 @@ public partial class PaginaFichar : ContentPage
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-		/*
-		//var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.grupo).FirstOrDefault();
-		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.equipo.Id, "Entrada");
-		Fichajes fich = new Fichajes(trabajador.numero_tarjeta, trabajador.equipo.Id, dt, "Entrada");
+		
+		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.equipo).FirstOrDefault();
+		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, "Entrada");
+		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
 
 		presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
 		presenciaContext.SaveChanges();
@@ -163,7 +162,7 @@ public partial class PaginaFichar : ContentPage
 		{
 			presenciaContext.Logs.Add(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - "+dt));
 		}
-		presenciaContext.SaveChanges(); */
+		presenciaContext.SaveChanges(); 
 		}
 	/*
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)

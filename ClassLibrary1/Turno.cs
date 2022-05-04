@@ -23,7 +23,7 @@ namespace Bibliotec
         public DateTime ValidoDesde { get; set; }
         public DateTime ValidoHasta { get; set; }
         public bool Eliminado { get; set; }
-        public ICollection<EquipoTrabajo> EquiposDeTrabajo { get; set; }
+        public ICollection<EquipoTrabajo> EquiposDeTrabajo { get; set; } = new List<EquipoTrabajo>();
         public Turno()
         {
 

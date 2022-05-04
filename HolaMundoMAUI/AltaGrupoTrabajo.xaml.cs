@@ -8,93 +8,40 @@ public partial class AltaGrupoTrabajo : ContentPage
 {
 	string NombreUsuario;
 	DateTime dt = DateTime.Now;
+	string NombreEquipoTrabajo;
 	string Turno;
 	PresenciaContext presenciaContext = new PresenciaContext();
 	public AltaGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		NombreUsuario = user;
-		SelectorHoraEntrada.ItemsSource = GeneraHoras();
-		SelectorHoraSalida.ItemsSource = GeneraHoras();
-		SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
-		SelectorMinutoSalida.ItemsSource = GeneraMinutos();
-		SelectorHoraEntrada.SelectedIndex = 0;
-		SelectorMinutoEntrada.SelectedIndex = 0;
-		SelectorHoraSalida.SelectedIndex = 0;
-		SelectorMinutoSalida.SelectedIndex = 0;
 	}
-	public AltaGrupoTrabajo(string user,string grupo,int actualiza)
+	public AltaGrupoTrabajo(string user,string equipo,int actualiza)
 	{
 		InitializeComponent();
-		Turno = grupo;
 		NombreUsuario = user;
-		var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == grupo).FirstOrDefault();
-		if(CampoNombre.Text is not null)
-		CampoNombre.Text = GrupoTrabajo.Turno;
-		string HoraEntrada = GrupoTrabajo.HoraEntrada.Substring(0, 2);
-		string HoraSalida = GrupoTrabajo.HoraSalida.Substring(0, 2);
-		string MinutoEntrada = GrupoTrabajo.HoraEntrada.Substring(3, 2);
-		string MinutoSalida = GrupoTrabajo.HoraEntrada.Substring(3, 2);
-		SelectorHoraEntrada.ItemsSource = GeneraHoras();
-		SelectorHoraSalida.ItemsSource = GeneraHoras();
-		SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
-		SelectorMinutoSalida.ItemsSource = GeneraMinutos();
-		SelectorHoraEntrada.SelectedItem = HoraEntrada;
-		SelectorHoraSalida.SelectedItem = HoraSalida;
-		SelectorMinutoEntrada.SelectedItem = MinutoEntrada;
-		SelectorMinutoSalida.SelectedItem = MinutoSalida;
-
-
-		switch (actualiza)
-        {
-			case 0:
-				BotonRegistrarAdmin.IsEnabled = true;
-				BotonRegistrarAdmin.IsVisible = true;
-				BotonActualizarAdmin.IsEnabled = false;
-				BotonActualizarAdmin.IsVisible = false;
-				break;
-			case 1:
-				BotonRegistrarAdmin.IsEnabled = false;
-				BotonRegistrarAdmin.IsVisible = false;
-				BotonActualizarAdmin.IsEnabled = true;
-				BotonActualizarAdmin.IsVisible = true;
-				break;
-        }
-
-		SelectorHoraEntrada.ItemsSource = GeneraHoras();
-		SelectorHoraSalida.ItemsSource = GeneraHoras();
-		SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
-		SelectorMinutoSalida.ItemsSource = GeneraMinutos();
-		SelectorHoraEntrada.SelectedItem = HoraEntrada;
-		SelectorHoraSalida.SelectedItem = HoraSalida;
-		SelectorMinutoEntrada.SelectedItem = MinutoEntrada;
-		SelectorMinutoSalida.SelectedItem = MinutoSalida;
+		NombreEquipoTrabajo = equipo;
 	}
 	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
 	{
 		PresenciaContext presenciaContext = new PresenciaContext();
-		string NombreGrupo = CampoNombre.Text;
-		if (NombreGrupo is not null)
+		string NombreEquipo = CampoNombre.Text;
+		if (NombreEquipo is not null)
 		{
-			string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
-			string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
-			string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
-			string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
-			string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
-			string TiempoSalida = HoraSalida + ":" + MinutoSalida;
-
-			var GrupoExiste = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == NombreGrupo).FirstOrDefault();
-			if (GrupoExiste is not null)
+			var EquipoExiste = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == NombreEquipo).FirstOrDefault();
+			if (EquipoExiste is not null)
 			{
-				await DisplayAlert("Alert", "El grupo de trabajo ya existe.", "OK");
+				
+				await DisplayAlert("Alert", "El equipo de trabajo ya existe.", "OK");
 			}
 			else
 			{
-				OperacionesDBContext.insertarGrupoTrabajo(NombreGrupo, TiempoEntrada, TiempoSalida);
-				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreGrupo + " - " + dt));
+				EquipoTrabajo eq = new EquipoTrabajo(NombreEquipo);
+				OperacionesDBContext.InsertaEquipoTrabajo(eq);
+				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreEquipo + " - " + dt));
 				presenciaContext.SaveChanges();
-				await DisplayAlert("Alert", "El grupo de trabajo se ha añadido correctamente.", "OK");
-				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
+				await DisplayAlert("Alert", "El equipo de trabajo se ha añadido correctamente.", "OK");
+				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,6));
 			}
 		}
 		else
@@ -104,16 +51,6 @@ public partial class AltaGrupoTrabajo : ContentPage
 	}
 	private void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		if(Turno is not null)
-		{
-			var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Turno).FirstOrDefault();
-			GrupoTrabajo.Turno = CampoNombre.Text;
-			GrupoTrabajo.HoraEntrada = (SelectorHoraEntrada.SelectedItem.ToString() + ":" + SelectorMinutoEntrada.SelectedItem.ToString()).Trim();
-			GrupoTrabajo.HoraSalida = (SelectorHoraSalida.SelectedItem.ToString() + ":" + SelectorMinutoSalida.SelectedItem.ToString()).Trim();
-			presenciaContext.Grupo_Trabajo.Update(GrupoTrabajo);
-			presenciaContext.SaveChanges();
-			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
-		}
 		
     }
 
@@ -150,9 +87,8 @@ public partial class AltaGrupoTrabajo : ContentPage
 		}
 		return ListaMinutos;
 	}
-
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,6));
     }
 }

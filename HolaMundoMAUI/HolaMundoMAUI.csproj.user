@@ -43,6 +43,9 @@
     <MauiXaml Update="AnadirZonaAGrupoTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="AnadirTrabajadorEquipoTrabajo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

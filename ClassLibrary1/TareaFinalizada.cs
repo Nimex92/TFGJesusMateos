@@ -12,7 +12,6 @@ namespace Bibliotec
         public int id { get; set; }
         public Tareas tarea { get; set; }
         public Trabajador trabajador { get; set; }
-        public Grupo_Trabajo grupo { get; set; }
         public DateTime inicioTarea { get; set; }
         public DateTime FinTarea { get; set; }
         public double HorasUsadas { get; set; }
@@ -22,11 +21,10 @@ namespace Bibliotec
         {
 
         }
-        public TareaFinalizada(Tareas t, Trabajador tr, Grupo_Trabajo gr, DateTime init, DateTime Fin, double HorasUsadas,bool EnHora)
+        public TareaFinalizada(Tareas t, Trabajador tr, DateTime init, DateTime Fin, double HorasUsadas,bool EnHora)
         {
             this.tarea = t;
             this.trabajador = tr;
-            this.grupo = gr;
             this.inicioTarea = init;
             this.FinTarea = Fin;
             this.HorasUsadas = HorasUsadas;

@@ -15,7 +15,7 @@ namespace Bibliotec
         public string Descripcion { get; set; }
         public double TiempoEstimado { get; set; }
 
-        public ICollection<Grupo_Trabajo> GruposTrabajo { get; set; } = new List<Grupo_Trabajo>();
+        public ICollection<EquipoTrabajo> EquipoTrabajo { get; set; }
 
         public Tareas()
         {

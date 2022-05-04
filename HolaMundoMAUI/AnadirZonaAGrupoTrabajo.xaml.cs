@@ -16,19 +16,19 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 	}
 	private void SetPickers()
 	{
-		var grupos = presenciaContext.Grupo_Trabajo;
+		var equipos = presenciaContext.EquipoTrabajo;
 		var zonas = presenciaContext.Zonas;
 
 		//Recojo todos los Turnos de la tabla de MySql
 		//Creo una lista para guardar todos los turnos existentes
-		var ListaGrupos = new List<string>();
+		var ListaEquipos = new List<string>();
 		var ListaTareas = new List<string>();
 		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
 		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");
 		SelectorZonas.Items.Add("-- Selecciona zona.");
-		foreach (Grupo_Trabajo grupo in grupos)
+		foreach (EquipoTrabajo equipo in equipos)
 		{
-			SelectorGruposTrabajo.Items.Add(grupo.Turno);
+			SelectorGruposTrabajo.Items.Add(equipo.Nombre);
 		}
 		foreach (Zonas zona in zonas)
 		{
@@ -47,14 +47,14 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 	{
 		var TurnoGrupo = SelectorGruposTrabajo.SelectedItem;
 		var NombreZona = SelectorZonas.SelectedItem;
-		var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == TurnoGrupo).FirstOrDefault();
+		var grupo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == TurnoGrupo).FirstOrDefault();
 		var zona = presenciaContext.Zonas.Where(x => x.Nombre == NombreZona).FirstOrDefault();
 
 		if (grupo is not null && zona is not null)
 		{
 			grupo.Zonas.Add(zona);
-			await DisplayAlert("Alert", "Se ha añadido '" + zona.Nombre + "' a grupo: " + grupo.Turno, "OK");
-			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido "+grupo.Zonas+"a " + grupo.Turno + " - " + dt));
+			await DisplayAlert("Alert", "Se ha añadido '" + zona.Nombre + "' a grupo: " + grupo.Nombre, "OK");
+			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido "+grupo.Zonas+" a " + grupo.Nombre + " - " + dt));
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 4));
 		}
 		else

@@ -162,7 +162,7 @@ public partial class AltaTurno : ContentPage
     }
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
     }
     public void RellenarPickers()
     {

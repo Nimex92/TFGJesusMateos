@@ -16,7 +16,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 	}
 	private void SetPickers()
     {
-		var grupos = presenciaContext.Grupo_Trabajo;
+		var equipos = presenciaContext.EquipoTrabajo;
 		var tareas = presenciaContext.Tareas;
 
 		//Recojo todos los Turnos de la tabla de MySql
@@ -24,11 +24,11 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		var ListaGrupos = new List<string>();
 		var ListaTareas = new List<string>();
 		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
-		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");
+		SelectorGruposTrabajo.Items.Add("-- Selecciona equipo de trabajo.");
 		SelectorTareas.Items.Add("-- Selecciona tarea.");
-		foreach (Grupo_Trabajo grupo in grupos)
+		foreach (EquipoTrabajo equipo in equipos)
 		{
-			SelectorGruposTrabajo.Items.Add(grupo.Turno);
+			SelectorGruposTrabajo.Items.Add(equipo.Nombre);
 		}
 		foreach (Tareas tarea in tareas)
 		{
@@ -46,14 +46,14 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
     {
 		var TurnoGrupo = SelectorGruposTrabajo.SelectedItem;
 		var NombreTarea = SelectorTareas.SelectedItem;
-		var grupo = presenciaContext.Grupo_Trabajo.Where(x=>x.Turno == TurnoGrupo).FirstOrDefault();
+		var grupo = presenciaContext.EquipoTrabajo.Where(x=>x.Nombre == TurnoGrupo).FirstOrDefault();
 		var tarea = presenciaContext.Tareas.Where(x=>x.NombreTarea == NombreTarea).FirstOrDefault();
 
 		if(grupo is not null && tarea is not null)
         {
 			grupo.Tareas.Add(tarea);
-			await DisplayAlert("Alert", "Se ha añadido '" + tarea.NombreTarea + "' a grupo: "+grupo.Turno, "OK");
-			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.NombreTarea +" a grupo "+grupo.Turno+ " - " + dt));
+			await DisplayAlert("Alert", "Se ha añadido '" + tarea.NombreTarea + "' a grupo: "+grupo.Nombre, "OK");
+			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.NombreTarea +" a grupo "+grupo.Nombre+ " - " + dt));
 			presenciaContext.SaveChanges();
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
 		}

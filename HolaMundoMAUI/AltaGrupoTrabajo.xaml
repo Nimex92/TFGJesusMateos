@@ -7,7 +7,7 @@
     <StackLayout
         Margin="0,20,0,0">
         <Label 
-                Text="Tech Talent &#10; Alta Grupo de trabajo"
+                Text="Tech Talent &#10; Alta equipo de trabajo"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
@@ -34,49 +34,6 @@
                         BackgroundColor="White"
                         TextColor="Black"
                         ClearButtonVisibility="WhileEditing"/>
-                <HorizontalStackLayout
-                        x:Name="ZonaHoraEntrada"
-                        Margin="30,10,0,0"
-                        WidthRequest="300"
-                        HorizontalOptions="Center">
-                    <Label Text="Horario Entrada: " TextColor="White" FontAttributes="Bold"
-                               VerticalOptions="Start"/>
-                    <Picker
-                            WidthRequest="70"
-                            x:Name="SelectorHoraEntrada"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            HorizontalTextAlignment="Center"/>
-                    <Picker
-                            WidthRequest="70"
-                            Margin="10,0,50,0"
-                            x:Name="SelectorMinutoEntrada"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            HorizontalTextAlignment="Center"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout
-                        x:Name="ZonaHoraSalida"
-                        Margin="30,10,0,0"
-                        WidthRequest="300"
-                        HorizontalOptions="Center">
-                    <Label Text="Entrada salida:   " TextColor="White" FontAttributes="Bold"
-                               VerticalOptions="Start"/>
-                    <Picker
-                            WidthRequest="70"
-                            Margin="10,0,0,0"
-                            x:Name="SelectorHoraSalida"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            HorizontalTextAlignment="Center"/>
-                    <Picker
-                            WidthRequest="70"
-                            Margin="10,0,50,0"
-                            x:Name="SelectorMinutoSalida"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            HorizontalTextAlignment="Center"/>
-                </HorizontalStackLayout>
 
                 <Button 
                         Text="Registrar"

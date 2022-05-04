@@ -22,6 +22,12 @@ namespace ClassLibrary1
             this.FechaFichaje = fechaFichaje;
             this.Entrada_Salida = entr_sali;
         }
+        public Fichajes(Trabajador trab, DateTime FechaFichaje, string Entrada_Salida)
+        {
+            this.Trabajador = trab;
+            this.FechaFichaje = FechaFichaje;
+            this.Entrada_Salida = Entrada_Salida;
+        }
         public Fichajes(Trabajador trab, EquipoTrabajo grup_trab, DateTime fechaFichaje, string entrada_Salida)
         {
             this.Trabajador = trab;

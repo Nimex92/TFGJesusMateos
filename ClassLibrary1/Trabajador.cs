@@ -16,14 +16,14 @@ namespace Bibliotec
         [Key]
         public int numero_tarjeta { get; set; }
         public string nombre { get; set; }
-        public virtual ICollection<EquipoTrabajo> equipo { get; set; }
+        public string perteneceaturnos { get; set; }
+        public ICollection<EquipoTrabajo> equipo { get; set; } = new List<EquipoTrabajo>();
         public virtual Usuarios usuario { get; set; }
         
 
         public Trabajador(string nombre, int grupo_trabajo)
         {
             this.nombre = nombre;
-            
         }
         public Trabajador(string nombre, EquipoTrabajo grupo,Usuarios user)
         {

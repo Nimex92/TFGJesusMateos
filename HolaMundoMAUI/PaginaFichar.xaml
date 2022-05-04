@@ -60,7 +60,7 @@
                 </StackLayout>
             </StackLayout >
             
-            <HorizontalStackLayout x:Name="Calendario"
+            <HorizontalStackLayout x:Name="Calendario" IsVisible="False" IsEnabled="False"
                              Margin="150,-500,0,0"
                              WidthRequest="900"
                              HeightRequest="500"
@@ -171,7 +171,7 @@
                     </StackLayout>
                 </StackLayout>
             </HorizontalStackLayout>
-            <StackLayout x:Name="CuerpoPrincipal" IsVisible="False"
+            <StackLayout x:Name="CuerpoPrincipal" IsVisible="True"
                          Margin="350,-500,0,0"
                          HorizontalOptions="Center"
                          VerticalOptions="Center">
@@ -246,10 +246,10 @@
                     IsVisible="False"
                    />
             </VerticalStackLayout>
-            <HorizontalStackLayout
+                <HorizontalStackLayout
                 HorizontalOptions="Center"
                 Margin="70,10,0,0">
-                <Button
+                    <Button
                     x:Name="BotonIniciarTarea"
                     Text="Iniciar"
                     BackgroundColor="Green"
@@ -258,7 +258,7 @@
                     IsVisible="False"
                    
                     Margin="130,0,0,0"/>
-                <Button
+                    <Button
                     x:Name="BotonAcabarTarea"
                     Text="Acabar"
                     BackgroundColor="Red"
@@ -267,15 +267,7 @@
                     IsVisible="False"
                     
                     Margin="130,0,0,0"/>
-            </HorizontalStackLayout>
-            <Button
-                        x:Name="irPaginaMain"
-                        Text="Cerrar Sesion"
-                        Clicked="irMainPage"
-                        WidthRequest="300"
-                        HeightRequest="30"
-                        HorizontalOptions="Center"
-                        Margin="0,10,0,0"/>
+                </HorizontalStackLayout>
             </StackLayout>
         </StackLayout>
     </FlexLayout>

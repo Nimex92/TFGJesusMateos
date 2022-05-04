@@ -93,7 +93,7 @@
             <StackLayout x:Name="BotonTareas">
                 <ImageButton
                 x:Name="BtnTareas"
-                Source="calendar.png"
+                Source="Tareas.png"
                 WidthRequest="70"
                 HeightRequest="70"
                 Margin="0,-10,0,0"
@@ -253,7 +253,7 @@
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                     <Label  
-                                       Text="Turno:" 
+                                       Text="Equipo:" 
                                        Margin="40,0,0,0"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
@@ -298,7 +298,7 @@
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
-                                       Text="{Binding grupo.Turno}" 
+                                       Text="{Binding perteneceaturnos}" 
                                        Margin="90,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
@@ -830,6 +830,17 @@
                                 x:Name="BtnAnadeEquipos"
                                 Clicked="BtnAnadeEquipos_Clicked"/>
                             <Label Text="Añadir nuevo equipo de trabajo"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Margin="5,0,0,0">
+                            <ImageButton 
+                                Source="adduser.png"
+                                VerticalOptions="Center"
+                                x:Name="BtnAnadeTrabajadorAEquipo"
+                                Clicked="BtnAnadeTrabajadorAEquipo_Clicked"/>
+                            <Label Text="Añadir trabajador a equipo"
                                    FontSize="16"
                                    FontAttributes="Bold"
                                    VerticalOptions="Center"/>

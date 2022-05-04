@@ -17,11 +17,25 @@ namespace Persistencia
 
         }
         //Metodo para insertar un trabajador a la base de datos
-        public static bool insertaTrabajador(string Name, int Equipo, string user)
+        public static bool InsertaTrabajador(Trabajador t)
+        {
+            PresenciaContext p = new PresenciaContext();
+            if(t is not null)
+            {
+                p.Trabajador.Add(t);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+            
+        public static bool insertaTrabajador(string Name, string Equipo, string user)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
             var trab = presenciaContext.Trabajador.Where(x => x.nombre == Name).FirstOrDefault();
-            var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Id == Equipo).FirstOrDefault();
+            var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == Equipo).FirstOrDefault();
             var us = presenciaContext.Usuarios.Where(x => x.Username == user).FirstOrDefault();
             if (trab == null)
             {
@@ -29,6 +43,8 @@ namespace Persistencia
                 {
                     Trabajador t1 = new Trabajador(Name, equipo, new Usuarios(user, "1"));
                     presenciaContext.Add(t1);
+                    presenciaContext.SaveChanges();
+                    t1.equipo.Add(equipo);
                     presenciaContext.SaveChanges();
                     return true;
                 }
@@ -48,31 +64,16 @@ namespace Persistencia
             }
 
         }
-        //Metodo para insertar un grupo de trabajo a la base de datos
-        public static bool insertarGrupoTrabajo(string nombre, string horaEntrada, string horaSalida)
-        {
-            using var presenciaContext = new PresenciaContext();
-            Grupo_Trabajo grupo = new Grupo_Trabajo(nombre, horaEntrada, horaSalida);
-            if (nombre is not null && horaEntrada is not null && horaSalida is not null) {
-                presenciaContext.Grupo_Trabajo.Add(grupo);
-                presenciaContext.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+    
         //Metodo para insertar un fichaje en la base de datos
-        public static bool insertaFichaje(int Trabajador, int GrupoTrabajo, string Entrada_Salida)
+        public static bool insertaFichaje(int Trabajador, string Entrada_Salida)
         {
             using var presenciaContext = new PresenciaContext();
             Trabajador trab = presenciaContext.Trabajador.Find(Trabajador);
-            EquipoTrabajo grupo = presenciaContext.EquipoTrabajo.Find(GrupoTrabajo);
 
             //Grupo_Trabajo grupo = new Grupo_Trabajo(2, "Tarde", "14:00", "22:00");
             DateTime fechaFichaje = DateTime.Now;
-            Fichajes fich = new Fichajes(trab.numero_tarjeta, grupo.Id, fechaFichaje, Entrada_Salida);
+            Fichajes fich = new Fichajes(trab, fechaFichaje, Entrada_Salida);
             if (fich is not null)
             {
                 presenciaContext.TablaFichajes.Add(fich);
@@ -122,22 +123,6 @@ namespace Persistencia
                 return false;
             }
         }
-        //MEtodo para insertar una tarea determinada en un grupo de trabajo existente
-        public static bool insertaTareaEnGrupo(int IdGrupo, string NombreTarea, string Descripcion, int TiempoEstimado)
-        {
-            if (IdGrupo != null && NombreTarea is not null && Descripcion is not null && TiempoEstimado != null)
-            {
-                var presenciaContext = new PresenciaContext();
-                var grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
-                grupo.Tareas.Add(new Tareas(NombreTarea, Descripcion, TiempoEstimado));
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
         //Metodo para insertar una zona en la base de datos
         public static bool insertaZona(string NombreZona)
         {
@@ -154,6 +139,22 @@ namespace Persistencia
             }
 
         }
+        //Metodo para insertar un equipo de trabajo en la base de datos
+        public static bool InsertaEquipoTrabajo(EquipoTrabajo eq)
+        {
+            PresenciaContext p = new PresenciaContext();
+            if(eq is not null)
+            {
+                p.EquipoTrabajo.Add(eq);
+                p.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;   
+            }
+            
+        }
         //Metodo para borrar un trabajador existente de la base de datos
         public static bool borraTrabajador(int NumeroTarjeta)
         {
@@ -162,21 +163,6 @@ namespace Persistencia
             if (trabajador is not null)
             {
                 presenciaContext.Remove(trabajador);
-                presenciaContext.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        //Metodo para borrar un grupo de trabajo existente de la base de datos
-        public static bool borraGrupoTrabajo(int IdGrupo)
-        {
-            using var presenciaContext = new PresenciaContext();
-            Grupo_Trabajo grupo = presenciaContext.Grupo_Trabajo.Find(IdGrupo);
-            if (grupo is not null) {
-                presenciaContext.Remove(grupo);
                 presenciaContext.SaveChanges();
                 return true;
             }
@@ -239,26 +225,6 @@ namespace Persistencia
             presenciaContext.Update(trabajador);
             presenciaContext.SaveChanges();
             return true;
-        }
-        //Metodo para actualizar un grupo existente de la base de datos
-        public static bool actualizarGrupoTrabajo(string Nombre, string HoraEntrada, string HoraSalida)
-        {
-            using var presenciaContext = new PresenciaContext();
-            var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == Nombre).FirstOrDefault();
-            if (Nombre is not null && HoraEntrada is not null && HoraSalida is not null)
-            {
-                GrupoTrabajo.Turno = Nombre;
-                GrupoTrabajo.HoraEntrada=HoraEntrada;
-                GrupoTrabajo.HoraSalida = HoraSalida;
-                presenciaContext.Update(GrupoTrabajo);
-                presenciaContext.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
         }
         /*Metodo para actualizar un usuario existente en la base de datos, aunque realmente no se usa
           ya que por seguridad no se necesita la modificacion del nombre de usuario por lo que solo podremos

@@ -14,7 +14,7 @@ namespace Bibliotec
         [Key]
         public int IdZona { get; set; }
         public string Nombre { get; set; }
-        public ICollection<Grupo_Trabajo> GruposTrabajo { get; set; } = new List<Grupo_Trabajo>();
+        public ICollection<EquipoTrabajo> EquiposTrabajo { get; set; } = new List<EquipoTrabajo>();
 
         public Zonas(String nombre)
         {

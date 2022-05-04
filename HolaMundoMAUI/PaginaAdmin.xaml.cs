@@ -1,12 +1,14 @@
 using Persistencia;
 using Bibliotec;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace HolaMundoMAUI;
 
 public partial class PaginaAdmin : ContentPage
 {
     private string nombreUsuario;
+    private string PerteneceATurnos;
     PresenciaContext presenciaContext = new PresenciaContext();
     DateTime dt = DateTime.Now;
     Usuarios us;
@@ -43,7 +45,7 @@ public partial class PaginaAdmin : ContentPage
         TrActivo = false;
         GrActivo = false;
         ZnActivo = false;
-        TaActivo=false;
+        TaActivo = false;
 
         InitializeComponent();
         SetListViewUsuarios();
@@ -72,7 +74,7 @@ public partial class PaginaAdmin : ContentPage
                 ListViewGroups.IsVisible = true;
                 ListViewGroups.IsEnabled = true;
                 GrActivo = true;
-                LabelTitulo3.Text = "Tech Talent" + Environment.NewLine + "gestión de grupos de trabajo";
+                LabelTitulo3.Text = "Tech Talent" + Environment.NewLine + "gestión de equipos de trabajo";
                 break;
             case 4:
                 ListViewZones.IsVisible = true;
@@ -84,7 +86,13 @@ public partial class PaginaAdmin : ContentPage
                 ListViewTasks.IsVisible = true;
                 ListViewTasks.IsEnabled = true;
                 TaActivo = true;
-                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de Zonas de tareas";
+                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de tareas";
+                break;
+            case 6:
+                ListViewTeams.IsVisible = true;
+                ListViewTeams.IsEnabled = true;
+                TaActivo = true;
+                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de turnos de trabajo";
                 break;
         }
     }
@@ -162,8 +170,8 @@ public partial class PaginaAdmin : ContentPage
     }
     public void SetListViewTrabajadores()
     {
-        PresenciaContext presenciaContext = new PresenciaContext();
-        var workers = presenciaContext.Trabajador.Include(x => x.equipo).Include(x => x.usuario).ToList();
+        PresenciaContext p = new PresenciaContext();
+        var workers = p.Trabajador.Include(x=>x.usuario).ToList();
         ListViewTrabajadores.ItemsSource = workers;
         if(workers.Count > 0)
         ListViewTrabajadores.SelectedItem = workers[0];
@@ -710,15 +718,18 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonAnadeZona_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonas de trabajo:'" + zn.Nombre + " - " + dt));
+        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario,"",0)); 
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonas de trabajo "+ "-"+ dt));
         presenciaContext.SaveChanges();
+        
+        
     }
     private void BtnAnadeTarea_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
-        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo:'" + ta.NombreTarea + " - " + dt));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo" +  " - " + dt));
         presenciaContext.SaveChanges();
+        
     }
     private void BotonCopiar_Clicked(object sender, EventArgs e)
     {
@@ -742,7 +753,14 @@ public partial class PaginaAdmin : ContentPage
 
     private void BtnAnadeEquipos_Clicked(object sender, EventArgs e)
     {
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,"",0));
+        presenciaContext.Logs.Add(new Log("Acceso",nombreUsuario+" ha accedido a \"Registrar nuevo equipo de trabajo\" - "+dt));
+        presenciaContext.SaveChanges();
+    }
 
+    private void BtnAnadeTrabajadorAEquipo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(nombreUsuario));
     }
 
     private async void ImageButton_Clicked(object sender, EventArgs e)
