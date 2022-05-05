@@ -197,7 +197,7 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nombre = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    perteneceaturnos = table.Column<string>(type: "longtext", nullable: false)
+                    perteneceaturnos = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     usuarioIdUser = table.Column<int>(type: "int", nullable: false)
                 },

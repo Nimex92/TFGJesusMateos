@@ -6,7 +6,7 @@
              BackgroundColor="White">
     <StackLayout>
         <Label  
-                Text="Tech Talent &#10;Añadir tareas a grupo de trabajo"
+                Text="Tech Talent &#10;Añadir tareas a equipo de trabajo"
                 FontSize="30"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"

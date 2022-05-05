@@ -19,6 +19,9 @@
     <MauiXaml Update="AltaTrabajador.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="BorrarTrabajadresDeGrupo.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

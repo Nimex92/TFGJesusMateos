@@ -1,3 +1,4 @@
+using Bibliotec;
 using Persistencia;
 using System.Diagnostics;
 
@@ -5,19 +6,40 @@ namespace HolaMundoMAUI;
 
 public partial class MainPage : ContentPage
 {	
-	PresenciaContext presenciaContext = new PresenciaContext();
+	PresenciaContext p = new PresenciaContext();
 	DateTime dt = DateTime.Now;
+	DateTime Today = DateTime.Today;
+
 	string user;
 	public MainPage()
 	{
 		InitializeComponent();
+		CompruebaTurnos();
 	}
+	public void CompruebaTurnos()
+    {
+		var Turnos = p.Turno.ToList();
+		foreach(Turno t in Turnos)
+        {
+            if (t.ValidoDesde<Today)
+            {
+				t.Activo = true;
+            }
+			if(t.ValidoHasta<Today)
+            {
+				t.Activo = false;
+				t.Eliminado = true;
+				p.SaveChanges();
+			}
+        }
+		
+    }
 	public async void CambiaFichar(object sender, EventArgs e)
     {
 		string NombreUsuario = CampoUsuario.Text;
 		string ContrasenaUsuario = CampoContraseña.Text;
 
-        var usuario = presenciaContext.Usuarios
+        var usuario = p.Usuarios
 							.Where(b => b.Username == NombreUsuario && b.Password == ContrasenaUsuario).FirstOrDefault();
 		
 		if (usuario is not null) {
@@ -25,16 +47,16 @@ public partial class MainPage : ContentPage
             {
 				MensajeError.IsVisible = false;
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
-				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
-				presenciaContext.SaveChanges();
+				p.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
+				p.SaveChanges();
 				user = NombreUsuario;
 			}
             else
             {
 				MensajeError.IsVisible = false;
 				App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
-				presenciaContext.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
-				presenciaContext.SaveChanges();
+				p.Logs.Add(new Bibliotec.Log("Login", NombreUsuario + " ha iniciado sesion - "+dt));
+				p.SaveChanges();
 			}
 			
 

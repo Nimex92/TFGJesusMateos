@@ -7,7 +7,7 @@ namespace HolaMundoMAUI;
 
 public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 {
-	PresenciaContext presenciaContext = new PresenciaContext();
+	PresenciaContext p = new PresenciaContext();
 	string nombreUsuario;
 	public AnadeTrabajadorEquipoTrabajo(string user)
 	{
@@ -18,8 +18,8 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 
 	private void SetPickers()
 	{
-		var equipos = presenciaContext.EquipoTrabajo;
-		var trabajadores = presenciaContext.Trabajador;
+		var equipos = p.EquipoTrabajo;
+		var trabajadores = p.Trabajador;
 
 		//Recojo todos los Turnos de la tabla de MySql
 		//Creo una lista para guardar todos los turnos existentes
@@ -42,20 +42,29 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 6));
     }
 
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
 		string BuscaEquipo = SelectorGruposTrabajo.SelectedItem.ToString();
 		string BuscaTrabajador = SelectorTareas.SelectedItem.ToString();
-		var EquipoTrabajo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == BuscaEquipo).FirstOrDefault();
-		var Trabajador = presenciaContext.Trabajador.Where(x => x.nombre == BuscaTrabajador).FirstOrDefault();
-		var Trabajadores = EquipoTrabajo.Trabajadores;
-		foreach(Trabajador t in Trabajadores)
-        {
-			Debug.WriteLine(t.nombre);
-        }
-		
+		var EquipoTrabajo = p.EquipoTrabajo.Where(x => x.Nombre == BuscaEquipo).Include(x=>x.Trabajadores).FirstOrDefault();
+		var Trabajador = p.Trabajador.Where(x => x.nombre == BuscaTrabajador).Include(x=>x.equipo).FirstOrDefault();
+		var Equipos = EquipoTrabajo.Trabajadores;
+            
+		if (Equipos.Contains(Trabajador))
+            {
+				await DisplayAlert("Alert", "El trabajador ya esta asignado", "Vale");
+            }
+        else
+            {
+				EquipoTrabajo.Trabajadores.Add(Trabajador);
+				Trabajador.perteneceaturnos += " - "+BuscaEquipo;
+				p.SaveChanges();
+				await DisplayAlert("Alert", "Se ha asignado correctamente " + Trabajador.nombre + " a " + EquipoTrabajo.Nombre, "Vale");
+            }
+        
+
 	}
 }

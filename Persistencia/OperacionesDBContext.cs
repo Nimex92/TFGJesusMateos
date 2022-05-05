@@ -71,7 +71,7 @@ namespace Persistencia
             using var presenciaContext = new PresenciaContext();
             Trabajador trab = presenciaContext.Trabajador.Find(Trabajador);
 
-            //Grupo_Trabajo grupo = new Grupo_Trabajo(2, "Tarde", "14:00", "22:00");
+     
             DateTime fechaFichaje = DateTime.Now;
             Fichajes fich = new Fichajes(trab, fechaFichaje, Entrada_Salida);
             if (fich is not null)

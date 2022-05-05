@@ -219,6 +219,9 @@ namespace Persistencia.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("varchar(255)");
 
+                    b.Property<bool>("Activo")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<bool>("Eliminado")
                         .HasColumnType("tinyint(1)");
 
@@ -322,9 +325,6 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("EquipoTrabajoId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("FechaFichaje")
                         .HasColumnType("datetime(6)");
 
@@ -332,8 +332,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EquipoTrabajoId");
 
                     b.HasIndex("Trabajadornumero_tarjeta");
 
@@ -496,19 +494,11 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
                 {
-                    b.HasOne("Bibliotec.EquipoTrabajo", "EquipoTrabajo")
-                        .WithMany()
-                        .HasForeignKey("EquipoTrabajoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Bibliotec.Trabajador", "Trabajador")
                         .WithMany()
                         .HasForeignKey("Trabajadornumero_tarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("EquipoTrabajo");
 
                     b.Navigation("Trabajador");
                 });

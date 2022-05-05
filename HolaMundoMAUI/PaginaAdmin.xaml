@@ -301,7 +301,7 @@
                                        Text="{Binding perteneceaturnos}" 
                                        Margin="90,0,0,0" 
                                        FontSize="16"
-                                       WidthRequest="100"
+                                       WidthRequest="110"
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
@@ -796,7 +796,14 @@
                                            Text="{Binding Nombre}" 
                                            Margin="-340,0,0,0" 
                                            FontSize="16"/>
-                                        
+                                        <ImageButton
+                                           Source="quitartrabajadordegrupo.png"  
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="500,0,0,0"
+                                           x:Name="BotonQuitarTrabajadorDeGrupo"
+                                           Clicked="BotonQuitarTrabajadorDeGrupo_Clicked"/>
                                         <ImageButton
                                            Source="editar.png"  
                                            WidthRequest="50"

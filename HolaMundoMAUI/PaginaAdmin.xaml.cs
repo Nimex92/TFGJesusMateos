@@ -163,7 +163,7 @@ public partial class PaginaAdmin : ContentPage
     public void SetListViewGruposTrabajo()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
-        var turnos = presenciaContext.Turno.ToList();
+        var turnos = presenciaContext.Turno.Where(x=>x.Eliminado==false).ToList();
         ListViewGrupos.ItemsSource = turnos;
         if(turnos.Count > 0)
         ListViewGrupos.SelectedItem = turnos[0];
@@ -761,6 +761,11 @@ public partial class PaginaAdmin : ContentPage
     private void BtnAnadeTrabajadorAEquipo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(nombreUsuario));
+    }
+
+    private void BotonQuitarTrabajadorDeGrupo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(nombreUsuario,Et));
     }
 
     private async void ImageButton_Clicked(object sender, EventArgs e)

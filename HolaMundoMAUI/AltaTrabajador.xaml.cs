@@ -45,7 +45,6 @@ public partial class AltaTrabajador : ContentPage
                 {
 					listaTurnos.Add(e.Nombre);
                 }
-				//Selector.SelectedItem = trab.equipo.; 
 				break;
         }
 		
@@ -95,7 +94,6 @@ public partial class AltaTrabajador : ContentPage
 		else
 		{
 			await DisplayAlert("Alert", "Error al insertar el trabajador " + nombre, "OK");
-
 		}
 	}
 

@@ -51,7 +51,10 @@ public partial class AltaGrupoTrabajo : ContentPage
 	}
 	private void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		
+		var Eq = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == CampoNombre.Text).FirstOrDefault();
+		Eq.Nombre = CampoNombre.Text;
+		presenciaContext.EquipoTrabajo.Update(Eq);
+		presenciaContext.SaveChanges();
     }
 
 	

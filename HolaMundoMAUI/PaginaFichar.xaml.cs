@@ -2,9 +2,9 @@
 using Microsoft.Maui.Dispatching;
 using System.Diagnostics;
 using Persistencia;
-using ClassLibrary1;
 using Microsoft.EntityFrameworkCore;
 using Bibliotec;
+using ClassLibrary1;
 
 namespace HolaMundoMAUI;
 
@@ -18,12 +18,13 @@ public partial class PaginaFichar : ContentPage
 	DateTime Salida;
 	DateTime dt = DateTime.Now;
 	DateTime HoraEntrada;
+	string user;
 	public PaginaFichar(string username)
 	{
 		InitializeComponent();
 		CompruebaFichajes(username);
 		CompruebaTareas(username);
-
+		user = username;
 		
 		this.username = username;
 		var trab = presenciaContext.Trabajador.Where(x => x.usuario.Username == username)
@@ -45,22 +46,30 @@ public partial class PaginaFichar : ContentPage
 
 		MyTimer.Start();
 
-		//var Trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.equipo).FirstOrDefault();
-		//var GrupoTrabajo = presenciaContext.Grupo_Trabajo.Where(x => x.IdGrupo == Trabajador.equipo.Id).Include(x => x.Tareas).FirstOrDefault();
-		//var tareas = 
-
-		/*
+		var Trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.equipo).FirstOrDefault();
+		var EquipoTrabajo = presenciaContext.EquipoTrabajo.Where(x => x.Trabajadores.Contains(Trabajador)).Include(x=>x.Turnos).Include(x => x.Tareas).FirstOrDefault();
+		var tareas = EquipoTrabajo.Tareas;
+		var turnos = EquipoTrabajo.Turnos;
+		Turno TurnoActual = new Turno();
+		
 		foreach (Tareas t in tareas)
 		{
 			SelectorTareas.Items.Add(t.NombreTarea);
 		}
+		foreach (Turno t in turnos)
+        {
+			if(t.HoraEntrada >= dt && t.HoraSalida <= dt && t.Activo == true)
+            {
+				TurnoActual = t;
+            }
+        }
 		
-
+		
 		SelectorTareas.SelectedIndex = 0;
-		string EntradaCompleta = GrupoTrabajo.HoraEntrada;
+		string EntradaCompleta = TurnoActual.HoraEntrada.ToString();
 		string HoraEntrada = EntradaCompleta.Substring(0, 2);
 		string MinutosEntrada = EntradaCompleta.Substring(3, 2);
-		string SalidaCompleta = Grupo_Trabajo.HoraSalida;
+		string SalidaCompleta = TurnoActual.HoraSalida.ToString();
 		string HoraSalida = SalidaCompleta.Substring(0, 2);
 		string MinutosSalida = SalidaCompleta.Substring(3, 2);
 		int HorEnt, MinEnt, HorSal, MinSal;
@@ -71,7 +80,6 @@ public partial class PaginaFichar : ContentPage
 		Entrada = DateTime.Today.AddHours(HorEnt).AddMinutes(MinEnt);
 		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
 		BotonIniciarTarea.IsVisible = false;
-		*/
 	}
 
 	private async void ImageButton_Clicked(object sender, EventArgs e)
@@ -94,6 +102,7 @@ public partial class PaginaFichar : ContentPage
 			BotonPlegar.IsEnabled = true;
 			SelectorTareas.IsVisible = true;
 			SelectorTareas.IsEnabled = true;
+			CompruebaTareas(user);
 		}
 		else
 		{
@@ -164,11 +173,11 @@ public partial class PaginaFichar : ContentPage
 		}
 		presenciaContext.SaveChanges(); 
 		}
-	/*
+	
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
 			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.equipo).FirstOrDefault();
-			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, trabajador.equipo.Id, "Salida");
+			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta , "Salida");
 			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
 			presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
 			presenciaContext.SaveChanges();
@@ -205,7 +214,6 @@ public partial class PaginaFichar : ContentPage
 	private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 		{
 			int selectedIndex = SelectorTareas.SelectedIndex;
-
 			var tareaActual = SelectorTareas.SelectedItem.ToString();
 			var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
 			var TareaIniciada = presenciaContext.TareasComenzadas.Where(x => x.tarea.NombreTarea == tarea.NombreTarea && x.InicioTarea.Date == dt.Date).OrderBy(x => x.InicioTarea).LastOrDefault();
@@ -225,7 +233,6 @@ public partial class PaginaFichar : ContentPage
 				BotonIniciarTarea.IsVisible = true;
 			}
 		}
-	
 	private async void BotonIniciarTarea_Clicked(object sender, EventArgs e)
 		{
 			BotonAcabarTarea.IsEnabled = true;
@@ -238,8 +245,7 @@ public partial class PaginaFichar : ContentPage
 			{
 				var tareaActual = SelectorTareas.SelectedItem.ToString();
 				var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
-				var grupo = presenciaContext.Grupo_Trabajo.Find(trabajador.equipo);
-				presenciaContext.Add(new TareaComenzada(tarea, trabajador, grupo, dt));
+				presenciaContext.Add(new TareaComenzada(tarea, trabajador, dt));
 				presenciaContext.Logs.Add(new Log("Tareas", username + " ha iniciado tarea " + tarea.NombreTarea + " - " + dt));
 				presenciaContext.SaveChanges();
 		}
@@ -249,8 +255,6 @@ public partial class PaginaFichar : ContentPage
 			}
 
 		}
-	*/
-	/*
 	private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
 		{
 			BotonAcabarTarea.IsEnabled = false;
@@ -260,7 +264,6 @@ public partial class PaginaFichar : ContentPage
 			var tareaActual = SelectorTareas.SelectedItem.ToString();
 			var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
 			var TareaIniciada = presenciaContext.TareasComenzadas.Where(x => x.tarea.NombreTarea == tarea.NombreTarea).Where(x => x.InicioTarea.Date == dt.Date).OrderBy(x => x.InicioTarea).Last();
-			var grupo = presenciaContext.Grupo_Trabajo.Find(trabajador.equipo.Id);
 			var HorasUsadas = (DateTime.Now - TareaIniciada.InicioTarea).TotalHours;
 			bool EnHora = false;
 			if (HorasUsadas <= tarea.TiempoEstimado)
@@ -268,23 +271,17 @@ public partial class PaginaFichar : ContentPage
 				EnHora = true;
 			}
 
-			presenciaContext.TareasFinalizadas.Add(new TareaFinalizada(tarea, trabajador, grupo, TareaIniciada.InicioTarea, dt, HorasUsadas, EnHora));
+			presenciaContext.TareasFinalizadas.Add(new TareaFinalizada(tarea, trabajador, TareaIniciada.InicioTarea, dt, HorasUsadas, EnHora));
 			presenciaContext.TareasComenzadas.Remove(TareaIniciada);
 			presenciaContext.Logs.Add(new Log("Tareas", username + " ha finalizado tarea " + tarea.NombreTarea + " - " + dt));
 			presenciaContext.SaveChanges();
 		}
-	*/
 	private void Logout_png_Clicked(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new MainPage());
 	}
 
     private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-
-    }
-
-    private void BotonPlegar_Clicked(object sender, EventArgs e)
     {
 
     }

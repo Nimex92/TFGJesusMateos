@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bibliotec
 {
-    public class DiaLibre
+    public class Dia
     {
         [Key]
         public int Id { get; set; }
@@ -16,11 +16,11 @@ namespace Bibliotec
         public bool EsFestivo { get; set; }
         public ICollection<Calendario> CalendarioPertenece { get; set; }
 
-        public DiaLibre()
+        public Dia()
         {
 
         }
-        public DiaLibre(string Motivo, DateTime Fecha,bool EsFestivo)
+        public Dia(string Motivo, DateTime Fecha,bool EsFestivo)
         {
             this.Motivo = Motivo;
             this.Fecha = Fecha;

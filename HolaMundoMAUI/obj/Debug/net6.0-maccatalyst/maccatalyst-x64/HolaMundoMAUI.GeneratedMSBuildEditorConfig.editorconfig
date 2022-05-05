@@ -69,6 +69,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/BorrarTrabajadresDeGrupo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.BorrarTrabajadresDeGrupo.xaml
+build_metadata.AdditionalFiles.TargetPath = BorrarTrabajadresDeGrupo.xaml
+build_metadata.AdditionalFiles.RelativePath = BorrarTrabajadresDeGrupo.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/CalendarioLalboral.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.CalendarioLalboral.xaml
