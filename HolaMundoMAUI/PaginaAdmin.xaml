@@ -364,7 +364,7 @@
                 HorizontalOptions="Center"
                 Margin="0,10,0,0"
                 x:Name="LabelTitulo3"/>
-                <HorizontalStackLayout x:Name="BarraDeTitulosTabla" Margin="240,0,0,0">
+                <HorizontalStackLayout x:Name="BarraDeTitulosTabla" Margin="260,0,0,0">
                     <Label 
                                        Text="Turno:" 
                                        FontSize="16"
@@ -486,12 +486,24 @@
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
+                                        <HorizontalStackLayout Margin="850,0,0,0">
+                                        <ImageButton x:Name="AddGruposEquipoTrabajo"
+                                             Source="addgroups.png"
+                                             HorizontalOptions="Center"
+                                             Clicked="AddGruposEquipoTrabajo_Clicked"
+                                             VerticalOptions="Center"
+                                             Aspect="AspectFill"/>
+                                        <ImageButton x:Name="RemoveGruposEquipoTrabajo"
+                                             Source="removegroup.png"
+                                             HorizontalOptions="Center"
+                                             Clicked="RemoveGruposEquipoTrabajo_Clicked"
+                                             VerticalOptions="Center"
+                                             Aspect="AspectFill"/>
                                         <ImageButton
                                            Source="editar.png"  
                                            WidthRequest="50"
                                            HeightRequest="50"
                                            VerticalOptions="Center"
-                                           Margin="790,0,0,0"
                                            x:Name="BotonEditarGruposTrabajo"
                                            Clicked="BotonEditarGruposTrabajo_Clicked"/>
                                         <ImageButton
@@ -499,9 +511,10 @@
                                            WidthRequest="50"
                                            HeightRequest="50"
                                            VerticalOptions="Center"
-                                           Margin="850,0,0,0"
                                            x:Name="BotonBorrarGruposTrabajo"
-                                           Clicked="BotonBorrarGruposTrabajo_Clicked"/>
+                                           Clicked="BotonBorrarGruposTrabajo_Clicked"
+                                            Margin="-15,0,0,0"/>
+                                        </HorizontalStackLayout>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -512,20 +525,21 @@
                      HeightRequest="2"
                      WidthRequest="1000"
                      HorizontalOptions="Center"/>
-                <HorizontalStackLayout HorizontalOptions="Center" WidthRequest="150"
-                             HeightRequest="50" Margin="-30,0,0,0">
+                <HorizontalStackLayout Margin="430,0,0,0">
                     <ImageButton x:Name="AddGrupos"
-                                 Source="addgroups.png"
-                                 HorizontalOptions="Start"
-                                 Clicked="NuevoGrupoTrabajo"
-                                 VerticalOptions="Center"/>
-                    <Label Text="Añadir turno"
-                           FontSize="16"
-                           TextColor="Black"
-                           Margin="5,0,0,0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"/>
+                                     Source="addgroups.png"
+                                     HorizontalOptions="Start"
+                                     Clicked="NuevoGrupoTrabajo"
+                                     VerticalOptions="Center"/>
+                        <Label Text="Añadir turno"
+                               FontSize="16"
+                               TextColor="Black"
+                               Margin="5,0,0,0"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"/>
                 </HorizontalStackLayout>
+                    
+
             </StackLayout>
             <StackLayout x:Name="ListViewZones"
                          IsVisible="False" IsEnabled="False">
@@ -751,7 +765,7 @@
                          IsEnabled="False" IsVisible="False"
                 HorizontalOptions="Center" Margin="0,10,0,0">
                 <Label 
-                    Text="Tech Talent &#10; Gestion de tareas"
+                    Text="Tech Talent &#10; Gestion de equipos de trabajo"
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
@@ -810,8 +824,8 @@
                                            HeightRequest="50"
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
-                                           x:Name="BotonEditarTareas"
-                                           Clicked="BotonEditarTareas_Clicked"/>
+                                           x:Name="BotonEditarEquiposTrabajo"
+                                           Clicked="BotonEditarEquiposTrabajo_Clicked"/>
                                         <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"

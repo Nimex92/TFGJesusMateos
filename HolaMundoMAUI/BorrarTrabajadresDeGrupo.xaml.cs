@@ -42,7 +42,7 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 6));
     }
 
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)

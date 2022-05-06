@@ -11,7 +11,7 @@ namespace Bibliotec
     {
         public int Id { get; set; }
         public Trabajador Trabajador { get; set; }
-        public ICollection<DiaLibre> DiasDelCalendario { get; set; }
+        public ICollection<Dia> DiasDelCalendario { get; set; } = new List<Dia>();
 
         public Calendario() { }
         public Calendario(Trabajador trab)

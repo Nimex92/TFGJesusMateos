@@ -89,6 +89,11 @@ editar.scale-125.png
 editar.scale-150.png
 editar.scale-200.png
 editar.scale-400.png
+group.scale-100.png
+group.scale-125.png
+group.scale-150.png
+group.scale-200.png
+group.scale-400.png
 grupos.scale-100.png
 grupos.scale-125.png
 grupos.scale-150.png
@@ -99,11 +104,6 @@ logout.scale-125.png
 logout.scale-150.png
 logout.scale-200.png
 logout.scale-400.png
-luffy.scale-100.png
-luffy.scale-125.png
-luffy.scale-150.png
-luffy.scale-200.png
-luffy.scale-400.png
 quitartrabajadordegrupo.scale-100.png
 quitartrabajadordegrupo.scale-125.png
 quitartrabajadordegrupo.scale-150.png
@@ -119,6 +119,11 @@ redcircle.scale-125.png
 redcircle.scale-150.png
 redcircle.scale-200.png
 redcircle.scale-400.png
+removegroup.scale-100.png
+removegroup.scale-125.png
+removegroup.scale-150.png
+removegroup.scale-200.png
+removegroup.scale-400.png
 tareas.scale-100.png
 tareas.scale-125.png
 tareas.scale-150.png

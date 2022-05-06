@@ -91,7 +91,7 @@ public partial class PaginaAdmin : ContentPage
             case 6:
                 ListViewTeams.IsVisible = true;
                 ListViewTeams.IsEnabled = true;
-                TaActivo = true;
+                EtActivo = true;
                 LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de turnos de trabajo";
                 break;
         }
@@ -163,7 +163,7 @@ public partial class PaginaAdmin : ContentPage
     public void SetListViewGruposTrabajo()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
-        var turnos = presenciaContext.Turno.Where(x=>x.Eliminado==false).ToList();
+        var turnos = presenciaContext.Turno.Where(x=>x.Eliminado==false).OrderBy(x=>x.Nombre).ToList();
         ListViewGrupos.ItemsSource = turnos;
         if(turnos.Count > 0)
         ListViewGrupos.SelectedItem = turnos[0];
@@ -750,22 +750,40 @@ public partial class PaginaAdmin : ContentPage
         presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonasa grupo de trabajo:'" + zn.Nombre + " - " + dt));
         presenciaContext.SaveChanges();
     }
-
     private void BtnAnadeEquipos_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario,"",0));
         presenciaContext.Logs.Add(new Log("Acceso",nombreUsuario+" ha accedido a \"Registrar nuevo equipo de trabajo\" - "+dt));
         presenciaContext.SaveChanges();
     }
-
     private void BtnAnadeTrabajadorAEquipo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(nombreUsuario,Et));
+    }
+    private void BotonQuitarTrabajadorDeGrupo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(nombreUsuario));
     }
 
-    private void BotonQuitarTrabajadorDeGrupo_Clicked(object sender, EventArgs e)
+    private void BotonEditarEquiposTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(nombreUsuario,Et));
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario, Et.Nombre, 1));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar equipo de trabajo '+" + ta.NombreTarea + " - " + dt));
+        presenciaContext.SaveChanges();
+    }
+
+    private void AddGruposEquipoTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(nombreUsuario, gr.Nombre,0));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir turno a equipo de trabajo' - " + dt));
+        presenciaContext.SaveChanges();
+    }
+
+    private void RemoveGruposEquipoTrabajo_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(nombreUsuario, gr.Nombre, 1));
+        presenciaContext.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir turno a equipo de trabajo' - " + dt));
+        presenciaContext.SaveChanges();
     }
 
     private async void ImageButton_Clicked(object sender, EventArgs e)

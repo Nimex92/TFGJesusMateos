@@ -26,7 +26,7 @@ namespace Persistencia
         public DbSet<Zonas> Zonas { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Calendario> Calendario { get; set; }
-        public DbSet<DiaLibre> DiaLibre { get; set; }
+        public DbSet<Dia> DiaLibre { get; set; }
         public DbSet<Turno> Turno { get; set; }
         public DbSet<EquipoTrabajo> EquipoTrabajo { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)

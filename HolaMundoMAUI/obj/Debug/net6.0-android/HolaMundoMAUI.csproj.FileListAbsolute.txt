@@ -2036,3 +2036,8 @@ C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resi
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\redcircle.png
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\red_circle.gif
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\turnos.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\quitartrabajadordegrupo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\quitartrabajadordegrupo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\quitartrabajadordegrupo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\quitartrabajadordegrupo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\quitartrabajadordegrupo.png

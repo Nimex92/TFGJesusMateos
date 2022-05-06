@@ -14,6 +14,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\editar.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\grupos.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\logout.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\luffy.png
+obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\quitartrabajadordegrupo.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\redcircle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\red_circle.gif
 obj\Debug\net6.0-android\resizetizer\r\drawable-hdpi\tareas.png
@@ -38,6 +39,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\editar.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\grupos.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\logout.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\luffy.png
+obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\quitartrabajadordegrupo.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\redcircle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\red_circle.gif
 obj\Debug\net6.0-android\resizetizer\r\drawable-mdpi\tareas.png
@@ -62,6 +64,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\editar.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\grupos.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\logout.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\luffy.png
+obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\quitartrabajadordegrupo.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\redcircle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\red_circle.gif
 obj\Debug\net6.0-android\resizetizer\r\drawable-xhdpi\tareas.png
@@ -86,6 +89,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\editar.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\grupos.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\logout.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\luffy.png
+obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\quitartrabajadordegrupo.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\redcircle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\red_circle.gif
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxhdpi\tareas.png
@@ -110,6 +114,7 @@ obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\editar.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\grupos.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\logout.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\luffy.png
+obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\quitartrabajadordegrupo.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\redcircle.png
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\red_circle.gif
 obj\Debug\net6.0-android\resizetizer\r\drawable-xxxhdpi\tareas.png

@@ -57,6 +57,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirTrabaj
 build_metadata.AdditionalFiles.TargetPath = AnadirTrabajadorEquipoTrabajo.xaml
 build_metadata.AdditionalFiles.RelativePath = AnadirTrabajadorEquipoTrabajo.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AnadirTurnoAEquipoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirTurnoAEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadirTurnoAEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadirTurnoAEquipoTrabajo.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AnadirZonaAGrupoTrabajo.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirZonaAGrupoTrabajo.xaml

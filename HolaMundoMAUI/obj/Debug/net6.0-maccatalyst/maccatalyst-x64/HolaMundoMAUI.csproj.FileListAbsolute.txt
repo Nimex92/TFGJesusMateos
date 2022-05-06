@@ -367,3 +367,6 @@ C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\turnos.png
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\turnos@2x.png
 C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\turnos@3x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\quitartrabajadordegrupo.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\quitartrabajadordegrupo@2x.png
+C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-maccatalyst\maccatalyst-x64\resizetizer\r\quitartrabajadordegrupo@3x.png

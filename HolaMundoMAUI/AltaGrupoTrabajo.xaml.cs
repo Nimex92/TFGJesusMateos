@@ -21,6 +21,23 @@ public partial class AltaGrupoTrabajo : ContentPage
 		InitializeComponent();
 		NombreUsuario = user;
 		NombreEquipoTrabajo = equipo;
+		CampoNombre.Text = equipo;
+        switch (actualiza)
+        {
+			case 0:
+				BotonRegistrarAdmin.IsVisible = true;
+				BotonRegistrarAdmin.IsEnabled = true;
+				BotonActualizarAdmin.IsVisible = false;
+				BotonActualizarAdmin.IsEnabled = false;
+				break;
+			case 1:
+				BotonRegistrarAdmin.IsVisible = false;
+				BotonRegistrarAdmin.IsEnabled = false;
+				BotonActualizarAdmin.IsVisible = true;
+				BotonActualizarAdmin.IsEnabled = true;
+				TituloEmpresa.Text = "Tech Talent" + Environment.NewLine + "Revocar trabajador de equipo de trabajo";
+				break;
+        }
 	}
 	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
 	{
