@@ -60,6 +60,7 @@
 	  <Page Remove="AltaTareaTrabajo.xaml" />
 	  <Page Remove="AltaTrabajador.xaml" />
 	  <Page Remove="AltaUsuarios.xaml" />
+	  <Page Remove="AnadeDiaCalendario.xaml" />
 	  <Page Remove="AnadirTrabajadorEquipoTrabajo.xaml" />
 	  <Page Remove="AnadirTurnoAEquipoTrabajo.xaml" />
 	  <Page Remove="BorrarTrabajadresDeGrupo.xaml" />
@@ -71,7 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.1" />
+	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.3.1" />
 	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.3" />
 	  <PackageReference Include="NUnit" Version="3.13.3" />
 	</ItemGroup>
@@ -127,6 +128,9 @@
 	  <Compile Update="AnadirTrabajadorEquipoTrabajo.xaml.cs">
 	    <DependentUpon>AnadirTrabajadorEquipoTrabajo.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="AnadeDiaCalendario.xaml.cs">
+	    <DependentUpon>AnadeDiaCalendario.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="PaginaAdmin.xaml.cs">
 	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
 	  </Compile>
@@ -181,6 +185,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AnadirTrabajadorEquipoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadeDiaCalendario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">

@@ -26,7 +26,8 @@
                     Source="calendar.png"
                     WidthRequest="70"
                     HeightRequest="70"
-                    Margin="0,-10,0,0"/>
+                    Margin="0,-10,0,0"
+                    Clicked="BtnCalendario_Clicked"/>
                     <Label
                     Text="Calendario"
                     FontAttributes="Bold"
@@ -40,7 +41,8 @@
                         Source="calendar.png"
                         WidthRequest="70"
                         HeightRequest="70"
-                        Margin="0,-10,0,0"/>
+                        Margin="0,-10,0,0"
+                        Clicked="BtnPedirVacaciones_Clicked"/>
                     <Label
                         Text="Solicitar vacaciones"
                         FontAttributes="Bold"
@@ -59,44 +61,50 @@
                     </HorizontalStackLayout>
                 </StackLayout>
             </StackLayout >
-            
-            <HorizontalStackLayout x:Name="Calendario" IsVisible="False" IsEnabled="False"
-                             Margin="150,-500,0,0"
-                             WidthRequest="900"
-                             HeightRequest="500"
-                             BackgroundColor="DarkGrey">
-                <StackLayout x:Name="ListViewUsers" 
-                         IsVisible="False"
-                         IsEnabled="False">
-                    <Label x:Name="LabelTitulo"
-                Text="Tech Talent &#10; Página de administracion"
-                TextColor="Black"
-                FontAttributes="Bold"
-                HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
-                FontSize="20"
-                HorizontalOptions="Center"/>
-                    <HorizontalStackLayout x:Name="LabelTitulosUsuarios"
-                                       WidthRequest="720"
-                                       HeightRequest="15"
-                                       Margin="435,10,0,0">
-                        <Label Text="Username"
-                           FontAttributes="Bold"/>
-                        <Label Text="Password"
-                           Margin="100,0,0,0"
-                           FontAttributes="Bold"/>
-                    </HorizontalStackLayout>
-                    <StackLayout x:Name="BarraDivisoraTituloArriba"
-                            BackgroundColor="Black"
-                            WidthRequest="500"
-                            HeightRequest="2"
-                            HorizontalOptions="Center"
-                            Margin="0,10,0,10"/>
+
+            <StackLayout x:Name="ListViewCalendar" 
+                         IsEnabled="False" IsVisible="False"
+                         HorizontalOptions="Center" Margin="180,-510,0,0"
+                         VerticalOptions="Center"
+                         WidthRequest="800">
+                <Label 
+                    Text="Tech Talent &#10; Calendario laboral"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.Description="Tech Talent Fiching System"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0"
+                    x:Name="LabelTitulo7"/>
+                
+                <HorizontalStackLayout Margin="100,0,0,0" VerticalOptions="Center" HorizontalOptions="Center"
+                             HeightRequest="20" WidthRequest="800">
+                    <Label 
+                        Text="Motivo"
+                        Margin="60,0,0,0"
+                        FontAttributes="Bold"/>
+                    <Label 
+                        Text="Fecha"
+                        Margin="190,0,0,0"
+                        FontAttributes="Bold"/>
+                    <Label 
+                        Text="Disfrutado"
+                        Margin="100,0,0,0"
+                        FontAttributes="Bold"/>
+
+                </HorizontalStackLayout>
+                <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="720"
+                     HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Center" Margin="0,5,0,0">
                     <ListView 
-                x:Name="ListView" 
-                WidthRequest="520"  
-                HeightRequest="300"
-                ItemSelected="ListView_ItemSelected">
+                        x:Name="ListViewCalendario" 
+                        WidthRequest="720"
+                        HorizontalOptions="Center" 
+                        ItemSelected="ListViewCalendario_ItemSelected"
+                        SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -109,68 +117,44 @@
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-
                                         <Label 
-                                       WidthRequest="100"
-                                       Text="{Binding Username}" 
-                                       Margin="-180,0,0,0" 
-                                       FontSize="16"
-                                       VerticalOptions="Center"/>
-                                        <HorizontalStackLayout>
-                                            <Label 
-                                       Text="*******" 
-                                       Margin="280,0,0,0" 
-                                       FontSize="16"
-                                       WidthRequest="100"
-                                       VerticalOptions="Center"
-                                       HorizontalOptions="Center"
-                                       x:Name="VerContrasena"/>
-
-                                            
-                                        </HorizontalStackLayout>
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Motivo}" 
+                                           Margin="-380,0,0,0" 
+                                           FontSize="16"
+                                           HeightRequest="30"/>
                                         <Label 
-                                       Text="{Binding Password}" 
-                                       Margin="240,0,0,0" 
-                                       FontSize="16"
-                                       WidthRequest="100"
-                                       VerticalOptions="Center"
-                                       IsVisible="False"
-                                       x:Name="CampoContraseña"/>
-                                        <ImageButton
-                                       Source="editar.png"  
-                                       WidthRequest="50"
-                                       HeightRequest="50"
-                                       VerticalOptions="Center"
-                                       Margin="390,0,0,0"
-                                       x:Name="BotonEditar"
-                                        />
-                                        
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Fecha}" 
+                                           Margin="40,0,0,0" 
+                                           FontSize="16"/>
+                                        <Label 
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Disfrutado}" 
+                                           Margin="470,0,0,0" 
+                                           FontSize="16"/>
+
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <StackLayout x:Name="BarraDivisoraTituloAbajo"
-                    BackgroundColor="Black"
-                    WidthRequest="500"
-                    HeightRequest="2"
-                    HorizontalOptions="Center"
-                    Margin="0,10,0,10"/>
-                    <StackLayout x:Name="AnadirUsuarios"
-                             WidthRequest="150"
-                             HeightRequest="40">
-                        <ImageButton x:Name="AddUsuarios"
-                                 Source="adduser.png"
-                                 HorizontalOptions="Start"
-                                 />
-                        <Label Text="Añadir usuario"
-                           FontSize="16"
-                           TextColor="Black"
-                           Margin="35,-25,0,0"
-                           FontAttributes="Bold"/>
-                    </StackLayout>
+                    <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="720"
+                     HorizontalOptions="Center"/>
+
+                    <Button Margin="0,10,0,0"
+                            x:Name="VolverATrabajadores"
+                            Text="Volver"
+                            Clicked="VolverATrabajadores_Clicked"
+                            WidthRequest="160"
+                            HeightRequest="35"/>
                 </StackLayout>
-            </HorizontalStackLayout>
+            </StackLayout>
             <StackLayout x:Name="CuerpoPrincipal" IsVisible="True"
                          Margin="350,-500,0,0"
                          HorizontalOptions="Center"

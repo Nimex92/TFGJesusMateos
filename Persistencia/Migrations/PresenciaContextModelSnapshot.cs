@@ -35,13 +35,16 @@ namespace Persistencia.Migrations
                     b.ToTable("Calendario");
                 });
 
-            modelBuilder.Entity("Bibliotec.DiaLibre", b =>
+            modelBuilder.Entity("Bibliotec.Dia", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("EsFestivo")
+                    b.Property<int>("CalendarioPerteneceId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Disfrutado")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("Fecha")
@@ -52,6 +55,8 @@ namespace Persistencia.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CalendarioPerteneceId");
 
                     b.ToTable("DiaLibre");
                 });
@@ -88,6 +93,27 @@ namespace Persistencia.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("Bibliotec.SolicitudVacaciones", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("SeAcepta")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Trabajador")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SolicitudesVacaciones");
                 });
 
             modelBuilder.Entity("Bibliotec.TareaComenzada", b =>
@@ -300,21 +326,6 @@ namespace Persistencia.Migrations
                     b.ToTable("Zonas");
                 });
 
-            modelBuilder.Entity("CalendarioDiaLibre", b =>
-                {
-                    b.Property<int>("CalendarioPerteneceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DiasDelCalendarioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CalendarioPerteneceId", "DiasDelCalendarioId");
-
-                    b.HasIndex("DiasDelCalendarioId");
-
-                    b.ToTable("CalendarioDiaLibre");
-                });
-
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
                 {
                     b.Property<int>("Id")
@@ -335,7 +346,7 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("Trabajadornumero_tarjeta");
 
-                    b.ToTable("TablaFichajes");
+                    b.ToTable("Fichajes");
                 });
 
             modelBuilder.Entity("EquipoTrabajoTareas", b =>
@@ -409,6 +420,17 @@ namespace Persistencia.Migrations
                     b.Navigation("Trabajador");
                 });
 
+            modelBuilder.Entity("Bibliotec.Dia", b =>
+                {
+                    b.HasOne("Bibliotec.Calendario", "CalendarioPertenece")
+                        .WithMany("DiasDelCalendario")
+                        .HasForeignKey("CalendarioPerteneceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CalendarioPertenece");
+                });
+
             modelBuilder.Entity("Bibliotec.TareaComenzada", b =>
                 {
                     b.HasOne("Bibliotec.Tareas", "tarea")
@@ -475,21 +497,6 @@ namespace Persistencia.Migrations
                     b.Navigation("fichaje");
 
                     b.Navigation("trabajador");
-                });
-
-            modelBuilder.Entity("CalendarioDiaLibre", b =>
-                {
-                    b.HasOne("Bibliotec.Calendario", null)
-                        .WithMany()
-                        .HasForeignKey("CalendarioPerteneceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Bibliotec.DiaLibre", null)
-                        .WithMany()
-                        .HasForeignKey("DiasDelCalendarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ClassLibrary1.Fichajes", b =>
@@ -561,6 +568,11 @@ namespace Persistencia.Migrations
                         .HasForeignKey("ZonasIdZona")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Bibliotec.Calendario", b =>
+                {
+                    b.Navigation("DiasDelCalendario");
                 });
 #pragma warning restore 612, 618
         }

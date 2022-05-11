@@ -10,7 +10,7 @@ namespace Bibliotec
     public class Calendario
     {
         public int Id { get; set; }
-        public Trabajador Trabajador { get; set; }
+        public virtual Trabajador Trabajador { get; set; }
         public ICollection<Dia> DiasDelCalendario { get; set; } = new List<Dia>();
 
         public Calendario() { }

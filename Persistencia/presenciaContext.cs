@@ -16,7 +16,7 @@ namespace Persistencia
 
         }
 
-        public DbSet<Fichajes> TablaFichajes { get; set; }
+        public DbSet<Fichajes> Fichajes { get; set; }
         public DbSet<Trabajador> Trabajador { get; set; }
         public DbSet<TrabajadorEnTurno> TrabajadorEnTurno { get; set; } 
         public DbSet<Usuarios> Usuarios { get; set; }
@@ -29,6 +29,7 @@ namespace Persistencia
         public DbSet<Dia> DiaLibre { get; set; }
         public DbSet<Turno> Turno { get; set; }
         public DbSet<EquipoTrabajo> EquipoTrabajo { get; set; }
+        public DbSet<SolicitudVacaciones> SolicitudesVacaciones { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseMySql("server=localhost;port=3306;uid=root;pwd='';database=pruebas;", new MySqlServerVersion(new Version(8, 0, 28)));

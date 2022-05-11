@@ -9,7 +9,6 @@ public partial class MainPage : ContentPage
 	PresenciaContext p = new PresenciaContext();
 	DateTime dt = DateTime.Now;
 	DateTime Today = DateTime.Today;
-
 	string user;
 	public MainPage()
 	{
@@ -21,17 +20,18 @@ public partial class MainPage : ContentPage
 		var Turnos = p.Turno.ToList();
 		foreach(Turno t in Turnos)
         {
-            if (t.ValidoDesde<Today)
+            if (t.ValidoDesde<=Today)
             {
 				t.Activo = true;
+
             }
 			if(t.ValidoHasta<Today)
             {
 				t.Activo = false;
 				t.Eliminado = true;
-				p.SaveChanges();
 			}
-        }
+			p.SaveChanges();
+		}
 		
     }
 	public async void CambiaFichar(object sender, EventArgs e)

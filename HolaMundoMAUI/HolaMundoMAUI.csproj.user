@@ -52,6 +52,9 @@
     <MauiXaml Update="AnadirTrabajadorEquipoTrabajo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="AnadeDiaCalendario.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

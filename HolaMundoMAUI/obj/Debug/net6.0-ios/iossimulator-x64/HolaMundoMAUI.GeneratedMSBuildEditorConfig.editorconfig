@@ -45,6 +45,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaZona.xam
 build_metadata.AdditionalFiles.TargetPath = AltaZona.xaml
 build_metadata.AdditionalFiles.RelativePath = AltaZona.xaml
 
+[C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AnadeDiaCalendario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadeDiaCalendario.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadeDiaCalendario.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadeDiaCalendario.xaml
+
 [C:/Users/jesus/Desktop/HolaMundoMAUI/HolaMundoMAUI/AnadeTareasAGrupoTrabajo.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadeTareasAGrupoTrabajo.xaml

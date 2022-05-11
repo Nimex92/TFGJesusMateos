@@ -20,24 +20,11 @@
                     FontAttributes="Bold"
                     Margin="0,10,10,0"/>
             </StackLayout>
-            <StackLayout x:Name="BotonUser" Margin="0,20,0,0">
-                <ImageButton
-                    x:Name="BtnUsuarios"
-                    Source="usuario.png"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="0,-10,0,0"
-                    Clicked="BtnUsuarios_Clicked"/>
-                <Label
-                    Text="Usuarios"
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    Margin="40,-15,0,0"/>
-            </StackLayout>
+            
             <StackLayout x:Name="BotonTrabajador">
                 <ImageButton
                 x:Name="BtnTrabajadores"
-                Source="trabajador.png"
+                Source="Usuario.png"
                 WidthRequest="70"
                 HeightRequest="70"
                 Margin="0,-10,0,0"
@@ -263,7 +250,7 @@
                                        Margin="40,0,0,0"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
-                                        VerticalOptions="Center"/>
+                                       VerticalOptions="Center"/>
                 </HorizontalStackLayout>
                 <StackLayout x:Name="BarraDivisoraTituloArriba2"
                             BackgroundColor="Black"
@@ -293,39 +280,54 @@
                                     <Label 
                                        WidthRequest="150"
                                        Text="{Binding nombre}" 
-                                       Margin="-120,0,0,0" 
+                                       Margin="-160,0,0,0" 
                                        FontSize="16"
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
                                        Text="{Binding perteneceaturnos}" 
-                                       Margin="90,0,0,0" 
+                                       Margin="50,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="110"
                                        VerticalOptions="Center"/>
-                                    
+
                                     <Label 
                                        Text="{Binding usuario.Username}" 
-                                       Margin="380,0,0,0" 
+                                       Margin="280,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
-                                        VerticalOptions="Center"/>
+                                       VerticalOptions="Center"/>
                                     <ImageButton
-                                       Source="editar.png"  
-                                       WidthRequest="50"
-                                       HeightRequest="50"
-                                       VerticalOptions="Center"
-                                       Margin="510,0,0,0"
-                                       x:Name="BotonEditarTrabajadores"
-                                       Clicked="BotonEditarTrabajadores_Clicked"/>
+                                           Source="calendarmini.png"
+                                           MaximumHeightRequest="50"
+                                           MaximumWidthRequest="50"
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="510,10,0,0"
+                                           x:Name="BotonCalendario"
+                                           Clicked="BotonCalendario_Clicked"/>
+                                        <ImageButton
+                                           Source="editar.png" 
+                                           Aspect="AspectFill"
+                                           MaximumHeightRequest="50"
+                                           MaximumWidthRequest="50"
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="570,10,0,0"
+                                           x:Name="BotonEditarTrabajadores"
+                                           Clicked="BotonEditarTrabajadores_Clicked"/>
                                     <ImageButton
-                                       Source="borrar.png"
-                                       WidthRequest="50"
-                                       HeightRequest="50"
-                                       VerticalOptions="Center"
-                                       Margin="580,0,0,0"
-                                       x:Name="BotonBorrarTrabajadores"
-                                       Clicked="BotonBorrarTrabajadores_Clicked"/>
+                                           Source="quitarusuario.png"
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           MaximumHeightRequest="50"
+                                           MaximumWidthRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="630,10,0,0"
+                                           x:Name="BotonBorrarTrabajadores"
+                                           Clicked="BotonBorrarTrabajadores_Clicked"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -337,19 +339,15 @@
                     HeightRequest="2"
                     HorizontalOptions="Center"
                     Margin="0,10,0,10"/>
-                <HorizontalStackLayout x:Name="GrupoAnadeTrabajador" WidthRequest="150"
-                             HeightRequest="50">
+                <HorizontalStackLayout x:Name="GrupoAnadeTrabajador" 
+                                       WidthRequest="60"
+                                       HeightRequest="60"
+                                       Margin="650,-225,0,0">
                     <ImageButton x:Name="AddTrabajadores"
-                                 Source="addworker.png"
+                                 Source="anadirusuario.png"
                                  HorizontalOptions="Start"
                                  VerticalOptions="Center"
                                  Clicked="NuevoTrabajador"/>
-                    <Label Text="Añadir trabajador"
-                           FontSize="16"
-                           TextColor="Black"
-                           Margin="5,10,0,0"
-                           FontAttributes="Bold"
-                           VerticalOptions="Center"/>
                 </HorizontalStackLayout>
             </StackLayout>
             <StackLayout x:Name="ListViewGroups" 
@@ -867,6 +865,124 @@
                                    VerticalOptions="Center"/>
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="ListViewCalendar" 
+                         IsEnabled="False" IsVisible="False"
+                         HorizontalOptions="Center" Margin="0,10,0,0">
+                <Label 
+                    Text="Tech Talent &#10; Calendario laboral"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.Description="Tech Talent Fiching System"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0"
+                    x:Name="LabelTitulo7"/>
+                <HorizontalStackLayout Margin="250,0,0,0" VerticalOptions="Center"
+                             HeightRequest="20" WidthRequest="800">
+                    <Label 
+                        Text="Motivo"
+                        Margin="45,0,0,0"
+                        FontAttributes="Bold"/>
+                    <Label 
+                        Text="Fecha"
+                        Margin="160,0,0,0"
+                        FontAttributes="Bold"/>
+                    <Label 
+                        Text="Disfrutado"
+                        Margin="120,0,0,0"
+                        FontAttributes="Bold"/>
+
+                </HorizontalStackLayout>
+                <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="720"
+                     HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Center" Margin="0,5,0,0">
+                    <ListView 
+                        x:Name="ListViewCalendario" 
+                        WidthRequest="720"
+                        HorizontalOptions="Center" 
+                        ItemSelected="OnItemSelectedCalendario"
+                        SeparatorColor="Black">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Motivo}" 
+                                           Margin="-380,0,0,0" 
+                                           FontSize="16"
+                                           HeightRequest="30"/>
+                                        <Label 
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Fecha}" 
+                                           Margin="40,0,0,0" 
+                                           FontSize="16"/>
+                                        <Label 
+                                           WidthRequest="150"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Disfrutado}" 
+                                           Margin="470,0,0,0" 
+                                           FontSize="16"/>
+                                       
+                                        <ImageButton
+                                           Source="editar.png"  
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="580,0,0,0"
+                                           x:Name="BotonActualizaDias"
+                                           Clicked="BotonActualizaDias_Clicked"/>
+                                        <ImageButton
+                                           Source="borrar.png"
+                                           WidthRequest="50"
+                                           HeightRequest="50"
+                                           VerticalOptions="Center"
+                                           Margin="660,0,0,0"
+                                           x:Name="BotonBorrarDias"
+                                           Clicked="BotonBorrarDias_Clicked"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <StackLayout BackgroundColor="Black"
+                     HeightRequest="2"
+                     WidthRequest="720"
+                     HorizontalOptions="Center"/>
+                    <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10,0,0">
+                        <HorizontalStackLayout>
+                            <ImageButton 
+                                Source="addtareas.png"
+                                VerticalOptions="Center"
+                                x:Name="BtnAnadeDias"
+                                Clicked="BtnAnadeDias_Clicked"/>
+                            <Label Text="Añadir Dias al calendario"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                    <Button
+                            x:Name="VolverATrabajadores"
+                            Text="Volver"
+                            Clicked="VolverATrabajadores_Clicked"
+                            WidthRequest="160"
+                            HeightRequest="35"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

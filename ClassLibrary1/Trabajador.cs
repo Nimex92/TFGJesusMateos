@@ -21,19 +21,10 @@ namespace Bibliotec
         public virtual Usuarios usuario { get; set; }
         
 
-        public Trabajador(string nombre, int grupo_trabajo)
-        {
-            this.nombre = nombre;
-        }
         public Trabajador(string nombre, EquipoTrabajo grupo,Usuarios user)
         {
             this.nombre = nombre;
             this.usuario = user;
-        }
-        public Trabajador(string nombre, int grupo, string user)
-        {
-            this.nombre = nombre;
-            this.usuario.Username = user;
         }
         public Trabajador(int numero_tarjeta, string nombre, EquipoTrabajo grupo)
         {

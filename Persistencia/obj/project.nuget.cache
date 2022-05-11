@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p8S116MLc3IRdaJuyk7qx+Fsar9a0D3IZnKR9FEyYtePDpiTFFa29WlRwmkjUJlUMdqjImfIoToffmrT1qQ7BQ==",
+  "dgSpecHash": "fN8guWzyMDuUphAj5a/oGQcr3MoqZN2SfoO7kN9kdYBX6SSlQbXFZa/eWVLDn61XLaX9MEgH6wFdf1ylmeB94w==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
@@ -27,10 +27,7 @@
     "C:\\Users\\jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.3\\microsoft.aspnetcore.app.ref.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.3\\microsoft.windowsdesktop.app.ref.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.3\\microsoft.netcore.app.ref.6.0.3.nupkg.sha512"
+    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4/M4gxMO6RK6mNYxhRpXKT0h69STRz96k3h+ZIW5QDd0Djm7NXtfKLSut5QLw0j1z0462LuKanUIFDGnm4sIHw==",
+  "dgSpecHash": "lOZtoLHcL6k8HUVQhprUS+dSv62oMjZEcqyyXuvRMx9j021z/B/MIEmD40DSeOX12MLIOh+1zeHzq9hFgIC8Zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj",
   "expectedPackageFiles": [
@@ -27,10 +27,7 @@
     "C:\\Users\\jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.3\\microsoft.aspnetcore.app.ref.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.3\\microsoft.windowsdesktop.app.ref.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.3\\microsoft.netcore.app.ref.6.0.3.nupkg.sha512"
+    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

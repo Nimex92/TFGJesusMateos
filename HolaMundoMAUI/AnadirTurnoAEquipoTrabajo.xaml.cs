@@ -129,22 +129,11 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		var NombreTurno = SelectorTurno.SelectedItem.ToString();
 		var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre.Equals(equipoTrabajo)).FirstOrDefault();
 		var turno = presenciaContext.Turno.Where(x => x.Nombre.Equals(NombreTurno)).FirstOrDefault();
-		var ListaTurnos = equipo.Turnos;
-		var ListaEquipos = turno.EquiposDeTrabajo;
-
-		if (equipo is not null && turno is not null)
-		{
-
-				turno.EquiposDeTrabajo.Remove(equipo);
-				await DisplayAlert("Alert", "Se ha Eliminado '" + turno.Nombre + "' del grupo: " + equipo.Nombre, "OK");
-				presenciaContext.Logs.Add(new Log("Remover", NombreUsuario + " ha eliminado " + equipo.Zonas + " a " + equipo.Nombre + " - " + dt));
-				presenciaContext.SaveChanges();
-				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
-		
+		equipo.Turnos.Remove(turno);
+		presenciaContext.SaveChanges();
+		await DisplayAlert("Alert", "Se ha Eliminado '" + turno.Nombre + "' del grupo: " + equipo.Nombre, "OK");
+		presenciaContext.Logs.Add(new Log("Remover", NombreUsuario + " ha eliminado " + equipo.Zonas + " a " + equipo.Nombre + " - " + dt));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
 		}
-		else
-		{
-			await DisplayAlert("Alert", "Error al añadir turno a equipo de trabajo.", "Vale");
-		}
-	}
+
 }

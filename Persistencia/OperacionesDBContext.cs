@@ -76,7 +76,7 @@ namespace Persistencia
             Fichajes fich = new Fichajes(trab, fechaFichaje, Entrada_Salida);
             if (fich is not null)
             {
-                presenciaContext.TablaFichajes.Add(fich);
+                presenciaContext.Fichajes.Add(fich);
                 presenciaContext.SaveChanges();
                 return true;
             }
@@ -175,7 +175,7 @@ namespace Persistencia
         public static bool borraFichaje(int Id)
         {
             using var presenciaContext = new PresenciaContext();
-            Fichajes fich = presenciaContext.TablaFichajes.Find(Id);
+            Fichajes fich = presenciaContext.Fichajes.Find(Id);
             if (fich is not null) {
                 presenciaContext.Remove(fich);
                 presenciaContext.SaveChanges();

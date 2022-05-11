@@ -532,19 +532,19 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\lib\net6.0\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Core.Runtime.win\6.0.300-rc.1.5355\lib\net6.0-windows10.0.19041\Microsoft.Maui.dll">
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Core.Runtime.win\6.0.300-rc.2.5513\lib\net6.0-windows10.0.19041\Microsoft.Maui.dll">
       <PackagePath>Microsoft.Maui.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.1.5355\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.dll">
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.2.5513\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.dll">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.1.5355\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.dll">
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.2.5513\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.dll">
       <PackagePath>Microsoft.Maui.Controls.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.1.5355\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.dll">
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Runtime.win\6.0.300-rc.2.5513\lib\net6.0-windows10.0.19041\Microsoft.Maui.Controls.dll">
       <PackagePath>Microsoft.Maui.Controls.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Essentials.Runtime.win\6.0.300-rc.1.5355\lib\net6.0-windows10.0.19041\Microsoft.Maui.Essentials.dll">
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Essentials.Runtime.win\6.0.300-rc.2.5513\lib\net6.0-windows10.0.19041\Microsoft.Maui.Essentials.dll">
       <PackagePath>Microsoft.Maui.Essentials.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\native\Microsoft.DiaSymReader.Native.amd64.dll">
@@ -763,13 +763,13 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.primitives\6.0.0\lib\net6.0\Microsoft.Extensions.Primitives.dll">
       <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.graphics.win2d\1.0.1\lib\net5.0-windows10.0.18362.0\Microsoft.Graphics.Canvas.Interop.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\lib\net5.0-windows10.0.18362.0\Microsoft.Graphics.Canvas.Interop.dll">
       <PackagePath>Microsoft.Graphics.Canvas.Interop.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.maui.graphics\6.0.300-rc.1.1215\lib\net6.0-windows10.0.18362\Microsoft.Maui.Graphics.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.maui.graphics\6.0.300-rc.2.1310\lib\net6.0-windows10.0.18362\Microsoft.Maui.Graphics.dll">
       <PackagePath>Microsoft.Maui.Graphics.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\6.0.300-rc.1.1215\lib\net6.0-windows10.0.18362\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\6.0.300-rc.2.1310\lib\net6.0-windows10.0.18362\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
       <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\lib\net5.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
@@ -808,7 +808,7 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.graphics.win2d\1.0.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\ClassLibrary1\bin\Debug\net6.0\Bibliotec.dll">
@@ -820,8 +820,20 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json">
       <PackagePath>HolaMundoMAUI.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf">
-      <PackagePath>Platforms\Windows\App.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
+      <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.pri">
+      <PackagePath>Microsoft.Maui.Controls.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.pri">
+      <PackagePath>Microsoft.Maui.Controls.Xaml.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Core.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.pri">
+      <PackagePath>Microsoft.Maui.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Essentials.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.Essentials.pri">
+      <PackagePath>Microsoft.Maui.Essentials.pri</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -843,6 +855,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\aceptar.scale-100.png">
+      <PackagePath>aceptar.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\aceptar.scale-125.png">
+      <PackagePath>aceptar.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\aceptar.scale-150.png">
+      <PackagePath>aceptar.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\aceptar.scale-200.png">
+      <PackagePath>aceptar.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\aceptar.scale-400.png">
+      <PackagePath>aceptar.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addgroups.scale-100.png">
       <PackagePath>addgroups.scale-100.png</PackagePath>
@@ -948,6 +975,81 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\addzonasgrupotrabajo.scale-400.png">
       <PackagePath>addzonasgrupotrabajo.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\agregar.scale-100.png">
+      <PackagePath>agregar.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\agregar.scale-125.png">
+      <PackagePath>agregar.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\agregar.scale-150.png">
+      <PackagePath>agregar.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\agregar.scale-200.png">
+      <PackagePath>agregar.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\agregar.scale-400.png">
+      <PackagePath>agregar.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturno.scale-100.png">
+      <PackagePath>anadirturno.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturno.scale-125.png">
+      <PackagePath>anadirturno.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturno.scale-150.png">
+      <PackagePath>anadirturno.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturno.scale-200.png">
+      <PackagePath>anadirturno.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturno.scale-400.png">
+      <PackagePath>anadirturno.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturnos.scale-100.png">
+      <PackagePath>anadirturnos.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturnos.scale-125.png">
+      <PackagePath>anadirturnos.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturnos.scale-150.png">
+      <PackagePath>anadirturnos.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturnos.scale-200.png">
+      <PackagePath>anadirturnos.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirturnos.scale-400.png">
+      <PackagePath>anadirturnos.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirusuario.scale-100.png">
+      <PackagePath>anadirusuario.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirusuario.scale-125.png">
+      <PackagePath>anadirusuario.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirusuario.scale-150.png">
+      <PackagePath>anadirusuario.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirusuario.scale-200.png">
+      <PackagePath>anadirusuario.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirusuario.scale-400.png">
+      <PackagePath>anadirusuario.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirzona.scale-100.png">
+      <PackagePath>anadirzona.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirzona.scale-125.png">
+      <PackagePath>anadirzona.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirzona.scale-150.png">
+      <PackagePath>anadirzona.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirzona.scale-200.png">
+      <PackagePath>anadirzona.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\anadirzona.scale-400.png">
+      <PackagePath>anadirzona.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
@@ -1069,6 +1171,51 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendar.scale-400.png">
       <PackagePath>calendar.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendario.scale-100.png">
+      <PackagePath>calendario.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendario.scale-125.png">
+      <PackagePath>calendario.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendario.scale-150.png">
+      <PackagePath>calendario.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendario.scale-200.png">
+      <PackagePath>calendario.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendario.scale-400.png">
+      <PackagePath>calendario.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendarmini.scale-100.png">
+      <PackagePath>calendarmini.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendarmini.scale-125.png">
+      <PackagePath>calendarmini.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendarmini.scale-150.png">
+      <PackagePath>calendarmini.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendarmini.scale-200.png">
+      <PackagePath>calendarmini.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\calendarmini.scale-400.png">
+      <PackagePath>calendarmini.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\cerrarsesion.scale-100.png">
+      <PackagePath>cerrarsesion.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\cerrarsesion.scale-125.png">
+      <PackagePath>cerrarsesion.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\cerrarsesion.scale-150.png">
+      <PackagePath>cerrarsesion.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\cerrarsesion.scale-200.png">
+      <PackagePath>cerrarsesion.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\cerrarsesion.scale-400.png">
+      <PackagePath>cerrarsesion.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-100.png">
       <PackagePath>copiar.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1083,6 +1230,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\copiar.scale-400.png">
       <PackagePath>copiar.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\denegar.scale-100.png">
+      <PackagePath>denegar.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\denegar.scale-125.png">
+      <PackagePath>denegar.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\denegar.scale-150.png">
+      <PackagePath>denegar.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\denegar.scale-200.png">
+      <PackagePath>denegar.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\denegar.scale-400.png">
+      <PackagePath>denegar.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
@@ -1114,6 +1276,51 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\editar.scale-400.png">
       <PackagePath>editar.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarturno.scale-100.png">
+      <PackagePath>eliminarturno.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarturno.scale-125.png">
+      <PackagePath>eliminarturno.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarturno.scale-150.png">
+      <PackagePath>eliminarturno.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarturno.scale-200.png">
+      <PackagePath>eliminarturno.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarturno.scale-400.png">
+      <PackagePath>eliminarturno.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarusuario.scale-100.png">
+      <PackagePath>eliminarusuario.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarusuario.scale-125.png">
+      <PackagePath>eliminarusuario.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarusuario.scale-150.png">
+      <PackagePath>eliminarusuario.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarusuario.scale-200.png">
+      <PackagePath>eliminarusuario.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\eliminarusuario.scale-400.png">
+      <PackagePath>eliminarusuario.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\equipotrabajo.scale-100.png">
+      <PackagePath>equipotrabajo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\equipotrabajo.scale-125.png">
+      <PackagePath>equipotrabajo.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\equipotrabajo.scale-150.png">
+      <PackagePath>equipotrabajo.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\equipotrabajo.scale-200.png">
+      <PackagePath>equipotrabajo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\equipotrabajo.scale-400.png">
+      <PackagePath>equipotrabajo.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\group.scale-100.png">
       <PackagePath>group.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1144,6 +1351,21 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\grupos.scale-400.png">
       <PackagePath>grupos.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\guardar.scale-100.png">
+      <PackagePath>guardar.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\guardar.scale-125.png">
+      <PackagePath>guardar.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\guardar.scale-150.png">
+      <PackagePath>guardar.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\guardar.scale-200.png">
+      <PackagePath>guardar.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\guardar.scale-400.png">
+      <PackagePath>guardar.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-100.png">
       <PackagePath>logout.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1159,6 +1381,21 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\logout.scale-400.png">
       <PackagePath>logout.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\maletin.scale-100.png">
+      <PackagePath>maletin.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\maletin.scale-125.png">
+      <PackagePath>maletin.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\maletin.scale-150.png">
+      <PackagePath>maletin.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\maletin.scale-200.png">
+      <PackagePath>maletin.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\maletin.scale-400.png">
+      <PackagePath>maletin.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitartrabajadordegrupo.scale-100.png">
       <PackagePath>quitartrabajadordegrupo.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1173,6 +1410,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitartrabajadordegrupo.scale-400.png">
       <PackagePath>quitartrabajadordegrupo.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitarusuario.scale-100.png">
+      <PackagePath>quitarusuario.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitarusuario.scale-125.png">
+      <PackagePath>quitarusuario.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitarusuario.scale-150.png">
+      <PackagePath>quitarusuario.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitarusuario.scale-200.png">
+      <PackagePath>quitarusuario.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\quitarusuario.scale-400.png">
+      <PackagePath>quitarusuario.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\redcircle.scale-100.png">
       <PackagePath>redcircle.scale-100.png</PackagePath>
@@ -1249,6 +1501,21 @@
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\trabajador.scale-400.png">
       <PackagePath>trabajador.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turno.scale-100.png">
+      <PackagePath>turno.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turno.scale-125.png">
+      <PackagePath>turno.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turno.scale-150.png">
+      <PackagePath>turno.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turno.scale-200.png">
+      <PackagePath>turno.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turno.scale-400.png">
+      <PackagePath>turno.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\turnos.scale-100.png">
       <PackagePath>turnos.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1308,21 +1575,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\Desktop\HolaMundoMAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\zonas.scale-400.png">
       <PackagePath>zonas.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
-      <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.pri">
-      <PackagePath>Microsoft.Maui.Controls.pri</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.pri">
-      <PackagePath>Microsoft.Maui.Controls.Xaml.pri</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Core.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.pri">
-      <PackagePath>Microsoft.Maui.pri</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Essentials.Ref.win\6.0.300-rc.1.5355\ref\net6.0-windows10.0.19041\Microsoft.Maui.Essentials.pri">
-      <PackagePath>Microsoft.Maui.Essentials.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

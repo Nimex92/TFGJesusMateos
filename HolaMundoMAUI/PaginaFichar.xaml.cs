@@ -10,27 +10,83 @@ namespace HolaMundoMAUI;
 
 public partial class PaginaFichar : ContentPage
 {
-	string username;
+	string Username;
 	Trabajador trabajador;
+	bool CalActivo,PrincipalActivo;
 	public IDispatcherTimer MyTimer { get; set; }
 	PresenciaContext presenciaContext = new PresenciaContext();
-	DateTime Entrada;
-	DateTime Salida;
+	List<DateTime> ListaEntradas = new List<DateTime>();
+	List<DateTime> ListaSalidas = new List<DateTime>();
 	DateTime dt = DateTime.Now;
 	DateTime HoraEntrada;
-	string user;
+	Dia dia;
 	public PaginaFichar(string username)
 	{
 		InitializeComponent();
 		CompruebaFichajes(username);
 		CompruebaTareas(username);
-		user = username;
+		ComienzaElReloj();
 		
-		this.username = username;
-		var trab = presenciaContext.Trabajador.Where(x => x.usuario.Username == username)
-			.Include(x => x.equipo).Include(x => x.usuario).FirstOrDefault();
+		Username = username;
+		if (SelectorTareas.IsVisible == true)
+		{
+			BotonIniciarTarea.IsVisible = false;
+			BotonIniciarTarea.IsEnabled = false;
+			BotonAcabarTarea.IsVisible = false;
+			BotonAcabarTarea.IsEnabled = false;
+		}
+
+		var trab = presenciaContext.Trabajador
+			.Where(x => x.usuario.Username == username)
+			.Include(x => x.equipo)
+			.Include(x => x.usuario)
+			.FirstOrDefault();
 		trabajador = trab;
 
+		var EquipoTrabajo = presenciaContext.EquipoTrabajo
+			.Where(x => x.Trabajadores.Contains(trab))
+			.Include(x=>x.Turnos)
+			.Include(x => x.Tareas)
+			.FirstOrDefault();
+		var tareas = EquipoTrabajo.Tareas.ToList(); 
+		var turnos = EquipoTrabajo.Turnos.ToList();
+		Turno TurnoActual = new Turno();
+		
+		foreach (Tareas t in tareas)
+		{
+			SelectorTareas.Items.Add(t.NombreTarea);
+		}
+		foreach (Turno t in turnos)
+        {
+			List<string> DiasTrabajo = SeTrabaja(t);
+			bool seTrabaja = false;
+			var HoyEs = dt.DayOfWeek.ToString();
+            if (DiasTrabajo.Contains(HoyEs)) { seTrabaja = true; }
+			if (t.HoraEntrada < dt && t.HoraSalida < dt && t.Activo == true && seTrabaja == true)
+			{
+				ListaEntradas.Add(t.HoraEntrada);
+				ListaSalidas.Add(t.HoraSalida);
+			}
+		}
+
+		SetListViewDias();
+		SelectorTareas.SelectedIndex = 0;
+		BotonIniciarTarea.IsVisible = false;
+
+		
+	}
+
+	private async void ImageButton_Clicked(object sender, EventArgs e)
+	{
+		BotonCerrarSession.BackgroundColor = Color.FromRgba("#b9b6bf");
+		bool answer = await DisplayAlert("Question?", "¿Deseas cerrar sesión?", "Si", "No");
+		if (answer == true)
+		{
+			App.Current.MainPage = new NavigationPage(new MainPage());
+		}
+	}
+	public void ComienzaElReloj()
+    {
 		MyTimer = Reloj.Dispatcher.CreateTimer();
 		MyTimer.Interval = TimeSpan.FromSeconds(1);
 		MyTimer.IsRepeating = true;
@@ -45,51 +101,6 @@ public partial class PaginaFichar : ContentPage
 		};
 
 		MyTimer.Start();
-
-		var Trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.equipo).FirstOrDefault();
-		var EquipoTrabajo = presenciaContext.EquipoTrabajo.Where(x => x.Trabajadores.Contains(Trabajador)).Include(x=>x.Turnos).Include(x => x.Tareas).FirstOrDefault();
-		var tareas = EquipoTrabajo.Tareas;
-		var turnos = EquipoTrabajo.Turnos;
-		Turno TurnoActual = new Turno();
-		
-		foreach (Tareas t in tareas)
-		{
-			SelectorTareas.Items.Add(t.NombreTarea);
-		}
-		foreach (Turno t in turnos)
-        {
-			if(t.HoraEntrada >= dt && t.HoraSalida <= dt && t.Activo == true)
-            {
-				TurnoActual = t;
-            }
-        }
-		
-		
-		SelectorTareas.SelectedIndex = 0;
-		string EntradaCompleta = TurnoActual.HoraEntrada.ToString();
-		string HoraEntrada = EntradaCompleta.Substring(0, 2);
-		string MinutosEntrada = EntradaCompleta.Substring(3, 2);
-		string SalidaCompleta = TurnoActual.HoraSalida.ToString();
-		string HoraSalida = SalidaCompleta.Substring(0, 2);
-		string MinutosSalida = SalidaCompleta.Substring(3, 2);
-		int HorEnt, MinEnt, HorSal, MinSal;
-		HorEnt = int.Parse(HoraEntrada);
-		MinEnt = int.Parse(MinutosEntrada);
-		HorSal = int.Parse(HoraSalida);
-		MinSal = int.Parse(MinutosSalida);
-		Entrada = DateTime.Today.AddHours(HorEnt).AddMinutes(MinEnt);
-		Salida = DateTime.Today.AddHours(HorSal).AddMinutes(MinSal);
-		BotonIniciarTarea.IsVisible = false;
-	}
-
-	private async void ImageButton_Clicked(object sender, EventArgs e)
-	{
-		BotonCerrarSession.BackgroundColor = Color.FromRgba("#b9b6bf");
-		bool answer = await DisplayAlert("Question?", "¿Deseas cerrar sesión?", "Si", "No");
-		if (answer == true)
-		{
-			App.Current.MainPage = new NavigationPage(new MainPage());
-		}
 	}
 	private void CompruebaFichajes(string user)
 	{
@@ -135,14 +146,14 @@ public partial class PaginaFichar : ContentPage
 	public void irMainPage(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new MainPage());
-		presenciaContext.Logs.Add(new Bibliotec.Log("Logout", username + " ha cerrado sesion - "+dt));
+		presenciaContext.Logs.Add(new Bibliotec.Log("Logout", Username + " ha cerrado sesion - "+dt));
 		presenciaContext.SaveChanges();
 
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-		
-		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x=>x.equipo).FirstOrDefault();
+
+		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
 		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, "Entrada");
 		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
 
@@ -156,27 +167,30 @@ public partial class PaginaFichar : ContentPage
 		SelectorTareas.IsVisible = true;
 		BotonIniciarTarea.IsEnabled = true;
 		BotonIniciarTarea.IsVisible = true;
-		if (dt < Entrada)
+		foreach (DateTime d in ListaEntradas)
 		{
-			var operacion = (Entrada-dt);
-			presenciaContext.Logs.Add(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m antes. - "+dt));
+			if (dt < d)
+			{
+				var operacion = (d - dt);
+				string motivo = await DisplayPromptAsync("Usted llega temprano.", "¿Cual es la razon?");
+				presenciaContext.Logs.Add(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m antes. - " + dt));
+			}
+			if (dt > d.AddMinutes(5))
+			{
+				var operacion = (dt - d);
+				string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
+				presenciaContext.Logs.Add(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt));
+			}
+			if (dt > d && dt <= d.AddMinutes(5))
+			{
+				presenciaContext.Logs.Add(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
+			}
+			presenciaContext.SaveChanges();
 		}
-		if (dt > Entrada.AddMinutes(5))
-		{
-			var operacion = (dt - Entrada);
-			string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
-			presenciaContext.Logs.Add(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m tarde debido a "+motivo+" - "+dt));
-		}
-		if (dt > Entrada && dt <= Entrada.AddMinutes(5))
-		{
-			presenciaContext.Logs.Add(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - "+dt));
-		}
-		presenciaContext.SaveChanges(); 
-		}
-	
+	}
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
-			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == username).Include(x => x.equipo).FirstOrDefault();
+			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
 			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta , "Salida");
 			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
 			presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
@@ -194,22 +208,25 @@ public partial class PaginaFichar : ContentPage
 				BotonAcabarTarea.IsVisible = false;
 				BotonAcabarTarea.IsEnabled = false;
 			}
-		if (dt < Salida)
-		{
-			var operacion = ( Salida- dt);
-			string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
-			presenciaContext.Logs.Add(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m antes. debido a "+motivo+" - "+dt));
+		foreach (DateTime d in ListaSalidas) {
+			if (dt < d)
+			{
+				var operacion = (d - dt);
+				string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
+				presenciaContext.Logs.Add(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
+			}
+			if (dt > d.AddMinutes(5))
+			{
+				var operacion = (dt - d);
+				string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
+				presenciaContext.Logs.Add(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
+			}
+			if (dt > d && dt <= d.AddMinutes(5))
+			{
+				presenciaContext.Logs.Add(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
+			}
+			presenciaContext.SaveChanges();
 		}
-		if (dt > Salida.AddMinutes(5))
-		{
-			var operacion = (dt - Salida);
-			presenciaContext.Logs.Add(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m tarde. - "+dt));
-		}
-		if (dt > Salida && dt <= Salida.AddMinutes(5))
-		{
-			presenciaContext.Logs.Add(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - "+dt));
-		}
-		presenciaContext.SaveChanges();
 	}
 	private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -246,7 +263,7 @@ public partial class PaginaFichar : ContentPage
 				var tareaActual = SelectorTareas.SelectedItem.ToString();
 				var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == tareaActual).FirstOrDefault();
 				presenciaContext.Add(new TareaComenzada(tarea, trabajador, dt));
-				presenciaContext.Logs.Add(new Log("Tareas", username + " ha iniciado tarea " + tarea.NombreTarea + " - " + dt));
+				presenciaContext.Logs.Add(new Log("Tareas", Username + " ha iniciado tarea " + tarea.NombreTarea + " - " + dt));
 				presenciaContext.SaveChanges();
 		}
 			else
@@ -273,17 +290,100 @@ public partial class PaginaFichar : ContentPage
 
 			presenciaContext.TareasFinalizadas.Add(new TareaFinalizada(tarea, trabajador, TareaIniciada.InicioTarea, dt, HorasUsadas, EnHora));
 			presenciaContext.TareasComenzadas.Remove(TareaIniciada);
-			presenciaContext.Logs.Add(new Log("Tareas", username + " ha finalizado tarea " + tarea.NombreTarea + " - " + dt));
+			presenciaContext.Logs.Add(new Log("Tareas", Username + " ha finalizado tarea " + tarea.NombreTarea + " - " + dt));
 			presenciaContext.SaveChanges();
 		}
 	private void Logout_png_Clicked(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new MainPage());
 	}
-
     private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-
+		Dia item = e.SelectedItem as Dia;
+		dia = item;
+	}
+    private void BtnPedirVacaciones_Clicked(object sender, EventArgs e)
+    {
+		var trab = trabajador;
+		App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username,trab));
     }
+    private void BtnCalendario_Clicked(object sender, EventArgs e)
+    {
+		switch (CalActivo)
+		{
+			case true:
+				ListViewCalendar.IsVisible = false;
+				ListViewCalendar.IsEnabled = false;
+				CuerpoPrincipal.IsVisible = true;
+				CuerpoPrincipal.IsEnabled = true;
+				CalActivo = false;
+				break;
+			case false:
+				ListViewCalendar.IsVisible = true;
+				ListViewCalendar.IsEnabled = true;
+				CuerpoPrincipal.IsVisible = false;
+				CuerpoPrincipal.IsEnabled = false;
+				CalActivo = true;
+				break;
+		}
+	}
+	private void SetListViewDias()
+    {
+		var ExisteCalendario = presenciaContext.Calendario.Where(x => x.Trabajador == trabajador).Include(x => x.DiasDelCalendario).FirstOrDefault();
+		if (ExisteCalendario is not null)
+		{
+			var ListaDias = ExisteCalendario.DiasDelCalendario.ToList();
+			ListViewCalendario.ItemsSource = ListaDias;
+			if (ListaDias.Count > 0)
+				ListViewCalendario.SelectedItem = ListaDias[0];
+		}
+	}
+    private void ListViewCalendario_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+			
+    }
+
+    private void VolverATrabajadores_Clicked(object sender, EventArgs e)
+    {
+		switch (PrincipalActivo)
+		{
+			case true:
+				ListViewCalendar.IsVisible = false;
+				ListViewCalendar.IsEnabled = false;
+				CuerpoPrincipal.IsVisible = true;
+				CuerpoPrincipal.IsEnabled = true;
+				PrincipalActivo = false;
+				CalActivo = false;
+				break;
+			case false:
+				ListViewCalendar.IsVisible = false;
+				ListViewCalendar.IsEnabled = false;
+				CuerpoPrincipal.IsVisible = true;
+				CuerpoPrincipal.IsEnabled = true;
+				PrincipalActivo = true;
+				CalActivo = false;
+				break;
+		}
+	}
+	private string QueDiaEs()
+    {
+		string dia = dt.DayOfWeek.ToString();
+		return dia;
+    }
+
+	private List<string> SeTrabaja(Turno t)
+    {
+		List<string> dias = new List<string>();
+		if (t.EsLunes == true) { dias.Add("Monday"); }
+		if (t.EsMartes == true) { dias.Add("Tuesday"); }
+		if (t.EsMiercoles == true) { dias.Add("Wednesday"); }
+		if (t.EsJueves == true) { dias.Add("Thursday"); }
+		if (t.EsViernes == true) { dias.Add("Friday"); }
+		if (t.EsSabado == true) { dias.Add("Saturday"); }
+		if (t.EsDomingo == true) { dias.Add("Sunday"); }
+		return dias;
+		var  a =dt.DayOfWeek;
+	}
+
 }
 

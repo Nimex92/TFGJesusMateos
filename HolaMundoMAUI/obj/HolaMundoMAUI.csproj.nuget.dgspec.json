@@ -80,20 +80,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -190,16 +176,16 @@
           "dependencies": {
             "Microsoft.Graphics.Win2D": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.3.1, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
@@ -227,10 +213,6 @@
               "version": "[31.0.101-preview.11.117, 31.0.101-preview.11.117]"
             },
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Host.linux-arm",
               "version": "[6.0.3, 6.0.3]"
             },
@@ -240,14 +222,6 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
               "version": "[6.0.3, 6.0.3]"
             }
           ],
@@ -275,16 +249,16 @@
           "dependencies": {
             "Microsoft.Graphics.Win2D": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.3.1, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
@@ -311,20 +285,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.iOS": {
               "privateAssets": "all"
@@ -349,16 +309,16 @@
           "dependencies": {
             "Microsoft.Graphics.Win2D": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.3.1, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
@@ -386,20 +346,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.MacCatalyst": {
               "privateAssets": "all"
@@ -424,16 +370,16 @@
           "dependencies": {
             "Microsoft.Graphics.Win2D": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.3.1, )"
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.1.5355, )",
+              "version": "[6.0.300-rc.2.5513, )",
               "autoReferenced": true
             },
             "Microsoft.Windows.SDK.BuildTools": {
@@ -463,19 +409,7 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
               "version": "[6.0.3, 6.0.3]"
             },
             {
@@ -485,10 +419,6 @@
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
               "version": "[10.0.19041.24, 10.0.19041.24]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
@@ -619,20 +549,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.3, 6.0.3]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
