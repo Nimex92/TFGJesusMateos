@@ -152,11 +152,9 @@ public partial class PaginaFichar : ContentPage
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-
 		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
-		OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta, "Entrada");
 		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
-
+		OperacionesDBContext.InsertaFichaje(fich);
 		presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
 		presenciaContext.SaveChanges();
 		BotonFichar.IsVisible = false;
@@ -191,7 +189,7 @@ public partial class PaginaFichar : ContentPage
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
 			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
-			OperacionesDBContext.insertaFichaje(trabajador.numero_tarjeta , "Salida");
+			OperacionesDBContext.InsertaFichaje(new Fichajes(trabajador, dt, "Entrada"));
 			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
 			presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
 			presenciaContext.SaveChanges();

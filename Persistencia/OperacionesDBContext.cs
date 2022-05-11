@@ -1,5 +1,6 @@
 ﻿using Bibliotec;
 using ClassLibrary1;
+using Persistencia;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,95 +17,76 @@ namespace Persistencia
         {
 
         }
-        //Metodo para insertar un trabajador a la base de datos
+        //######################### Metodos para insertar  datos a la BD #############################################
+        public static void InsertaLog(Log l)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Logs.Add(l);
+                p.SaveChanges();
+            }
+            catch (NullReferenceException ex)
+            {
+                Debug.Write(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Metodo para insertar un trabajador en la base de datos pasandole
+        /// un objecto trabajador como parametro
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
         public static bool InsertaTrabajador(Trabajador t)
         {
-            PresenciaContext p = new PresenciaContext();
-            if(t is not null)
+            try
             {
-                p.Trabajador.Add(t);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-            
-        public static bool insertaTrabajador(string Name, string Equipo, string user)
-        {
-            PresenciaContext presenciaContext = new PresenciaContext();
-            var trab = presenciaContext.Trabajador.Where(x => x.nombre == Name).FirstOrDefault();
-            var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == Equipo).FirstOrDefault();
-            var us = presenciaContext.Usuarios.Where(x => x.Username == user).FirstOrDefault();
-            if (trab == null)
-            {
-                if (us is null)
+                using var p = new PresenciaContext();
+                if (t is not null)
                 {
-                    Trabajador t1 = new Trabajador(Name, equipo, new Usuarios(user, "1"));
-                    presenciaContext.Add(t1);
-                    presenciaContext.SaveChanges();
-                    t1.equipo.Add(equipo);
-                    presenciaContext.SaveChanges();
-                    return true;
-                }
-                else
-                {
-                    user = "0" + user;
-                    Trabajador t1 = new Trabajador(Name, equipo, new Usuarios(user, "1"));
-                    presenciaContext.Add(t1);
-                    presenciaContext.SaveChanges();
-                    return true;
-
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-    
-        //Metodo para insertar un fichaje en la base de datos
-        public static bool insertaFichaje(int Trabajador, string Entrada_Salida)
-        {
-            using var presenciaContext = new PresenciaContext();
-            Trabajador trab = presenciaContext.Trabajador.Find(Trabajador);
-
-     
-            DateTime fechaFichaje = DateTime.Now;
-            Fichajes fich = new Fichajes(trab, fechaFichaje, Entrada_Salida);
-            if (fich is not null)
-            {
-                presenciaContext.Fichajes.Add(fich);
-                presenciaContext.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        //Metodo para insertar un usuario en la base de datos
-        public static bool insertaUsuario(string username, string password, bool esAdmin)
-        {
-            if (username is not null)
-            {
-                if (password is not null) {
-                    using var presenciaContext = new PresenciaContext();
-                    Usuarios us = new Usuarios(username, password, esAdmin);
-                    presenciaContext.Usuarios.Add(us);
-                    presenciaContext.SaveChanges();
+                    p.Trabajador.Add(t);
+                    p.SaveChanges();
                     return true;
                 }
                 else
                 {
                     return false;
                 }
-            }
-            else
+            }catch(NullReferenceException ex)
             {
+                Debug.WriteLine(ex.StackTrace);
+                return false;
+            }
+        }
+        //Metodo para insertar un fichaje en la base de datos
+        public static bool InsertaFichaje(Fichajes f)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Fichajes.Add(f);
+                p.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+            }
+            return true;
+        }
+        //Metodo para insertar un usuario en la base de datos
+        public static bool InsertaUsuario(Usuarios us)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Usuarios.Add(us);
+                p.SaveChanges();
+                return true;
+
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
                 return false;
             }
         }
@@ -142,20 +124,40 @@ namespace Persistencia
         //Metodo para insertar un equipo de trabajo en la base de datos
         public static bool InsertaEquipoTrabajo(EquipoTrabajo eq)
         {
-            PresenciaContext p = new PresenciaContext();
-            if(eq is not null)
-            {
+            try { 
+                using var p = new PresenciaContext();
                 p.EquipoTrabajo.Add(eq);
                 p.SaveChanges();
-                return true;
+                return true; 
             }
-            else
+            catch (Exception ex)
             {
-                return false;   
+                return false;
+                Debug.WriteLine(ex.StackTrace);
             }
             
         }
         //Metodo para borrar un trabajador existente de la base de datos
+
+        //########################################################################################################
+
+        //#################### Metodos para Borrar datos de la BD ################################################
+        public static bool BorraTrabajador(Trabajador t)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Remove(t);
+                p.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                return false;
+
+            }
+        }
         public static bool borraTrabajador(int NumeroTarjeta)
         {
             using var presenciaContext = new PresenciaContext();
@@ -218,6 +220,23 @@ namespace Persistencia
             }
         } 
         //Metodo para actualizar un trabajador existente de la base de datos
+
+        //######################Metodos para actualizar datos de la BD ############################################
+        public static bool ActualizaTrabajador(Trabajador t,string nombre,EquipoTrabajo eq)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                Trabajador tr = new Trabajador(t.numero_tarjeta, nombre, eq);
+                p.Update(tr);
+                p.SaveChanges();
+                return true;
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                return false;
+            }
+        }
         public static bool actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
         {
             using var presenciaContext = new PresenciaContext();
@@ -230,23 +249,21 @@ namespace Persistencia
           ya que por seguridad no se necesita la modificacion del nombre de usuario por lo que solo podremos
         modificar las contraseñas y si es o no admin(En la interfaz)
          */
-        public static bool actualizaUsuario(string usernamebusca,string username, string password, bool esAdmin)
+        public static bool ActualizaUsuario(Usuarios us)
         {
-            using var presenciaContext = new PresenciaContext();
-            var us = presenciaContext.Usuarios.Where(x=>x.Username== usernamebusca).FirstOrDefault();
-            if(usernamebusca is not null) { 
-                us.Username = usernamebusca;
-                us.Password = password;
-                us.esAdmin = esAdmin;
-                presenciaContext.Update(us);
-                presenciaContext.SaveChanges();
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Usuarios.Update(us);
+                p.SaveChanges();
                 return true;
             }
-            else
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.StackTrace);
                 return false;
             }
-        }    
+        } 
         //Metodo para actualizar una zona existente en la base de datos
         public static bool ActualizaZona(string OldName, string NewName)
         {

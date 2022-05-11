@@ -5356,11 +5356,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\PersistenciaTests\\PersistenciaTests.csproj",
+      "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\PersistenciaTests\\PersistenciaTests.csproj",
       "projectName": "PersistenciaTests",
-      "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\PersistenciaTests\\PersistenciaTests.csproj",
+      "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\PersistenciaTests\\PersistenciaTests.csproj",
       "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\PersistenciaTests\\obj\\",
+      "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\PersistenciaTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5382,8 +5382,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj"
             }
           }
         }

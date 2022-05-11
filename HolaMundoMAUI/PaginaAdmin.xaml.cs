@@ -108,58 +108,49 @@ public partial class PaginaAdmin : ContentPage
     public void NuevoUsuario(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaUsuarios(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Registrar usuario' - " + dt));
-        p.SaveChanges();
+       OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar usuario' - " + dt));
     }
     public void NuevoTrabajador(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(nombreUsuario,0));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Registrar trabajador' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar trabajador' - " + dt));
     }
     public void NuevoGrupoTrabajo(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTurno(nombreUsuario,0));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Registrar grupo de trabajo' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar grupo de trabajo' - " + dt));
     }
     public async void VolverAlMainAdmin(object sender, EventArgs e)
     {
         await DisplayAlert("Alert", "Hasta luego, "+nombreUsuario, "OK");
         App.Current.MainPage = new NavigationPage(new MainPage());
-        p.Logs.Add(new Log("Logout", nombreUsuario + " ha cerrado sesion -"+dt ));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Logout", nombreUsuario + " ha cerrado sesion -"+dt ));
 
     }
     private void RegistrarNuevaTareaTrabajo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo' - " + dt));
     }
     private void RegistrarNuevaZona_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt));
     }
     private void AnadeTareasGrupo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir Tareas a grupo' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir Tareas a grupo' - " + dt));
     }
     private void AnadirZonaGrupo_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt));
     }
-    private void BotonSinNada_Clicked(object sender, EventArgs e)
+    private void TrabajadoresEnTurno_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(nombreUsuario));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt));
     }
 
     //Settear ListViews de la ventana /////////////////////////////
@@ -682,8 +673,7 @@ public partial class PaginaAdmin : ContentPage
         if (answer == true)
         {
             bool inserta = OperacionesDBContext.borraUsuario(IdUser);
-            p.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado tarea " + us.Username + " - " + dt));
-            p.SaveChanges();
+            OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado tarea " + us.Username + " - " + dt));
             if (inserta == true)
             {
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,1));
@@ -704,14 +694,15 @@ public partial class PaginaAdmin : ContentPage
         if (tr is not null && answer == true)
         {
             var NumeroTarjeta = tr.numero_tarjeta;
-            OperacionesDBContext.borraTrabajador(NumeroTarjeta);
-            p.Logs.Add(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.nombre + "\" - " + dt));
-            p.SaveChanges();
+            //OperacionesDBContext.borraTrabajador(NumeroTarjeta);
+            OperacionesDBContext.BorraTrabajador(tr);
+            OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.nombre + "\" - " + dt));
+
             App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,2));
         }
         else
         {
-            await DisplayAlert("Alert", "Error!", "OK");
+            await DisplayAlert("Alert", "No se han producido cambios.", "OK");
         }
     }
     private async void BotonBorrarGruposTrabajo_Clicked(object sender, EventArgs e)
@@ -918,8 +909,7 @@ public partial class PaginaAdmin : ContentPage
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 1));
-        p.Logs.Add(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.nombre + " - " + dt));
-        p.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.nombre + " - " + dt));
     }
     private async void CompruebaDias(Trabajador tr)
     {

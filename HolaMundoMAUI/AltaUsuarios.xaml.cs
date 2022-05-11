@@ -64,7 +64,7 @@ public partial class AltaUsuarios : ContentPage
 					esAdmin = true;
 
 				//Inserto usuario
-				bool inserta = OperacionesDBContext.insertaUsuario(Username, Password,esAdmin);
+				bool inserta = OperacionesDBContext.InsertaUsuario(new Usuarios(Username, Password,esAdmin));
 				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt));
 				presenciaContext.SaveChanges();
 				if (inserta == true) 
@@ -109,26 +109,28 @@ public partial class AltaUsuarios : ContentPage
                 {
 					esAdmin = true;
                 }
-					
-
-				bool inserta = OperacionesDBContext.actualizaUsuario(us.Username, Username, Password, esAdmin);
-				presenciaContext.Logs.Add(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt));
-				presenciaContext.SaveChanges();
+				us.Nombre = Username;
+				us.Password = Password;
+				us.esAdmin = esAdmin;
+				//bool inserta = OperacionesDBContext.actualizaUsuario(us.Username, Username, Password, esAdmin);
+				bool inserta = OperacionesDBContext.ActualizaUsuario(us);
+				OperacionesDBContext.InsertaLog(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt));
 				if (inserta == true)
-				{
-					//Activo label de aceptacion, se ha insertado.
+				{ 
+					//Activa popup aceptacion, inserta el usuario
 					await DisplayAlert("Alert", "Usuario " + Username + " Actualizado correctamente.", "OK");
 					App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 1));
 				}
 				else
 				{
+					//Activa popup error, si no puede inserta el usuario
 					await DisplayAlert("Alert", "Error al insertar el usuario " + Username + ".", "OK");
 				}
 
 			}
 			else
 			{
-				//Activa label error, no coinciden las contraseñas
+				//Activa popup error, no coinciden las contraseñas
 				await DisplayAlert("Alert", "Las contraseñas deben coincidir.", "OK");
 			}
 		}

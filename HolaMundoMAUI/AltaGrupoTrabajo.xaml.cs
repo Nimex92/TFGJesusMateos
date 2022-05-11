@@ -29,6 +29,7 @@ public partial class AltaGrupoTrabajo : ContentPage
 				BotonRegistrarAdmin.IsEnabled = true;
 				BotonActualizarAdmin.IsVisible = false;
 				BotonActualizarAdmin.IsEnabled = false;
+				TituloEmpresa.Text = "Tech Talent" + Environment.NewLine + "Añadir trabajador a equipo de trabajo";
 				break;
 			case 1:
 				BotonRegistrarAdmin.IsVisible = false;
@@ -42,21 +43,20 @@ public partial class AltaGrupoTrabajo : ContentPage
 	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
 	{
 		PresenciaContext presenciaContext = new PresenciaContext();
-		string NombreEquipo = CampoNombre.Text;
-		if (NombreEquipo is not null)
+		
+		if (CampoNombre.Text.Equals("")==false)
 		{
+			string NombreEquipo = CampoNombre.Text;
 			var EquipoExiste = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == NombreEquipo).FirstOrDefault();
 			if (EquipoExiste is not null)
 			{
-				
 				await DisplayAlert("Alert", "El equipo de trabajo ya existe.", "OK");
 			}
 			else
 			{
 				EquipoTrabajo eq = new EquipoTrabajo(NombreEquipo);
 				OperacionesDBContext.InsertaEquipoTrabajo(eq);
-				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreEquipo + " - " + dt));
-				presenciaContext.SaveChanges();
+				OperacionesDBContext.InsertaLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreEquipo + " - " + dt));
 				await DisplayAlert("Alert", "El equipo de trabajo se ha añadido correctamente.", "OK");
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,6));
 			}
