@@ -11,6 +11,7 @@ public partial class AltaGrupoTrabajo : ContentPage
 	string NombreEquipoTrabajo;
 	string Turno;
 	PresenciaContext presenciaContext = new PresenciaContext();
+	EquipoTrabajo Eq;
 	public AltaGrupoTrabajo(string user)
 	{
 		InitializeComponent();
@@ -36,6 +37,8 @@ public partial class AltaGrupoTrabajo : ContentPage
 				BotonRegistrarAdmin.IsEnabled = false;
 				BotonActualizarAdmin.IsVisible = true;
 				BotonActualizarAdmin.IsEnabled = true;
+				var EquipoEditar = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == CampoNombre.Text).FirstOrDefault();
+				Eq = EquipoEditar;
 				TituloEmpresa.Text = "Tech Talent" + Environment.NewLine + "Revocar trabajador de equipo de trabajo";
 				break;
         }
@@ -43,7 +46,6 @@ public partial class AltaGrupoTrabajo : ContentPage
 	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
 	{
 		PresenciaContext presenciaContext = new PresenciaContext();
-		
 		if (CampoNombre.Text.Equals("")==false)
 		{
 			string NombreEquipo = CampoNombre.Text;
@@ -66,12 +68,19 @@ public partial class AltaGrupoTrabajo : ContentPage
 			await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
 		}
 	}
-	private void ActualizarGrupoTrabajo(object sender, EventArgs e)
+	private async void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		var Eq = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == CampoNombre.Text).FirstOrDefault();
-		Eq.Nombre = CampoNombre.Text;
-		presenciaContext.EquipoTrabajo.Update(Eq);
-		presenciaContext.SaveChanges();
+		bool actualizar = OperacionesDBContext.ActualizaEquipoTrabajo(Eq, CampoNombre.Text);
+		if(actualizar == true)
+        {
+			await DisplayAlert("Alert", "Se ha modificado correctamente.","Vale");
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 6));
+			OperacionesDBContext.InsertaLog(new Log("Modifica", NombreUsuario + " ha modificado el grupo de trabajo " + Eq.Nombre));
+        }
+        else
+        {
+			await DisplayAlert("Alert", "No se han realizado cambios.","Vale");
+		}
     }
 
 	

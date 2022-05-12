@@ -13,6 +13,7 @@ namespace Persistencia
 {
     public class OperacionesDBContext
     {
+        static PresenciaContext p = new PresenciaContext();
         public OperacionesDBContext()
         {
 
@@ -35,7 +36,7 @@ namespace Persistencia
         /// Metodo para insertar un trabajador en la base de datos pasandole
         /// un objecto trabajador como parametro
         /// </summary>
-        /// <param name="t"></param>
+        /// <param Trabajador="t"></param>
         /// <returns></returns>
         public static bool InsertaTrabajador(Trabajador t)
         {
@@ -54,7 +55,12 @@ namespace Persistencia
                 }
             }catch(NullReferenceException ex)
             {
-                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine(ex.ToString());
+                return false;
+            }
+            catch(ArgumentNullException ex2)
+            {
+                Debug.WriteLine(ex2.ToString());
                 return false;
             }
         }
@@ -90,7 +96,7 @@ namespace Persistencia
                 return false;
             }
         }
-        //Metodo para insertar una tarea en la base de datos
+        //Metodo para insertar una zona en la base de datos
         public static bool insertaTareas(string NombreTarea, string Descripcion, double TiempoEstimado)
         {
             PresenciaContext presenciaContext = new PresenciaContext();
@@ -158,70 +164,91 @@ namespace Persistencia
 
             }
         }
-        public static bool borraTrabajador(int NumeroTarjeta)
-        {
-            using var presenciaContext = new PresenciaContext();
-            Trabajador trabajador = presenciaContext.Trabajador.Find(NumeroTarjeta);
-            if (trabajador is not null)
-            {
-                presenciaContext.Remove(trabajador);
-                presenciaContext.SaveChanges();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         //Metodo para borrar un fichaje concreto de la base de datos
-        public static bool borraFichaje(int Id)
+        public static bool BorraFichaje(Fichajes fichaje)
         {
-            using var presenciaContext = new PresenciaContext();
-            Fichajes fich = presenciaContext.Fichajes.Find(Id);
-            if (fich is not null) {
-                presenciaContext.Remove(fich);
-                presenciaContext.SaveChanges();
-                return true;
-            } else
+            try
             {
+                using var p = new PresenciaContext();
+                p.Fichajes.Remove(fichaje);
+                p.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
                 return false;
             }
         }
         //Metodo para borrar un usuario concreto de la base de datos
-        public static bool borraUsuario(int Id)
+        public static bool BorraUsuario(Usuarios us)
         {
-            using var presenciaContext = new PresenciaContext();
-            Usuarios us = presenciaContext.Usuarios.Find(Id);
-            if (us != null)
+            try
             {
-                presenciaContext.Remove(us);
-                presenciaContext.SaveChanges();
+                var p = new PresenciaContext();
+                p.Usuarios.Remove(us);
+                p.SaveChanges();
                 return true;
             }
-            else
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.StackTrace);
                 return false;
             }
         }
         //Metodo para borrar una zona concreta de la base de datos
-        public static bool BorraZona(int id)
+        public static bool BorraZona(Zonas zona)
         {
-            using var presenciaContext = new PresenciaContext();
-            var Zona = presenciaContext.Zonas.Find(id);
-            if (Zona is not null)
+            try
             {
-                presenciaContext.Zonas.Remove(Zona);
-                presenciaContext.SaveChanges();
+                using var p = new PresenciaContext();
+                p.Zonas.Remove(zona);
+                p.SaveChanges();
                 return true;
             }
-            else
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.StackTrace);
                 return false;
             }
-        } 
-        //Metodo para actualizar un trabajador existente de la base de datos
+        }
+        //Metodo para borrar un turno de la base de datos
+        public static bool BorraTurno(Turno t)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Turno.Remove(t);
+                p.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                return false;
+            }
+        }
+        //Metodo para borrar una zona de la base de datos
+        public static bool BorraTarea(Tareas tarea)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                p.Tareas.Remove(tarea);
+                p.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                return false;
+            }
+        }
+
 
         //######################Metodos para actualizar datos de la BD ############################################
+
+        //Metodo para actualizar un trabajador existente de la base de datos
         public static bool ActualizaTrabajador(Trabajador t,string nombre,EquipoTrabajo eq)
         {
             try
@@ -233,22 +260,11 @@ namespace Persistencia
                 return true;
             }catch(Exception ex)
             {
-                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine(ex.ToString());
                 return false;
             }
         }
-        public static bool actualizaTrabajador(int Id, string Nombre, int GrupoTrabajo)
-        {
-            using var presenciaContext = new PresenciaContext();
-            Trabajador trabajador = new Trabajador(Id, Nombre, presenciaContext.EquipoTrabajo.Find(GrupoTrabajo));
-            presenciaContext.Update(trabajador);
-            presenciaContext.SaveChanges();
-            return true;
-        }
-        /*Metodo para actualizar un usuario existente en la base de datos, aunque realmente no se usa
-          ya que por seguridad no se necesita la modificacion del nombre de usuario por lo que solo podremos
-        modificar las contraseñas y si es o no admin(En la interfaz)
-         */
+        //Metodo para actualizar un usuario existente en la base de datos
         public static bool ActualizaUsuario(Usuarios us)
         {
             try
@@ -282,6 +298,74 @@ namespace Persistencia
                 return false;
             }
         }
+        //Metodo para actualizar un turno existente en la base de datos
+        public static bool ActualizaTurno(Turno t,string nombre,DateTime entrada,DateTime salida,bool EsLunes,bool EsMartes,bool EsMiercoles, bool EsJueves, bool EsViernes,bool EsSabado, bool EsDomingo,DateTime ValidoDesde,DateTime ValidoHasta,bool Activo, bool Eliminado)
+        {
+            try
+            {
+                using var p = new PresenciaContext();
+                Turno tu = new Turno();
+                tu.Nombre = t.Nombre;
+                tu.HoraEntrada = entrada;
+                tu.HoraSalida = salida;
+                tu.EsLunes = EsLunes;
+                tu.EsMartes = EsMartes;
+                tu.EsMiercoles = EsMiercoles;
+                tu.EsJueves = EsJueves;
+                tu.EsViernes = EsViernes;
+                tu.EsSabado = EsSabado;
+                tu.EsDomingo = EsDomingo;
+                tu.ValidoDesde = ValidoDesde;
+                tu.ValidoHasta = ValidoHasta;
+                tu.Activo = Activo;
+                tu.Eliminado = Eliminado;
+                
+                p.Update(tu);
+                p.SaveChanges();
+                return true;
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+        //Metodo para actualizar una tarea existente en la base de datos
+        public static bool ActualizaTarea(Tareas ta,string nombre,string descripcion,double tiempoestimado)
+        {
+            try
+            {
+                Tareas t = new Tareas();
+                t.IdTarea = ta.IdTarea;
+                t.NombreTarea = nombre;
+                t.Descripcion = descripcion;
+                t.TiempoEstimado = tiempoestimado;
+                p.Update(t);
+                p.SaveChanges();
+                return true;
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+        //Metodo para actualizar un equipo de trabajo existente en la base de datos
+        public static bool ActualizaEquipoTrabajo(EquipoTrabajo eq,string nombre)
+        {
+            try
+            {
+                EquipoTrabajo e = new EquipoTrabajo();
+                e.Id = eq.Id;
+                e.Nombre = nombre;
+                p.Update(e);
+                p.SaveChanges();
+                return true;
+            }
+            catch (Exception ex){
+                Debug.WriteLine(ex.ToString());
+                return false;
+            }
+            
         }
     }
+}
 

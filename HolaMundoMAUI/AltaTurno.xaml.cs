@@ -10,6 +10,7 @@ public partial class AltaTurno : ContentPage
 	bool L, M, X, J, V, S, D;
     string NombreUsuario;
     DateTime dt = DateTime.Now;
+    Turno TurnoEditar;
 
     public AltaTurno()
     {
@@ -25,15 +26,11 @@ public partial class AltaTurno : ContentPage
         {
             case 0:
                 BotonRegistrarAdmin.IsVisible = true;
-                BotonRegistrarAdmin.IsEnabled = true;
                 BotonActualizarAdmin.IsVisible = false;
-                BotonActualizarAdmin.IsEnabled = false;
                 break;
             case 1:
                 BotonRegistrarAdmin.IsVisible = false;
-                BotonRegistrarAdmin.IsEnabled = false;
                 BotonActualizarAdmin.IsVisible = true;
-                BotonActualizarAdmin.IsEnabled = true;
                 break;
         }
     }
@@ -56,15 +53,17 @@ public partial class AltaTurno : ContentPage
                 BotonActualizarAdmin.IsVisible = true;
                 BotonActualizarAdmin.IsEnabled = true;
                 var turno = p.Turno.Where(x => x.Nombre == NombreTurno).FirstOrDefault();
+                TurnoEditar = turno;
                 CampoNombre.Text = turno.Nombre;
+                CampoNombre.IsEnabled = false;
                 string HoraEntrada = turno.HoraEntrada.ToString().Substring(10, 3);
-                string MinutoEntrada = turno.HoraEntrada.ToString().Substring(13, 2);
+                string MinutoEntrada = turno.HoraEntrada.ToString().Substring(14, 2);
                 string HoraSalida = turno.HoraSalida.ToString().Substring(10, 3);
-                string MinutoSalida = turno.HoraSalida.ToString().Substring(13 ,2);
-                SelectorHoraEntrada.SelectedItem = HoraEntrada;
-                SelectorMinutoEntrada.SelectedItem = MinutoEntrada;
-                SelectorHoraSalida.SelectedItem = HoraSalida;
-                SelectorMinutoSalida.SelectedItem = MinutoSalida;
+                string MinutoSalida = turno.HoraSalida.ToString().Substring(14 ,2);
+                SelectorHoraEntrada.SelectedIndex = int.Parse(HoraEntrada);
+                SelectorMinutoEntrada.SelectedIndex = int.Parse(MinutoEntrada);
+                SelectorHoraSalida.SelectedIndex = int.Parse(HoraSalida);
+                SelectorMinutoSalida.SelectedIndex = int.Parse(MinutoSalida);
                 ValidoDesde.Date = turno.ValidoDesde;
                 ValidoHasta.Date = turno.ValidoHasta;
                 Lunes.IsChecked = turno.EsLunes;
@@ -115,47 +114,28 @@ public partial class AltaTurno : ContentPage
 
     private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
     {
-        string NombreTurno = CampoNombre.Text;
-        if (NombreTurno is not null)
+        try
         {
-            string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
-            string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
-            string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
-            string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
-            string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
-            string TiempoSalida = HoraSalida + ":" + MinutoSalida;
-            DateTime entrada = DateTime.Today.AddHours(Double.Parse(HoraEntrada)).AddMinutes(Double.Parse(MinutoEntrada));
-            DateTime salida = DateTime.Today.AddHours(Double.Parse(HoraSalida)).AddMinutes(Double.Parse(MinutoSalida));
-            var TurnoExiste = p.Turno.Where(x => x.Nombre == NombreTurno).FirstOrDefault();
-            if (TurnoExiste is not null)
+                string NombreTurno = CampoNombre.Text;
+                string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
+                string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
+                string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
+                string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
+                string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
+                string TiempoSalida = HoraSalida + ":" + MinutoSalida;
+                DateTime entrada = DateTime.Today.AddHours(Double.Parse(HoraEntrada)).AddMinutes(Double.Parse(MinutoEntrada));
+                DateTime salida = DateTime.Today.AddHours(Double.Parse(HoraSalida)).AddMinutes(Double.Parse(MinutoSalida));
+                bool actualiza =OperacionesDBContext.ActualizaTurno(TurnoEditar, NombreTurno, entrada, salida, L, M, X, J, V, S, D, ValidoDesde.Date, ValidoHasta.Date, TurnoEditar.Activo, TurnoEditar.Eliminado);
+            if (actualiza == true)
             {
-                TurnoExiste.Nombre = NombreTurno;
-                TurnoExiste.HoraEntrada = entrada;
-                TurnoExiste.HoraSalida = salida;
-                TurnoExiste.EsLunes = L;
-                TurnoExiste.EsMartes = M;
-                TurnoExiste.EsMiercoles = X;
-                TurnoExiste.EsJueves = J;
-                TurnoExiste.EsViernes = V;
-                TurnoExiste.EsSabado = S;
-                TurnoExiste.EsDomingo = D;
-                TurnoExiste.ValidoDesde = ValidoDesde.Date;
-                TurnoExiste.ValidoHasta = ValidoHasta.Date;
-
-                p.Turno.Update(TurnoExiste);
-                p.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt));
-                p.SaveChanges();
+                OperacionesDBContext.InsertaLog(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt));
                 await DisplayAlert("Alert", "El turno se ha modificado correctamente.", "OK");
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
             }
-            else
-            {
-                
-            }
-        }
-        else
+            
+        }catch(Exception ex)
         {
-            await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
+            await DisplayAlert("Alert", ex.ToString(), "Vale");
         }
     }
     private void BotonVolver_Clicked(object sender, EventArgs e)

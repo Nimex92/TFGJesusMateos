@@ -100,7 +100,7 @@ namespace Persistencia.Tests
         {
             PresenciaContext p = new PresenciaContext();
             var us = p.Usuarios.ToList();
-            bool borra = OperacionesDBContext.borraUsuario(us[0].IdUser);
+            bool borra = OperacionesDBContext.BorraUsuario(us[0]);
             Assert.IsTrue(borra);
         }
         /*

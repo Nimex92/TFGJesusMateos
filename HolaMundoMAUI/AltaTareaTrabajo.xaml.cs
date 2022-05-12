@@ -48,8 +48,7 @@ public partial class AltaTareaTrabajo : ContentPage
         string descripcion=CampoDescripcion.Text;
         double numerohoras=step.Value;
         bool inserta = OperacionesDBContext.insertaTareas(nombre, descripcion, numerohoras);
-        presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido tarea de trabajo " + nombre + " - " + dt));
-        presenciaContext.SaveChanges();
+        OperacionesDBContext.InsertaLog(new Log("Añadir", NombreUsuario + " ha añadido tarea de trabajo " + nombre + " - " + dt));
         if (inserta == true)
         {
             await DisplayAlert("Alert", "Se ha insertado tarea "+nombre+".", "OK");
@@ -63,9 +62,10 @@ public partial class AltaTareaTrabajo : ContentPage
     private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
     {
         var tarea = presenciaContext.Tareas.Where(x => x.NombreTarea == NombreTarea).FirstOrDefault();
-        tarea.NombreTarea = CampoNombre.Text;
-        tarea.Descripcion = CampoDescripcion.Text;
-        tarea.TiempoEstimado = step.Value;
+        //tarea.NombreTarea = CampoNombre.Text;
+        //tarea.Descripcion = CampoDescripcion.Text;
+        //tarea.TiempoEstimado = step.Value;
+        OperacionesDBContext.ActualizaTarea(tarea,CampoNombre.Text,CampoDescripcion.Text,step.Value);
         await DisplayAlert("Alert","Se ha modificado la tarea correctamente.","OK");
         App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,5));
     }

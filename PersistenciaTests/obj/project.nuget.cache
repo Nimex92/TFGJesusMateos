@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+I+ip+PWhAe7M/ER+Wph4WhQtp7b1FbMx5D2qNPbmOQyiJo2eOlssPEFxW6ovYmpU1Ut+Y+SsiLoQEJL1ywS6Q==",
+  "dgSpecHash": "cgSN98jig1ICtOK9Lublaz1SKULKplBUjWvcrwVEMjY9W/zU6UJOYzG5FT9lYLee5wqkUHhKoPHTVHkJyVcCmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\PersistenciaTests\\PersistenciaTests.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\PersistenciaTests\\PersistenciaTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

@@ -5,35 +5,42 @@
              Title="PaginaAdmin"
              BackgroundColor="White">
     <FlexLayout BackgroundColor="White">
+
         <StackLayout x:Name="MenuLateral" 
                      WidthRequest="130" 
-                     HeightRequest="550" 
-                     BackgroundColor="#b9b6bf"
-                     Margin="0,-32,0,0"
-                     HorizontalOptions="StartAndExpand">
+                     HeightRequest="850" 
+                     BackgroundColor="#2B282D"
+                     Margin="0,-35,0,0"
+                     HorizontalOptions="StartAndExpand"
+                     ZIndex="999">
             <StackLayout>
                 <Label
-                    x:Name="Label_NameUser"
+                    x:Name="Saludo"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"
                     FontSize="14"
+                    TextColor="White"
                     FontAttributes="Bold"
-                    Margin="0,10,10,0"/>
+                    Text="Bienvenid@,"
+                    Margin="15,15,15,0"/>
+                <Label
+                    x:Name="LabelNameUser"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="14"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin="15,0,15,0"/>
+                
             </StackLayout>
-            
+
             <StackLayout x:Name="BotonTrabajador">
                 <ImageButton
                 x:Name="BtnTrabajadores"
-                Source="Usuario.png"
+                Source="trabajadores.png"
                 WidthRequest="70"
                 HeightRequest="70"
-                Margin="0,-10,0,0"
                 Clicked="BtnTrabajadores_Clicked"/>
-                <Label
-                Text="Trabajadores"
-                FontAttributes="Bold"
-                FontSize="12"
-                Margin="25,-10,0,0"/>
             </StackLayout>
             <StackLayout x:Name="BotonGrupoTrabajo">
                 <ImageButton
@@ -43,25 +50,15 @@
                 HeightRequest="70"
                 Margin="0,-10,0,0"
                 Clicked="BtnGruposTrabajo_Clicked"/>
-                <Label
-                Text="Turnos de trabajo"
-                FontAttributes="Bold"
-                FontSize="12"
-                Margin="10,-15,0,0"/>
             </StackLayout>
             <StackLayout x:Name="BotonEquipoTrabajo">
                 <ImageButton
                 x:Name="BtnEquiposTrabajo"
-                Source="grupos.png"
+                Source="equipostrabajo.png"
                 WidthRequest="70"
                 HeightRequest="70"
                 Margin="0,-10,0,0"
                 Clicked="BtnEquiposTrabajo_Clicked"/>
-                <Label
-                Text="Equipos de trabajo"
-                FontAttributes="Bold"
-                FontSize="12"
-                Margin="10,-15,0,0"/>
             </StackLayout>
             <StackLayout x:Name="BotonZonas">
                 <ImageButton
@@ -71,157 +68,48 @@
                 HeightRequest="70"
                 Margin="0,-10,0,0"
                 Clicked="BtnZonas_Clicked"/>
-                <Label
-                Text="Zonas de trabajo"
-                FontAttributes="Bold"
-                FontSize="12"
-                Margin="15,-10,0,0"/>
             </StackLayout>
             <StackLayout x:Name="BotonTareas">
                 <ImageButton
                 x:Name="BtnTareas"
-                Source="Tareas.png"
+                Source="tareas.png"
                 WidthRequest="70"
                 HeightRequest="70"
                 Margin="0,-10,0,0"
                 Clicked="BtnTareas_Clicked"/>
-                <Label
-                Text="Tareas"
-                FontAttributes="Bold"
-                FontSize="12"
-                Margin="45,-10,0,0"/>
             </StackLayout>
-            <HorizontalStackLayout x:Name="BotonCerrarSession" Margin="5,60,0,0">
+
+            <VerticalStackLayout x:Name="BotonCerrarSession" 
+                                 Margin="5,140,0,0"
+                                 VerticalOptions="End">
+
+                <Label Text="Cerrar sesión"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       Margin="5,0,0,0"/>
                 <ImageButton Source="logout.png"
                              VerticalOptions="Center"
-                             Clicked="ImageButton_Clicked"/>
-                <Label Text="Cerrar sesión"
-                       VerticalOptions="Center"
-                       Margin="5,0,0,0"/>
-            </HorizontalStackLayout>
+                             Clicked="ImageButton_Clicked"
+                             WidthRequest="30"/>
+            </VerticalStackLayout>
         </StackLayout >
-        <StackLayout x:Name="ContenedorVentana">
+        <StackLayout x:Name="BarraSuperior"
+                     BackgroundColor="#2B282D"
+                     WidthRequest="1900"
+                     HeightRequest="100"
+                     ZIndex="998"
+                     Margin="30,-70,0,0"></StackLayout>
+        <StackLayout x:Name="ContenedorVentana"
+                     Margin="-590,0,0,0"
+                     WidthRequest="1000"
+                     HeightRequest="600">
+
             <StackLayout x:Name="PaginaPrincipal">
 
             </StackLayout>
-            <StackLayout x:Name="ListViewUsers" 
-                         IsVisible="False"
-                         IsEnabled="False">
-                <Label x:Name="LabelTitulo"
-                Text="Tech Talent &#10; Página de administracion"
-                TextColor="Black"
-                FontAttributes="Bold"
-                HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
-                FontSize="20"
-                HorizontalOptions="Center"/>
-                <HorizontalStackLayout x:Name="LabelTitulosUsuarios"
-                                       WidthRequest="720"
-                                       HeightRequest="15"
-                                       Margin="435,10,0,0">
-                    <Label Text="Username"
-                           FontAttributes="Bold"/>
-                    <Label Text="Password"
-                           Margin="100,0,0,0"
-                           FontAttributes="Bold"/>
-                </HorizontalStackLayout>
-                <StackLayout x:Name="BarraDivisoraTituloArriba"
-                            BackgroundColor="Black"
-                            WidthRequest="500"
-                            HeightRequest="2"
-                            HorizontalOptions="Center"
-                            Margin="0,10,0,10"/>
-                <ListView 
-                x:Name="ListViewUsuarios" 
-                WidthRequest="520"  
-                HeightRequest="300"
-                ItemSelected="OnItemSelectedUsuarios">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <Label 
-                                       WidthRequest="100"
-                                       Text="{Binding Username}" 
-                                       Margin="-180,0,0,0" 
-                                       FontSize="16"
-                                       VerticalOptions="Center"/>
-                                    <HorizontalStackLayout>
-                                    <Label 
-                                       Text="*******" 
-                                       Margin="280,0,0,0" 
-                                       FontSize="16"
-                                       WidthRequest="100"
-                                       VerticalOptions="Center"
-                                       HorizontalOptions="Center"
-                                       x:Name="VerContrasena"/>
-                                    
-                                    <ImageButton x:Name="BotonCopiar"
-                                                 Source="copiar.png"
-                                                 Clicked="BotonCopiar_Clicked"
-                                                 Margin="-40,0,0,0"/>
-                                    </HorizontalStackLayout>
-                                    <Label 
-                                       Text="{Binding Password}" 
-                                       Margin="240,0,0,0" 
-                                       FontSize="16"
-                                       WidthRequest="100"
-                                       VerticalOptions="Center"
-                                       IsVisible="False"
-                                       x:Name="CampoContraseña"/>
-                                    <ImageButton
-                                       Source="editar.png"  
-                                       WidthRequest="50"
-                                       HeightRequest="50"
-                                       VerticalOptions="Center"
-                                       Margin="390,0,0,0"
-                                       x:Name="BotonEditar"
-                                        Clicked="BotonEditarUsuarios_Clicked"/>
-                                    <ImageButton
-                                       Source="borrar.png"
-                                       Clicked="BotonBorrarUsuarios_Clicked"
-                                       WidthRequest="50"
-                                       HeightRequest="50"
-                                       VerticalOptions="Center"
-                                       Margin="460,0,0,0"
-                                       x:Name="BotonBorrar"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <StackLayout x:Name="BarraDivisoraTituloAbajo"
-                    BackgroundColor="Black"
-                    WidthRequest="500"
-                    HeightRequest="2"
-                    HorizontalOptions="Center"
-                    Margin="0,10,0,10"/>
-                <StackLayout x:Name="AnadirUsuarios"
-                             WidthRequest="150"
-                             HeightRequest="40">
-                    <ImageButton x:Name="AddUsuarios"
-                                 Source="adduser.png"
-                                 HorizontalOptions="Start"
-                                 Clicked="NuevoUsuario"/>
-                    <Label Text="Añadir usuario"
-                           FontSize="16"
-                           TextColor="Black"
-                           Margin="35,-25,0,0"
-                           FontAttributes="Bold"/>
-
-                </StackLayout>
-            </StackLayout>
             <StackLayout x:Name="ListViewWorkers" 
-                HorizontalOptions="Center" Margin="0,10,0,0" IsEnabled="False" IsVisible="False">
+                HorizontalOptions="Center" Margin="-50,0,0,0" 
+                         IsEnabled="False" IsVisible="False">
                 <Label x:Name="LabelTitulo2"
                     Text="Tech Talent &#10; Página de administracion &#10;de trabajadores"
                     TextColor="Black"
@@ -229,10 +117,11 @@
                     HorizontalTextAlignment="Center"
                     SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="20"
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    Margin="150,30,0,0"/>
                 <HorizontalStackLayout 
-                                       HeightRequest="20" WidthRequest="720"
-                                       Margin="380,0,0,0">
+                                       HeightRequest="20" WidthRequest="900"
+                                       Margin="560,10,0,0">
                     <Label 
                                        Text="Nombre:" 
                                        Margin="0,0,0,0" 
@@ -251,6 +140,12 @@
                                        FontAttributes="Bold"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
+                    <ImageButton x:Name="AddTrabajadores"
+                                 Source="anadirusuario.png"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"
+                                 Clicked="NuevoTrabajador"
+                                 Margin="85,0,0,0"/>
                 </HorizontalStackLayout>
                 <StackLayout x:Name="BarraDivisoraTituloArriba2"
                             BackgroundColor="Black"
@@ -339,19 +234,10 @@
                     HeightRequest="2"
                     HorizontalOptions="Center"
                     Margin="0,10,0,10"/>
-                <HorizontalStackLayout x:Name="GrupoAnadeTrabajador" 
-                                       WidthRequest="60"
-                                       HeightRequest="60"
-                                       Margin="650,-225,0,0">
-                    <ImageButton x:Name="AddTrabajadores"
-                                 Source="anadirusuario.png"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="Center"
-                                 Clicked="NuevoTrabajador"/>
-                </HorizontalStackLayout>
             </StackLayout>
             <StackLayout x:Name="ListViewGroups" 
-                         IsVisible="False" IsEnabled="False">
+                         IsVisible="False" IsEnabled="False"
+                         Margin="0,0,0,0">
                 <Label 
                 Text="Tech Talent &#10; Gestion de turnos"
                 TextColor="Black"
@@ -366,7 +252,7 @@
                     <Label 
                                        Text="Turno:" 
                                        FontSize="16"
-                                       Margin="-130,0,0,0"
+                                       Margin="-200,0,0,0"
                                        FontAttributes="Bold"
                                        WidthRequest="100"
                                         VerticalOptions="Center"
@@ -409,19 +295,18 @@
                 </HorizontalStackLayout>
                 <StackLayout BackgroundColor="Black"
                      HeightRequest="2"
-                     WidthRequest="1000"
+                     WidthRequest="1200"
                      HorizontalOptions="Center"/>
                 <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
                     <ListView 
                         x:Name="ListViewGrupos" 
-                        WidthRequest="1000"  
-                        HorizontalOptions="Center" 
                         ItemSelected="OnItemSelectedGruposTrabajo"
-                        SeparatorColor="Black"> 
+                        SeparatorColor="Black"
+                        SeparatorVisibility="Default"> 
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <Grid>
+                                    <Grid Margin="-300,0,0,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
@@ -430,28 +315,28 @@
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-
+                                        
                                         <Label 
                                        WidthRequest="150"
                                        Text="{Binding Nombre}" 
-                                       Margin="-655,0,0,0" 
+                                       Margin="-705,0,0,0" 
                                        FontSize="16"
                                         VerticalOptions="Center"/>
                                        
                                         <Label 
                                        Text="{Binding HoraEntrada}" 
-                                       Margin="-515,0,0,0" 
+                                       Margin="-565,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                        <Label 
                                        Text="{Binding HoraSalida}" 
-                                       Margin="-230,0,0,0" 
+                                       Margin="-330,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/> 
                                         <HorizontalStackLayout x:Name="CamposDiasDeLaSemana"
-                                            Margin="400,0,0,0">
+                                            Margin="370,0,0,0">
                                             <HorizontalStackLayout>
                                                 <Label Text="L" FontAttributes="Bold" Margin="5,0,0,0"/>
                                                 <Label Text="M" FontAttributes="Bold" Margin="10,0,0,0"/>
@@ -474,37 +359,37 @@
                                         
                                         <Label 
                                        Text="{Binding ValidoDesde}" 
-                                       Margin="360,0,0,0" 
+                                       Margin="320,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                         <Label 
                                        Text="{Binding ValidoHasta}" 
-                                       Margin="620,0,0,0" 
+                                       Margin="570,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                         <HorizontalStackLayout Margin="850,0,0,0">
-                                        <ImageButton x:Name="AddGruposEquipoTrabajo"
+                                            <ImageButton x:Name="AddGruposEquipoTrabajo"
                                              Source="addgroups.png"
                                              HorizontalOptions="Center"
                                              Clicked="AddGruposEquipoTrabajo_Clicked"
                                              VerticalOptions="Center"
                                              Aspect="AspectFill"/>
-                                        <ImageButton x:Name="RemoveGruposEquipoTrabajo"
+                                            <ImageButton x:Name="RemoveGruposEquipoTrabajo"
                                              Source="removegroup.png"
                                              HorizontalOptions="Center"
                                              Clicked="RemoveGruposEquipoTrabajo_Clicked"
                                              VerticalOptions="Center"
                                              Aspect="AspectFill"/>
-                                        <ImageButton
+                                            <ImageButton
                                            Source="editar.png"  
                                            WidthRequest="50"
                                            HeightRequest="50"
                                            VerticalOptions="Center"
                                            x:Name="BotonEditarGruposTrabajo"
                                            Clicked="BotonEditarGruposTrabajo_Clicked"/>
-                                        <ImageButton
+                                            <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
                                            HeightRequest="50"

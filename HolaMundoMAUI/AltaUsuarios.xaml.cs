@@ -109,7 +109,7 @@ public partial class AltaUsuarios : ContentPage
                 {
 					esAdmin = true;
                 }
-				us.Nombre = Username;
+				us.Username = Username;
 				us.Password = Password;
 				us.esAdmin = esAdmin;
 				//bool inserta = OperacionesDBContext.actualizaUsuario(us.Username, Username, Password, esAdmin);

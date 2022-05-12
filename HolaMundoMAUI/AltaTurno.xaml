@@ -166,7 +166,6 @@
                             Margin="0,10,0,0"
                             BackgroundColor="Black"
                             WidthRequest="300"
-                            IsEnabled="False"
                             IsVisible="False"
                             Clicked="BotonActualizarAdmin_Clicked"/>
                 </StackLayout>

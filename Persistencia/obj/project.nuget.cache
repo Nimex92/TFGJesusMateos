@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Ras5qPef9ikZYbPZBmRu2SwC/vKvVwtGXPMmFHDlfzfg/0wL4d7sAOUm2Myng6SI71kAKGCx/7KyxvbPW3iMQ==",
+  "dgSpecHash": "fN8guWzyMDuUphAj5a/oGQcr3MoqZN2SfoO7kN9kdYBX6SSlQbXFZa/eWVLDn61XLaX9MEgH6wFdf1ylmeB94w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
