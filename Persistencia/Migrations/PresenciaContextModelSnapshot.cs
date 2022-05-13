@@ -61,6 +61,33 @@ namespace Persistencia.Migrations
                     b.ToTable("DiaLibre");
                 });
 
+            modelBuilder.Entity("Bibliotec.Empresa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CIF")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CodigoCuentaMonetaria")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Empresa");
+                });
+
             modelBuilder.Entity("Bibliotec.EquipoTrabajo", b =>
                 {
                     b.Property<int>("Id")
@@ -74,6 +101,32 @@ namespace Persistencia.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EquipoTrabajo");
+                });
+
+            modelBuilder.Entity("Bibliotec.Incidencia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaIncidencia")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("Justificada")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("MotivoIncidencia")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Trabajadornumero_tarjeta");
+
+                    b.ToTable("Incidencias");
                 });
 
             modelBuilder.Entity("Bibliotec.Log", b =>
@@ -93,6 +146,36 @@ namespace Persistencia.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("Bibliotec.Nomina", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HorasEspeciales")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HorasNormales")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalAPercibir")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Trabajadornumero_tarjeta")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("Trabajadornumero_tarjeta");
+
+                    b.ToTable("NominasTrabajadores");
                 });
 
             modelBuilder.Entity("Bibliotec.SolicitudVacaciones", b =>
@@ -429,6 +512,36 @@ namespace Persistencia.Migrations
                         .IsRequired();
 
                     b.Navigation("CalendarioPertenece");
+                });
+
+            modelBuilder.Entity("Bibliotec.Incidencia", b =>
+                {
+                    b.HasOne("Bibliotec.Trabajador", "Trabajador")
+                        .WithMany()
+                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Trabajador");
+                });
+
+            modelBuilder.Entity("Bibliotec.Nomina", b =>
+                {
+                    b.HasOne("Bibliotec.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bibliotec.Trabajador", "Trabajador")
+                        .WithMany()
+                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("Trabajador");
                 });
 
             modelBuilder.Entity("Bibliotec.TareaComenzada", b =>

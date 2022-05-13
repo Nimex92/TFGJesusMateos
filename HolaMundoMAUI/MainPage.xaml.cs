@@ -12,7 +12,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		CompruebaTurnos();
+		CompruebaTurnos();	
 	}
 	public void CompruebaTurnos()
     {

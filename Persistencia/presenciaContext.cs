@@ -30,6 +30,9 @@ namespace Persistencia
         public DbSet<Turno> Turno { get; set; }
         public DbSet<EquipoTrabajo> EquipoTrabajo { get; set; }
         public DbSet<SolicitudVacaciones> SolicitudesVacaciones { get; set; }
+        public DbSet<Nomina> NominasTrabajadores { get; set; }
+        public DbSet<Incidencia> Incidencias { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseMySql("server=localhost;port=3306;uid=root;pwd='';database=pruebas;", new MySqlServerVersion(new Version(8, 0, 28)));
