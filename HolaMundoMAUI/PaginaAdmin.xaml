@@ -4,109 +4,114 @@
              x:Class="HolaMundoMAUI.PaginaAdmin"
              Title="PaginaAdmin"
              BackgroundColor="White">
-    <FlexLayout BackgroundColor="White">
-
-        <StackLayout x:Name="MenuLateral" 
-                     WidthRequest="130" 
-                     HeightRequest="850" 
+    <StackLayout BackgroundColor="White">
+        <StackLayout x:Name="BarraSuperior"
                      BackgroundColor="#2B282D"
-                     Margin="0,-35,0,0"
+                     WidthRequest="1920"
+                     HeightRequest="70"
+                     ZIndex="998"
+                     Margin="30,-70,0,0">
+            <HorizontalStackLayout x:Name="BotonCerrarSession" 
+                                   HorizontalOptions="Center"
+                                   Margin="1200,20,0,0">
+                <ImageButton Source="logout.png"
+                     VerticalOptions="Center"
+                     Clicked="BotonCerrarSesion_Clicked"
+                     WidthRequest="30"/>
+                <Button Text="Cerrar sesión"
+                   HorizontalOptions="Center"
+                   Clicked="BotonCerrarSesion_Clicked"
+                   TextColor="White"
+                   Margin="5,0,0,0"
+                   BackgroundColor="#2B282D"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+        <FlexLayout x:Name="MenuLateral" 
+                     WidthRequest="130" 
+                     HeightRequest="1100"
+                     BackgroundColor="#2B282D"
+                     Margin="0,-45,0,0"
                      HorizontalOptions="StartAndExpand"
-                     ZIndex="999">
-            <StackLayout>
-                <Label
-                    x:Name="Saludo"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    FontSize="14"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    Text="Bienvenid@,"
-                    Margin="15,15,15,0"/>
-                <Label
-                    x:Name="LabelNameUser"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    FontSize="14"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    Margin="15,0,15,0"/>
-            </StackLayout>
+                     Direction="Column"
+                     AlignItems="Strech"
+                     ZIndex="999"
+                     FlexLayout.Basis="100%"
+                     Wrap="Wrap"
+                     JustifyContent="Start">
 
+            <StackLayout x:Name="LabelUser">
+                <Label
+                        x:Name="Saludo"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        FontSize="14"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Text="Bienvenid@,"
+                        Margin="15,15,15,0"/>
+                <Label
+                        x:Name="LabelNameUser"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        FontSize="14"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="15,0,15,0"/>
+            </StackLayout>
             <StackLayout x:Name="BotonTrabajador">
                 <ImageButton
-                x:Name="BtnTrabajadores"
-                Source="trabajadores.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Clicked="BtnTrabajadores_Clicked"/>
+                    x:Name="BtnTrabajadores"
+                    Source="trabajadores.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Clicked="BtnTrabajadores_Clicked"/>
             </StackLayout>
             <StackLayout x:Name="BotonGrupoTrabajo">
                 <ImageButton
-                x:Name="BtnGruposTrabajo"
-                Source="turnos.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Margin="0,-10,0,0"
-                Clicked="BtnGruposTrabajo_Clicked"/>
+                    x:Name="BtnGruposTrabajo"
+                    Source="turnos.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Margin="0,-10,0,0"
+                    Clicked="BtnGruposTrabajo_Clicked"/>
             </StackLayout>
             <StackLayout x:Name="BotonEquipoTrabajo">
                 <ImageButton
-                x:Name="BtnEquiposTrabajo"
-                Source="equipostrabajo.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Margin="0,-10,0,0"
-                Clicked="BtnEquiposTrabajo_Clicked"/>
+                    x:Name="BtnEquiposTrabajo"
+                    Source="equipostrabajo.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Margin="0,-10,0,0"
+                    Clicked="BtnEquiposTrabajo_Clicked"/>
             </StackLayout>
             <StackLayout x:Name="BotonZonas">
                 <ImageButton
-                x:Name="BtnZonas"
-                Source="zonas.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Margin="0,-10,0,0"
-                Clicked="BtnZonas_Clicked"/>
+                    x:Name="BtnZonas"
+                    Source="zonas.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Margin="0,-10,0,0"
+                    Clicked="BtnZonas_Clicked"/>
             </StackLayout>
             <StackLayout x:Name="BotonTareas">
                 <ImageButton
-                x:Name="BtnTareas"
-                Source="tareas.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Margin="0,-10,0,0"
-                Clicked="BtnTareas_Clicked"/>
+                    x:Name="BtnTareas"
+                    Source="tareas.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Margin="0,-10,0,0"
+                    Clicked="BtnTareas_Clicked"/>
             </StackLayout>
             <StackLayout x:Name="BotonNominas">
                 <ImageButton
-                x:Name="BtnProblemas"
-                Source="problemas.png"
-                WidthRequest="70"
-                HeightRequest="70"
-                Margin="0,-10,0,0"
-                Clicked="BtnProblemas_Clicked"/>
+                    x:Name="BtnProblemas"
+                    Source="problemas.png"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    Margin="0,-10,0,0"
+                    Clicked="BtnProblemas_Clicked"/>
             </StackLayout>
-
-            <VerticalStackLayout x:Name="BotonCerrarSession" 
-                                 Margin="5,140,0,0"
-                                 VerticalOptions="End">
-
-                <Label Text="Cerrar sesión"
-                       HorizontalOptions="Center"
-                       TextColor="White"
-                       Margin="5,0,0,0"/>
-                <ImageButton Source="logout.png"
-                             VerticalOptions="Center"
-                             Clicked="ImageButton_Clicked"
-                             WidthRequest="30"/>
-            </VerticalStackLayout>
-        </StackLayout >
-        <StackLayout x:Name="BarraSuperior"
-                     BackgroundColor="#2B282D"
-                     WidthRequest="1900"
-                     HeightRequest="100"
-                     ZIndex="998"
-                     Margin="30,-70,0,0"></StackLayout>
+        </FlexLayout >
         <StackLayout x:Name="ContenedorVentana"
                      Margin="-590,0,0,0"
                      WidthRequest="1000"
@@ -1008,5 +1013,5 @@
                 </StackLayout>
             </StackLayout>
         </StackLayout>
-    </FlexLayout>
+    </StackLayout>
 </ContentPage>

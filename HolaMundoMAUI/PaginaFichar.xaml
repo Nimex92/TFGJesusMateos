@@ -3,108 +3,122 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.PaginaFichar"
              BackgroundColor="White">
-    <FlexLayout>
-        <StackLayout>
-            <StackLayout x:Name="MenuLateral" 
+    <StackLayout>
+
+        <StackLayout x:Name="BarraSuperior"
+                     BackgroundColor="#2B282D"
+                     WidthRequest="1920"
+                     HeightRequest="70"
+                     ZIndex="998"
+                     Margin="30,-70,0,0">
+            <HorizontalStackLayout x:Name="BotonCerrarSession" 
+                                   HorizontalOptions="Center"
+                                   Margin="1200,20,0,0">
+                <ImageButton Source="logout.png"
+                     VerticalOptions="Center"
+                     Clicked="BotonCerrarSesion_Clicked"
+                     WidthRequest="30"/>
+                <Button Text="Cerrar sesión"
+                   HorizontalOptions="Center"
+                   Clicked="BotonCerrarSesion_Clicked"
+                   TextColor="White"
+                   Margin="5,0,0,0"
+                   BackgroundColor="#2B282D"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+        <FlexLayout x:Name="MenuLateral" 
                      WidthRequest="130" 
-                     HeightRequest="550" 
-                     BackgroundColor="#b9b6bf"
-                     Margin="0,-50,0,0"
-                     HorizontalOptions="StartAndExpand">
-                <StackLayout>
-                    <Label
-                    x:Name="Label_NameUser1"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    FontSize="14"
-                    FontAttributes="Bold"
-                    Margin="0,10,10,0"/>
-                </StackLayout>
-                <StackLayout x:Name="BotonCalendario" Margin="0,20,0,0">
-                    <ImageButton
-                    x:Name="BtnCalendario"
-                    Source="calendar.png"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="0,-10,0,0"
-                    Clicked="BtnCalendario_Clicked"/>
-                    <Label
-                    Text="Calendario"
-                    FontAttributes="Bold"
-                    FontSize="12"
-                    Margin="35,-15,0,0"/>
+                     HeightRequest="1100"
+                     BackgroundColor="#2B282D"
+                     Margin="0,-45,0,0"
+                     HorizontalOptions="StartAndExpand"
+                     Direction="Column"
+                     AlignItems="Strech"
+                     ZIndex="999"
+                     FlexLayout.Basis="100%"
+                     Wrap="Wrap"
+                     JustifyContent="Start">
 
-                </StackLayout>
-                <StackLayout x:Name="BotonPedirVacaciones" Margin="0,20,0,0">
-                    <ImageButton
-                        x:Name="BtnPedirVacaciones"
-                        Source="calendar.png"
-                        WidthRequest="70"
-                        HeightRequest="70"
-                        Margin="0,-10,0,0"
-                        Clicked="BtnPedirVacaciones_Clicked"/>
-                    <Label
-                        Text="Solicitar vacaciones"
+            <StackLayout x:Name="LabelUser">
+                <Label
+                        x:Name="Saludo"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        FontSize="14"
+                        TextColor="White"
                         FontAttributes="Bold"
-                        FontSize="12"
-                        Margin="5,-15,0,0"
-                             HorizontalTextAlignment="Center"/>
-                </StackLayout>
-                <StackLayout x:Name="BotonCerrarSesion">
-                    <HorizontalStackLayout x:Name="BotonCerrarSession" Margin="5,100,0,0">
-                        <ImageButton Source="logout.png"
-                                 VerticalOptions="Center"
-                                 Clicked="ImageButton_Clicked"/>
-                        <Label Text="Cerrar sesión"
-                           VerticalOptions="Center"
-                           Margin="5,0,0,0"/>
-                    </HorizontalStackLayout>
-                </StackLayout>
-            </StackLayout >
-
+                        Text="Bienvenid@,"
+                        Margin="15,15,15,0"/>
+                <Label
+                        x:Name="LabelNameUser"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        FontSize="14"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="15,0,15,0"/>
+            </StackLayout>
+            <StackLayout x:Name="BotonCalendario">
+                <ImageButton
+                    x:Name="BtnCalendarioTrabajador"
+                    Source="calendariotrabajador.png"
+                    WidthRequest="120"
+                    HeightRequest="70"
+                    Clicked="BtnCalendario_Clicked"/>
+            </StackLayout>
+            <StackLayout x:Name="BtnPedirVacacionesTrabajador">
+                <ImageButton
+                    x:Name="BotonPedirVacacionesTrabajador"
+                    Source="pedirvacacionestrabajador.png"
+                    WidthRequest="120"
+                    HeightRequest="70"
+                    Clicked="BtnPedirVacaciones_Clicked"/>
+            </StackLayout>
+        </FlexLayout >
+        <FlexLayout>
             <StackLayout x:Name="ListViewCalendar" 
-                         IsEnabled="False" IsVisible="False"
-                         HorizontalOptions="Center" Margin="180,-510,0,0"
-                         VerticalOptions="Center"
-                         WidthRequest="800">
+                             IsEnabled="False" IsVisible="False"
+                             HorizontalOptions="Center" Margin="180,-510,0,0"
+                             VerticalOptions="Center"
+                             WidthRequest="800">
                 <Label 
-                    Text="Tech Talent &#10; Calendario laboral"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
-                    FontSize="20"
-                    HorizontalOptions="Center"
-                    Margin="0,10,0,0"
-                    x:Name="LabelTitulo7"/>
-                
+                        Text="Tech Talent &#10; Calendario laboral"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        SemanticProperties.Description="Tech Talent Fiching System"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        x:Name="LabelTitulo7"/>
+
                 <HorizontalStackLayout Margin="100,0,0,0" VerticalOptions="Center" HorizontalOptions="Center"
-                             HeightRequest="20" WidthRequest="800">
+                                 HeightRequest="20" WidthRequest="800">
                     <Label 
-                        Text="Motivo"
-                        Margin="60,0,0,0"
-                        FontAttributes="Bold"/>
+                            Text="Motivo"
+                            Margin="60,0,0,0"
+                            FontAttributes="Bold"/>
                     <Label 
-                        Text="Fecha"
-                        Margin="190,0,0,0"
-                        FontAttributes="Bold"/>
+                            Text="Fecha"
+                            Margin="190,0,0,0"
+                            FontAttributes="Bold"/>
                     <Label 
-                        Text="Disfrutado"
-                        Margin="100,0,0,0"
-                        FontAttributes="Bold"/>
+                            Text="Disfrutado"
+                            Margin="100,0,0,0"
+                            FontAttributes="Bold"/>
 
                 </HorizontalStackLayout>
                 <StackLayout BackgroundColor="Black"
-                     HeightRequest="2"
-                     WidthRequest="720"
-                     HorizontalOptions="Center"/>
+                         HeightRequest="2"
+                         WidthRequest="720"
+                         HorizontalOptions="Center"/>
                 <StackLayout HorizontalOptions="Center" Margin="0,5,0,0">
                     <ListView 
-                        x:Name="ListViewCalendario" 
-                        WidthRequest="720"
-                        HorizontalOptions="Center" 
-                        ItemSelected="ListViewCalendario_ItemSelected"
-                        SeparatorColor="Black">
+                            x:Name="ListViewCalendario" 
+                            WidthRequest="720"
+                            HorizontalOptions="Center" 
+                            ItemSelected="ListViewCalendario_ItemSelected"
+                            SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -118,24 +132,24 @@
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
                                         <Label 
-                                           WidthRequest="150"
-                                           VerticalOptions="Center"
-                                           Text="{Binding Motivo}" 
-                                           Margin="-380,0,0,0" 
-                                           FontSize="16"
-                                           HeightRequest="30"/>
+                                               WidthRequest="150"
+                                               VerticalOptions="Center"
+                                               Text="{Binding Motivo}" 
+                                               Margin="-380,0,0,0" 
+                                               FontSize="16"
+                                               HeightRequest="30"/>
                                         <Label 
-                                           WidthRequest="150"
-                                           VerticalOptions="Center"
-                                           Text="{Binding Fecha}" 
-                                           Margin="40,0,0,0" 
-                                           FontSize="16"/>
+                                               WidthRequest="150"
+                                               VerticalOptions="Center"
+                                               Text="{Binding Fecha}" 
+                                               Margin="40,0,0,0" 
+                                               FontSize="16"/>
                                         <Label 
-                                           WidthRequest="150"
-                                           VerticalOptions="Center"
-                                           Text="{Binding Disfrutado}" 
-                                           Margin="470,0,0,0" 
-                                           FontSize="16"/>
+                                               WidthRequest="150"
+                                               VerticalOptions="Center"
+                                               Text="{Binding Disfrutado}" 
+                                               Margin="470,0,0,0" 
+                                               FontSize="16"/>
 
                                     </Grid>
                                 </ViewCell>
@@ -143,116 +157,116 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <StackLayout BackgroundColor="Black"
-                     HeightRequest="2"
-                     WidthRequest="720"
-                     HorizontalOptions="Center"/>
+                         HeightRequest="2"
+                         WidthRequest="720"
+                         HorizontalOptions="Center"/>
 
                     <Button Margin="0,10,0,0"
-                            x:Name="VolverATrabajadores"
-                            Text="Volver"
-                            Clicked="VolverATrabajadores_Clicked"
-                            WidthRequest="160"
-                            HeightRequest="35"/>
+                                x:Name="VolverATrabajadores"
+                                Text="Volver"
+                                Clicked="VolverATrabajadores_Clicked"
+                                WidthRequest="160"
+                                HeightRequest="35"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="CuerpoPrincipal" IsVisible="True"
-                         Margin="350,-500,0,0"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center">
+                             Margin="-350,-150,0,0"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
             <Label 
-                Text="Tech Talent &#10; control de presencia"
-                TextColor="Black"
-                FontAttributes="Bold"
-                HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
-                FontSize="24"
-                HorizontalOptions="Center"
-                x:Name="TituloEmpresa"/>
-            <StackLayout BackgroundColor="Black"
-                         HeightRequest="2"
-                         WidthRequest="320"
-                         HorizontalOptions="Center"/>
-            <StackLayout
-                Margin="120,0,0,0"
-                HorizontalOptions="Center">
-                <Label
-                    x:Name="Reloj"
-                
-                    FontSize="28"
+                    Text="Tech Talent &#10; control de presencia"
                     TextColor="Black"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="300"
-                    HeightRequest="90"
-                    Margin="65,10,0,0"
-                   />
-            </StackLayout>
-            <Button
-                    x:Name="BotonFichar"
-                    Text="Comenzar &#10; jornada"
-                    TextColor="White"
-                    FontSize="24"
-                    Clicked="BotonFichar_Clicked"
                     FontAttributes="Bold"
-                    BackgroundColor="Red"
-                    WidthRequest="150" 
-                    HeightRequest="150"
-                    HorizontalOptions="Center"
-                    Margin="0,-50,0,0"
-                    IsEnabled="True"
-                    IsVisible="True"/>
-            <Button
-                    x:Name="BotonPlegar"
-                    Text="Terminar &#10; jornada"
-                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="24"
-                    Clicked="BotonPlegar_Clicked"
-                    FontAttributes="Bold"
-                    BackgroundColor="Green"
-                    WidthRequest="150" 
-                    HeightRequest="150"
                     HorizontalOptions="Center"
-                    Margin="0,-50,0,0"
-                    IsEnabled="False"
-                    IsVisible="False"/>
-            <VerticalStackLayout
-                HorizontalOptions="Center">
+                    x:Name="TituloEmpresa"/>
+            <StackLayout BackgroundColor="Black"
+                             HeightRequest="2"
+                             WidthRequest="320"
+                             HorizontalOptions="Center"/>
+            <StackLayout
+                    Margin="120,0,0,0"
+                    HorizontalOptions="Center">
                 <Label
-                    Text="Tarea:"
-                    IsEnabled="False"
-                    IsVisible="False"/>
-                <Picker
-                    x:Name="SelectorTareas"
-                    BackgroundColor="Black"
-                    WidthRequest="300"
-                    
-                    IsEnabled="False"
-                    IsVisible="False"
-                   />
-            </VerticalStackLayout>
-                <HorizontalStackLayout
-                HorizontalOptions="Center"
-                Margin="70,10,0,0">
-                    <Button
-                    x:Name="BotonIniciarTarea"
-                    Text="Iniciar"
-                    BackgroundColor="Green"
-                    WidthRequest="100"
-                    IsEnabled="False"
-                    IsVisible="False"
-                    Clicked="BotonIniciarTarea_Clicked"
-                    Margin="130,0,0,0"/>
-                    <Button
-                    x:Name="BotonAcabarTarea"
-                    Text="Acabar"
-                    BackgroundColor="Red"
-                    WidthRequest="100"
-                    IsEnabled="False"
-                    IsVisible="False"
-                    Clicked="BotonAcabarTarea_Clicked"
-                    Margin="130,0,0,0"/>
-                </HorizontalStackLayout>
+                        x:Name="Reloj"
+                
+                        FontSize="28"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        HeightRequest="90"
+                        Margin="65,10,0,0"
+                       />
             </StackLayout>
+            <Button
+                        x:Name="BotonFichar"
+                        Text="Comenzar &#10; jornada"
+                        TextColor="White"
+                        FontSize="24"
+                        Clicked="BotonFichar_Clicked"
+                        FontAttributes="Bold"
+                        BackgroundColor="Red"
+                        WidthRequest="150" 
+                        HeightRequest="150"
+                        HorizontalOptions="Center"
+                        Margin="0,-50,0,0"
+                        IsEnabled="True"
+                        IsVisible="True"/>
+            <Button
+                        x:Name="BotonPlegar"
+                        Text="Terminar &#10; jornada"
+                        TextColor="White"
+                        FontSize="24"
+                        Clicked="BotonPlegar_Clicked"
+                        FontAttributes="Bold"
+                        BackgroundColor="Green"
+                        WidthRequest="150" 
+                        HeightRequest="150"
+                        HorizontalOptions="Center"
+                        Margin="0,-50,0,0"
+                        IsEnabled="False"
+                        IsVisible="False"/>
+            <VerticalStackLayout
+                    HorizontalOptions="Center">
+                <Label
+                        Text="Tarea:"
+                        IsEnabled="False"
+                        IsVisible="False"/>
+                <Picker
+                        x:Name="SelectorTareas"
+                        BackgroundColor="Black"
+                        WidthRequest="300"
+                    
+                        IsEnabled="False"
+                        IsVisible="False"
+                       />
+            </VerticalStackLayout>
+            <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Margin="70,10,0,0">
+                <Button
+                        x:Name="BotonIniciarTarea"
+                        Text="Iniciar"
+                        BackgroundColor="Green"
+                        WidthRequest="100"
+                        IsEnabled="False"
+                        IsVisible="False"
+                        Clicked="BotonIniciarTarea_Clicked"
+                        Margin="130,0,0,0"/>
+                <Button
+                        x:Name="BotonAcabarTarea"
+                        Text="Acabar"
+                        BackgroundColor="Red"
+                        WidthRequest="100"
+                        IsEnabled="False"
+                        IsVisible="False"
+                        Clicked="BotonAcabarTarea_Clicked"
+                        Margin="130,0,0,0"/>
+            </HorizontalStackLayout>
         </StackLayout>
-    </FlexLayout>
+        </FlexLayout>
+    </StackLayout>
 </ContentPage>

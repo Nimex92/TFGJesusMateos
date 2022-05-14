@@ -18,7 +18,8 @@ namespace Persistencia
         {
 
         }
-        //######################### Metodos para insertar  datos a la BD #############################################
+        //######################################## Metodos para insertar  datos a la BD ###########################
+        //Metodo para insertar un log en la base de datos
         public static void InsertaLog(Log l)
         {
             try
@@ -32,12 +33,33 @@ namespace Persistencia
                 Debug.Write(ex.Message);
             }
         }
-        /// <summary>
-        /// Metodo para insertar un trabajador en la base de datos pasandole
-        /// un objecto trabajador como parametro
-        /// </summary>
-        /// <param Trabajador="t"></param>
-        /// <returns></returns>
+        //Metodo para insertar una incidencia en la base de datos
+        public static void InsertaIncidencia(Incidencia i)
+        {
+            try
+            {
+                p.Incidencias.Add(i);
+                p.SaveChanges();
+            }
+            catch (NullReferenceException ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+        //Metodo para insertar un trabajador en turno actual
+        public static void InsertaTrabajadorEnTurno(Trabajador t,Fichajes f)
+        {
+            try
+            {
+                p.TrabajadorEnTurno.Add(new TrabajadorEnTurno(t,f));
+                p.SaveChanges();
+            }
+            catch (NullReferenceException ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+        //Metodo para insertar un trabajador en la base de datos
         public static bool InsertaTrabajador(Trabajador t)
         {
             try
@@ -143,11 +165,11 @@ namespace Persistencia
             }
             
         }
-        //Metodo para borrar un trabajador existente de la base de datos
 
         //########################################################################################################
 
-        //#################### Metodos para Borrar datos de la BD ################################################
+        //#################################### Metodos para Borrar datos de la BD ################################
+        //Metodo para borrar un trabajador existente de la base de datos
         public static bool BorraTrabajador(Trabajador t)
         {
             try
@@ -244,9 +266,9 @@ namespace Persistencia
                 return false;
             }
         }
+        //#########################################################################################################
 
-
-        //######################Metodos para actualizar datos de la BD ############################################
+        //################################# Metodos para actualizar datos de la BD #################################
 
         //Metodo para actualizar un trabajador existente de la base de datos
         public static bool ActualizaTrabajador(Trabajador t,string nombre,EquipoTrabajo eq)

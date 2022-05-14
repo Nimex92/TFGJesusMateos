@@ -2,42 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.MainPage"
-             Title="MainPage"
-             BackgroundColor="White">
-
-
-    <StackLayout>
-        <StackLayout 
-            x:Name="LayoutTitulo"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Margin="0,5,0,0">
-            <Label
-                Margin="0,105,0,0"
-                HorizontalTextAlignment="Center"
-                x:Name="LabelTitulo"
-                Text="Tech Talent &#10; control de presencia"
-                FontAttributes="Bold"
-                FontSize="30"
-                />
+             BackgroundColor="#A29FA0">
+    <FlexLayout x:Name="CuerpoLogin"
+                AlignItems="Center" 
+                Direction="Column"
+                Margin="0,-10,0,0"
+                BackgroundColor="#2B282D"
+                WidthRequest="400"
+                HeightRequest="700"
+                Opacity="70">
+        <FlexLayout.Shadow>
+            <Shadow Brush="Black"
+                    Offset="20,10"
+                    Opacity="0.8"
+                    />
+        </FlexLayout.Shadow>
+        <StackLayout>
+            <Image x:Name="ImgUsuario"
+                   Source="usuario.png"
+                   WidthRequest="290"
+                   HeightRequest="290"
+                   Margin="0,30,0,0"/>
         </StackLayout>
-        <StackLayout 
-            BackgroundColor="Black" 
-            WidthRequest="320" 
-            HeightRequest="2"
-            Margin="0,5,0,0"
-            HorizontalOptions="Center"/>
-
         <StackLayout x:Name="LayoutCampos"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
                      Margin="0,10,0,0"
                      WidthRequest="320"
                      HeightRequest="170"
-                     BackgroundColor="#828282">
+                     >
             <Entry x:Name="CampoUsuario"
                    Placeholder="Introduce usuario:"
-                   PlaceholderColor="Black"
+                   PlaceholderColor="#A29FA0"
                    Margin="0,15,0,0"
                    FontSize="24"
                    HorizontalOptions="Center"
@@ -48,7 +44,7 @@
 
             <Entry x:Name="CampoContraseña"
                    Placeholder="Introduce Contraseña:"
-                   PlaceholderColor="Black"
+                   PlaceholderColor="#A29FA0"
                    Margin="0,15,0,0"
                    IsPassword="True"
                    FontSize="24"
@@ -59,40 +55,27 @@
                    TextColor="Black"
                    />
 
-            <Button
-            x:Name="irPaginaFichar"
-            Text="Iniciar sesión"
-            Margin="0,15,0,0"
-            Clicked="CambiaFichar"
-            WidthRequest="300"
-            HeightRequest="35"
-            HorizontalOptions="Center"/>
-        
+            <ImageButton
+                x:Name="irPaginaFichar"
+                Source="login.png"
+                Margin="0,50,0,0"
+                Clicked="CambiaFichar"
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#2B282D"
+                HorizontalOptions="Center"/>
+
         </StackLayout>
-        <StackLayout>
-            <HorizontalStackLayout HorizontalOptions="Center">
+        <HorizontalStackLayout x:Name="LabelContrasenaOlvidada"
+                               HorizontalOptions="Center"
+                               Margin="0,30,0,0">
             <Button x:Name="ContrasenaOlvidada"
                    Text="¿Olvidaste la contraseña?"
-                   FontSize="12"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   Margin="0,0,30,0"
-                   Clicked="CambiaFichar"
-                   />
-            
-            </HorizontalStackLayout>
-            
-            <Label
-                x:Name="MensajeError"
-                Text="Error, Usuario o contraseña erroreos.."
-                TextColor="Red"
-                FontSize="14"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                IsVisible="false"/>
-                
-        </StackLayout>
-
-    </StackLayout>
-
+                   FontSize="18"
+                   BackgroundColor="#2B282D"
+                   TextColor="White"
+                   Margin="15,70,15,10"
+                   Clicked="CambiaFichar"/>
+        </HorizontalStackLayout>
+    </FlexLayout>
 </ContentPage>

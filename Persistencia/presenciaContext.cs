@@ -44,7 +44,6 @@ namespace Persistencia
         {
             var optionsBuilder = new DbContextOptionsBuilder<PresenciaContext>();
             optionsBuilder.UseMySql("server=localhost;port=3306;uid=root;pwd='';database=pruebas;", new MySqlServerVersion((new Version(8, 0, 28))));
-
             return new PresenciaContext(optionsBuilder.Options);
         }
     }

@@ -2,6 +2,7 @@ using Persistencia;
 using Bibliotec;
 using Microsoft.EntityFrameworkCore;
 using ClassLibrary1;
+using System.Diagnostics;
 
 namespace HolaMundoMAUI;
 
@@ -799,7 +800,6 @@ public partial class PaginaAdmin : ContentPage
             await DisplayAlert("Alert", "No se realizaron cambios.", "Vale");
         }
     }
-
     private async void BotonBorrarTareas_Clicked(object sender, EventArgs e)
     {
         bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar la tarea \"" + ta.NombreTarea + "\"?", "Si", "No");
@@ -854,10 +854,10 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = true;
         ListViewWorkers.IsEnabled = true;
     }
-    private async void ImageButton_Clicked(object sender, EventArgs e)
+    private async void BotonCerrarSesion_Clicked(object sender, EventArgs e)
     {
-        BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
-        bool answer = await DisplayAlert("Question?","¿Deseas cerrar sesión?","Si","No");
+        //BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
+        bool answer = await DisplayAlert("Logout","¿Deseas cerrar sesión?","Si","No");
         if(answer == true)
         {
             App.Current.MainPage = new NavigationPage(new MainPage());
@@ -901,18 +901,23 @@ public partial class PaginaAdmin : ContentPage
         App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(nombreUsuario));
         OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt));
     }
-
     public async void CompruebaIncidencias()
     {
-        var ListaIncidencias = p.Incidencias.ToList();
-        ListViewIncidencias.ItemsSource = ListaIncidencias;
-        if(ListaIncidencias.Count > 0)
+        try
         {
-            BtnProblemas.Source="problemasactivo.png";
-        }
-        else
+            var ListaIncidencias = p.Incidencias.ToList();
+            ListViewIncidencias.ItemsSource = ListaIncidencias;
+            if (ListaIncidencias.Count > 0)
+            {
+                BtnProblemas.Source = "problemasactivo.png";
+            }
+            else
+            {
+                BtnProblemas.Source = "problemas.png";
+            }
+        }catch(NullReferenceException ex)
         {
-            BtnProblemas.Source = "problemas.png";
+            Debug.WriteLine(ex.ToString());
         }
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
