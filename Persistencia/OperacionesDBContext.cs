@@ -34,7 +34,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar una incidencia en la base de datos
-        public static void InsertaIncidencia(Incidencia i)
+        public static void InsertaIncidencia(Incidencia i,PresenciaContext p)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar un trabajador en turno actual
-        public static void InsertaTrabajadorEnTurno(Trabajador t,Fichajes f)
+        public static void InsertaTrabajadorEnTurno(Trabajador t,Fichajes f,PresenciaContext p)
         {
             try
             {

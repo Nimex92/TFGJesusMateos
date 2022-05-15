@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.PaginaFichar"
-             BackgroundColor="White">
+             BackgroundColor="#A29FA0">
     <StackLayout>
 
         <StackLayout x:Name="BarraSuperior"
@@ -11,9 +11,18 @@
                      HeightRequest="70"
                      ZIndex="998"
                      Margin="30,-70,0,0">
+            <Label x:Name="Reloj"
+                   FontSize="28"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   HeightRequest="90"
+                   Margin="300,25,0,0"/>
             <HorizontalStackLayout x:Name="BotonCerrarSession" 
                                    HorizontalOptions="Center"
-                                   Margin="1200,20,0,0">
+                                   Margin="1200,-90,0,0">
+                
                 <ImageButton Source="logout.png"
                      VerticalOptions="Center"
                      Clicked="BotonCerrarSesion_Clicked"
@@ -22,7 +31,6 @@
                    HorizontalOptions="Center"
                    Clicked="BotonCerrarSesion_Clicked"
                    TextColor="White"
-                   Margin="5,0,0,0"
                    BackgroundColor="#2B282D"/>
             </HorizontalStackLayout>
         </StackLayout>
@@ -170,38 +178,13 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="CuerpoPrincipal" IsVisible="True"
-                             Margin="-350,-150,0,0"
+                             Margin="150,-650,0,0"
                              HorizontalOptions="Center"
-                             VerticalOptions="Center">
-            <Label 
-                    Text="Tech Talent &#10; control de presencia"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
-                    FontSize="24"
-                    HorizontalOptions="Center"
-                    x:Name="TituloEmpresa"/>
-            <StackLayout BackgroundColor="Black"
-                             HeightRequest="2"
-                             WidthRequest="320"
-                             HorizontalOptions="Center"/>
-            <StackLayout
-                    Margin="120,0,0,0"
-                    HorizontalOptions="Center">
-                <Label
-                        x:Name="Reloj"
-                
-                        FontSize="28"
-                        TextColor="Black"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        WidthRequest="300"
-                        HeightRequest="90"
-                        Margin="65,10,0,0"
-                       />
-            </StackLayout>
-            <Button
+                             VerticalOptions="Center"
+                             HeightRequest="400"
+                             WidthRequest="350"
+                             BackgroundColor="White">
+                <Button
                         x:Name="BotonFichar"
                         Text="Comenzar &#10; jornada"
                         TextColor="White"
@@ -212,7 +195,7 @@
                         WidthRequest="150" 
                         HeightRequest="150"
                         HorizontalOptions="Center"
-                        Margin="0,-50,0,0"
+                        Margin="0,20,0,0"
                         IsEnabled="True"
                         IsVisible="True"/>
             <Button
@@ -226,11 +209,12 @@
                         WidthRequest="150" 
                         HeightRequest="150"
                         HorizontalOptions="Center"
-                        Margin="0,-50,0,0"
+                        Margin="0,20,0,0"
                         IsEnabled="False"
                         IsVisible="False"/>
             <VerticalStackLayout
-                    HorizontalOptions="Center">
+                    HorizontalOptions="Center"
+                    Margin="0,15,0,0">
                 <Label
                         Text="Tarea:"
                         IsEnabled="False"
@@ -239,7 +223,6 @@
                         x:Name="SelectorTareas"
                         BackgroundColor="Black"
                         WidthRequest="300"
-                    
                         IsEnabled="False"
                         IsVisible="False"
                        />

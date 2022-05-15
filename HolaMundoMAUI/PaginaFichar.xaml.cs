@@ -154,10 +154,9 @@ public partial class PaginaFichar : ContentPage
 		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
 		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
 		OperacionesDBContext.InsertaFichaje(fich);
-		OperacionesDBContext.InsertaTrabajadorEnTurno(trabajador, fich);
-		//presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
-		//presenciaContext.SaveChanges();
-		BotonFichar.IsVisible = false;
+        presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
+        presenciaContext.SaveChanges();
+        BotonFichar.IsVisible = false;
 		BotonFichar.IsEnabled = false;
 		BotonPlegar.IsVisible = true;
 		BotonPlegar.IsEnabled = true;
@@ -178,7 +177,7 @@ public partial class PaginaFichar : ContentPage
 				var operacion = (dt - d);
 				string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
 				OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt));
-				OperacionesDBContext.InsertaIncidencia(new Incidencia(trabajador,"Retraso de"+operacion,dt,false));
+				OperacionesDBContext.InsertaIncidencia(new Incidencia(trabajador,"Retraso de"+operacion,dt,false),presenciaContext);
 			}
 			if (dt > d && dt <= d.AddMinutes(5))
 			{
@@ -190,9 +189,10 @@ public partial class PaginaFichar : ContentPage
 		{
 			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
 			OperacionesDBContext.InsertaFichaje(new Fichajes(trabajador, dt, "Entrada"));
-			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
-			presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
-			presenciaContext.SaveChanges();
+			
+			//var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
+			//presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
+			//presenciaContext.SaveChanges();
 			BotonFichar.IsVisible = true;
 			BotonFichar.IsEnabled = true;
 			BotonPlegar.IsVisible = false;

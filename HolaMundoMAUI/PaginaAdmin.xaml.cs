@@ -18,7 +18,7 @@ public partial class PaginaAdmin : ContentPage
     EquipoTrabajo Et;
     Calendario cal;
     Dia dia;
-    Boolean TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo;
+    Boolean TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo,ProblemActivo,VacacionesActivo;
 
     public PaginaAdmin(string nombreUsuario)
     {
@@ -28,6 +28,8 @@ public partial class PaginaAdmin : ContentPage
         TaActivo = false;
         EtActivo = false;
         NmActivo = false;
+        ProblemActivo = false;
+        VacacionesActivo = false;
         
         InitializeComponent();
         SetListViewTrabajadores();
@@ -45,7 +47,10 @@ public partial class PaginaAdmin : ContentPage
         GrActivo = false;
         ZnActivo = false;
         TaActivo = false;
+        EtActivo = false;
         NmActivo = false;
+        ProblemActivo = false;
+        VacacionesActivo = false;
 
         InitializeComponent();
         SetListViewTrabajadores();
@@ -94,6 +99,12 @@ public partial class PaginaAdmin : ContentPage
                 ListViewCalendar.IsEnabled = true;
                 DiActivo = true;
                 LabelTitulo7.Text = "Tech Talent" + Environment.NewLine + "gestión de dias libres";
+                break;
+            case 8:
+
+                break;
+            case 9:
+
                 break;
         }
         
@@ -198,6 +209,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewCalendar.IsVisible = false;
             ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
 
@@ -231,6 +243,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewTeams.IsVisible = false;
             ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -266,6 +279,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewCalendar.IsVisible = false;
             ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -296,6 +310,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewTeams.IsVisible = false;
             ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -331,6 +346,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewCalendar.IsVisible = false;
             ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -363,6 +379,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewTeams.IsVisible = false;
             ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -400,6 +417,7 @@ public partial class PaginaAdmin : ContentPage
                 ListViewCalendar.IsVisible = false;
                 ListViewCalendar.IsEnabled = false;
                 ListViewNominas.IsVisible = false;
+                ListViewIssues.IsVisible = false;
 
 
                 BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -431,7 +449,7 @@ public partial class PaginaAdmin : ContentPage
                 ListViewTeams.IsVisible = false;
                 ListViewTeams.IsEnabled = false;
                 ListViewNominas.IsVisible = false;
-
+                ListViewIssues.IsVisible = false;
 
                 BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
                 BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -466,9 +484,9 @@ public partial class PaginaAdmin : ContentPage
                 ListViewCalendar.IsVisible = false;
                 ListViewCalendar.IsEnabled = false;
                 ListViewNominas.IsVisible = false;
+                ListViewIssues.IsVisible = false;
 
-
-            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+                BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
                 BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
                 BotonTareas.BackgroundColor = Color.FromRgba("#84677D");
                 BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
@@ -496,7 +514,7 @@ public partial class PaginaAdmin : ContentPage
                 ListViewTeams.IsVisible = false;
                 ListViewTeams.IsEnabled = false;
                 ListViewNominas.IsVisible = false;
-
+                ListViewIssues.IsVisible = false;
 
                 BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
                 BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -531,6 +549,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewCalendar.IsVisible = false;
             ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = true;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -559,6 +578,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
             ListViewTeams.IsEnabled = false;
+            ListViewIssues.IsVisible = false;
 
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
@@ -579,7 +599,68 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BtnProblemas_Clicked(object sender, EventArgs e)
     {
+        if (NmActivo == false)
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewCalendar.IsVisible = false;
+            ListViewCalendar.IsEnabled = false;
+            ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = true;
 
+
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#84677D"); ;
+
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            TaActivo = false;
+            EtActivo = false;
+            NmActivo = true;
+        }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewIssues.IsVisible = false;
+
+
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+
+            TaActivo = false;
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            EtActivo = false;
+            NmActivo = false;
+            CompruebaIncidencias();
+        }
     }
     private void BotonNominas_Clicked(object sender, EventArgs e)
     {
@@ -905,11 +986,12 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-            var ListaIncidencias = p.Incidencias.ToList();
+            var ListaIncidencias = p.Incidencias.Where(x=>x.Justificada==false).Include(x=>x.Trabajador).ToList();
             ListViewIncidencias.ItemsSource = ListaIncidencias;
             if (ListaIncidencias.Count > 0)
             {
                 BtnProblemas.Source = "problemasactivo.png";
+                ListViewIncidencias.SelectedItem = ListaIncidencias[0];
             }
             else
             {
