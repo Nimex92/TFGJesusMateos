@@ -244,3 +244,16 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\obj\Debug\n
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\obj\Debug\net6.0\PersistenciaTests.pdb
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\obj\Debug\net6.0\PersistenciaTests.genruntimeconfig.cache
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\obj\Debug\net6.0\ref\PersistenciaTests.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.forms.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.io.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.layout.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.sign.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.svg.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\itext.commons.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\PersistenciaTests\bin\Debug\net6.0\BouncyCastle.Crypto.dll

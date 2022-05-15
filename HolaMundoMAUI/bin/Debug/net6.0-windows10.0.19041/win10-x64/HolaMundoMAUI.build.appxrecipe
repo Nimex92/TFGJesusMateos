@@ -724,6 +724,39 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.24\lib\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.barcodes.dll">
+      <PackagePath>itext.barcodes.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.forms.dll">
+      <PackagePath>itext.forms.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.io.dll">
+      <PackagePath>itext.io.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.kernel.dll">
+      <PackagePath>itext.kernel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.layout.dll">
+      <PackagePath>itext.layout.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.pdfa.dll">
+      <PackagePath>itext.pdfa.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.sign.dll">
+      <PackagePath>itext.sign.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.styledxmlparser.dll">
+      <PackagePath>itext.styledxmlparser.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.svg.dll">
+      <PackagePath>itext.svg.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7.commons\7.2.2\lib\netstandard2.0\itext.commons.dll">
+      <PackagePath>itext.commons.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.dotnet.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll">
+      <PackagePath>Microsoft.DotNet.PlatformAbstractions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.entityframeworkcore\6.0.4\lib\net6.0\Microsoft.EntityFrameworkCore.dll">
       <PackagePath>Microsoft.EntityFrameworkCore.dll</PackagePath>
     </AppxPackagedFile>
@@ -750,6 +783,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\6.0.0\lib\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.dependencymodel\1.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll">
+      <PackagePath>Microsoft.Extensions.DependencyModel.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.logging\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
@@ -799,11 +835,17 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\mysqlconnector\2.1.2\lib\net6.0\MySqlConnector.dll">
       <PackagePath>MySqlConnector.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\nunit\3.13.3\lib\netstandard2.0\nunit.framework.dll">
       <PackagePath>nunit.framework.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\pomelo.entityframeworkcore.mysql\6.0.1\lib\net6.0\Pomelo.EntityFrameworkCore.MySql.dll">
       <PackagePath>Pomelo.EntityFrameworkCore.MySql.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\portable.bouncycastle\1.8.9\lib\netstandard2.0\BouncyCastle.Crypto.dll">
+      <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>

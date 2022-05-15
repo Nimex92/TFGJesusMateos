@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-05-15T00:01:37.257</Modified>
+      <Modified>2022-05-15T13:07:47.705</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-05-15T00:01:36.603</Modified>
+      <Modified>2022-05-15T13:07:46.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json">
       <PackagePath>HolaMundoMAUI.runtimeconfig.json</PackagePath>
-      <Modified>2022-05-14T22:20:15.479</Modified>
+      <Modified>2022-05-15T11:51:03.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll">
       <PackagePath>HolaMundoMAUI.dll</PackagePath>
-      <Modified>2022-05-15T00:01:34.540</Modified>
+      <Modified>2022-05-15T13:07:44.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\apphost.exe">
       <PackagePath>HolaMundoMAUI.exe</PackagePath>
-      <Modified>2022-05-15T00:01:34.562</Modified>
+      <Modified>2022-05-15T13:07:44.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.3\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -966,6 +966,50 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2022-03-15T03:04:48.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.barcodes.dll">
+      <PackagePath>itext.barcodes.dll</PackagePath>
+      <Modified>2022-04-04T17:46:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.forms.dll">
+      <PackagePath>itext.forms.dll</PackagePath>
+      <Modified>2022-04-04T17:46:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.io.dll">
+      <PackagePath>itext.io.dll</PackagePath>
+      <Modified>2022-04-04T17:46:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.kernel.dll">
+      <PackagePath>itext.kernel.dll</PackagePath>
+      <Modified>2022-04-04T17:46:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.layout.dll">
+      <PackagePath>itext.layout.dll</PackagePath>
+      <Modified>2022-04-04T17:46:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.pdfa.dll">
+      <PackagePath>itext.pdfa.dll</PackagePath>
+      <Modified>2022-04-04T17:46:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.sign.dll">
+      <PackagePath>itext.sign.dll</PackagePath>
+      <Modified>2022-04-04T17:47:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.styledxmlparser.dll">
+      <PackagePath>itext.styledxmlparser.dll</PackagePath>
+      <Modified>2022-04-04T17:46:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7\7.2.2\lib\netstandard2.0\itext.svg.dll">
+      <PackagePath>itext.svg.dll</PackagePath>
+      <Modified>2022-04-04T17:47:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\itext7.commons\7.2.2\lib\netstandard2.0\itext.commons.dll">
+      <PackagePath>itext.commons.dll</PackagePath>
+      <Modified>2022-04-04T17:46:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.dotnet.platformabstractions\1.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll">
+      <PackagePath>Microsoft.DotNet.PlatformAbstractions.dll</PackagePath>
+      <Modified>2016-11-08T22:14:04.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.entityframeworkcore\6.0.4\lib\net6.0\Microsoft.EntityFrameworkCore.dll">
       <PackagePath>Microsoft.EntityFrameworkCore.dll</PackagePath>
       <Modified>2022-03-12T02:00:46.000</Modified>
@@ -1001,6 +1045,10 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\6.0.0\lib\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
       <Modified>2021-10-22T23:48:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.dependencymodel\1.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll">
+      <PackagePath>Microsoft.Extensions.DependencyModel.dll</PackagePath>
+      <Modified>2016-11-08T22:14:04.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.extensions.logging\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
@@ -1066,6 +1114,10 @@
       <PackagePath>MySqlConnector.dll</PackagePath>
       <Modified>2021-12-23T03:43:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\newtonsoft.json\9.0.1\lib\netstandard1.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2016-06-13T23:06:14.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\nunit\3.13.3\lib\netstandard2.0\nunit.framework.dll">
       <PackagePath>nunit.framework.dll</PackagePath>
       <Modified>2022-03-20T17:47:42.000</Modified>
@@ -1073,6 +1125,10 @@
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\pomelo.entityframeworkcore.mysql\6.0.1\lib\net6.0\Pomelo.EntityFrameworkCore.MySql.dll">
       <PackagePath>Pomelo.EntityFrameworkCore.MySql.dll</PackagePath>
       <Modified>2022-01-22T18:54:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\portable.bouncycastle\1.8.9\lib\netstandard2.0\BouncyCastle.Crypto.dll">
+      <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
+      <Modified>2020-12-17T21:32:28.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\.nuget\packages\microsoft.windowsappsdk\1.0.3\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
@@ -1084,15 +1140,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\ClassLibrary1\bin\Debug\net6.0\Bibliotec.dll">
       <PackagePath>Bibliotec.dll</PackagePath>
-      <Modified>2022-05-14T22:18:42.876</Modified>
+      <Modified>2022-05-15T11:49:22.645</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\Persistencia\bin\Debug\net6.0\Persistencia.dll">
       <PackagePath>Persistencia.dll</PackagePath>
-      <Modified>2022-05-14T23:56:34.931</Modified>
+      <Modified>2022-05-15T11:51:20.486</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json">
       <PackagePath>HolaMundoMAUI.deps.json</PackagePath>
-      <Modified>2022-05-15T00:01:36.933</Modified>
+      <Modified>2022-05-15T13:07:47.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.300-rc.2.5513\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

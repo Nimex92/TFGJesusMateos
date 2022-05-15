@@ -8,6 +8,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Colors;
 
 namespace Persistencia
 {
@@ -184,6 +189,21 @@ namespace Persistencia
                 Debug.WriteLine(ex.StackTrace);
                 return false;
 
+            }
+        }
+        //Metodo para borrar un trabajador actual en turno(Plegar de su turno de trabajo)
+        public static bool BorraTrabajadorEnTurno(TrabajadorEnTurno t, PresenciaContext p)
+        {
+            try
+            {
+                p.TrabajadorEnTurno.Remove(t);
+                p.SaveChanges();
+                return true;
+            }
+            catch (NullReferenceException ex)
+            {
+                Debug.Write(ex.ToString());
+                return false;
             }
         }
         //Metodo para borrar un fichaje concreto de la base de datos

@@ -68,6 +68,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -157,6 +161,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [

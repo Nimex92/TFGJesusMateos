@@ -68,6 +68,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -195,6 +199,10 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.13.3, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -273,6 +281,10 @@
               "target": "Package",
               "version": "[6.0.1, )",
               "autoReferenced": true
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -333,6 +345,10 @@
               "target": "Package",
               "version": "[6.0.1, )",
               "autoReferenced": true
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -395,6 +411,10 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.13.3, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [
@@ -537,6 +557,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
             }
           },
           "imports": [

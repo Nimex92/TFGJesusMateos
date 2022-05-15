@@ -189,41 +189,43 @@ public partial class PaginaFichar : ContentPage
 		{
 			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
 			OperacionesDBContext.InsertaFichaje(new Fichajes(trabajador, dt, "Entrada"));
+			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
+			OperacionesDBContext.BorraTrabajadorEnTurno(TrabajadorEnTurno, presenciaContext);
 			
-			//var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
-			//presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
-			//presenciaContext.SaveChanges();
-			BotonFichar.IsVisible = true;
-			BotonFichar.IsEnabled = true;
-			BotonPlegar.IsVisible = false;
-			BotonPlegar.IsEnabled = false;
-			SelectorTareas.IsEnabled = false;
-			SelectorTareas.IsVisible = false;
-			if (SelectorTareas.IsVisible == false)
-			{
-				BotonIniciarTarea.IsVisible = false;
-				BotonIniciarTarea.IsEnabled = false;
-				BotonAcabarTarea.IsVisible = false;
-				BotonAcabarTarea.IsEnabled = false;
+		
+				//presenciaContext.TrabajadorEnTurno.Remove(TrabajadorEnTurno);
+				//presenciaContext.SaveChanges();
+				BotonFichar.IsVisible = true;
+				BotonFichar.IsEnabled = true;
+				BotonPlegar.IsVisible = false;
+				BotonPlegar.IsEnabled = false;
+				SelectorTareas.IsEnabled = false;
+				SelectorTareas.IsVisible = false;
+				if (SelectorTareas.IsVisible == false)
+				{
+					BotonIniciarTarea.IsVisible = false;
+					BotonIniciarTarea.IsEnabled = false;
+					BotonAcabarTarea.IsVisible = false;
+					BotonAcabarTarea.IsEnabled = false;
+				}
+			foreach (DateTime d in ListaSalidas) {
+				if (dt < d)
+				{
+					var operacion = (d - dt);
+					string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
+					OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
+				}
+				if (dt > d.AddMinutes(5))
+				{
+					var operacion = (dt - d);
+					string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
+					OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
+				}
+				if (dt > d && dt <= d.AddMinutes(5))
+				{
+					OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
+				}
 			}
-		foreach (DateTime d in ListaSalidas) {
-			if (dt < d)
-			{
-				var operacion = (d - dt);
-				string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
-				OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
-			}
-			if (dt > d.AddMinutes(5))
-			{
-				var operacion = (dt - d);
-				string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
-				OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
-			}
-			if (dt > d && dt <= d.AddMinutes(5))
-			{
-				OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
-			}
-		}
 	}
 	private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -302,28 +304,23 @@ public partial class PaginaFichar : ContentPage
     }
     private void BtnCalendario_Clicked(object sender, EventArgs e)
     {
-		switch (CalActivo)
-		{
-			case true:
+			if(CalActivo== true) { 
 				ListViewCalendar.IsVisible = false;
-				ListViewCalendar.IsEnabled = false;
 				CuerpoPrincipal.IsVisible = true;
-				CuerpoPrincipal.IsEnabled = true;
 				BtnCalendarioTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
 				BtnPedirVacacionesTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
 				CalActivo = false;
-				break;
-			case false:
+			}
+			else 
+			{ 
 				ListViewCalendar.IsVisible = true;
-				ListViewCalendar.IsEnabled = true;
-				CuerpoPrincipal.IsVisible = false;
-				CuerpoPrincipal.IsEnabled = false;
-				BtnCalendarioTrabajador.BackgroundColor = Color.FromRgba("#84677D");
+				CuerpoPrincipal.IsVisible = false;;
+				BtnCalendarioTrabajador.BackgroundColor = Color.FromRgba("#93778B");
 				BtnPedirVacacionesTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
 				CalActivo = true;
-				break;
-		}
+			}
 	}
+	
 	private void SetListViewDias()
     {
 		var ExisteCalendario = presenciaContext.Calendario.Where(x => x.Trabajador == trabajador).Include(x => x.DiasDelCalendario).FirstOrDefault();

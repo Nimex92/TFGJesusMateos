@@ -3,6 +3,12 @@ using Bibliotec;
 using Microsoft.EntityFrameworkCore;
 using ClassLibrary1;
 using System.Diagnostics;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Colors;
+using Color = Microsoft.Maui.Graphics.Color;
 
 namespace HolaMundoMAUI;
 
@@ -210,6 +216,7 @@ public partial class PaginaAdmin : ContentPage
             ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
+
 
 
 
@@ -664,7 +671,113 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonNominas_Clicked(object sender, EventArgs e)
     {
+        // Must have write permissions to the path folder
+        PdfWriter writer = new PdfWriter("D:\\demo.pdf");
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+        Paragraph header = new Paragraph("Nomina ")
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+           .SetFontSize(20);
+        // Tabla datos de la empresa
+        Table TablaEmprsa = new Table(3, false);
+        iText.Layout.Element.Cell cell11 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("Empresa"));
+        iText.Layout.Element.Cell cell12 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("Direccion"));
+        iText.Layout.Element.Cell cell13 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("CIF"));
+        iText.Layout.Element.Cell cell21 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("TTI Hub Venture Builder S.L."));
+        iText.Layout.Element.Cell cell22 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("Calle Paletillas, 6 - PISO 2 B, Calahorra, 26500 , La Rioja"));
+        iText.Layout.Element.Cell cell23 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("B26557397"));
+        
+        TablaEmprsa.AddCell(cell11);
+        TablaEmprsa.AddCell(cell12);
+        TablaEmprsa.AddCell(cell13);
+        TablaEmprsa.AddCell(cell21);
+        TablaEmprsa.AddCell(cell22);
+        TablaEmprsa.AddCell(cell23);
 
+        /// Tabla datos empleado
+        Table TablaEmpleado = new Table(5, false);
+         cell11 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("Trabajador"));
+        cell12 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("Categoria"));
+        cell13 = new iText.Layout.Element.Cell(1, 1)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(12)
+           .Add(new Paragraph("Nº Matricula"));
+        iText.Layout.Element.Cell cell14 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetWidth(50)
+           .SetFontSize(10)
+           .Add(new Paragraph("Antiguedad"));
+        iText.Layout.Element.Cell cell15 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+           .SetFontSize(10)
+           .Add(new Paragraph("D.N.I"));
+        cell21 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("Nimex"));
+        cell22 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("Oficial 1era"));
+        cell23 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("6033DSZ"));
+        iText.Layout.Element.Cell cell24 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("3 Años"));
+        iText.Layout.Element.Cell cell25 = new iText.Layout.Element.Cell(1, 1)
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+           .SetFontSize(10)
+           .Add(new Paragraph("16627350Y"));
+        TablaEmpleado.AddCell(cell11);
+        TablaEmpleado.AddCell(cell12);
+        TablaEmpleado.AddCell(cell13);
+        TablaEmpleado.AddCell(cell14);
+        TablaEmpleado.AddCell(cell15);
+        TablaEmpleado.AddCell(cell21);
+        TablaEmpleado.AddCell(cell22);
+        TablaEmpleado.AddCell(cell23);
+        TablaEmpleado.AddCell(cell24);
+        TablaEmpleado.AddCell(cell25);
+
+        document.Add(header);
+        document.Add(TablaEmprsa);
+        document.Add(TablaEmpleado);
+
+        document.Close();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////

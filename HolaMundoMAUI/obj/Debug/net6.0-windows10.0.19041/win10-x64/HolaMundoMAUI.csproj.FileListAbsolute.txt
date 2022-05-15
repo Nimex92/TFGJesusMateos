@@ -1563,3 +1563,17 @@ C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\login.scale-150.png
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\login.scale-200.png
 C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\resizetizer\r\login.scale-400.png
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.barcodes.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.forms.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.io.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.kernel.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.layout.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.pdfa.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.sign.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.styledxmlparser.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.svg.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.commons.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Microsoft.Extensions.DependencyModel.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Newtonsoft.Json.dll
+C:\Users\jesus\OneDrive\Documentos\GitHub\APP_MAUI\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\BouncyCastle.Crypto.dll
