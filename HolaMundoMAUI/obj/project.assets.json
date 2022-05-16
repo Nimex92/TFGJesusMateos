@@ -65802,11 +65802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+      "projectUniqueName": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
       "projectName": "HolaMundoMAUI",
-      "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+      "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
       "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\HolaMundoMAUI\\obj\\",
+      "outputPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -65832,44 +65832,44 @@
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\Bibliotec.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\ClassLibrary1\\Bibliotec.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Persistencia\\Persistencia.csproj"
             }
           }
         }

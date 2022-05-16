@@ -1,13 +1,12 @@
-using Persistencia;
 using Bibliotec;
-using Microsoft.EntityFrameworkCore;
 using ClassLibrary1;
-using System.Diagnostics;
+using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using iText.Layout.Properties;
-using iText.Kernel.Colors;
+using Microsoft.EntityFrameworkCore;
+using Persistencia;
+using System.Diagnostics;
 using Color = Microsoft.Maui.Graphics.Color;
 
 namespace HolaMundoMAUI;
@@ -669,236 +668,9 @@ public partial class PaginaAdmin : ContentPage
             CompruebaIncidencias();
         }
     }
-    private void BotonNominas_Clicked(object sender, EventArgs e)
+    private  void BotonNominas_Clicked(object sender, EventArgs e)
     {
-        // Must have write permissions to the path folder
-        PdfWriter writer = new PdfWriter("D:\\demo.pdf");
-        PdfDocument pdf = new PdfDocument(writer);
-        Document document = new Document(pdf);
-        Paragraph header = new Paragraph("Nomina ")
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
-           .SetFontSize(20);
-        
-        // Tabla datos de la empresa
-        Table TablaEmprsa = new Table(3, false);
-        iText.Layout.Element.Cell cell11 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(170)
-           .Add(new Paragraph("Empresa"));
-        iText.Layout.Element.Cell cell12 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(170)
-           .Add(new Paragraph("Direccion"));
-        iText.Layout.Element.Cell cell13 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(170)
-           .Add(new Paragraph("CIF"));
-        iText.Layout.Element.Cell cell21 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(170)
-           .Add(new Paragraph("TTI Hub Venture Builder S.L."));
-        iText.Layout.Element.Cell cell22 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(169)
-           .Add(new Paragraph("Calle Paletillas, 6 - PISO 2 B, Calahorra, 26500 , La Rioja"));
-        iText.Layout.Element.Cell cell23 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(169)
-           .Add(new Paragraph("B26557397"));
-        
-        TablaEmprsa.AddCell(cell11);
-        TablaEmprsa.AddCell(cell12);
-        TablaEmprsa.AddCell(cell13);
-        TablaEmprsa.AddCell(cell21);
-        TablaEmprsa.AddCell(cell22);
-        TablaEmprsa.AddCell(cell23);
-
-        /// Tabla datos empleado
-        Table TablaEmpleado = new Table(5, false);
-         cell11 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(100)
-           .Add(new Paragraph("Trabajador"));
-        cell12 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(100)
-           .Add(new Paragraph("Categoria"));
-        cell13 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(12)
-           .SetWidth(100)
-           .Add(new Paragraph("Nº Matricula"));
-        iText.Layout.Element.Cell cell14 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetWidth(50)
-           .SetFontSize(12)
-           .SetWidth(100)
-           .Add(new Paragraph("Antiguedad"));
-        iText.Layout.Element.Cell cell15 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetFontSize(12)
-           .SetWidth(100)
-           .Add(new Paragraph("D.N.I"));
-        cell21 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("Nimex"));
-        cell22 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("Oficial 1era"));
-        cell23 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("6033DSZ"));
-        iText.Layout.Element.Cell cell24 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("3 Años"));
-        iText.Layout.Element.Cell cell25 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("16627350Y"));
-
-        TablaEmpleado.AddCell(cell11);
-        TablaEmpleado.AddCell(cell12);
-        TablaEmpleado.AddCell(cell13);
-        TablaEmpleado.AddCell(cell14);
-        TablaEmpleado.AddCell(cell15);
-        TablaEmpleado.AddCell(cell21);
-        TablaEmpleado.AddCell(cell22);
-        TablaEmpleado.AddCell(cell23);
-        TablaEmpleado.AddCell(cell24);
-        TablaEmpleado.AddCell(cell25);
-
-        /// Tabla otros datos
-        Table TablaOtrosDatos = new Table(7, false);
-        cell11 = new iText.Layout.Element.Cell(1, 1)
-          .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-          .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-          .SetFontSize(10)
-          .SetWidth(80)
-          .SetHeight(20)
-          .Add(new Paragraph("Nº Afiliacion. S.S"));
-        cell12 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(50)
-           .SetHeight(20)
-           .Add(new Paragraph("Tarifa"));
-        cell13 = new iText.Layout.Element.Cell(1, 1)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(50)
-           .SetHeight(20)
-           .Add(new Paragraph("Cod. C.T"));
-        cell14 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY).SetWidth(50)
-           .SetFontSize(10)
-           .SetWidth(50)
-           .SetHeight(20)
-           .Add(new Paragraph("Seccion"));
-        cell15 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetFontSize(10)
-           .SetWidth(50)
-           .SetHeight(20)
-           .Add(new Paragraph("Nro."));
-        iText.Layout.Element.Cell cell16 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetFontSize(10)
-           .SetWidth(80)
-           .SetHeight(20)
-           .Add(new Paragraph("Periodo"));
-        iText.Layout.Element.Cell cell17 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
-           .SetFontSize(10)
-           .SetWidth(50)
-           .SetHeight(20)
-           .Add(new Paragraph("Dias totales"));
-        cell21 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("-"));
-        cell22 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(16)
-           .Add(new Paragraph("-"));
-        cell23 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(16)
-           .Add(new Paragraph("-"));
-        cell24 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("-"));
-        cell25 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(30)
-           .Add(new Paragraph("-"));
-        iText.Layout.Element.Cell cell26 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(100)
-           .Add(new Paragraph("-"));
-        iText.Layout.Element.Cell cell27 = new iText.Layout.Element.Cell(1, 1)
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
-           .SetFontSize(10)
-           .SetWidth(25)
-           .Add(new Paragraph("-"));
-
-        TablaOtrosDatos.AddCell(cell11);
-        TablaOtrosDatos.AddCell(cell12);
-        TablaOtrosDatos.AddCell(cell13);
-        TablaOtrosDatos.AddCell(cell14);
-        TablaOtrosDatos.AddCell(cell15);
-        TablaOtrosDatos.AddCell(cell16);
-        TablaOtrosDatos.AddCell(cell17);
-        TablaOtrosDatos.AddCell(cell21);
-        TablaOtrosDatos.AddCell(cell22);
-        TablaOtrosDatos.AddCell(cell23);
-        TablaOtrosDatos.AddCell(cell24);
-        TablaOtrosDatos.AddCell(cell25);
-        TablaOtrosDatos.AddCell(cell26);
-        TablaOtrosDatos.AddCell(cell27);
-
-        document.Add(header);
-        document.Add(TablaEmprsa);
-        document.Add(TablaEmpleado);
-        document.Add(TablaOtrosDatos);
-
-        document.Close();
+        GeneraNominaPdf();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -1236,5 +1008,107 @@ public partial class PaginaAdmin : ContentPage
             Debug.WriteLine(ex.ToString());
         }
     }
+
+    public void GeneraNominaPdf()
+    {
+        PdfWriter writer = new PdfWriter("C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Nominas\\demo2.pdf");
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+        Paragraph header = new Paragraph("Nomina")
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+           .SetFontSize(20);
+        BetterTable DatosEmpresa = GeneraTabla(3, 2);
+        DatosEmpresa.SetColorHeader(ColorConstants.LIGHT_GRAY);
+        DatosEmpresa.ChangeTableFontSize(10);
+        DatosEmpresa.SetNextText("Empresa");
+        DatosEmpresa.SetNextText("Direccion");
+        DatosEmpresa.SetNextText("CIF");
+        BetterTable DatosTrabajador = GeneraTabla(5, 2);
+        DatosTrabajador.SetColorHeader(ColorConstants.LIGHT_GRAY);
+        DatosTrabajador.ChangeTableFontSize(10);
+        DatosTrabajador.SetNextText("Trabajador");
+        DatosTrabajador.SetNextText("Categoria");
+        DatosTrabajador.SetNextText("Nº Matricula");
+        DatosTrabajador.SetNextText("Antiguedad");
+        DatosTrabajador.SetNextText("D.N.I");
+        BetterTable OtrosDatos = GeneraTabla(7,2);
+        OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
+        OtrosDatos.ChangeTableFontSize(10);
+        OtrosDatos.SetNextText("Nº Afiliación S.S");
+        OtrosDatos.SetNextText("Tarifa");
+        OtrosDatos.SetNextText("Cod C.T.");
+        OtrosDatos.SetNextText("Sección");
+        OtrosDatos.SetNextText("Nro.");
+        OtrosDatos.SetNextText("Periodo");
+        OtrosDatos.SetNextText("Días");
+        BetterTable CuerpoNomina = GeneraTabla(5, 8);
+        CuerpoNomina.SetColorHeader(ColorConstants.LIGHT_GRAY);
+        CuerpoNomina.ChangeTableFontSize(10);
+        CuerpoNomina.RemoveBorder(0);
+        CuerpoNomina.SetNextText("Cuantía");
+        CuerpoNomina.SetNextText("Precio");
+        CuerpoNomina.SetNextText("Concepto");
+        CuerpoNomina.SetNextText("Devengos");
+        CuerpoNomina.SetNextText("Deducciones");
+        BetterTable PieNomina1 = GeneraTabla(7,2);
+        PieNomina1.SetColorHeader(ColorConstants.LIGHT_GRAY);
+        PieNomina1.ChangeTableFontSize(8);
+        PieNomina1.SetNextText("Rem. Total");
+        PieNomina1.SetNextText("P.P. Extras");
+        PieNomina1.SetNextText("Base S.S.");
+        PieNomina1.SetNextText("Base A.T y DES");
+        PieNomina1.SetNextText("Base I.R.P.F");
+        PieNomina1.SetNextText("T. Devengo");
+        PieNomina1.SetNextText("T. a deducir");
+        Paragraph SubPieNomina1 = new Paragraph("* Percepciones salariales sujetas a Cot. S.S.\t\t\t\t\t\t\t\t *Percepciones no salariales excluidas Cot. S.S.")
+           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+           .SetFontSize(6);
+        BetterTable PieNomina2 = GeneraTabla(4, 5);
+        PieNomina2.ChangeTableFontSize(6);
+        PieNomina2.RemoveBorder(1);
+        PieNomina2.SetNextText("Fecha");
+        PieNomina2.SetNextText("Sello empresa");
+        PieNomina2.SetNextText("Recibi");
+        PieNomina2[0,0].SetText("16 de Mayo de 2022");
+        PieNomina2[2,1].SetText("SWIFT/BIC: 789456258");
+        PieNomina2[2,2].SetText("IBAN: ES45678912324");
+        PieNomina2[0,3].SetText("Total a percibir");
+        PieNomina2[0,3].AddAllBorders();
+        PieNomina2[1,3].SetText("1245.74€");
+        PieNomina2[1,3].AddAllBorders();
+        PieNomina2[0,0].AddBorder(1);
+        PieNomina2[0,0].AddBorder(2);
+        PieNomina2[1,0].AddBorder(2);
+        PieNomina2[2,0].AddBorder(2);
+        PieNomina2[3,0].AddBorder(2);
+        PieNomina2[0,1].AddBorder(1);
+        PieNomina2[0,2].AddBorder(1);
+        PieNomina2[0,3].AddBorder(1);
+        PieNomina2[0, 1].AddBorder(1);
+        PieNomina2[0, 2].AddBorder(1);
+        PieNomina2[3, 0].AddBorder(1);
+        PieNomina2[3, 1].AddBorder(3);
+        PieNomina2[3, 2].AddBorder(3);
+        PieNomina2[3, 3].AddBorder(3);
+        PieNomina2[3, 3].AddBorder(0);
+        PieNomina2[3, 2].AddBorder(0);
+
+
+        document.Add(header);
+        document.Add(DatosEmpresa.Table);
+        document.Add(DatosTrabajador.Table);
+        document.Add(OtrosDatos.Table);
+        document.Add(CuerpoNomina.Table);
+        document.Add(PieNomina1.Table);
+        document.Add(SubPieNomina1);
+        document.Add(PieNomina2.Table);
+        document.Close();
+    }
+    public BetterTable GeneraTabla(int numeroColumnas,int numeroFilas) 
+    {
+        BetterTable b = new BetterTable(numeroColumnas, numeroFilas);
+        return b;
+    }
+    
     ///////////////////////////////////////////////////////////////////////////////////////////////
 }

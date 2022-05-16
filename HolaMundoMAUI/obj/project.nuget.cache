@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gNgdpFkltJ1vGIr5xXbanTbSLjyO3HAGsxIEhn37QjBuvEbwD/0H3G5H56uENImzvPkXBj9dXc0fUw7Lx+D+cQ==",
+  "dgSpecHash": "yG1jfwXi0RLuf5lVunHyAvuo6rO9NJeX+uMAWqsco4LZB6c4w/2w7nUP9VuszE++JyC30k3EyZFL2vYN1eFEbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\googlegson\\2.8.8.2\\googlegson.2.8.8.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",

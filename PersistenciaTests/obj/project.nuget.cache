@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MQAVYvhfV3xUxc7f8hTAdCiCQLQ4K6P0lEWRoQbdq5MD09FSSy7BR2wNYOLlXU1LNJ9qGLS6cTbogi4AZxe87w==",
+  "dgSpecHash": "7aqQz4IUT21lxrbXRJALK7RLZhiuNJSH1qEXjbTJeEJkH5cH8tb3tqdj91A1kXrqN1b04NPos+D2nMQL37IR4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\PersistenciaTests\\PersistenciaTests.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\PersistenciaTests\\PersistenciaTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",
