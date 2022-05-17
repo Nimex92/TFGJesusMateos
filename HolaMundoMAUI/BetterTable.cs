@@ -62,7 +62,6 @@ namespace HolaMundoMAUI
                 column.SetBackgroundColor(color);
             }
         }
-
         public void SetNextText(string newText)
         {
             Matrix[CurrentRow][CurrentColumn].Add(new Paragraph(newText));
@@ -89,8 +88,7 @@ namespace HolaMundoMAUI
                     column.SetFontSize(size);
                 }
             }
-        }
-       
+        }  
         public void RemoveBorder(int option)
         {
             if (Matrix[0] is null) { return; }
@@ -117,6 +115,18 @@ namespace HolaMundoMAUI
                     break;
             };
         }
+        public void AddTableBorder(int size)
+        {
+            Table.SetBorder(new SolidBorder(size));
+        }
+        public void TableConjunctionUp()
+        {
+            Table.SetBorderTop(new SolidBorder(0));
+        }
+        public void TableConjunctionDown()
+        {
+            Table.SetBorderBottom(new SolidBorder(0));
+        }
         public Cell this[int x, int y]
         {
             get { return Matrix[x][y]; }
@@ -134,19 +144,30 @@ namespace HolaMundoMAUI
         {
             cell.SetFontSize(size);
         }
+        public static void SetTextAlign(this Cell cell,string option)
+        {
+            switch (option)
+            {
+                case "START": cell.SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT); break;
+                case "CENTER": cell.SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER); break;
+                case "END": cell.SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT); break;
+            }
+        }
         public static void WithoutBorder(this Cell cell,int option)
         {
             switch (option)
             {
                 case 0:
                     cell.SetBorderTop(iText.Layout.Borders.Border.NO_BORDER);
-                    cell.SetBorderBottom(iText.Layout.Borders.Border.NO_BORDER);
                     break;
                 case 1:
                     cell.SetBorderTop(iText.Layout.Borders.Border.NO_BORDER);
                     cell.SetBorderBottom(iText.Layout.Borders.Border.NO_BORDER);
                     cell.SetBorderLeft(iText.Layout.Borders.Border.NO_BORDER);
                     cell.SetBorderRight(iText.Layout.Borders.Border.NO_BORDER);
+                    break;
+                case 2:
+                    cell.SetBorderBottom(iText.Layout.Borders.Border.NO_BORDER);
                     break;
             }
         }
@@ -167,5 +188,6 @@ namespace HolaMundoMAUI
                 case 3: cell.SetBorderBottom(new SolidBorder(1)); break;
             }
         }
+        
     }
 }

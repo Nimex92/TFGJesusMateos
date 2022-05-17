@@ -4,13 +4,14 @@
              x:Class="HolaMundoMAUI.PaginaAdmin"
              Title="PaginaAdmin"
              BackgroundColor="#A29FA0">
-    <StackLayout BackgroundColor="White">
+    <StackLayout>
         <StackLayout x:Name="BarraSuperior"
                      BackgroundColor="#2B282D"
                      WidthRequest="1920"
                      HeightRequest="70"
                      ZIndex="998"
-                     Margin="30,-70,0,0">
+                     Margin="30,-70,0,0"
+                     >
             <HorizontalStackLayout x:Name="BotonCerrarSession" 
                                    HorizontalOptions="Center"
                                    Margin="1200,20,0,0">
@@ -116,7 +117,8 @@
                      HorizontalOptions="Center"
                      WidthRequest="1250"
                      HeightRequest="650"
-                     Margin="130,-1045,0,0">
+                     Margin="130,-1045,0,0"
+                     BackgroundColor="White">
 
             <StackLayout x:Name="PaginaPrincipal">
 
@@ -189,20 +191,20 @@
                                     
                                     <Label 
                                        WidthRequest="150"
-                                       Text="{Binding nombre}" 
+                                       Text="{Binding Nombre}" 
                                        Margin="-160,0,0,0" 
                                        FontSize="16"
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
-                                       Text="{Binding perteneceaturnos}" 
+                                       Text="{Binding PerteneceATurnos}" 
                                        Margin="50,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="110"
                                        VerticalOptions="Center"/>
 
                                     <Label 
-                                       Text="{Binding usuario.Username}" 
+                                       Text="{Binding Usuario.Username}" 
                                        Margin="280,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"

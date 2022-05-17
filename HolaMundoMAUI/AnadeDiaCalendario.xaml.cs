@@ -23,7 +23,7 @@ public partial class AnadeDiaCalendario : ContentPage
                 BotonRegistrar.IsVisible = true;
                 BotonActualizar.IsEnabled = false;
                 BotonActualizar.IsVisible = false;
-                SelectorCalendario.Items.Add(cal.Trabajador.nombre);
+                SelectorCalendario.Items.Add(cal.Trabajador.Nombre);
                 break;
             case 1:
                 BotonRegistrar.IsEnabled = false;
@@ -57,7 +57,7 @@ public partial class AnadeDiaCalendario : ContentPage
  
     private void SetPickerVacaciones()
     {
-        SelectorCalendario.Items.Add(traba.nombre);
+        SelectorCalendario.Items.Add(traba.Nombre);
         SelectorCalendario.SelectedIndex = 0;
         List<string> motivos = new List<string>();
         motivos.Add("Festivo");
@@ -74,7 +74,7 @@ public partial class AnadeDiaCalendario : ContentPage
     }
     private void SetPickers()
     {  
-        SelectorCalendario.Items.Add(CalendarioLaboral.Trabajador.nombre);
+        SelectorCalendario.Items.Add(CalendarioLaboral.Trabajador.Nombre);
         SelectorCalendario.SelectedIndex = 0;
         List<string> motivos = new List<string>();
         motivos.Add("Festivo");
@@ -92,7 +92,7 @@ public partial class AnadeDiaCalendario : ContentPage
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
         var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Trabajador.Where(x => x.nombre.Equals(NombreTrabajador)).FirstOrDefault();
+        var Trabajador = p.Trabajador.Where(x => x.Nombre.Equals(NombreTrabajador)).FirstOrDefault();
         var Calendario = p.Calendario.Where(x => x.Trabajador == Trabajador).FirstOrDefault();
         var motivo = SelectorMotivo.SelectedItem.ToString();
         var fecha = SelectorFecha.Date;
@@ -105,7 +105,7 @@ public partial class AnadeDiaCalendario : ContentPage
     private async void BotonActualizar_Clicked(object sender, EventArgs e)
     {
         var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Trabajador.Where(x => x.nombre.Equals(NombreTrabajador)).FirstOrDefault();
+        var Trabajador = p.Trabajador.Where(x => x.Nombre.Equals(NombreTrabajador)).FirstOrDefault();
         var Calendario = p.Calendario.Where(x => x.Trabajador == Trabajador).FirstOrDefault();
         var motivo = SelectorMotivo.SelectedItem.ToString();
         var fecha = SelectorFecha.Date;
@@ -127,13 +127,13 @@ public partial class AnadeDiaCalendario : ContentPage
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
         var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Trabajador.Where(x => x.nombre.Equals(NombreTrabajador)).FirstOrDefault();
+        var Trabajador = p.Trabajador.Where(x => x.Nombre.Equals(NombreTrabajador)).FirstOrDefault();
         var Calendario = p.Calendario.Where(x => x.Trabajador == Trabajador).FirstOrDefault();
         App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
     }
     private void BotonVolverFichar_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.usuario.Username));
+        App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.Usuario.Username));
     }
     private async void BotonPideVacaciones_Clicked(object sender, EventArgs e) 
     {
@@ -141,10 +141,10 @@ public partial class AnadeDiaCalendario : ContentPage
         {
             var seacepta = false;
             DateTime fecha = SelectorFecha.Date;
-            p.SolicitudesVacaciones.Add(new SolicitudVacaciones(traba.nombre, fecha, seacepta));
+            p.SolicitudesVacaciones.Add(new SolicitudVacaciones(traba.Nombre, fecha, seacepta));
             p.SaveChanges();
             await DisplayAlert("Alert", "Se ha realizado correctamente la solicitud", "Vale");
-            App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.usuario.Username));
+            App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.Usuario.Username));
         }catch(Exception ex) 
         {
             await DisplayAlert("Alert", ex.StackTrace , "Vale");

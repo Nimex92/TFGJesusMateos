@@ -18,13 +18,28 @@ public partial class AltaTrabajador : ContentPage
 		var Turno = presenciaContext.EquipoTrabajo;
 		//Creo una lista para guardar todos los turnos existentes
 		var listaTurnos = new List<string>();
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
 		Selector.Items.Add("-- Selecciona un equipo de trabajo.");
 		foreach (EquipoTrabajo equipo in Turno)
         {
 			Selector.Items.Add(equipo.Nombre);
 		}
-		//Selecciono el primer item de la lista a modo informatico para el usuario
+		List<string> Categorias = new List<string>();
+		Categorias.Add("Ingeniero licenciado");
+		Categorias.Add("Ingeniero tecnico");
+		Categorias.Add("Jefe administrativo");
+		Categorias.Add("Ayudante no titulado");
+		Categorias.Add("Oficial administrativo");
+		Categorias.Add("Subalterno");
+		Categorias.Add("Auxiliar Administrativo");
+		Categorias.Add("Oficial de 1ºera");
+		Categorias.Add("Oficial de 2ºda");
+		Categorias.Add("Oficial de 3ºera");
+		Categorias.Add("Oficial especialista");
+		Categorias.Add("Peon");
+		Categorias.Add("Menor de edad o independiente");
+		SelectorCategoria.ItemsSource = Categorias;
+		//Selecciono el primer item de la lista a modo informatico para el Usuario
 		Selector.SelectedIndex = 0;
 		//Segun el entero que recibe actvia la insercion o el modificado (interfaz)
 		switch(actualiza)
@@ -44,9 +59,9 @@ public partial class AltaTrabajador : ContentPage
 				BotonRegistrarAdmin.IsEnabled = false;
 				Selector.IsEnabled = false;
 				CampoNombre.Text = user;
-				var trab = presenciaContext.Trabajador.Where(x => x.nombre == user).Include(x=>x.usuario).Include(x => x.equipo).FirstOrDefault();
+				var trab = presenciaContext.Trabajador.Where(x => x.Nombre == user).Include(x=>x.Usuario).Include(x => x.Equipo).FirstOrDefault();
 				//Recorro los equipos del trabajador y los añado a la lista para setearlos en el Picker.
-				foreach(EquipoTrabajo e in trab.equipo)
+				foreach(EquipoTrabajo e in trab.Equipo)
                 {
 					listaTurnos.Add(e.Nombre);
                 }
@@ -69,10 +84,13 @@ public partial class AltaTrabajador : ContentPage
 			string user = nombre + r.Next(0, 9) + r.Next(0, 9) + r.Next(0, 9) + r.Next(0, 9);
 			var seleccionado = Selector.SelectedItem.ToString();
 			var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == seleccionado).FirstOrDefault();
-			Trabajador t = new Trabajador(nombre, equipo, new Usuarios(user, "1"));
-			t.perteneceaturnos = equipo.Nombre;
+			var dni = CampoDni.Text;
+			var numeroSeguridadSocial = CampoNumeroSS.Text;
+			var categoria = SelectorCategoria.SelectedItem.ToString();
+			Trabajador t = new Trabajador(nombre, equipo, new Usuarios(user, "1"),dni,numeroSeguridadSocial,categoria);
+			t.PerteneceATurnos = equipo.Nombre;
 			bool inserta = OperacionesDBContext.InsertaTrabajador(t);
-            try {t.perteneceaturnos = equipo.Nombre; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
+            try {t.PerteneceATurnos = equipo.Nombre; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
 			
 			OperacionesDBContext.InsertaLog(new Log("Añadir", NombreUsuario + " ha añadido trabajador " + nombre + " - " + dt));
 			if (inserta == true)
@@ -82,7 +100,7 @@ public partial class AltaTrabajador : ContentPage
 			}
 			else
 			{
-				await DisplayAlert("Alert", "Error al insertar el trabajador " + t.nombre, "OK");
+				await DisplayAlert("Alert", "Error al insertar el trabajador " + t.Nombre, "OK");
 
 			}
         }
@@ -100,7 +118,7 @@ public partial class AltaTrabajador : ContentPage
 	{
 		Random r = new Random();
 		string nombre = CampoNombre.Text;
-		var user = presenciaContext.Trabajador.Where(x => x.nombre == NombreUsuario).Include(x => x.usuario).Include(x => x.equipo).FirstOrDefault();
+		var user = presenciaContext.Trabajador.Where(x => x.Nombre == NombreUsuario).Include(x => x.Usuario).Include(x => x.Equipo).FirstOrDefault();
 		var seleccionado = Selector.SelectedItem.ToString().Trim();
 		var equipo = presenciaContext.EquipoTrabajo.Where(x => x.Nombre == seleccionado).FirstOrDefault();
 		bool actualiza = OperacionesDBContext.ActualizaTrabajador(user,nombre,equipo);

@@ -40,7 +40,7 @@ public partial class AltaUsuarios : ContentPage
 
 	public async void RegistrarNuevoUsuario(object sender, EventArgs e)
 	{
-		string Username = CampoUsuario.Text;                    //Recojo el usuario de la interfaz
+		string Username = CampoUsuario.Text;                    //Recojo el Usuario de la interfaz
 		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
 		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
 
@@ -63,7 +63,7 @@ public partial class AltaUsuarios : ContentPage
 				if(BotonEsAdmin.IsChecked)
 					esAdmin = true;
 
-				//Inserto usuario
+				//Inserto Usuario
 				bool inserta = OperacionesDBContext.InsertaUsuario(new Usuarios(Username, Password,esAdmin));
 				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt));
 				presenciaContext.SaveChanges();
@@ -92,7 +92,7 @@ public partial class AltaUsuarios : ContentPage
 	}
     private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
     {
-		string Username = CampoUsuario.Text;                    //Recojo el usuario de la interfaz
+		string Username = CampoUsuario.Text;                    //Recojo el Usuario de la interfaz
 		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
 		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
 
@@ -117,13 +117,13 @@ public partial class AltaUsuarios : ContentPage
 				OperacionesDBContext.InsertaLog(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt));
 				if (inserta == true)
 				{ 
-					//Activa popup aceptacion, inserta el usuario
+					//Activa popup aceptacion, inserta el Usuario
 					await DisplayAlert("Alert", "Usuario " + Username + " Actualizado correctamente.", "OK");
 					App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 1));
 				}
 				else
 				{
-					//Activa popup error, si no puede inserta el usuario
+					//Activa popup error, si no puede inserta el Usuario
 					await DisplayAlert("Alert", "Error al insertar el usuario " + Username + ".", "OK");
 				}
 

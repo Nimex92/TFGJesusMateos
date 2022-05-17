@@ -21,20 +21,20 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 	private void SetPickers()
 	{
 		var equipos = p.EquipoTrabajo;
-		var trabajadores = p.Trabajador.Where(x=>x.equipo.Contains(equipoTrabajo)).ToList();
+		var trabajadores = p.Trabajador.Where(x=>x.Equipo.Contains(equipoTrabajo)).ToList();
 
 		//Recojo todos los Turnos de la tabla de MySql
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaGrupos = new List<string>();
 		var ListaTrabajador = new List<string>();
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
 		SelectorTareas.Items.Add("-- Selecciona Trabajador.");
 		
 		SelectorGruposTrabajo.Items.Add(equipoTrabajo.Nombre);
 		
 		foreach (Trabajador t in trabajadores)
 		{
-			SelectorTareas.Items.Add(t.nombre);
+			SelectorTareas.Items.Add(t.Nombre);
 		}
 		SelectorGruposTrabajo.SelectedIndex = 0;
 		SelectorTareas.SelectedIndex = 0;
@@ -50,21 +50,21 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 		string BuscaEquipo = SelectorGruposTrabajo.SelectedItem.ToString();
 		string BuscaTrabajador = SelectorTareas.SelectedItem.ToString();
 		var EquipoTrabajo = p.EquipoTrabajo.Where(x => x.Nombre == BuscaEquipo).Include(x=>x.Trabajadores).FirstOrDefault();
-		var Trabajador = p.Trabajador.Where(x => x.nombre == BuscaTrabajador).Include(x=>x.equipo).FirstOrDefault();
+		var Trabajador = p.Trabajador.Where(x => x.Nombre == BuscaTrabajador).Include(x=>x.Equipo).FirstOrDefault();
 		var Equipos = EquipoTrabajo.Trabajadores;
-		Trabajador.perteneceaturnos = "";
+		Trabajador.PerteneceATurnos = "";
 
-		Trabajador.equipo.Remove(EquipoTrabajo);
+		Trabajador.Equipo.Remove(EquipoTrabajo);
 		await DisplayAlert("Alert", BuscaTrabajador + " ya no pertenece a " + BuscaEquipo, "Vale");
-		foreach (EquipoTrabajo eq in Trabajador.equipo)
+		foreach (EquipoTrabajo eq in Trabajador.Equipo)
 		{
-			Trabajador.perteneceaturnos += eq.Nombre;
+			Trabajador.PerteneceATurnos += eq.Nombre;
 			
-			var trabajadores = p.Trabajador.Where(x => x.equipo.Contains(equipoTrabajo)).ToList();
+			var trabajadores = p.Trabajador.Where(x => x.Equipo.Contains(equipoTrabajo)).ToList();
 			
 			foreach (Trabajador t in trabajadores)
 			{
-				SelectorTareas.Items.Add(t.nombre);
+				SelectorTareas.Items.Add(t.Nombre);
 			}
 		}
 		p.SaveChanges();

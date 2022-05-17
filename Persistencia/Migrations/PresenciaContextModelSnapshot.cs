@@ -25,12 +25,12 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Trabajadornumero_tarjeta")
+                    b.Property<int>("TrabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Trabajadornumero_tarjeta");
+                    b.HasIndex("TrabajadorNumeroTarjeta");
 
                     b.ToTable("Calendario");
                 });
@@ -119,12 +119,12 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Trabajadornumero_tarjeta")
+                    b.Property<int>("TrabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Trabajadornumero_tarjeta");
+                    b.HasIndex("TrabajadorNumeroTarjeta");
 
                     b.ToTable("Incidencias");
                 });
@@ -166,14 +166,14 @@ namespace Persistencia.Migrations
                     b.Property<int>("TotalAPercibir")
                         .HasColumnType("int");
 
-                    b.Property<int>("Trabajadornumero_tarjeta")
+                    b.Property<int>("TrabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EmpresaId");
 
-                    b.HasIndex("Trabajadornumero_tarjeta");
+                    b.HasIndex("TrabajadorNumeroTarjeta");
 
                     b.ToTable("NominasTrabajadores");
                 });
@@ -211,14 +211,14 @@ namespace Persistencia.Migrations
                     b.Property<int>("tareaIdTarea")
                         .HasColumnType("int");
 
-                    b.Property<int>("trabajadornumero_tarjeta")
+                    b.Property<int>("trabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
                     b.HasIndex("tareaIdTarea");
 
-                    b.HasIndex("trabajadornumero_tarjeta");
+                    b.HasIndex("trabajadorNumeroTarjeta");
 
                     b.ToTable("TareasComenzadas");
                 });
@@ -244,14 +244,14 @@ namespace Persistencia.Migrations
                     b.Property<int>("tareaIdTarea")
                         .HasColumnType("int");
 
-                    b.Property<int>("trabajadornumero_tarjeta")
+                    b.Property<int>("trabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
                     b.HasIndex("tareaIdTarea");
 
-                    b.HasIndex("trabajadornumero_tarjeta");
+                    b.HasIndex("trabajadorNumeroTarjeta");
 
                     b.ToTable("TareasFinalizadas");
                 });
@@ -280,24 +280,39 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Bibliotec.Trabajador", b =>
                 {
-                    b.Property<int>("numero_tarjeta")
+                    b.Property<int>("NumeroTarjeta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("nombre")
+                    b.Property<string>("Categoria")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("perteneceaturnos")
+                    b.Property<string>("Dni")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("usuarioIdUser")
+                    b.Property<DateTime>("FechaDeContratacion")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("NumeroSeguridadSocial")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PerteneceATurnos")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UsuarioIdUser")
                         .HasColumnType("int");
 
-                    b.HasKey("numero_tarjeta");
+                    b.HasKey("NumeroTarjeta");
 
-                    b.HasIndex("usuarioIdUser");
+                    b.HasIndex("UsuarioIdUser");
 
                     b.ToTable("Trabajador");
                 });
@@ -311,14 +326,14 @@ namespace Persistencia.Migrations
                     b.Property<int>("fichajeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("trabajadornumero_tarjeta")
+                    b.Property<int>("trabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("fichajeId");
 
-                    b.HasIndex("trabajadornumero_tarjeta");
+                    b.HasIndex("trabajadorNumeroTarjeta");
 
                     b.ToTable("TrabajadorEnTurno");
                 });
@@ -422,12 +437,12 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("FechaFichaje")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("Trabajadornumero_tarjeta")
+                    b.Property<int>("TrabajadorNumeroTarjeta")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Trabajadornumero_tarjeta");
+                    b.HasIndex("TrabajadorNumeroTarjeta");
 
                     b.ToTable("Fichajes");
                 });
@@ -449,15 +464,15 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("EquipoTrabajoTrabajador", b =>
                 {
-                    b.Property<int>("Trabajadoresnumero_tarjeta")
+                    b.Property<int>("EquipoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("equipoId")
+                    b.Property<int>("TrabajadoresNumeroTarjeta")
                         .HasColumnType("int");
 
-                    b.HasKey("Trabajadoresnumero_tarjeta", "equipoId");
+                    b.HasKey("EquipoId", "TrabajadoresNumeroTarjeta");
 
-                    b.HasIndex("equipoId");
+                    b.HasIndex("TrabajadoresNumeroTarjeta");
 
                     b.ToTable("EquipoTrabajoTrabajador");
                 });
@@ -496,7 +511,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("Bibliotec.Trabajador", "Trabajador")
                         .WithMany()
-                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .HasForeignKey("TrabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -518,7 +533,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("Bibliotec.Trabajador", "Trabajador")
                         .WithMany()
-                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .HasForeignKey("TrabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -535,7 +550,7 @@ namespace Persistencia.Migrations
 
                     b.HasOne("Bibliotec.Trabajador", "Trabajador")
                         .WithMany()
-                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .HasForeignKey("TrabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -554,7 +569,7 @@ namespace Persistencia.Migrations
 
                     b.HasOne("Bibliotec.Trabajador", "trabajador")
                         .WithMany()
-                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .HasForeignKey("trabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -573,7 +588,7 @@ namespace Persistencia.Migrations
 
                     b.HasOne("Bibliotec.Trabajador", "trabajador")
                         .WithMany()
-                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .HasForeignKey("trabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -584,13 +599,13 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Bibliotec.Trabajador", b =>
                 {
-                    b.HasOne("Bibliotec.Usuarios", "usuario")
+                    b.HasOne("Bibliotec.Usuarios", "Usuario")
                         .WithMany()
-                        .HasForeignKey("usuarioIdUser")
+                        .HasForeignKey("UsuarioIdUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("usuario");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Bibliotec.TrabajadorEnTurno", b =>
@@ -603,7 +618,7 @@ namespace Persistencia.Migrations
 
                     b.HasOne("Bibliotec.Trabajador", "trabajador")
                         .WithMany()
-                        .HasForeignKey("trabajadornumero_tarjeta")
+                        .HasForeignKey("trabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -616,7 +631,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("Bibliotec.Trabajador", "Trabajador")
                         .WithMany()
-                        .HasForeignKey("Trabajadornumero_tarjeta")
+                        .HasForeignKey("TrabajadorNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -640,15 +655,15 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("EquipoTrabajoTrabajador", b =>
                 {
-                    b.HasOne("Bibliotec.Trabajador", null)
+                    b.HasOne("Bibliotec.EquipoTrabajo", null)
                         .WithMany()
-                        .HasForeignKey("Trabajadoresnumero_tarjeta")
+                        .HasForeignKey("EquipoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bibliotec.EquipoTrabajo", null)
+                    b.HasOne("Bibliotec.Trabajador", null)
                         .WithMany()
-                        .HasForeignKey("equipoId")
+                        .HasForeignKey("TrabajadoresNumeroTarjeta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

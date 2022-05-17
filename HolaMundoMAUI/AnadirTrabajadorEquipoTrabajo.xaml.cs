@@ -25,7 +25,7 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaGrupos = new List<string>();
 		var ListaTrabajador = new List<string>();
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
 		SelectorGruposTrabajo.Items.Add("-- Selecciona equipo de trabajo.");
 		SelectorTareas.Items.Add("-- Selecciona Trabajador.");
 		foreach (EquipoTrabajo equipo in equipos)
@@ -34,7 +34,7 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 		}
 		foreach (Trabajador t in trabajadores)
 		{
-			SelectorTareas.Items.Add(t.nombre);
+			SelectorTareas.Items.Add(t.Nombre);
 		}
 		SelectorGruposTrabajo.SelectedIndex = 0;
 		SelectorTareas.SelectedIndex = 0;
@@ -50,7 +50,7 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 		string BuscaEquipo = SelectorGruposTrabajo.SelectedItem.ToString();
 		string BuscaTrabajador = SelectorTareas.SelectedItem.ToString();
 		var EquipoTrabajo = p.EquipoTrabajo.Where(x => x.Nombre == BuscaEquipo).Include(x=>x.Trabajadores).FirstOrDefault();
-		var Trabajador = p.Trabajador.Where(x => x.nombre == BuscaTrabajador).Include(x=>x.equipo).FirstOrDefault();
+		var Trabajador = p.Trabajador.Where(x => x.Nombre == BuscaTrabajador).Include(x=>x.Equipo).FirstOrDefault();
 		var Equipos = EquipoTrabajo.Trabajadores;
             
 		if (Equipos.Contains(Trabajador))
@@ -60,9 +60,9 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
         else
             {
 				EquipoTrabajo.Trabajadores.Add(Trabajador);
-				Trabajador.perteneceaturnos += " - "+BuscaEquipo;
+				Trabajador.PerteneceATurnos += " - "+BuscaEquipo;
 				p.SaveChanges();
-				await DisplayAlert("Alert", "Se ha asignado correctamente " + Trabajador.nombre + " a " + EquipoTrabajo.Nombre, "Vale");
+				await DisplayAlert("Alert", "Se ha asignado correctamente " + Trabajador.Nombre + " a " + EquipoTrabajo.Nombre, "Vale");
             }
         
 

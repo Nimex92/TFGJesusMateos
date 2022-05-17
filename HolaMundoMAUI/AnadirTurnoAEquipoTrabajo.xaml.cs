@@ -44,7 +44,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaEquipos = new List<string>();
 		var ListaTareas = new List<string>();
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
 
 		
 		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");
@@ -70,7 +70,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaEquipos = new List<string>();
 		var ListaTareas = new List<string>();
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
 
 
 		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");

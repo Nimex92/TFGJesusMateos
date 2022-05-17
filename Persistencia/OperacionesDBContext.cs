@@ -8,11 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using iText.Kernel.Colors;
+
 
 namespace Persistencia
 {
@@ -106,7 +102,7 @@ namespace Persistencia
             }
             return true;
         }
-        //Metodo para insertar un usuario en la base de datos
+        //Metodo para insertar un Usuario en la base de datos
         public static bool InsertaUsuario(Usuarios us)
         {
             try
@@ -154,7 +150,7 @@ namespace Persistencia
             }
 
         }
-        //Metodo para insertar un equipo de trabajo en la base de datos
+        //Metodo para insertar un Equipo de trabajo en la base de datos
         public static bool InsertaEquipoTrabajo(EquipoTrabajo eq)
         {
             try { 
@@ -170,7 +166,7 @@ namespace Persistencia
             }
             
         }
-
+        
         //########################################################################################################
 
         //#################################### Metodos para Borrar datos de la BD ################################
@@ -222,7 +218,7 @@ namespace Persistencia
                 return false;
             }
         }
-        //Metodo para borrar un usuario concreto de la base de datos
+        //Metodo para borrar un Usuario concreto de la base de datos
         public static bool BorraUsuario(Usuarios us)
         {
             try
@@ -296,7 +292,7 @@ namespace Persistencia
             try
             {
                 using var p = new PresenciaContext();
-                Trabajador tr = new Trabajador(t.numero_tarjeta, nombre, eq);
+                Trabajador tr = new Trabajador(t.NumeroTarjeta, nombre, eq);
                 p.Update(tr);
                 p.SaveChanges();
                 return true;
@@ -306,7 +302,7 @@ namespace Persistencia
                 return false;
             }
         }
-        //Metodo para actualizar un usuario existente en la base de datos
+        //Metodo para actualizar un Usuario existente en la base de datos
         public static bool ActualizaUsuario(Usuarios us)
         {
             try
@@ -390,7 +386,7 @@ namespace Persistencia
                 return false;
             }
         }
-        //Metodo para actualizar un equipo de trabajo existente en la base de datos
+        //Metodo para actualizar un Equipo de trabajo existente en la base de datos
         public static bool ActualizaEquipoTrabajo(EquipoTrabajo eq,string nombre)
         {
             try
@@ -407,6 +403,12 @@ namespace Persistencia
                 return false;
             }
             
+        }
+
+        public static void AnadeTareaEquipoTrabajo(EquipoTrabajo equipo,Tareas ta,PresenciaContext p) 
+        {
+            equipo.Tareas.Add(ta);
+            p.SaveChanges();
         }
     }
 }

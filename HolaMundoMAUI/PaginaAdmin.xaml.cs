@@ -23,7 +23,7 @@ public partial class PaginaAdmin : ContentPage
     EquipoTrabajo Et;
     Calendario cal;
     Dia dia;
-    Boolean TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo,ProblemActivo,VacacionesActivo;
+    Boolean TrActivo, GrActivo, ZnActivo, TaActivo, EtActivo, DiActivo, NmActivo, ProblemActivo, VacacionesActivo;
 
     public PaginaAdmin(string nombreUsuario)
     {
@@ -35,7 +35,7 @@ public partial class PaginaAdmin : ContentPage
         NmActivo = false;
         ProblemActivo = false;
         VacacionesActivo = false;
-        
+
         InitializeComponent();
         SetListViewTrabajadores();
         SetListViewGruposTrabajo();
@@ -46,7 +46,7 @@ public partial class PaginaAdmin : ContentPage
         this.nombreUsuario = nombreUsuario;
         LabelNameUser.Text = nombreUsuario;
     }
-    public PaginaAdmin(string nombreUsuario,int interfaz)
+    public PaginaAdmin(string nombreUsuario, int interfaz)
     {
         TrActivo = false;
         GrActivo = false;
@@ -112,40 +112,40 @@ public partial class PaginaAdmin : ContentPage
 
                 break;
         }
-        
+
     }
     //Settear ListViews de la ventana ////////////////////////////////////////////////////////////
     public void SetListViewGruposTrabajo()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
-        var turnos = presenciaContext.Turno.Where(x=>x.Eliminado==false).OrderBy(x=>x.Nombre).ToList();
+        var turnos = presenciaContext.Turno.Where(x => x.Eliminado == false).OrderBy(x => x.Nombre).ToList();
         ListViewGrupos.ItemsSource = turnos;
-        if(turnos.Count > 0)
-        ListViewGrupos.SelectedItem = turnos[0];
+        if (turnos.Count > 0)
+            ListViewGrupos.SelectedItem = turnos[0];
     }
     public void SetListViewTrabajadores()
     {
         PresenciaContext p = new PresenciaContext();
-        var workers = p.Trabajador.Include(x=>x.usuario).ToList();
+        var workers = p.Trabajador.Include(x => x.Usuario).ToList();
         ListViewTrabajadores.ItemsSource = workers;
-        if(workers.Count > 0)
-        ListViewTrabajadores.SelectedItem = workers[0];
+        if (workers.Count > 0)
+            ListViewTrabajadores.SelectedItem = workers[0];
     }
     public void SetListViewZonas()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
         var zones = presenciaContext.Zonas.ToList();
         ListViewZonas.ItemsSource = zones;
-        if(zones.Count > 0)
-        ListViewZonas.SelectedItem = zones[0];
+        if (zones.Count > 0)
+            ListViewZonas.SelectedItem = zones[0];
     }
     public void SetListViewTareas()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
         var tareas = presenciaContext.Tareas.ToList();
         ListViewTareas.ItemsSource = tareas;
-        if (tareas.Count > 0) 
-        { 
+        if (tareas.Count > 0)
+        {
             ListViewTareas.SelectedItem = tareas[0];
         }
     }
@@ -160,14 +160,14 @@ public partial class PaginaAdmin : ContentPage
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     ///////// Lo que sucede cuando pulsamos en cada uno de los list view /////////////////////////
-    public  void OnItemSelectedTrabajadores(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedTrabajadores(object sender, SelectedItemChangedEventArgs e)
     {
         Trabajador item = e.SelectedItem as Trabajador;
         tr = item;
-        cal = p.Calendario.Where(x => x.Trabajador == item).Include(x=>x.Trabajador).FirstOrDefault();
-        
+        cal = p.Calendario.Where(x => x.Trabajador == item).Include(x => x.Trabajador).FirstOrDefault();
+
     }
     public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
     {
@@ -195,7 +195,7 @@ public partial class PaginaAdmin : ContentPage
         ta = item;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     /////////// Funciones Menu lateral ///////////////////////////////////////////////////////////
     private void BtnTrabajadores_Clicked(object sender, EventArgs e)
     {
@@ -405,139 +405,139 @@ public partial class PaginaAdmin : ContentPage
             CompruebaIncidencias();
 
         }
-        }
+    }
     private void BtnZonas_Clicked(object sender, EventArgs e)
+    {
+        if (ZnActivo == false)
         {
-            if (ZnActivo == false)
-            {
-                ListViewWorkers.IsVisible = false;
-                ListViewWorkers.IsEnabled = false;
-                ListViewGroups.IsVisible = false;
-                ListViewGroups.IsEnabled = false;
-                ListViewZones.IsVisible = true;
-                ListViewZones.IsEnabled = true;
-                ListViewTasks.IsVisible = false;
-                ListViewTasks.IsEnabled = false;
-                ListViewTeams.IsVisible = false;
-                ListViewTeams.IsEnabled = false;
-                ListViewCalendar.IsVisible = false;
-                ListViewCalendar.IsEnabled = false;
-                ListViewNominas.IsVisible = false;
-                ListViewIssues.IsVisible = false;
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = true;
+            ListViewZones.IsEnabled = true;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewCalendar.IsVisible = false;
+            ListViewCalendar.IsEnabled = false;
+            ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
 
-                BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonZonas.BackgroundColor = Color.FromRgba("#84677D");
-                BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#84677D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
 
-                ZnActivo = true;
-                GrActivo = false;
-                TrActivo = false;
-                TaActivo = false;
-                EtActivo = false;
-                NmActivo = false;
+            ZnActivo = true;
+            GrActivo = false;
+            TrActivo = false;
+            TaActivo = false;
+            EtActivo = false;
+            NmActivo = false;
             CompruebaIncidencias();
         }
-            else
-            {
-                ListViewWorkers.IsVisible = false;
-                ListViewWorkers.IsEnabled = false;
-                ListViewGroups.IsVisible = false;
-                ListViewGroups.IsEnabled = false;
-                ListViewZones.IsVisible = false;
-                ListViewZones.IsEnabled = false;
-                ListViewTasks.IsVisible = false;
-                ListViewTasks.IsEnabled = false;
-                ListViewTeams.IsVisible = false;
-                ListViewTeams.IsEnabled = false;
-                ListViewNominas.IsVisible = false;
-                ListViewIssues.IsVisible = false;
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
-                BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-                ZnActivo = false;
-                GrActivo = false;
-                TrActivo = false;
-                TaActivo = false;
-                EtActivo = false;
-                NmActivo = false;
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            TaActivo = false;
+            EtActivo = false;
+            NmActivo = false;
             CompruebaIncidencias();
         }
-        }
+    }
     private void BtnTareas_Clicked(object sender, EventArgs e)
+    {
+        if (TaActivo == false)
         {
-            if (TaActivo == false)
-            {
-                ListViewWorkers.IsVisible = false;
-                ListViewWorkers.IsEnabled = false;
-                ListViewGroups.IsVisible = false;
-                ListViewGroups.IsEnabled = false;
-                ListViewZones.IsVisible = false;
-                ListViewZones.IsEnabled = false;
-                ListViewTasks.IsVisible = true;
-                ListViewTasks.IsEnabled = true;
-                ListViewTeams.IsVisible = false;
-                ListViewTeams.IsEnabled = false;
-                ListViewCalendar.IsVisible = false;
-                ListViewCalendar.IsEnabled = false;
-                ListViewNominas.IsVisible = false;
-                ListViewIssues.IsVisible = false;
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = true;
+            ListViewTasks.IsEnabled = true;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewCalendar.IsVisible = false;
+            ListViewCalendar.IsEnabled = false;
+            ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
 
-                BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonTareas.BackgroundColor = Color.FromRgba("#84677D");
-                BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#84677D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-                ZnActivo = false;
-                GrActivo = false;
-                TrActivo = false;
-                TaActivo = true;
-                EtActivo = false;
-                NmActivo = false;
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            TaActivo = true;
+            EtActivo = false;
+            NmActivo = false;
             CompruebaIncidencias();
-            }
-            else
-            {
-                ListViewWorkers.IsVisible = false;
-                ListViewWorkers.IsEnabled = false;
-                ListViewGroups.IsVisible = false;
-                ListViewGroups.IsEnabled = false;
-                ListViewZones.IsVisible = false;
-                ListViewZones.IsEnabled = false;
-                ListViewTasks.IsVisible = false;
-                ListViewTasks.IsEnabled = false;
-                ListViewTeams.IsVisible = false;
-                ListViewTeams.IsEnabled = false;
-                ListViewNominas.IsVisible = false;
-                ListViewIssues.IsVisible = false;
-
-                BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-                BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
-
-                TaActivo = false;
-                ZnActivo = false;
-                GrActivo = false;
-                TrActivo = false;
-                EtActivo = false;
-                NmActivo = false;
-            CompruebaIncidencias();
-            }
         }
+        else
+        {
+            ListViewWorkers.IsVisible = false;
+            ListViewWorkers.IsEnabled = false;
+            ListViewGroups.IsVisible = false;
+            ListViewGroups.IsEnabled = false;
+            ListViewZones.IsVisible = false;
+            ListViewZones.IsEnabled = false;
+            ListViewTasks.IsVisible = false;
+            ListViewTasks.IsEnabled = false;
+            ListViewTeams.IsVisible = false;
+            ListViewTeams.IsEnabled = false;
+            ListViewNominas.IsVisible = false;
+            ListViewIssues.IsVisible = false;
+
+            BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
+            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+
+            TaActivo = false;
+            ZnActivo = false;
+            GrActivo = false;
+            TrActivo = false;
+            EtActivo = false;
+            NmActivo = false;
+            CompruebaIncidencias();
+        }
+    }
     private void BtnNominas_Clicked(object sender, EventArgs e)
     {
         if (NmActivo == false)
@@ -668,9 +668,9 @@ public partial class PaginaAdmin : ContentPage
             CompruebaIncidencias();
         }
     }
-    private  void BotonNominas_Clicked(object sender, EventArgs e)
+    private void BotonNominas_Clicked(object sender, EventArgs e)
     {
-        GeneraNominaPdf();
+        GeneraNominaPdf(tr);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -793,52 +793,54 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.nombre, 1));
-        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.nombre + " - " + dt));
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.Nombre, 1));
+        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.Nombre + " - " + dt));
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     /////// Metodos de las funciones de borrado ///////////////////////////////////////////////////
     private async void BotonBorrarTrabajadores_Clicked(object sender, EventArgs e)
+    {
+        try
         {
-            try
+            bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + tr.Nombre + "\"?", "Si", "No");
+            if (tr is not null && answer == true)
             {
-                bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + tr.nombre + "\"?", "Si", "No");
-                if (tr is not null && answer == true)
-                {
-                    OperacionesDBContext.BorraTrabajador(tr);
-                    OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.nombre + "\" - " + dt));
-                    App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
-                }
-                else
-                {
-                    await DisplayAlert("Alert", "No se han producido cambios.", "Vale");
-                }
-            }catch(Exception ex)
+                OperacionesDBContext.BorraTrabajador(tr);
+                OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.Nombre + "\" - " + dt));
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
+            }
+            else
             {
-                await DisplayAlert("Alert", "Error inesperado "+ex.StackTrace, "Vale");
+                await DisplayAlert("Alert", "No se han producido cambios.", "Vale");
             }
         }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Alert", "Error inesperado " + ex.StackTrace, "Vale");
+        }
+    }
     private async void BotonBorrarGruposTrabajo_Clicked(object sender, EventArgs e)
+    {
+        try
         {
-            try
+            bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Nombre + "\"?", "Si", "No");
+            if (answer == true)
             {
-                bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Nombre + "\"?", "Si", "No");
-                if (answer == true)
-                {
-                    Turno turno = gr;
-                    OperacionesDBContext.BorraTurno(turno);
-                    OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Nombre + " - " + dt));
-                    await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
+                Turno turno = gr;
+                OperacionesDBContext.BorraTurno(turno);
+                OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Nombre + " - " + dt));
+                await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
 
-                    App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
 
-                }
-            }catch(Exception ex)
-            {
-                await DisplayAlert("Alert", "Error inesperado " + ex.Message,"Vale");
             }
         }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Alert", "Error inesperado " + ex.Message, "Vale");
+        }
+    }
     private async void BotonBorrarZonas_Clicked(object sender, EventArgs e)
     {
         if (zn is not null)
@@ -915,18 +917,18 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = false;
         ListViewWorkers.IsEnabled = false;
 
-        var ExisteCalendario = p.Calendario.Where(x => x.Trabajador == tr).Include(x=>x.DiasDelCalendario).FirstOrDefault();
-        if(ExisteCalendario is not null)
+        var ExisteCalendario = p.Calendario.Where(x => x.Trabajador == tr).Include(x => x.DiasDelCalendario).FirstOrDefault();
+        if (ExisteCalendario is not null)
         {
             var ListaDias = ExisteCalendario.DiasDelCalendario.ToList();
             ListViewCalendario.ItemsSource = ListaDias;
-            if(ListaDias.Count > 0)
-            ListViewCalendario.SelectedItem = ListaDias[0];
+            if (ListaDias.Count > 0)
+                ListViewCalendario.SelectedItem = ListaDias[0];
         }
         else
         {
             await DisplayAlert("Alert", "El trabajador no dispone de calendario, se procede a crearlo", "Vale");
-            var trabajador = p.Trabajador.Where(x => x.numero_tarjeta == tr.numero_tarjeta).FirstOrDefault();
+            var trabajador = p.Trabajador.Where(x => x.NumeroTarjeta == tr.NumeroTarjeta).FirstOrDefault();
             var calendario = new Calendario(trabajador);
             p.Calendario.Add(calendario);
             p.SaveChanges();
@@ -944,8 +946,8 @@ public partial class PaginaAdmin : ContentPage
     private async void BotonCerrarSesion_Clicked(object sender, EventArgs e)
     {
         //BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
-        bool answer = await DisplayAlert("Logout","¿Deseas cerrar sesión?","Si","No");
-        if(answer == true)
+        bool answer = await DisplayAlert("Logout", "¿Deseas cerrar sesión?", "Si", "No");
+        if (answer == true)
         {
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
@@ -992,7 +994,7 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-            var ListaIncidencias = p.Incidencias.Where(x=>x.Justificada==false).Include(x=>x.Trabajador).ToList();
+            var ListaIncidencias = p.Incidencias.Where(x => x.Justificada == false).Include(x => x.Trabajador).ToList();
             ListViewIncidencias.ItemsSource = ListaIncidencias;
             if (ListaIncidencias.Count > 0)
             {
@@ -1003,112 +1005,166 @@ public partial class PaginaAdmin : ContentPage
             {
                 BtnProblemas.Source = "problemas.png";
             }
-        }catch(NullReferenceException ex)
+        }
+        catch (NullReferenceException ex)
         {
             Debug.WriteLine(ex.ToString());
         }
     }
-
-    public void GeneraNominaPdf()
+    public void GeneraNominaPdf(Trabajador tr)
     {
-        PdfWriter writer = new PdfWriter("C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Nominas\\demo2.pdf");
-        PdfDocument pdf = new PdfDocument(writer);
-        Document document = new Document(pdf);
-        Paragraph header = new Paragraph("Nomina")
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
-           .SetFontSize(20);
-        BetterTable DatosEmpresa = GeneraTabla(3, 2);
-        DatosEmpresa.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        DatosEmpresa.ChangeTableFontSize(10);
-        DatosEmpresa.SetNextText("Empresa");
-        DatosEmpresa.SetNextText("Direccion");
-        DatosEmpresa.SetNextText("CIF");
-        BetterTable DatosTrabajador = GeneraTabla(5, 2);
-        DatosTrabajador.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        DatosTrabajador.ChangeTableFontSize(10);
-        DatosTrabajador.SetNextText("Trabajador");
-        DatosTrabajador.SetNextText("Categoria");
-        DatosTrabajador.SetNextText("Nº Matricula");
-        DatosTrabajador.SetNextText("Antiguedad");
-        DatosTrabajador.SetNextText("D.N.I");
-        BetterTable OtrosDatos = GeneraTabla(7,2);
-        OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        OtrosDatos.ChangeTableFontSize(10);
-        OtrosDatos.SetNextText("Nº Afiliación S.S");
-        OtrosDatos.SetNextText("Tarifa");
-        OtrosDatos.SetNextText("Cod C.T.");
-        OtrosDatos.SetNextText("Sección");
-        OtrosDatos.SetNextText("Nro.");
-        OtrosDatos.SetNextText("Periodo");
-        OtrosDatos.SetNextText("Días");
-        BetterTable CuerpoNomina = GeneraTabla(5, 8);
-        CuerpoNomina.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        CuerpoNomina.ChangeTableFontSize(10);
-        CuerpoNomina.RemoveBorder(0);
-        CuerpoNomina.SetNextText("Cuantía");
-        CuerpoNomina.SetNextText("Precio");
-        CuerpoNomina.SetNextText("Concepto");
-        CuerpoNomina.SetNextText("Devengos");
-        CuerpoNomina.SetNextText("Deducciones");
-        BetterTable PieNomina1 = GeneraTabla(7,2);
-        PieNomina1.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        PieNomina1.ChangeTableFontSize(8);
-        PieNomina1.SetNextText("Rem. Total");
-        PieNomina1.SetNextText("P.P. Extras");
-        PieNomina1.SetNextText("Base S.S.");
-        PieNomina1.SetNextText("Base A.T y DES");
-        PieNomina1.SetNextText("Base I.R.P.F");
-        PieNomina1.SetNextText("T. Devengo");
-        PieNomina1.SetNextText("T. a deducir");
-        Paragraph SubPieNomina1 = new Paragraph("* Percepciones salariales sujetas a Cot. S.S.\t\t\t\t\t\t\t\t *Percepciones no salariales excluidas Cot. S.S.")
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
-           .SetFontSize(6);
-        BetterTable PieNomina2 = GeneraTabla(4, 5);
-        PieNomina2.ChangeTableFontSize(6);
-        PieNomina2.RemoveBorder(1);
-        PieNomina2.SetNextText("Fecha");
-        PieNomina2.SetNextText("Sello empresa");
-        PieNomina2.SetNextText("Recibi");
-        PieNomina2[0,0].SetText("16 de Mayo de 2022");
-        PieNomina2[2,1].SetText("SWIFT/BIC: 789456258");
-        PieNomina2[2,2].SetText("IBAN: ES45678912324");
-        PieNomina2[0,3].SetText("Total a percibir");
-        PieNomina2[0,3].AddAllBorders();
-        PieNomina2[1,3].SetText("1245.74€");
-        PieNomina2[1,3].AddAllBorders();
-        PieNomina2[0,0].AddBorder(1);
-        PieNomina2[0,0].AddBorder(2);
-        PieNomina2[1,0].AddBorder(2);
-        PieNomina2[2,0].AddBorder(2);
-        PieNomina2[3,0].AddBorder(2);
-        PieNomina2[0,1].AddBorder(1);
-        PieNomina2[0,2].AddBorder(1);
-        PieNomina2[0,3].AddBorder(1);
-        PieNomina2[0, 1].AddBorder(1);
-        PieNomina2[0, 2].AddBorder(1);
-        PieNomina2[3, 0].AddBorder(1);
-        PieNomina2[3, 1].AddBorder(3);
-        PieNomina2[3, 2].AddBorder(3);
-        PieNomina2[3, 3].AddBorder(3);
-        PieNomina2[3, 3].AddBorder(0);
-        PieNomina2[3, 2].AddBorder(0);
+        try
+        {
+            PdfWriter writer = new PdfWriter("C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Nominas\\demo2.pdf");
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            Paragraph header = new Paragraph("Nomina mensual")
+               .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+               .SetFontSize(20);
+            BetterTable DatosEmpresa = GeneraTabla(3, 2);
+            DatosEmpresa.SetColorHeader(ColorConstants.LIGHT_GRAY);
+            DatosEmpresa.ChangeTableFontSize(8);
+            DatosEmpresa.SetNextText("Empresa");
+            DatosEmpresa.SetNextText("Direccion");
+            DatosEmpresa.SetNextText("CIF");
+            DatosEmpresa.SetNextText("TTI Ventures");
+            DatosEmpresa.SetNextText(" C. Paletillas,6,Calahorra");
+            DatosEmpresa.SetNextText("B26557397");
+            BetterTable DatosTrabajador = GeneraTabla(5, 2);
+            DatosTrabajador.SetColorHeader(ColorConstants.LIGHT_GRAY);
+            DatosTrabajador.ChangeTableFontSize(8);
+            DatosTrabajador.SetNextText("Trabajador");
+            DatosTrabajador.SetNextText("Categoria");
+            DatosTrabajador.SetNextText("Nº Matricula");
+            DatosTrabajador.SetNextText("Antiguedad");
+            DatosTrabajador.SetNextText("D.N.I");
+            DatosTrabajador.SetNextText(tr.Nombre);
+            DatosTrabajador.SetNextText(tr.Categoria);
+            DatosTrabajador.SetNextText("");
+            DatosTrabajador.SetNextText((dt - tr.FechaDeContratacion).Days.ToString());
+            DatosTrabajador.SetNextText(tr.Dni);
+            BetterTable OtrosDatos = GeneraTabla(7, 2);
+            OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
+            OtrosDatos.ChangeTableFontSize(8);
+            OtrosDatos.SetNextText("Nº Afiliación S.S");
+            OtrosDatos.SetNextText("Tarifa");
+            OtrosDatos.SetNextText("Cod C.T.");
+            OtrosDatos.SetNextText("Sección");
+            OtrosDatos.SetNextText("Nro.");
+            OtrosDatos.SetNextText("Periodo");
+            OtrosDatos.SetNextText("Días");
+            OtrosDatos.SetNextText(tr.NumeroSeguridadSocial);
+            var diasTrabajador = p.Fichajes.Where(x => x.Trabajador == tr).Where(x => x.Entrada_Salida == "Entrada").OrderBy(x => x.FechaFichaje).ToList();
+            var diastotal = diasTrabajador.Count;
+            var lapso = diasTrabajador.First().FechaFichaje.Date + "-" + diasTrabajador.Last().FechaFichaje.Date;
+            OtrosDatos[1,6].SetText(lapso.ToString());
+            OtrosDatos[1,5].SetText(diastotal.ToString());
+            BetterTable CuerpoNomina = GeneraTabla(5, 8);
+            CuerpoNomina.SetColorHeader(ColorConstants.LIGHT_GRAY);
+            CuerpoNomina.ChangeTableFontSize(10);
+            CuerpoNomina.RemoveBorder(1);
+            CuerpoNomina.AddTableBorder(1);
+            CuerpoNomina.SetNextText("Cuantía");
+            CuerpoNomina.SetNextText("Precio");
+            CuerpoNomina.SetNextText("Concepto");
+            CuerpoNomina.SetNextText("Devengos");
+            CuerpoNomina.SetNextText("Deducciones");
+            BetterTable PieNomina1 = GeneraTabla(7, 2);
+            PieNomina1.SetColorHeader(ColorConstants.LIGHT_GRAY);
+            PieNomina1.ChangeTableFontSize(8);
+            PieNomina1.SetNextText("Rem. Total");
+            PieNomina1.SetNextText("P.P. Extras");
+            PieNomina1.SetNextText("Base S.S.");
+            PieNomina1.SetNextText("Base A.T y DES");
+            PieNomina1.SetNextText("Base I.R.P.F");
+            PieNomina1.SetNextText("T. Devengo");
+            PieNomina1.SetNextText("T. a deducir");
+            Paragraph SubPieNomina1 = new Paragraph("* Percepciones salariales sujetas a Cot. S.S.\t\t\t\t\t\t\t\t *Percepciones no salariales excluidas Cot. S.S.")
+               .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+               .SetFontSize(6);
+            BetterTable PieNomina2 = GeneraTabla(4, 5);
+            PieNomina2.ChangeTableFontSize(6);
+            PieNomina2.RemoveBorder(1);
+            PieNomina2.AddTableBorder(1);
+            PieNomina2.SetNextText("Fecha");
+            PieNomina2.SetNextText("Sello empresa");
+            PieNomina2.SetNextText("Recibi");
+            PieNomina2[0, 0].SetText("16 de Mayo de 2022");
+            PieNomina2[4, 0].SetText("SWIFT/BIC: 789456258");
+            PieNomina2[4, 0].SetText("IBAN: ES45678912324");
+            PieNomina2[4, 0].SetTextAlign("START");
+            PieNomina2[1, 3].SetText("Total a percibir");
+            PieNomina2[1, 3].AddAllBorders();
+            PieNomina2[2, 3].SetText("1245.74€");
+            PieNomina2[2, 3].AddAllBorders();
+            PieNomina2.AddTableBorder(1);
+            BetterTable CabeceraPieNomina3 = GeneraTabla(1, 1);
+            CabeceraPieNomina3.ChangeTableFontSize(8);
+            CabeceraPieNomina3.RemoveBorder(2);
+            CabeceraPieNomina3.TableConjunctionDown();
+            CabeceraPieNomina3.SetNextText("DETERMINACION DE LA B. DE COTIZACION A LA S.S. Y CONCEPTOS DE RECAUCACION CONJUNTA Y APORTACION A LA EMPRESA");
+            BetterTable PieNomina3 = GeneraTabla(5, 8);
+            PieNomina3.TableConjunctionUp();
+            PieNomina3.ChangeTableFontSize(8);
+            PieNomina3.RemoveBorder(1);
+            PieNomina3.AddTableBorder(1);
+            PieNomina3[0, 0].SetText("Concepto");
+            PieNomina3[0, 0].SetTextAlign("END");
+            PieNomina3[0, 2].SetText("Base");
+            PieNomina3[0, 3].SetText("Tipo");
+            PieNomina3[0, 4].SetText("Aportacion Empresarial");
+            PieNomina3[1, 0].SetText("1. Contingencias comunes");
+            PieNomina3[1, 1].SetText("......................");
+            PieNomina3[1, 2].SetText("1475.00");
+            PieNomina3[1, 3].SetText("23.60");
+            PieNomina3[1, 4].SetText("348.10");
+            PieNomina3[2, 0].SetText("2. Contingencias profesionales");
+            PieNomina3[2, 1].SetText("AT Y EP................");
+            PieNomina3[2, 2].SetText("1475.00");
+            PieNomina3[2, 3].SetText("1.00");
+            PieNomina3[2, 4].SetText("14.75");
+            PieNomina3[3, 0].SetText(" y conceptos de reaudacion");
+            PieNomina3[3, 1].SetText("Desempleo--............");
+            PieNomina3[3, 2].SetText("1475.00");
+            PieNomina3[3, 3].SetText("5.50");
+            PieNomina3[3, 4].SetText("81.13");
+            PieNomina3[4, 0].SetText("Conjunta");
+            PieNomina3[4, 1].SetText("Formacion profesional..");
+            PieNomina3[4, 2].SetText("1475.00");
+            PieNomina3[4, 3].SetText("5.50");
+            PieNomina3[4, 4].SetText("71.13");
+            PieNomina3[5, 1].SetText("Fondo garantia salarial");
+            PieNomina3[5, 2].SetText("1475.00");
+            PieNomina3[5, 3].SetText("0.62");
+            PieNomina3[5, 4].SetText("5.85");
+            PieNomina3[6, 0].SetText("3. Cotización horas extraordinarias");
+            PieNomina3[6, 1].SetText(".................");
+            PieNomina3[6, 2].SetText(".................");
+            PieNomina3[6, 3].SetText(".................");
+            PieNomina3[6, 4].SetText(".................");
 
-
-        document.Add(header);
-        document.Add(DatosEmpresa.Table);
-        document.Add(DatosTrabajador.Table);
-        document.Add(OtrosDatos.Table);
-        document.Add(CuerpoNomina.Table);
-        document.Add(PieNomina1.Table);
-        document.Add(SubPieNomina1);
-        document.Add(PieNomina2.Table);
-        document.Close();
+            document.Add(header);
+            document.Add(DatosEmpresa.Table);
+            document.Add(DatosTrabajador.Table);
+            document.Add(OtrosDatos.Table);
+            document.Add(CuerpoNomina.Table);
+            document.Add(PieNomina1.Table);
+            document.Add(SubPieNomina1);
+            document.Add(PieNomina2.Table);
+            document.Add(CabeceraPieNomina3.Table);
+            document.Add(PieNomina3.Table);
+            document.Close();
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.ToString());
+        }
     }
-    public BetterTable GeneraTabla(int numeroColumnas,int numeroFilas) 
+    public BetterTable GeneraTabla(int numeroColumnas, int numeroFilas)
     {
         BetterTable b = new BetterTable(numeroColumnas, numeroFilas);
         return b;
     }
-    
+
     ///////////////////////////////////////////////////////////////////////////////////////////////
 }

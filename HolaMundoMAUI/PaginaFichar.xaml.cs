@@ -40,9 +40,9 @@ public partial class PaginaFichar : ContentPage
 		}
 
 		var trab = presenciaContext.Trabajador
-			.Where(x => x.usuario.Username == username)
-			.Include(x => x.equipo)
-			.Include(x => x.usuario)
+			.Where(x => x.Usuario.Username == username)
+			.Include(x => x.Equipo)
+			.Include(x => x.Usuario)
 			.FirstOrDefault();
 		trabajador = trab;
 
@@ -103,7 +103,7 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void CompruebaFichajes(string user)
 	{
-		var Trabajador = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador.usuario.Username == user).FirstOrDefault();
+		var Trabajador = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador.Usuario.Username == user).FirstOrDefault();
 		if (Trabajador is not null)
 		{
 			BotonFichar.IsVisible = false;
@@ -126,7 +126,7 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void CompruebaTareas(string user)
 	{
-		var trabajador = presenciaContext.TareasComenzadas.Where(x => x.trabajador.usuario.Username == user).Include(x => x.trabajador).Include(x => x.tarea).FirstOrDefault();
+		var trabajador = presenciaContext.TareasComenzadas.Where(x => x.trabajador.Usuario.Username == user).Include(x => x.trabajador).Include(x => x.tarea).FirstOrDefault();
 		if (trabajador is not null)
 		{
 			BotonAcabarTarea.IsVisible = true;
@@ -151,7 +151,7 @@ public partial class PaginaFichar : ContentPage
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-		var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
+		var trabajador = presenciaContext.Trabajador.Where(x => x.Usuario.Username == Username).Include(x => x.Equipo).FirstOrDefault();
 		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
 		OperacionesDBContext.InsertaFichaje(fich);
         presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
@@ -170,24 +170,24 @@ public partial class PaginaFichar : ContentPage
 			{
 				var operacion = (d - dt);
 				string motivo = await DisplayPromptAsync("Usted llega temprano.", "¿Cual es la razon?");
-				OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m antes. - " + dt));
+				OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado " + operacion + "m antes. - " + dt));
 			}
 			if (dt > d.AddMinutes(5))
 			{
 				var operacion = (dt - d);
 				string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
-				OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt));
+				OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt));
 				OperacionesDBContext.InsertaIncidencia(new Incidencia(trabajador,"Retraso de"+operacion,dt,false),presenciaContext);
 			}
 			if (dt > d && dt <= d.AddMinutes(5))
 			{
-				OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
+				OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado a tiempo - " + dt));
 			}
 		}
 	}
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
-			var trabajador = presenciaContext.Trabajador.Where(x => x.usuario.Username == Username).Include(x => x.equipo).FirstOrDefault();
+			var trabajador = presenciaContext.Trabajador.Where(x => x.Usuario.Username == Username).Include(x => x.Equipo).FirstOrDefault();
 			OperacionesDBContext.InsertaFichaje(new Fichajes(trabajador, dt, "Entrada"));
 			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
 			OperacionesDBContext.BorraTrabajadorEnTurno(TrabajadorEnTurno, presenciaContext);
@@ -213,17 +213,17 @@ public partial class PaginaFichar : ContentPage
 				{
 					var operacion = (d - dt);
 					string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
-					OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
+					OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.NumeroTarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
 				}
 				if (dt > d.AddMinutes(5))
 				{
 					var operacion = (dt - d);
 					string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
-					OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.numero_tarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
+					OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.NumeroTarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
 				}
 				if (dt > d && dt <= d.AddMinutes(5))
 				{
-					OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.numero_tarjeta + " Ha llegado a tiempo - " + dt));
+					OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado a tiempo - " + dt));
 				}
 			}
 	}

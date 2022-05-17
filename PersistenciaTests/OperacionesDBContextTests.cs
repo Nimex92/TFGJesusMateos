@@ -23,8 +23,8 @@ namespace Persistencia.Tests
             var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.Turno == "Mañana").FirstOrDefault();
             Trabajador trab = new()
             {
-                nombre = "Nimex2",
-                equipo = grupo
+                Nombre = "Nimex2",
+                Equipo = grupo
             };
             presenciaContext.Trabajador.Add(trab);
             var trabajadores = presenciaContext.Trabajador.ToList();
@@ -51,7 +51,7 @@ namespace Persistencia.Tests
                 Entrada_Salida = "Entrada"
             };
 
-            bool inserta = OperacionesDBContext.insertaFichaje(f.Trabajador.numero_tarjeta, f.EquipoTrabajo.IdGrupo, "Entrada");
+            bool inserta = OperacionesDBContext.insertaFichaje(f.Trabajador.NumeroTarjeta, f.EquipoTrabajo.IdGrupo, "Entrada");
             Assert.IsTrue(inserta);
         }
 
@@ -73,7 +73,7 @@ namespace Persistencia.Tests
         {
             PresenciaContext p = new PresenciaContext();
             Trabajador tr = p.Trabajador.Find(2);
-            bool borra = OperacionesDBContext.borraTrabajador(tr.numero_tarjeta);
+            bool borra = OperacionesDBContext.borraTrabajador(tr.NumeroTarjeta);
             Assert.IsTrue(borra);
         }
         /*
@@ -110,9 +110,9 @@ namespace Persistencia.Tests
             PresenciaContext p = new PresenciaContext();
             var trabs = p.Trabajador.ToList();
             Trabajador t = trabs[0];
-            t.nombre = "prueba2";
-            //t.equipo = p.EquipoTrabajo.Find(1);
-            bool actualiza = OperacionesDBContext.actualizaTrabajador(t.numero_tarjeta, t.nombre, t.equipo.IdGrupo);
+            t.Nombre = "prueba2";
+            //t.Equipo = p.EquipoTrabajo.Find(1);
+            bool actualiza = OperacionesDBContext.actualizaTrabajador(t.NumeroTarjeta, t.Nombre, t.Equipo.IdGrupo);
             Assert.IsTrue(actualiza);
         }
         
