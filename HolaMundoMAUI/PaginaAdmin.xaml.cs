@@ -1,4 +1,5 @@
 using ClassLibray;
+using HolaMundoMAUI;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf;
 using iText.Layout;
@@ -15,25 +16,14 @@ public partial class PaginaAdmin : ContentPage
     private string nombreUsuario;
     PresenciaContext p = new PresenciaContext();
     DateTime dt = DateTime.Now;
-<<<<<<< HEAD
     Worker tr;
     WorkShift gr;
     Places zn;
     WorkTask ta;
     WorkGroup Et;
     Calendar cal;
-    Day _day;
-    Boolean TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo,ProblemActivo,VacacionesActivo;
-=======
-    Trabajador tr;
-    Turno gr;
-    Zonas zn;
-    Tareas ta;
-    EquipoTrabajo Et;
-    Calendario cal;
-    Dia dia;
-    Boolean TrActivo, GrActivo, ZnActivo, TaActivo, EtActivo, DiActivo, NmActivo, ProblemActivo, VacacionesActivo;
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
+    Day day;
+    bool TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo,ProblemActivo,VacacionesActivo;
 
     public PaginaAdmin(string nombreUsuario)
     {
@@ -128,11 +118,7 @@ public partial class PaginaAdmin : ContentPage
     public void SetListViewGruposTrabajo()
     {
         PresenciaContext presenciaContext = new PresenciaContext();
-<<<<<<< HEAD
         var turnos = presenciaContext.WorkShifts.Where(x=>x.Deleted==false).OrderBy(x=>x.Name).ToList();
-=======
-        var turnos = presenciaContext.Turno.Where(x => x.Eliminado == false).OrderBy(x => x.Nombre).ToList();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
         ListViewGrupos.ItemsSource = turnos;
         if (turnos.Count > 0)
             ListViewGrupos.SelectedItem = turnos[0];
@@ -140,11 +126,7 @@ public partial class PaginaAdmin : ContentPage
     public void SetListViewTrabajadores()
     {
         PresenciaContext p = new PresenciaContext();
-<<<<<<< HEAD
         var workers = p.Workers.Include(x=>x.User).ToList();
-=======
-        var workers = p.Trabajador.Include(x => x.Usuario).ToList();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
         ListViewTrabajadores.ItemsSource = workers;
         if (workers.Count > 0)
             ListViewTrabajadores.SelectedItem = workers[0];
@@ -184,13 +166,7 @@ public partial class PaginaAdmin : ContentPage
     {
         Worker item = e.SelectedItem as Worker;
         tr = item;
-<<<<<<< HEAD
         cal = p.Calendars.Where(x => x.Worker == item).Include(x=>x.Worker).FirstOrDefault();
-        
-=======
-        cal = p.Calendario.Where(x => x.Trabajador == item).Include(x => x.Trabajador).FirstOrDefault();
-
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
     }
     public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
     {
@@ -210,7 +186,7 @@ public partial class PaginaAdmin : ContentPage
     public void OnItemSelectedCalendario(object sender, SelectedItemChangedEventArgs e)
     {
         Day item = e.SelectedItem as Day;
-        _day = item;
+        day = item;
     }
     public void OnItemSelectedTareas(object sender, SelectedItemChangedEventArgs e)
     {
@@ -711,7 +687,7 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BtnAnadeDias_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 0, _day));
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 0, day));
         DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir dias al calendario" + " - " + dt), p);
 
     }
@@ -800,7 +776,7 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonActualizaDias_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 1, _day));
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 1, day));
         DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir dias al calendario" + " - " + dt),p);
 
     }
@@ -816,13 +792,8 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
     {
-<<<<<<< HEAD
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.Name, 1));
         DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.Name + " - " + dt), p);
-=======
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.Nombre, 1));
-        OperacionesDBContext.InsertaLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.Nombre + " - " + dt));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -831,10 +802,6 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-            bool answer = await DisplayAlert("Question?", "�Estas seguro de borrar el trabajador \"" + tr.Nombre + "\"?", "Si", "No");
-            if (tr is not null && answer == true)
-            {
-<<<<<<< HEAD
                 bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + tr.Name + "\"?", "Si", "No");
                 if (tr is not null && answer == true)
                 {
@@ -846,62 +813,33 @@ public partial class PaginaAdmin : ContentPage
                 {
                     await DisplayAlert("Error", "No se han producido cambios.", "Vale");
                 }
-            }catch(Exception ex)
-            {
-                await DisplayAlert("Error", "Error inesperado "+ex.StackTrace, "Vale");
-=======
-                OperacionesDBContext.BorraTrabajador(tr);
-                OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.Nombre + "\" - " + dt));
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
-            }
-            else
-            {
-                await DisplayAlert("Alert", "No se han producido cambios.", "Vale");
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
-            }
-        }
-        catch (Exception ex)
+        }catch(Exception ex)
         {
-            await DisplayAlert("Alert", "Error inesperado " + ex.StackTrace, "Vale");
+            await DisplayAlert("Error", ex.ToString(), "Vale");
         }
     }
     private async void BotonBorrarGruposTrabajo_Clicked(object sender, EventArgs e)
     {
         try
         {
-            bool answer = await DisplayAlert("Question?", "�Estas seguro de borrar el grupo \"" + gr.Nombre + "\"?", "Si", "No");
+            bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Name + "\"?", "Si", "No");
             if (answer == true)
             {
-<<<<<<< HEAD
-                bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Name + "\"?", "Si", "No");
-                if (answer == true)
-                {
                 WorkShift workShift = gr;
-                    DbDelete.DeleteWorkShift(workShift,p);
-                    DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Name + " - " + dt), p);
-                    await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
-=======
-                Turno turno = gr;
-                OperacionesDBContext.BorraTurno(turno);
-                OperacionesDBContext.InsertaLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Nombre + " - " + dt));
+                DbDelete.DeleteWorkShift(workShift, p);
+                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Name + " - " + dt), p);
                 await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
-
+                WorkShift turno = gr;
+                DbDelete.DeleteWorkShift(turno, p);
+                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Name + " - " + dt), p);
+                await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
-
-<<<<<<< HEAD
-                }
-            }catch(Exception ex)
-            {
-                await DisplayAlert("Alert", "Error inesperado " + ex.ToString,"Vale");
-=======
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
             }
-        }
-        catch (Exception ex)
+        }catch(Exception ex)
         {
-            await DisplayAlert("Alert", "Error inesperado " + ex.Message, "Vale");
+             await DisplayAlert("Alert", "Error inesperado " + ex.ToString,"Vale");
         }
+        
     }
     private async void BotonBorrarZonas_Clicked(object sender, EventArgs e)
     {
@@ -940,7 +878,7 @@ public partial class PaginaAdmin : ContentPage
         bool respuesta = await DisplayAlert("¿Estás segur@?", "¿Deseas eliminar este dia?", "Si", "No");
         if (respuesta == true)
         {
-            p.DayOff.Remove(_day);
+            p.DayOff.Remove(day);
             p.SaveChanges();
             await DisplayAlert("Eliminado", "Se ha eliminado correctamente", "Vale");
             App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
@@ -978,13 +916,8 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = false;
         ListViewWorkers.IsEnabled = false;
 
-<<<<<<< HEAD
         var ExisteCalendario = p.Calendars.Where(x => x.Worker == tr).Include(x=>x.DaysOnCalendar).FirstOrDefault();
         if(ExisteCalendario is not null)
-=======
-        var ExisteCalendario = p.Calendario.Where(x => x.Trabajador == tr).Include(x => x.DiasDelCalendario).FirstOrDefault();
-        if (ExisteCalendario is not null)
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
         {
             var ListaDias = ExisteCalendario.DaysOnCalendar.ToList();
             ListViewCalendario.ItemsSource = ListaDias;
@@ -994,15 +927,9 @@ public partial class PaginaAdmin : ContentPage
         else
         {
             await DisplayAlert("Alert", "El trabajador no dispone de calendario, se procede a crearlo", "Vale");
-<<<<<<< HEAD
             var trabajador = p.Workers.Where(x => x.CardNumber == tr.CardNumber).FirstOrDefault();
             var calendario = new Calendar(trabajador);
             p.Calendars.Add(calendario);
-=======
-            var trabajador = p.Trabajador.Where(x => x.NumeroTarjeta == tr.NumeroTarjeta).FirstOrDefault();
-            var calendario = new Calendario(trabajador);
-            p.Calendario.Add(calendario);
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
             p.SaveChanges();
             await DisplayAlert("Alert", "Calendario creado con exito", "Vale");
         }
@@ -1018,13 +945,8 @@ public partial class PaginaAdmin : ContentPage
     private async void BotonCerrarSesion_Clicked(object sender, EventArgs e)
     {
         //BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
-<<<<<<< HEAD
-        bool answer = await DisplayAlert("Logout","¿Deseas cerrar sesión?","Si","No");
-        if(answer == true)
-=======
         bool answer = await DisplayAlert("Logout", "�Deseas cerrar sesi�n?", "Si", "No");
         if (answer == true)
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
         {
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
@@ -1071,11 +993,7 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-<<<<<<< HEAD
             var ListaIncidencias = p.Issues.Where(x=>x.Justified==false).Include(x=>x.Worker).ToList();
-=======
-            var ListaIncidencias = p.Incidencias.Where(x => x.Justificada == false).Include(x => x.Trabajador).ToList();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
             ListViewIncidencias.ItemsSource = ListaIncidencias;
             if (ListaIncidencias.Count > 0)
             {
@@ -1092,92 +1010,8 @@ public partial class PaginaAdmin : ContentPage
             Debug.WriteLine(ex.ToString());
         }
     }
-    public void GeneraNominaPdf(Trabajador tr)
+    public void GeneraNominaPdf(Worker tr)
     {
-<<<<<<< HEAD
-        //PdfWriter writer = new PdfWriter("C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Nominas\\demo2.pdf");
-        PdfWriter writer = new PdfWriter("D:\\demo2.pdf");
-        PdfDocument pdf = new PdfDocument(writer);
-        Document document = new Document(pdf);
-        Paragraph header = new Paragraph("Nomina")
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
-           .SetFontSize(20);
-        BetterTable DatosEmpresa = GeneraTabla(3, 2);
-        DatosEmpresa.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        DatosEmpresa.ChangeTableFontSize(10);
-        DatosEmpresa.SetNextText("Empresa");
-        DatosEmpresa.SetNextText("Direccion");
-        DatosEmpresa.SetNextText("CIF");
-        BetterTable DatosTrabajador = GeneraTabla(5, 2);
-        DatosTrabajador.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        DatosTrabajador.ChangeTableFontSize(10);
-        DatosTrabajador.SetNextText("Trabajador");
-        DatosTrabajador.SetNextText("Categoria");
-        DatosTrabajador.SetNextText("Nº Matricula");
-        DatosTrabajador.SetNextText("Antiguedad");
-        DatosTrabajador.SetNextText("D.N.I");
-        BetterTable OtrosDatos = GeneraTabla(7,2);
-        OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        OtrosDatos.ChangeTableFontSize(10);
-        OtrosDatos.SetNextText("Nº Afiliación S.S");
-        OtrosDatos.SetNextText("Tarifa");
-        OtrosDatos.SetNextText("Cod C.T.");
-        OtrosDatos.SetNextText("Sección");
-        OtrosDatos.SetNextText("Nro.");
-        OtrosDatos.SetNextText("Periodo");
-        OtrosDatos.SetNextText("Días");
-        BetterTable CuerpoNomina = GeneraTabla(5, 8);
-        CuerpoNomina.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        CuerpoNomina.ChangeTableFontSize(10);
-        CuerpoNomina.RemoveBorder(0);
-        CuerpoNomina.SetNextText("Cuantía");
-        CuerpoNomina.SetNextText("Precio");
-        CuerpoNomina.SetNextText("Concepto");
-        CuerpoNomina.SetNextText("Devengos");
-        CuerpoNomina.SetNextText("Deducciones");
-        BetterTable PieNomina1 = GeneraTabla(7,2);
-        PieNomina1.SetColorHeader(ColorConstants.LIGHT_GRAY);
-        PieNomina1.ChangeTableFontSize(8);
-        PieNomina1.SetNextText("Rem. Total");
-        PieNomina1.SetNextText("P.P. Extras");
-        PieNomina1.SetNextText("Base S.S.");
-        PieNomina1.SetNextText("Base A.T y DES");
-        PieNomina1.SetNextText("Base I.R.P.F");
-        PieNomina1.SetNextText("T. Devengo");
-        PieNomina1.SetNextText("T. a deducir");
-        Paragraph SubPieNomina1 = new Paragraph("* Percepciones salariales sujetas a Cot. S.S.\t\t\t\t\t\t\t\t *Percepciones no salariales excluidas Cot. S.S.")
-           .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
-           .SetFontSize(6);
-        BetterTable PieNomina2 = GeneraTabla(4, 5);
-        PieNomina2.ChangeTableFontSize(6);
-        PieNomina2.RemoveBorder(1);
-        PieNomina2.SetNextText("Fecha");
-        PieNomina2.SetNextText("Sello empresa");
-        PieNomina2.SetNextText("Recibi");
-        PieNomina2[0,0].SetText("16 de Mayo de 2022");
-        PieNomina2[2,1].SetText("SWIFT/BIC: 789456258");
-        PieNomina2[2,2].SetText("IBAN: ES45678912324");
-        PieNomina2[0,3].SetText("Total a percibir");
-        PieNomina2[0,3].AddAllBorders();
-        PieNomina2[1,3].SetText("1245.74€");
-        PieNomina2[1,3].AddAllBorders();
-        PieNomina2[0,0].AddBorder(1);
-        PieNomina2[0,0].AddBorder(2);
-        PieNomina2[1,0].AddBorder(2);
-        PieNomina2[2,0].AddBorder(2);
-        PieNomina2[3,0].AddBorder(2);
-        PieNomina2[0,1].AddBorder(1);
-        PieNomina2[0,2].AddBorder(1);
-        PieNomina2[0,3].AddBorder(1);
-        PieNomina2[0, 1].AddBorder(1);
-        PieNomina2[0, 2].AddBorder(1);
-        PieNomina2[3, 0].AddBorder(1);
-        PieNomina2[3, 1].AddBorder(3);
-        PieNomina2[3, 2].AddBorder(3);
-        PieNomina2[3, 3].AddBorder(3);
-        PieNomina2[3, 3].AddBorder(0);
-        PieNomina2[3, 2].AddBorder(0);
-=======
         try
         {
             PdfWriter writer = new PdfWriter("C:\\Users\\jesus\\Desktop\\HolaMundoMAUI\\Nominas\\demo2.pdf");
@@ -1203,11 +1037,11 @@ public partial class PaginaAdmin : ContentPage
             DatosTrabajador.SetNextText("N� Matricula");
             DatosTrabajador.SetNextText("Antiguedad");
             DatosTrabajador.SetNextText("D.N.I");
-            DatosTrabajador.SetNextText(tr.Nombre);
-            DatosTrabajador.SetNextText(tr.Categoria);
+            DatosTrabajador.SetNextText(tr.Name);
+            DatosTrabajador.SetNextText(tr.Category);
             DatosTrabajador.SetNextText("");
-            DatosTrabajador.SetNextText((dt - tr.FechaDeContratacion).Days.ToString());
-            DatosTrabajador.SetNextText(tr.Dni);
+            DatosTrabajador.SetNextText((dt - tr.HiringDate).Days.ToString());
+            DatosTrabajador.SetNextText(tr.Nif);
             BetterTable OtrosDatos = GeneraTabla(7, 2);
             OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
             OtrosDatos.ChangeTableFontSize(8);
@@ -1218,10 +1052,10 @@ public partial class PaginaAdmin : ContentPage
             OtrosDatos.SetNextText("Nro.");
             OtrosDatos.SetNextText("Periodo");
             OtrosDatos.SetNextText("D�as");
-            OtrosDatos.SetNextText(tr.NumeroSeguridadSocial);
-            var diasTrabajador = p.Fichajes.Where(x => x.Trabajador == tr).Where(x => x.Entrada_Salida == "Entrada").OrderBy(x => x.FechaFichaje).ToList();
+            OtrosDatos.SetNextText(tr.SocialSecurityCard);
+            var diasTrabajador = p.Signings.Where(x => x.Worker == tr).Where(x => x.CheckInCheckOut == "Entrada").OrderBy(x => x.SigningDate).ToList();
             var diastotal = diasTrabajador.Count;
-            var lapso = diasTrabajador.First().FechaFichaje.Date + "-" + diasTrabajador.Last().FechaFichaje.Date;
+            var lapso = diasTrabajador.First().SigningDate.Date + "-" + diasTrabajador.Last().SigningDate.Date;
             OtrosDatos[1,6].SetText(lapso.ToString());
             OtrosDatos[1,5].SetText(diastotal.ToString());
             BetterTable CuerpoNomina = GeneraTabla(5, 8);
@@ -1307,7 +1141,6 @@ public partial class PaginaAdmin : ContentPage
             PieNomina3[6, 2].SetText(".................");
             PieNomina3[6, 3].SetText(".................");
             PieNomina3[6, 4].SetText(".................");
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 
             document.Add(header);
             document.Add(DatosEmpresa.Table);

@@ -19,6 +19,10 @@ namespace ClassLibray
         public string BelongsToWorkShifts { get; set; }
         public ICollection<WorkGroup> WorkGroup { get; set; } = new List<WorkGroup>();
         public virtual User User { get; set; }
+        public string Category { get; set; }
+        public DateTime HiringDate { get; set; }
+        public string Nif { get; set; }
+        public string SocialSecurityCard { get; set; }
         
 
         public Worker(string name, WorkGroup workGroup,User user)

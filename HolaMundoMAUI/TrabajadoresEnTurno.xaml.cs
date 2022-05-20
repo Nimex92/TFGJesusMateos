@@ -21,11 +21,7 @@ public partial class TrabajadoresEnTurno : ContentPage
 	}
 	public void SetListView()
 	{
-<<<<<<< HEAD
 		var trabajador = presenciaContext.SignedWorkers.Include(x => x.Worker).Include(x=>x.Worker.WorkGroup).Include(x=>x.Worker.User).ToList();
-=======
-		var trabajador = presenciaContext.TrabajadorEnTurno.Include(x => x.trabajador).Include(x=>x.trabajador.Equipo).Include(x=>x.trabajador.Usuario).ToList();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 		ListViewUsuarios.ItemsSource = trabajador;
 	}
 	public void OnItemSelected(object sender, SelectedItemChangedEventArgs e)

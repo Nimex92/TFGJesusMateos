@@ -37,18 +37,10 @@ public partial class PaginaFichar : ContentPage
 			BotonAcabarTarea.IsVisible = false;
 			BotonAcabarTarea.IsEnabled = false;
 		}
-
-<<<<<<< HEAD
 		var trab = presenciaContext.Workers
 			.Where(x => x.User.Username == username)
 			.Include(x => x.WorkGroup)
 			.Include(x => x.User)
-=======
-		var trab = presenciaContext.Trabajador
-			.Where(x => x.Usuario.Username == username)
-			.Include(x => x.Equipo)
-			.Include(x => x.Usuario)
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 			.FirstOrDefault();
 		worker = trab;
 
@@ -109,11 +101,7 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void CompruebaFichajes(string user)
 	{
-<<<<<<< HEAD
 		var Trabajador = presenciaContext.SignedWorkers.Where(x => x.Worker.User.Username == user).FirstOrDefault();
-=======
-		var Trabajador = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador.Usuario.Username == user).FirstOrDefault();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 		if (Trabajador is not null)
 		{
 			BotonFichar.IsVisible = false;
@@ -136,11 +124,7 @@ public partial class PaginaFichar : ContentPage
 	}
 	private void CompruebaTareas(string user)
 	{
-<<<<<<< HEAD
 		var trabajador = presenciaContext.StartedTasks.Where(x => x.Worker.User.Username == user).Include(x => x.Worker).Include(x => x.Task).FirstOrDefault();
-=======
-		var trabajador = presenciaContext.TareasComenzadas.Where(x => x.trabajador.Usuario.Username == user).Include(x => x.trabajador).Include(x => x.tarea).FirstOrDefault();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 		if (trabajador is not null)
 		{
 			BotonAcabarTarea.IsVisible = true;
@@ -165,19 +149,10 @@ public partial class PaginaFichar : ContentPage
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-<<<<<<< HEAD
 		var trabajador = presenciaContext.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
 		Signing fich = new Signing(trabajador, dt, "Entrada");
 		DbInsert.InsertSigning(fich, presenciaContext);
-		
-		
         presenciaContext.SignedWorkers.Add(new SignedWorker(trabajador, fich));
-=======
-		var trabajador = presenciaContext.Trabajador.Where(x => x.Usuario.Username == Username).Include(x => x.Equipo).FirstOrDefault();
-		Fichajes fich = new Fichajes(trabajador, dt, "Entrada");
-		OperacionesDBContext.InsertaFichaje(fich);
-        presenciaContext.TrabajadorEnTurno.Add(new TrabajadorEnTurno(trabajador, fich));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
         presenciaContext.SaveChanges();
         BotonFichar.IsVisible = false;
 		BotonFichar.IsEnabled = false;
@@ -193,49 +168,27 @@ public partial class PaginaFichar : ContentPage
 			{
 				var operacion = (d - dt);
 				string motivo = await DisplayPromptAsync("Usted llega temprano.", "¿Cual es la razon?");
-<<<<<<< HEAD
 				DbInsert.InsertLog(new Log("Temprano", "El trabajador " + trabajador.CardNumber + " Ha llegado " + operacion + "m antes. - " + dt), presenciaContext);
-=======
-				OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado " + operacion + "m antes. - " + dt));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 			}
 			if (dt > d.AddMinutes(5))
 			{
 				var operacion = (dt - d);
 				string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
-<<<<<<< HEAD
 				DbInsert.InsertLog(new Log("Retraso", "El trabajador " + trabajador.CardNumber + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt), presenciaContext);
 				DbInsert.InsertIssue(new Issue(trabajador,"Retraso de"+operacion,dt,false),presenciaContext);
 			}
 			if (dt > d && dt <= d.AddMinutes(5))
 			{
 				DbInsert.InsertLog(new Log("En hora", "El trabajador " + trabajador.CardNumber + " Ha llegado a tiempo - " + dt), presenciaContext);
-=======
-				OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt));
-				OperacionesDBContext.InsertaIncidencia(new Incidencia(trabajador,"Retraso de"+operacion,dt,false),presenciaContext);
-			}
-			if (dt > d && dt <= d.AddMinutes(5))
-			{
-				OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado a tiempo - " + dt));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 			}
 		}
 	}
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
-<<<<<<< HEAD
 			var trabajador = presenciaContext.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
 			DbInsert.InsertSigning(new Signing(trabajador, dt, "Entrada"), presenciaContext);
 			var TrabajadorEnTurno = presenciaContext.SignedWorkers.Where(x => x.Worker == trabajador).FirstOrDefault();
 			DbDelete.DeleteSignedWorker(TrabajadorEnTurno, presenciaContext);
-=======
-			var trabajador = presenciaContext.Trabajador.Where(x => x.Usuario.Username == Username).Include(x => x.Equipo).FirstOrDefault();
-			OperacionesDBContext.InsertaFichaje(new Fichajes(trabajador, dt, "Entrada"));
-			var TrabajadorEnTurno = presenciaContext.TrabajadorEnTurno.Where(x => x.trabajador == trabajador).FirstOrDefault();
-			OperacionesDBContext.BorraTrabajadorEnTurno(TrabajadorEnTurno, presenciaContext);
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
-			
-		
 				//presenciaContext.SignedWorkers.Remove(SignedWorkers);
 				//presenciaContext.SaveChanges();
 				BotonFichar.IsVisible = true;
@@ -256,29 +209,17 @@ public partial class PaginaFichar : ContentPage
 				{
 					var operacion = (d - dt);
 					string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
-<<<<<<< HEAD
 					DbInsert.InsertLog(new Log("Temprano", "El trabajador " + trabajador.CardNumber + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt), presenciaContext);
-=======
-					OperacionesDBContext.InsertaLog(new Log("Temprano", "El trabajador " + trabajador.NumeroTarjeta + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 				}
 				if (dt > d.AddMinutes(5))
 				{
 					var operacion = (dt - d);
 					string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
-<<<<<<< HEAD
 					DbInsert.InsertLog(new Log("Retraso", "El trabajador " + trabajador.CardNumber + " Ha salido " + operacion + "m tarde. - " + dt),presenciaContext);
 				}
 				if (dt > d && dt <= d.AddMinutes(5))
 				{
 					DbInsert.InsertLog(new Log("En hora", "El trabajador " + trabajador.CardNumber + " Ha llegado a tiempo - " + dt),presenciaContext);
-=======
-					OperacionesDBContext.InsertaLog(new Log("Retraso", "El trabajador " + trabajador.NumeroTarjeta + " Ha salido " + operacion + "m tarde. - " + dt));
-				}
-				if (dt > d && dt <= d.AddMinutes(5))
-				{
-					OperacionesDBContext.InsertaLog(new Log("En hora", "El trabajador " + trabajador.NumeroTarjeta + " Ha llegado a tiempo - " + dt));
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 				}
 			}
 	}

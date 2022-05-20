@@ -23,11 +23,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaGrupos = new List<string>();
 		var ListaTareas = new List<string>();
-<<<<<<< HEAD
 		//Para cada lista que haya en la seleccion WorkShifts, aÃ±ado al selector (Picker de la interfaz) El nombre del turno
-=======
-		//Para cada lista que haya en la seleccion Turno, añado al selector (Picker de la interfaz) El Nombre del turno
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 		SelectorGruposTrabajo.Items.Add("-- Selecciona equipo de trabajo.");
 		SelectorTareas.Items.Add("-- Selecciona tarea.");
 		foreach (WorkGroup equipo in equipos)
@@ -55,16 +51,12 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 
 		if(grupo is not null && tarea is not null)
         {
-<<<<<<< HEAD
 			grupo.Tasks.Add(tarea);
-			await DisplayAlert("Alert", "Se ha aÃ±adido '" + tarea.Name + "' a grupo: "+grupo.Name, "OK");
-			presenciaContext.Logs.Add(new Log("AÃ±adir", NombreUsuario + " ha aÃ±adido " + tarea.Name +" a grupo "+grupo.Name+ " - " + dt));
 			presenciaContext.SaveChanges();
-=======
-			OperacionesDBContext.AnadeTareaEquipoTrabajo(grupo,tarea,presenciaContext);
-			OperacionesDBContext.InsertaLog(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.NombreTarea + " a grupo " + grupo.Nombre + " - " + dt));
-			await DisplayAlert("Operacion correcta", "Se ha añadido '" + tarea.NombreTarea + "' a grupo: "+grupo.Nombre, "OK");
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
+			await DisplayAlert("Alert", "Se ha añadido '" + tarea.Name + "' a grupo: "+grupo.Name, "OK");
+			//DbInsert.AnadeTareaEquipoTrabajo(grupo,tarea,presenciaContext);
+			DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.Name + " a grupo " + grupo.Name + " - " + dt),presenciaContext);
+			await DisplayAlert("Operacion correcta", "Se ha añadido '" + tarea.Name + "' a grupo: "+grupo.Name, "OK");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
 		}
         else

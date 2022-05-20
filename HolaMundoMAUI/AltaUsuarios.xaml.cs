@@ -63,16 +63,10 @@ public partial class AltaUsuarios : ContentPage
 				if(BotonEsAdmin.IsChecked)
 					esAdmin = true;
 
-<<<<<<< HEAD
 				//Inserto usuario
 				bool inserta = DbInsert.InsertUser(new User(Username, Password,esAdmin),presenciaContext);
 				DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt),presenciaContext);
-=======
 				//Inserto Usuario
-				bool inserta = OperacionesDBContext.InsertaUsuario(new Usuarios(Username, Password,esAdmin));
-				presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt));
-				presenciaContext.SaveChanges();
->>>>>>> fb0fc5fb889192d67c03416bb018ef984a3d00be
 				if (inserta == true) 
 				{
 					//Activo label de aceptacion, se ha insertado.

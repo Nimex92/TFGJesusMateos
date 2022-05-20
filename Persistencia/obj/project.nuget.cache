@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NcnbeMb7XeowMX9a/Qfb8w7h7NWH022b5PLlDX9w1m84v5Qy078UDah+bTh+8RTdV7k2aTuD5cu5bl5v0kiurQ==",
+  "dgSpecHash": "D+d1s8/N6e3yH+LLedsgC9sPpiNbb5dNHl/6oBmD2orG3JltHPuMNNEhTdHBLSuGoLCI+eLKnNocZc2NckhBnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\Persistencia\\Persistencia.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",

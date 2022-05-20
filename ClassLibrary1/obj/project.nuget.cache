@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x1iMr+BDclSsmvfQMktIKOSw06DtfxpyVT0UrGRt4rqe2xXjtOt8cdQZbs2M76DX7JORnNxAMTYDcjkq+aygzw==",
+  "dgSpecHash": "IvEU84P1wCcpYj5a4yz/n1mXTBNiRti327MdZyTH0azC82U+nGt8MVd+lt6m1qRTdDqsvAJx/SZvRzoFOP+SCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\APP_MAUI\\ClassLibrary1\\ClassLibray.csproj",
+  "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",
