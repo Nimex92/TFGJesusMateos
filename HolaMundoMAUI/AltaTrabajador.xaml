@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AltaTrabajador"
+             BackgroundColor="#A29FA0">
+    <StackLayout>
+        <StackLayout
+                Margin="450,0"
+                Background="White"
+                WidthRequest="400"
+                HeightRequest="510">
+            
+            <Label  
+                Text="Tech Talent &#10;Alta de Trabajador"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                TextColor="#2B282D"/>
+            <StackLayout 
+                BackgroundColor="#2B282D" 
+                WidthRequest="300" 
+                HeightRequest="2"
+                Margin="0,5,0,0"
+                HorizontalOptions="Center"/>
+            <StackLayout>
+                <StackLayout x:Name="LayoutCampos"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0,10,0,0"
+                     WidthRequest="350"
+                     HeightRequest="350"
+                     BackgroundColor="#2B282D">
+                    
+                    <Entry x:Name="CampoNombre"
+                        Placeholder="Introduce Nombre:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Entry x:Name="CampoDni"
+                        Placeholder="Introduce DNI:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Entry x:Name="CampoNumeroSS"
+                        Placeholder="Introduce Numero S.S:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <HorizontalStackLayout
+                        Margin="0,10,0,0"
+                        WidthRequest="300">
+                        <Label Text="Selecciona Equipo&#10; de trabajo: " TextColor="White" FontAttributes="Bold"
+                               HorizontalOptions="Start" Margin="10,0,0,0"
+                               />
+                        <Picker
+                            WidthRequest="170"
+                            x:Name="Selector"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            HorizontalOptions="End"
+                            />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        Margin="0,10,0,0"
+                        WidthRequest="300">
+                        <Label Text="Selecciona&#10; categoria: " TextColor="White" FontAttributes="Bold"
+                               HorizontalOptions="End" Margin="10,0,0,0"
+                               />
+                        <Picker
+                            WidthRequest="170"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            x:Name="SelectorCategoria"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            />
+                    </HorizontalStackLayout>
+                   
+                    <Button 
+                        Text="Registrar"
+                        x:Name="BotonRegistrarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="RegistrarNuevoTrabajador"
+                        WidthRequest="300"/>
+                    <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        WidthRequest="300"/>
+                    
+                </StackLayout>
+                <Button
+                Text="Volver"
+                Margin="0,15,0,0"
+                BackgroundColor="Black"
+                x:Name="BotonCerrarSesionAdmin"
+                Clicked="VolverAlMain"
+                WidthRequest="300"
+                HeightRequest="30"
+                HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+                <Label
+                    Text=""
+                    x:Name="LabelAvisos"
+                    WidthRequest="300"
+                    HeightRequest="130"
+                    HorizontalOptions="Center"
+                    FontSize="16"
+                    Margin="30,0,0,0"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

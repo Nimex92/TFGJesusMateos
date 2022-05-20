@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AnadeDiaCalendario"
+             BackgroundColor="White"
+             Title="Añade dias a calendario laboral">
+    <StackLayout>
+        <Label  
+                Text="Tech Talent &#10;Añadir dia a calendario laboral"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                x:Name="LabelTitulo"/>
+        <StackLayout 
+                BackgroundColor="Black" 
+                WidthRequest="300" 
+                HeightRequest="2"
+                Margin="0,5,0,0"
+                HorizontalOptions="Center"/>
+        <StackLayout
+            HorizontalOptions="Center"
+            WidthRequest="320"
+            HeightRequest="240"
+            BackgroundColor="#828282"
+            Margin="0,10,0,0">
+            <Label Text="Calendario de:"
+                       TextColor="White"
+                       Margin="22,10,0,0"
+                       />
+            <Picker
+                        x:Name="SelectorCalendario"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+            <Label Text="Selecciona motivo:"
+                       TextColor="White"
+                       Margin="22,10,0,0"
+                       />
+            <Picker
+                        x:Name="SelectorMotivo"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+            <Label Text="Selecciona dia a introducir"
+                       TextColor="White"
+                       Margin="22,0,0,0"/>
+            <DatePicker
+                    x:Name="SelectorFecha"
+                    BackgroundColor="Black"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,0"/>
+
+            <Button
+                            x:Name="BotonRegistrar"
+                            Text="Registrar"
+                            Clicked="BotonRegistrar_Clicked"
+                            Margin="0,10,0,0"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"
+                            IsVisible="True"
+                            IsEnabled="True"/>
+            <Button
+                            x:Name="BotonActualizar"
+                            Text="Actualizar"
+                            Clicked="BotonActualizar_Clicked"
+                            Margin="0,10,0,0"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"
+                            IsVisible="False"
+                            IsEnabled="False"/>
+            <Button
+                            x:Name="BotonSolicitar"
+                            Text="Solicitar"
+                            Clicked="BotonPideVacaciones_Clicked"
+                            Margin="0,10,0,0"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"
+                            IsVisible="False"
+                            />
+            
+        </StackLayout>
+        <StackLayout>
+            <Button
+                x:Name="BotonVolver"
+                Text="Volver"
+                WidthRequest="200"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"
+                Clicked="BotonVolver_Clicked"/>
+            <Button
+                x:Name="BotonVolverFichar"
+                Text="Volver"
+                WidthRequest="200"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"
+                Clicked="BotonVolverFichar_Clicked"
+                IsEnabled="False"
+                IsVisible="False"/>
+        </StackLayout>
+
+        </StackLayout> 
+</ContentPage>

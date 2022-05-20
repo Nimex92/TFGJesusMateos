@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AltaTareaTrabajo"
+             Title="Alta tarea de trabajo"
+             BackgroundColor="White">
+    <StackLayout
+        Margin="0,20,0,0">
+        <Label 
+                Text="Tech Talent &#10; Alta tarea de trabajo"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.Description="Tech Talent Fiching System"
+                FontSize="20"
+                HorizontalOptions="Center"
+                x:Name="TituloEmpresa"/>
+        <StackLayout>
+            <StackLayout x:Name="LayoutCampos"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0,10,0,0"
+                     WidthRequest="320"
+                     HeightRequest="220"
+                     BackgroundColor="#828282">
+            <Entry x:Name="CampoNombre"
+                        Placeholder="Nombre tarea:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="22"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="CampoDescripcion"
+                        Placeholder="Descripcion tarea:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="22"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                <HorizontalStackLayout
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0">
+                    <Label
+                        Text="Horas estimadas: "
+                        TextColor="White"
+                        VerticalTextAlignment="Center"/>
+                    <Label
+                        x:Name="LabelHoras"
+                        Text="0"
+                        FontSize="16"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        WidthRequest="50"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalOptions="Center"/>
+                    <Stepper x:Name="step"
+                         Minimum="0"
+                         Maximum="24"
+                         Increment="1"
+                         Value="0"
+                         />
+
+                </HorizontalStackLayout>
+                <Button 
+                        Text="Registrar"
+                        x:Name="BotonRegistrarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        Clicked="RegistraNuevaTarea"
+                        BackgroundColor="Black"
+                        WidthRequest="300"/>
+                <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        BackgroundColor="Black"
+                        WidthRequest="300"
+                        IsEnabled="False"
+                        IsVisible="False"/>
+            </StackLayout>
+            <Button
+                Text="Volver"
+                Clicked="IrAlMain"
+                WidthRequest="320"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"/>
+            <Label
+                x:Name="LabelAvisos"
+                Text=""
+                TextColor="Black"
+                WidthRequest="320"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                Margin="20,0,0,0"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

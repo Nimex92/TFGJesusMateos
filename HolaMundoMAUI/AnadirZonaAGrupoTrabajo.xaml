@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AnadirZonaGrupoTrabajo"
+             Title="Añadir zonas a grupo de trabajo"
+             BackgroundColor="White">
+    <StackLayout>
+        <Label  
+                Text="Tech Talent &#10;Añadir zonas a grupo de trabajo"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        <StackLayout 
+                BackgroundColor="Black" 
+                WidthRequest="300" 
+                HeightRequest="2"
+                Margin="0,5,0,0"
+                HorizontalOptions="Center"/>
+        <StackLayout
+            HorizontalOptions="Center"
+            WidthRequest="320"
+            HeightRequest="170"
+            BackgroundColor="#828282"
+            Margin="0,10,0,0">
+            <Label Text="Selecciona turno de trabajo"
+                       TextColor="White"
+                       Margin="22,10,0,0"
+                       />
+            <Picker
+                        x:Name="SelectorGruposTrabajo"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+            <Label Text="Selecciona zona"
+                       TextColor="White"
+                       Margin="22,0,0,0"/>
+            <Picker
+                        x:Name="SelectorZonas"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+            <Button
+                            x:Name="BotonRegistrar"
+                            Text="Aplicar"
+                            Clicked="BotonRegistrar_Clicked"
+                            Margin="0,10,0,0"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout>
+            <Button
+                x:Name="BotonVolver"
+                Text="Volver"
+                WidthRequest="200"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"
+                Clicked="BotonVolver_Clicked"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

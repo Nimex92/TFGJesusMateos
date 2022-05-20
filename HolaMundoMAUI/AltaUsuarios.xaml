@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMundoMAUI.AltaUsuarios"
+             Title="Alta Usuarios"
+             BackgroundColor="White">
+    <StackLayout>
+        <StackLayout
+                Margin="450,30">
+            
+            <Label  
+                Text="Tech Talent &#10;Alta de usuario"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <StackLayout 
+                BackgroundColor="Black" 
+                WidthRequest="300" 
+                HeightRequest="2"
+                Margin="0,5,0,0"
+                HorizontalOptions="Center"/>
+            <StackLayout>
+                <StackLayout x:Name="LayoutCampos"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="0,10,0,0"
+                     WidthRequest="320"
+                     HeightRequest="290"
+                     BackgroundColor="#828282">
+                    <Label
+                        x:Name="LabelUsuario"
+                        Margin="0,15,0,0"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        HeightRequest="40"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        IsEnabled="False"
+                        IsVisible="False"/>
+                    <Entry x:Name="CampoUsuario"
+                        Placeholder="Introduce usuario:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                    <Entry x:Name="CampoContrasena"
+                        Placeholder="Introduce Contraseña:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        IsPassword="False"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        
+                        />
+                    <Entry x:Name="CampoRepiteContrasena"
+                        Keyboard="Chat"
+                        Placeholder="Repite Contraseña:"
+                        PlaceholderColor="Black"
+                        Margin="0,15,0,0"
+                        IsPassword="False"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="300"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        
+                        />
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="160,10,0,0"
+                        BackgroundColor="White"
+                        WidthRequest="130">
+                        <Label
+                            Text="¿Es admin?"
+                            FontSize="18"
+                            Margin="10,0,5,0"
+                            VerticalTextAlignment="Center"/>
+                        <CheckBox 
+                            x:Name="BotonEsAdmin"
+                            IsChecked="false"
+                            />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                    <Button 
+                        Text="Registrar"
+                        x:Name="BotonRegistrarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="RegistrarNuevoUsuario"
+                        WidthRequest="300"/>
+                        <Button 
+                        Text="Actualizar"
+                        x:Name="BotonActualizarAdmin"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,0"
+                        BackgroundColor="Black"
+                        Clicked="BotonActualizarAdmin_Clicked"
+                        WidthRequest="300"
+                        IsVisible="False"
+                        IsEnabled="False"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <Button
+                Text="Volver"
+                Margin="0,15,0,0"
+                BackgroundColor="Black"
+                x:Name="BotonCerrarSesionAdmin"
+                Clicked="VolverAlMain"
+                WidthRequest="300"
+                HeightRequest="30"
+                HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+                <Label
+                    Text=""
+                    x:Name="LabelAvisos"
+                    WidthRequest="300"
+                    HeightRequest="130"
+                    HorizontalOptions="Center"
+                    FontSize="16"
+                    Margin="30,0,0,0"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

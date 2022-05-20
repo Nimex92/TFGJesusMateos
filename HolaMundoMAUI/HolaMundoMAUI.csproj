@@ -1,0 +1,207 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>HolaMundoMAUI</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+
+		<!-- Display name -->
+		<ApplicationTitle>HolaMundoMAUI</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.holamundomaui</ApplicationId>
+		<ApplicationId Condition="$(TargetFramework.Contains('-windows'))">64A2AAE6-5EAB-4226-9803-E2A346C5389C</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- Required for C# Hot Reload -->
+		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<!-- Required - WinUI does not yet have buildTransitive for everything -->
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Remove="AltaGrupoTrabajo.xaml" />
+	  <Page Remove="AltaTareaTrabajo.xaml" />
+	  <Page Remove="AltaTrabajador.xaml" />
+	  <Page Remove="AltaUsuarios.xaml" />
+	  <Page Remove="AnadeDiaCalendario.xaml" />
+	  <Page Remove="AnadirTrabajadorEquipoTrabajo.xaml" />
+	  <Page Remove="AnadirTurnoAEquipoTrabajo.xaml" />
+	  <Page Remove="BorrarTrabajadresDeGrupo.xaml" />
+	  <Page Remove="CalendarioLalboral.xaml" />
+	  <Page Remove="EliminarTrabajador.xaml" />
+	  <Page Remove="ModificaGrupoTrabajo.xaml" />
+	  <Page Remove="PaginaAdmin.xaml" />
+	  <Page Remove="TrabajadoresEnTurno.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="itext7" Version="7.2.2" />
+	  <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.3.1" />
+	  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.3" />
+	  <PackageReference Include="NUnit" Version="3.13.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ClassLibrary1\ClassLibray.csproj" />
+	  <ProjectReference Include="..\Persistencia\Persistencia.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="AltaTrabajador.xaml.cs">
+	    <DependentUpon>AltaTrabajador.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadirTurnoAEquipoTrabajo.xaml.cs">
+	    <DependentUpon>AnadirTurnoAEquipoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="BorrarTrabajadresDeGrupo.xaml.cs">
+	    <DependentUpon>BorrarTrabajadresDeGrupo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MainPage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AltaUsuarios.xaml.cs">
+	    <DependentUpon>AltaUsuarios.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AltaGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AltaGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ModificaGrupoTrabajo.xaml.cs">
+	    <DependentUpon>ModificaGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="EliminarTrabajador.xaml.cs">
+	    <DependentUpon>EliminarTrabajador.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalendarioLalboral.xaml.cs">
+	    <DependentUpon>CalendarioLalboral.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AltaTareaTrabajo.xaml.cs">
+	    <DependentUpon>AltaTareaTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AltaZona.xaml.cs">
+	    <DependentUpon>AltaZona.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ModificarZona.xaml.cs">
+	    <DependentUpon>ModificarZona.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadeTareasAGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AnadeTareasAGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadirZonaAGrupoTrabajo.xaml.cs">
+	    <DependentUpon>AnadirZonaAGrupoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadirTrabajadorEquipoTrabajo.xaml.cs">
+	    <DependentUpon>AnadirTrabajadorEquipoTrabajo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="AnadeDiaCalendario.xaml.cs">
+	    <DependentUpon>AnadeDiaCalendario.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="PaginaAdmin.xaml.cs">
+	    <DependentUpon>PaginaAdmin.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="PaginaFichar.xaml.cs">
+	    <DependentUpon>PaginaFichar.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="AltaTrabajador.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadirTurnoAEquipoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="BorrarTrabajadresDeGrupo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaUsuarios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ModificaGrupoTrabajo.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EliminarTrabajador.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CalendarioLalboral.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaTareaTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AltaZona.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ModificarZona.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadeTareasAGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadirZonaAGrupoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadirTrabajadorEquipoTrabajo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AnadeDiaCalendario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PaginaAdmin.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TrabajadoresEnTurno.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
+		<OutputType>WinExe</OutputType>
+		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+	</PropertyGroup>
+	
+</Project>
