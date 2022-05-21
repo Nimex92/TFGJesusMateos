@@ -44,7 +44,6 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 		var worker = p.Workers.Where(x => x.Name == workerSearch).Include(x=>x.WorkGroup).FirstOrDefault();
 		var workGroupList = workGroup.Workers;
 		worker.BelongstoWorkGroups = "";
-
 		worker.WorkGroup.Remove(workGroup);
 		await DisplayAlert("Alert", workerSearch + " ya no pertenece a " + WorkGroupSearch, "Vale");
 		foreach (WorkGroup workgroup in worker.WorkGroup)
@@ -59,7 +58,5 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 			}
 		}
 		p.SaveChanges();
-
-
 	}
 }

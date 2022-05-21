@@ -10,8 +10,7 @@
                      WidthRequest="1920"
                      HeightRequest="70"
                      ZIndex="998"
-                     Margin="30,-70,0,0"
-                     >
+                     Margin="30,-70,0,0">
             <HorizontalStackLayout x:Name="BotonCerrarSession" 
                                    HorizontalOptions="Center"
                                    Margin="1200,20,0,0">
@@ -173,7 +172,7 @@
                     x:Name="ListViewTrabajadores" 
                     WidthRequest="700"  
                     HorizontalOptions="Center" 
-                    ItemSelected="OnItemSelectedTrabajadores"
+                    ItemSelected="OnItemSelectedWorkers"
                     SeparatorColor="Black"
                     SeparatorVisibility="Default">
                     <ListView.ItemTemplate>
@@ -327,7 +326,7 @@
                 <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
                     <ListView 
                         x:Name="ListViewGrupos" 
-                        ItemSelected="OnItemSelectedGruposTrabajo"
+                        ItemSelected="OnItemSelectedWorkShifts"
                         SeparatorColor="Black"
                         SeparatorVisibility="Default"> 
                         <ListView.ItemTemplate>
@@ -476,7 +475,7 @@
                 x:Name="ListViewZonas" 
                 WidthRequest="700"  
                 HorizontalOptions="Center" 
-                ItemSelected="OnItemSelectedZonas"
+                ItemSelected="OnItemSelectedPlaces"
                 SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -586,7 +585,7 @@
                         x:Name="ListViewTareas" 
                         WidthRequest="720"  
                         HorizontalOptions="Center" 
-                        ItemSelected="OnItemSelectedTareas"
+                        ItemSelected="OnItemSelectedWorkTasks"
                         SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -700,7 +699,7 @@
                         x:Name="ListViewEquipos" 
                         WidthRequest="720"
                         HorizontalOptions="Center" 
-                        ItemSelected="OnItemSelectedEquiposTrabajo"
+                        ItemSelected="OnItemSelectedWorkGroups"
                         SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -817,7 +816,7 @@
                         x:Name="ListViewCalendario" 
                         WidthRequest="720"
                         HorizontalOptions="Center" 
-                        ItemSelected="OnItemSelectedCalendario"
+                        ItemSelected="OnItemSelectedCalendar"
                         SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -943,7 +942,7 @@
                         x:Name="ListViewIncidencias" 
                         WidthRequest="720"
                         HorizontalOptions="Center" 
-                        ItemSelected="OnItemSelectedCalendario"
+                        ItemSelected="OnItemSelectedCalendar"
                         SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>

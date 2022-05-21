@@ -6948,11 +6948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\PersistenciaTests\\PersistenciaTests.csproj",
+      "projectUniqueName": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\PersistenciaTests\\PersistenciaTests.csproj",
       "projectName": "PersistenciaTests",
-      "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\PersistenciaTests\\PersistenciaTests.csproj",
+      "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\PersistenciaTests\\PersistenciaTests.csproj",
       "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\PersistenciaTests\\obj\\",
+      "outputPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\PersistenciaTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6974,8 +6974,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
             }
           }
         }

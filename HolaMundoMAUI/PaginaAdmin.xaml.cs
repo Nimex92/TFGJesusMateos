@@ -23,7 +23,7 @@ public partial class PaginaAdmin : ContentPage
     WorkGroup WorkGroup;
     Calendar Calendar;
     Day Day;
-    bool activeWorker,activeWorkShift,activePlace,activeWorkTask,activeWorkGroup,activeDay, activePayroll,activeIssue,activeVacationsRequest;
+    bool activeWorker, activeWorkShift, activePlace, activeWorkTask, activeWorkGroup, activeDay, activePayroll, activeIssue, activeVacationsRequest;
     Db db = new Db();
     public PaginaAdmin(string username)
     {
@@ -37,11 +37,11 @@ public partial class PaginaAdmin : ContentPage
         activeVacationsRequest = false;
 
         InitializeComponent();
-        SetListViewTrabajadores();
-        SetListViewGruposTrabajo();
-        SetListViewTareas();
-        SetListViewZonas();
-        SetListViewEquiposTrabajo();
+        SetListViewWorkers();
+        SetListViewWorkShifts();
+        SetListViewWorkTasks();
+        SetListViewPlaces();
+        SetListViewWorkGroups();
         CompruebaIncidencias();
         Username = username;
         LabelNameUser.Text = username;
@@ -58,11 +58,11 @@ public partial class PaginaAdmin : ContentPage
         activeVacationsRequest = false;
 
         InitializeComponent();
-        SetListViewTrabajadores();
-        SetListViewGruposTrabajo();
-        SetListViewZonas();
-        SetListViewTareas();
-        SetListViewEquiposTrabajo();
+        SetListViewWorkers();
+        SetListViewWorkShifts();
+        SetListViewPlaces();
+        SetListViewWorkTasks();
+        SetListViewWorkGroups();
         CompruebaIncidencias();
 
         this.Username = username;
@@ -109,80 +109,72 @@ public partial class PaginaAdmin : ContentPage
 
     }
     //Settear ListViews de la ventana ////////////////////////////////////////////////////////////
-    public void SetListViewGruposTrabajo()
+    public void SetListViewWorkShifts()
     {
-        PresenciaContext presenciaContext = new PresenciaContext();
-        var turnos = presenciaContext.WorkShifts.Where(x=>x.Deleted==false).OrderBy(x=>x.Name).ToList();
-        ListViewGrupos.ItemsSource = turnos;
-        if (turnos.Count > 0)
-            ListViewGrupos.SelectedItem = turnos[0];
+        var workShifts = p.WorkShifts.Where(x => x.Deleted == false).OrderBy(x => x.Name).ToList();
+        ListViewGrupos.ItemsSource = workShifts;
+        if (workShifts.Count > 0)
+            ListViewGrupos.SelectedItem = workShifts[0];
     }
-    public void SetListViewTrabajadores()
+    public void SetListViewWorkers()
     {
-        PresenciaContext p = new PresenciaContext();
-        var workers = p.Workers.Include(x=>x.User).ToList();
+        var workers = p.Workers.Include(x => x.User).ToList();
         ListViewTrabajadores.ItemsSource = workers;
         if (workers.Count > 0)
             ListViewTrabajadores.SelectedItem = workers[0];
     }
-    public void SetListViewZonas()
+    public void SetListViewPlaces()
     {
-        PresenciaContext presenciaContext = new PresenciaContext();
-        var zones = presenciaContext.Places.ToList();
+        var zones = p.Places.ToList();
         ListViewZonas.ItemsSource = zones;
         if (zones.Count > 0)
             ListViewZonas.SelectedItem = zones[0];
     }
-    public void SetListViewTareas()
+    public void SetListViewWorkTasks()
     {
-        PresenciaContext presenciaContext = new PresenciaContext();
-        var tareas = presenciaContext.WorkTasks.ToList();
+        var tareas = p.WorkTasks.ToList();
         ListViewTareas.ItemsSource = tareas;
         if (tareas.Count > 0)
-        {
             ListViewTareas.SelectedItem = tareas[0];
-        }
+
     }
-    public void SetListViewEquiposTrabajo()
+    public void SetListViewWorkGroups()
     {
-        PresenciaContext presenciaContext = new PresenciaContext();
-        var equipos = presenciaContext.WorkGroups.ToList();
+        var equipos = p.WorkGroups.ToList();
         ListViewEquipos.ItemsSource = equipos;
         if (equipos.Count > 0)
-        {
             ListViewEquipos.SelectedItem = equipos[0];
-        }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////// Lo que sucede cuando pulsamos en cada uno de los list view /////////////////////////
-    public void OnItemSelectedTrabajadores(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedWorkers(object sender, SelectedItemChangedEventArgs e)
     {
         Worker item = e.SelectedItem as Worker;
         Worker = item;
-        Calendar = p.Calendars.Where(x => x.Worker == item).Include(x=>x.Worker).FirstOrDefault();
+        Calendar = p.Calendars.Where(x => x.Worker == item).Include(x => x.Worker).FirstOrDefault();
     }
-    public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedWorkShifts(object sender, SelectedItemChangedEventArgs e)
     {
         WorkShift item = e.SelectedItem as WorkShift;
         WorkShift = item;
     }
-    public void OnItemSelectedEquiposTrabajo(object sender, SelectedItemChangedEventArgs e)
-    {
+    public void OnItemSelectedWorkGroups(object sender, SelectedItemChangedEventArgs e)
+    { 
         WorkGroup item = e.SelectedItem as WorkGroup;
         WorkGroup = item;
     }
-    public void OnItemSelectedZonas(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedPlaces(object sender, SelectedItemChangedEventArgs e)
     {
         Places item = e.SelectedItem as Places;
         Place = item;
     }
-    public void OnItemSelectedCalendario(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedCalendar(object sender, SelectedItemChangedEventArgs e)
     {
         Day item = e.SelectedItem as Day;
         Day = item;
     }
-    public void OnItemSelectedTareas(object sender, SelectedItemChangedEventArgs e)
+    public void OnItemSelectedWorkTasks(object sender, SelectedItemChangedEventArgs e)
     {
         WorkTask item = e.SelectedItem as WorkTask;
         WorkTask = item;

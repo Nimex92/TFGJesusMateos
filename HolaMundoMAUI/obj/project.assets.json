@@ -65802,11 +65802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+      "projectUniqueName": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
       "projectName": "HolaMundoMAUI",
-      "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+      "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
       "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\obj\\",
+      "outputPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -65832,44 +65832,44 @@
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
             }
           }
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041",
           "projectReferences": {
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
             },
-            "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+            "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+              "projectPath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
             }
           }
         }
