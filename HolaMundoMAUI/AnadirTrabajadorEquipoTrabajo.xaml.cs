@@ -7,61 +7,53 @@ namespace HolaMundoMAUI;
 public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 {
 	PresenciaContext p = new PresenciaContext();
-	string nombreUsuario;
-	public AnadeTrabajadorEquipoTrabajo(string user)
+	string Username;
+	public AnadeTrabajadorEquipoTrabajo(string username)
 	{
-		nombreUsuario = user;
+		Username = username;
 		InitializeComponent();
 		SetPickers();
 	}
-
 	private void SetPickers()
 	{
-		var equipos = p.WorkGroups;
-		var trabajadores = p.Workers;
-
-		//Recojo todos los Turnos de la tabla de MySql
-		//Creo una lista para guardar todos los turnos existentes
-		var ListaGrupos = new List<string>();
-		var ListaTrabajador = new List<string>();
+		var workGroupList = p.WorkGroups.ToList();
+		var workerList = p.Workers.ToList();
 		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
-		SelectorGruposTrabajo.Items.Add("-- Selecciona equipo de trabajo.");
-		SelectorTareas.Items.Add("-- Selecciona Trabajador.");
-		foreach (WorkGroup equipo in equipos)
+		WorkGroupSelector.Items.Add("-- Selecciona equipo de trabajo.");
+		WorkerSelector.Items.Add("-- Selecciona Trabajador.");
+		foreach (WorkGroup workGroup in workGroupList)
 		{
-			SelectorGruposTrabajo.Items.Add(equipo.Name);
+			WorkGroupSelector.Items.Add(workGroup.Name);
 		}
-		foreach (Worker t in trabajadores)
+		foreach (Worker worker in workerList)
 		{
-			SelectorTareas.Items.Add(t.Name);
+			WorkerSelector.Items.Add(worker.Name);
 		}
-		SelectorGruposTrabajo.SelectedIndex = 0;
-		SelectorTareas.SelectedIndex = 0;
+		if (workGroupList.Count > 0) { WorkGroupSelector.SelectedIndex = 0; }
+		if (workerList.Count > 0) { WorkerSelector.SelectedIndex = 0; }
 	}
-
-    private void BotonVolver_Clicked(object sender, EventArgs e)
+    private void BackButton_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 6));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
     }
-
-    private async void BotonRegistrar_Clicked(object sender, EventArgs e)
+    private async void SubminButton_Clicked(object sender, EventArgs e)
     {
-		string BuscaEquipo = SelectorGruposTrabajo.SelectedItem.ToString();
-		string BuscaTrabajador = SelectorTareas.SelectedItem.ToString();
-		var EquipoTrabajo = p.WorkGroups.Where(x => x.Name == BuscaEquipo).Include(x=>x.Workers).FirstOrDefault();
-		var Trabajador = p.Workers.Where(x => x.Name == BuscaTrabajador).Include(x=>x.WorkGroup).FirstOrDefault();
-		var Equipos = EquipoTrabajo.Workers;
+		string workGroupSearch = WorkGroupSelector.SelectedItem.ToString();
+		string workerSearch = WorkerSelector.SelectedItem.ToString();
+		var workGroup = p.WorkGroups.Where(x => x.Name == workGroupSearch).Include(x=>x.Workers).FirstOrDefault();
+		var worker = p.Workers.Where(x => x.Name == workerSearch).Include(x=>x.WorkGroup).FirstOrDefault();
+		var workerList = workGroup.Workers;
             
-		if (Equipos.Contains(Trabajador))
+		if (workerList.Contains(worker))
         {
-			await DisplayAlert("Alert", "El trabajador ya esta asignado", "Vale");
+			await DisplayAlert("Error", "El trabajador ya esta asignado", "Vale");
         }
         else
         {
-			EquipoTrabajo.Workers.Add(Trabajador);
-			Trabajador.BelongsToWorkShifts += " - "+BuscaEquipo;
+			workGroup.Workers.Add(worker);
+			worker.BelongstoWorkGroups += " - "+workGroupSearch;
 			p.SaveChanges();
-			await DisplayAlert("Alert", "Se ha asignado correctamente " + Trabajador.Name + " a " + EquipoTrabajo.Name, "Vale");
+			await DisplayAlert("Success", "Se ha asignado correctamente " + worker.Name + " a " + workGroup.Name, "Vale");
         }
 	}
 }

@@ -68,7 +68,6 @@
 	  <Page Remove="EliminarTrabajador.xaml" />
 	  <Page Remove="ModificaGrupoTrabajo.xaml" />
 	  <Page Remove="PaginaAdmin.xaml" />
-	  <Page Remove="TrabajadoresEnTurno.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -192,9 +191,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PaginaAdmin.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="TrabajadoresEnTurno.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -4,14 +4,13 @@
              x:Class="HolaMundoMAUI.PaginaFichar"
              BackgroundColor="#A29FA0">
     <StackLayout>
-
         <StackLayout x:Name="BarraSuperior"
                      BackgroundColor="#2B282D"
                      WidthRequest="1920"
                      HeightRequest="70"
                      ZIndex="998"
                      Margin="30,-70,0,0">
-            <Label x:Name="Reloj"
+            <Label x:Name="Clock"
                    FontSize="28"
                    TextColor="White"
                    HorizontalOptions="Center"
@@ -19,17 +18,17 @@
                    WidthRequest="300"
                    HeightRequest="90"
                    Margin="300,25,0,0"/>
-            <HorizontalStackLayout x:Name="BotonCerrarSession" 
+            <HorizontalStackLayout x:Name="LogoutButton" 
                                    HorizontalOptions="Center"
                                    Margin="1200,-90,0,0">
                 
                 <ImageButton Source="logout.png"
                      VerticalOptions="Center"
-                     Clicked="BotonCerrarSesion_Clicked"
+                     Clicked="LogoutButton_Clicked"
                      WidthRequest="30"/>
                 <Button Text="Cerrar sesión"
                    HorizontalOptions="Center"
-                   Clicked="BotonCerrarSesion_Clicked"
+                   Clicked="LogoutButton_Clicked"
                    TextColor="White"
                    BackgroundColor="#2B282D"/>
             </HorizontalStackLayout>
@@ -66,25 +65,25 @@
                         FontAttributes="Bold"
                         Margin="15,0,15,0"/>
             </StackLayout>
-            <StackLayout x:Name="BotonCalendario">
+            <StackLayout x:Name="Calendar">
                 <ImageButton
-                    x:Name="BtnCalendarioTrabajador"
+                    x:Name="CalendarButton"
                     Source="calendariotrabajador.png"
                     WidthRequest="120"
                     HeightRequest="70"
-                    Clicked="BtnCalendario_Clicked"/>
+                    Clicked="CalendarButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BtnPedirVacacionesTrabajador">
+            <StackLayout x:Name="VacationRequest">
                 <ImageButton
-                    x:Name="BotonPedirVacacionesTrabajador"
+                    x:Name="VacationRequestButton"
                     Source="pedirvacacionestrabajador.png"
                     WidthRequest="120"
                     HeightRequest="70"
-                    Clicked="BtnPedirVacaciones_Clicked"/>
+                    Clicked="VacationRequestButton_Clicked"/>
             </StackLayout>
         </FlexLayout >
         <FlexLayout>
-            <StackLayout x:Name="CuerpoPrincipal" IsVisible="True"
+            <StackLayout x:Name="MainBody" IsVisible="True"
                              Margin="300,-650,0,0"
                              HorizontalOptions="Center"
                              VerticalOptions="Center"
@@ -92,7 +91,7 @@
                              WidthRequest="350"
                              BackgroundColor="White">
                 <Button
-                        x:Name="BotonFichar"
+                        x:Name="CheckInButton"
                         Text="Comenzar &#10; jornada"
                         TextColor="White"
                         FontSize="24"
@@ -106,7 +105,7 @@
                         IsEnabled="True"
                         IsVisible="True"/>
             <Button
-                        x:Name="BotonPlegar"
+                        x:Name="CheckOutButton"
                         Text="Terminar &#10; jornada"
                         TextColor="White"
                         FontSize="24"
@@ -127,7 +126,7 @@
                         IsEnabled="False"
                         IsVisible="False"/>
                 <Picker
-                        x:Name="SelectorTareas"
+                        x:Name="WorkTaskSelector"
                         BackgroundColor="Black"
                         WidthRequest="300"
                         IsEnabled="False"
@@ -138,7 +137,7 @@
                     HorizontalOptions="Center"
                     Margin="70,10,0,0">
                 <Button
-                        x:Name="BotonIniciarTarea"
+                        x:Name="WorkTaskStartButton"
                         Text="Iniciar"
                         BackgroundColor="Green"
                         WidthRequest="100"
@@ -147,7 +146,7 @@
                         Clicked="BotonIniciarTarea_Clicked"
                         Margin="130,0,0,0"/>
                 <Button
-                        x:Name="BotonAcabarTarea"
+                        x:Name="WorkTaskEndButton"
                         Text="Acabar"
                         BackgroundColor="Red"
                         WidthRequest="100"
@@ -166,18 +165,21 @@
                              BackgroundColor="White"
                              IsVisible="False">
                 <Label 
-                        Text="Tech Talent &#10; Calendario laboral"
+                        Text="Calendario laboral"
                         TextColor="Black"
                         FontAttributes="Bold"
                         HorizontalTextAlignment="Center"
-                        SemanticProperties.Description="Tech Talent Fiching System"
                         FontSize="20"
                         HorizontalOptions="Center"
                         Margin="0,10,0,0"
                         x:Name="LabelTitulo7"/>
 
-                <HorizontalStackLayout Margin="100,0,0,0" VerticalOptions="Center" HorizontalOptions="Center"
-                                 HeightRequest="20" WidthRequest="800">
+                <HorizontalStackLayout 
+                    Margin="100,0,0,0" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"       
+                    HeightRequest="20" 
+                    WidthRequest="800">
                     <Label 
                             Text="Motivo"
                             Margin="60,0,0,0"
@@ -201,7 +203,6 @@
                             x:Name="ListViewCalendario" 
                             WidthRequest="720"
                             HorizontalOptions="Center" 
-                            ItemSelected="ListViewCalendario_ItemSelected"
                             SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>

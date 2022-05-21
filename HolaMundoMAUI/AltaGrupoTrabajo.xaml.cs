@@ -6,61 +6,62 @@ namespace HolaMundoMAUI;
 
 public partial class AltaGrupoTrabajo : ContentPage
 {
-	string NombreUsuario;
-	DateTime dt = DateTime.Now;
-	string NombreEquipoTrabajo;
-	string Turno;
-	PresenciaContext presenciaContext = new PresenciaContext();
-	WorkGroup Eq;
+	string Username;
+	DateTime DateTime = DateTime.Now;
+	string WorkGroupName;
+	string WorkShiftName;
+	PresenciaContext p;
+	Db db = new Db();
+	WorkGroup WorkGroup;
 	public AltaGrupoTrabajo(string user)
 	{
 		InitializeComponent();
-		NombreUsuario = user;
+		Username = user;
 	}
-	public AltaGrupoTrabajo(string user,string equipo,int actualiza)
+	public AltaGrupoTrabajo(string user,string workGroup,int option)
 	{
 		InitializeComponent();
-		NombreUsuario = user;
-		NombreEquipoTrabajo = equipo;
-		CampoNombre.Text = equipo;
-        switch (actualiza)
+		Username = user;
+		WorkGroupName = workGroup;
+		NameField.Text = workGroup;
+        switch (option)
         {
 			case 0:
-				BotonRegistrarAdmin.IsVisible = true;
-				BotonRegistrarAdmin.IsEnabled = true;
-				BotonActualizarAdmin.IsVisible = false;
-				BotonActualizarAdmin.IsEnabled = false;
-				TituloEmpresa.Text = "Tech Talent" + Environment.NewLine + "Añadir trabajador a equipo de trabajo";
+				RegisterButton.IsVisible = true;
+				RegisterButton.IsEnabled = true;
+				UpdateButton.IsVisible = false;
+				UpdateButton.IsEnabled = false;
+				Title.Text = "Tech Talent" + Environment.NewLine + "Añadir trabajador a equipo de trabajo";
 				break;
 			case 1:
-				BotonRegistrarAdmin.IsVisible = false;
-				BotonRegistrarAdmin.IsEnabled = false;
-				BotonActualizarAdmin.IsVisible = true;
-				BotonActualizarAdmin.IsEnabled = true;
-				var EquipoEditar = presenciaContext.WorkGroups.Where(x => x.Name == CampoNombre.Text).FirstOrDefault();
-				Eq = EquipoEditar;
-				TituloEmpresa.Text = "Tech Talent" + Environment.NewLine + "Revocar trabajador de equipo de trabajo";
+				RegisterButton.IsVisible = false;
+				RegisterButton.IsEnabled = false;
+				UpdateButton.IsVisible = true;
+				UpdateButton.IsEnabled = true;
+				var FindWorkGroup = p.WorkGroups.Where(x => x.Name == NameField.Text).FirstOrDefault();
+				WorkGroup = FindWorkGroup;
+				Title.Text = "Revocar trabajador de equipo de trabajo";
 				break;
         }
 	}
 	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
 	{
-		PresenciaContext presenciaContext = new PresenciaContext();
-		if (CampoNombre.Text.Equals("")==false)
+		PresenciaContext p = new PresenciaContext();
+		if (NameField.Text.Equals("")==false)
 		{
-			string NombreEquipo = CampoNombre.Text;
-			var EquipoExiste = presenciaContext.WorkGroups.Where(x => x.Name == NombreEquipo).FirstOrDefault();
-			if (EquipoExiste is not null)
+			string WorkGroupName = NameField.Text;
+			var WorkGroup = p.WorkGroups.Where(x => x.Name == WorkGroupName).FirstOrDefault();
+			if (WorkGroup is not null)
 			{
 				await DisplayAlert("Alert", "El equipo de trabajo ya existe.", "OK");
 			}
 			else
 			{
-				WorkGroup eq = new WorkGroup(NombreEquipo);
-				DbInsert.InsertWorkGroup(eq,presenciaContext);
-				DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + NombreEquipo + " - " + dt), presenciaContext);
-				await DisplayAlert("Alert", "El equipo de trabajo se ha añadido correctamente.", "OK");
-				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,6));
+				WorkGroup workGroup = new WorkGroup(WorkGroupName);
+				db.InsertWorkGroup(workGroup,p);
+				db.InsertLog(new Log("Añadir", Username + " ha añadido grupo de trabajo " + WorkGroupName + " - " + DateTime), p);
+				await DisplayAlert("Error", "El equipo de trabajo se ha añadido correctamente.", "OK");
+				App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,6));
 			}
 		}
 		else
@@ -70,12 +71,12 @@ public partial class AltaGrupoTrabajo : ContentPage
 	}
 	private async void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		bool actualizar = DbUpdate.UpdateWorkGroup(Eq, CampoNombre.Text,presenciaContext);
+		bool actualizar = db.UpdateWorkGroup(WorkGroup, NameField.Text,p);
 		if(actualizar == true)
         {
-			await DisplayAlert("Alert", "Se ha modificado correctamente.","Vale");
-			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 6));
-			DbInsert.InsertLog(new Log("Modifica", NombreUsuario + " ha modificado el grupo de trabajo " + Eq.Name), presenciaContext);
+			await DisplayAlert("Modificar", "Se ha modificado correctamente.","Vale");
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
+			db.InsertLog(new Log("Modificar", Username + " ha modificado el grupo de trabajo " + WorkGroup.Name), p);
         }
         else
         {
@@ -84,40 +85,40 @@ public partial class AltaGrupoTrabajo : ContentPage
     }
 
 	
-	public List<string> GeneraHoras()
+	public List<string> HourGenerate()
     {
-		var ListaHoras = new List<string>();
+		var HourList = new List<string>();
 		for (int i = 00; i < 24; i++)
 		{
 			if (i < 10)
 			{
-				ListaHoras.Add("0" + i.ToString());
+				HourList.Add("0" + i.ToString());
 			}
 			else
 			{
-				ListaHoras.Add(i.ToString());
+				HourList.Add(i.ToString());
 			}
 		}
-		return ListaHoras;
+		return HourList;
 	}
-	public List<string> GeneraMinutos()
+	public List<string> MinuteGenerate()
 	{
-		var ListaMinutos = new List<string>();
+		var MinuteList = new List<string>();
 		for (int i = 00; i < 60; i++)
 		{
 			if (i < 10)
 			{
-				ListaMinutos.Add("0" + i.ToString());
+				MinuteList.Add("0" + i.ToString());
 			}
 			else
 			{
-				ListaMinutos.Add(i.ToString());
+				MinuteList.Add(i.ToString());
 			}
 		}
-		return ListaMinutos;
+		return MinuteList;
 	}
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,6));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,6));
     }
 }

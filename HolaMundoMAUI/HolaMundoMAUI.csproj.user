@@ -58,8 +58,5 @@
     <MauiXaml Update="PaginaAdmin.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="TrabajadoresEnTurno.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
   </ItemGroup>
 </Project>

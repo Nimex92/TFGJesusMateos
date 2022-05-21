@@ -10,7 +10,8 @@ public partial class AltaTurno : ContentPage
 	bool L, M, X, J, V, S, D;
     string NombreUsuario;
     DateTime dt = DateTime.Now;
-    WorkShift _workShiftEditar;
+    WorkShift workShiftEditar;
+    Db db = new Db();
 
     public AltaTurno()
     {
@@ -53,7 +54,7 @@ public partial class AltaTurno : ContentPage
                 BotonActualizarAdmin.IsVisible = true;
                 BotonActualizarAdmin.IsEnabled = true;
                 var turno = p.WorkShifts.Where(x => x.Name == NombreTurno).FirstOrDefault();
-                _workShiftEditar = turno;
+                workShiftEditar = turno;
                 CampoNombre.Text = turno.Name;
                 CampoNombre.IsEnabled = false;
                 string HoraEntrada = turno.CheckIn.ToString().Substring(10, 3);
@@ -125,10 +126,10 @@ public partial class AltaTurno : ContentPage
                 string TiempoSalida = HoraSalida + ":" + MinutoSalida;
                 DateTime entrada = DateTime.Today.AddHours(Double.Parse(HoraEntrada)).AddMinutes(Double.Parse(MinutoEntrada));
                 DateTime salida = DateTime.Today.AddHours(Double.Parse(HoraSalida)).AddMinutes(Double.Parse(MinutoSalida));
-                bool actualiza =DbUpdate.UpdateWorkShift(_workShiftEditar, NombreTurno, entrada, salida, L, M, X, J, V, S, D, ValidoDesde.Date, ValidoHasta.Date, _workShiftEditar.Enabled, _workShiftEditar.Deleted, p);
+                bool actualiza =db.UpdateWorkShift(workShiftEditar, NombreTurno, entrada, salida, L, M, X, J, V, S, D, ValidoDesde.Date, ValidoHasta.Date, workShiftEditar.Enabled, workShiftEditar.Deleted, p);
             if (actualiza == true)
             {
-                DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt),p);
+                db.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt),p);
                 await DisplayAlert("Alert", "El turno se ha modificado correctamente.", "OK");
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
             }

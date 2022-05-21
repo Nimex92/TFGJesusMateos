@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HolaMundoMAUI.BorraTrabajadorDeGrupo"
-             Title="Borrar trabajadores a equipos de trabajo"
+             x:Class="HolaMundoMAUI.AnadeTrabajadorEquipoTrabajo"
              BackgroundColor="White">
     <StackLayout>
         <Label  
-                Text="Tech Talent &#10;Añadir trabajadores de equipo de trabajo"
+                Text="Añadir trabajadores de equipo de trabajo"
                 FontSize="30"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
@@ -24,42 +23,42 @@
             HeightRequest="170"
             BackgroundColor="#828282"
             Margin="0,10,0,0">
-            <Label Text="Selecciona turno de trabajo"
+            <Label Text="Selecciona equipo de trabajo"
                        TextColor="White"
                        Margin="22,10,0,0"
                        />
             <Picker
-                        x:Name="SelectorGruposTrabajo"
+                        x:Name="WorkGroupSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
                         HorizontalOptions="Center"/>
-            <Label Text="Selecciona tarea"
+            <Label Text="Selecciona trabajador"
                        TextColor="White"
                        Margin="22,0,0,0"/>
             <Picker
-                        x:Name="SelectorTareas"
+                        x:Name="WorkerSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
                         HorizontalOptions="Center"/>
 
             <Button
-                            x:Name="BotonRegistrar"
+                            x:Name="SubmitButton"
                             Text="Aplicar"
                             Margin="0,10,0,0"
                             WidthRequest="300"
-                            Clicked="BotonRegistrar_Clicked"
+                            Clicked="SubminButton_Clicked"
                             HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout>
             <Button
-                x:Name="BotonVolver"
+                x:Name="BackButton"
                 Text="Volver"
                 WidthRequest="200"
                 HeightRequest="35"
                 HorizontalOptions="Center"
-                Clicked="BotonVolver_Clicked"
+                Clicked="BackButton_Clicked"
                 Margin="0,20,0,0"/>
         </StackLayout>
 

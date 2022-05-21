@@ -6,9 +6,10 @@ namespace HolaMundoMAUI;
 
 public partial class AltaUsuarios : ContentPage
 {
-	PresenciaContext presenciaContext = new PresenciaContext();
+	PresenciaContext p = new PresenciaContext();
 	string NombreUsuario;
 	DateTime dt = DateTime.Now;
+	Db db = new Db();
 	public AltaUsuarios(string user)
 	{
 		InitializeComponent();
@@ -21,7 +22,7 @@ public partial class AltaUsuarios : ContentPage
         switch (actualiza)
         {
 			case 1:
-				var usuario = presenciaContext.Users.Where(x => x.Username == user).FirstOrDefault();
+				var usuario = p.Users.Where(x => x.Username == user).FirstOrDefault();
 				CampoUsuario.Text = usuario.Username;
 				CampoContrasena.Text = usuario.Password;
 				CampoRepiteContrasena.Text = usuario.Password;
@@ -44,7 +45,7 @@ public partial class AltaUsuarios : ContentPage
 		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
 		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
 
-		var us = presenciaContext.Users
+		var us = p.Users
 						.Where(b => b.Username == Username)
 						.FirstOrDefault();
 
@@ -64,8 +65,8 @@ public partial class AltaUsuarios : ContentPage
 					esAdmin = true;
 
 				//Inserto usuario
-				bool inserta = DbInsert.InsertUser(new User(Username, Password,esAdmin),presenciaContext);
-				DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt),presenciaContext);
+				bool inserta = db.InsertUser(new User(Username, Password,esAdmin),p);
+				db.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt),p);
 				//Inserto Usuario
 				if (inserta == true) 
 				{
@@ -96,7 +97,7 @@ public partial class AltaUsuarios : ContentPage
 		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
 		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
 
-		var us = presenciaContext.Users
+		var us = p.Users
 						.Where(b => b.Username == Username)
 						.FirstOrDefault();
 
@@ -113,8 +114,8 @@ public partial class AltaUsuarios : ContentPage
 				us.Password = Password;
 				us.esAdmin = esAdmin;
 				//bool inserta = Db.actualizaUsuario(us.Username, Username, Password, esAdmin);
-				bool inserta = DbUpdate.UpdateUser(us,presenciaContext);
-				DbInsert.InsertLog(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt),presenciaContext);
+				bool inserta = db.UpdateUser(us,p);
+				db.InsertLog(new Log("Actualizar", NombreUsuario + " ha actualizado grupo de trabajo " + Username + " - " + dt),p);
 				if (inserta == true)
 				{ 
 					//Activa popup aceptacion, inserta el Usuario

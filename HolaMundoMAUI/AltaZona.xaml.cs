@@ -8,6 +8,7 @@ public partial class AltaZona : ContentPage
     string NombreUsuario;
     DateTime dt = DateTime.Now;
     string Zona;
+    Db db = new Db();
 
     public AltaZona(string user)
 	{
@@ -47,7 +48,7 @@ public partial class AltaZona : ContentPage
 
     private async void RegistrarNuevaZona(object sender, EventArgs e)
     {
-		bool inserta = DbInsert.InsertPlace(CampoNombre.Text,presenciaContext);
+		bool inserta = db.InsertPlace(CampoNombre.Text,presenciaContext);
         presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + CampoNombre.Text + " - " + dt));
         presenciaContext.SaveChanges();
         if (inserta == true)

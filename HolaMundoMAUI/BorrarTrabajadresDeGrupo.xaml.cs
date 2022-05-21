@@ -8,62 +8,54 @@ namespace HolaMundoMAUI;
 public partial class BorraTrabajadorDeGrupo : ContentPage
 {
 	PresenciaContext p = new PresenciaContext();
-	string nombreUsuario;
-	WorkGroup workGroup;
-	public BorraTrabajadorDeGrupo(string user,WorkGroup eq)
+	string Username;
+	WorkGroup WorkGroup;
+	public BorraTrabajadorDeGrupo(string username,WorkGroup workGroup)
 	{
-		nombreUsuario = user;
-		workGroup = eq;
+		Username = username;
+		WorkGroup = workGroup;
 		InitializeComponent();
 		SetPickers();
 	}
 
 	private void SetPickers()
 	{
-		var equipos = p.WorkGroups;
-		var trabajadores = p.Workers.Where(x=>x.WorkGroup.Contains(workGroup)).ToList();
-		//Recojo todos los Turnos de la tabla de MySql
-		//Creo una lista para guardar todos los turnos existentes
-		var ListaGrupos = new List<string>();
-		var ListaTrabajador = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
-		SelectorTareas.Items.Add("-- Selecciona Trabajador.");
-		
-		SelectorGruposTrabajo.Items.Add(workGroup.Name);
-		
-		foreach (Worker t in trabajadores)
+		var workerList = p.Workers.Where(x=>x.WorkGroup.Contains(WorkGroup)).ToList();
+		WorkerSelector.Items.Add("-- Selecciona Trabajador.");
+		WorkGroupSelector.Items.Add(WorkGroup.Name);
+		foreach (Worker worker in workerList)
 		{
-			SelectorTareas.Items.Add(t.Name);
+			WorkerSelector.Items.Add(worker.Name);
 		}
-		SelectorGruposTrabajo.SelectedIndex = 0;
-		SelectorTareas.SelectedIndex = 0;
+		WorkGroupSelector.SelectedIndex = 0;
+		WorkerSelector.SelectedIndex = 0;
 	}
 
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 6));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
     }
 
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
-		string BuscaEquipo = SelectorGruposTrabajo.SelectedItem.ToString();
-		string BuscaTrabajador = SelectorTareas.SelectedItem.ToString();
-		var EquipoTrabajo = p.WorkGroups.Where(x => x.Name == BuscaEquipo).Include(x=>x.Workers).FirstOrDefault();
-		var Trabajador = p.Workers.Where(x => x.Name == BuscaTrabajador).Include(x=>x.WorkGroup).FirstOrDefault();
-		var Equipos = EquipoTrabajo.Workers;
-		Trabajador.BelongsToWorkShifts = "";
+		string WorkGroupSearch = WorkGroupSelector.SelectedItem.ToString();
+		string workerSearch = WorkerSelector.SelectedItem.ToString();
+		var workGroup = p.WorkGroups.Where(x => x.Name == WorkGroupSearch).Include(x=>x.Workers).FirstOrDefault();
+		var worker = p.Workers.Where(x => x.Name == workerSearch).Include(x=>x.WorkGroup).FirstOrDefault();
+		var workGroupList = workGroup.Workers;
+		worker.BelongstoWorkGroups = "";
 
-		Trabajador.WorkGroup.Remove(EquipoTrabajo);
-		await DisplayAlert("Alert", BuscaTrabajador + " ya no pertenece a " + BuscaEquipo, "Vale");
-		foreach (WorkGroup eq in Trabajador.WorkGroup)
+		worker.WorkGroup.Remove(workGroup);
+		await DisplayAlert("Alert", workerSearch + " ya no pertenece a " + WorkGroupSearch, "Vale");
+		foreach (WorkGroup workgroup in worker.WorkGroup)
 		{
-			Trabajador.BelongsToWorkShifts += eq.Name;
+			worker.BelongstoWorkGroups += workgroup.Name;
 			
-			var trabajadores = p.Workers.Where(x => x.WorkGroup.Contains(workGroup)).ToList();
+			var workerList = p.Workers.Where(x => x.WorkGroup.Contains(workgroup)).ToList();
 			
-			foreach (Worker t in trabajadores)
+			foreach (Worker w in workerList)
 			{
-				SelectorTareas.Items.Add(t.Name);
+				WorkerSelector.Items.Add(w.Name);
 			}
 		}
 		p.SaveChanges();

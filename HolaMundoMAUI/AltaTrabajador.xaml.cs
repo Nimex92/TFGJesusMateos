@@ -7,65 +7,62 @@ namespace HolaMundoMAUI;
 
 public partial class AltaTrabajador : ContentPage
 {
-	PresenciaContext presenciaContext = new PresenciaContext();
-	string NombreUsuario;
+	PresenciaContext p = new PresenciaContext();
+	string Username;
 	DateTime dt = DateTime.Now;
-	public AltaTrabajador(string user,int actualiza)
+	Db db = new Db();
+	public AltaTrabajador(string user,int option)
 	{
 		InitializeComponent();
-		NombreUsuario = user;
+		Username = user;
 		//Recojo todos los Turnos de la tabla de MySql
-		var Turno = presenciaContext.WorkGroups;
+		var WorkShift = p.WorkGroups;
 		//Creo una lista para guardar todos los turnos existentes
-		var listaTurnos = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, aÃ±ado al selector (Picker de la interfaz) El nombre del turno
-		Selector.Items.Add("-- Selecciona un equipo de trabajo.");
-		foreach (WorkGroup equipo in Turno)
+		var WorkShiftList = new List<string>();
+		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El name del turno
+		WorkGroupSelector.Items.Add("-- Selecciona un equipo de trabajo.");
+		foreach (WorkGroup equipo in WorkShift)
         {
-			Selector.Items.Add(equipo.Name);
+			WorkGroupSelector.Items.Add(equipo.Name);
 		}
-		List<string> Categorias = new List<string>();
-		Categorias.Add("Ingeniero licenciado");
-		Categorias.Add("Ingeniero tecnico");
-		Categorias.Add("Jefe administrativo");
-		Categorias.Add("Ayudante no titulado");
-		Categorias.Add("Oficial administrativo");
-		Categorias.Add("Subalterno");
-		Categorias.Add("Auxiliar Administrativo");
-		Categorias.Add("Oficial de 1ºera");
-		Categorias.Add("Oficial de 2ºda");
-		Categorias.Add("Oficial de 3ºera");
-		Categorias.Add("Oficial especialista");
-		Categorias.Add("Peon");
-		Categorias.Add("Menor de edad o independiente");
-		SelectorCategoria.ItemsSource = Categorias;
+		List<string> Category = new List<string>();
+		Category.Add("Ingeniero licenciado");
+		Category.Add("Ingeniero tecnico");
+		Category.Add("Jefe administrativo");
+		Category.Add("Ayudante no titulado");
+		Category.Add("Oficial administrativo");
+		Category.Add("Subalterno");
+		Category.Add("Auxiliar Administrativo");
+		Category.Add("Oficial de 1ºera");
+		Category.Add("Oficial de 2ºda");
+		Category.Add("Oficial de 3ºera");
+		Category.Add("Oficial especialista");
+		Category.Add("Peon");
+		Category.Add("Menor de edad o independiente");
+		CategorySelector.ItemsSource = Category;
 		//Selecciono el primer item de la lista a modo informatico para el Usuario
-		Selector.SelectedIndex = 0;
+		CategorySelector.SelectedIndex = 0;
 		//Segun el entero que recibe actvia la insercion o el modificado (interfaz)
-		switch(actualiza)
+		switch(option)
 		{
 			//Activa el boton para registrar un nuevo trabajador
 			case 0:
-				BotonActualizarAdmin.IsVisible = false;
-				BotonActualizarAdmin.IsEnabled = false;
-				BotonRegistrarAdmin.IsVisible = true;
-				BotonRegistrarAdmin.IsEnabled = true;
+				UpdateButton.IsVisible = false;
+				RegisterButton.IsVisible = true;
 				break;
 			//Activa el boton para actualizar un trabajador existente
 			case 1:
-				BotonActualizarAdmin.IsVisible = true;
-				BotonActualizarAdmin.IsEnabled = true;
-				BotonRegistrarAdmin.IsVisible = false;
-				BotonRegistrarAdmin.IsEnabled = false;
-				Selector.IsEnabled = false;
-				CampoNombre.Text = user;
-				var trab = presenciaContext.Workers.Where(x => x.Name == user).Include(x=>x.User).Include(x => x.WorkGroup).FirstOrDefault();
-				//Recorro los equipos del trabajador y los aÃ±ado a la lista para setearlos en el Picker.
-				foreach(WorkGroup e in trab.WorkGroup)
+				UpdateButton.IsVisible = true;
+				RegisterButton.IsVisible = false;
+				WorkGroupSelector.IsEnabled = false;
+				NameField.Text = user;
+				var worker = p.Workers.Where(x => x.Name == user).Include(x=>x.User).Include(x => x.WorkGroup).FirstOrDefault();
+				//Recorro los equipos del trabajador y los añado a la lista para setearlos en el Picker.
+				foreach(WorkGroup e in worker.WorkGroup)
                 {
-					listaTurnos.Add(e.Name);
+					WorkShiftList.Add(e.Name);
                 }
-				Selector.SelectedIndex = 1;
+				WorkGroupSelector.SelectedIndex = 1;
 				break;
         }
 		
@@ -79,25 +76,25 @@ public partial class AltaTrabajador : ContentPage
 	{
 		try
 		{
-			Random r = new Random();
-			string nombre = CampoNombre.Text;
-			string user = nombre + r.Next(0, 9) + r.Next(0, 9) + r.Next(0, 9) + r.Next(0, 9);
-			var seleccionado = Selector.SelectedItem.ToString();
-			var equipo = presenciaContext.WorkGroups.Where(x => x.Name == seleccionado).FirstOrDefault();
-			Worker t = new Worker(nombre, equipo, new User(user, "1"));
-			t.BelongsToWorkShifts = equipo.Name;
-			bool inserta = DbInsert.InsertWorker(t,presenciaContext);
-            try {t.BelongsToWorkShifts = equipo.Name; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
+			Random randomNumber = new Random();
+			string name = NameField.Text;
+			string user = name + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9);
+			var selected = WorkGroupSelector.SelectedItem.ToString();
+			var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
+			Worker workers = new Worker(name, workGroup, new User(user, "1"));
+			workers.BelongstoWorkGroups = workGroup.Name;
+			bool inserta = db.InsertWorker(workers,p);
+            try {workers.BelongstoWorkGroups = workers.Name; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
 
-			DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha aÃ±adido trabajador " + nombre + " - " + dt), presenciaContext);
+			db.InsertLog(new Log("Añadir", Username + " ha aÃ±adido trabajador " + name + " - " + dt), p);
 			if (inserta == true)
 			{
-				await DisplayAlert("Alert", "Se ha insertado correctamente el trabajador " + nombre, "OK");
-				App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 2));
+				await DisplayAlert("Alert", "Se ha insertado correctamente el trabajador " + name, "OK");
+				App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
 			}
 			else
 			{
-				await DisplayAlert("Alert", "Error al insertar el trabajador " + t.Name, "OK");
+				await DisplayAlert("Alert", "Error al insertar el trabajador " + workers.Name, "OK");
 			}
         }
         catch (Exception ex)
@@ -113,17 +110,17 @@ public partial class AltaTrabajador : ContentPage
 	private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
 	{
 		Random r = new Random();
-		string nombre = CampoNombre.Text;
-		var user = presenciaContext.Workers.Where(x => x.Name == NombreUsuario).Include(x => x.User).Include(x => x.WorkGroup).FirstOrDefault();
-		var seleccionado = Selector.SelectedItem.ToString().Trim();
-		var equipo = presenciaContext.WorkGroups.Where(x => x.Name == seleccionado).FirstOrDefault();
-		bool actualiza = DbUpdate.UpdateWorker(user,nombre,equipo);
+		string nombre = NameField.Text;
+		var user = p.Workers.Where(x => x.Name == Username).Include(x => x.User).Include(x => x.WorkGroup).FirstOrDefault();
+		var seleccionado = WorkGroupSelector.SelectedItem.ToString().Trim();
+		var equipo = p.WorkGroups.Where(x => x.Name == seleccionado).FirstOrDefault();
+		bool actualiza = db.UpdateWorker(user,nombre,equipo);
 		
 		if (actualiza == true)
 		{
-			DbInsert.InsertLog(new Log("AÃ±adir", NombreUsuario + " ha modificado trabajador " + nombre + " - " + dt), presenciaContext);
+			db.InsertLog(new Log("AÃ±adir", Username + " ha modificado trabajador " + nombre + " - " + dt), p);
 			await DisplayAlert("Alert", "Se ha modificado correctamente el trabajador " + nombre, "OK");
-			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 2));
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
 		}
 		else
 		{
@@ -138,7 +135,7 @@ public partial class AltaTrabajador : ContentPage
 	/// <param name="e"></param>
 	public void VolverAlMain(object sender, EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,2));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,2));
 	}
 
 

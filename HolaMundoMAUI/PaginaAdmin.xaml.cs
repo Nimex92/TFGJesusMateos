@@ -13,28 +13,28 @@ namespace HolaMundoMAUI;
 
 public partial class PaginaAdmin : ContentPage
 {
-    private string nombreUsuario;
+    private string Username;
     PresenciaContext p = new PresenciaContext();
     DateTime dt = DateTime.Now;
-    Worker tr;
-    WorkShift gr;
-    Places zn;
-    WorkTask ta;
-    WorkGroup Et;
-    Calendar cal;
-    Day day;
-    bool TrActivo,GrActivo,ZnActivo,TaActivo,EtActivo,DiActivo, NmActivo,ProblemActivo,VacacionesActivo;
-
-    public PaginaAdmin(string nombreUsuario)
+    Worker Worker;
+    WorkShift WorkShift;
+    Places Place;
+    WorkTask WorkTask;
+    WorkGroup WorkGroup;
+    Calendar Calendar;
+    Day Day;
+    bool activeWorker,activeWorkShift,activePlace,activeWorkTask,activeWorkGroup,activeDay, activePayroll,activeIssue,activeVacationsRequest;
+    Db db = new Db();
+    public PaginaAdmin(string username)
     {
-        TrActivo = false;
-        GrActivo = false;
-        ZnActivo = false;
-        TaActivo = false;
-        EtActivo = false;
-        NmActivo = false;
-        ProblemActivo = false;
-        VacacionesActivo = false;
+        activeWorker = false;
+        activeWorkShift = false;
+        activePlace = false;
+        activeWorkTask = false;
+        activeWorkGroup = false;
+        activePayroll = false;
+        activeIssue = false;
+        activeVacationsRequest = false;
 
         InitializeComponent();
         SetListViewTrabajadores();
@@ -43,19 +43,19 @@ public partial class PaginaAdmin : ContentPage
         SetListViewZonas();
         SetListViewEquiposTrabajo();
         CompruebaIncidencias();
-        this.nombreUsuario = nombreUsuario;
-        LabelNameUser.Text = nombreUsuario;
+        Username = username;
+        LabelNameUser.Text = username;
     }
-    public PaginaAdmin(string nombreUsuario, int interfaz)
+    public PaginaAdmin(string username, int option)
     {
-        TrActivo = false;
-        GrActivo = false;
-        ZnActivo = false;
-        TaActivo = false;
-        EtActivo = false;
-        NmActivo = false;
-        ProblemActivo = false;
-        VacacionesActivo = false;
+        activeWorker = false;
+        activeWorkShift = false;
+        activePlace = false;
+        activeWorkTask = false;
+        activeWorkGroup = false;
+        activePayroll = false;
+        activeIssue = false;
+        activeVacationsRequest = false;
 
         InitializeComponent();
         SetListViewTrabajadores();
@@ -65,45 +65,39 @@ public partial class PaginaAdmin : ContentPage
         SetListViewEquiposTrabajo();
         CompruebaIncidencias();
 
-        this.nombreUsuario = nombreUsuario;
-        LabelNameUser.Text = nombreUsuario;
-        switch (interfaz)
+        this.Username = username;
+        LabelNameUser.Text = username;
+        switch (option)
         {
             case 2:
                 ListViewWorkers.IsVisible = true;
-                ListViewWorkers.IsEnabled = true;
-                TrActivo = true;
-                LabelTitulo2.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
+                activeWorker = true;
+                LabelTitulo2.Text = "Gesti�n de trabajadores";
                 break;
             case 3:
                 ListViewGroups.IsVisible = true;
-                ListViewGroups.IsEnabled = true;
-                GrActivo = true;
-                LabelTitulo3.Text = "Tech Talent" + Environment.NewLine + "gestión de equipos de trabajo";
+                activeWorkShift = true;
+                LabelTitulo3.Text = "Gesti�n de turnos de trabajo";
                 break;
             case 4:
                 ListViewZones.IsVisible = true;
-                ListViewZones.IsEnabled = true;
-                ZnActivo = true;
-                LabelTitulo4.Text = "Tech Talent" + Environment.NewLine + "gestión de Zonas de trabajo";
+                activePlace = true;
+                LabelTitulo4.Text = "Gesti�n de lugares de trabajo";
                 break;
             case 5:
                 ListViewTasks.IsVisible = true;
-                ListViewTasks.IsEnabled = true;
-                TaActivo = true;
-                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de tareas";
+                activeWorkTask = true;
+                LabelTitulo5.Text = "Gesti�n de tareas de trabajo";
                 break;
             case 6:
                 ListViewTeams.IsVisible = true;
-                ListViewTeams.IsEnabled = true;
-                EtActivo = true;
-                LabelTitulo5.Text = "Tech Talent" + Environment.NewLine + "gestión de turnos de trabajo";
+                activeWorkGroup = true;
+                LabelTitulo5.Text = "Gesti�n de equipos de trabajo";
                 break;
             case 7:
                 ListViewCalendar.IsVisible = true;
-                ListViewCalendar.IsEnabled = true;
-                DiActivo = true;
-                LabelTitulo7.Text = "Tech Talent" + Environment.NewLine + "gestión de dias libres";
+                activeDay = true;
+                LabelTitulo7.Text = "Listado de dias libres";
                 break;
             case 8:
 
@@ -165,194 +159,146 @@ public partial class PaginaAdmin : ContentPage
     public void OnItemSelectedTrabajadores(object sender, SelectedItemChangedEventArgs e)
     {
         Worker item = e.SelectedItem as Worker;
-        tr = item;
-        cal = p.Calendars.Where(x => x.Worker == item).Include(x=>x.Worker).FirstOrDefault();
+        Worker = item;
+        Calendar = p.Calendars.Where(x => x.Worker == item).Include(x=>x.Worker).FirstOrDefault();
     }
     public void OnItemSelectedGruposTrabajo(object sender, SelectedItemChangedEventArgs e)
     {
         WorkShift item = e.SelectedItem as WorkShift;
-        gr = item;
+        WorkShift = item;
     }
     public void OnItemSelectedEquiposTrabajo(object sender, SelectedItemChangedEventArgs e)
     {
         WorkGroup item = e.SelectedItem as WorkGroup;
-        Et = item;
+        WorkGroup = item;
     }
     public void OnItemSelectedZonas(object sender, SelectedItemChangedEventArgs e)
     {
         Places item = e.SelectedItem as Places;
-        zn = item;
+        Place = item;
     }
     public void OnItemSelectedCalendario(object sender, SelectedItemChangedEventArgs e)
     {
         Day item = e.SelectedItem as Day;
-        day = item;
+        Day = item;
     }
     public void OnItemSelectedTareas(object sender, SelectedItemChangedEventArgs e)
     {
         WorkTask item = e.SelectedItem as WorkTask;
-        ta = item;
+        WorkTask = item;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////// Funciones Menu lateral ///////////////////////////////////////////////////////////
     private void BtnTrabajadores_Clicked(object sender, EventArgs e)
     {
-        if (TrActivo == false)
+        if (activeWorker == false)
         {
             ListViewWorkers.IsVisible = true;
-            ListViewWorkers.IsEnabled = true;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
-
-
-
-
             BotonTrabajador.BackgroundColor = Color.FromRgba("#84677D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
-
-
-            TrActivo = true;
-            GrActivo = false;
-            ZnActivo = false;
-            TaActivo = false;
-            EtActivo = false;
+            activeWorker = true;
+            activeWorkShift = false;
+            activePlace = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
             CompruebaIncidencias();
-
-            LabelTitulo2.Text = "Tech Talent" + Environment.NewLine + "gestión de trabajadores";
+            LabelTitulo2.Text = "Gesti�n de trabajadores";
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
-
-
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
-
-
-            TrActivo = false;
-            GrActivo = false;
-            ZnActivo = false;
-            TaActivo = false;
-            EtActivo = false;
+            activeWorker = false;
+            activeWorkShift = false;
+            activePlace = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
             CompruebaIncidencias();
         }
     }
     private void BtnGruposTrabajo_Clicked(object sender, EventArgs e)
     {
-        if (GrActivo == false)
+        if (activeWorkShift == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = true;
-            ListViewGroups.IsEnabled = true;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
-
-
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#84677D");
             BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
-
-
-            GrActivo = true;
-            TrActivo = false;
-            TaActivo = false;
-            ZnActivo = false;
-            EtActivo = false;
+            activeWorkShift = true;
+            activeWorker = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkGroup = false;
             CompruebaIncidencias();
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
-
-
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
-
-
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            ZnActivo = false;
-            EtActivo = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkGroup = false;
             CompruebaIncidencias();
         }
     }
     private void BtnEquiposTrabajo_Clicked(object sender, EventArgs e)
     {
-        if (EtActivo == false)
+        if (activeWorkGroup == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = true;
-            ListViewTeams.IsEnabled = true;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
-
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -361,28 +307,21 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#84677D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            ZnActivo = false;
-            EtActivo = true;
-            NmActivo = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkGroup = true;
+            activePayroll = false;
             CompruebaIncidencias();
-
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
 
@@ -395,32 +334,26 @@ public partial class PaginaAdmin : ContentPage
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
 
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            ZnActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
 
         }
     }
     private void BtnZonas_Clicked(object sender, EventArgs e)
     {
-        if (ZnActivo == false)
+        if (activePlace == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = true;
-            ListViewZones.IsEnabled = true;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
 
@@ -433,26 +366,21 @@ public partial class PaginaAdmin : ContentPage
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
 
-            ZnActivo = true;
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activePlace = true;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
 
@@ -463,31 +391,25 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
     }
     private void BtnTareas_Clicked(object sender, EventArgs e)
     {
-        if (TaActivo == false)
+        if (activeWorkTask == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = true;
-            ListViewTasks.IsEnabled = true;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
 
@@ -498,26 +420,21 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = true;
-            EtActivo = false;
-            NmActivo = false;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = true;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = false;
 
@@ -528,34 +445,27 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-            TaActivo = false;
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
     }
     private void BtnNominas_Clicked(object sender, EventArgs e)
     {
-        if (NmActivo == false)
+        if (activePayroll == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = true;
             ListViewIssues.IsVisible = false;
-
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -564,27 +474,21 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#84677D"); ;
 
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            EtActivo = false;
-            NmActivo = true;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
+            activePayroll = true;
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewIssues.IsVisible = false;
-
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -593,34 +497,27 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-            TaActivo = false;
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
     }
     private void BtnProblemas_Clicked(object sender, EventArgs e)
     {
-        if (NmActivo == false)
+        if (activePayroll == false)
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewCalendar.IsVisible = false;
-            ListViewCalendar.IsEnabled = false;
             ListViewNominas.IsVisible = false;
             ListViewIssues.IsVisible = true;
-
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -629,27 +526,21 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#84677D"); ;
 
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            TaActivo = false;
-            EtActivo = false;
-            NmActivo = true;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkTask = false;
+            activeWorkGroup = false;
+            activePayroll = true;
         }
         else
         {
             ListViewWorkers.IsVisible = false;
-            ListViewWorkers.IsEnabled = false;
             ListViewGroups.IsVisible = false;
-            ListViewGroups.IsEnabled = false;
             ListViewZones.IsVisible = false;
-            ListViewZones.IsEnabled = false;
             ListViewTasks.IsVisible = false;
-            ListViewTasks.IsEnabled = false;
             ListViewTeams.IsVisible = false;
-            ListViewTeams.IsEnabled = false;
             ListViewIssues.IsVisible = false;
-
 
             BotonTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
             BotonGrupoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
@@ -658,18 +549,18 @@ public partial class PaginaAdmin : ContentPage
             BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
             BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
 
-            TaActivo = false;
-            ZnActivo = false;
-            GrActivo = false;
-            TrActivo = false;
-            EtActivo = false;
-            NmActivo = false;
+            activeWorkTask = false;
+            activePlace = false;
+            activeWorkShift = false;
+            activeWorker = false;
+            activeWorkGroup = false;
+            activePayroll = false;
             CompruebaIncidencias();
         }
     }
     private void BotonNominas_Clicked(object sender, EventArgs e)
     {
-        GeneraNominaPdf(tr);
+        GeneraNominaPdf(Worker);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -677,87 +568,87 @@ public partial class PaginaAdmin : ContentPage
     /////// Metodos de las funciones de añadir ////////////////////////////////////////////////////
     private void BotonAnadeZona_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario, "", 0));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonas de trabajo " + "-" + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaZona(Username, "", 0));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'A�adir zonas de trabajo " + "-" + dt),p);
     }
     private void BtnAnadeTarea_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo" + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'A�adir tareas de trabajo" + " - " + dt), p);
     }
     private void BtnAnadeDias_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 0, day));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir dias al calendario" + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 0, Day));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'A�adir dias al calendario" + " - " + dt), p);
 
     }
     private void BtnAnadeTareaGrupoTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tarea a grupo de trabajo:'" + ta.Name + " - " + dt),p);
+        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir tarea a grupo de trabajo:'" + WorkTask.Name + " - " + dt),p);
     }
     private void AddZonasGrupos_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zonasa grupo de trabajo:'" + zn.Name + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir zonasa grupo de trabajo:'" + Place.Name + " - " + dt), p);
     }
     private void BtnAnadeEquipos_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario, "", 0));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " ha accedido a \"Registrar nuevo equipo de trabajo\" - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(Username, "", 0));
+        db.InsertLog(new Log("Acceso", Username + " ha accedido a \"Registrar nuevo equipo de trabajo\" - " + dt), p);
     }
     private void BtnAnadeTrabajadorAEquipo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir trabajador a un grupo de trabajo" + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir trabajador a un grupo de trabajo" + " - " + dt), p);
 
     }
     private void AddGruposEquipoTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(nombreUsuario, gr.Name, 0));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir turno a equipo de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(Username, WorkShift.Name, 0));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir turno a equipo de trabajo' - " + dt), p);
     }
     public void NuevoUsuario(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaUsuarios(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar usuario' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaUsuarios(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar usuario' - " + dt), p);
     }
     public void NuevoTrabajador(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(nombreUsuario, 0));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar trabajador' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(Username, 0));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar trabajador' - " + dt), p);
     }
     public void NuevoGrupoTrabajo(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTurno(nombreUsuario, 0));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Registrar grupo de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTurno(Username, 0));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar grupo de trabajo' - " + dt), p);
     }
     public async void VolverAlMainAdmin(object sender, EventArgs e)
     {
-        await DisplayAlert("Alert", "Hasta luego, " + nombreUsuario, "OK");
+        await DisplayAlert("Alert", "Hasta luego, " + Username, "OK");
         App.Current.MainPage = new NavigationPage(new MainPage());
-        DbInsert.InsertLog(new Log("Logout", nombreUsuario + " ha cerrado sesion -" + dt), p);
+        db.InsertLog(new Log("Logout", Username + " ha cerrado sesion -" + dt), p);
 
     }
     private void RegistrarNuevaTareaTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir tareas de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir tareas de trabajo' - " + dt), p);
     }
     private void RegistrarNuevaZona_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaZona(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir zona de trabajo' - " + dt), p);
     }
     private void AnadeTareasGrupo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir Tareas a grupo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir Tareas a grupo' - " + dt), p);
     }
     private void AnadirZonaGrupo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir zona de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir zona de trabajo' - " + dt), p);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -765,35 +656,35 @@ public partial class PaginaAdmin : ContentPage
     /////// Metodos de las funciones de modificar /////////////////////////////////////////////////
     private void BotonEditarZonas_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaZona(nombreUsuario, zn.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar zonas de trabajo" + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaZona(Username, Place.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar zonas de trabajo" + " - " + dt), p);
 
     }
     private void BotonEditarEquiposTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(nombreUsuario, Et.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar equipo de trabajo '+" + ta.Name + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(Username, WorkGroup.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar equipo de trabajo '+" + WorkTask.Name + " - " + dt), p);
     }
     private void BotonActualizaDias_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(nombreUsuario, cal, 1, day));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir dias al calendario" + " - " + dt),p);
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 1, Day));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir dias al calendario" + " - " + dt),p);
 
     }
     private void BotonEditarTareas_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(nombreUsuario, ta.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar tarea de trabajo '+" + ta.Name + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username, WorkTask.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar tarea de trabajo '+" + WorkTask.Name + " - " + dt), p);
     }
     private void BotonEditarGruposTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTurno(nombreUsuario, gr.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar grupo de trabajo' " + gr.Name + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTurno(Username, WorkShift.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar grupo de trabajo' " + WorkShift.Name + " - " + dt), p);
     }
     private void BotonEditarTrabajadores_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AltaTrabajador(tr.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Editar trabajador '+" + tr.Name + " - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AltaTrabajador(Worker.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar trabajador '+" + Worker.Name + " - " + dt), p);
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -802,12 +693,12 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-                bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + tr.Name + "\"?", "Si", "No");
-                if (tr is not null && answer == true)
+                bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el trabajador \"" + Worker.Name + "\"?", "Si", "No");
+                if (Worker is not null && answer == true)
                 {
-                    DbDelete.DeleteWorker(tr, p);
-                    DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado trabajador \"" + tr.Name + "\" - " + dt), p);
-                    App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
+                    db.DeleteWorker(Worker, p);
+                    db.InsertLog(new Log("Eliminar", Username + " ha eliminado trabajador \"" + Worker.Name + "\" - " + dt), p);
+                    App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
                 }
                 else
                 {
@@ -822,18 +713,18 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-            bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + gr.Name + "\"?", "Si", "No");
+            bool answer = await DisplayAlert("Question?", "¿Estas seguro de borrar el grupo \"" + WorkShift.Name + "\"?", "Si", "No");
             if (answer == true)
             {
-                WorkShift workShift = gr;
-                DbDelete.DeleteWorkShift(workShift, p);
-                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Name + " - " + dt), p);
+                WorkShift workShift = WorkShift;
+                db.DeleteWorkShift(workShift, p);
+                db.InsertLog(new Log("Eliminar", Username + " ha eliminado grupo de trabajo " + WorkShift.Name + " - " + dt), p);
                 await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
-                WorkShift turno = gr;
-                DbDelete.DeleteWorkShift(turno, p);
-                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado grupo de trabajo " + gr.Name + " - " + dt), p);
+                WorkShift turno = WorkShift;
+                db.DeleteWorkShift(turno, p);
+                db.InsertLog(new Log("Eliminar", Username + " ha eliminado grupo de trabajo " + WorkShift.Name + " - " + dt), p);
                 await DisplayAlert("Alert", "Se ha eliminado correctamente.", "Vale");
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 3));
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
             }
         }catch(Exception ex)
         {
@@ -843,15 +734,15 @@ public partial class PaginaAdmin : ContentPage
     }
     private async void BotonBorrarZonas_Clicked(object sender, EventArgs e)
     {
-        if (zn is not null)
+        if (Place is not null)
         {
-            bool answer = await DisplayAlert("Question?", "¿Desea Borrar la zona \"" + zn.Name + "\"?", "Si", "No");
+            bool answer = await DisplayAlert("Question?", "¿Desea Borrar la zona \"" + Place.Name + "\"?", "Si", "No");
             if (answer == true)
             {
-                await DisplayAlert("Alert", "Se ha borrado correctamente " + zn.Name, "OK");
-                DbDelete.DeletePlace(zn, p);
-                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminar " + zn.Name + " - " + dt), p);
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 4));
+                await DisplayAlert("Alert", "Se ha borrado correctamente " + Place.Name, "OK");
+                db.DeletePlace(Place, p);
+                db.InsertLog(new Log("Eliminar", Username + " ha eliminar " + Place.Name + " - " + dt), p);
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 4));
             }
             else
             {
@@ -865,12 +756,12 @@ public partial class PaginaAdmin : ContentPage
     }
     private void BotonQuitarTrabajadorDeGrupo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(nombreUsuario, Et));
+        App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(Username, WorkGroup));
     }
     private void RemoveGruposEquipoTrabajo_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(nombreUsuario, gr.Name, 1));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Añadir turno a equipo de trabajo' - " + dt), p);
+        App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(Username, WorkShift.Name, 1));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir turno a equipo de trabajo' - " + dt), p);
     }
     private async void BotonBorrarDias_Clicked(object sender, EventArgs e)
     {
@@ -878,10 +769,10 @@ public partial class PaginaAdmin : ContentPage
         bool respuesta = await DisplayAlert("¿Estás segur@?", "¿Deseas eliminar este dia?", "Si", "No");
         if (respuesta == true)
         {
-            p.DayOff.Remove(day);
+            p.DayOff.Remove(Day);
             p.SaveChanges();
             await DisplayAlert("Eliminado", "Se ha eliminado correctamente", "Vale");
-            App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
+            App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
         }
         else
         {
@@ -890,14 +781,14 @@ public partial class PaginaAdmin : ContentPage
     }
     private async void BotonBorrarTareas_Clicked(object sender, EventArgs e)
     {
-        bool answer = await DisplayAlert("¿Estás segur@?", "¿Estas seguro de borrar la tarea \"" + ta.Name + "\"?", "Si", "No");
+        bool answer = await DisplayAlert("¿Estás segur@?", "¿Estas seguro de borrar la tarea \"" + WorkTask.Name + "\"?", "Si", "No");
         if (answer == true)
         {
-            if (ta is not null)
+            if (WorkTask is not null)
             {
-                DbDelete.DeleteWorkTask(ta,p);
-                DbInsert.InsertLog(new Log("Eliminar", nombreUsuario + " ha eliminado la tarea " + ta.Name + " - " + dt),p);
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 5));
+                db.DeleteWorkTask(WorkTask,p);
+                db.InsertLog(new Log("Eliminar", Username + " ha eliminado la tarea " + WorkTask.Name + " - " + dt),p);
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 5));
             }
             else
             {
@@ -916,7 +807,7 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = false;
         ListViewWorkers.IsEnabled = false;
 
-        var ExisteCalendario = p.Calendars.Where(x => x.Worker == tr).Include(x=>x.DaysOnCalendar).FirstOrDefault();
+        var ExisteCalendario = p.Calendars.Where(x => x.Worker == Worker).Include(x=>x.DaysOnCalendar).FirstOrDefault();
         if(ExisteCalendario is not null)
         {
             var ListaDias = ExisteCalendario.DaysOnCalendar.ToList();
@@ -927,13 +818,13 @@ public partial class PaginaAdmin : ContentPage
         else
         {
             await DisplayAlert("Alert", "El trabajador no dispone de calendario, se procede a crearlo", "Vale");
-            var trabajador = p.Workers.Where(x => x.CardNumber == tr.CardNumber).FirstOrDefault();
+            var trabajador = p.Workers.Where(x => x.CardNumber == Worker.CardNumber).FirstOrDefault();
             var calendario = new Calendar(trabajador);
             p.Calendars.Add(calendario);
             p.SaveChanges();
             await DisplayAlert("Alert", "Calendario creado con exito", "Vale");
         }
-        CompruebaDias(tr);
+        CompruebaDias(Worker);
     }
     private void VolverATrabajadores_Clicked(object sender, EventArgs e)
     {
@@ -986,8 +877,8 @@ public partial class PaginaAdmin : ContentPage
     }
     private void TrabajadoresEnTurno_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(nombreUsuario));
-        DbInsert.InsertLog(new Log("Acceso", nombreUsuario + " Accede a 'Trabajadores en turno' - " + dt),p);
+        App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(Username));
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Trabajadores en turno' - " + dt),p);
     }
     public async void CompruebaIncidencias()
     {

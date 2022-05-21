@@ -10,88 +10,87 @@ namespace HolaMundoMAUI;
 public partial class PaginaFichar : ContentPage
 {
 	string Username;
-	Worker worker;
-	bool CalActivo,PrincipalActivo;
+	Worker Worker;
+	bool activeCalendar,activeMain;
+	Db db = new Db();
 	public IDispatcherTimer MyTimer { get; set; }
-	PresenciaContext presenciaContext = new PresenciaContext();
-	List<DateTime> ListaEntradas = new List<DateTime>();
-	List<DateTime> ListaSalidas = new List<DateTime>();
-	DateTime dt = DateTime.Now;
-	DateTime HoraEntrada;
-	Day _day;
+	PresenciaContext p = new PresenciaContext();
+	List<DateTime> CheckInList = new List<DateTime>();
+	List<DateTime> CheckOutList = new List<DateTime>();
+	DateTime Now = DateTime.Now;
+	DateTime CheckIn;
+	Day Day;
 	public PaginaFichar(string username)
 	{
 		InitializeComponent();
-		CompruebaFichajes(username);
-		CompruebaTareas(username);
-		ComienzaElReloj();
+		SigningsCheck(username);
+		WorkTasksCheck(username);
+		ClockStart();
 		
 		Username = username;
-		var user = presenciaContext.Users.Where(x=>x.Username.ToLower()==username.ToLower()).FirstOrDefault();
+		var user = p.Users.Where(x=>x.Username.ToLower()==username.ToLower()).FirstOrDefault();
 		LabelNameUser.Text = user.Username;
-		CalActivo = false;
-		if (SelectorTareas.IsVisible == true)
+		activeCalendar = false;
+		if (WorkTaskSelector.IsVisible == false)
 		{
-			BotonIniciarTarea.IsVisible = false;
-			BotonIniciarTarea.IsEnabled = false;
-			BotonAcabarTarea.IsVisible = false;
-			BotonAcabarTarea.IsEnabled = false;
+			WorkTaskStartButton.IsVisible = false;
+			WorkTaskEndButton.IsVisible = false;
 		}
-		var trab = presenciaContext.Workers
+		var worker = p.Workers
 			.Where(x => x.User.Username == username)
 			.Include(x => x.WorkGroup)
 			.Include(x => x.User)
 			.FirstOrDefault();
-		worker = trab;
+		Worker = worker;
 
-		var EquipoTrabajo = presenciaContext.WorkGroups
-			.Where(x => x.Workers.Contains(trab))
+		var workGroup = p.WorkGroups
+			.Where(x => x.Workers.Contains(worker))
 			.Include(x=>x.WorkShifts)
 			.Include(x => x.Tasks)
 			.FirstOrDefault();
-		var tareas = EquipoTrabajo.Tasks.ToList(); 
-		var turnos = EquipoTrabajo.WorkShifts.ToList();
+		var tasks = workGroup.Tasks.ToList(); 
+		var turnos = workGroup.WorkShifts.ToList();
 		WorkShift workShiftActual = new WorkShift();
-		foreach (WorkTask t in tareas)
+		foreach (WorkTask t in tasks)
 		{
-			SelectorTareas.Items.Add(t.Name);
+			WorkTaskSelector.Items.Add(t.Name);
 		}
-		foreach (WorkShift t in turnos)
+		foreach (WorkShift workShifth in turnos)
         {
-            List<string> Dias = DiasTrabajo(t);
-			bool seTrabaja = false;
-			var HoyEs = dt.DayOfWeek.ToString();
-            if (Dias.Contains(HoyEs)) { seTrabaja = true; }
-			if (t.CheckIn < dt && t.CheckOut < dt && t.Enabled == true && seTrabaja == true)
+            List<string> days = WorkDays(workShifth);
+			bool workDay = false;
+			var todayIs = Now.DayOfWeek.ToString();
+            if (days.Contains(todayIs)) { workDay = true; }
+			if (workShifth.CheckIn < Now && workShifth.CheckOut < Now && workShifth.Enabled == true && workDay == true)
 			{
-				ListaEntradas.Add(t.CheckIn);
-				ListaSalidas.Add(t.CheckOut);
+				CheckInList.Add(workShifth.CheckIn);
+				CheckOutList.Add(workShifth.CheckOut);
 			}
 		}
-		SetListViewDias();
-		SelectorTareas.SelectedIndex = 0;
-		BotonIniciarTarea.IsVisible = false;
+		DaysListViewSet();
+		WorkTaskSelector.SelectedIndex = 0;
+		WorkTaskStartButton.IsVisible = false;
 	}
 
-	private async void BotonCerrarSesion_Clicked(object sender, EventArgs e)
+	private async void LogoutButton_Clicked(object sender, EventArgs e)
 	{
-		BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
+		LogoutButton.BackgroundColor = Color.FromRgba("#2B282D");
 		bool answer = await DisplayAlert("Logout", "¿Deseas cerrar sesión?", "Si", "No");
 		if (answer == true)
 		{
 			App.Current.MainPage = new NavigationPage(new MainPage());
 		}
 	}
-	public void ComienzaElReloj()
+	public void ClockStart()
     {
-		MyTimer = Reloj.Dispatcher.CreateTimer();
+		MyTimer = Clock.Dispatcher.CreateTimer();
 		MyTimer.Interval = TimeSpan.FromSeconds(1);
 		MyTimer.IsRepeating = true;
 		MyTimer.Tick += (x, y) =>
 		{
 			DateTime dt = DateTime.Now;
 
-			Reloj.Text =
+			Clock.Text =
 				dt.Hour.ToString("00") + ":" +
 				dt.Minute.ToString("00") + ":" +
 				dt.Second.ToString("00");
@@ -99,167 +98,137 @@ public partial class PaginaFichar : ContentPage
 
 		MyTimer.Start();
 	}
-	private void CompruebaFichajes(string user)
+	private void SigningsCheck(string username)
 	{
-		var Trabajador = presenciaContext.SignedWorkers.Where(x => x.Worker.User.Username == user).FirstOrDefault();
-		if (Trabajador is not null)
+		var worker = p.SignedWorkers.Where(x => x.Worker.User.Username == username).FirstOrDefault();
+		if (worker is not null)
 		{
-			BotonFichar.IsVisible = false;
-			BotonFichar.IsEnabled = false;
-			BotonPlegar.IsVisible = true;
-			BotonPlegar.IsEnabled = true;
-			SelectorTareas.IsVisible = true;
-			SelectorTareas.IsEnabled = true;
-			CompruebaTareas(user);
+			CheckInButton.IsVisible = false;
+			CheckOutButton.IsVisible = true;
+			WorkTaskSelector.IsVisible = true;
+			WorkTasksCheck(username);
 		}
 		else
 		{
-			BotonFichar.IsVisible = true;
-			BotonFichar.IsEnabled = true;
-			BotonPlegar.IsVisible = false;
-			BotonPlegar.IsEnabled = false;
-			SelectorTareas.IsVisible = false;
-			SelectorTareas.IsEnabled = false;
+			CheckInButton.IsVisible = true;
+			CheckOutButton.IsVisible = false;
+			WorkTaskSelector.IsVisible = false;
 		}
 	}
-	private void CompruebaTareas(string user)
+	private void WorkTasksCheck(string username)
 	{
-		var trabajador = presenciaContext.StartedTasks.Where(x => x.Worker.User.Username == user).Include(x => x.Worker).Include(x => x.Task).FirstOrDefault();
-		if (trabajador is not null)
+		var worker = p.StartedTasks.Where(x => x.Worker.User.Username == username).Include(x => x.Worker).Include(x => x.Task).FirstOrDefault();
+		if (worker is not null)
 		{
-			BotonAcabarTarea.IsVisible = true;
-			BotonAcabarTarea.IsEnabled = true;
-			BotonIniciarTarea.IsEnabled = false;
-			BotonIniciarTarea.IsVisible = false;
+			WorkTaskEndButton.IsVisible = true;
+			WorkTaskStartButton.IsVisible = false;
 		}
 		else
 		{
-			BotonAcabarTarea.IsVisible = false;
-			BotonAcabarTarea.IsEnabled = false;
-			BotonIniciarTarea.IsEnabled = false;
-			BotonIniciarTarea.IsVisible = false;
+			WorkTaskEndButton.IsVisible = false;
+			WorkTaskStartButton.IsEnabled = false;
 		}
 	}
-	public void irMainPage(object sender, EventArgs e)
+	public void GoToMainPage(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new MainPage());
-		presenciaContext.Logs.Add(new Log("Logout", Username + " ha cerrado sesion - "+dt));
-		presenciaContext.SaveChanges();
-
+		db.InsertLog(new Log("Logout", Username + " ha cerrado sesion - "+Now),p);
 	}
 	private async void BotonFichar_Clicked(object sender, EventArgs e)
 	{
-		var trabajador = presenciaContext.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
-		Signing fich = new Signing(trabajador, dt, "Entrada");
-		DbInsert.InsertSigning(fich, presenciaContext);
-        presenciaContext.SignedWorkers.Add(new SignedWorker(trabajador, fich));
-        presenciaContext.SaveChanges();
-        BotonFichar.IsVisible = false;
-		BotonFichar.IsEnabled = false;
-		BotonPlegar.IsVisible = true;
-		BotonPlegar.IsEnabled = true;
-		SelectorTareas.IsEnabled = true;
-		SelectorTareas.IsVisible = true;
-		BotonIniciarTarea.IsEnabled = true;
-		BotonIniciarTarea.IsVisible = true;
-		foreach (DateTime d in ListaEntradas)
+		var worker = p.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
+		Signing signing = new Signing(worker, Now, "Entrada");
+		db.InsertSigning(signing, p);
+        p.SignedWorkers.Add(new SignedWorker(worker, signing));
+        p.SaveChanges();
+        CheckInButton.IsVisible = false;
+		CheckOutButton.IsVisible = true;
+		WorkTaskSelector.IsVisible = true;
+		WorkTaskStartButton.IsVisible = true;
+		foreach (DateTime d in CheckInList)
 		{
-			if (dt < d)
+			if (Now < d)
 			{
-				var operacion = (d - dt);
+				var operacion = (d - Now);
 				string motivo = await DisplayPromptAsync("Usted llega temprano.", "¿Cual es la razon?");
-				DbInsert.InsertLog(new Log("Temprano", "El trabajador " + trabajador.CardNumber + " Ha llegado " + operacion + "m antes. - " + dt), presenciaContext);
+				db.InsertLog(new Log("Temprano", "El trabajador " + worker.CardNumber + " Ha llegado " + operacion + "m antes. - " + Now), p);
 			}
-			if (dt > d.AddMinutes(5))
+			if (Now > d.AddMinutes(5))
 			{
-				var operacion = (dt - d);
+				var operacion = (Now - d);
 				string motivo = await DisplayPromptAsync("Usted llega tarde.", "¿Cual es la razon?");
-				DbInsert.InsertLog(new Log("Retraso", "El trabajador " + trabajador.CardNumber + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + dt), presenciaContext);
-				DbInsert.InsertIssue(new Issue(trabajador,"Retraso de"+operacion,dt,false),presenciaContext);
+				db.InsertLog(new Log("Retraso", "El trabajador " + worker.CardNumber + " Ha llegado " + operacion + "m tarde debido a " + motivo + " - " + Now), p);
+				db.InsertIssue(new Issue(worker,"Retraso de"+operacion,Now,false),p);
 			}
-			if (dt > d && dt <= d.AddMinutes(5))
+			if (Now > d && Now <= d.AddMinutes(5))
 			{
-				DbInsert.InsertLog(new Log("En hora", "El trabajador " + trabajador.CardNumber + " Ha llegado a tiempo - " + dt), presenciaContext);
+				db.InsertLog(new Log("En hora", "El trabajador " + worker.CardNumber + " Ha llegado a tiempo - " + Now), p);
 			}
 		}
 	}
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
-			var trabajador = presenciaContext.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
-			DbInsert.InsertSigning(new Signing(trabajador, dt, "Entrada"), presenciaContext);
-			var TrabajadorEnTurno = presenciaContext.SignedWorkers.Where(x => x.Worker == trabajador).FirstOrDefault();
-			DbDelete.DeleteSignedWorker(TrabajadorEnTurno, presenciaContext);
-				//presenciaContext.SignedWorkers.Remove(SignedWorkers);
-				//presenciaContext.SaveChanges();
-				BotonFichar.IsVisible = true;
-				BotonFichar.IsEnabled = true;
-				BotonPlegar.IsVisible = false;
-				BotonPlegar.IsEnabled = false;
-				SelectorTareas.IsEnabled = false;
-				SelectorTareas.IsVisible = false;
-				if (SelectorTareas.IsVisible == false)
+			var worker = p.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
+			db.InsertSigning(new Signing(worker, Now, "Entrada"), p);
+			var SignedWorker = p.SignedWorkers.Where(x => x.Worker == worker).FirstOrDefault();
+			db.DeleteSignedWorker(SignedWorker, p);
+			CheckInButton.IsVisible = true;
+			CheckOutButton.IsVisible = false;
+			WorkTaskSelector.IsVisible = false;
+			if (WorkTaskSelector.IsVisible == false)
+			{
+				WorkTaskStartButton.IsVisible = false;
+				WorkTaskEndButton.IsVisible = false;
+			}
+			foreach (DateTime date in CheckOutList) {
+				if (Now < date)
 				{
-					BotonIniciarTarea.IsVisible = false;
-					BotonIniciarTarea.IsEnabled = false;
-					BotonAcabarTarea.IsVisible = false;
-					BotonAcabarTarea.IsEnabled = false;
+					var difference = (date - Now);
+					string reason = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
+					db.InsertLog(new Log("Temprano", "El trabajador " + worker.CardNumber + " Ha salido " + difference + "m antes. debido a " + reason + " - " + Now), p);
 				}
-			foreach (DateTime d in ListaSalidas) {
-				if (dt < d)
+				if (Now > date.AddMinutes(5))
 				{
-					var operacion = (d - dt);
-					string motivo = await DisplayPromptAsync("Esta saliendo antes de hora", "¿Cual es la razon?");
-					DbInsert.InsertLog(new Log("Temprano", "El trabajador " + trabajador.CardNumber + " Ha salido " + operacion + "m antes. debido a " + motivo + " - " + dt), presenciaContext);
+					var difference = (Now - date);
+					string reason = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
+					db.InsertLog(new Log("Retraso", "El trabajador " + worker.CardNumber + " Ha salido " + difference + "m tarde. - " + Now),p);
 				}
-				if (dt > d.AddMinutes(5))
+				if (Now > date && Now <= date.AddMinutes(5))
 				{
-					var operacion = (dt - d);
-					string motivo = await DisplayPromptAsync("Usted Sale tarde.", "¿Cual es la razon?");
-					DbInsert.InsertLog(new Log("Retraso", "El trabajador " + trabajador.CardNumber + " Ha salido " + operacion + "m tarde. - " + dt),presenciaContext);
-				}
-				if (dt > d && dt <= d.AddMinutes(5))
-				{
-					DbInsert.InsertLog(new Log("En hora", "El trabajador " + trabajador.CardNumber + " Ha llegado a tiempo - " + dt),presenciaContext);
+					db.InsertLog(new Log("En hora", "El trabajador " + worker.CardNumber + " Ha llegado a tiempo - " + Now),p);
 				}
 			}
 	}
 	private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 		{
-			int selectedIndex = SelectorTareas.SelectedIndex;
-			var tareaActual = SelectorTareas.SelectedItem.ToString();
-			var tarea = presenciaContext.WorkTasks.Where(x => x.Name == tareaActual).FirstOrDefault();
-			var TareaIniciada = presenciaContext.StartedTasks.Where(x => x.Task.Name == tarea.Name && x.TastStart.Date == dt.Date).OrderBy(x => x.TastStart).LastOrDefault();
+			var searchWorkTask = WorkTaskSelector.SelectedItem.ToString();
+			var worktask = p.WorkTasks.Where(x => x.Name == searchWorkTask).FirstOrDefault();
+			var startedWorkTask = p.StartedTasks.Where(x => x.Task.Name == worktask.Name && x.TastStart.Date == Now.Date).OrderBy(x => x.TastStart).LastOrDefault();
 
-			if (TareaIniciada is not null)
+			if (startedWorkTask is not null)
 			{
-				BotonAcabarTarea.IsEnabled = true;
-				BotonAcabarTarea.IsVisible = true;
-				BotonIniciarTarea.IsEnabled = false;
-				BotonIniciarTarea.IsVisible = false;
+				WorkTaskEndButton.IsVisible = true;
+				WorkTaskStartButton.IsVisible = false;
 			}
 			else
 			{
-				BotonAcabarTarea.IsEnabled = false;
-				BotonAcabarTarea.IsVisible = false;
-				BotonIniciarTarea.IsEnabled = true;
-				BotonIniciarTarea.IsVisible = true;
+				WorkTaskEndButton.IsVisible = false;
+				WorkTaskStartButton.IsVisible = false;
 			}
 		}
 	private async void BotonIniciarTarea_Clicked(object sender, EventArgs e)
 		{
-			BotonAcabarTarea.IsEnabled = true;
-			BotonAcabarTarea.IsVisible = true;
-			BotonIniciarTarea.IsEnabled = false;
-			BotonIniciarTarea.IsVisible = false;
-			HoraEntrada = dt;
+			WorkTaskEndButton.IsVisible = true;
+			WorkTaskStartButton.IsVisible = false;
+			CheckIn = Now;
 
-			if (SelectorTareas.SelectedItem.ToString() is not null)
+			if (WorkTaskSelector.SelectedItem.ToString() is not null)
 			{
-				var tareaActual = SelectorTareas.SelectedItem.ToString();
-				var tarea = presenciaContext.WorkTasks.Where(x => x.Name == tareaActual).FirstOrDefault();
-				presenciaContext.Add(new StartedTask(tarea, worker, dt));
-				DbInsert.InsertLog(new Log("Tareas", Username + " ha iniciado tarea " + tarea.Name + " - " + dt),presenciaContext);
-				presenciaContext.SaveChanges();
+				var searchWorkTask = WorkTaskSelector.SelectedItem.ToString();
+				var workTask = p.WorkTasks.Where(x => x.Name == searchWorkTask).FirstOrDefault();
+				db.InsertStartedTask(new StartedTask(workTask, Worker, Now),p);
+				db.InsertLog(new Log("Tareas", Username + " ha iniciado tarea " + workTask.Name + " - " + Now),p);
+				p.SaveChanges();
 		}
 			else
 			{
@@ -268,108 +237,94 @@ public partial class PaginaFichar : ContentPage
 
 		}
 	private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
+	{
+		WorkTaskEndButton.IsVisible = false;
+		WorkTaskStartButton.IsVisible = true;
+		var searchWorkTask = WorkTaskSelector.SelectedItem.ToString();
+		var workTask = p.WorkTasks.Where(x => x.Name == searchWorkTask).FirstOrDefault();
+		var startedWorkTask = p.StartedTasks.Where(x => x.Task.Name == workTask.Name).Where(x => x.TastStart.Date == Now.Date).OrderBy(x => x.TastStart).Last();
+		var totalHours = (DateTime.Now - startedWorkTask.TastStart).TotalHours;
+		bool onTime = false;
+		if (totalHours <= workTask.ElapsedTime)
 		{
-			BotonAcabarTarea.IsEnabled = false;
-			BotonAcabarTarea.IsVisible = false;
-			BotonIniciarTarea.IsEnabled = true;
-			BotonIniciarTarea.IsVisible = true;
-			var tareaActual = SelectorTareas.SelectedItem.ToString();
-			var tarea = presenciaContext.WorkTasks.Where(x => x.Name == tareaActual).FirstOrDefault();
-			var TareaIniciada = presenciaContext.StartedTasks.Where(x => x.Task.Name == tarea.Name).Where(x => x.TastStart.Date == dt.Date).OrderBy(x => x.TastStart).Last();
-			var HorasUsadas = (DateTime.Now - TareaIniciada.TastStart).TotalHours;
-			bool EnHora = false;
-			if (HorasUsadas <= tarea.ElapsedTime)
-			{
-				EnHora = true;
-			}
-
-			presenciaContext.EndedTasks.Add(new EndedTask(tarea, worker, TareaIniciada.TastStart, dt, HorasUsadas, EnHora));
-			presenciaContext.StartedTasks.Remove(TareaIniciada);
-			DbInsert.InsertLog(new Log("Tareas", Username + " ha finalizado tarea " + tarea.Name + " - " + dt), presenciaContext);
-			presenciaContext.SaveChanges();
+			onTime = true;
 		}
-    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		db.InsertEndedTask(new EndedTask(workTask, Worker, startedWorkTask.TastStart, Now, totalHours, onTime), p);
+		db.DeleteStartedTask(startedWorkTask,p);
+		db.InsertLog(new Log("Tareas", Username + " ha finalizado tarea " + workTask.Name + " - " + Now), p);
+	}
+    private void DayListView_Selected(object sender, SelectedItemChangedEventArgs e)
     {
 		Day item = e.SelectedItem as Day;
-		_day = item;
+		Day = item;
 	}
-    private void BtnPedirVacaciones_Clicked(object sender, EventArgs e)
+    private void VacationRequestButton_Clicked(object sender, EventArgs e)
     {
-		var trab = worker;
+		var trab = Worker;
 		App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username,trab));
     }
-    private void BtnCalendario_Clicked(object sender, EventArgs e)
+    private void CalendarButton_Clicked(object sender, EventArgs e)
     {
-			if(CalActivo== true) { 
+			if(activeCalendar== true) { 
 				ListViewCalendar.IsVisible = false;
-				CuerpoPrincipal.IsVisible = true;
-				BtnCalendarioTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-				BtnPedirVacacionesTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-				CalActivo = false;
+				MainBody.IsVisible = true;
+				Calendar.BackgroundColor = Color.FromRgba("#2B282D");
+				VacationRequest.BackgroundColor = Color.FromRgba("#2B282D");
+				activeCalendar = false;
 			}
 			else 
 			{ 
 				ListViewCalendar.IsVisible = true;
-				CuerpoPrincipal.IsVisible = false;;
-				BtnCalendarioTrabajador.BackgroundColor = Color.FromRgba("#93778B");
-				BtnPedirVacacionesTrabajador.BackgroundColor = Color.FromRgba("#2B282D");
-				CalActivo = true;
+				MainBody.IsVisible = false;;
+				Calendar.BackgroundColor = Color.FromRgba("#93778B");
+				VacationRequest.BackgroundColor = Color.FromRgba("#2B282D");
+				activeCalendar = true;
 			}
 	}
-	
-	private void SetListViewDias()
+	private void DaysListViewSet()
     {
-		var ExisteCalendario = presenciaContext.Calendars.Where(x => x.Worker == worker).Include(x => x.DaysOnCalendar).FirstOrDefault();
-		if (ExisteCalendario is not null)
+		var calendarSearch = p.Calendars.Where(x => x.Worker == Worker).Include(x => x.DaysOnCalendar).FirstOrDefault();
+		if (calendarSearch is not null)
 		{
-			var ListaDias = ExisteCalendario.DaysOnCalendar.ToList();
-			ListViewCalendario.ItemsSource = ListaDias;
-			if (ListaDias.Count > 0)
-				ListViewCalendario.SelectedItem = ListaDias[0];
+			var dayList = calendarSearch.DaysOnCalendar.ToList();
+			ListViewCalendario.ItemsSource = dayList;
+			if (dayList.Count > 0)
+				ListViewCalendario.SelectedItem = dayList[0];
 		}
 	}
-    private void ListViewCalendario_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-			
-    }
-
     private void VolverATrabajadores_Clicked(object sender, EventArgs e)
     {
-		switch (PrincipalActivo)
+		switch (activeMain)
 		{
 			case true:
 				ListViewCalendar.IsVisible = false;
-				ListViewCalendar.IsEnabled = false;
-				CuerpoPrincipal.IsVisible = true;
-				CuerpoPrincipal.IsEnabled = true;
-				PrincipalActivo = false;
-				CalActivo = false;
+				MainBody.IsVisible = true;
+				activeMain = false;
+				activeCalendar = false;
 				break;
 			case false:
 				ListViewCalendar.IsVisible = false;
-				ListViewCalendar.IsEnabled = false;
-				CuerpoPrincipal.IsVisible = true;
-				CuerpoPrincipal.IsEnabled = true;
-				PrincipalActivo = true;
-				CalActivo = false;
+				MainBody.IsVisible = true;
+				activeMain = true;
+				activeCalendar = true;
 				break;
 		}
 	}
-	private string QueDiaEs()
+	private string WhatDayIsIt()
     {
-		string dia = dt.DayOfWeek.ToString();
-		return dia;
+		string day = Now.DayOfWeek.ToString();
+		return day;
     }
-    private List<string> DiasTrabajo(WorkShift t)
+    private List<string> WorkDays(WorkShift t)
     {
-		List<string> dias = new List<string>();
-		if (t.Monday == true) { dias.Add("Monday"); }
-		if (t.Tuesday == true) { dias.Add("Tuesday"); }
-		if (t.Wednesday == true) { dias.Add("Wednesday"); }
-		if (t.Thursday == true) { dias.Add("Thursday"); }
-		if (t.Friday == true) { dias.Add("Friday"); }
-		if (t.Saturday == true) { dias.Add("Saturday"); }
-		if (t.Domingo == true) { dias.Add("Sunday"); }
-		return dias;
+		List<string> days = new List<string>();
+		if (t.Monday == true) { days.Add("Monday"); }
+		if (t.Tuesday == true) { days.Add("Tuesday"); }
+		if (t.Wednesday == true) { days.Add("Wednesday"); }
+		if (t.Thursday == true) { days.Add("Thursday"); }
+		if (t.Friday == true) { days.Add("Friday"); }
+		if (t.Saturday == true) { days.Add("Saturday"); }
+		if (t.Domingo == true) { days.Add("Sunday"); }
+		return days;
 	}
 }

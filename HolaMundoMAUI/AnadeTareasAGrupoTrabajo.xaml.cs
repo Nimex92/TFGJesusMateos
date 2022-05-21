@@ -8,6 +8,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 	PresenciaContext presenciaContext = new PresenciaContext();
 	string NombreUsuario;
 	DateTime dt = DateTime.Now;
+	Db db = new Db();
 	public AnadeTareasGrupoTrabajo(string user)
 	{
 		InitializeComponent();
@@ -54,8 +55,8 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 			grupo.Tasks.Add(tarea);
 			presenciaContext.SaveChanges();
 			await DisplayAlert("Alert", "Se ha añadido '" + tarea.Name + "' a grupo: "+grupo.Name, "OK");
-			//DbInsert.AnadeTareaEquipoTrabajo(grupo,tarea,presenciaContext);
-			DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.Name + " a grupo " + grupo.Name + " - " + dt),presenciaContext);
+			//db.AnadeTareaEquipoTrabajo(grupo,tarea,p);
+			db.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido " + tarea.Name + " a grupo " + grupo.Name + " - " + dt),presenciaContext);
 			await DisplayAlert("Operacion correcta", "Se ha añadido '" + tarea.Name + "' a grupo: "+grupo.Name, "OK");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
 		}

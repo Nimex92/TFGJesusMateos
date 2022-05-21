@@ -5,54 +5,53 @@ namespace HolaMundoMAUI;
 
 public partial class AltaTareaTrabajo : ContentPage
 {
-    string NombreUsuario;
-    string NombreTarea;
+    string Username;
+    string TaskName;
     DateTime dt = DateTime.Now;
     PresenciaContext presenciaContext = new PresenciaContext();
+    Db db = new Db();
 
     public AltaTareaTrabajo(string user)
 	{
 		InitializeComponent();
-        NombreUsuario = user;
-        step.ValueChanged += (sender, e) =>
+        Username = user;
+        Step.ValueChanged += (sender, e) =>
         {
-            LabelHoras.Text = e.NewValue.ToString();
+            HourLabel.Text = e.NewValue.ToString();
         };
     }
-    public AltaTareaTrabajo(string user,string tarea,int actualiza)
+    public AltaTareaTrabajo(string user,string task,int option)
     {
         InitializeComponent();
-        NombreTarea = tarea;
-        NombreUsuario = user;
-        step.ValueChanged += (sender, e) =>
+        TaskName = task;
+        Username = user;
+        Step.ValueChanged += (sender, e) =>
         {
-            LabelHoras.Text = e.NewValue.ToString();
+            HourLabel.Text = e.NewValue.ToString();
         };
 
-        if(actualiza  == 1)
+        if(option  == 1)
         {
-            BotonRegistrarAdmin.IsVisible = false;
-            BotonRegistrarAdmin.IsEnabled = false;
-            BotonActualizarAdmin.IsVisible = true;
-            BotonActualizarAdmin.IsEnabled = true;
+            RegisterButton.IsVisible = false;
+            UpdateButton.IsVisible = true;
         }
-        var Tarea = presenciaContext.WorkTasks.Where(x => x.Name == NombreTarea).FirstOrDefault();
-        CampoNombre.Text = Tarea.Name;
-        CampoDescripcion.Text = Tarea.Description;
-        step.Value = Tarea.ElapsedTime;
+        var WorkTask = presenciaContext.WorkTasks.Where(x => x.Name == TaskName).FirstOrDefault();
+        NameField.Text = WorkTask.Name;
+        DescriptionField.Text = WorkTask.Description;
+        Step.Value = WorkTask.ElapsedTime;
     }
 
     private async void RegistraNuevaTarea(object sender, EventArgs e)
     {
-        string nombre = CampoNombre.Text; 
-        string descripcion=CampoDescripcion.Text;
-        double numerohoras=step.Value;
-        bool inserta = DbInsert.InsertWorkTask(nombre, descripcion, numerohoras, presenciaContext);
-        DbInsert.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido tarea de trabajo " + nombre + " - " + dt),presenciaContext);
-        if (inserta == true)
+        string name = NameField.Text; 
+        string descripcion= DescriptionField.Text;
+        double numberOfHours=Step.Value;
+        bool insert = db.InsertWorkTask(name, descripcion, numberOfHours, presenciaContext);
+        db.InsertLog(new Log("Añadir", Username + " ha añadido tarea de trabajo " + name + " - " + dt),presenciaContext);
+        if (insert == true)
         {
-            await DisplayAlert("Alert", "Se ha insertado tarea "+nombre+".", "OK");
-            App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 5));
+            await DisplayAlert("Success", "Se ha insertado tarea "+name+".", "OK");
+            App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 5));
         }
         else
         {
@@ -61,17 +60,17 @@ public partial class AltaTareaTrabajo : ContentPage
     }
     private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
     {
-        var tarea = presenciaContext.WorkTasks.Where(x => x.Name == NombreTarea).FirstOrDefault();
-        //tarea.NombreTarea = CampoNombre.Text;
-        //tarea.Descripcion = CampoDescripcion.Text;
-        //tarea.TiempoEstimado = step.Value;
-        DbUpdate.UpdateWorkTask(tarea,CampoNombre.Text,CampoDescripcion.Text,step.Value,presenciaContext);
+        var task = presenciaContext.WorkTasks.Where(x => x.Name == TaskName).FirstOrDefault();
+        task.Name = NameField.Text;
+        task.Description = DescriptionField.Text;
+        task.ElapsedTime = Step.Value;
+        db.UpdateWorkTask(task,NameField.Text,DescriptionField.Text,Step.Value,presenciaContext);
         await DisplayAlert("Alert","Se ha modificado la tarea correctamente.","OK");
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,5));
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,5));
     }
     private void IrAlMain(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,5));
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,5));
     }
 
 

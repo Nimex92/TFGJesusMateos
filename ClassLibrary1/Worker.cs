@@ -16,7 +16,7 @@ namespace ClassLibray
         [Key]
         public int CardNumber { get; set; }
         public string Name { get; set; }
-        public string BelongsToWorkShifts { get; set; }
+        public string BelongstoWorkGroups { get; set; }
         public ICollection<WorkGroup> WorkGroup { get; set; } = new List<WorkGroup>();
         public virtual User User { get; set; }
         public string Category { get; set; }

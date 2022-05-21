@@ -106,9 +106,10 @@ namespace Persistencia.Tests
         [TestMethod()]
         public void borraUsuarioTest()
         {
+            Db db = new Db();
             PresenciaContext p = new PresenciaContext();
             var us = p.Users.ToList();
-            bool borra = DbDelete.DeleteUser(us[0],p);
+            bool borra = db.DeleteUser(us[0],p);
             Assert.IsTrue(borra);
         }
         /*

@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 	PresenciaContext p = new PresenciaContext();
 	DateTime dt = DateTime.Now;
 	DateTime Today = DateTime.Today;
+	Db db = new Db();
 	public MainPage()
 	{
 		InitializeComponent();
@@ -54,7 +55,7 @@ public partial class MainPage : ContentPage
 					ContrasenaOlvidada.Background = Color.FromRgba("#1b5e3b");
 					await CuerpoLogin.TranslateTo(2000, 0, 1500);
 					App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
-					DbInsert.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
+					db.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
 				}
 				else
 				{
@@ -63,7 +64,7 @@ public partial class MainPage : ContentPage
 					ContrasenaOlvidada.Background = Color.FromRgba("#1b5e3b");
 					await CuerpoLogin.TranslateTo(-2000, 0, 1500);
 					App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
-					DbInsert.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
+					db.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
 				}
 			}
 			else

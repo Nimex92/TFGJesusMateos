@@ -26,7 +26,7 @@ namespace Persistencia
         /// </summary>
         /// <param Log="log"></param>
         /// <param PresenciaContext="p"></param>
-        public static void InsertLog(Log log, PresenciaContext p)
+        public static void InsertLog(this Db db, Log log, PresenciaContext p)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar una incidencia en la base de datos
-        public static void InsertIssue(Issue issue, PresenciaContext p)
+        public static void InsertIssue(this Db db, Issue issue, PresenciaContext p)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar un trabajador en turno actual
-        public static void InsertSignedWorker(Worker worker, Signing signing, PresenciaContext p)
+        public static void InsertSignedWorker(this Db db, Worker worker, Signing signing, PresenciaContext p)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar un trabajador en la base de datos
-        public static bool InsertWorker(Worker worker, PresenciaContext p)
+        public static bool InsertWorker(this Db db, Worker worker, PresenciaContext p)
         {
                 try
                 {
@@ -80,7 +80,7 @@ namespace Persistencia
                 }
         }
         //Metodo para insertar un fichaje en la base de datos
-        public static bool InsertSigning(Signing signing,PresenciaContext p)
+        public static bool InsertSigning(this Db db, Signing signing,PresenciaContext p)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace Persistencia
             
         }
         //Metodo para insertar un usuario en la base de datos
-        public static bool InsertUser(User user, PresenciaContext p)
+        public static bool InsertUser(this Db db, User user, PresenciaContext p)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar una zona en la base de datos
-        public static bool InsertWorkTask(string taskName, string description, double elapsedTime, PresenciaContext p)
+        public static bool InsertWorkTask(this Db db, string taskName, string description, double elapsedTime, PresenciaContext p)
         {
             if (taskName is not null && description is not null)
             {
@@ -125,7 +125,7 @@ namespace Persistencia
             }
         }
         //Metodo para insertar una zona en la base de datos
-        public static bool InsertPlace(string name, PresenciaContext p)
+        public static bool InsertPlace(this Db db, string name, PresenciaContext p)
         {
             try
             {
@@ -140,7 +140,7 @@ namespace Persistencia
 
         }
         //Metodo para insertar un equipo de trabajo en la base de datos
-        public static bool InsertWorkGroup(WorkGroup workGroup,PresenciaContext p)
+        public static bool InsertWorkGroup(this Db db, WorkGroup workGroup,PresenciaContext p)
         {
             try
             {
@@ -155,7 +155,7 @@ namespace Persistencia
             }
 
         }
-        public static bool InsertStartedTask(StartedTask startedTask,PresenciaContext p)
+        public static bool InsertStartedTask(this Db db, StartedTask startedTask,PresenciaContext p)
         {
             try
             {
@@ -169,7 +169,7 @@ namespace Persistencia
                 return false;
             }
         }
-        public static bool InsertEndedTask(EndedTask endedTask, PresenciaContext p)
+        public static bool InsertEndedTask(this Db db, EndedTask endedTask, PresenciaContext p)
         {
             try
             {
@@ -190,7 +190,7 @@ namespace Persistencia
     {
         //#################################### Metodos para Borrar datos de la BD ################################
         //Metodo para borrar un trabajador existente de la base de datos
-        public static bool DeleteWorker(Worker worker, PresenciaContext p)
+        public static bool DeleteWorker(this Db db, Worker worker, PresenciaContext p)
         {
             try
             {
@@ -206,7 +206,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar un trabajador actual en turno(Plegar de su turno de trabajo)
-        public static bool DeleteSignedWorker(SignedWorker signedWorker, PresenciaContext p)
+        public static bool DeleteSignedWorker(this Db db, SignedWorker signedWorker, PresenciaContext p)
         {
             try
             {
@@ -221,7 +221,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar un fichaje concreto de la base de datos
-        public static bool DeleteSigning(Signing signing, PresenciaContext p)
+        public static bool DeleteSigning(this Db db, Signing signing, PresenciaContext p)
         {
             try
             {
@@ -236,7 +236,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar un usuario concreto de la base de datos
-        public static bool DeleteUser(User user, PresenciaContext p)
+        public static bool DeleteUser(this Db db, User user, PresenciaContext p)
         {
             try
             {
@@ -251,7 +251,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar una zona concreta de la base de datos
-        public static bool DeletePlace(Places place, PresenciaContext p)
+        public static bool DeletePlace(this Db db, Places place, PresenciaContext p)
         {
             try
             {
@@ -266,7 +266,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar un turno de la base de datos
-        public static bool DeleteWorkShift(WorkShift workShift, PresenciaContext p)
+        public static bool DeleteWorkShift(this Db db, WorkShift workShift, PresenciaContext p)
         {
             try
             {
@@ -281,7 +281,7 @@ namespace Persistencia
             }
         }
         //Metodo para borrar una zona de la base de datos
-        public static bool DeleteWorkTask(WorkTask workTask, PresenciaContext p)
+        public static bool DeleteWorkTask(this Db db, WorkTask workTask, PresenciaContext p)
         {
             try
             {
@@ -295,7 +295,7 @@ namespace Persistencia
                 return false;
             }
         }
-        public static bool InsertStartedTask(StartedTask startedTask, PresenciaContext p)
+        public static bool DeleteStartedTask(this Db db, StartedTask startedTask, PresenciaContext p)
         {
             try
             {
@@ -309,7 +309,7 @@ namespace Persistencia
                 return false;
             }
         }
-        public static bool InsertEndedTask(EndedTask endedTask, PresenciaContext p)
+        public static bool DeleteEndedTask(this Db db, EndedTask endedTask, PresenciaContext p)
         {
             try
             {
@@ -326,7 +326,7 @@ namespace Persistencia
     }
     public static class DbUpdate
     {
-        public static bool UpdateWorker(Worker worker, string name, WorkGroup workgroup)
+        public static bool UpdateWorker(this Db db, Worker worker, string name, WorkGroup workgroup)
         {
             try
             {
@@ -343,7 +343,7 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar un usuario existente en la base de datos
-        public static bool UpdateUser(User user, PresenciaContext p)
+        public static bool UpdateUser(this Db db, User user, PresenciaContext p)
         {
             try
             {
@@ -358,7 +358,7 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar una zona existente en la base de datos
-        public static bool UpdatePlace(string oldName, string newName)
+        public static bool UpdatePlace(this Db db, string oldName, string newName)
         {
             try
             {
@@ -384,7 +384,7 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar un turno existente en la base de datos
-        public static bool UpdateWorkShift(WorkShift worker, string name, DateTime checkIn, DateTime checkOut, bool monday, bool tuesday, bool wednesday, bool thursday, bool friday, bool sabado, bool sunday, DateTime validFrom, DateTime validUntil, bool enabled, bool deleted, PresenciaContext p)
+        public static bool UpdateWorkShift(this Db db, WorkShift worker, string name, DateTime checkIn, DateTime checkOut, bool monday, bool tuesday, bool wednesday, bool thursday, bool friday, bool sabado, bool sunday, DateTime validFrom, DateTime validUntil, bool enabled, bool deleted, PresenciaContext p)
         {
             try
             {
@@ -415,7 +415,7 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar una tarea existente en la base de datos
-        public static bool UpdateWorkTask(WorkTask workTask, string name, string descrption, double elapsedTime,PresenciaContext p)
+        public static bool UpdateWorkTask(this Db db, WorkTask workTask, string name, string descrption, double elapsedTime,PresenciaContext p)
         {
             try
             {
@@ -435,7 +435,7 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar un equipo de trabajo existente en la base de datos
-        public static bool UpdateWorkGroup(WorkGroup workgroup, string name, PresenciaContext p)
+        public static bool UpdateWorkGroup(this Db db, WorkGroup workgroup, string name, PresenciaContext p)
         {
             try
             {
@@ -452,7 +452,7 @@ namespace Persistencia
                 return false;
             }
         }
-        public static bool UpdateStartedTask(StartedTask startedTask, WorkTask workTask, Worker worker, DateTime taskStart, PresenciaContext p)
+        public static bool UpdateStartedTask(this Db db, StartedTask startedTask, WorkTask workTask, Worker worker, DateTime taskStart, PresenciaContext p)
         {
             try
             {
@@ -469,7 +469,7 @@ namespace Persistencia
                 return false;
             }
         }
-        public static bool UpdateEndedTask(EndedTask endedTask,WorkTask workTask,Worker worker,DateTime taskInit,DateTime taskEnd,double totalTimeUsed,bool onTime, PresenciaContext p)
+        public static bool UpdateEndedTask(this Db db, EndedTask endedTask,WorkTask workTask,Worker worker,DateTime taskInit,DateTime taskEnd,double totalTimeUsed,bool onTime, PresenciaContext p)
         {
             try
             {
