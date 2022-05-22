@@ -16,11 +16,11 @@
                                    Margin="1200,20,0,0">
                 <ImageButton Source="logout.png"
                      VerticalOptions="Center"
-                     Clicked="BotonCerrarSesion_Clicked"
+                     Clicked="LogoutButton_Clicked"
                      WidthRequest="30"/>
                 <Button Text="Cerrar sesión"
                    HorizontalOptions="Center"
-                   Clicked="BotonCerrarSesion_Clicked"
+                   Clicked="LogoutButton_Clicked"
                    TextColor="White"
                    Margin="5,0,0,0"
                    BackgroundColor="#2B282D"/>
@@ -58,58 +58,58 @@
                         FontAttributes="Bold"
                         Margin="15,0,15,0"/>
             </StackLayout>
-            <StackLayout x:Name="BotonTrabajador">
+            <StackLayout x:Name="WorkersButton">
                 <ImageButton
-                    x:Name="BtnTrabajadores"
+                    x:Name="ButtonWorker"
                     Source="trabajadores.png"
                     WidthRequest="70"
                     HeightRequest="70"
-                    Clicked="BtnTrabajadores_Clicked"/>
+                    Clicked="WorkersButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BotonGrupoTrabajo">
+            <StackLayout x:Name="WorkShiftsButton">
                 <ImageButton
-                    x:Name="BtnGruposTrabajo"
+                    x:Name="ButtonWorkShift"
                     Source="turnos.png"
                     WidthRequest="70"
                     HeightRequest="70"
                     Margin="0,-10,0,0"
-                    Clicked="BtnGruposTrabajo_Clicked"/>
+                    Clicked="WorkShiftsButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BotonEquipoTrabajo">
+            <StackLayout x:Name="WorkGroupsButton">
                 <ImageButton
-                    x:Name="BtnEquiposTrabajo"
+                    x:Name="ButtonWorkGroup"
                     Source="equipostrabajo.png"
                     WidthRequest="70"
                     HeightRequest="70"
                     Margin="0,-10,0,0"
-                    Clicked="BtnEquiposTrabajo_Clicked"/>
+                    Clicked="WorkGroupsButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BotonZonas">
+            <StackLayout x:Name="PlacesButton">
                 <ImageButton
-                    x:Name="BtnZonas"
+                    x:Name="ButtonPlace"
                     Source="zonas.png"
                     WidthRequest="70"
                     HeightRequest="70"
                     Margin="0,-10,0,0"
-                    Clicked="BtnZonas_Clicked"/>
+                    Clicked="PlacesButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BotonTareas">
+            <StackLayout x:Name="WorkTasksButton">
                 <ImageButton
-                    x:Name="BtnTareas"
+                    x:Name="ButtonWorkTask"
                     Source="tareas.png"
                     WidthRequest="70"
                     HeightRequest="70"
                     Margin="0,-10,0,0"
-                    Clicked="BtnTareas_Clicked"/>
+                    Clicked="WorkTasksButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="BotonNominas">
+            <StackLayout x:Name="PayrollsButton">
                 <ImageButton
-                    x:Name="BtnProblemas"
+                    x:Name="ButtonPayroll"
                     Source="problemas.png"
                     WidthRequest="70"
                     HeightRequest="70"
                     Margin="0,-10,0,0"
-                    Clicked="BtnProblemas_Clicked"/>
+                    Clicked="IssueButton_Clicked"/>
             </StackLayout>
         </FlexLayout >
         <StackLayout x:Name="ContenedorVentana"
@@ -119,7 +119,7 @@
                      Margin="130,-1045,0,0"
                      BackgroundColor="White">
 
-            <StackLayout x:Name="PaginaPrincipal">
+            <StackLayout x:Name="MainBody">
 
             </StackLayout>
             <StackLayout x:Name="ListViewWorkers" 
@@ -159,7 +159,7 @@
                                  Source="anadirusuario.png"
                                  HorizontalOptions="Start"
                                  VerticalOptions="Center"
-                                 Clicked="NuevoTrabajador"
+                                 Clicked="AddWorkerButton_Clicked"
                                  Margin="85,0,0,0"/>
                 </HorizontalStackLayout>
                 <StackLayout x:Name="BarraDivisoraTituloArriba2"
@@ -217,7 +217,7 @@
                                            VerticalOptions="Center"
                                            Margin="450,10,0,0"
                                            x:Name="BotonNominas"
-                                           Clicked="BotonNominas_Clicked"/>
+                                           Clicked="WorkerPayrollButton_Clicked"/>
                                     <ImageButton
                                            Source="calendarmini.png"
                                            MaximumHeightRequest="50"
@@ -227,7 +227,7 @@
                                            VerticalOptions="Center"
                                            Margin="510,10,0,0"
                                            x:Name="BotonCalendario"
-                                           Clicked="BotonCalendario_Clicked"/>
+                                           Clicked="CalendarButton_Clicked"/>
                                         <ImageButton
                                            Source="editar.png" 
                                            Aspect="AspectFill"
@@ -238,7 +238,7 @@
                                            VerticalOptions="Center"
                                            Margin="570,10,0,0"
                                            x:Name="BotonEditarTrabajadores"
-                                           Clicked="BotonEditarTrabajadores_Clicked"/>
+                                           Clicked="ModifyWorkersButton_Clicked"/>
                                     <ImageButton
                                            Source="quitarusuario.png"
                                            WidthRequest="50"
@@ -248,7 +248,7 @@
                                            VerticalOptions="Center"
                                            Margin="630,10,0,0"
                                            x:Name="BotonBorrarTrabajadores"
-                                           Clicked="BotonBorrarTrabajadores_Clicked"/>
+                                           Clicked="DeleteWorkerButton_Clicked"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -399,13 +399,13 @@
                                             <ImageButton x:Name="AddGruposEquipoTrabajo"
                                              Source="addgroups.png"
                                              HorizontalOptions="Center"
-                                             Clicked="AddGruposEquipoTrabajo_Clicked"
+                                             Clicked="AddWorkShiftTOWorkGroupButton_Clicked"
                                              VerticalOptions="Center"
                                              Aspect="AspectFill"/>
                                             <ImageButton x:Name="RemoveGruposEquipoTrabajo"
                                              Source="removegroup.png"
                                              HorizontalOptions="Center"
-                                             Clicked="RemoveGruposEquipoTrabajo_Clicked"
+                                             Clicked="RemoveWorkShiftFROMWorkGroup"
                                              VerticalOptions="Center"
                                              Aspect="AspectFill"/>
                                             <ImageButton
@@ -414,14 +414,14 @@
                                            HeightRequest="50"
                                            VerticalOptions="Center"
                                            x:Name="BotonEditarGruposTrabajo"
-                                           Clicked="BotonEditarGruposTrabajo_Clicked"/>
+                                           Clicked="ModifyWorkGroupButton_Clicked"/>
                                             <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
                                            HeightRequest="50"
                                            VerticalOptions="Center"
                                            x:Name="BotonBorrarGruposTrabajo"
-                                           Clicked="BotonBorrarGruposTrabajo_Clicked"
+                                           Clicked="DeleteWorkShiftButton_Clicked"
                                             Margin="-15,0,0,0"/>
                                         </HorizontalStackLayout>
                                     </Grid>
@@ -438,7 +438,7 @@
                     <ImageButton x:Name="AddGrupos"
                                      Source="addgroups.png"
                                      HorizontalOptions="Start"
-                                     Clicked="NuevoGrupoTrabajo"
+                                     Clicked="AddWorkGroupButton_Clicked"
                                      VerticalOptions="Center"/>
                         <Label Text="Añadir turno"
                                FontSize="16"
@@ -503,7 +503,7 @@
                                            VerticalOptions="Center"
                                            Margin="510,0,0,0"
                                            x:Name="BotonEditarZonas"
-                                           Clicked="BotonEditarZonas_Clicked"/>
+                                           Clicked="ModifyPlacesButton_Clicked"/>
                                         <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
@@ -511,7 +511,7 @@
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
                                            x:Name="BotonBorrarZonas"
-                                           Clicked="BotonBorrarZonas_Clicked"/>
+                                           Clicked="DeleteWorkTaskButton_Clicked"/>
 
                                     </Grid>
                                 </ViewCell>
@@ -528,7 +528,7 @@
                              HeightRequest="50" Margin="-400,0,0,0">
                     <ImageButton x:Name="BotonAnadeZona"
                                  Source="addzonas.png"
-                                 Clicked="BotonAnadeZona_Clicked"/>
+                                 Clicked="AddPlaceButton_Clicked"/>
                     <Label Text="Añadir nueva zona de trabajo"
                            FontSize="16"
                            TextColor="Black"
@@ -538,7 +538,7 @@
                     <ImageButton x:Name="AddZonasGrupos"
                                  Source="addzonasgrupotrabajo.png"
                                  HorizontalOptions="Start"
-                                 Clicked="AddZonasGrupos_Clicked"
+                                 Clicked="AddPlacesTOWorkGroupButton_Clicked"
                                  VerticalOptions="Center"
                                  Margin="10,0,0,0"/>
                     <Label Text="Añadir zona a grupo de trabajo"
@@ -624,7 +624,7 @@
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
                                            x:Name="BotonEditarTareas"
-                                           Clicked="BotonEditarTareas_Clicked"/>
+                                           Clicked="ModifyWorkTaskButton_Clicked"/>
                                         <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
@@ -632,7 +632,7 @@
                                            VerticalOptions="Center"
                                            Margin="660,0,0,0"
                                            x:Name="BotonBorrarTareas"
-                                           Clicked="BotonBorrarTareas_Clicked"/>
+                                           Clicked="DeleteWorkTaskButton_Clicked"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -648,7 +648,7 @@
                                 Source="addtareas.png"
                                 VerticalOptions="Center"
                                 x:Name="BtnAnadeTarea"
-                                Clicked="BtnAnadeTarea_Clicked"/>
+                                Clicked="AddWorkTasksButton_Clicked"/>
                             <Label Text="Añadir nueva tarea"
                                    FontSize="16"
                                    FontAttributes="Bold"
@@ -659,7 +659,7 @@
                                 Source="addtareasgrupotrabajo.png"
                                 VerticalOptions="Center"
                                 x:Name="BtnAnadeTareaGrupoTrabajo"
-                                Clicked="BtnAnadeTareaGrupoTrabajo_Clicked"
+                                Clicked="AddWorkTasksTOWorkGroupButton_Clicked"
                                 Margin="10,0,0,0"/>
                             <Label Text="Añadir tarea a grupo de trabajo"
                                    FontSize="16"
@@ -726,7 +726,7 @@
                                            VerticalOptions="Center"
                                            Margin="500,0,0,0"
                                            x:Name="BotonQuitarTrabajadorDeGrupo"
-                                           Clicked="BotonQuitarTrabajadorDeGrupo_Clicked"/>
+                                           Clicked="RemoveWorkerFROMWorkGroup"/>
                                         <ImageButton
                                            Source="editar.png"  
                                            WidthRequest="50"
@@ -734,7 +734,7 @@
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
                                            x:Name="BotonEditarEquiposTrabajo"
-                                           Clicked="BotonEditarEquiposTrabajo_Clicked"/>
+                                           Clicked="ModifyWorkShiftButton_Clicked"/>
                                         <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
@@ -742,7 +742,7 @@
                                            VerticalOptions="Center"
                                            Margin="660,0,0,0"
                                            x:Name="BotonBorrarTareas"
-                                           Clicked="BotonBorrarTareas_Clicked"/>
+                                           Clicked="DeleteWorkTaskButton_Clicked"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -758,7 +758,7 @@
                                 Source="addtareas.png"
                                 VerticalOptions="Center"
                                 x:Name="BtnAnadeEquipos"
-                                Clicked="BtnAnadeEquipos_Clicked"/>
+                                Clicked="AddWorkGroupsButton_Clicked"/>
                             <Label Text="Añadir nuevo equipo de trabajo"
                                    FontSize="16"
                                    FontAttributes="Bold"
@@ -769,7 +769,7 @@
                                 Source="adduser.png"
                                 VerticalOptions="Center"
                                 x:Name="BtnAnadeTrabajadorAEquipo"
-                                Clicked="BtnAnadeTrabajadorAEquipo_Clicked"/>
+                                Clicked="AddWorkerTOWorkGroupButton_Clicked"/>
                             <Label Text="Añadir trabajador a equipo"
                                    FontSize="16"
                                    FontAttributes="Bold"
@@ -857,7 +857,7 @@
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
                                            x:Name="BotonActualizaDias"
-                                           Clicked="BotonActualizaDias_Clicked"/>
+                                           Clicked="ModifyDaysButton_Clicked"/>
                                         <ImageButton
                                            Source="borrar.png"
                                            WidthRequest="50"
@@ -865,7 +865,7 @@
                                            VerticalOptions="Center"
                                            Margin="660,0,0,0"
                                            x:Name="BotonBorrarDias"
-                                           Clicked="BotonBorrarDias_Clicked"/>
+                                           Clicked="DeleteDaysButton_Clicked"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -881,7 +881,7 @@
                                 Source="addtareas.png"
                                 VerticalOptions="Center"
                                 x:Name="BtnAnadeDias"
-                                Clicked="BtnAnadeDias_Clicked"/>
+                                Clicked="AddDaysButton_Clicked"/>
                             <Label Text="Añadir Dias al calendario"
                                    FontSize="16"
                                    FontAttributes="Bold"
@@ -891,7 +891,7 @@
                     <Button
                             x:Name="VolverATrabajadores"
                             Text="Volver"
-                            Clicked="VolverATrabajadores_Clicked"
+                            Clicked="BackToWorkersWindowButton_Clicked"
                             WidthRequest="160"
                             HeightRequest="35"/>
                 </StackLayout>
@@ -999,7 +999,7 @@
                                 Source="addtareas.png"
                                 VerticalOptions="Center"
                                 
-                                Clicked="BtnAnadeDias_Clicked"/>
+                                Clicked="AddDaysButton_Clicked"/>
                             <Label Text="Añadir Dias al calendario"
                                    FontSize="16"
                                    FontAttributes="Bold"
@@ -1009,7 +1009,7 @@
                     <Button
                             x:Name="VolverAdmin"
                             Text="Volver"
-                            Clicked="VolverATrabajadores_Clicked"
+                            Clicked="BackToWorkersWindowButton_Clicked"
                             WidthRequest="160"
                             HeightRequest="35"/>
                 </StackLayout>
