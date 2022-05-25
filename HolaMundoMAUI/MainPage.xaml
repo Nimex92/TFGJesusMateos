@@ -31,7 +31,7 @@
                      WidthRequest="320"
                      HeightRequest="170"
                      >
-            <Entry x:Name="CampoUsuario"
+            <Entry x:Name="NameField"
                    Placeholder="Introduce usuario:"
                    PlaceholderColor="#A29FA0"
                    Margin="0,15,0,0"
@@ -42,7 +42,7 @@
                    BackgroundColor="White"
                    TextColor="Black"/>
 
-            <Entry x:Name="CampoContraseña"
+            <Entry x:Name="PasswordField"
                    Placeholder="Introduce Contraseña:"
                    PlaceholderColor="#A29FA0"
                    Margin="0,15,0,0"
@@ -56,10 +56,10 @@
                    />
 
             <ImageButton
-                x:Name="irPaginaFichar"
+                x:Name="GoToSigningButton"
                 Source="login.png"
                 Margin="0,50,0,0"
-                Clicked="CambiaFichar"
+                Clicked="ChangeToSigningScreen"
                 WidthRequest="100"
                 HeightRequest="100"
                 BackgroundColor="#2B282D"
@@ -69,13 +69,13 @@
         <HorizontalStackLayout x:Name="LabelContrasenaOlvidada"
                                HorizontalOptions="Center"
                                Margin="0,30,0,0">
-            <Button x:Name="ContrasenaOlvidada"
+            <Button x:Name="ForgotPassword"
                    Text="¿Olvidaste la contraseña?"
                    FontSize="18"
                    BackgroundColor="#2B282D"
                    TextColor="White"
                    Margin="15,70,15,10"
-                   Clicked="CambiaFichar"/>
+                   Clicked="ForgotPassword_Clicked"/>
         </HorizontalStackLayout>
     </FlexLayout>
 </ContentPage>

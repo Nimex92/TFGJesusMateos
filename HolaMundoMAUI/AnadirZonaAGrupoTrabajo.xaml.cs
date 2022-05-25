@@ -5,62 +5,56 @@ namespace HolaMundoMAUI;
 
 public partial class AnadirZonaGrupoTrabajo : ContentPage
 {
-	PresenciaContext presenciaContext = new PresenciaContext();
-	string NombreUsuario;
-	DateTime dt = DateTime.Now;
-	public AnadirZonaGrupoTrabajo(string user)
+	PresenciaContext p = new PresenciaContext();
+	string Username;
+	DateTime now = DateTime.Now;
+	Db db = new Db();
+	public AnadirZonaGrupoTrabajo(string username)
 	{
 		InitializeComponent();
 		SetPickers();
-		NombreUsuario = user;
+		Username = username;
 	}
 	private void SetPickers()
 	{
-		var equipos = presenciaContext.WorkGroups;
-		var zonas = presenciaContext.Places;
-
 		//Recojo todos los Turnos de la tabla de MySql
-		//Creo una lista para guardar todos los turnos existentes
-		var ListaEquipos = new List<string>();
-		var ListaTareas = new List<string>();
+		var workGroups = p.WorkGroups.ToList();
+		var places = p.Places.ToList();
 		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
-		SelectorGruposTrabajo.Items.Add("-- Selecciona Grupo de trabajo.");
-		SelectorZonas.Items.Add("-- Selecciona zona.");
-		foreach (WorkGroup equipo in equipos)
-		{
-			SelectorGruposTrabajo.Items.Add(equipo.Name);
-		}
-		foreach (Places zona in zonas)
-		{
-			SelectorZonas.Items.Add(zona.Name);
-		}
-		SelectorGruposTrabajo.SelectedIndex = 0;
-		SelectorZonas.SelectedIndex = 0;
-
+		WorkGroupSelector.Items.Add("-- Selecciona Grupo de trabajo.");
+		PlaceSelector.Items.Add("-- Selecciona zona.");
+        workGroups.ForEach(x =>
+        {
+			WorkGroupSelector.Items.Add(x.Name);
+		});
+        places.ForEach(x =>
+        {
+			PlaceSelector.Items.Add(x.Name);
+        });
+		WorkGroupSelector.SelectedIndex = 0;
+		PlaceSelector.SelectedIndex = 0;
 	}
-	private void BotonVolver_Clicked(object sender, EventArgs e)
+	private void BackButton_Clicked(object sender, EventArgs e)
 	{
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,4));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,4));
 	}
-
-	private async void BotonRegistrar_Clicked(object sender, EventArgs e)
+	private async void RegisterButton_Clicked (object sender, EventArgs e)
 	{
-		var TurnoGrupo = SelectorGruposTrabajo.SelectedItem;
-		var NombreZona = SelectorZonas.SelectedItem;
-		var grupo = presenciaContext.WorkGroups.Where(x => x.Name == TurnoGrupo).FirstOrDefault();
-		var zona = presenciaContext.Places.Where(x => x.Name == NombreZona).FirstOrDefault();
+		var workGroupName = WorkGroupSelector.SelectedItem;
+		var placeName = PlaceSelector.SelectedItem;
+		var workGroup = p.WorkGroups.Where(x => x.Name == workGroupName).FirstOrDefault();
+		var place = p.Places.Where(x => x.Name == placeName).FirstOrDefault();
 
-		if (grupo is not null && zona is not null)
+		if (workGroup is not null && place is not null)
 		{
-			grupo.Places.Add(zona);
-			await DisplayAlert("Alert", "Se ha añadido '" + zona.Name + "' a grupo: " + grupo.Name, "OK");
-			presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido "+grupo.Places+" a " + grupo.Name + " - " + dt));
-			App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 4));
+			db.AddPlaceToWorkGroup(workGroup, place, p);
+			await DisplayAlert("Success", "Se ha añadido '" + place.Name + "' a grupo: " + workGroup.Name, "OK");
+			db.InsertLog(new Log("Añadir", Username + " ha añadido "+workGroup.Places+" a " + workGroup.Name + " - " + now),p);
+			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 4));
 		}
 		else
 		{
-			await DisplayAlert("Alert", "Error al añadir tareas.", "OK");
+			await DisplayAlert("Error", "Error al añadir tareas.", "OK");
 		}
-
 	}
 }

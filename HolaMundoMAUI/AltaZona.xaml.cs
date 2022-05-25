@@ -4,73 +4,62 @@ using ClassLibray;
 
 public partial class AltaZona : ContentPage
 {
-    PresenciaContext presenciaContext = new PresenciaContext();
-    string NombreUsuario;
-    DateTime dt = DateTime.Now;
-    string Zona;
+    PresenciaContext p = new PresenciaContext();
+    string Username;
+    DateTime now = DateTime.Now;
+    string Place;
     Db db = new Db();
 
-    public AltaZona(string user)
+    public AltaZona(string username)
 	{
 		InitializeComponent();
-        NombreUsuario= user;
-
+        Username= username;
     }
-    public AltaZona(string user,string zona,int actualiza)
+    public AltaZona(string username,string place,int option)
     {
         InitializeComponent();
-        NombreUsuario = user;
-        Zona = zona;
-        switch (actualiza)
+        Username = username;
+        Place = place;
+        switch (option)
         {
             case 0:
-                BotonRegistrarAdmin.IsVisible = true;
-                BotonRegistrarAdmin.IsEnabled = true;
-                BotonActualizarAdmin.IsVisible = false;
-                BotonActualizarAdmin.IsEnabled = false;
-                CampoNombre.Text = "";
+                RegisterButton.IsVisible = true;
+                UpdateButton.IsVisible = false;
+                NameField.Text = "";
                 break;
             case 1:
-                BotonRegistrarAdmin.IsVisible = false;
-                BotonRegistrarAdmin.IsEnabled = false;
-                BotonActualizarAdmin.IsVisible = true;
-                BotonActualizarAdmin.IsEnabled = true;
-                CampoNombre.Text = zona;
+                RegisterButton.IsVisible = false;
+                UpdateButton.IsVisible = true;
+                NameField.Text = place;
                 break;
         }
-
     }
 
-    private void IrAlMain(object sender,EventArgs e)
+    private void BackToMain(object sender,EventArgs e)
     {
-		App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,4));
+		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,4));
 	}
-
-    private async void RegistrarNuevaZona(object sender, EventArgs e)
+    private async void RegisterButton_Clicked(object sender, EventArgs e)
     {
-		bool inserta = db.InsertPlace(CampoNombre.Text,presenciaContext);
-        presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + CampoNombre.Text + " - " + dt));
-        presenciaContext.SaveChanges();
+		bool inserta = db.InsertPlace(NameField.Text,p);
+        db.InsertLog(new Log("Añadir", Username + " ha añadido grupo de trabajo " + NameField.Text + " - " + now),p);
         if (inserta == true)
         {
-			await DisplayAlert ("Alert","Zona unsertada correctamente","OK");
-            App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,4));
+			await DisplayAlert ("Success","Zona unsertada correctamente","OK");
+            App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,4));
         }
         else
         {
-            await DisplayAlert("Alert", "Error al insertar", "OK");
+            await DisplayAlert("Error", "Error al insertar", "OK");
         }
 		
     }
 
-    private void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
+    private void UpdateButton_Clicked(object sender, EventArgs e)
     {
-        var zona = presenciaContext.Places.Where(x => x.Name == Zona).FirstOrDefault();
-        string OldZona = zona.Name;
-        zona.Name = CampoNombre.Text;
-        presenciaContext.Places.Update(zona);
-        presenciaContext.Logs.Add(new Log("Añadir", NombreUsuario + " ha modificado "+OldZona+" a " + zona.Name + " - " + dt));
-        presenciaContext.SaveChanges();
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,4));
+        var place = p.Places.Where(x => x.Name == Place).FirstOrDefault();
+        db.UpdatePlace(place,NameField.Text, p);
+        db.InsertLog(new Log("Añadir", Username + " ha modificado a " + place.Name + " - " + now), p);
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,4));
     }
 }

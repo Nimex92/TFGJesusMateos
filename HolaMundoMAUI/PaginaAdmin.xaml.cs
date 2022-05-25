@@ -267,10 +267,10 @@ public partial class PaginaAdmin : ContentPage
             ListViewIssues.IsVisible = false;
             WorkersButton.BackgroundColor = Color.FromRgba("#2B282D");
             WorkShiftsButton.BackgroundColor = Color.FromRgba("#2B282D");
-            BotonTareas.BackgroundColor = Color.FromRgba("#2B282D");
-            BotonZonas.BackgroundColor = Color.FromRgba("#2B282D");
-            BotonEquipoTrabajo.BackgroundColor = Color.FromRgba("#2B282D");
-            BotonNominas.BackgroundColor = Color.FromRgba("#2B282D");
+            WorkTasksButton.BackgroundColor = Color.FromRgba("#2B282D");
+            PlacesButton.BackgroundColor = Color.FromRgba("#2B282D");
+            WorkGroupsButton.BackgroundColor = Color.FromRgba("#2B282D");
+            PayrollsButton.BackgroundColor = Color.FromRgba("#2B282D");
             activeWorkShift = false;
             activeWorker = false;
             activeWorkTask = false;
@@ -720,7 +720,7 @@ public partial class PaginaAdmin : ContentPage
         }
         
     }
-    private async void DeleteWorkTaskButton_Clicked(object sender, EventArgs e)
+    private async void DeletePlaceButton_Clicked(object sender, EventArgs e)
     {
         if (Place is not null)
         {
@@ -795,20 +795,20 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = false;
         ListViewWorkers.IsEnabled = false;
 
-        var ExisteCalendario = p.Calendars.Where(x => x.Worker == Worker).Include(x=>x.DaysOnCalendar).FirstOrDefault();
-        if(ExisteCalendario is not null)
+        var ExistsOnCalendar = p.Calendars.Where(x => x.Worker == Worker).Include(x=>x.DaysOnCalendar).FirstOrDefault();
+        if(ExistsOnCalendar is not null)
         {
-            var ListaDias = ExisteCalendario.DaysOnCalendar.ToList();
-            ListViewCalendario.ItemsSource = ListaDias;
-            if (ListaDias.Count > 0)
-                ListViewCalendario.SelectedItem = ListaDias[0];
+            var DayList = ExistsOnCalendar.DaysOnCalendar.ToList();
+            ListViewCalendario.ItemsSource = DayList;
+            if (DayList.Count > 0)
+                ListViewCalendario.SelectedItem = DayList[0];
         }
         else
         {
-            await DisplayAlert("Alert", "El trabajador no dispone de calendario, se procede a crearlo", "Vale");
-            var trabajador = p.Workers.Where(x => x.CardNumber == Worker.CardNumber).FirstOrDefault();
-            var calendario = new Calendar(trabajador);
-            p.Calendars.Add(calendario);
+            await DisplayAlert("Error", "El trabajador no dispone de calendario, se procede a crearlo", "Vale");
+            var worker = p.Workers.Where(x => x.CardNumber == Worker.CardNumber).FirstOrDefault();
+            var calendar = new Calendar(worker);
+            p.Calendars.Add(calendar);
             p.SaveChanges();
             await DisplayAlert("Alert", "Calendario creado con exito", "Vale");
         }
@@ -832,35 +832,32 @@ public partial class PaginaAdmin : ContentPage
     }
     private async void DaysCheck(Worker tr)
     {
-        var ListaFichajes = p.Signings.Where(x => x.Worker == tr).ToList();
-        var CalendarioTrabajador = p.Calendars.Where(x => x.Worker == tr).Include(x => x.DaysOnCalendar).FirstOrDefault();
-        var ListaDiasLibres = CalendarioTrabajador.DaysOnCalendar.ToList();
-        var FechasFichajes = Signing.GetFechas(ListaFichajes);
-        var FechasFestivos = Day.GetFechas(ListaDiasLibres);
-        foreach (DateTime d in FechasFestivos)
+        var signingList = p.Signings.Where(x => x.Worker == tr).ToList();
+        var workerCalendar = p.Calendars.Where(x => x.Worker == tr).Include(x => x.DaysOnCalendar).FirstOrDefault();
+        var freeDaysList = workerCalendar.DaysOnCalendar.ToList();
+        var signingDates = Signing.GetFechas(signingList);
+        var holidaysDate = Day.GetFechas(freeDaysList);
+        foreach (DateTime datetime in holidaysDate)
         {
-            if (FechasFichajes.Contains(d))
+            if (signingDates.Contains(datetime))
             {
 
-                var ListaDias = p.DayOff.ToList();
-                foreach (Day di in ListaDias)
+                var dayList = p.DayOff.ToList();
+                foreach (Day day in dayList)
                 {
-                    if (di.BelongCalendar == CalendarioTrabajador && di.Date == d)
+                    if (day.BelongCalendar == workerCalendar && day.Date == datetime)
                     {
-                        di.Enjoyed = true;
-                        p.DayOff.Update(di);
+                        day.Enjoyed = true;
+                        p.DayOff.Update(day);
                         p.SaveChanges();
                     }
                     else
                     {
-                        di.Enjoyed = false;
-                        p.DayOff.Update(di);
+                        day.Enjoyed = false;
+                        p.DayOff.Update(day);
                     }
                 }
-
-
             }
-
         }
     }
     private void SignedWorkersButton_Clicked(object sender, EventArgs e)
@@ -872,16 +869,16 @@ public partial class PaginaAdmin : ContentPage
     {
         try
         {
-            var ListaIncidencias = p.Issues.Where(x=>x.Justified==false).Include(x=>x.Worker).ToList();
-            ListViewIncidencias.ItemsSource = ListaIncidencias;
-            if (ListaIncidencias.Count > 0)
+            var IssuesList = p.Issues.Where(x=>x.Justified==false).Include(x=>x.Worker).ToList();
+            ListViewIncidencias.ItemsSource = IssuesList;
+            if (IssuesList.Count > 0)
             {
-                BtnProblemas.Source = "problemasactivo.png";
-                ListViewIncidencias.SelectedItem = ListaIncidencias[0];
+                IssueButton.Source = "problemasactivo.png";
+                ListViewIncidencias.SelectedItem = IssuesList[0];
             }
             else
             {
-                BtnProblemas.Source = "problemas.png";
+                IssueButton.Source = "problemas.png";
             }
         }
         catch (NullReferenceException ex)
@@ -919,7 +916,7 @@ public partial class PaginaAdmin : ContentPage
             DatosTrabajador.SetNextText(worker.Name);
             DatosTrabajador.SetNextText(worker.Category);
             DatosTrabajador.SetNextText("");
-            DatosTrabajador.SetNextText((dt - worker.HiringDate).Days.ToString());
+            DatosTrabajador.SetNextText((dt - worker.HiringDate).ToString());
             DatosTrabajador.SetNextText(worker.Nif);
             BetterTable OtrosDatos = NewTable(7, 2);
             OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);

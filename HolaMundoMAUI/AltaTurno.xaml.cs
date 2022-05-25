@@ -7,104 +7,101 @@ namespace HolaMundoMAUI;
 public partial class AltaTurno : ContentPage
 {
     PresenciaContext p = new PresenciaContext();
-	bool L, M, X, J, V, S, D;
-    string NombreUsuario;
-    DateTime dt = DateTime.Now;
-    WorkShift workShiftEditar;
+	bool Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday;
+    string Username;
+    DateTime Now = DateTime.Now;
+    WorkShift WorkShift;
     Db db = new Db();
 
     public AltaTurno()
     {
         InitializeComponent();
-        RellenarPickers();
+        SetPickers();
     }
     public AltaTurno(string user,int opcion)
 	{
 		InitializeComponent();
-        NombreUsuario = user;
-        RellenarPickers();
+        Username = user;
+        SetPickers();
         switch (opcion)
         {
             case 0:
-                BotonRegistrarAdmin.IsVisible = true;
-                BotonActualizarAdmin.IsVisible = false;
+                RegisterButton.IsVisible = true;
+                UpdateButton.IsVisible = false;
                 break;
             case 1:
-                BotonRegistrarAdmin.IsVisible = false;
-                BotonActualizarAdmin.IsVisible = true;
+                RegisterButton.IsVisible = false;
+                UpdateButton.IsVisible = true;
                 break;
         }
     }
     public AltaTurno(string user,string NombreTurno,int opcion)
     {
         InitializeComponent();
-        NombreUsuario = user;
-        RellenarPickers();
+        Username = user;
+        SetPickers();
         switch (opcion)
         {
             case 0:
-                BotonRegistrarAdmin.IsVisible = true;
-                BotonRegistrarAdmin.IsEnabled = true;
-                BotonActualizarAdmin.IsVisible = false;
-                BotonActualizarAdmin.IsEnabled = false;
+                RegisterButton.IsVisible = true;
+                UpdateButton.IsVisible = false;
                 break;
             case 1:
-                BotonRegistrarAdmin.IsVisible = false;
-                BotonRegistrarAdmin.IsEnabled = false;
-                BotonActualizarAdmin.IsVisible = true;
-                BotonActualizarAdmin.IsEnabled = true;
-                var turno = p.WorkShifts.Where(x => x.Name == NombreTurno).FirstOrDefault();
-                workShiftEditar = turno;
-                CampoNombre.Text = turno.Name;
-                CampoNombre.IsEnabled = false;
-                string HoraEntrada = turno.CheckIn.ToString().Substring(10, 3);
-                string MinutoEntrada = turno.CheckIn.ToString().Substring(14, 2);
-                string HoraSalida = turno.CheckOut.ToString().Substring(10, 3);
-                string MinutoSalida = turno.CheckOut.ToString().Substring(14 ,2);
-                SelectorHoraEntrada.SelectedIndex = int.Parse(HoraEntrada);
-                SelectorMinutoEntrada.SelectedIndex = int.Parse(MinutoEntrada);
-                SelectorHoraSalida.SelectedIndex = int.Parse(HoraSalida);
-                SelectorMinutoSalida.SelectedIndex = int.Parse(MinutoSalida);
-                ValidoDesde.Date = turno.ValidFrom;
-                ValidoHasta.Date = turno.ValidUntil;
-                Lunes.IsChecked = turno.Monday;
-                Martes.IsChecked = turno.Tuesday;
-                Miercoles.IsChecked = turno.Wednesday;
-                Jueves.IsChecked = turno.Thursday;
-                Viernes.IsChecked = turno.Friday;
-                Sabado.IsChecked = turno.Saturday;
-                Domingo.IsChecked = turno.Domingo; 
+                RegisterButton.IsVisible = false;
+                UpdateButton.IsVisible = true;
+                var workShift = p.WorkShifts.Where(x => x.Name == NombreTurno).FirstOrDefault();
+                WorkShift = workShift;
+                NameField.Text = workShift.Name;
+                NameField.IsEnabled = false;
+                string HoraEntrada = workShift.CheckIn.ToString().Substring(10, 3);
+                string MinutoEntrada = workShift.CheckIn.ToString().Substring(14, 2);
+                string HoraSalida = workShift.CheckOut.ToString().Substring(10, 3);
+                string MinutoSalida = workShift.CheckOut.ToString().Substring(14 ,2);
+                HourCheckInSelector.SelectedIndex = int.Parse(HoraEntrada);
+                MinuteCheckInSelector.SelectedIndex = int.Parse(MinutoEntrada);
+                HourCheckOutSelector.SelectedIndex = int.Parse(HoraSalida);
+                MinuteCheckOutSelector.SelectedIndex = int.Parse(MinutoSalida);
+                ValidFromPicker.Date = workShift.ValidFrom;
+                ValidUntilPicker.Date = workShift.ValidUntil;
+                monday.IsChecked = workShift.Monday;
+                tuesday.IsChecked = workShift.Tuesday;
+                wednesday.IsChecked = workShift.Wednesday;
+                thursday.IsChecked = workShift.Thursday;
+                friday.IsChecked = workShift.Friday;
+                saturday.IsChecked = workShift.Saturday;
+                sunday.IsChecked = workShift.Domingo; 
                 break;
         }
     }
-    private async void BotonRegistrarAdmin_Clicked(object sender, EventArgs e)
+    private async void RegisterButton_Clicked(object sender, EventArgs e)
     {
-        string NombreTurno = CampoNombre.Text;
-        if (NombreTurno is not null)
+        string workShiftName = NameField.Text;
+        if (workShiftName is not null)
         {
-            string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
-            string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
-            string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
-            string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
-            string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
-            string TiempoSalida = HoraSalida + ":" + MinutoSalida;
-            DateTime entrada = DateTime.Today.AddHours(Double.Parse(HoraEntrada)).AddMinutes(Double.Parse(MinutoEntrada));
-            DateTime salida = DateTime.Today.AddHours(Double.Parse(HoraSalida)).AddMinutes(Double.Parse(MinutoSalida));
-            var GrupoExiste = p.WorkShifts.Where(x => x.Name == NombreTurno).FirstOrDefault();
-            if (GrupoExiste is not null)
+            string HourCheckIn = HourCheckInSelector.SelectedItem.ToString();
+            string MinuteCheckIn = MinuteCheckInSelector.SelectedItem.ToString();
+            string FinalCheckIn = HourCheckIn + ":" + MinuteCheckIn;
+            string HourCheckOut = HourCheckOutSelector.SelectedItem.ToString();
+            string MinuteCheckOut = MinuteCheckOutSelector.SelectedItem.ToString();
+            string FinalCheckOut = HourCheckOut + ":" + MinuteCheckOut;
+            DateTime checkIn = DateTime.Today.AddHours(Double.Parse(HourCheckIn)).AddMinutes(Double.Parse(MinuteCheckIn));
+            DateTime checkOut = DateTime.Today.AddHours(Double.Parse(HourCheckOut)).AddMinutes(Double.Parse(MinuteCheckOut));
+            var workGroupSearch = p.WorkShifts.Where(x => x.Name == workShiftName).FirstOrDefault();
+            if (workGroupSearch is not null)
             {
-                await DisplayAlert("Alert", "El turno ya existe.", "OK");
+                await DisplayAlert("Error", "El turno ya existe.", "OK");
             }
             else
             {
-                WorkShift workShift = new WorkShift(CampoNombre.Text,entrada,salida, L, M, X, J, V, S, D);
-                workShift.ValidFrom = ValidoDesde.Date;
-                workShift.ValidUntil = ValidoHasta.Date;
+                WorkShift workShift = new WorkShift(NameField.Text,checkIn,checkOut, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
+                workShift.ValidFrom = ValidFromPicker.Date;
+                workShift.ValidUntil = ValidUntilPicker.Date;
+                //InsertWorkShift method here
                 p.WorkShifts.Add(workShift);
-                p.Logs.Add(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt));
+                db.InsertLog(new Log("Añadir", Username + " ha añadido turno de trabajo: " + workShiftName + " - " + Now),p);
                 p.SaveChanges();
                 await DisplayAlert("Alert", "El turno se ha añadido correctamente.", "OK");
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
             }
         }
         else
@@ -112,65 +109,64 @@ public partial class AltaTurno : ContentPage
             await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
         }
     }
-
-    private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
+    private async void UpdateButton_Clicked(object sender, EventArgs e)
     {
         try
         {
-                string NombreTurno = CampoNombre.Text;
-                string HoraEntrada = SelectorHoraEntrada.SelectedItem.ToString();
-                string MinutoEntrada = SelectorMinutoEntrada.SelectedItem.ToString();
-                string TiempoEntrada = HoraEntrada + ":" + MinutoEntrada;
-                string HoraSalida = SelectorHoraSalida.SelectedItem.ToString();
-                string MinutoSalida = SelectorMinutoSalida.SelectedItem.ToString();
-                string TiempoSalida = HoraSalida + ":" + MinutoSalida;
-                DateTime entrada = DateTime.Today.AddHours(Double.Parse(HoraEntrada)).AddMinutes(Double.Parse(MinutoEntrada));
-                DateTime salida = DateTime.Today.AddHours(Double.Parse(HoraSalida)).AddMinutes(Double.Parse(MinutoSalida));
-                bool actualiza =db.UpdateWorkShift(workShiftEditar, NombreTurno, entrada, salida, L, M, X, J, V, S, D, ValidoDesde.Date, ValidoHasta.Date, workShiftEditar.Enabled, workShiftEditar.Deleted, p);
-            if (actualiza == true)
+                string workShiftName = NameField.Text;
+                string CheckInHour = HourCheckInSelector.SelectedItem.ToString();
+                string MinuteCheckIn = MinuteCheckInSelector.SelectedItem.ToString();
+                string CheckInTime = CheckInHour + ":" + MinuteCheckIn;
+                string CheckOutHour = HourCheckOutSelector.SelectedItem.ToString();
+                string CheckOutMinute = MinuteCheckOutSelector.SelectedItem.ToString();
+                string CheckOutTime = CheckOutHour + ":" + CheckOutMinute;
+                DateTime checkIn = DateTime.Today.AddHours(Double.Parse(CheckInHour)).AddMinutes(Double.Parse(MinuteCheckIn));
+                DateTime checkOut = DateTime.Today.AddHours(Double.Parse(CheckOutHour)).AddMinutes(Double.Parse(CheckOutMinute));
+                bool update =db.UpdateWorkShift(WorkShift, workShiftName, checkIn, checkOut, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, ValidFromPicker.Date, ValidUntilPicker.Date, WorkShift.Enabled, WorkShift.Deleted, p);
+            if (update == true)
             {
-                db.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido turno de trabajo: " + NombreTurno + " - " + dt),p);
+                db.InsertLog(new Log("Añadir", Username + " ha añadido turno de trabajo: " + workShiftName + " - " + Now),p);
                 await DisplayAlert("Alert", "El turno se ha modificado correctamente.", "OK");
-                App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario, 3));
+                App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
             }
             
         }catch(Exception ex)
         {
-            await DisplayAlert("Alert", ex.ToString(), "Vale");
+            await DisplayAlert("Error", ex.ToString(), "Vale");
         }
     }
-    private void BotonVolver_Clicked(object sender, EventArgs e)
+    private void BackButton_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario,3));
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,3));
     }
-    public void RellenarPickers()
+    public void SetPickers()
     {
-        SelectorHoraEntrada.ItemsSource = GeneraHoras();
-        SelectorHoraSalida.ItemsSource = GeneraHoras();
-        SelectorMinutoEntrada.ItemsSource = GeneraMinutos();
-        SelectorMinutoSalida.ItemsSource = GeneraMinutos();
-        SelectorHoraEntrada.SelectedIndex = 12;
-        SelectorMinutoEntrada.SelectedIndex = 30;
-        SelectorHoraSalida.SelectedIndex = 12;
-        SelectorMinutoSalida.SelectedIndex = 30;
+        HourCheckInSelector.ItemsSource = HourGenerate();
+        HourCheckOutSelector .ItemsSource = HourGenerate();
+        MinuteCheckInSelector.ItemsSource = MinuteGenerate();
+        MinuteCheckOutSelector.ItemsSource = MinuteGenerate();
+        HourCheckInSelector.SelectedIndex = 12;
+        MinuteCheckInSelector.SelectedIndex = 00;
+        HourCheckOutSelector.SelectedIndex = 12;
+        MinuteCheckOutSelector.SelectedIndex = 00;
     }
-    public List<string> GeneraHoras()
+    public List<string> HourGenerate()
     {
-        var ListaHoras = new List<string>();
+        var hourList = new List<string>();
         for (int i = 00; i < 24; i++)
         {
             if (i < 10)
             {
-                ListaHoras.Add("0" + i.ToString());
+                hourList.Add("0" + i.ToString());
             }
             else
             {
-                ListaHoras.Add(i.ToString());
+                hourList.Add(i.ToString());
             }
         }
-        return ListaHoras;
+        return hourList;
     }
-    public List<string> GeneraMinutos()
+    public List<string> MinuteGenerate()
     {
         var ListaMinutos = new List<string>();
         for (int i = 00; i < 60; i++)
@@ -186,79 +182,14 @@ public partial class AltaTurno : ContentPage
         }
         return ListaMinutos;
     }
-
     private void CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-		if (Lunes.IsChecked)
-        {
-			L = true;
-            Debug.WriteLine(L);
-        }
-        else
-        {
-            L = false;
-            Debug.WriteLine(L);
-        }
-        if (Martes.IsChecked)
-        {
-            M = true;
-            
-        }
-        else
-        {
-            M = false;
-            
-        }
-        if (Miercoles.IsChecked)
-        {
-            X = true;
-            
-        }
-        else
-        {
-            X = false;
-            
-        }
-        if (Jueves.IsChecked)
-        {
-            J = true;
-
-        }
-        else
-        {
-            J = false;
-            
-        }
-        if (Viernes.IsChecked)
-        {
-            V = true;
-            
-        }
-        else
-        {
-            V = false;
-            
-        }
-        if (Sabado.IsChecked)
-        {
-            S = true;
-            
-        }
-        else
-        {
-            S = false;
-            
-        }
-        if (Domingo.IsChecked)
-        {
-            D = true;
-           
-        }
-        else
-        {
-            D = false;
-            
-        }
-
+		if (monday.IsChecked){ Monday = true; } else { Monday = false; }
+        if (tuesday.IsChecked) { Tuesday = true; } else { Tuesday = false; }
+        if (wednesday.IsChecked) { Wednesday = true; } else { Wednesday = false; }
+        if (thursday.IsChecked) { Thursday = true; } else { Thursday = false; }
+        if (friday.IsChecked) { Friday = true; } else { Friday = false; }
+        if (saturday.IsChecked) { Saturday = true; } else { Saturday = false; }
+        if (sunday.IsChecked) { Sunday = true; } else { Sunday = false; }
     }
 }

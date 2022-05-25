@@ -6,7 +6,7 @@
              BackgroundColor="White">
     <StackLayout>
         <Label 
-                Text="Tech Talent &#10; Calendario laboral"
+                Text="Calendario laboral"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"

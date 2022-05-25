@@ -40,7 +40,7 @@
                         HorizontalOptions="Center"
                         Margin="0,15,0,0"
                         BackgroundColor="Black"
-                        Clicked="RegistraNuevoGrupoTrabajo"
+                        Clicked="AddNewWorkGroupButton_Clicked"
                         WidthRequest="300"/>
                 <Button 
                         Text="Actualizar"
@@ -55,7 +55,7 @@
             </StackLayout>
             <Button
                 Text="Volver"
-                Clicked="VolverAlMain"
+                Clicked="BackToMain"
                 WidthRequest="280"
                 HeightRequest="50"
                 FontSize="16"

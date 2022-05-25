@@ -8,14 +8,13 @@
         Margin="0,20,0,0"
         BackgroundColor="White">
         <Label 
-                Text="Tech Talent &#10; Alta turno de trabajo"
+                Text="Alta turno de trabajo"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="20"
                 HorizontalOptions="Center"
-                x:Name="TituloEmpresa"/>
+                x:Name="Title"/>
         <StackLayout>
             <StackLayout x:Name="LayoutCampos"
                      HorizontalOptions="Center"
@@ -25,7 +24,7 @@
                      HeightRequest="330"
                      BackgroundColor="#828282"
                      >
-                <Entry x:Name="CampoNombre"
+                <Entry x:Name="NameField"
                             Placeholder="Nombre Turno:"
                             PlaceholderColor="Black"
                             Margin="0,15,0,0"
@@ -36,12 +35,12 @@
                             BackgroundColor="White"
                             TextColor="Black"
                             ClearButtonVisibility="WhileEditing"/>
-                <StackLayout x:Name="DiasDeLaSemana"
+                <StackLayout x:Name="WeekDays"
                                  WidthRequest="295"
                                  Margin="0,10,0,0"
                                  BackgroundColor="#828289">
                         <HorizontalStackLayout>
-                            <CheckBox x:Name="Lunes" 
+                            <CheckBox x:Name="monday" 
                                       Color="#caa2e8" 
                                       CheckedChanged="CheckedChanged"/>
                             <Label Text="Lunes" 
@@ -49,13 +48,13 @@
                                    VerticalTextAlignment="Center"
                                    TextColor="White"/>
 
-                            <CheckBox x:Name="Martes" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
+                            <CheckBox x:Name="tuesday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
                             <Label Text="Martes"
                                    Margin="-95,0,0,0"
                                    VerticalTextAlignment="Center"
                                    TextColor="White"/>
 
-                            <CheckBox x:Name="Miercoles" 
+                            <CheckBox x:Name="wednesday" 
                                       Color="#caa2e8"
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
@@ -63,7 +62,7 @@
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
-                            <CheckBox x:Name="Jueves" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
+                            <CheckBox x:Name="thursday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
                             <Label Text="Jueves"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
@@ -72,7 +71,7 @@
                         <HorizontalStackLayout>
                            
 
-                            <CheckBox x:Name="Viernes" 
+                            <CheckBox x:Name="friday" 
                                       Color="#caa2e8" 
                                       
                                       CheckedChanged="CheckedChanged"/>
@@ -82,7 +81,7 @@
                                        TextColor="White"/>
 
 
-                            <CheckBox x:Name="Sabado" 
+                            <CheckBox x:Name="saturday" 
                                       Color="#caa2e8" 
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
@@ -92,7 +91,7 @@
                                        TextColor="White"/>
 
 
-                            <CheckBox x:Name="Domingo" 
+                            <CheckBox x:Name="sunday" 
                                       Color="#caa2e8" 
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
@@ -110,13 +109,13 @@
                                    VerticalTextAlignment="Center"/>
                         <Picker
                                 WidthRequest="70"
-                                x:Name="SelectorHoraEntrada"
+                                x:Name="HourCheckInSelector"
                                 BackgroundColor="#828289"
                                 VerticalTextAlignment="Center"/>
                         <Picker
                                 WidthRequest="70"
                                 Margin="10,0,50,0"
-                                x:Name="SelectorMinutoEntrada"
+                                x:Name="MinuteCheckInSelector"
                                 BackgroundColor="#828289"
                                 HorizontalTextAlignment="Center"/>
                     </HorizontalStackLayout>
@@ -130,59 +129,52 @@
                         <Picker
                                 WidthRequest="70"
                                 Margin="10,0,0,0"
-                                x:Name="SelectorHoraSalida"
+                                x:Name="HourCheckOutSelector"
                                 BackgroundColor="#828289"
                                 VerticalTextAlignment="Center"/>
                         <Picker
                                 WidthRequest="70"
                                 Margin="10,0,50,0"
-                                x:Name="SelectorMinutoSalida"
+                                x:Name="MinuteCheckOutSelector"
                                 BackgroundColor="#828289"
                                 HorizontalTextAlignment="Center"/>
                     </HorizontalStackLayout>
-                <HorizontalStackLayout x:Name="DatePickerValidoDesde" Margin="25,0,0,0">
+                <HorizontalStackLayout x:Name="ValidFrom" Margin="25,0,0,0">
                     <Label Text="Válido desde: " FontAttributes="Bold" 
                                                  TextColor="White"
                                                  VerticalTextAlignment="Center"
                                                  />
-                    <DatePicker x:Name="ValidoDesde" BackgroundColor="#828289"/>
+                    <DatePicker x:Name="ValidFromPicker" BackgroundColor="#828289"/>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout x:Name="DatePickerValidoHasta" Margin="25,0,0,0">
+                <HorizontalStackLayout x:Name="ValidUntil" Margin="25,0,0,0">
                     <Label Text="Válido hasta: " FontAttributes="Bold" 
                                                  TextColor="White"
                                                  VerticalTextAlignment="Center"/>
-                    <DatePicker x:Name="ValidoHasta" BackgroundColor="#828289"/>
+                    <DatePicker x:Name="ValidUntilPicker" BackgroundColor="#828289"/>
                 </HorizontalStackLayout>
-                <Button x:Name="BotonRegistrarAdmin"
+                <Button x:Name="RegisterButton"
                             Text="Registrar"
                             HorizontalOptions="Center"
                             Margin="0,10,0,0"
                             BackgroundColor="Black"
                             WidthRequest="300"
-                            Clicked="BotonRegistrarAdmin_Clicked"/>
-                <Button x:Name="BotonActualizarAdmin"
+                            Clicked="RegisterButton_Clicked"/>
+                <Button x:Name="UpdateButton"
                             Text="Actualizar"
                             HorizontalOptions="Center"
                             Margin="0,10,0,0"
                             BackgroundColor="Black"
                             WidthRequest="300"
                             IsVisible="False"
-                            Clicked="BotonActualizarAdmin_Clicked"/>
+                            Clicked="UpdateButton_Clicked"/>
                 </StackLayout>
-                <Button x:Name="BotonVolver"
+            <Button x:Name="BackButton"
                     Text="Volver"
                     WidthRequest="320"
                     HeightRequest="35"
                     HorizontalOptions="Center"
                     Margin="0,10,0,0"
-                    Clicked="BotonVolver_Clicked"/>
-                <Label x:Name="LabelAvisos"
-                    Text=""
-                    TextColor="Black"
-                    WidthRequest="320"
-                    HeightRequest="40"
-                    HorizontalOptions="Center"
-                    Margin="20,0,0,0"/>
+                    Clicked="BackButton_Clicked"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

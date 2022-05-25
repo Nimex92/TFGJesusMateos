@@ -7,151 +7,135 @@ namespace HolaMundoMAUI;
 public partial class AnadeDiaCalendario : ContentPage
 {
     PresenciaContext p = new PresenciaContext();
-    Calendar CalendarioLaboral;
-    Worker traba;
-    string nombreUsuario;
-    public AnadeDiaCalendario(string user, Calendar cal, int actualiza, Day day)
+    Calendar Calendar;
+    Worker Worker;
+    string Username;
+    public AnadeDiaCalendario(string username, Calendar calendar, int option, Day day)
 	{
 		InitializeComponent();
-        CalendarioLaboral = cal;
-        nombreUsuario = user;
-        SetPickers();
-        switch (actualiza)
+        Calendar = calendar;
+        Username = username;
+        ReasonSetPicker();
+        switch (option)
         {
             case 0:
-                BotonRegistrar.IsEnabled = true;
-                BotonRegistrar.IsVisible = true;
-                BotonActualizar.IsEnabled = false;
-                BotonActualizar.IsVisible = false;
-                SelectorCalendario.Items.Add(cal.Worker.Name);
+                RegisterButton.IsVisible = true;
+                UpdateButton.IsVisible = false;
+                CalendarSelector.Items.Add(calendar.Worker.Name);
                 break;
             case 1:
-                BotonRegistrar.IsEnabled = false;
-                BotonRegistrar.IsVisible = false;
-                BotonActualizar.IsEnabled = true;
-                BotonActualizar.IsVisible = true;
-                SelectorCalendario.SelectedIndex = 0;
-                SelectorMotivo.SelectedItem=day.Reason;
-                SelectorFecha.Date = day.Date;
-                
+                RegisterButton.IsVisible = false;
+                UpdateButton.IsVisible = true;
+                CalendarSelector.SelectedIndex = 0;
+                ReasonSelector.SelectedItem=day.Reason;
+                DateSelector.Date = day.Date;
                 break;
         }
 	}
-    public AnadeDiaCalendario(string user, Worker trab)
+    public AnadeDiaCalendario(string username, Worker worker)
     { 
         InitializeComponent();
-        nombreUsuario = user;
-        traba = trab;
-        BotonActualizar.IsVisible = false;
-        BotonActualizar.IsEnabled = false;
-        BotonRegistrar.IsEnabled = false;
-        BotonRegistrar.IsVisible = false;
-        BotonSolicitar.IsVisible = true;
-        BotonSolicitar.IsVisible = true;
-        BotonVolver.IsEnabled = false;
-        BotonVolver.IsVisible = false;
-        BotonVolverFichar.IsVisible = true;
-        BotonVolverFichar.IsEnabled = true;
-        SetPickerVacaciones();
+        Username = username;
+        Worker = worker;
+        UpdateButton.IsVisible = false;
+        RequestButton.IsVisible = true;
+        BackToMainButton.IsVisible = false;
+        BackButton.IsVisible = true;
+        VacationSetPicker();
     }
- 
-    private void SetPickerVacaciones()
+    private void VacationSetPicker()
     {
-        SelectorCalendario.Items.Add(traba.Name);
-        SelectorCalendario.SelectedIndex = 0;
-        List<string> motivos = new List<string>();
-        motivos.Add("Festivo");
-        motivos.Add("Festivo nocturno");
-        motivos.Add("Festivo nacional");
-        motivos.Add("Festivo nacional nocturno");
-        motivos.Add("Dia de asuntos propios");
-        motivos.Add("Baja laboral");
-        motivos.Add("Baja médica");
-        motivos.Add("Baja por maternidad");
-        motivos.Add("Vacaciones");
-        SelectorMotivo.Items.Add("-- Selecciona motivo");
-        SelectorMotivo.ItemsSource = motivos;
+        CalendarSelector.Items.Add(Worker.Name);
+        CalendarSelector.SelectedIndex = 0;
+        List<string> reason = new List<string>();
+        reason.Add("Festivo");
+        reason.Add("Festivo nocturno");
+        reason.Add("Festivo nacional");
+        reason.Add("Festivo nacional nocturno");
+        reason.Add("Dia de asuntos propios");
+        reason.Add("Baja laboral");
+        reason.Add("Baja médica");
+        reason.Add("Baja por maternidad");
+        reason.Add("Vacaciones");
+        ReasonSelector.Items.Add("-- Selecciona motivo");
+        ReasonSelector.ItemsSource = reason;
     }
-    private void SetPickers()
+    private void ReasonSetPicker()
     {  
-        SelectorCalendario.Items.Add(CalendarioLaboral.Worker.Name);
-        SelectorCalendario.SelectedIndex = 0;
-        List<string> motivos = new List<string>();
-        motivos.Add("Festivo");
-        motivos.Add("Festivo nocturno");
-        motivos.Add("Festivo nacional");
-        motivos.Add("Festivo nacional nocturno");
-        motivos.Add("Dia de asuntos propios");
-        motivos.Add("Baja laboral");
-        motivos.Add("Baja médica");
-        motivos.Add("Baja por maternidad");
-        motivos.Add("Vacaciones");
-        SelectorMotivo.Items.Add("-- Selecciona motivo");
-        SelectorMotivo.ItemsSource = motivos;
+        CalendarSelector.Items.Add(Calendar.Worker.Name);
+        CalendarSelector.SelectedIndex = 0;
+        List<string> reason = new List<string>();
+        reason.Add("Festivo");
+        reason.Add("Festivo nocturno");
+        reason.Add("Festivo nacional");
+        reason.Add("Festivo nacional nocturno");
+        reason.Add("Dia de asuntos propios");
+        reason.Add("Baja laboral");
+        reason.Add("Baja médica");
+        reason.Add("Baja por maternidad");
+        reason.Add("Vacaciones");
+        ReasonSelector.Items.Add("-- Selecciona motivo");
+        ReasonSelector.ItemsSource = reason;
     }
-    private async void BotonRegistrar_Clicked(object sender, EventArgs e)
+    private async void RegisterButton_Clicked(object sender, EventArgs e)
     {
-        var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Workers.Where(x => x.Name.Equals(NombreTrabajador)).FirstOrDefault();
-        var Calendario = p.Calendars.Where(x => x.Worker == Trabajador).FirstOrDefault();
-        var motivo = SelectorMotivo.SelectedItem.ToString();
-        var fecha = SelectorFecha.Date;
-        var Dia = new Day(motivo,fecha);
-        Calendario.DaysOnCalendar.Add(Dia);
+        var workerName = CalendarSelector.SelectedItem.ToString();
+        var worker = p.Workers.Where(x => x.Name.Equals(workerName)).FirstOrDefault();
+        var calendar = p.Calendars.Where(x => x.Worker == worker).FirstOrDefault();
+        var reason = ReasonSelector.SelectedItem.ToString();
+        var date = DateSelector.Date;
+        var day = new Day(reason,date);
+        calendar.DaysOnCalendar.Add(day);
         p.SaveChanges();
-        await DisplayAlert("Alert", "Se ha introducido correctamente el dia.", "Vale");
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario,2));
+        await DisplayAlert("Success", "Se ha introducido correctamente el dia.", "Vale");
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,2));
     }
-    private async void BotonActualizar_Clicked(object sender, EventArgs e)
+    private async void UpdateButton_Clicked(object sender, EventArgs e)
     {
-        var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Workers.Where(x => x.Name.Equals(NombreTrabajador)).FirstOrDefault();
-        var Calendario = p.Calendars.Where(x => x.Worker == Trabajador).FirstOrDefault();
-        var motivo = SelectorMotivo.SelectedItem.ToString();
-        var fecha = SelectorFecha.Date;
-        var dia = p.DayOff.Where(x => x.BelongCalendar == Calendario).Where(x => x.Date == fecha).FirstOrDefault();
-        var ListaDias = Calendario.DaysOnCalendar;
-        foreach(Day d in ListaDias)
+        var workerName = CalendarSelector.SelectedItem.ToString();
+        var worker = p.Workers.Where(x => x.Name.Equals(workerName)).FirstOrDefault();
+        var calendar = p.Calendars.Where(x => x.Worker == worker).FirstOrDefault();
+        var reason = ReasonSelector.SelectedItem.ToString();
+        var date = DateSelector.Date;
+        var day = p.DayOff.Where(x => x.BelongCalendar == calendar).Where(x => x.Date == date).FirstOrDefault();
+        var dayList = calendar.DaysOnCalendar;
+        foreach(Day d in dayList)
         {
-            if(d == dia)
+            if(d == day)
             {
-                d.Date = SelectorFecha.Date;
-                d.Reason = SelectorMotivo.SelectedItem.ToString();
+                d.Date = DateSelector.Date;
+                d.Reason = ReasonSelector.SelectedItem.ToString();
                 d.Enjoyed = false;
             }
         }
         p.SaveChanges();
-        await DisplayAlert("Alert", "Se ha actualizado correctamente el dia.", "Vale");
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
+        await DisplayAlert("Success", "Se ha actualizado correctamente el dia.", "Vale");
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
     }
-    private void BotonVolver_Clicked(object sender, EventArgs e)
+    private void BackButton_Clicked(object sender, EventArgs e)
     {
-        var NombreTrabajador = SelectorCalendario.SelectedItem.ToString();
-        var Trabajador = p.Workers.Where(x => x.Name.Equals(NombreTrabajador)).FirstOrDefault();
-        var Calendario = p.Calendars.Where(x => x.Worker == Trabajador).FirstOrDefault();
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(nombreUsuario, 2));
+        var workerName = CalendarSelector.SelectedItem.ToString();
+        var worker = p.Workers.Where(x => x.Name.Equals(workerName)).FirstOrDefault();
+        var calendar = p.Calendars.Where(x => x.Worker == worker).FirstOrDefault();
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
     }
-    private void BotonVolverFichar_Clicked(object sender, EventArgs e)
+    private void BackToSignings_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.User.Username));
+        App.Current.MainPage = new NavigationPage(new PaginaFichar(Worker.User.Username));
     }
-    private async void BotonPideVacaciones_Clicked(object sender, EventArgs e) 
+    private async void RequestVacationButton_Clicked(object sender, EventArgs e) 
     {
         try
         {
-            var seacepta = false;
-            DateTime fecha = SelectorFecha.Date;
-            p.VacationRequests.Add(new VacationRequest(traba.Name, fecha, seacepta));
+            var accepted = false;
+            DateTime date = DateSelector.Date;
+            p.VacationRequests.Add(new VacationRequest(Worker.Name, date, accepted));
             p.SaveChanges();
-            await DisplayAlert("Alert", "Se ha realizado correctamente la solicitud", "Vale");
-            App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.User.Username));
-            p.VacationRequests.Add(new VacationRequest(traba.Name, fecha, seacepta));
-            p.SaveChanges();
-            await DisplayAlert("Alert", "Se ha realizado correctamente la solicitud", "Vale");
-            App.Current.MainPage = new NavigationPage(new PaginaFichar(traba.User.Username));
+            await DisplayAlert("Success", "Se ha realizado correctamente la solicitud", "Vale");
+            App.Current.MainPage = new NavigationPage(new PaginaFichar(Worker.User.Username));
         }catch(Exception ex) 
         {
-            await DisplayAlert("Alert", ex.StackTrace , "Vale");
+            await DisplayAlert("Error", ex.ToString() , "Vale");
         }
         
     }

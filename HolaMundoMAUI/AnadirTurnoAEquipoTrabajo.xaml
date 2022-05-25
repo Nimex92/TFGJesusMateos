@@ -6,7 +6,7 @@
              BackgroundColor="White">
     <StackLayout>
         <Label  
-                Text="Tech Talent &#10;Añadir turnos a equipo de trabajo"
+                Text="Añadir turnos a equipo de trabajo"
                 FontSize="30"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
@@ -30,7 +30,7 @@
                        Margin="22,10,0,0"
                        />
             <Picker
-                        x:Name="SelectorGruposTrabajo"
+                        x:Name="WorkGroupSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
@@ -39,21 +39,21 @@
                        TextColor="White"
                        Margin="22,0,0,0"/>
             <Picker
-                        x:Name="SelectorTurno"
+                        x:Name="WorkShiftSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
                         HorizontalOptions="Center"/>
 
             <Button
-                            x:Name="BotonRegistrar"
+                            x:Name="RegisterButton"
                             Text="Registrar"
                             Clicked="BotonRegistrar_Clicked"
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"/>
             <Button
-                            x:Name="BotonActualizar"
+                            x:Name="UpdateButton"
                             Text="Eliminar"
                             Clicked="BotonActualizar_Clicked"
                             Margin="0,10,0,0"
@@ -62,7 +62,7 @@
         </StackLayout>
         <StackLayout>
             <Button
-                x:Name="BotonVolver"
+                x:Name="BackButton"
                 Text="Volver"
                 WidthRequest="200"
                 HeightRequest="35"

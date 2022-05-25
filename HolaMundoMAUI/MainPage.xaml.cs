@@ -13,9 +13,9 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		CompruebaTurnos();	
+		CheckWorkShifts();	
 	}
-	public void CompruebaTurnos()
+	public void CheckWorkShifts()
     {
 		var Turnos = p.WorkShifts.ToList();
 		foreach(WorkShift t in Turnos)
@@ -23,7 +23,6 @@ public partial class MainPage : ContentPage
             if (t.ValidFrom<=Today)
             {
 				t.Enabled = true;
-
             }
 			if(t.ValidUntil<Today)
             {
@@ -34,16 +33,16 @@ public partial class MainPage : ContentPage
 		}
 		
     }
-	public async void CambiaFichar(object sender, EventArgs e)
+	public async void ChangeToSigningScreen(object sender, EventArgs e)
     {
 		try
 		{
-			string NombreUsuario = CampoUsuario.Text;
-			string ContrasenaUsuario = CampoContraseña.Text;
+			string NombreUsuario = NameField.Text;
+			string ContrasenaUsuario = PasswordField.Text;
 			var usuario = p.Users
 								.Where(b => b.Username == NombreUsuario && b.Password == ContrasenaUsuario).FirstOrDefault();
-			await irPaginaFichar.ScaleTo(1.3, 500, Easing.BounceIn);
-			await irPaginaFichar.ScaleTo(1.0, 100, Easing.BounceOut);
+			await GoToSigningButton.ScaleTo(1.3, 500, Easing.BounceIn);
+			await GoToSigningButton.ScaleTo(1.0, 100, Easing.BounceOut);
 
 			if (usuario is not null)
 			{
@@ -51,8 +50,8 @@ public partial class MainPage : ContentPage
 				{
 					
 					CuerpoLogin.Background = Color.FromRgba("#1b5e3b");
-					irPaginaFichar.Background = Color.FromRgba("#1b5e3b");
-					ContrasenaOlvidada.Background = Color.FromRgba("#1b5e3b");
+					GoToSigningButton.Background = Color.FromRgba("#1b5e3b");
+					ForgotPassword.Background = Color.FromRgba("#1b5e3b");
 					await CuerpoLogin.TranslateTo(2000, 0, 1500);
 					App.Current.MainPage = new NavigationPage(new PaginaAdmin(NombreUsuario));
 					db.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
@@ -60,8 +59,8 @@ public partial class MainPage : ContentPage
 				else
 				{
 					CuerpoLogin.Background = Color.FromRgba("#1b5e3b");
-					irPaginaFichar.Background = Color.FromRgba("#1b5e3b");
-					ContrasenaOlvidada.Background = Color.FromRgba("#1b5e3b");
+					GoToSigningButton.Background = Color.FromRgba("#1b5e3b");
+					ForgotPassword.Background = Color.FromRgba("#1b5e3b");
 					await CuerpoLogin.TranslateTo(-2000, 0, 1500);
 					App.Current.MainPage = new NavigationPage(new PaginaFichar(NombreUsuario));
 					db.InsertLog(new Log("Login", NombreUsuario + " ha iniciado sesion - " + dt),p);
@@ -70,8 +69,8 @@ public partial class MainPage : ContentPage
 			else
 			{
 				CuerpoLogin.Background = Color.FromRgba("#5e1b1b");
-				irPaginaFichar.Background = Color.FromRgba("#5e1b1b");
-				ContrasenaOlvidada.Background = Color.FromRgba("#5e1b1b");
+				GoToSigningButton.Background = Color.FromRgba("#5e1b1b");
+				ForgotPassword.Background = Color.FromRgba("#5e1b1b");
 
 				await CuerpoLogin.TranslateTo(-20, 0, 200);
 				await CuerpoLogin.TranslateTo(20, 0, 200);
@@ -81,11 +80,11 @@ public partial class MainPage : ContentPage
 				await  CuerpoLogin.TranslateTo(20, 0, 200);
 				await CuerpoLogin.TranslateTo(0, 0, 200);
 				CuerpoLogin.Background = Color.FromRgba("#2B282D");
-				irPaginaFichar.Background = Color.FromRgba("#2B282D");
-				ContrasenaOlvidada.Background = Color.FromRgba("#2B282D");
+				GoToSigningButton.Background = Color.FromRgba("#2B282D");
+				ForgotPassword.Background = Color.FromRgba("#2B282D");
 
 
-				DisplayAlert("Error de credenciales", "El usuario o la contraseña son incorrectos.", "Vale");
+				DisplayAlert("Error", "El usuario o la contraseña son incorrectos.", "Vale");
 			}
 		}catch(NullReferenceException ex)
         {
@@ -93,4 +92,8 @@ public partial class MainPage : ContentPage
         }
 	}
 
+    private void ForgotPassword_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

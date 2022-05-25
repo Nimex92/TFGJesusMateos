@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.AnadeDiaCalendario"
              BackgroundColor="White"
-             Title="Añade dias a calendario laboral">
+             Title="Añadir dias a calendario laboral">
     <StackLayout>
         <Label  
-                Text="Tech Talent &#10;Añadir dia a calendario laboral"
+                Text="Añadir dia a calendario laboral"
                 FontSize="30"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
@@ -30,7 +30,7 @@
                        Margin="22,10,0,0"
                        />
             <Picker
-                        x:Name="SelectorCalendario"
+                        x:Name="CalendarSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
@@ -40,7 +40,7 @@
                        Margin="22,10,0,0"
                        />
             <Picker
-                        x:Name="SelectorMotivo"
+                        x:Name="ReasonSelector"
                         BackgroundColor="Black"
                         TextColor="White"
                         WidthRequest="300"
@@ -49,33 +49,33 @@
                        TextColor="White"
                        Margin="22,0,0,0"/>
             <DatePicker
-                    x:Name="SelectorFecha"
+                    x:Name="DateSelector"
                     BackgroundColor="Black"
                     HorizontalOptions="Center"
                     Margin="0,0,0,0"/>
 
             <Button
-                            x:Name="BotonRegistrar"
+                            x:Name="RegisterButton"
                             Text="Registrar"
-                            Clicked="BotonRegistrar_Clicked"
+                            Clicked="RegisterButton_Clicked"
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"
                             IsVisible="True"
                             IsEnabled="True"/>
             <Button
-                            x:Name="BotonActualizar"
+                            x:Name="UpdateButton"
                             Text="Actualizar"
-                            Clicked="BotonActualizar_Clicked"
+                            Clicked="UpdateButton_Clicked"
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"
                             IsVisible="False"
                             IsEnabled="False"/>
             <Button
-                            x:Name="BotonSolicitar"
+                            x:Name="RequestButton"
                             Text="Solicitar"
-                            Clicked="BotonPideVacaciones_Clicked"
+                            Clicked="RequestVacationButton_Clicked"
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"
@@ -85,21 +85,21 @@
         </StackLayout>
         <StackLayout>
             <Button
-                x:Name="BotonVolver"
+                x:Name="BackButton"
                 Text="Volver"
                 WidthRequest="200"
                 HeightRequest="35"
                 HorizontalOptions="Center"
                 Margin="0,20,0,0"
-                Clicked="BotonVolver_Clicked"/>
+                Clicked="BackButton_Clicked"/>
             <Button
-                x:Name="BotonVolverFichar"
+                x:Name="BackToMainButton"
                 Text="Volver"
                 WidthRequest="200"
                 HeightRequest="35"
                 HorizontalOptions="Center"
                 Margin="0,20,0,0"
-                Clicked="BotonVolverFichar_Clicked"
+                Clicked="BackToSignings_Clicked"
                 IsEnabled="False"
                 IsVisible="False"/>
         </StackLayout>

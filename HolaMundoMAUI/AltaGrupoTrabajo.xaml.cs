@@ -38,13 +38,13 @@ public partial class AltaGrupoTrabajo : ContentPage
 				RegisterButton.IsEnabled = false;
 				UpdateButton.IsVisible = true;
 				UpdateButton.IsEnabled = true;
-				var FindWorkGroup = p.WorkGroups.Where(x => x.Name == NameField.Text).FirstOrDefault();
-				WorkGroup = FindWorkGroup;
+				var findWorkGroup = p.WorkGroups.Where(x => x.Name == NameField.Text).FirstOrDefault();
+				WorkGroup = findWorkGroup;
 				Title.Text = "Revocar trabajador de equipo de trabajo";
 				break;
         }
 	}
-	public async void RegistraNuevoGrupoTrabajo(object sender, EventArgs e)
+	public async void AddNewWorkGroupButton_Clicked(object sender, EventArgs e)
 	{
 		PresenciaContext p = new PresenciaContext();
 		if (NameField.Text.Equals("")==false)
@@ -53,34 +53,34 @@ public partial class AltaGrupoTrabajo : ContentPage
 			var WorkGroup = p.WorkGroups.Where(x => x.Name == WorkGroupName).FirstOrDefault();
 			if (WorkGroup is not null)
 			{
-				await DisplayAlert("Alert", "El equipo de trabajo ya existe.", "OK");
+				await DisplayAlert("Error", "El equipo de trabajo ya existe.", "OK");
 			}
 			else
 			{
 				WorkGroup workGroup = new WorkGroup(WorkGroupName);
 				db.InsertWorkGroup(workGroup,p);
 				db.InsertLog(new Log("Añadir", Username + " ha añadido grupo de trabajo " + WorkGroupName + " - " + DateTime), p);
-				await DisplayAlert("Error", "El equipo de trabajo se ha añadido correctamente.", "OK");
+				await DisplayAlert("Success", "El equipo de trabajo se ha añadido correctamente.", "OK");
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,6));
 			}
 		}
 		else
 		{
-			await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
+			await DisplayAlert("Error", "Debes introducir el nombre de turno", "OK");
 		}
 	}
 	private async void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
-		bool actualizar = db.UpdateWorkGroup(WorkGroup, NameField.Text,p);
-		if(actualizar == true)
+		bool update = db.UpdateWorkGroup(WorkGroup, NameField.Text,p);
+		if(update == true)
         {
-			await DisplayAlert("Modificar", "Se ha modificado correctamente.","Vale");
+			await DisplayAlert("Modify", "Se ha modificado correctamente.","Vale");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
 			db.InsertLog(new Log("Modificar", Username + " ha modificado el grupo de trabajo " + WorkGroup.Name), p);
         }
         else
         {
-			await DisplayAlert("Alert", "No se han realizado cambios.","Vale");
+			await DisplayAlert("Error", "No se han realizado cambios.","Vale");
 		}
     }
 
@@ -117,7 +117,7 @@ public partial class AltaGrupoTrabajo : ContentPage
 		}
 		return MinuteList;
 	}
-	public void VolverAlMain(object sender, EventArgs e)
+	public void BackToMain(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,6));
     }

@@ -6,11 +6,10 @@
              BackgroundColor="White">
     <StackLayout>
         <Label 
-                Text="Tech Talent &#10; trabajadores en la empresa"
+                Text="Trabajadores en la empresa"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="20"
                 HorizontalOptions="Center"
                 x:Name="TituloEmpresa"/>
@@ -45,7 +44,7 @@
                                     />
                                 <Label 
                                        WidthRequest="150"
-                                       Text="{Binding trabajador.nombre}" 
+                                       Text="{Binding Worker.Name}" 
                                        Margin="20,0,0,0" 
                                        FontSize="16"/>
                                 <Label  
@@ -55,7 +54,7 @@
                                        FontAttributes="Bold"
                                        WidthRequest="100"/>
                                 <Label 
-                                       Text="{Binding trabajador.grupo.Turno}" 
+                                       Text="{Binding Worker.WorkGroup.WorkShift}" 
                                        Margin="230,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"/>
@@ -66,7 +65,7 @@
                                        FontAttributes="Bold"
                                        WidthRequest="100"/>
                                 <Label 
-                                       Text="{Binding trabajador.usuario.Username}" 
+                                       Text="{Binding Worker.User.Username}" 
                                        Margin="520,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"/>

@@ -104,7 +104,7 @@
             </StackLayout>
             <StackLayout x:Name="PayrollsButton">
                 <ImageButton
-                    x:Name="ButtonPayroll"
+                    x:Name="IssueButton"
                     Source="problemas.png"
                     WidthRequest="70"
                     HeightRequest="70"
@@ -155,7 +155,7 @@
                                        FontAttributes="Bold"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
-                    <ImageButton x:Name="AddTrabajadores"
+                    <ImageButton x:Name="AddWorkers"
                                  Source="anadirusuario.png"
                                  HorizontalOptions="Start"
                                  VerticalOptions="Center"
@@ -190,20 +190,20 @@
                                     
                                     <Label 
                                        WidthRequest="150"
-                                       Text="{Binding Nombre}" 
+                                       Text="{Binding Name}" 
                                        Margin="-160,0,0,0" 
                                        FontSize="16"
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
-                                       Text="{Binding PerteneceATurnos}" 
+                                       Text="{Binding BelongstoWorkGroups}" 
                                        Margin="50,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="110"
                                        VerticalOptions="Center"/>
 
                                     <Label 
-                                       Text="{Binding Usuario.Username}" 
+                                       Text="{Binding User.Username}" 
                                        Margin="280,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
@@ -511,7 +511,7 @@
                                            VerticalOptions="Center"
                                            Margin="580,0,0,0"
                                            x:Name="BotonBorrarZonas"
-                                           Clicked="DeleteWorkTaskButton_Clicked"/>
+                                           Clicked="DeletePlaceButton_Clicked"/>
 
                                     </Grid>
                                 </ViewCell>
@@ -632,7 +632,7 @@
                                            VerticalOptions="Center"
                                            Margin="660,0,0,0"
                                            x:Name="BotonBorrarTareas"
-                                           Clicked="DeleteWorkTaskButton_Clicked"/>
+                                           Clicked="DeletePlaceButton_Clicked"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
@@ -742,7 +742,7 @@
                                            VerticalOptions="Center"
                                            Margin="660,0,0,0"
                                            x:Name="BotonBorrarTareas"
-                                           Clicked="DeleteWorkTaskButton_Clicked"/>
+                                           Clicked="DeletePlaceButton_Clicked"/>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>

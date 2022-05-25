@@ -21,6 +21,21 @@ namespace Persistencia
     }
     public static class DbInsert
     {
+        public static void AddPlaceToWorkGroup(this Db db, WorkGroup workGroup, Places place, PresenciaContext p)
+        {
+            workGroup.Places.Add(place);
+            p.SaveChanges();
+        }
+        public static void AddWorkTaskTOWorkGroup(this Db db, WorkGroup workGroup, WorkTask workTask, PresenciaContext p)
+        {
+            workGroup.Tasks.Add(workTask);
+            p.SaveChanges();
+        }
+        public static void AddWorkShiftTOWorkGroup(this Db db,WorkGroup workGroup, WorkShift workShift, PresenciaContext p)
+        {
+            workGroup.WorkShifts.Add(workShift);
+            p.SaveChanges();
+        }
         /// <summary>
         /// Method to insert a bew Log on the MySql DB
         /// </summary>
@@ -358,24 +373,14 @@ namespace Persistencia
             }
         }
         //Metodo para actualizar una zona existente en la base de datos
-        public static bool UpdatePlace(this Db db, string oldName, string newName)
+        public static bool UpdatePlace(this Db db,Places place, string newName, PresenciaContext p)
         {
             try
             {
-                using var presenciaContext = new PresenciaContext();
-                var Zona = presenciaContext.Places.Where(x => x.Name == oldName).FirstOrDefault();
-                if (Zona is not null)
-                {
-                    Zona.Name = newName;
-                    presenciaContext.Places.Update(Zona);
-                    presenciaContext.Logs.Add(new Log("Update", "Se ha actualizado la zona \"" + oldName + "\" a \"" + newName + "\""));
-                    presenciaContext.SaveChanges();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                place.Name = newName;
+                p.Places.Update(place);
+                p.SaveChanges();
+                return true;
             }
             catch (NullReferenceException ex)
             {

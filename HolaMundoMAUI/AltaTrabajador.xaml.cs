@@ -16,15 +16,14 @@ public partial class AltaTrabajador : ContentPage
 		InitializeComponent();
 		Username = user;
 		//Recojo todos los Turnos de la tabla de MySql
-		var WorkShift = p.WorkGroups;
-		//Creo una lista para guardar todos los turnos existentes
+		var WorkShift = p.WorkGroups.ToList();
 		var WorkShiftList = new List<string>();
 		//Para cada lista que haya en la seleccion WorkShifts, aÒado al selector (Picker de la interfaz) El name del turno
 		WorkGroupSelector.Items.Add("-- Selecciona un equipo de trabajo.");
-		foreach (WorkGroup equipo in WorkShift)
+        WorkShift.ForEach(x =>
         {
-			WorkGroupSelector.Items.Add(equipo.Name);
-		}
+			WorkGroupSelector.Items.Add(x.Name);
+		});
 		List<string> Category = new List<string>();
 		Category.Add("Ingeniero licenciado");
 		Category.Add("Ingeniero tecnico");
@@ -70,9 +69,9 @@ public partial class AltaTrabajador : ContentPage
 	/// <summary>
 	/// Accion reactiva al pulsar el boton Registrar (Cuando esta activo)
 	/// </summary>
-	/// <param name="sender"></param>
-	/// <param name="e"></param>
-	public async void RegistrarNuevoTrabajador(object sender, EventArgs e)
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
+	public async void AddWorkerButton_Clicked(object sender, EventArgs e)
 	{
 		try
 		{
@@ -81,15 +80,17 @@ public partial class AltaTrabajador : ContentPage
 			string user = name + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9);
 			var selected = WorkGroupSelector.SelectedItem.ToString();
 			var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
-			Worker workers = new Worker(name, workGroup, new User(user, "1"));
-			workers.BelongstoWorkGroups = workGroup.Name;
-			bool inserta = db.InsertWorker(workers,p);
-            try {workers.BelongstoWorkGroups = workers.Name; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
-
+			var Nif = NifField.Text;
+			var SSNumber = SSNumberField.Text;
+			var inserta = true;//db.InsertWorker(new Worker(name, workGroup, new User(user, "1")),p);
+			p.Workers.Add(new Worker(name, workGroup, new User(user, "1"),CategorySelector.SelectedItem.ToString(),DateTime.Now,Nif,SSNumber));
+			p.SaveChanges();
+			var workers = p.Workers.Where(x => x.Name == name).FirstOrDefault();
+			try {workers.BelongstoWorkGroups = workers.Name; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
 			db.InsertLog(new Log("AÒadir", Username + " ha a√±adido trabajador " + name + " - " + dt), p);
 			if (inserta == true)
 			{
-				await DisplayAlert("Alert", "Se ha insertado correctamente el trabajador " + name, "OK");
+				await DisplayAlert("Success", "Se ha insertado correctamente el trabajador " + name, "OK");
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
 			}
 			else
@@ -105,34 +106,34 @@ public partial class AltaTrabajador : ContentPage
 	/// <summary>
 	/// Accion reactiva al pulsar el boton Actualziar (Cuando esta activo)
 	/// </summary>
-	/// <param name="sender"></param>
-	/// <param name="e"></param>
-	private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
+	private async void UpdateWorkerButton_Clicked(object sender, EventArgs e)
 	{
-		Random r = new Random();
-		string nombre = NameField.Text;
+		Random random = new Random();
+		string name = NameField.Text;
 		var user = p.Workers.Where(x => x.Name == Username).Include(x => x.User).Include(x => x.WorkGroup).FirstOrDefault();
-		var seleccionado = WorkGroupSelector.SelectedItem.ToString().Trim();
-		var equipo = p.WorkGroups.Where(x => x.Name == seleccionado).FirstOrDefault();
-		bool actualiza = db.UpdateWorker(user,nombre,equipo);
+		var selected = WorkGroupSelector.SelectedItem.ToString().Trim();
+		var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
+		bool update = db.UpdateWorker(user,name,workGroup);
 		
-		if (actualiza == true)
+		if (update == true)
 		{
-			db.InsertLog(new Log("A√±adir", Username + " ha modificado trabajador " + nombre + " - " + dt), p);
-			await DisplayAlert("Alert", "Se ha modificado correctamente el trabajador " + nombre, "OK");
+			db.InsertLog(new Log("Modificar", Username + " ha modificado trabajador " + name + " - " + dt), p);
+			await DisplayAlert("Modify", "Se ha modificado correctamente el trabajador " + name, "OK");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
 		}
 		else
 		{
-			await DisplayAlert("Alert", "Error al actualizar el trabajador " + nombre, "OK");
+			await DisplayAlert("Error", "Error al actualizar el trabajador " + name, "OK");
 		}
 	}
 	/// <summary>
 	/// Accion reactiva al boton volver que nos traslada de vuelta a la zona de 
 	/// admin
 	/// </summary>
-	/// <param name="sender"></param>
-	/// <param name="e"></param>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	public void VolverAlMain(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,2));
