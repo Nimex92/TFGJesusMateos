@@ -84,7 +84,7 @@ namespace Persistencia
         {
                 try
                 {
-                    p.Workers.Add(worker);
+                    p.Add(worker);
                     p.SaveChanges();
                     return true;
                 }

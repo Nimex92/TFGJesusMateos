@@ -18,51 +18,80 @@ public partial class AltaTurno : ContentPage
         InitializeComponent();
         SetPickers();
     }
-    public AltaTurno(string user,int opcion)
+    /// <summary>
+    /// Constructor that receives the username to persist the data
+    /// and an option to enable create or update UI
+    /// </summary>
+    /// <param string="user"></param>
+    /// <param int="opcion"></param>
+    public AltaTurno(string username,int option)
 	{
 		InitializeComponent();
-        Username = user;
+        //Set the Username to a global local use
+        Username = username;
+        //Set the UI Pickers with the data
         SetPickers();
-        switch (opcion)
+        switch (option)
         {
+            //In this case enable the create UI
             case 0:
                 RegisterButton.IsVisible = true;
                 UpdateButton.IsVisible = false;
                 break;
+            //In this case enable the update UI
             case 1:
                 RegisterButton.IsVisible = false;
                 UpdateButton.IsVisible = true;
                 break;
         }
     }
-    public AltaTurno(string user,string NombreTurno,int opcion)
+    /// <summary>
+    /// Constructor that receives the username, workShiftName to persist the data
+    /// and a option to enable the create or update UI
+    /// </summary>
+    /// <param string="user"></param>
+    /// <param string="workShiftName"></param>
+    /// <param int="opcion"></param>
+    public AltaTurno(string username,string workShiftName,int option)
     {
         InitializeComponent();
-        Username = user;
+        //Set the Username to a global local use
+        Username = username;
+        //Fill the UI Pickers with data
         SetPickers();
-        switch (opcion)
+        switch (option)
         {
+            //In this case enable the create UI
             case 0:
                 RegisterButton.IsVisible = true;
                 UpdateButton.IsVisible = false;
                 break;
+            //In this case enable the update UI and fill Fields with update object data
             case 1:
                 RegisterButton.IsVisible = false;
                 UpdateButton.IsVisible = true;
-                var workShift = p.WorkShifts.Where(x => x.Name == NombreTurno).FirstOrDefault();
+                //Search a workShift with the name passed on the global parameter
+                var workShift = p.WorkShifts.Where(x => x.Name == workShiftName).FirstOrDefault();
+                //Match with the global object
                 WorkShift = workShift;
+                //Update the object attribute "Name"
                 NameField.Text = workShift.Name;
+                //Disenable the field to avoid unwanted PK changes
                 NameField.IsEnabled = false;
-                string HoraEntrada = workShift.CheckIn.ToString().Substring(10, 3);
-                string MinutoEntrada = workShift.CheckIn.ToString().Substring(14, 2);
-                string HoraSalida = workShift.CheckOut.ToString().Substring(10, 3);
-                string MinutoSalida = workShift.CheckOut.ToString().Substring(14 ,2);
-                HourCheckInSelector.SelectedIndex = int.Parse(HoraEntrada);
-                MinuteCheckInSelector.SelectedIndex = int.Parse(MinutoEntrada);
-                HourCheckOutSelector.SelectedIndex = int.Parse(HoraSalida);
-                MinuteCheckOutSelector.SelectedIndex = int.Parse(MinutoSalida);
+                //Conveert to a string the field of the database
+                string CheckInHour = workShift.CheckIn.ToString().Substring(10, 3);
+                string CheckInMinute = workShift.CheckIn.ToString().Substring(14, 2);
+                string CheckOutHour = workShift.CheckOut.ToString().Substring(10, 3);
+                string CheckOutMinute = workShift.CheckOut.ToString().Substring(14 ,2);
+                //Convert values to Int and Set the pickers
+                HourCheckInSelector.SelectedIndex = int.Parse(CheckInHour);
+                MinuteCheckInSelector.SelectedIndex = int.Parse(CheckInMinute);
+                HourCheckOutSelector.SelectedIndex = int.Parse(CheckOutHour);
+                MinuteCheckOutSelector.SelectedIndex = int.Parse(CheckOutMinute);
+                //Set the datepickers with the object values
                 ValidFromPicker.Date = workShift.ValidFrom;
                 ValidUntilPicker.Date = workShift.ValidUntil;
+                //Set the weekdays with the object value
                 monday.IsChecked = workShift.Monday;
                 tuesday.IsChecked = workShift.Tuesday;
                 wednesday.IsChecked = workShift.Wednesday;
@@ -73,11 +102,18 @@ public partial class AltaTurno : ContentPage
                 break;
         }
     }
+    /// <summary>
+    /// Mehod to add a new WorkShift to the DB
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void RegisterButton_Clicked(object sender, EventArgs e)
     {
+        //Get the name for the object
         string workShiftName = NameField.Text;
         if (workShiftName is not null)
         {
+            //Gets the hours for the new object
             string HourCheckIn = HourCheckInSelector.SelectedItem.ToString();
             string MinuteCheckIn = MinuteCheckInSelector.SelectedItem.ToString();
             string FinalCheckIn = HourCheckIn + ":" + MinuteCheckIn;
@@ -86,6 +122,7 @@ public partial class AltaTurno : ContentPage
             string FinalCheckOut = HourCheckOut + ":" + MinuteCheckOut;
             DateTime checkIn = DateTime.Today.AddHours(Double.Parse(HourCheckIn)).AddMinutes(Double.Parse(MinuteCheckIn));
             DateTime checkOut = DateTime.Today.AddHours(Double.Parse(HourCheckOut)).AddMinutes(Double.Parse(MinuteCheckOut));
+            //Search if the object exists on the DB
             var workGroupSearch = p.WorkShifts.Where(x => x.Name == workShiftName).FirstOrDefault();
             if (workGroupSearch is not null)
             {
@@ -93,6 +130,7 @@ public partial class AltaTurno : ContentPage
             }
             else
             {
+                //If not exists then add the new object
                 WorkShift workShift = new WorkShift(NameField.Text,checkIn,checkOut, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
                 workShift.ValidFrom = ValidFromPicker.Date;
                 workShift.ValidUntil = ValidUntilPicker.Date;
@@ -100,33 +138,41 @@ public partial class AltaTurno : ContentPage
                 p.WorkShifts.Add(workShift);
                 db.InsertLog(new Log("Añadir", Username + " ha añadido turno de trabajo: " + workShiftName + " - " + Now),p);
                 p.SaveChanges();
-                await DisplayAlert("Alert", "El turno se ha añadido correctamente.", "OK");
+                await DisplayAlert("Sucess", "El turno se ha añadido correctamente.", "OK");
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
             }
         }
         else
         {
-            await DisplayAlert("Alert", "Debes introducir el nombre de turno", "OK");
+            await DisplayAlert("Error", "Debes introducir el nombre de turno", "OK");
         }
     }
+    /// <summary>
+    /// Method to update an exist WorkShift on DB
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void UpdateButton_Clicked(object sender, EventArgs e)
     {
         try
         {
+                //Get the workshift name from the UI
                 string workShiftName = NameField.Text;
+                //Get the time parameters from the UI
                 string CheckInHour = HourCheckInSelector.SelectedItem.ToString();
                 string MinuteCheckIn = MinuteCheckInSelector.SelectedItem.ToString();
                 string CheckInTime = CheckInHour + ":" + MinuteCheckIn;
                 string CheckOutHour = HourCheckOutSelector.SelectedItem.ToString();
                 string CheckOutMinute = MinuteCheckOutSelector.SelectedItem.ToString();
                 string CheckOutTime = CheckOutHour + ":" + CheckOutMinute;
+                //Convert it to DateTime 
                 DateTime checkIn = DateTime.Today.AddHours(Double.Parse(CheckInHour)).AddMinutes(Double.Parse(MinuteCheckIn));
                 DateTime checkOut = DateTime.Today.AddHours(Double.Parse(CheckOutHour)).AddMinutes(Double.Parse(CheckOutMinute));
                 bool update =db.UpdateWorkShift(WorkShift, workShiftName, checkIn, checkOut, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, ValidFromPicker.Date, ValidUntilPicker.Date, WorkShift.Enabled, WorkShift.Deleted, p);
             if (update == true)
             {
                 db.InsertLog(new Log("Añadir", Username + " ha añadido turno de trabajo: " + workShiftName + " - " + Now),p);
-                await DisplayAlert("Alert", "El turno se ha modificado correctamente.", "OK");
+                await DisplayAlert("Success", "El turno se ha modificado correctamente.", "OK");
                 App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
             }
             
@@ -135,10 +181,19 @@ public partial class AltaTurno : ContentPage
             await DisplayAlert("Error", ex.ToString(), "Vale");
         }
     }
+    /// <summary>
+    /// Method to back to the last screen of the app
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void BackButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,3));
     }
+    /// <summary>
+    /// Method to fill the UI time pickers with data
+    /// and select a default value
+    /// </summary>
     public void SetPickers()
     {
         HourCheckInSelector.ItemsSource = HourGenerate();
@@ -150,6 +205,10 @@ public partial class AltaTurno : ContentPage
         HourCheckOutSelector.SelectedIndex = 12;
         MinuteCheckOutSelector.SelectedIndex = 00;
     }
+    /// <summary>
+    /// Method to generate an 24 hours interval and add it to a List
+    /// </summary>
+    /// <returns></returns>
     public List<string> HourGenerate()
     {
         var hourList = new List<string>();
@@ -166,6 +225,10 @@ public partial class AltaTurno : ContentPage
         }
         return hourList;
     }
+    /// <summary>
+    /// Method to generate an 60 Minute interval and add it to a List
+    /// </summary>
+    /// <returns></returns>
     public List<string> MinuteGenerate()
     {
         var ListaMinutos = new List<string>();
@@ -182,6 +245,11 @@ public partial class AltaTurno : ContentPage
         }
         return ListaMinutos;
     }
+    /// <summary>
+    /// Method to check the changes of the checkbox of the UI
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
 		if (monday.IsChecked){ Monday = true; } else { Monday = false; }

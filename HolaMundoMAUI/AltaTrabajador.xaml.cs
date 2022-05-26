@@ -11,19 +11,26 @@ public partial class AltaTrabajador : ContentPage
 	string Username;
 	DateTime dt = DateTime.Now;
 	Db db = new Db();
+	
+	/// <summary>
+	/// Constructor that receives the username to persist the data
+	/// </summary>
+	/// <param string="user"></param>
+	/// <param int="option"></param>
 	public AltaTrabajador(string user,int option)
 	{
 		InitializeComponent();
+		//Set the user variable received to an global local use
 		Username = user;
-		//Recojo todos los Turnos de la tabla de MySql
+		//Get all the workShifts than exists on Db and add it to a List
 		var WorkShift = p.WorkGroups.ToList();
-		var WorkShiftList = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El name del turno
+		//for each workgroup than exist on workshifs we add it to the selector
 		WorkGroupSelector.Items.Add("-- Selecciona un equipo de trabajo.");
         WorkShift.ForEach(x =>
         {
 			WorkGroupSelector.Items.Add(x.Name);
 		});
+        //Fill a List with all static category
 		List<string> Category = new List<string>();
 		Category.Add("Ingeniero licenciado");
 		Category.Add("Ingeniero tecnico");
@@ -32,42 +39,45 @@ public partial class AltaTrabajador : ContentPage
 		Category.Add("Oficial administrativo");
 		Category.Add("Subalterno");
 		Category.Add("Auxiliar Administrativo");
-		Category.Add("Oficial de 1ºera");
-		Category.Add("Oficial de 2ºda");
-		Category.Add("Oficial de 3ºera");
+		Category.Add("Oficial de 1Âºera");
+		Category.Add("Oficial de 2Âºda");
+		Category.Add("Oficial de 3Âºera");
 		Category.Add("Oficial especialista");
 		Category.Add("Peon");
 		Category.Add("Menor de edad o independiente");
 		CategorySelector.ItemsSource = Category;
-		//Selecciono el primer item de la lista a modo informatico para el Usuario
+		//Select the first exists item (for UI better experience)
 		CategorySelector.SelectedIndex = 0;
-		//Segun el entero que recibe actvia la insercion o el modificado (interfaz)
 		switch(option)
 		{
-			//Activa el boton para registrar un nuevo trabajador
+			//Enable the create UI
 			case 0:
+				//Set the create button visible
 				UpdateButton.IsVisible = false;
 				RegisterButton.IsVisible = true;
 				break;
-			//Activa el boton para actualizar un trabajador existente
+			//Enable the update UI
 			case 1:
+				//Set the update button visible
 				UpdateButton.IsVisible = true;
 				RegisterButton.IsVisible = false;
 				WorkGroupSelector.IsEnabled = false;
 				NameField.Text = user;
+				//Find a worker than march with the user than constructor receives
 				var worker = p.Workers.Where(x => x.Name == user).Include(x=>x.User).Include(x => x.WorkGroup).FirstOrDefault();
-				//Recorro los equipos del trabajador y los añado a la lista para setearlos en el Picker.
+				//foreach Workgroup than worker belongs it will be added to the List
 				foreach(WorkGroup e in worker.WorkGroup)
                 {
 					WorkShiftList.Add(e.Name);
                 }
+				//Select the first item of the list
 				WorkGroupSelector.SelectedIndex = 1;
 				break;
         }
 		
 	}
 	/// <summary>
-	/// Accion reactiva al pulsar el boton Registrar (Cuando esta activo)
+	/// Method to add a new Worker to Db
 	/// </summary>
 	/// <param object="sender"></param>
 	/// <param EventArgs="e"></param>
@@ -82,12 +92,13 @@ public partial class AltaTrabajador : ContentPage
 			var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
 			var Nif = NifField.Text;
 			var SSNumber = SSNumberField.Text;
-			var inserta = true;//db.InsertWorker(new Worker(name, workGroup, new User(user, "1")),p);
-			p.Workers.Add(new Worker(name, workGroup, new User(user, "1"),CategorySelector.SelectedItem.ToString(),DateTime.Now,Nif,SSNumber));
-			p.SaveChanges();
+			var category = CategorySelector.SelectedItem.ToString();
+			var inserta = db.InsertWorker(new Worker(name, workGroup, new User(user, "1"),category,DateTime.Now,Nif,SSNumber),p);
+			//p.Workers.Add(new Worker(name, workGroup, new User(user, "1"),CategorySelector.SelectedItem.ToString(),DateTime.Now,Nif,SSNumber));
+			//p.SaveChanges();
 			var workers = p.Workers.Where(x => x.Name == name).FirstOrDefault();
-			try {workers.BelongstoWorkGroups = workers.Name; } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
-			db.InsertLog(new Log("Añadir", Username + " ha aÃ±adido trabajador " + name + " - " + dt), p);
+			try {workers.BelongstoWorkGroups = workers.WorkGroup.ToString(); } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
+			db.InsertLog(new Log("Aï¿½adir", Username + " ha aï¿½adido trabajador " + name + " - " + dt), p);
 			if (inserta == true)
 			{
 				await DisplayAlert("Success", "Se ha insertado correctamente el trabajador " + name, "OK");
@@ -104,7 +115,7 @@ public partial class AltaTrabajador : ContentPage
         }
 	}
 	/// <summary>
-	/// Accion reactiva al pulsar el boton Actualziar (Cuando esta activo)
+	/// Method to update an exist Worker on Db
 	/// </summary>
 	/// <param object="sender"></param>
 	/// <param EventArgs="e"></param>
@@ -112,9 +123,12 @@ public partial class AltaTrabajador : ContentPage
 	{
 		Random random = new Random();
 		string name = NameField.Text;
-		var user = p.Workers.Where(x => x.Name == Username).Include(x => x.User).Include(x => x.WorkGroup).FirstOrDefault();
-		var selected = WorkGroupSelector.SelectedItem.ToString().Trim();
+		string user = name + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9);
+		var selected = WorkGroupSelector.SelectedItem.ToString();
 		var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
+		var Nif = NifField.Text;
+		var SSNumber = SSNumberField.Text;
+		var category = CategorySelector.SelectedItem.ToString();
 		bool update = db.UpdateWorker(user,name,workGroup);
 		
 		if (update == true)
@@ -129,7 +143,7 @@ public partial class AltaTrabajador : ContentPage
 		}
 	}
 	/// <summary>
-	/// Accion reactiva al boton volver que nos traslada de vuelta a la zona de 
+	/// Method to back to the MainScreen of the app
 	/// admin
 	/// </summary>
 	/// <param object="sender"></param>

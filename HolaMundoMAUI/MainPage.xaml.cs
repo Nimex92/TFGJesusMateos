@@ -15,6 +15,10 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		CheckWorkShifts();	
 	}
+	/// <summary>
+	/// Checks if the workShifts are enabled and if the validUntil date overpass the actual date it
+	/// sets the workShift as deleted
+	/// </summary>
 	public void CheckWorkShifts()
     {
 		var Turnos = p.WorkShifts.ToList();
@@ -33,22 +37,24 @@ public partial class MainPage : ContentPage
 		}
 		
     }
+	/// <summary>
+	/// Check if the credentials exists on the DB and if exist go to the workerPage or the adminPage
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
 	public async void ChangeToSigningScreen(object sender, EventArgs e)
     {
 		try
 		{
 			string NombreUsuario = NameField.Text;
 			string ContrasenaUsuario = PasswordField.Text;
-			var usuario = p.Users
-								.Where(b => b.Username == NombreUsuario && b.Password == ContrasenaUsuario).FirstOrDefault();
+			var usuario = p.Users.Where(b => b.Username == NombreUsuario && b.Password == ContrasenaUsuario).FirstOrDefault();
 			await GoToSigningButton.ScaleTo(1.3, 500, Easing.BounceIn);
 			await GoToSigningButton.ScaleTo(1.0, 100, Easing.BounceOut);
-
 			if (usuario is not null)
 			{
 				if (usuario.esAdmin == true)
 				{
-					
 					CuerpoLogin.Background = Color.FromRgba("#1b5e3b");
 					GoToSigningButton.Background = Color.FromRgba("#1b5e3b");
 					ForgotPassword.Background = Color.FromRgba("#1b5e3b");

@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AbhbWlTjqShMgdNvQ7jEEELAbGvS7XKAuhhLiBPWay0T8CUEE7vqo+r5+pdArIFqRaCz3m+Bs/JmnpMHkZkj7g==",
+  "dgSpecHash": "BDLM8pRH/XCEUgjVctSIS9SpAEtsWvd38JOZHpnRyvcUN5qnJwZT/ev+ffZFutiYeW6+EZHABxtGEINd3vpHyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jesus\\.nuget\\packages\\googlegson\\2.8.8.2\\googlegson.2.8.8.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7\\7.2.2\\itext7.7.2.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\itext7.commons\\7.2.2\\itext7.commons.7.2.2.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",
@@ -28,12 +27,7 @@
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.dependencies\\6.0.300-rc.2.5513\\microsoft.maui.dependencies.6.0.300-rc.2.5513.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.extensions\\6.0.300-rc.2.5513\\microsoft.maui.extensions.6.0.300-rc.2.5513.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics\\6.0.300-rc.2.1310\\microsoft.maui.graphics.6.0.300-rc.2.1310.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.300-rc.2.1310\\microsoft.maui.graphics.win2d.winui.desktop.6.0.300-rc.2.1310.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsappsdk\\1.0.3\\microsoft.windowsappsdk.1.0.3.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
@@ -42,108 +36,31 @@
     "C:\\Users\\jesus\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.globalization\\4.3.0\\runtime.any.system.globalization.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.reflection\\4.3.0\\runtime.any.system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.reflection.extensions\\4.3.0\\runtime.any.system.reflection.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.reflection.primitives\\4.3.0\\runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.resources.resourcemanager\\4.3.0\\runtime.any.system.resources.resourcemanager.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.runtime.handles\\4.3.0\\runtime.any.system.runtime.handles.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.runtime.interopservices\\4.3.0\\runtime.any.system.runtime.interopservices.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.text.encoding.extensions\\4.3.0\\runtime.any.system.text.encoding.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.any.system.threading.tasks\\4.3.0\\runtime.any.system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.native.system.security.cryptography.apple\\4.3.0\\runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple\\4.3.0\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.unix.microsoft.win32.primitives\\4.3.0\\runtime.unix.microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.unix.system.diagnostics.debug\\4.3.0\\runtime.unix.system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.unix.system.io.filesystem\\4.3.0\\runtime.unix.system.io.filesystem.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.unix.system.private.uri\\4.3.0\\runtime.unix.system.private.uri.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.unix.system.runtime.extensions\\4.3.0\\runtime.unix.system.runtime.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.win.microsoft.win32.primitives\\4.3.0\\runtime.win.microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.win.system.diagnostics.debug\\4.3.0\\runtime.win.system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.win.system.io.filesystem\\4.3.0\\runtime.win.system.io.filesystem.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.process\\4.3.0\\system.diagnostics.process.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\system.diagnostics.tools.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.dynamic.runtime\\4.0.11\\system.dynamic.runtime.4.0.11.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.io\\4.1.0\\system.io.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.io.filesystem\\4.0.1\\system.io.filesystem.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.linq\\4.1.0\\system.linq.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.linq.expressions\\4.1.0\\system.linq.expressions.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.objectmodel\\4.0.12\\system.objectmodel.4.0.12.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.emit\\4.0.1\\system.reflection.emit.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.0.1\\system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.emit.lightweight\\4.0.1\\system.reflection.emit.lightweight.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.extensions\\4.0.1\\system.reflection.extensions.4.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.reflection.typeextensions\\4.1.0\\system.reflection.typeextensions.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.extensions\\4.1.0\\system.runtime.extensions.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.interopservices\\4.1.0\\system.runtime.interopservices.4.1.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.0.0\\system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.loader\\4.3.0\\system.runtime.loader.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.serialization.formatters\\4.3.0\\system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.security.cryptography.csp\\4.3.0\\system.security.cryptography.csp.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\system.security.cryptography.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\system.security.cryptography.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.text.encoding.codepages\\4.3.0\\system.text.encoding.codepages.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.text.regularexpressions\\4.3.1\\system.text.regularexpressions.4.3.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.threading.overlapped\\4.3.0\\system.threading.overlapped.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.threading.thread\\4.3.0\\system.threading.thread.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.android.glide\\4.12.0.2\\xamarin.android.glide.4.12.0.2.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.android.glide.disklrucache\\4.12.0.2\\xamarin.android.glide.disklrucache.4.12.0.2.nupkg.sha512",
@@ -225,14 +142,1971 @@
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.6.20.1\\xamarin.kotlin.stdlib.jdk8.1.6.20.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.0.1\\xamarin.kotlinx.coroutines.android.1.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.0.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.3\\microsoft.netcore.app.host.linux-x64.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm64\\6.0.3\\microsoft.netcore.app.host.linux-arm64.6.0.3.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.android.ref.31\\31.0.101-preview.11.117\\microsoft.android.ref.31.31.0.101-preview.11.117.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm\\6.0.3\\microsoft.netcore.app.host.linux-arm.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.3\\microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.3\\microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.3.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.24\\microsoft.windows.sdk.net.ref.10.0.19041.24.nupkg.sha512"
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm64\\6.0.3\\microsoft.netcore.app.host.linux-arm64.6.0.3.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.3\\microsoft.netcore.app.host.linux-x64.6.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/android-x86"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/ios-arm64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.AppContext 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.AppContext",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.Immutable 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.Immutable",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Collections.NonGeneric 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Collections.NonGeneric",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Debug 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Debug",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.DiagnosticSource 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.DiagnosticSource",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Diagnostics.Process 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Dynamic.Runtime 4.0.11' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Dynamic.Runtime",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Globalization.Extensions 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Globalization.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.IO.FileSystem 4.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.IO.FileSystem",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Linq 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Linq",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Reflection.TypeExtensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Reflection.TypeExtensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.CompilerServices.Unsafe 6.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.CompilerServices.Unsafe",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Extensions 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Extensions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices 4.1.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.NFloat.Internal 6.0.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.NFloat.Internal",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.InteropServices.RuntimeInformation 4.0.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.InteropServices.RuntimeInformation",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Loader 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Loader",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Runtime.Serialization.Formatters 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Runtime.Serialization.Formatters",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Security.Cryptography.Csp 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Security.Cryptography.Csp",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.Encoding.CodePages 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.Encoding.CodePages",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Text.RegularExpressions 4.3.1' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.Thread 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.Thread",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Threading.ThreadPool 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Threading.ThreadPool",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'System.Xml.XmlDocument 4.3.0' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "System.Xml.XmlDocument",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'ClassLibray' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "ClassLibray",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1703",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "'Persistencia' was resolved as a dependency of 'HolaMundoMAUI', but the dependency is using 'Xamarin.iOS' while 'HolaMundoMAUI' is using 'net6.0-maccatalyst15.4' as its TargetFramework. There might be compatibility issues when MacCatalyst projects depend on Xamarin.iOS projects.",
+      "libraryId": "Persistencia",
+      "targetGraphs": [
+        "net6.0-maccatalyst15.4/maccatalyst-x64"
+      ]
+    }
+  ]
 }

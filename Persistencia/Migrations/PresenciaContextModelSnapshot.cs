@@ -329,14 +329,12 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("BelongstoWorkGroups")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Category")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("HiringDate")
+                    b.Property<DateTime?>("HiringDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
@@ -344,11 +342,9 @@ namespace Persistencia.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nif")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("SocialSecurityCard")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("UserIdUser")

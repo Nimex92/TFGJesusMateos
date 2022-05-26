@@ -13,27 +13,44 @@ public partial class AltaGrupoTrabajo : ContentPage
 	PresenciaContext p;
 	Db db = new Db();
 	WorkGroup WorkGroup;
+	/// <summary>
+	/// Constructor that receives the username to persist the data
+	/// </summary>
+	/// <param string="user"></param>
 	public AltaGrupoTrabajo(string user)
 	{
 		InitializeComponent();
 		Username = user;
 	}
+	/// <summary>
+	/// Constructor that receives the username, workgroup to persist the data
+	/// and an option to enable the create or update UI
+	/// </summary>
+	/// <param string="user"></param>
+	/// <param string="workGroup"></param>
+	/// <param int="option"></param>
 	public AltaGrupoTrabajo(string user,string workGroup,int option)
 	{
+	    //Initialize visual components
 		InitializeComponent();
+		//Set the username to a global local use
 		Username = user;
+		//Set the workgroup to a global local use
 		WorkGroupName = workGroup;
+		//Set the UI entry with the workgroup received 
 		NameField.Text = workGroup;
         switch (option)
         {
+        	//In this case enable the create UI
 			case 0:
 				RegisterButton.IsVisible = true;
 				RegisterButton.IsEnabled = true;
 				UpdateButton.IsVisible = false;
 				UpdateButton.IsEnabled = false;
-				Title.Text = "Tech Talent" + Environment.NewLine + "Añadir trabajador a equipo de trabajo";
+				Title.Text = "Añadir trabajador a equipo de trabajo";
 				break;
-			case 1:
+			//In this case enable the update UI
+            case 1:
 				RegisterButton.IsVisible = false;
 				RegisterButton.IsEnabled = false;
 				UpdateButton.IsVisible = true;
@@ -44,6 +61,11 @@ public partial class AltaGrupoTrabajo : ContentPage
 				break;
         }
 	}
+	/// <summary>
+	/// Method to add a new Workgroup to DB
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	public async void AddNewWorkGroupButton_Clicked(object sender, EventArgs e)
 	{
 		PresenciaContext p = new PresenciaContext();
@@ -69,6 +91,11 @@ public partial class AltaGrupoTrabajo : ContentPage
 			await DisplayAlert("Error", "Debes introducir el nombre de turno", "OK");
 		}
 	}
+	/// <summary>
+	/// Method to update an existent Workgroup on DB
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	private async void ActualizarGrupoTrabajo(object sender, EventArgs e)
     {
 		bool update = db.UpdateWorkGroup(WorkGroup, NameField.Text,p);
@@ -83,8 +110,10 @@ public partial class AltaGrupoTrabajo : ContentPage
 			await DisplayAlert("Error", "No se han realizado cambios.","Vale");
 		}
     }
-
-	
+	/// <summary>
+	/// Method to generare an 24h hour interval
+	/// </summary>
+	/// <returns>List<string> HourList</returns>
 	public List<string> HourGenerate()
     {
 		var HourList = new List<string>();
@@ -101,6 +130,10 @@ public partial class AltaGrupoTrabajo : ContentPage
 		}
 		return HourList;
 	}
+	/// <summary>
+	/// Method to generate an 60 minute interval
+	/// </summary>
+	/// <returns>List<string> MinuteList</returns>
 	public List<string> MinuteGenerate()
 	{
 		var MinuteList = new List<string>();
@@ -117,6 +150,11 @@ public partial class AltaGrupoTrabajo : ContentPage
 		}
 		return MinuteList;
 	}
+	/// <summary>
+	/// Method to Back to the MainScreen of the app
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
 	public void BackToMain(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,6));

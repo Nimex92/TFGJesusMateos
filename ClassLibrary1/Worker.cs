@@ -36,6 +36,11 @@ namespace ClassLibray
             Name = name;
             User = user;
             WorkGroup.Add(workGroup);
+            Category = category;
+            HiringDate = hiringDate;
+            Nif = nif;
+            SocialSecurityCard = socialsecuritynumber;
+
         }
         public Worker(int cardNumber, string name, WorkGroup workGroup)
         {

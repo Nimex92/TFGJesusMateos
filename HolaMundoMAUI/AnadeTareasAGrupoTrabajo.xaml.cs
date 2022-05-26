@@ -23,7 +23,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var workGroupList = new List<string>();
 		var workTasksList = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion WorkShifts, aï¿½ado al selector (Picker de la interfaz) El nombre del turno
 		WorkGroupSelector.Items.Add("-- Selecciona equipo de trabajo.");
 		WorkTaskSelector.Items.Add("-- Selecciona tarea.");
         workGroups.ForEach(x =>
@@ -37,10 +37,20 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		WorkGroupSelector.SelectedIndex=0;
 		WorkTaskSelector.SelectedIndex = 0;
 	}
+	/// <summary>
+	/// Method to back to the mainscreen of the app
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,5));
     }
+	/// <summary>
+	/// Method to add a WorkTask to a WorkGroup than exist on the DB
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
 		var workGroupName = WorkGroupSelector.SelectedItem;
@@ -49,15 +59,15 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		var workTask = p.WorkTasks.Where(x=>x.Name == workTaskName).FirstOrDefault();
 		if(workGroup is not null && workTask is not null)
         {
-			await DisplayAlert("Success", "Se ha añadido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
+			await DisplayAlert("Success", "Se ha aï¿½adido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
 			db.AddWorkTaskTOWorkGroup(workGroup, workTask, p);
-			db.InsertLog(new Log("Añadir", Username + " ha añadido " + workTask.Name + " a grupo " + workGroup.Name + " - " + Now),p);
-			await DisplayAlert("Success", "Se ha añadido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
+			db.InsertLog(new Log("Aï¿½adir", Username + " ha aï¿½adido " + workTask.Name + " a grupo " + workGroup.Name + " - " + Now),p);
+			await DisplayAlert("Success", "Se ha aï¿½adido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 5));
 		}
         else
         {
-			await DisplayAlert("Error", "Error al añadir tareas.", "OK");
+			await DisplayAlert("Error", "Error al aï¿½adir tareas.", "OK");
 		}
 
     }

@@ -114,12 +114,10 @@
         "originalTargetFrameworks": [
           "net6.0-android",
           "net6.0-ios",
-          "net6.0-maccatalyst",
-          "net6.0-windows10.0.19041"
+          "net6.0-maccatalyst"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -147,17 +145,6 @@
           },
           "net6.0-maccatalyst15.4": {
             "targetAlias": "net6.0-maccatalyst",
-            "projectReferences": {
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
-              },
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
-              }
-            }
-          },
-          "net6.0-windows10.0.19041": {
-            "targetAlias": "net6.0-windows10.0.19041",
             "projectReferences": {
               "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
                 "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
@@ -380,89 +367,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
-        },
-        "net6.0-windows10.0.19041": {
-          "targetAlias": "net6.0-windows10.0.19041",
-          "dependencies": {
-            "Microsoft.Graphics.Win2D": {
-              "target": "Package",
-              "version": "[1.0.3.1, )"
-            },
-            "Microsoft.Maui.Dependencies": {
-              "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Maui.Extensions": {
-              "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Windows.SDK.BuildTools": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[10.0.22000.194, )",
-              "autoReferenced": true
-            },
-            "Microsoft.WindowsAppSDK": {
-              "target": "Package",
-              "version": "[1.0.3, )"
-            },
-            "NUnit": {
-              "target": "Package",
-              "version": "[3.13.3, )"
-            },
-            "itext7": {
-              "target": "Package",
-              "version": "[7.2.2, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.24, 10.0.19041.24]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.Maui.Controls": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Core": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Essentials": {
-              "privateAssets": "all"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Windows.SDK.NET.Ref": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -482,9 +386,6 @@
           "#import": []
         },
         "maccatalyst-x64": {
-          "#import": []
-        },
-        "win10-x64": {
           "#import": []
         }
       }

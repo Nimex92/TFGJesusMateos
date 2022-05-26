@@ -14,6 +14,9 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 		InitializeComponent();
 		SetPickers();
 	}
+	/// <summary>
+	/// Fill the UI Pickers with data
+	/// </summary>
 	private void SetPickers()
 	{
 		var workGroupList = p.WorkGroups.ToList();
@@ -32,10 +35,20 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 		if (workGroupList.Count > 0) { WorkGroupSelector.SelectedIndex = 0; }
 		if (workerList.Count > 0) { WorkerSelector.SelectedIndex = 0; }
 	}
+	/// <summary>
+	/// Method to back to the last screen of the app
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private void BackButton_Clicked(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
     }
+	/// <summary>
+	/// Method to add a worker to a workGroup
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
     private async void SubminButton_Clicked(object sender, EventArgs e)
     {
 		string workGroupSearch = WorkGroupSelector.SelectedItem.ToString();

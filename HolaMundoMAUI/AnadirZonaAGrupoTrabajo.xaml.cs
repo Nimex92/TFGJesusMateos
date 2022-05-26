@@ -15,6 +15,9 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 		SetPickers();
 		Username = username;
 	}
+	/// <summary>
+	/// Method to fill the UI pickers with data
+	/// </summary>
 	private void SetPickers()
 	{
 		//Recojo todos los Turnos de la tabla de MySql
@@ -34,10 +37,20 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 		WorkGroupSelector.SelectedIndex = 0;
 		PlaceSelector.SelectedIndex = 0;
 	}
+	/// <summary>
+	/// Method to back to the last screen of the app
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	private void BackButton_Clicked(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,4));
 	}
+	/// <summary>
+	/// Method to add a place to a WorkGroup
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	private async void RegisterButton_Clicked (object sender, EventArgs e)
 	{
 		var workGroupName = WorkGroupSelector.SelectedItem;

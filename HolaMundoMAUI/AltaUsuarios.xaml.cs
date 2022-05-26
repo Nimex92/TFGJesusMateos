@@ -10,19 +10,19 @@ public partial class AltaUsuarios : ContentPage
 	string NombreUsuario;
 	DateTime dt = DateTime.Now;
 	Db db = new Db();
-	public AltaUsuarios(string user)
+	public AltaUsuarios(string username)
 	{
 		InitializeComponent();
-		NombreUsuario = user;
+		NombreUsuario = username;
 	}
-	public AltaUsuarios(string user,int actualiza)
+	public AltaUsuarios(string username,int actualiza)
 	{
 		InitializeComponent();
-		NombreUsuario = user;
+		NombreUsuario = username;
         switch (actualiza)
         {
 			case 1:
-				var usuario = p.Users.Where(x => x.Username == user).FirstOrDefault();
+				var usuario = p.Users.Where(x => x.Username == username).FirstOrDefault();
 				CampoUsuario.Text = usuario.Username;
 				CampoContrasena.Text = usuario.Password;
 				CampoRepiteContrasena.Text = usuario.Password;
@@ -42,8 +42,8 @@ public partial class AltaUsuarios : ContentPage
 	public async void RegistrarNuevoUsuario(object sender, EventArgs e)
 	{
 		string Username = CampoUsuario.Text;                    //Recojo el Usuario de la interfaz
-		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
-		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
+		string Password = CampoContrasena.Text;                 //Recojo la contraseï¿½a de la interfaz
+		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseï¿½a de la interfaz
 
 		var us = p.Users
 						.Where(b => b.Username == Username)
@@ -66,7 +66,7 @@ public partial class AltaUsuarios : ContentPage
 
 				//Inserto usuario
 				bool inserta = db.InsertUser(new User(Username, Password,esAdmin),p);
-				db.InsertLog(new Log("Añadir", NombreUsuario + " ha añadido grupo de trabajo " + Username + " - " + dt),p);
+				db.InsertLog(new Log("Aï¿½adir", NombreUsuario + " ha aï¿½adido grupo de trabajo " + Username + " - " + dt),p);
 				//Inserto Usuario
 				if (inserta == true) 
 				{
@@ -82,8 +82,8 @@ public partial class AltaUsuarios : ContentPage
 			}
 			else
 			{
-				//Activa label error, no coinciden las contraseñas
-				await DisplayAlert("Alert", "Las contraseñas deben coincidir.", "OK");
+				//Activa label error, no coinciden las contraseï¿½as
+				await DisplayAlert("Alert", "Las contraseï¿½as deben coincidir.", "OK");
 			}
 		}
 	}   
@@ -94,8 +94,8 @@ public partial class AltaUsuarios : ContentPage
     private async void BotonActualizarAdmin_Clicked(object sender, EventArgs e)
     {
 		string Username = CampoUsuario.Text;                    //Recojo el Usuario de la interfaz
-		string Password = CampoContrasena.Text;                 //Recojo la contraseña de la interfaz
-		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseña de la interfaz
+		string Password = CampoContrasena.Text;                 //Recojo la contraseï¿½a de la interfaz
+		string CompruebaPassword = CampoRepiteContrasena.Text;  //Recojo la comprobacion de la contraseï¿½a de la interfaz
 
 		var us = p.Users
 						.Where(b => b.Username == Username)
@@ -131,8 +131,8 @@ public partial class AltaUsuarios : ContentPage
 			}
 			else
 			{
-				//Activa popup error, no coinciden las contraseñas
-				await DisplayAlert("Alert", "Las contraseñas deben coincidir.", "OK");
+				//Activa popup error, no coinciden las contraseï¿½as
+				await DisplayAlert("Alert", "Las contraseï¿½as deben coincidir.", "OK");
 			}
 		}
 	}

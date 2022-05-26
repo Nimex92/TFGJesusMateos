@@ -72,27 +72,27 @@ public partial class PaginaAdmin : ContentPage
             case 2:
                 ListViewWorkers.IsVisible = true;
                 activeWorker = true;
-                LabelTitulo2.Text = "Gestión de trabajadores";
+                LabelTitulo2.Text = "Gestiï¿½n de trabajadores";
                 break;
             case 3:
                 ListViewGroups.IsVisible = true;
                 activeWorkShift = true;
-                LabelTitulo3.Text = "Gestión de turnos de trabajo";
+                LabelTitulo3.Text = "Gestiï¿½n de turnos de trabajo";
                 break;
             case 4:
                 ListViewZones.IsVisible = true;
                 activePlace = true;
-                LabelTitulo4.Text = "Gestión de lugares de trabajo";
+                LabelTitulo4.Text = "Gestiï¿½n de lugares de trabajo";
                 break;
             case 5:
                 ListViewTasks.IsVisible = true;
                 activeWorkTask = true;
-                LabelTitulo5.Text = "Gestión de tareas de trabajo";
+                LabelTitulo5.Text = "Gestiï¿½n de tareas de trabajo";
                 break;
             case 6:
                 ListViewTeams.IsVisible = true;
                 activeWorkGroup = true;
-                LabelTitulo5.Text = "Gestión de equipos de trabajo";
+                LabelTitulo5.Text = "Gestiï¿½n de equipos de trabajo";
                 break;
             case 7:
                 ListViewCalendar.IsVisible = true;
@@ -108,7 +108,9 @@ public partial class PaginaAdmin : ContentPage
         }
 
     }
-    //Settear ListViews de la ventana ////////////////////////////////////////////////////////////
+    /// <summary>
+    /// Method to fill the ListView of the UI
+    /// </summary>
     public void SetListViewWorkShifts()
     {
         var workShifts = p.WorkShifts.Where(x => x.Deleted == false).OrderBy(x => x.Name).ToList();
@@ -116,6 +118,9 @@ public partial class PaginaAdmin : ContentPage
         if (workShifts.Count > 0)
             ListViewGrupos.SelectedItem = workShifts[0];
     }
+    /// <summary>
+    /// Method to fill the ListView of the UI
+    /// </summary>
     public void SetListViewWorkers()
     {
         var workers = p.Workers.Include(x => x.User).ToList();
@@ -123,6 +128,9 @@ public partial class PaginaAdmin : ContentPage
         if (workers.Count > 0)
             ListViewTrabajadores.SelectedItem = workers[0];
     }
+    /// <summary>
+    /// Method to fill the ListView of the UI
+    /// </summary>
     public void SetListViewPlaces()
     {
         var zones = p.Places.ToList();
@@ -130,14 +138,19 @@ public partial class PaginaAdmin : ContentPage
         if (zones.Count > 0)
             ListViewZonas.SelectedItem = zones[0];
     }
+    /// <summary>
+    /// Method to fill the ListView of the UI
+    /// </summary>
     public void SetListViewWorkTasks()
     {
         var tareas = p.WorkTasks.ToList();
         ListViewTareas.ItemsSource = tareas;
         if (tareas.Count > 0)
             ListViewTareas.SelectedItem = tareas[0];
-
     }
+    /// <summary>
+    /// Method to fill the ListView of the UI
+    /// </summary>
     public void SetListViewWorkGroups()
     {
         var equipos = p.WorkGroups.ToList();
@@ -145,43 +158,72 @@ public partial class PaginaAdmin : ContentPage
         if (equipos.Count > 0)
             ListViewEquipos.SelectedItem = equipos[0];
     }
-    //////////////////////////////////////////////////////////////////////////////////////////////
-
-    ///////// Lo que sucede cuando pulsamos en cada uno de los list view /////////////////////////
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedWorkers(object sender, SelectedItemChangedEventArgs e)
     {
         Worker item = e.SelectedItem as Worker;
         Worker = item;
         Calendar = p.Calendars.Where(x => x.Worker == item).Include(x => x.Worker).FirstOrDefault();
     }
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedWorkShifts(object sender, SelectedItemChangedEventArgs e)
     {
         WorkShift item = e.SelectedItem as WorkShift;
         WorkShift = item;
     }
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedWorkGroups(object sender, SelectedItemChangedEventArgs e)
     { 
         WorkGroup item = e.SelectedItem as WorkGroup;
         WorkGroup = item;
     }
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedPlaces(object sender, SelectedItemChangedEventArgs e)
     {
         Places item = e.SelectedItem as Places;
         Place = item;
     }
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedCalendar(object sender, SelectedItemChangedEventArgs e)
     {
         Day item = e.SelectedItem as Day;
         Day = item;
     }
+    /// <summary>
+    /// Method to set an action when select an ListView Item
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param SelectedItemChangedEventArgs="e"></param>
     public void OnItemSelectedWorkTasks(object sender, SelectedItemChangedEventArgs e)
     {
         WorkTask item = e.SelectedItem as WorkTask;
         WorkTask = item;
     }
-    //////////////////////////////////////////////////////////////////////////////////////////////
-
-    /////////// Funciones Menu lateral ///////////////////////////////////////////////////////////
+    /// <summary>
+    /// Method to enable the workers UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void WorkersButton_Clicked(object sender, EventArgs e)
     {
         if (activeWorker == false)
@@ -206,7 +248,7 @@ public partial class PaginaAdmin : ContentPage
             activeWorkTask = false;
             activeWorkGroup = false;
             IssueCheck();
-            LabelTitulo2.Text = "Gestión de trabajadores";
+            LabelTitulo2.Text = "Gestiï¿½n de trabajadores";
         }
         else
         {
@@ -231,6 +273,11 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the workers UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void WorkShiftsButton_Clicked(object sender, EventArgs e)
     {
         if (activeWorkShift == false)
@@ -279,6 +326,11 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the WorkGroups UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void WorkGroupsButton_Clicked(object sender, EventArgs e)
     {
         if (activeWorkGroup == false)
@@ -336,6 +388,11 @@ public partial class PaginaAdmin : ContentPage
 
         }
     }
+    /// <summary>
+    /// Method to enable the Places UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void PlacesButton_Clicked(object sender, EventArgs e)
     {
         if (activePlace == false)
@@ -392,6 +449,11 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the WorkTasks UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void WorkTasksButton_Clicked(object sender, EventArgs e)
     {
         if (activeWorkTask == false)
@@ -446,6 +508,11 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the Payroll UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void PayrollButton_Clicked(object sender, EventArgs e)
     {
         if (activePayroll == false)
@@ -499,6 +566,11 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the Issues UI of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void IssueButton_Clicked(object sender, EventArgs e)
     {
         if (activePayroll == false)
@@ -551,66 +623,122 @@ public partial class PaginaAdmin : ContentPage
             IssueCheck();
         }
     }
+    /// <summary>
+    /// Method to enable the generate Payroll Method of the admin section
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void WorkerPayrollButton_Clicked(object sender, EventArgs e)
     {
         GeneratePayrollToPDF(Worker);
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    /////// Metodos de las funciones de añadir ////////////////////////////////////////////////////
+    /// <summary>
+    /// Method to add a new Place
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddPlaceButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(Username, "", 0));
-        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir zonas de trabajo " + "-" + dt),p);
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Aï¿½adir zonas de trabajo " + "-" + dt),p);
     }
+    /// <summary>
+    /// Method to add a new WorkTasks
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkTasksButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username));
-        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir tareas de trabajo" + " - " + dt), p);
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Aï¿½adir tareas de trabajo" + " - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new Day
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddDaysButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 0, Day));
-        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir dias al calendario" + " - " + dt), p);
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Aï¿½adir dias al calendario" + " - " + dt), p);
 
     }
+    /// <summary>
+    /// Method to add a Place to WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddPlacesTOWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir zonasa grupo de trabajo:'" + Place.Name + " - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkGroupsButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(Username, "", 0));
         db.InsertLog(new Log("Acceso", Username + " ha accedido a \"Registrar nuevo equipo de trabajo\" - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a Worker to WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkerTOWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTrabajadorEquipoTrabajo(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir trabajador a un grupo de trabajo" + " - " + dt), p);
 
     }
+    /// <summary>
+    /// Method to add a WorkShift to WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkShiftTOWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(Username, WorkShift.Name, 0));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir turno a equipo de trabajo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new User
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     public void AddUserButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaUsuarios(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar usuario' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new Worker
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     public void AddWorkerButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(Username, 0));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar trabajador' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new WorkShift
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     public void AddWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTurno(Username, 0));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Registrar grupo de trabajo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to Logout session
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     public async void LogoutSessionButton_Clicked(object sender, EventArgs e)
     {
         await DisplayAlert("Logout", "Hasta luego, " + Username, "OK");
@@ -618,65 +746,113 @@ public partial class PaginaAdmin : ContentPage
         db.InsertLog(new Log("Logout", Username + " ha cerrado sesion -" + dt), p);
 
     }
+    /// <summary>
+    /// Method to add a new WorkTask
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkTaskButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir tareas de trabajo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a new Place
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddPlacesButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir zona de trabajo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a WorkTask to Workgroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddWorkTasksTOWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeTareasGrupoTrabajo(Username));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir Tareas a grupo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to add a Place to WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void AddPlaceTOWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirZonaGrupoTrabajo(Username));
-        db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir zona de trabajo' - " + dt), p);
+        db.InsertLog(new Log("Acceso", Username + " Accede a 'Aï¿½adir zona de trabajo' - " + dt), p);
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    /////// Metodos de las funciones de modificar /////////////////////////////////////////////////
+    /// <summary>
+    /// Method to edit a Place
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyPlacesButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaZona(Username, Place.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar zonas de trabajo" + " - " + dt), p);
 
     }
+    /// <summary>
+    /// Method to edit a WorkShift
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyWorkShiftButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaGrupoTrabajo(Username, WorkGroup.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar equipo de trabajo '+" + WorkTask.Name + " - " + dt), p);
     }
+    /// <summary>
+    /// Method to edit a Day
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyDaysButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 1, Day));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir dias al calendario" + " - " + dt),p);
 
     }
+    /// <summary>
+    /// Method to edit a WorkTask
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyWorkTaskButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTareaTrabajo(Username, WorkTask.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar tarea de trabajo '+" + WorkTask.Name + " - " + dt), p);
     }
+    /// <summary>
+    /// Method to edit WorkShift
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyWorkGroupButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTurno(Username, WorkShift.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar grupo de trabajo' " + WorkShift.Name + " - " + dt), p);
     }
+    /// <summary>
+    /// Method to edit a Worker
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void ModifyWorkersButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AltaTrabajador(Worker.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Editar trabajador '+" + Worker.Name + " - " + dt), p);
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-    /////// Metodos de las funciones de borrado ///////////////////////////////////////////////////
+    /// <summary>
+    /// Method to delete a worker
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DeleteWorkerButton_Clicked(object sender, EventArgs e)
     {
         try
@@ -697,6 +873,11 @@ public partial class PaginaAdmin : ContentPage
             await DisplayAlert("Error", ex.ToString(), "Vale");
         }
     }
+    /// <summary>
+    /// Method to delete a WorkShift
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DeleteWorkShiftButton_Clicked(object sender, EventArgs e)
     {
         try
@@ -720,6 +901,11 @@ public partial class PaginaAdmin : ContentPage
         }
         
     }
+    /// <summary>
+    /// Method to delete a Place
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DeletePlaceButton_Clicked(object sender, EventArgs e)
     {
         if (Place is not null)
@@ -742,15 +928,30 @@ public partial class PaginaAdmin : ContentPage
             await DisplayAlert("Alert", "Por favor, Seleccione un elemento primero", "OK");
         }
     }
+    /// <summary>
+    /// Method to remove a Worker from WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void RemoveWorkerFROMWorkGroup(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new BorraTrabajadorDeGrupo(Username, WorkGroup));
     }
+    /// <summary>
+    /// Method to remove a WorkShift from a WorkGroup
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void RemoveWorkShiftFROMWorkGroup(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new AnadirTurnoEquipoTrabajo(Username, WorkShift.Name, 1));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'AÃ±adir turno a equipo de trabajo' - " + dt), p);
     }
+    /// <summary>
+    /// Method to delete a Day
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DeleteDaysButton_Clicked(object sender, EventArgs e)
     {
 
@@ -767,6 +968,11 @@ public partial class PaginaAdmin : ContentPage
             await DisplayAlert("Error", "No se realizaron cambios.", "Vale");
         }
     }
+    /// <summary>
+    /// Method to delete a WorkTask
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DeleteWorkTaskButton_Clicked(object sender, EventArgs e)
     {
         bool answer = await DisplayAlert("Â¿EstÃ¡s segur@?", "Â¿Estas seguro de borrar la tarea \"" + WorkTask.Name + "\"?", "Si", "No");
@@ -784,10 +990,11 @@ public partial class PaginaAdmin : ContentPage
             }
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    /////////// Otras funciones //////////////////////////////////////////////////////////////////
+    /// <summary>
+    /// Method to enable the calendar UI
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void CalendarButton_Clicked(object sender, EventArgs e)
     {
         ListViewCalendar.IsVisible = true;
@@ -814,6 +1021,11 @@ public partial class PaginaAdmin : ContentPage
         }
         DaysCheck(Worker);
     }
+    /// <summary>
+    /// Method to back to the workers screen
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void BackToWorkersWindowButton_Clicked(object sender, EventArgs e)
     {
         ListViewCalendar.IsVisible = false;
@@ -821,15 +1033,25 @@ public partial class PaginaAdmin : ContentPage
         ListViewWorkers.IsVisible = true;
         ListViewWorkers.IsEnabled = true;
     }
+    /// <summary>
+    /// Method to Logout session
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void LogoutButton_Clicked(object sender, EventArgs e)
     {
         //BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
-        bool answer = await DisplayAlert("Logout", "¿Deseas cerrar sesión?", "Si", "No");
+        bool answer = await DisplayAlert("Logout", "ï¿½Deseas cerrar sesiï¿½n?", "Si", "No");
         if (answer == true)
         {
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
+    /// <summary>
+    /// Method to check the worker free days
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private async void DaysCheck(Worker tr)
     {
         var signingList = p.Signings.Where(x => x.Worker == tr).ToList();
@@ -860,6 +1082,11 @@ public partial class PaginaAdmin : ContentPage
             }
         }
     }
+    /// <summary>
+    /// Method to check the signed workers
+    /// </summary>
+    /// <param object="sender"></param>
+    /// <param EventArgs="e"></param>
     private void SignedWorkersButton_Clicked(object sender, EventArgs e)
     {
         App.Current.MainPage = new NavigationPage(new TrabajadoresEnTurno(Username));
@@ -886,6 +1113,10 @@ public partial class PaginaAdmin : ContentPage
             Debug.WriteLine(ex.ToString());
         }
     }
+    /// <summary>
+    /// Method to generate a worker's payroll
+    /// </summary>
+    /// <param Worker="worker"></param>
     public void GeneratePayrollToPDF(Worker worker)
     {
         try
@@ -910,7 +1141,7 @@ public partial class PaginaAdmin : ContentPage
             DatosTrabajador.ChangeTableFontSize(8);
             DatosTrabajador.SetNextText("Trabajador");
             DatosTrabajador.SetNextText("Categoria");
-            DatosTrabajador.SetNextText("Nº Matricula");
+            DatosTrabajador.SetNextText("Nï¿½ Matricula");
             DatosTrabajador.SetNextText("Antiguedad");
             DatosTrabajador.SetNextText("D.N.I");
             DatosTrabajador.SetNextText(worker.Name);
@@ -921,13 +1152,13 @@ public partial class PaginaAdmin : ContentPage
             BetterTable OtrosDatos = NewTable(7, 2);
             OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
             OtrosDatos.ChangeTableFontSize(8);
-            OtrosDatos.SetNextText("Nº Afiliación S.S");
+            OtrosDatos.SetNextText("Nï¿½ Afiliaciï¿½n S.S");
             OtrosDatos.SetNextText("Tarifa");
             OtrosDatos.SetNextText("Cod C.T.");
-            OtrosDatos.SetNextText("Sección");
+            OtrosDatos.SetNextText("Secciï¿½n");
             OtrosDatos.SetNextText("Nro.");
             OtrosDatos.SetNextText("Periodo");
-            OtrosDatos.SetNextText("Días");
+            OtrosDatos.SetNextText("Dï¿½as");
             OtrosDatos.SetNextText(worker.SocialSecurityCard);
             var diasTrabajador = p.Signings.Where(x => x.Worker == worker).Where(x => x.CheckInCheckOut == "Entrada").OrderBy(x => x.SigningDate).ToList();
             var diastotal = diasTrabajador.Count;
@@ -939,7 +1170,7 @@ public partial class PaginaAdmin : ContentPage
             CuerpoNomina.ChangeTableFontSize(10);
             CuerpoNomina.RemoveBorder(1);
             CuerpoNomina.AddTableBorder(1);
-            CuerpoNomina.SetNextText("Cuantía");
+            CuerpoNomina.SetNextText("Cuantï¿½a");
             CuerpoNomina.SetNextText("Precio");
             CuerpoNomina.SetNextText("Concepto");
             CuerpoNomina.SetNextText("Devengos");
@@ -970,7 +1201,7 @@ public partial class PaginaAdmin : ContentPage
             PieNomina2[4, 0].SetTextAlign("START");
             PieNomina2[1, 3].SetText("Total a percibir");
             PieNomina2[1, 3].AddAllBorders();
-            PieNomina2[2, 3].SetText("1245.74€");
+            PieNomina2[2, 3].SetText("1245.74ï¿½");
             PieNomina2[2, 3].AddAllBorders();
             PieNomina2.AddTableBorder(1);
             BetterTable CabeceraPieNomina3 = NewTable(1, 1);
@@ -1012,7 +1243,7 @@ public partial class PaginaAdmin : ContentPage
             PieNomina3[5, 2].SetText("1475.00");
             PieNomina3[5, 3].SetText("0.62");
             PieNomina3[5, 4].SetText("5.85");
-            PieNomina3[6, 0].SetText("3. Cotización horas extraordinarias");
+            PieNomina3[6, 0].SetText("3. Cotizaciï¿½n horas extraordinarias");
             PieNomina3[6, 1].SetText(".................");
             PieNomina3[6, 2].SetText(".................");
             PieNomina3[6, 3].SetText(".................");
@@ -1035,11 +1266,15 @@ public partial class PaginaAdmin : ContentPage
             Debug.WriteLine(ex.ToString());
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param int="numeroColumnas"></param>
+    /// <param int="numeroFilas"></param>
+    /// <returns></returns>
     public BetterTable NewTable(int numeroColumnas, int numeroFilas)
     {
         BetterTable b = new BetterTable(numeroColumnas, numeroFilas);
         return b;
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 }

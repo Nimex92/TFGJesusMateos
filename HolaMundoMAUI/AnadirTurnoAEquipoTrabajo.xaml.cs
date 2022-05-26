@@ -18,11 +18,13 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		WorkShift = workShift;
         switch (option)
         {
+	        //In this case enable the create UI
 			case 0:
 				RegisterButton.IsVisible = true;
 				UpdateButton.IsVisible = false;
 				SetPickers0();
 				break;
+			//In this case enable the update UI
 			case 1:
 				RegisterButton.IsVisible = false;
 				UpdateButton.IsVisible = true;
@@ -32,6 +34,9 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
         }
 		
 	}
+	/// <summary>
+	/// Method to fill the UI Pickers
+	/// </summary>
 	private void SetPickers0()
 	{
 		var workGroups = p.WorkGroups;
@@ -49,6 +54,9 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		WorkGroupSelector.SelectedIndex = 0;
 		WorkShiftSelector.SelectedIndex = 0;
 	}
+	/// <summary>
+	/// Method to fill the UI Pickers
+	/// </summary>
 	private void SetPickers1()
 	{
 		//Recojo todos los Turnos de la tabla de MySql
@@ -64,11 +72,20 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		WorkGroupSelector.SelectedIndex = 0;
 		WorkShiftSelector.SelectedIndex = 0;
 	}
+	/// <summary>
+	/// Method to back to the last screen of the app
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	private void BotonVolver_Clicked(object sender, EventArgs e)
 	{
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,3));
 	}
-
+	/// <summary>
+	/// Method to create add a WorkShift to a WorkGroup
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
 	private async void BotonRegistrar_Clicked(object sender, EventArgs e)
 	{
 		var workGroupName = WorkGroupSelector.SelectedItem;
@@ -86,9 +103,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
             }
             else
             {
-				//workShift.WorkShifts.Add(workGroup);
-				//p.SaveChanges();
-				db.AddWorkShiftTOWorkGroup(workGroup, workShift, p);
+	            db.AddWorkShiftTOWorkGroup(workGroup, workShift, p);
 				await DisplayAlert("Success", "Se ha añadido '" + workShift.Name + "' a grupo: " + workGroup.Name, "OK");
 				db.InsertLog(new Log("Añadir", Username + " ha añadido " + workShift.Name + " a " + workGroup.Name + " - " + now),p);
 				App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
@@ -100,16 +115,21 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		}
 
 	}
+	/// <summary>
+	/// Method to remove a workShift from a workGroup
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private async void BotonActualizar_Clicked(object sender, EventArgs e)
     {
-		var equipoTrabajo = WorkGroupSelector.SelectedItem.ToString();
-		var NombreTurno = WorkShiftSelector.SelectedItem.ToString();
-		var equipo = p.WorkGroups.Where(x => x.Name.Equals(equipoTrabajo)).FirstOrDefault();
-		var turno = p.WorkShifts.Where(x => x.Name.Equals(NombreTurno)).FirstOrDefault();
-		equipo.WorkShifts.Remove(turno);
+		var workGroupName = WorkGroupSelector.SelectedItem.ToString();
+		var workShiftName = WorkShiftSelector.SelectedItem.ToString();
+		var workGroup = p.WorkGroups.Where(x => x.Name.Equals(workGroupName)).FirstOrDefault();
+		var workShift = p.WorkShifts.Where(x => x.Name.Equals(workShiftName)).FirstOrDefault();
+		workGroup.WorkShifts.Remove(workShift);
 		p.SaveChanges();
-		await DisplayAlert("Alert", "Se ha Eliminado '" + turno.Name + "' del grupo: " + equipo.Name, "OK");
-		p.Logs.Add(new Log("Remover", Username + " ha eliminado " + equipo.Places + " a " + equipo.Name + " - " + now));
+		await DisplayAlert("Success", "Se ha Eliminado '" + workShift.Name + "' del grupo: " + workGroup.Name, "OK");
+		p.Logs.Add(new Log("Remover", Username + " ha eliminado " + workGroup.Places + " a " + workGroup.Name + " - " + now));
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 3));
 		}
 

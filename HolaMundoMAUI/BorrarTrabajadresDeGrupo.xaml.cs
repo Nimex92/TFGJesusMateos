@@ -17,7 +17,9 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 		InitializeComponent();
 		SetPickers();
 	}
-
+	/// <summary>
+	/// Fill the UI Pickers with data
+	/// </summary>
 	private void SetPickers()
 	{
 		var workerList = p.Workers.Where(x=>x.WorkGroup.Contains(WorkGroup)).ToList();
@@ -30,12 +32,20 @@ public partial class BorraTrabajadorDeGrupo : ContentPage
 		WorkGroupSelector.SelectedIndex = 0;
 		WorkerSelector.SelectedIndex = 0;
 	}
-
+	/// <summary>
+	/// Method to back to the last screen of the app
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private void BotonVolver_Clicked(object sender, EventArgs e)
     {
 		App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 6));
     }
-
+	/// <summary>
+	/// Method to remove a worker from a workGroup
+	/// </summary>
+	/// <param object="sender"></param>
+	/// <param EventArgs="e"></param>
     private async void BotonRegistrar_Clicked(object sender, EventArgs e)
     {
 		string WorkGroupSearch = WorkGroupSelector.SelectedItem.ToString();
