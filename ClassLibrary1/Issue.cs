@@ -12,7 +12,7 @@ namespace ClassLibray
         public Worker Worker { get; set; }
         public string IssueReason { get; set; }
         public DateTime IssueDate { get; set; }
-        public bool Justified { get; set; }
+        public bool? Justified { get; set; }
 
         public Issue() { }
 

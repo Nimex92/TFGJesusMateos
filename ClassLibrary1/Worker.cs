@@ -18,7 +18,7 @@ namespace ClassLibray
         public string Name { get; set; }
         public string? BelongstoWorkGroups { get; set; }
         public ICollection<WorkGroup>? WorkGroup { get; set; } = new List<WorkGroup>();
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
         public string? Category { get; set; }
         public DateTime? HiringDate { get; set; }
         public string? Nif { get; set; }

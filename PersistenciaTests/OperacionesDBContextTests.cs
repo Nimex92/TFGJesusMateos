@@ -19,7 +19,7 @@ namespace Persistencia.Tests
         {
             /*
             PresenciaContext presenciaContext = new PresenciaContext();
-            var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.WorkShifts == "Mañana").FirstOrDefault();
+            var grupo = presenciaContext.Grupo_Trabajo.Where(x => x.WorkGroups == "Mañana").FirstOrDefault();
             Worker trab = new()
             {
                 Nombre = "Nimex2",
@@ -139,10 +139,10 @@ namespace Persistencia.Tests
             PresenciaContext p = new PresenciaContext();
             var grupos = p.Grupo_Trabajo.ToList();
             Grupo_Trabajo g = grupos[0];
-            g.WorkShifts = "Mañana";
+            g.WorkGroups = "Mañana";
             g.HoraEntrada = "00:00";
             g.HoraSalida = "00:00";
-            bool actualiza = Db.actualizarGrupoTrabajo(g.WorkShifts, g.HoraSalida, g.HoraSalida);
+            bool actualiza = Db.actualizarGrupoTrabajo(g.WorkGroups, g.HoraSalida, g.HoraSalida);
             Assert.IsTrue(actualiza);
         }
 

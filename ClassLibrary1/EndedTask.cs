@@ -14,8 +14,8 @@ namespace ClassLibray
         public Worker Worker { get; set; }
         public DateTime TaskTaskInit { get; set; }
         public DateTime TaskEnd { get; set; }
-        public double TotalTimeUsed { get; set; }
-        public bool OnTime { get; set; }
+        public double? TotalTimeUsed { get; set; }
+        public bool? OnTime { get; set; }
 
         public EndedTask()
         {

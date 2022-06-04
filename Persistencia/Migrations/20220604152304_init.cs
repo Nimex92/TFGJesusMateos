@@ -21,11 +21,11 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CIF = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Adress = table.Column<string>(type: "longtext", nullable: false)
+                    Adress = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    BankAccountCode = table.Column<string>(type: "longtext", nullable: false)
+                    BankAccountCode = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -76,7 +76,7 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Password = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    esAdmin = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    esAdmin = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,7 +93,7 @@ namespace Persistencia.Migrations
                     Worker = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Accepted = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Accepted = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -148,9 +148,9 @@ namespace Persistencia.Migrations
                 {
                     TaskId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Description = table.Column<string>(type: "longtext", nullable: false)
+                    Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ElapsedTime = table.Column<double>(type: "double", nullable: false)
                 },
@@ -170,7 +170,7 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BelongstoWorkGroups = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserIdUser = table.Column<int>(type: "int", nullable: false),
+                    UserIdUser = table.Column<int>(type: "int", nullable: true),
                     Category = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     HiringDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
@@ -186,8 +186,7 @@ namespace Persistencia.Migrations
                         name: "FK_Workers_Users_UserIdUser",
                         column: x => x.UserIdUser,
                         principalTable: "Users",
-                        principalColumn: "IdUser",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdUser");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -220,16 +219,16 @@ namespace Persistencia.Migrations
                 name: "WorkGroupWorkShift",
                 columns: table => new
                 {
-                    WorkShiftsId = table.Column<int>(type: "int", nullable: false),
+                    WorkGroupsId = table.Column<int>(type: "int", nullable: false),
                     WorkShiftsName = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WorkGroupWorkShift", x => new { x.WorkShiftsId, x.WorkShiftsName });
+                    table.PrimaryKey("PK_WorkGroupWorkShift", x => new { x.WorkGroupsId, x.WorkShiftsName });
                     table.ForeignKey(
-                        name: "FK_WorkGroupWorkShift_WorkGroups_WorkShiftsId",
-                        column: x => x.WorkShiftsId,
+                        name: "FK_WorkGroupWorkShift_WorkGroups_WorkGroupsId",
+                        column: x => x.WorkGroupsId,
                         principalTable: "WorkGroups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -297,8 +296,8 @@ namespace Persistencia.Migrations
                     WorkerCardNumber = table.Column<int>(type: "int", nullable: false),
                     TaskTaskInit = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     TaskEnd = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TotalTimeUsed = table.Column<double>(type: "double", nullable: false),
-                    OnTime = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    TotalTimeUsed = table.Column<double>(type: "double", nullable: true),
+                    OnTime = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -328,7 +327,7 @@ namespace Persistencia.Migrations
                     IssueReason = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     IssueDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Justified = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Justified = table.Column<bool>(type: "tinyint(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -401,9 +400,9 @@ namespace Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     BusinessId = table.Column<int>(type: "int", nullable: false),
                     WorkerCardNumber = table.Column<int>(type: "int", nullable: false),
-                    NormalHours = table.Column<int>(type: "int", nullable: false),
-                    SpecialHours = table.Column<int>(type: "int", nullable: false),
-                    TotalToReceive = table.Column<int>(type: "int", nullable: false)
+                    NormalHours = table.Column<int>(type: "int", nullable: true),
+                    SpecialHours = table.Column<int>(type: "int", nullable: true),
+                    TotalToReceive = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -457,8 +456,8 @@ namespace Persistencia.Migrations
                     Reason = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Enjoyed = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    BelongCalendarId = table.Column<int>(type: "int", nullable: false)
+                    Enjoyed = table.Column<bool>(type: "tinyint(1)", nullable: true),
+                    BelongCalendarId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -467,8 +466,7 @@ namespace Persistencia.Migrations
                         name: "FK_DayOff_Calendars_BelongCalendarId",
                         column: x => x.BelongCalendarId,
                         principalTable: "Calendars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 

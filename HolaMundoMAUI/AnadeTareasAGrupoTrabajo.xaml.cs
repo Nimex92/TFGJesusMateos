@@ -23,7 +23,7 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
 		//Creo una lista para guardar todos los turnos existentes
 		var workGroupList = new List<string>();
 		var workTasksList = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, a�ado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion WorkGroups, a�ado al selector (Picker de la interfaz) El nombre del turno
 		WorkGroupSelector.Items.Add("-- Selecciona equipo de trabajo.");
 		WorkTaskSelector.Items.Add("-- Selecciona tarea.");
         workGroups.ForEach(x =>

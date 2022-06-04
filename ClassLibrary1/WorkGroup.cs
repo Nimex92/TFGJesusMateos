@@ -10,14 +10,10 @@ namespace ClassLibray
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Worker> Workers { get; set; } = new List<Worker>();
-        string workers;
-        public ICollection<WorkShift> WorkShifts { get; set; } = new List<WorkShift>();
-        string workShifts;
-        public ICollection<WorkTask> Tasks { get; set; } = new List<WorkTask>();
-        string tasks;
-        public ICollection<Places> Places { get; set; } = new List<Places>();
-        string places;
+        public ICollection<Worker>? Workers { get; set; } = new List<Worker>();
+        public ICollection<WorkShift>? WorkShifts { get; set; } = new List<WorkShift>();
+        public ICollection<WorkTask>? Tasks { get; set; } = new List<WorkTask>();
+        public ICollection<Places>? Places { get; set; } = new List<Places>();
 
         public WorkGroup() { }
 

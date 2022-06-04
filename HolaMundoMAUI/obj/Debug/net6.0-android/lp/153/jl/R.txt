@@ -2324,7 +2324,6 @@ int string material_timepicker_minute 0x0
 int string material_timepicker_pm 0x0
 int string material_timepicker_select_time 0x0
 int string material_timepicker_text_input_mode_description 0x0
-int string maui_empty_unused 0x0
 int string mtrl_badge_numberless_content_description 0x0
 int string mtrl_chip_close_icon_content_description 0x0
 int string mtrl_exceed_max_badge_number_content_description 0x0

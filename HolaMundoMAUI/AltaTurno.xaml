@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.AltaTurno"
-             BackgroundColor="White"
-             Title="AltaTurno">
+             BackgroundColor="#A29FA0">
+
     <StackLayout
         Margin="0,20,0,0"
-        BackgroundColor="White">
+        BackgroundColor="White"
+        WidthRequest="400"
+        HeightRequest="420">
         <Label 
                 Text="Alta turno de trabajo"
                 TextColor="Black"
@@ -22,7 +24,7 @@
                      Margin="0,10,0,0"
                      WidthRequest="320"
                      HeightRequest="330"
-                     BackgroundColor="#828282"
+                     BackgroundColor="#2B282D"
                      >
                 <Entry x:Name="NameField"
                             Placeholder="Nombre Turno:"
@@ -39,106 +41,106 @@
                                  WidthRequest="295"
                                  Margin="0,10,0,0"
                                  BackgroundColor="#828289">
-                        <HorizontalStackLayout>
-                            <CheckBox x:Name="monday" 
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="monday" 
                                       Color="#caa2e8" 
                                       CheckedChanged="CheckedChanged"/>
-                            <Label Text="Lunes" 
+                        <Label Text="Lunes" 
                                    Margin="-95,0,0,0"
                                    VerticalTextAlignment="Center"
                                    TextColor="White"/>
 
-                            <CheckBox x:Name="tuesday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
-                            <Label Text="Martes"
+                        <CheckBox x:Name="tuesday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
+                        <Label Text="Martes"
                                    Margin="-95,0,0,0"
                                    VerticalTextAlignment="Center"
                                    TextColor="White"/>
 
-                            <CheckBox x:Name="wednesday" 
+                        <CheckBox x:Name="wednesday" 
                                       Color="#caa2e8"
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
-                            <Label Text="Miercoles"
+                        <Label Text="Miercoles"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
-                            <CheckBox x:Name="thursday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
-                            <Label Text="Jueves"
+                        <CheckBox x:Name="thursday" Color="#caa2e8" CheckedChanged="CheckedChanged"/>
+                        <Label Text="Jueves"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
                     </HorizontalStackLayout>
-                        <HorizontalStackLayout>
-                           
+                    <HorizontalStackLayout>
 
-                            <CheckBox x:Name="friday" 
+
+                        <CheckBox x:Name="friday" 
                                       Color="#caa2e8" 
                                       
                                       CheckedChanged="CheckedChanged"/>
-                            <Label Text="Viernes"
+                        <Label Text="Viernes"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
 
 
-                            <CheckBox x:Name="saturday" 
+                        <CheckBox x:Name="saturday" 
                                       Color="#caa2e8" 
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
-                            <Label Text="Sabado"
+                        <Label Text="Sabado"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
 
 
-                            <CheckBox x:Name="sunday" 
+                        <CheckBox x:Name="sunday" 
                                       Color="#caa2e8" 
                                       Margin="10,0,0,0"
                                       CheckedChanged="CheckedChanged"/>
-                            <Label Text="Domingo"
+                        <Label Text="Domingo"
                                        Margin="-95,0,0,0"
                                        VerticalTextAlignment="Center"
                                        TextColor="White"/>
-                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
                 </StackLayout>
                 <HorizontalStackLayout x:Name="ZonaHoraEntrada"
                             Margin="30,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center">
-                        <Label Text="Horario Entrada: " TextColor="White" FontAttributes="Bold"
+                    <Label Text="Horario Entrada: " TextColor="White" FontAttributes="Bold"
                                    VerticalTextAlignment="Center"/>
-                        <Picker
+                    <Picker
                                 WidthRequest="70"
                                 x:Name="HourCheckInSelector"
                                 BackgroundColor="#828289"
                                 VerticalTextAlignment="Center"/>
-                        <Picker
+                    <Picker
                                 WidthRequest="70"
                                 Margin="10,0,50,0"
                                 x:Name="MinuteCheckInSelector"
                                 BackgroundColor="#828289"
                                 HorizontalTextAlignment="Center"/>
-                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
                 <HorizontalStackLayout x:Name="ZonaHoraSalida"
                             Margin="30,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center">
-                    
-                        <Label Text="Entrada salida:   " TextColor="White" FontAttributes="Bold"
+
+                    <Label Text="Entrada salida:   " TextColor="White" FontAttributes="Bold"
                                    VerticalOptions="Start"/>
-                        <Picker
+                    <Picker
                                 WidthRequest="70"
                                 Margin="10,0,0,0"
                                 x:Name="HourCheckOutSelector"
                                 BackgroundColor="#828289"
                                 VerticalTextAlignment="Center"/>
-                        <Picker
+                    <Picker
                                 WidthRequest="70"
                                 Margin="10,0,50,0"
                                 x:Name="MinuteCheckOutSelector"
                                 BackgroundColor="#828289"
                                 HorizontalTextAlignment="Center"/>
-                    </HorizontalStackLayout>
+                </HorizontalStackLayout>
                 <HorizontalStackLayout x:Name="ValidFrom" Margin="25,0,0,0">
                     <Label Text="Válido desde: " FontAttributes="Bold" 
                                                  TextColor="White"
@@ -167,7 +169,7 @@
                             WidthRequest="300"
                             IsVisible="False"
                             Clicked="UpdateButton_Clicked"/>
-                </StackLayout>
+            </StackLayout>
             <Button x:Name="BackButton"
                     Text="Volver"
                     WidthRequest="320"

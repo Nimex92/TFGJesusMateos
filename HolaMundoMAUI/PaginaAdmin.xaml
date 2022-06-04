@@ -196,7 +196,7 @@
                                        VerticalOptions="Center"/>
                                     
                                     <Label 
-                                       Text="{Binding BelongstoWorkGroups}" 
+                                       Text="{Binding BelongsToGroup}" 
                                        Margin="50,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="110"
@@ -344,19 +344,19 @@
                                         
                                         <Label 
                                        WidthRequest="150"
-                                       Text="{Binding Nombre}" 
+                                       Text="{Binding Name}" 
                                        Margin="-705,0,0,0" 
                                        FontSize="16"
                                         VerticalOptions="Center"/>
                                        
                                         <Label 
-                                       Text="{Binding HoraEntrada}" 
+                                       Text="{Binding CheckIn}" 
                                        Margin="-565,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                        <Label 
-                                       Text="{Binding HoraSalida}" 
+                                       Text="{Binding CheckOut}" 
                                        Margin="-330,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
@@ -373,24 +373,24 @@
                                                 <Label Text="D" FontAttributes="Bold" Margin="15,0,0,0"/>
                                             </HorizontalStackLayout>
                                             <HorizontalStackLayout Margin="-10,20,0,0"  HeightRequest="15">
-                                                <CheckBox IsChecked="{Binding EsLunes}" Margin="-140,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsMartes}" Margin="-95,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsMiercoles}" Margin="-100,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsJueves}" Margin="-100,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsViernes}" Margin="-100,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsSabado}" Margin="-100,5,0,0" IsEnabled="False"/>
-                                                <CheckBox IsChecked="{Binding EsDomingo}" Margin="-95,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Monday}" Margin="-140,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Tuesday}" Margin="-95,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Wednesday}" Margin="-100,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Thursday}" Margin="-100,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Friday}" Margin="-100,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Saturday}" Margin="-100,5,0,0" IsEnabled="False"/>
+                                                <CheckBox IsChecked="{Binding Sunday}" Margin="-95,5,0,0" IsEnabled="False"/>
                                             </HorizontalStackLayout>
                                         </HorizontalStackLayout>
                                         
                                         <Label 
-                                       Text="{Binding ValidoDesde}" 
+                                       Text="{Binding ValidFrom}" 
                                        Margin="320,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
                                        VerticalOptions="Center"/>
                                         <Label 
-                                       Text="{Binding ValidoHasta}" 
+                                       Text="{Binding ValidUntil}" 
                                        Margin="570,0,0,0" 
                                        FontSize="16"
                                        WidthRequest="100"
@@ -493,8 +493,8 @@
                                         <Label 
                                        WidthRequest="150"
                                        VerticalOptions="Center"
-                                       Text="{Binding Nombre}" 
-                                       Margin="-85,0,0,0" 
+                                       Text="{Binding Name}" 
+                                       Margin="-350,0,0,0" 
                                        FontSize="16"/>
                                         <ImageButton
                                            Source="editar.png"  
@@ -602,18 +602,18 @@
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding NombreTarea}" 
+                                           Text="{Binding Name}" 
                                            Margin="-450,0,0,0" 
                                            FontSize="16"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Descripcion}" 
+                                           Text="{Binding Description}" 
                                            Margin="-10,0,0,0" 
                                            FontSize="16"/>
                                         <Label 
                                            WidthRequest="150"
-                                           Text="{Binding TiempoEstimado}" 
+                                           Text="{Binding ElapsedTime}" 
                                            Margin="550,0,0,0" 
                                            FontSize="16"
                                            VerticalOptions="Center"/>
@@ -716,7 +716,7 @@
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Nombre}" 
+                                           Text="{Binding Name}" 
                                            Margin="-340,0,0,0" 
                                            FontSize="16"/>
                                         <ImageButton
@@ -833,20 +833,20 @@
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Motivo}" 
+                                           Text="{Binding Reason}" 
                                            Margin="-380,0,0,0" 
                                            FontSize="16"
                                            HeightRequest="30"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Fecha}" 
+                                           Text="{Binding Date}" 
                                            Margin="40,0,0,0" 
                                            FontSize="16"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Disfrutado}" 
+                                           Text="{Binding Enjoyed}" 
                                            Margin="470,0,0,0" 
                                            FontSize="16"/>
                                        
@@ -908,7 +908,7 @@
                          IsEnabled="False" IsVisible="False"
                          HorizontalOptions="Center" Margin="0,10,0,0">
                 <Label 
-                    Text="Tech Talent &#10; Informe incidencias"
+                    Text="Informe incidencias"
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
@@ -921,15 +921,15 @@
                              HeightRequest="20" WidthRequest="800">
                     <Label 
                         Text="Trabajador"
-                        Margin="45,0,0,0"
+                        Margin="-60,0,0,0"
                         FontAttributes="Bold"/>
                     <Label 
                         Text="Motivo"
-                        Margin="160,0,0,0"
+                        Margin="180,0,0,0"
                         FontAttributes="Bold"/>
                     <Label 
                         Text="Fecha"
-                        Margin="120,0,0,0"
+                        Margin="180,0,0,0"
                         FontAttributes="Bold"/>
 
                 </HorizontalStackLayout>
@@ -959,20 +959,20 @@
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding Trabajador.nombre}" 
+                                           Text="{Binding Worker.Name}" 
                                            Margin="-380,0,0,0" 
                                            FontSize="16"
                                            HeightRequest="30"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding MotivoIncidencia}" 
+                                           Text="{Binding IssueReason}" 
                                            Margin="40,0,0,0" 
                                            FontSize="16"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
-                                           Text="{Binding FechaIncidencia}" 
+                                           Text="{Binding IssueDate}" 
                                            Margin="470,0,0,0" 
                                            FontSize="16"/>
 
@@ -993,25 +993,7 @@
                      HeightRequest="2"
                      WidthRequest="720"
                      HorizontalOptions="Center"/>
-                    <HorizontalStackLayout HorizontalOptions="Center" Margin="0,10,0,0">
-                        <HorizontalStackLayout>
-                            <ImageButton 
-                                Source="addtareas.png"
-                                VerticalOptions="Center"
-                                
-                                Clicked="AddDaysButton_Clicked"/>
-                            <Label Text="Añadir Dias al calendario"
-                                   FontSize="16"
-                                   FontAttributes="Bold"
-                                   VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
-                    </HorizontalStackLayout>
-                    <Button
-                            x:Name="VolverAdmin"
-                            Text="Volver"
-                            Clicked="BackToWorkersWindowButton_Clicked"
-                            WidthRequest="160"
-                            HeightRequest="35"/>
+                    
                 </StackLayout>
             </StackLayout>
         </StackLayout>

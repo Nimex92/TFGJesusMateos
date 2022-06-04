@@ -24,7 +24,7 @@ namespace ClassLibray
         public DateTime ValidUntil { get; set; }
         public bool Enabled { get; set; }
         public bool Deleted { get; set; }
-        public ICollection<WorkGroup> WorkShifts { get; set; } = new List<WorkGroup>();
+        public ICollection<WorkGroup>? WorkGroups { get; set; } = new List<WorkGroup>();
         public WorkShift()
         {
 

@@ -14,7 +14,7 @@ namespace ClassLibray
         [Key]
         public int PlaceId { get; set; }
         public string Name { get; set; }
-        public ICollection<WorkGroup> WorkGroups { get; set; } = new List<WorkGroup>();
+        public ICollection<WorkGroup>? WorkGroups { get; set; } = new List<WorkGroup>();
 
         public Places(string name)
         {

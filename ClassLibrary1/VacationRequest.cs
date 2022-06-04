@@ -13,7 +13,7 @@ namespace ClassLibray
         public int Id { get; set; }
         public string Worker { get; set; }
         public DateTime Date { get; set; }
-        public bool Accepted { get; set; }
+        public bool? Accepted { get; set; }
 
         public VacationRequest()
         {

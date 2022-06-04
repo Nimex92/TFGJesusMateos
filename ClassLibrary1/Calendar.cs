@@ -11,7 +11,7 @@ namespace ClassLibray
     {
         public int Id { get; set; }
         public virtual Worker Worker { get; set; }
-        public ICollection<Day> DaysOnCalendar { get; set; } = new List<Day>();
+        public ICollection<Day>? DaysOnCalendar { get; set; } = new List<Day>();
 
         public Calendar() { }
         public Calendar(Worker trab)

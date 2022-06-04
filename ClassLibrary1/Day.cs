@@ -13,8 +13,8 @@ namespace ClassLibray
         public int Id { get; set; }
         public string Reason { get; set; }
         public DateTime Date { get; set; }
-        public bool Enjoyed { get; set; }
-        public virtual Calendar BelongCalendar { get; set; }
+        public bool? Enjoyed { get; set; }
+        public virtual Calendar? BelongCalendar { get; set; }
 
         public Day()
         {

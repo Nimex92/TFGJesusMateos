@@ -47,7 +47,7 @@ public partial class AnadeDiaCalendario : ContentPage
         InitializeComponent();
         Username = username;
         Worker = worker;
-        UpdateButton.IsVisible = false;
+
         RequestButton.IsVisible = true;
         BackToMainButton.IsVisible = false;
         BackButton.IsVisible = true;
@@ -116,7 +116,7 @@ public partial class AnadeDiaCalendario : ContentPage
         }
         p.SaveChanges();
         await DisplayAlert("Success", "Se ha actualizado correctamente el dia.", "Vale");
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
+        App.Current.MainPage = new NavigationPage(new PaginaFichar(Worker.User.Username));
     }
     /// <summary>
     /// Method to back to the last screen of the app
@@ -128,7 +128,7 @@ public partial class AnadeDiaCalendario : ContentPage
         var workerName = CalendarSelector.SelectedItem.ToString();
         var worker = p.Workers.Where(x => x.Name.Equals(workerName)).FirstOrDefault();
         var calendar = p.Calendars.Where(x => x.Worker == worker).FirstOrDefault();
-        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 2));
+        App.Current.MainPage = new NavigationPage(new PaginaFichar(Worker.User.Username));
     }
     /// <summary>
     /// Method to back to the signings screen of the app

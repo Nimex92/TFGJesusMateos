@@ -11,9 +11,9 @@ namespace ClassLibray
         public int Id { get; set; }
         public Business Business { get; set; }
         public Worker Worker { get; set; }
-        public int NormalHours { get; set; }
-        public int SpecialHours { get; set; }
-        public int TotalToReceive { get; set; }
+        public int? NormalHours { get; set; }
+        public int? SpecialHours { get; set; }
+        public int? TotalToReceive { get; set; }
 
         public Payroll() { }
 

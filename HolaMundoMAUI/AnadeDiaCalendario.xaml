@@ -2,12 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.AnadeDiaCalendario"
-             BackgroundColor="White"
-             Title="Añadir dias a calendario laboral">
-    <StackLayout>
+             BackgroundColor="#A29FA0">
+    <StackLayout WidthRequest="400" HeightRequest="400" BackgroundColor="White">
         <Label  
                 Text="Añadir dia a calendario laboral"
-                FontSize="30"
+                FontSize="24"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="Center" 
@@ -22,7 +21,7 @@
         <StackLayout
             HorizontalOptions="Center"
             WidthRequest="320"
-            HeightRequest="240"
+            HeightRequest="250"
             BackgroundColor="#828282"
             Margin="0,10,0,0">
             <Label Text="Calendario de:"
@@ -61,8 +60,7 @@
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"
-                            IsVisible="True"
-                            IsEnabled="True"/>
+                            IsVisible="False"/>
             <Button
                             x:Name="UpdateButton"
                             Text="Actualizar"
@@ -70,8 +68,7 @@
                             Margin="0,10,0,0"
                             WidthRequest="300"
                             HorizontalOptions="Center"
-                            IsVisible="False"
-                            IsEnabled="False"/>
+                            IsVisible="False"/>
             <Button
                             x:Name="RequestButton"
                             Text="Solicitar"

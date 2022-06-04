@@ -18,7 +18,7 @@ namespace ClassLibray
         public int IdUser { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public bool esAdmin { get; set; }
+        public bool? esAdmin { get; set; }
 
 
 

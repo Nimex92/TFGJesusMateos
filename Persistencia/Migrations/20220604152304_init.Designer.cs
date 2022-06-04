@@ -11,14 +11,14 @@ using Persistencia;
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(PresenciaContext))]
-    [Migration("20220525170925_init")]
+    [Migration("20220604152304_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("ClassLibray.Business", b =>
@@ -28,11 +28,9 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Adress")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("BankAccountCode")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("CIF")
@@ -40,7 +38,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -70,13 +67,13 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("BelongCalendarId")
+                    b.Property<int?>("BelongCalendarId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("Enjoyed")
+                    b.Property<bool?>("Enjoyed")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Reason")
@@ -96,7 +93,7 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("OnTime")
+                    b.Property<bool?>("OnTime")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("TaskEnd")
@@ -108,7 +105,7 @@ namespace Persistencia.Migrations
                     b.Property<DateTime>("TaskTaskInit")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<double>("TotalTimeUsed")
+                    b.Property<double?>("TotalTimeUsed")
                         .HasColumnType("double");
 
                     b.Property<int>("WorkerCardNumber")
@@ -136,7 +133,7 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("Justified")
+                    b.Property<bool?>("Justified")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<int>("WorkerCardNumber")
@@ -177,13 +174,13 @@ namespace Persistencia.Migrations
                     b.Property<int>("BusinessId")
                         .HasColumnType("int");
 
-                    b.Property<int>("NormalHours")
+                    b.Property<int?>("NormalHours")
                         .HasColumnType("int");
 
-                    b.Property<int>("SpecialHours")
+                    b.Property<int?>("SpecialHours")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalToReceive")
+                    b.Property<int?>("TotalToReceive")
                         .HasColumnType("int");
 
                     b.Property<int>("WorkerCardNumber")
@@ -295,7 +292,7 @@ namespace Persistencia.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("esAdmin")
+                    b.Property<bool?>("esAdmin")
                         .HasColumnType("tinyint(1)");
 
                     b.HasKey("IdUser");
@@ -309,7 +306,7 @@ namespace Persistencia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("Accepted")
+                    b.Property<bool?>("Accepted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("Date")
@@ -349,7 +346,7 @@ namespace Persistencia.Migrations
                     b.Property<string>("SocialSecurityCard")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UserIdUser")
+                    b.Property<int?>("UserIdUser")
                         .HasColumnType("int");
 
                     b.HasKey("CardNumber");
@@ -430,14 +427,12 @@ namespace Persistencia.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<double>("ElapsedTime")
                         .HasColumnType("double");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("TaskId");
@@ -477,13 +472,13 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("WorkGroupWorkShift", b =>
                 {
-                    b.Property<int>("WorkShiftsId")
+                    b.Property<int>("WorkGroupsId")
                         .HasColumnType("int");
 
                     b.Property<string>("WorkShiftsName")
                         .HasColumnType("varchar(255)");
 
-                    b.HasKey("WorkShiftsId", "WorkShiftsName");
+                    b.HasKey("WorkGroupsId", "WorkShiftsName");
 
                     b.HasIndex("WorkShiftsName");
 
@@ -520,9 +515,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("ClassLibray.Calendar", "BelongCalendar")
                         .WithMany("DaysOnCalendar")
-                        .HasForeignKey("BelongCalendarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BelongCalendarId");
 
                     b.Navigation("BelongCalendar");
                 });
@@ -629,9 +622,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("ClassLibray.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserIdUser")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserIdUser");
 
                     b.Navigation("User");
                 });
@@ -670,7 +661,7 @@ namespace Persistencia.Migrations
                 {
                     b.HasOne("ClassLibray.WorkGroup", null)
                         .WithMany()
-                        .HasForeignKey("WorkShiftsId")
+                        .HasForeignKey("WorkGroupsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

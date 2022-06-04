@@ -72,27 +72,27 @@ public partial class PaginaAdmin : ContentPage
             case 2:
                 ListViewWorkers.IsVisible = true;
                 activeWorker = true;
-                LabelTitulo2.Text = "Gesti�n de trabajadores";
+                LabelTitulo2.Text = "Gestión de trabajadores";
                 break;
             case 3:
                 ListViewGroups.IsVisible = true;
                 activeWorkShift = true;
-                LabelTitulo3.Text = "Gesti�n de turnos de trabajo";
+                LabelTitulo3.Text = "Gestión de turnos de trabajo";
                 break;
             case 4:
                 ListViewZones.IsVisible = true;
                 activePlace = true;
-                LabelTitulo4.Text = "Gesti�n de lugares de trabajo";
+                LabelTitulo4.Text = "Gestión de lugares de trabajo";
                 break;
             case 5:
                 ListViewTasks.IsVisible = true;
                 activeWorkTask = true;
-                LabelTitulo5.Text = "Gesti�n de tareas de trabajo";
+                LabelTitulo5.Text = "Gestión de tareas de trabajo";
                 break;
             case 6:
                 ListViewTeams.IsVisible = true;
                 activeWorkGroup = true;
-                LabelTitulo5.Text = "Gesti�n de equipos de trabajo";
+                LabelTitulo5.Text = "Gestión de equipos de trabajo";
                 break;
             case 7:
                 ListViewCalendar.IsVisible = true;
@@ -123,7 +123,15 @@ public partial class PaginaAdmin : ContentPage
     /// </summary>
     public void SetListViewWorkers()
     {
-        var workers = p.Workers.Include(x => x.User).ToList();
+        var workers = p.Workers.Include(x=>x.WorkGroup).Include(x => x.User).ToList();
+        workers.ForEach(x =>
+        {
+            var workgroups = x.WorkGroup.ToList();
+            workgroups.ForEach(y =>
+            {
+                x.BelongstoWorkGroups = x.BelongstoWorkGroups+" - "+y.Name;
+            });
+        });
         ListViewTrabajadores.ItemsSource = workers;
         if (workers.Count > 0)
             ListViewTrabajadores.SelectedItem = workers[0];
@@ -248,7 +256,7 @@ public partial class PaginaAdmin : ContentPage
             activeWorkTask = false;
             activeWorkGroup = false;
             IssueCheck();
-            LabelTitulo2.Text = "Gesti�n de trabajadores";
+            LabelTitulo2.Text = "Gestión de trabajadores";
         }
         else
         {
@@ -1041,7 +1049,7 @@ public partial class PaginaAdmin : ContentPage
     private async void LogoutButton_Clicked(object sender, EventArgs e)
     {
         //BotonCerrarSession.BackgroundColor = Color.FromRgba("#2B282D");
-        bool answer = await DisplayAlert("Logout", "�Deseas cerrar sesi�n?", "Si", "No");
+        bool answer = await DisplayAlert("Logout", "¿Deseas cerrar sesión?", "Si", "No");
         if (answer == true)
         {
             App.Current.MainPage = new NavigationPage(new MainPage());
@@ -1152,16 +1160,16 @@ public partial class PaginaAdmin : ContentPage
             BetterTable OtrosDatos = NewTable(7, 2);
             OtrosDatos.SetColorHeader(ColorConstants.LIGHT_GRAY);
             OtrosDatos.ChangeTableFontSize(8);
-            OtrosDatos.SetNextText("N� Afiliaci�n S.S");
+            OtrosDatos.SetNextText("N� Afiliación S.S");
             OtrosDatos.SetNextText("Tarifa");
             OtrosDatos.SetNextText("Cod C.T.");
-            OtrosDatos.SetNextText("Secci�n");
+            OtrosDatos.SetNextText("Sección");
             OtrosDatos.SetNextText("Nro.");
             OtrosDatos.SetNextText("Periodo");
-            OtrosDatos.SetNextText("D�as");
+            OtrosDatos.SetNextText("Días");
             OtrosDatos.SetNextText(worker.SocialSecurityCard);
             var diasTrabajador = p.Signings.Where(x => x.Worker == worker).Where(x => x.CheckInCheckOut == "Entrada").OrderBy(x => x.SigningDate).ToList();
-            var diastotal = diasTrabajador.Count;
+            int diastotal = diasTrabajador.Count;
             var lapso = diasTrabajador.First().SigningDate.Date + "-" + diasTrabajador.Last().SigningDate.Date;
             OtrosDatos[1,6].SetText(lapso.ToString());
             OtrosDatos[1,5].SetText(diastotal.ToString());
@@ -1170,7 +1178,7 @@ public partial class PaginaAdmin : ContentPage
             CuerpoNomina.ChangeTableFontSize(10);
             CuerpoNomina.RemoveBorder(1);
             CuerpoNomina.AddTableBorder(1);
-            CuerpoNomina.SetNextText("Cuant�a");
+            CuerpoNomina.SetNextText("Cuantía");
             CuerpoNomina.SetNextText("Precio");
             CuerpoNomina.SetNextText("Concepto");
             CuerpoNomina.SetNextText("Devengos");
@@ -1201,7 +1209,7 @@ public partial class PaginaAdmin : ContentPage
             PieNomina2[4, 0].SetTextAlign("START");
             PieNomina2[1, 3].SetText("Total a percibir");
             PieNomina2[1, 3].AddAllBorders();
-            PieNomina2[2, 3].SetText("1245.74�");
+            PieNomina2[2, 3].SetText("1245.74€");
             PieNomina2[2, 3].AddAllBorders();
             PieNomina2.AddTableBorder(1);
             BetterTable CabeceraPieNomina3 = NewTable(1, 1);

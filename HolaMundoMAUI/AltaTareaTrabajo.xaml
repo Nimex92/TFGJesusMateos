@@ -2,10 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.AltaTareaTrabajo"
-             Title="Alta tarea de trabajo"
-             BackgroundColor="White">
-    <StackLayout
-        Margin="0,20,0,0">
+             BackgroundColor="#A29FA0">
+    <StackLayout WidthRequest="400" HeightRequest="320" BackgroundColor="White">
         <Label 
                 Text="Alta tarea de trabajo"
                 TextColor="Black"
@@ -21,12 +19,12 @@
                      Margin="0,10,0,0"
                      WidthRequest="320"
                      HeightRequest="220"
-                     BackgroundColor="#828282">
+                     BackgroundColor="#2B282D">
             <Entry x:Name="NameField"
                         Placeholder="Nombre tarea:"
                         PlaceholderColor="Black"
                         Margin="0,15,0,0"
-                        FontSize="22"
+                        FontSize="16"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="300"
@@ -37,7 +35,7 @@
                         Placeholder="Descripcion tarea:"
                         PlaceholderColor="Black"
                         Margin="0,15,0,0"
-                        FontSize="22"
+                        FontSize="16"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                         WidthRequest="300"
@@ -66,6 +64,7 @@
                          Maximum="24"
                          Increment="1"
                          Value="0"
+                         BackgroundColor="#2B282D"
                          />
 
                 </HorizontalStackLayout>

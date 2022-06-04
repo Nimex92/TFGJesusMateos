@@ -23,7 +23,7 @@ public partial class AnadirZonaGrupoTrabajo : ContentPage
 		//Recojo todos los Turnos de la tabla de MySql
 		var workGroups = p.WorkGroups.ToList();
 		var places = p.Places.ToList();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion WorkGroups, añado al selector (Picker de la interfaz) El nombre del turno
 		WorkGroupSelector.Items.Add("-- Selecciona Grupo de trabajo.");
 		PlaceSelector.Items.Add("-- Selecciona zona.");
         workGroups.ForEach(x =>

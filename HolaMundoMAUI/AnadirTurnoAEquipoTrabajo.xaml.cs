@@ -44,7 +44,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		var workGroupList = p.WorkGroups.Where(x => x.WorkShifts.Contains(WorkShift)).ToList();
 		//Creo una lista para guardar todos los turnos existentes
 		var ListaTareas = new List<string>();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del workshift	
+		//Para cada lista que haya en la seleccion WorkGroups, añado al selector (Picker de la interfaz) El nombre del workshift	
 		WorkGroupSelector.Items.Add("-- Selecciona Grupo de trabajo.");
 		WorkShiftSelector.Items.Add(WorkShift.Name);
         workGroupList.ForEach(x =>
@@ -62,7 +62,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		//Recojo todos los Turnos de la tabla de MySql
 		var workGroups = p.WorkGroups;
 		var workGroupsList = p.WorkGroups.Where(x => x.WorkShifts.Contains(WorkShift)).ToList();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del workshift
+		//Para cada lista que haya en la seleccion WorkGroups, añado al selector (Picker de la interfaz) El nombre del workshift
 		WorkGroupSelector.Items.Add("-- Selecciona Grupo de trabajo.");
 		WorkShiftSelector.Items.Add(WorkShift.Name);
 		workGroupsList.ForEach(x =>
@@ -93,7 +93,7 @@ public partial class AnadirTurnoEquipoTrabajo : ContentPage
 		var workGroup = p.WorkGroups.Where(x => x.Name.Equals(workGroupName)).FirstOrDefault();
 		var workShift = p.WorkShifts.Where(x => x.Name.Equals(workShiftName)).FirstOrDefault();
 		var workShiftList = workGroup.WorkShifts.ToList();
-		var workGroupList = workShift.WorkShifts;
+		var workGroupList = workShift.WorkGroups;
 
 		if (workGroupName is not null && workShift is not null)
 		{

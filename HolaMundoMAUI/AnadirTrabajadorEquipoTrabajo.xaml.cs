@@ -21,7 +21,7 @@ public partial class AnadeTrabajadorEquipoTrabajo : ContentPage
 	{
 		var workGroupList = p.WorkGroups.ToList();
 		var workerList = p.Workers.ToList();
-		//Para cada lista que haya en la seleccion WorkShifts, añado al selector (Picker de la interfaz) El nombre del turno
+		//Para cada lista que haya en la seleccion WorkGroups, añado al selector (Picker de la interfaz) El nombre del turno
 		WorkGroupSelector.Items.Add("-- Selecciona equipo de trabajo.");
 		WorkerSelector.Items.Add("-- Selecciona Trabajador.");
 		foreach (WorkGroup workGroup in workGroupList)

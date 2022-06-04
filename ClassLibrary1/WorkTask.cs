@@ -11,8 +11,8 @@ namespace ClassLibray
     {
         [Key]
         public int TaskId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
         public double ElapsedTime { get; set; }
 
         public ICollection<WorkGroup> WorkGroups { get; set; }
