@@ -18,7 +18,7 @@ public partial class AnadeDiaCalendario : ContentPage
         //Set the Username to a global local use
         Username = username;
         //Set the UI pickers with data
-        ReasonSetPicker();
+        VacationSetPicker();
         switch (option)
         {
             //In this case enable the create UI

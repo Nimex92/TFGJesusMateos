@@ -33,7 +33,7 @@
                      Margin="0,-45,0,0"
                      HorizontalOptions="StartAndExpand"
                      Direction="Column"
-                     AlignItems="Strech"
+                     AlignItems="Center"
                      ZIndex="999"
                      FlexLayout.Basis="100%"
                      Wrap="Wrap"

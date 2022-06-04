@@ -1,0 +1,118 @@
+is_global = true
+build_property.TargetFramework = net6.0-windows10.0.19041
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HolaMundoMAUI
+build_property.ProjectDir = D:\TFGJesusMateos\HolaMundoMAUI\
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaGrupoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaGrupoTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaTareaTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTareaTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaTareaTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaTareaTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaTrabajador.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTrabajador.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaTrabajador.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaTrabajador.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaTurno.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaTurno.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaTurno.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaTurno.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaUsuarios.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaUsuarios.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaUsuarios.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaUsuarios.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AltaZona.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AltaZona.xaml
+build_metadata.AdditionalFiles.TargetPath = AltaZona.xaml
+build_metadata.AdditionalFiles.RelativePath = AltaZona.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AnadeDiaCalendario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadeDiaCalendario.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadeDiaCalendario.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadeDiaCalendario.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AnadeTareasAGrupoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadeTareasAGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadeTareasAGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadeTareasAGrupoTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AnadirTrabajadorEquipoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirTrabajadorEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadirTrabajadorEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadirTrabajadorEquipoTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AnadirTurnoAEquipoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirTurnoAEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadirTurnoAEquipoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadirTurnoAEquipoTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/AnadirZonaAGrupoTrabajo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.AnadirZonaAGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.TargetPath = AnadirZonaAGrupoTrabajo.xaml
+build_metadata.AdditionalFiles.RelativePath = AnadirZonaAGrupoTrabajo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/BorrarTrabajadresDeGrupo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.BorrarTrabajadresDeGrupo.xaml
+build_metadata.AdditionalFiles.TargetPath = BorrarTrabajadresDeGrupo.xaml
+build_metadata.AdditionalFiles.RelativePath = BorrarTrabajadresDeGrupo.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/CalendarioLalboral.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.CalendarioLalboral.xaml
+build_metadata.AdditionalFiles.TargetPath = CalendarioLalboral.xaml
+build_metadata.AdditionalFiles.RelativePath = CalendarioLalboral.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/PaginaAdmin.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaAdmin.xaml
+build_metadata.AdditionalFiles.TargetPath = PaginaAdmin.xaml
+build_metadata.AdditionalFiles.RelativePath = PaginaAdmin.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/PaginaFichar.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.PaginaFichar.xaml
+build_metadata.AdditionalFiles.TargetPath = PaginaFichar.xaml
+build_metadata.AdditionalFiles.RelativePath = PaginaFichar.xaml
+
+[D:/TFGJesusMateos/HolaMundoMAUI/TrabajadoresEnTurno.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = HolaMundoMAUI.TrabajadoresEnTurno.xaml
+build_metadata.AdditionalFiles.TargetPath = TrabajadoresEnTurno.xaml
+build_metadata.AdditionalFiles.RelativePath = TrabajadoresEnTurno.xaml

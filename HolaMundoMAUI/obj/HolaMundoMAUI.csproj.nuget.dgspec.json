@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj": {}
+    "D:\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+    "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj",
+        "projectUniqueName": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj",
         "projectName": "ClassLibray",
-        "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj",
-        "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\obj\\",
+        "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj",
+        "packagesPath": "C:\\Users\\nimex\\.nuget\\packages\\",
+        "outputPath": "D:\\TFGJesusMateos\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jesus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nimex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -89,68 +89,81 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj": {
+    "D:\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+        "projectUniqueName": "D:\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
         "projectName": "HolaMundoMAUI",
-        "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
-        "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\obj\\",
+        "projectPath": "D:\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
+        "packagesPath": "C:\\Users\\nimex\\.nuget\\packages\\",
+        "outputPath": "D:\\TFGJesusMateos\\HolaMundoMAUI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jesus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nimex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-android",
           "net6.0-ios",
-          "net6.0-maccatalyst"
+          "net6.0-maccatalyst",
+          "net6.0-windows10.0.19041"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-android31.0": {
             "targetAlias": "net6.0-android",
             "projectReferences": {
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+              "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
               },
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+              "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
               }
             }
           },
           "net6.0-ios15.4": {
             "targetAlias": "net6.0-ios",
             "projectReferences": {
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+              "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
               },
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+              "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
               }
             }
           },
           "net6.0-maccatalyst15.4": {
             "targetAlias": "net6.0-maccatalyst",
             "projectReferences": {
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+              "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
               },
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+              "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
+              }
+            }
+          },
+          "net6.0-windows10.0.19041": {
+            "targetAlias": "net6.0-windows10.0.19041",
+            "projectReferences": {
+              "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+              },
+              "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -171,17 +184,17 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.0.3, )"
+              "version": "[1.1.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -204,20 +217,16 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.Android.Ref.31",
-              "version": "[31.0.101-preview.11.117, 31.0.101-preview.11.117]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Host.linux-arm",
-              "version": "[6.0.3, 6.0.3]"
+              "version": "[6.0.5, 6.0.5]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-arm64",
-              "version": "[6.0.3, 6.0.3]"
+              "version": "[6.0.5, 6.0.5]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.3, 6.0.3]"
+              "version": "[6.0.5, 6.0.5]"
             }
           ],
           "frameworkReferences": {
@@ -237,7 +246,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         },
         "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
@@ -248,17 +257,17 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.0.3, )"
+              "version": "[1.1.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -301,7 +310,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
@@ -312,17 +321,17 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.300-rc.2.5513, )",
+              "version": "[6.0.312, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.0.3, )"
+              "version": "[1.1.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -366,7 +375,90 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        },
+        "net6.0-windows10.0.19041": {
+          "targetAlias": "net6.0-windows10.0.19041",
+          "dependencies": {
+            "Microsoft.Graphics.Win2D": {
+              "target": "Package",
+              "version": "[1.0.3.1, )"
+            },
+            "Microsoft.Maui.Dependencies": {
+              "target": "Package",
+              "version": "[6.0.312, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Extensions": {
+              "target": "Package",
+              "version": "[6.0.312, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Windows.SDK.BuildTools": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.22000.194, )",
+              "autoReferenced": true
+            },
+            "Microsoft.WindowsAppSDK": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[6.0.5, 6.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[6.0.5, 6.0.5]"
+            },
+            {
+              "name": "Microsoft.Windows.SDK.NET.Ref",
+              "version": "[10.0.19041.25, 10.0.19041.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[6.0.5, 6.0.5]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.Maui.Controls": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Maui.Core": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Maui.Essentials": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -387,23 +479,26 @@
         },
         "maccatalyst-x64": {
           "#import": []
+        },
+        "win10-x64": {
+          "#import": []
         }
       }
     },
-    "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
+    "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\Persistencia.csproj",
-        "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\Persistencia\\obj\\",
+        "projectPath": "D:\\TFGJesusMateos\\Persistencia\\Persistencia.csproj",
+        "packagesPath": "C:\\Users\\nimex\\.nuget\\packages\\",
+        "outputPath": "D:\\TFGJesusMateos\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jesus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nimex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -419,8 +514,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
-                "projectPath": "C:\\Users\\jesus\\OneDrive\\Documentos\\GitHub\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
+              "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj": {
+                "projectPath": "D:\\TFGJesusMateos\\ClassLibrary1\\ClassLibray.csproj"
               }
             }
           }
@@ -479,7 +574,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300-preview.22204.3\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -68,7 +68,7 @@ public partial class AltaTrabajador : ContentPage
 				//foreach Workgroup than worker belongs it will be added to the List
 				foreach(WorkGroup e in worker.WorkGroup)
                 {
-					WorkShiftList.Add(e.Name);
+					//Work.Add(e.Name);
                 }
 				//Select the first item of the list
 				WorkGroupSelector.SelectedIndex = 1;
@@ -123,13 +123,14 @@ public partial class AltaTrabajador : ContentPage
 	{
 		Random random = new Random();
 		string name = NameField.Text;
-		string user = name + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9) + randomNumber.Next(0, 9);
+		string user = name + random.Next(0, 9) + random.Next(0, 9) + random.Next(0, 9) + random.Next(0, 9);
 		var selected = WorkGroupSelector.SelectedItem.ToString();
 		var workGroup = p.WorkGroups.Where(x => x.Name == selected).FirstOrDefault();
 		var Nif = NifField.Text;
 		var SSNumber = SSNumberField.Text;
 		var category = CategorySelector.SelectedItem.ToString();
-		bool update = db.UpdateWorker(user,name,workGroup);
+		var worker = p.Workers.Where(x => x.Name == name).FirstOrDefault();
+		bool update = db.UpdateWorker(worker,name,workGroup);
 		
 		if (update == true)
 		{
