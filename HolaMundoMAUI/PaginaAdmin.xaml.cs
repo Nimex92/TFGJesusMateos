@@ -312,7 +312,6 @@ public partial class PaginaAdmin : ContentPage
             activeWorkTask = false;
             activePlace = false;
             activeWorkGroup = false;
-            IssueCheck();
         }
         else
         {
@@ -334,7 +333,6 @@ public partial class PaginaAdmin : ContentPage
             activeWorkTask = false;
             activePlace = false;
             activeWorkGroup = false;
-            IssueCheck();
         }
     }
     /// <summary>
@@ -368,7 +366,6 @@ public partial class PaginaAdmin : ContentPage
             activePlace = false;
             activeWorkGroup = true;
             activePayroll = false;
-            IssueCheck();
         }
         else
         {
@@ -395,7 +392,6 @@ public partial class PaginaAdmin : ContentPage
             activePlace = false;
             activeWorkGroup = false;
             activePayroll = false;
-            IssueCheck();
 
         }
     }

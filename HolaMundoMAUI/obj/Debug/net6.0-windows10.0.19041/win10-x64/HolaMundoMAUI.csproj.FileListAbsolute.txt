@@ -1190,6 +1190,14 @@ D:\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\qua
 D:\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\qualifiers.txt.intermediate
 D:\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\ProjectArchitectures.txt
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.exe
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.pdb
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Microsoft.Graphics.Canvas.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.barcodes.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\itext.forms.dll
@@ -1458,6 +1466,7 @@ C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-wi
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\hostfxr.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\hostpolicy.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\mscordaccore.dll
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\mscordaccore_amd64_amd64_6.0.522.21309.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\mscordbi.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\mscorrc.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\msquic.dll
@@ -1758,14 +1767,6 @@ C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-wi
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\refint\HolaMundoMAUI.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.pdb
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.exe
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\Platforms\Windows\App.xbf
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.deps.json
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.runtimeconfig.json
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.pdb
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\resources.pri
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\AppxManifest.xml
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.genruntimeconfig.cache
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\ref\HolaMundoMAUI.dll
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\priconfig.xml
@@ -1784,4 +1785,3 @@ C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-wi
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\qualifiers.txt.intermediate
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\ProjectArchitectures.txt
-C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\bin\Debug\net6.0-windows10.0.19041\win10-x64\mscordaccore_amd64_amd64_6.0.622.26707.dll

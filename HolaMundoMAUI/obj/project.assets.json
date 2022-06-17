@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0-android31.0": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -316,24 +316,24 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -342,7 +342,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -756,14 +756,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -775,7 +776,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -787,10 +800,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -1246,19 +1259,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -1609,7 +1622,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -1631,11 +1644,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -1649,14 +1662,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -1669,13 +1682,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -1977,7 +1990,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -2006,10 +2019,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -2168,7 +2181,7 @@
       }
     },
     "net6.0-android31.0/android-arm": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -2468,24 +2481,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -2494,7 +2507,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -2840,14 +2853,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -2859,7 +2873,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -2871,10 +2897,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -3330,19 +3356,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -3693,7 +3719,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -3715,11 +3741,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -3733,14 +3759,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -3753,13 +3779,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -4061,7 +4087,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -4090,10 +4116,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -4252,7 +4278,7 @@
       }
     },
     "net6.0-android31.0/android-arm64": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -4552,24 +4578,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -4578,7 +4604,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -4924,14 +4950,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -4943,7 +4970,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -4955,10 +4994,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -5414,19 +5453,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -5777,7 +5816,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -5799,11 +5838,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -5817,14 +5856,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -5837,13 +5876,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -6145,7 +6184,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -6174,10 +6213,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -6336,7 +6375,7 @@
       }
     },
     "net6.0-android31.0/android-x64": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -6636,24 +6675,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -6662,7 +6701,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -7008,14 +7047,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -7027,7 +7067,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -7039,10 +7091,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -7498,19 +7550,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -7861,7 +7913,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -7883,11 +7935,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -7901,14 +7953,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -7921,13 +7973,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -8229,7 +8281,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -8258,10 +8310,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -8420,7 +8472,7 @@
       }
     },
     "net6.0-android31.0/android-x86": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -8720,24 +8772,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -8746,7 +8798,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -9092,14 +9144,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -9111,7 +9164,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -9123,10 +9188,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -9582,19 +9647,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -9945,7 +10010,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -9967,11 +10032,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -9985,14 +10050,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -10005,13 +10070,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -10313,7 +10378,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -10342,10 +10407,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -10504,7 +10569,7 @@
       }
     },
     "net6.0-android31.0/ios-arm64": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -10804,24 +10869,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -10830,7 +10895,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -11176,14 +11241,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -11195,7 +11261,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -11207,10 +11285,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -11666,19 +11744,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -12029,7 +12107,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -12051,11 +12129,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -12069,14 +12147,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -12089,13 +12167,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -12397,7 +12475,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -12426,10 +12504,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -12588,7 +12666,7 @@
       }
     },
     "net6.0-android31.0/maccatalyst-x64": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -12888,24 +12966,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -12914,7 +12992,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -13260,14 +13338,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -13279,7 +13358,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -13291,10 +13382,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -13750,19 +13841,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -14113,7 +14204,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -14135,11 +14226,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -14153,14 +14244,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -14173,13 +14264,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -14481,7 +14572,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -14510,10 +14601,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -14672,7 +14763,7 @@
       }
     },
     "net6.0-android31.0/win10-x64": {
-      "GoogleGson/2.8.8.2": {
+      "GoogleGson/2.9.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/GoogleGson.dll": {}
@@ -14975,24 +15066,24 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Xamarin.Android.Glide": "4.12.0.2",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Xamarin.Android.Glide": "4.12.0.8",
           "Xamarin.AndroidX.Browser": "1.4.0.1",
           "Xamarin.AndroidX.Legacy.Support.V4": "1.0.0.13",
           "Xamarin.AndroidX.Lifecycle.LiveData": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Fragment": "2.4.1.2",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.UI": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Fragment": "2.4.2",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
+          "Xamarin.AndroidX.Navigation.UI": "2.4.2",
           "Xamarin.AndroidX.Security.SecurityCrypto": "1.1.0-alpha03",
-          "Xamarin.Google.Android.Material": "1.5.0.2",
-          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.2"
+          "Xamarin.Google.Android.Material": "1.6.0",
+          "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -15001,7 +15092,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-android30.0/Microsoft.Maui.Graphics.dll": {}
@@ -15350,14 +15441,15 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
-      "Xamarin.Android.Glide/4.12.0.2": {
+      "Xamarin.Android.Glide/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.2",
-          "Xamarin.Android.Glide.GifDecoder": "4.12.0.2",
-          "Xamarin.AndroidX.ExifInterface": "1.3.3",
-          "Xamarin.AndroidX.Fragment": "1.3.6.1",
-          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.8"
+          "Xamarin.Android.Glide.Annotations": "4.12.0.8",
+          "Xamarin.Android.Glide.DiskLruCache": "4.12.0.8",
+          "Xamarin.Android.Glide.GifDecoder": "4.12.0.8",
+          "Xamarin.AndroidX.ExifInterface": "1.3.2.2",
+          "Xamarin.AndroidX.Fragment": "1.3.2",
+          "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.10"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.dll": {}
@@ -15369,7 +15461,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets": {}
         }
       },
-      "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
+      "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets": {}
+        }
+      },
+      "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll": {}
@@ -15381,10 +15485,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets": {}
         }
       },
-      "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
+      "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.2.0"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll": {}
@@ -15840,19 +15944,19 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets": {}
         }
       },
-      "Xamarin.AndroidX.ExifInterface/1.3.3": {
+      "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.2.0.1"
+          "Xamarin.AndroidX.Annotation": "1.1.0.9"
         },
         "compile": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "runtime": {
-          "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll": {}
+          "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll": {}
         },
         "build": {
-          "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets": {}
+          "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets": {}
         }
       },
       "Xamarin.AndroidX.Fragment/1.4.1.1": {
@@ -16203,7 +16307,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Media.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Common/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -16225,11 +16329,11 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
+      "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Fragment.Ktx": "1.4.1.1",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.SlidingPaneLayout": "1.2.0.1",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
@@ -16243,14 +16347,14 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Activity.Ktx": "1.4.0.2",
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.4.1.1",
           "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.4.1.1",
-          "Xamarin.AndroidX.Navigation.Common": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Common": "2.4.2",
           "Xamarin.Kotlin.StdLib": "1.6.20.1"
         },
         "compile": {
@@ -16263,13 +16367,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
+      "Xamarin.AndroidX.Navigation.UI/2.4.2": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation.Experimental": "1.2.0.1",
           "Xamarin.AndroidX.CustomView": "1.1.0.12",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1.8",
-          "Xamarin.AndroidX.Navigation.Runtime": "2.4.1.1",
+          "Xamarin.AndroidX.Navigation.Runtime": "2.4.2",
           "Xamarin.AndroidX.Transition": "1.4.1.6",
           "Xamarin.Google.Android.Material": "1.5.0.2"
         },
@@ -16571,7 +16675,7 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.targets": {}
         }
       },
-      "Xamarin.Google.Android.Material/1.5.0.2": {
+      "Xamarin.Google.Android.Material/1.6.0": {
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.3.0.3",
@@ -16600,10 +16704,10 @@
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
-      "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
+      "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
         "type": "package",
         "dependencies": {
-          "GoogleGson": "2.8.8.2"
+          "GoogleGson": "2.9.0.1"
         },
         "compile": {
           "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll": {}
@@ -17094,14 +17198,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -17111,7 +17215,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -18695,14 +18799,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -18712,7 +18816,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -20417,14 +20521,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -20434,7 +20538,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -22139,14 +22243,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -22156,7 +22260,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -23861,14 +23965,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -23878,7 +23982,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -25583,14 +25687,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -25600,7 +25704,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -27302,14 +27406,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -27319,7 +27423,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -29024,14 +29128,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -29041,7 +29145,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-ios13.6/Microsoft.Maui.Graphics.dll": {}
@@ -30769,14 +30873,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -30786,7 +30890,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -32370,14 +32474,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -32387,7 +32491,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -34092,14 +34196,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -34109,7 +34213,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -35814,14 +35918,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -35831,7 +35935,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -37536,14 +37640,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -37553,7 +37657,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -39258,14 +39362,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -39275,7 +39379,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -40977,14 +41081,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -40994,7 +41098,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -42699,14 +42803,14 @@
           "build/netcoreapp3.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
+          "Microsoft.Maui.Graphics": "6.0.403",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -42716,7 +42820,7 @@
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-maccatalyst13.5/Microsoft.Maui.Graphics.dll": {}
@@ -44444,16 +44548,16 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -44462,7 +44566,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -44471,12 +44575,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -46080,16 +46184,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -46098,7 +46202,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -46107,12 +46211,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -47837,16 +47941,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -47855,7 +47959,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -47864,12 +47968,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -49594,16 +49698,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -49612,7 +49716,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -49621,12 +49725,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -51351,16 +51455,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -51369,7 +51473,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -51378,12 +51482,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -53108,16 +53212,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -53126,7 +53230,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -53135,12 +53239,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -54862,16 +54966,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -54880,7 +54984,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -54889,12 +54993,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -56619,16 +56723,16 @@
           "build/net5.0-windows10.0.18362.0/Microsoft.Graphics.Win2D.targets": {}
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Dependencies/6.0.400": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSDK": "1.0.3"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "6.0.403",
+          "Microsoft.WindowsAppSDK": "1.1.0"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
+      "Microsoft.Maui.Extensions/6.0.400": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -56637,7 +56741,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
       },
-      "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics/6.0.403": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
@@ -56646,12 +56750,12 @@
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.dll": {}
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Graphics.Win2D": "1.0.1",
-          "Microsoft.Maui.Graphics": "6.0.300-rc.2.1310",
-          "Microsoft.WindowsAppSdk": "1.0.1"
+          "Microsoft.Graphics.Win2D": "1.0.3.1",
+          "Microsoft.Maui.Graphics": "6.0.403",
+          "Microsoft.WindowsAppSdk": "1.0.3"
         },
         "compile": {
           "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {}
@@ -58068,19 +58172,19 @@
     }
   },
   "libraries": {
-    "GoogleGson/2.8.8.2": {
-      "sha512": "YfUT4t1cilKIV+2GIQCpiXG67aA6+LzvuNVbOLAt2XlwfXnmWLXfbzQMgwyOM8F00nmtrEBBu4obrw/FGyr99A==",
+    "GoogleGson/2.9.0.1": {
+      "sha512": "hztMZzgzX82HUORHX4YHOcfzF7yAOn8dWpXeYcrJa9sjw1qHfFpibrHeiWrk8aKn4C4IO6mBNOuaFiyS6/EOBA==",
       "type": "package",
-      "path": "googlegson/2.8.8.2",
+      "path": "googlegson/2.9.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "License.md",
         "THIRD-PARTY-NOTICES.txt",
-        "googlegson.2.8.8.2.nupkg.sha512",
+        "googlegson.2.9.0.1.nupkg.sha512",
         "googlegson.nuspec",
-        "lib/monoandroid90/GoogleGson.dll",
-        "lib/monoandroid90/GoogleGson.xml",
+        "lib/monoandroid12.0/GoogleGson.dll",
+        "lib/monoandroid12.0/GoogleGson.xml",
         "lib/net6.0-android31.0/GoogleGson.aar",
         "lib/net6.0-android31.0/GoogleGson.dll",
         "lib/net6.0-android31.0/GoogleGson.xml"
@@ -58569,32 +58673,32 @@
         "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll"
       ]
     },
-    "Microsoft.Maui.Dependencies/6.0.300-rc.2.5513": {
-      "sha512": "5xdbpJ0f+ZQ1HWMgcMGV6mYcYEmn8MgGSxIZrGZHw/Q+B42x0KCvcOUWRgC298GH9g3iXEiaoyG5QGxi7xCogg==",
+    "Microsoft.Maui.Dependencies/6.0.400": {
+      "sha512": "v8L1Ul0xC6dw7PJU4v26Ka9Nd9TCp7vB1etLRfv8QEHkWKxYlHSyJQVWw0YW9ViF69UY2mwwiHpGTSCaygbIhg==",
       "type": "package",
-      "path": "microsoft.maui.dependencies/6.0.300-rc.2.5513",
+      "path": "microsoft.maui.dependencies/6.0.400",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "microsoft.maui.dependencies.6.0.300-rc.2.5513.nupkg.sha512",
+        "microsoft.maui.dependencies.6.0.400.nupkg.sha512",
         "microsoft.maui.dependencies.nuspec"
       ]
     },
-    "Microsoft.Maui.Extensions/6.0.300-rc.2.5513": {
-      "sha512": "+o3xts/+CU+VaeIqluP2sMMc44q+KqBVKGXRyMe8VgTlEe90Vxo6xCHEYZtJa5U1ldqeheTIloRuXD1TVJP1zg==",
+    "Microsoft.Maui.Extensions/6.0.400": {
+      "sha512": "OvwlpszmHcWupNQvIVcOiGnIgRJze/JtQ/9hzphFG5IHKWmhCTePUEvNxYhcImFQP+vRiusjYm8kThGk9V2E5g==",
       "type": "package",
-      "path": "microsoft.maui.extensions/6.0.300-rc.2.5513",
+      "path": "microsoft.maui.extensions/6.0.400",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "microsoft.maui.extensions.6.0.300-rc.2.5513.nupkg.sha512",
+        "microsoft.maui.extensions.6.0.400.nupkg.sha512",
         "microsoft.maui.extensions.nuspec"
       ]
     },
-    "Microsoft.Maui.Graphics/6.0.300-rc.2.1310": {
-      "sha512": "BAG8TSghi4VOZuRXyLfxndabAmGKzBSOVelshY+cOFstnzNR2W7YLSXgcFo8eOWG2tq12KHkzxXj9rZNg7dfTA==",
+    "Microsoft.Maui.Graphics/6.0.403": {
+      "sha512": "U3geHZANTsD8biN1cYOe9E1dU+UuV5mo0hURmLHCXRCTHddZSL0IJYnIF02dLCdCp2mXRGY4elGi789fgRaAlg==",
       "type": "package",
-      "path": "microsoft.maui.graphics/6.0.300-rc.2.1310",
+      "path": "microsoft.maui.graphics/6.0.403",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -58620,20 +58724,20 @@
         "lib/xamarin.ios10/Microsoft.Maui.Graphics.pdb",
         "lib/xamarin.mac20/Microsoft.Maui.Graphics.dll",
         "lib/xamarin.mac20/Microsoft.Maui.Graphics.pdb",
-        "microsoft.maui.graphics.6.0.300-rc.2.1310.nupkg.sha512",
+        "microsoft.maui.graphics.6.0.403.nupkg.sha512",
         "microsoft.maui.graphics.nuspec"
       ]
     },
-    "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.300-rc.2.1310": {
-      "sha512": "FhedYrKyTusspJLlgOpsRBHKoH446gMcepgnUL1ExOZL1X+wZ72h1kpXlWS5wSEVubHTcU9UdXPx/fFOcSttnQ==",
+    "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/6.0.403": {
+      "sha512": "6LfKdG+658GzupeXWdbpeZkv/V5bda2gLIiF+2D8PQEhUAS3OxWlDJsAjP+1KdHvu0BN7e9f+awAxhOEcuO/oQ==",
       "type": "package",
-      "path": "microsoft.maui.graphics.win2d.winui.desktop/6.0.300-rc.2.1310",
+      "path": "microsoft.maui.graphics.win2d.winui.desktop/6.0.403",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll",
         "lib/net6.0-windows10.0.18362/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.pdb",
-        "microsoft.maui.graphics.win2d.winui.desktop.6.0.300-rc.2.1310.nupkg.sha512",
+        "microsoft.maui.graphics.win2d.winui.desktop.6.0.403.nupkg.sha512",
         "microsoft.maui.graphics.win2d.winui.desktop.nuspec"
       ]
     },
@@ -63966,78 +64070,91 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
-    "Xamarin.Android.Glide/4.12.0.2": {
-      "sha512": "1/LA7086pK4XFQwZfXwF6PyVl7H3LuamfPhAKXAlyfb/KtMzHvFjjP/PGnpRJs4rDE/PLM+0jrthnabb57nk4g==",
+    "Xamarin.Android.Glide/4.12.0.8": {
+      "sha512": "/aY+/hU38oTeZttBYE1t5GQr7qE/PMIVOtWjy6vj9jBeirLKwOq9tIAbt7YFYpSncX5X8Dd9w0fgwwJTC3qTkA==",
       "type": "package",
-      "path": "xamarin.android.glide/4.12.0.2",
+      "path": "xamarin.android.glide/4.12.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/glide.aar",
-        "build/monoandroid10.0/Xamarin.Android.Glide.targets",
-        "build/monoandroid9.0/Xamarin.Android.Glide.targets",
+        "build/monoandroid12.0/Xamarin.Android.Glide.targets",
         "build/net6.0-android31.0/Xamarin.Android.Glide.targets",
-        "buildTransitive/monoandroid10.0/Xamarin.Android.Glide.targets",
-        "buildTransitive/monoandroid9.0/Xamarin.Android.Glide.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Android.Glide.targets",
         "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.targets",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.dll",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.xml",
-        "lib/monoandroid90/Xamarin.Android.Glide.dll",
-        "lib/monoandroid90/Xamarin.Android.Glide.xml",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.dll",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.xml",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.dll",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.xml",
-        "xamarin.android.glide.4.12.0.2.nupkg.sha512",
+        "xamarin.android.glide.4.12.0.8.nupkg.sha512",
         "xamarin.android.glide.nuspec"
       ]
     },
-    "Xamarin.Android.Glide.DiskLruCache/4.12.0.2": {
-      "sha512": "joZmNT1iY+2ukqczlWtdCmTTKrOmSvdwY14eG7eWoEcuDRfZbd+OCFDdoevVmMjuNJJED0SZMWlie2Hvag22zQ==",
+    "Xamarin.Android.Glide.Annotations/4.12.0.8": {
+      "sha512": "m+jx01VgRqvzDBWybFmfjyCM1ddQp9m4Iu1pwYL3A6qvRleA8Sb2Fama/06p8u4DbttZ05v23hRAJgmtIyVYMw==",
       "type": "package",
-      "path": "xamarin.android.glide.disklrucache/4.12.0.2",
+      "path": "xamarin.android.glide.annotations/4.12.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
-        "build/monoandroid10.0/Xamarin.Android.Glide.DiskLruCache.targets",
-        "build/monoandroid9.0/Xamarin.Android.Glide.DiskLruCache.targets",
+        "build/monoandroid12.0/Xamarin.Android.Glide.Annotations.targets",
+        "build/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Android.Glide.Annotations.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.Annotations.targets",
+        "jar/annotations.jar",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.Annotations.dll",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.Annotations.xml",
+        "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.dll",
+        "lib/net6.0-android31.0/Xamarin.Android.Glide.Annotations.xml",
+        "xamarin.android.glide.annotations.4.12.0.8.nupkg.sha512",
+        "xamarin.android.glide.annotations.nuspec"
+      ]
+    },
+    "Xamarin.Android.Glide.DiskLruCache/4.12.0.8": {
+      "sha512": "qFJjs4SaCsS3m8h5zKGwfLNnbnjCAJMIYXQTnt45qe9YZtIdWYgUogVuiI+PZueihQLfo8Fgx0/7dah/Ehte1Q==",
+      "type": "package",
+      "path": "xamarin.android.glide.disklrucache/4.12.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid12.0/Xamarin.Android.Glide.DiskLruCache.targets",
         "build/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets",
-        "buildTransitive/monoandroid10.0/Xamarin.Android.Glide.DiskLruCache.targets",
-        "buildTransitive/monoandroid9.0/Xamarin.Android.Glide.DiskLruCache.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Android.Glide.DiskLruCache.targets",
         "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.targets",
         "jar/disklrucache.jar",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.DiskLruCache.dll",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.DiskLruCache.xml",
-        "lib/monoandroid90/Xamarin.Android.Glide.DiskLruCache.dll",
-        "lib/monoandroid90/Xamarin.Android.Glide.DiskLruCache.xml",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.DiskLruCache.dll",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.DiskLruCache.xml",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.dll",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.DiskLruCache.xml",
-        "xamarin.android.glide.disklrucache.4.12.0.2.nupkg.sha512",
+        "xamarin.android.glide.disklrucache.4.12.0.8.nupkg.sha512",
         "xamarin.android.glide.disklrucache.nuspec"
       ]
     },
-    "Xamarin.Android.Glide.GifDecoder/4.12.0.2": {
-      "sha512": "+5Gomf58Fc2gMvs5V03DTOtJBC0I9Vcm9QZiNymPkiCVnqJXSWWs5psLfQs5kNCeBm9GrZX3x1TZ9qV2SSAi4A==",
+    "Xamarin.Android.Glide.GifDecoder/4.12.0.8": {
+      "sha512": "cjxizxtYC4V/7SlGal8lA+DrtNOgFPVSMK7rCO7oWSbPYGI+ujXpJcHgASy2Kq0C4XxEw43Izd4CjqELXCZeow==",
       "type": "package",
-      "path": "xamarin.android.glide.gifdecoder/4.12.0.2",
+      "path": "xamarin.android.glide.gifdecoder/4.12.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/gifdecoder.aar",
-        "build/monoandroid10.0/Xamarin.Android.Glide.GifDecoder.targets",
-        "build/monoandroid9.0/Xamarin.Android.Glide.GifDecoder.targets",
+        "build/monoandroid12.0/Xamarin.Android.Glide.GifDecoder.targets",
         "build/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.targets",
-        "buildTransitive/monoandroid10.0/Xamarin.Android.Glide.GifDecoder.targets",
-        "buildTransitive/monoandroid9.0/Xamarin.Android.Glide.GifDecoder.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.Android.Glide.GifDecoder.targets",
         "buildTransitive/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.targets",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.GifDecoder.dll",
-        "lib/monoandroid10.0/Xamarin.Android.Glide.GifDecoder.xml",
-        "lib/monoandroid90/Xamarin.Android.Glide.GifDecoder.dll",
-        "lib/monoandroid90/Xamarin.Android.Glide.GifDecoder.xml",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.GifDecoder.dll",
+        "lib/monoandroid12.0/Xamarin.Android.Glide.GifDecoder.xml",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.dll",
         "lib/net6.0-android31.0/Xamarin.Android.Glide.GifDecoder.xml",
-        "xamarin.android.glide.gifdecoder.4.12.0.2.nupkg.sha512",
+        "xamarin.android.glide.gifdecoder.4.12.0.8.nupkg.sha512",
         "xamarin.android.glide.gifdecoder.nuspec"
       ]
     },
@@ -64643,26 +64760,20 @@
         "xamarin.androidx.emoji2.viewshelper.nuspec"
       ]
     },
-    "Xamarin.AndroidX.ExifInterface/1.3.3": {
-      "sha512": "2DX83lz3Lez1zWtaQbAz2sT/HRtFiC93Es1FhdHOgUtviqAigToVSevhWP2leg37L64CujA8rWqsbesAPi7Qug==",
+    "Xamarin.AndroidX.ExifInterface/1.3.2.2": {
+      "sha512": "Dh+wFBDJp3vpWgGaY3J46PACT938i6O2VtM9W+0YhRyzudQ7eAc7QjrIM1iHaY48IZguwMFqGJiOT/cP2MOZzQ==",
       "type": "package",
-      "path": "xamarin.androidx.exifinterface/1.3.3",
+      "path": "xamarin.androidx.exifinterface/1.3.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "aar/androidx.exifinterface.exifinterface.aar",
-        "build/monoandroid90/Xamarin.AndroidX.ExifInterface.targets",
-        "build/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets",
-        "buildTransitive/monoandroid90/Xamarin.AndroidX.ExifInterface.targets",
-        "buildTransitive/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.targets",
+        "build/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets",
+        "buildTransitive/monoandroid9.0/Xamarin.AndroidX.ExifInterface.targets",
         "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.dll",
         "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.pdb",
-        "lib/monoandroid90/Xamarin.AndroidX.ExifInterface.xml",
-        "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.dll",
-        "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.pdb",
-        "lib/net6.0-android30.0/Xamarin.AndroidX.ExifInterface.xml",
-        "xamarin.androidx.exifinterface.1.3.3.nupkg.sha512",
+        "xamarin.androidx.exifinterface.1.3.2.2.nupkg.sha512",
         "xamarin.androidx.exifinterface.nuspec"
       ]
     },
@@ -65109,10 +65220,10 @@
         "xamarin.androidx.media.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Navigation.Common/2.4.1.1": {
-      "sha512": "Wyr1st2+WUe1enPRSdbKdJbyfBfJbVSHoXF7nru0DpujyfAIrSiDD29V0PefT/d+bZmzvDm67wwHGuR6s5mkSg==",
+    "Xamarin.AndroidX.Navigation.Common/2.4.2": {
+      "sha512": "gQPz9x5AmrZxP/ZuiDR8okO9kjydifetCdRFyZTBdTxUOaRo/FKT/f7LllztL/N2DiAkiKCxreaxzKEZ5na3Xw==",
       "type": "package",
-      "path": "xamarin.androidx.navigation.common/2.4.1.1",
+      "path": "xamarin.androidx.navigation.common/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -65129,14 +65240,14 @@
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.pdb",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Common.xml",
         "proguard/proguard.txt",
-        "xamarin.androidx.navigation.common.2.4.1.1.nupkg.sha512",
+        "xamarin.androidx.navigation.common.2.4.2.nupkg.sha512",
         "xamarin.androidx.navigation.common.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Navigation.Fragment/2.4.1.2": {
-      "sha512": "Au3Q1lSlZae7EgBOZQqExeSE1tOatSlZv7KL0MvCxMtz0E+85EX2PQ4fZZibbypw022auEqW7AaCMIad7xhPAQ==",
+    "Xamarin.AndroidX.Navigation.Fragment/2.4.2": {
+      "sha512": "/ediF7+Qu3oo2h+lDBJGQihxtnrPtIx/j2ttVhZ4FXCvzL3w/+U/VZuDn/KZWW/19+dMwlVE8sjQhUuZsx3QrA==",
       "type": "package",
-      "path": "xamarin.androidx.navigation.fragment/2.4.1.2",
+      "path": "xamarin.androidx.navigation.fragment/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -65152,14 +65263,14 @@
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.dll",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.pdb",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Fragment.xml",
-        "xamarin.androidx.navigation.fragment.2.4.1.2.nupkg.sha512",
+        "xamarin.androidx.navigation.fragment.2.4.2.nupkg.sha512",
         "xamarin.androidx.navigation.fragment.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Navigation.Runtime/2.4.1.1": {
-      "sha512": "jZSlox3X6OhDhqRVOKd505QcjiYWhXI9jjWho5bluMJOo38vxojKO6gQXAxRwgUk5OAD36sN4fd3FdVinCBtwg==",
+    "Xamarin.AndroidX.Navigation.Runtime/2.4.2": {
+      "sha512": "ZEDKcxNm8gHjaIOd6mBzj8WPQhP1xauFwxeELMKe8DlqtKgGEzybBA0HPs/pLStdlFaHByQykrCIriBPDQE+Qw==",
       "type": "package",
-      "path": "xamarin.androidx.navigation.runtime/2.4.1.1",
+      "path": "xamarin.androidx.navigation.runtime/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -65175,14 +65286,14 @@
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.dll",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.pdb",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.Runtime.xml",
-        "xamarin.androidx.navigation.runtime.2.4.1.1.nupkg.sha512",
+        "xamarin.androidx.navigation.runtime.2.4.2.nupkg.sha512",
         "xamarin.androidx.navigation.runtime.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Navigation.UI/2.4.1.1": {
-      "sha512": "Pjc8aj2t1fx9pm4+DgwXWy72HgQphVq3N3J7Fkq6xKORxyfpiRIy9y1kPOSGK78jrsNMK/VJZ4YctI2RDrg2LQ==",
+    "Xamarin.AndroidX.Navigation.UI/2.4.2": {
+      "sha512": "Uz/pneLJ/BXKEu5j0V6MvR1G4oM4xLbi+yl18jXHWltKO1kPAVOxQeCbvQ7lQlLze/rcMyziwO/thA9jkNWxQQ==",
       "type": "package",
-      "path": "xamarin.androidx.navigation.ui/2.4.1.1",
+      "path": "xamarin.androidx.navigation.ui/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -65199,7 +65310,7 @@
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.UI.pdb",
         "lib/net6.0-android31.0/Xamarin.AndroidX.Navigation.UI.xml",
         "proguard/proguard.txt",
-        "xamarin.androidx.navigation.ui.2.4.1.1.nupkg.sha512",
+        "xamarin.androidx.navigation.ui.2.4.2.nupkg.sha512",
         "xamarin.androidx.navigation.ui.nuspec"
       ]
     },
@@ -65601,10 +65712,10 @@
         "xamarin.androidx.window.nuspec"
       ]
     },
-    "Xamarin.Google.Android.Material/1.5.0.2": {
-      "sha512": "H39/gKVVfX33V/DZ5jFLNYAausnp1V2LpqlLtHgzohFx1rzM7j0pVNR6ZDnyFNP1HKwai0tsp60F6S8NaHhnqQ==",
+    "Xamarin.Google.Android.Material/1.6.0": {
+      "sha512": "WOr6K1pt1JeYjK3DbBHjBxPIo7ySxK5zwZssjNLTzW1tbaxo92uemr4Wxog1KTzHbzLAFwnjk361HcIs5EyRRQ==",
       "type": "package",
-      "path": "xamarin.google.android.material/1.5.0.2",
+      "path": "xamarin.google.android.material/1.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -65621,25 +65732,25 @@
         "lib/net6.0-android31.0/Xamarin.Google.Android.Material.pdb",
         "lib/net6.0-android31.0/Xamarin.Google.Android.Material.xml",
         "proguard/proguard.txt",
-        "xamarin.google.android.material.1.5.0.2.nupkg.sha512",
+        "xamarin.google.android.material.1.6.0.nupkg.sha512",
         "xamarin.google.android.material.nuspec"
       ]
     },
-    "Xamarin.Google.Crypto.Tink.Android/1.6.1.2": {
-      "sha512": "t0HmV6Uvw1G1ggoFV/m7OdB7EWSnqWxDb4uTrvRa9jxO/Ed6+5Fy6f2Yxbcd1yHiSDaC5INHuVzcbvqBZB2tyQ==",
+    "Xamarin.Google.Crypto.Tink.Android/1.6.1.6": {
+      "sha512": "KQogZ+b3C+VTBp1ANQyd12luXxTK80HirIjDnKuVMCGtzZDlScG5CYbrTepwyNgpobQhYKyHQl/V4QwGOKCSaQ==",
       "type": "package",
-      "path": "xamarin.google.crypto.tink.android/1.6.1.2",
+      "path": "xamarin.google.crypto.tink.android/1.6.1.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
-        "lib/monoandroid90/Xamarin.Google.Crypto.Tink.Android.dll",
-        "lib/monoandroid90/Xamarin.Google.Crypto.Tink.Android.xml",
+        "lib/monoandroid12.0/Xamarin.Google.Crypto.Tink.Android.dll",
+        "lib/monoandroid12.0/Xamarin.Google.Crypto.Tink.Android.xml",
         "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.aar",
         "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.dll",
         "lib/net6.0-android31.0/Xamarin.Google.Crypto.Tink.Android.xml",
-        "xamarin.google.crypto.tink.android.1.6.1.2.nupkg.sha512",
+        "xamarin.google.crypto.tink.android.1.6.1.6.nupkg.sha512",
         "xamarin.google.crypto.tink.android.nuspec"
       ]
     },
@@ -65828,8 +65939,8 @@
     "net6.0-android31.0": [
       "ClassLibray >= 1.0.0",
       "Microsoft.Graphics.Win2D >= 1.0.3.1",
-      "Microsoft.Maui.Dependencies >= 6.0.300-rc.2.5513",
-      "Microsoft.Maui.Extensions >= 6.0.300-rc.2.5513",
+      "Microsoft.Maui.Dependencies >= 6.0.400",
+      "Microsoft.Maui.Extensions >= 6.0.400",
       "Microsoft.WindowsAppSDK >= 1.1.0",
       "NUnit >= 3.13.3",
       "Persistencia >= 1.0.0",
@@ -65838,8 +65949,8 @@
     "net6.0-ios15.4": [
       "ClassLibray >= 1.0.0",
       "Microsoft.Graphics.Win2D >= 1.0.3.1",
-      "Microsoft.Maui.Dependencies >= 6.0.300-rc.2.5513",
-      "Microsoft.Maui.Extensions >= 6.0.300-rc.2.5513",
+      "Microsoft.Maui.Dependencies >= 6.0.400",
+      "Microsoft.Maui.Extensions >= 6.0.400",
       "Microsoft.WindowsAppSDK >= 1.1.0",
       "NUnit >= 3.13.3",
       "Persistencia >= 1.0.0",
@@ -65849,8 +65960,8 @@
     "net6.0-maccatalyst15.4": [
       "ClassLibray >= 1.0.0",
       "Microsoft.Graphics.Win2D >= 1.0.3.1",
-      "Microsoft.Maui.Dependencies >= 6.0.300-rc.2.5513",
-      "Microsoft.Maui.Extensions >= 6.0.300-rc.2.5513",
+      "Microsoft.Maui.Dependencies >= 6.0.400",
+      "Microsoft.Maui.Extensions >= 6.0.400",
       "Microsoft.WindowsAppSDK >= 1.1.0",
       "NUnit >= 3.13.3",
       "Persistencia >= 1.0.0",
@@ -65860,8 +65971,8 @@
     "net6.0-windows10.0.19041": [
       "ClassLibray >= 1.0.0",
       "Microsoft.Graphics.Win2D >= 1.0.3.1",
-      "Microsoft.Maui.Dependencies >= 6.0.300-rc.2.5513",
-      "Microsoft.Maui.Extensions >= 6.0.300-rc.2.5513",
+      "Microsoft.Maui.Dependencies >= 6.0.400",
+      "Microsoft.Maui.Extensions >= 6.0.400",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
       "Microsoft.WindowsAppSDK >= 1.1.0",
       "NUnit >= 3.13.3",
@@ -65964,12 +66075,12 @@
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.WindowsAppSDK": {
@@ -65991,42 +66102,23 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.Android.Ref.31",
-            "version": "[31.0.101-preview.11.117, 31.0.101-preview.11.117]"
-          },
-          {
             "name": "Microsoft.NETCore.App.Host.linux-arm",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.linux-arm64",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.6, 6.0.6]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.android-arm",
-            "version": "[6.0.6, 6.0.6]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.android-arm64",
-            "version": "[6.0.6, 6.0.6]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.android-x64",
-            "version": "[6.0.6, 6.0.6]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.android-x86",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           }
         ],
         "frameworkReferences": {
@@ -66046,7 +66138,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
       },
       "net6.0-ios15.4": {
         "targetAlias": "net6.0-ios",
@@ -66057,12 +66149,12 @@
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.WindowsAppSDK": {
@@ -66089,16 +66181,11 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.ios-arm64",
-            "version": "[6.0.6, 6.0.6]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.iOS": {
             "privateAssets": "all"
@@ -66116,7 +66203,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
       },
       "net6.0-maccatalyst15.4": {
         "targetAlias": "net6.0-maccatalyst",
@@ -66127,12 +66214,12 @@
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.WindowsAppSDK": {
@@ -66160,16 +66247,11 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.maccatalyst-x64",
-            "version": "[6.0.6, 6.0.6]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.MacCatalyst": {
             "privateAssets": "all"
@@ -66187,7 +66269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
       },
       "net6.0-windows10.0.19041": {
         "targetAlias": "net6.0-windows10.0.19041",
@@ -66198,12 +66280,12 @@
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.300-rc.2.5513, )",
+            "version": "[6.0.400, )",
             "autoReferenced": true
           },
           "Microsoft.Windows.SDK.BuildTools": {
@@ -66231,18 +66313,19 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
@@ -66250,7 +66333,7 @@
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.6, 6.0.6]"
+            "version": "[6.0.5, 6.0.5]"
           }
         ],
         "frameworkReferences": {
@@ -66270,7 +66353,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

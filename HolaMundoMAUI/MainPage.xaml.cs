@@ -20,7 +20,17 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		CheckWorkShifts();
         GeneratePayrollsIfDayOne();
+        SeedData();
 	}
+    public void SeedData()
+    {
+        var firstUser = p.Workers.Where(x => x.Name == "Nimex").FirstOrDefault();
+        if (firstUser is null)
+        {
+            p.Workers.Add(new Worker("Jesus", new WorkGroup("Test team"), new User("Nimex", "1")));
+            p.SaveChanges();
+        }
+    }
 	/// <summary>
 	/// Checks if the workShifts are enabled and if the validUntil date overpass the actual date it
 	/// sets the workShift as deleted
@@ -106,7 +116,10 @@ public partial class MainPage : ContentPage
 
     public void ForgotPassword_Clicked(object sender, EventArgs e)
     {
-		
+        PresenciaContext p = new PresenciaContext();
+        Db db = new Db();
+        var worker = p.Workers.Where(x => x.Name == NameField.Text).FirstOrDefault();
+        db.InsertIssue(new Issue(worker,"Solicita cambio de contraseña",dt,false),p);
     }
 	public void GeneratePayrollsIfDayOne()
     {

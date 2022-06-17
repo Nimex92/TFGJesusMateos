@@ -40,7 +40,6 @@
                      Margin="0,-45,0,0"
                      HorizontalOptions="StartAndExpand"
                      Direction="Column"
-                     AlignItems="Strech"
                      ZIndex="999"
                      FlexLayout.Basis="100%"
                      Wrap="Wrap"
@@ -65,26 +64,26 @@
                         FontAttributes="Bold"
                         Margin="15,0,15,0"/>
             </StackLayout>
-            <StackLayout x:Name="Calendar">
+            <StackLayout x:Name="Calendar" Margin="0,10,0,0">
                 <ImageButton
                     x:Name="CalendarButton"
                     Source="calendariotrabajador.png"
                     WidthRequest="120"
-                    HeightRequest="70"
+                    HeightRequest="50"
                     Clicked="CalendarButton_Clicked"/>
             </StackLayout>
-            <StackLayout x:Name="VacationRequest">
+            <StackLayout x:Name="VacationRequest" Margin="0,10,0,0">
                 <ImageButton
                     x:Name="VacationRequestButton"
                     Source="pedirvacacionestrabajador.png"
                     WidthRequest="120"
-                    HeightRequest="70"
+                    HeightRequest="50"
                     Clicked="VacationRequestButton_Clicked"/>
             </StackLayout>
         </FlexLayout >
         <FlexLayout>
             <StackLayout x:Name="MainBody" IsVisible="True"
-                             Margin="300,-650,0,0"
+                             Margin="240,-650,0,0"
                              HorizontalOptions="Center"
                              VerticalOptions="Center"
                              HeightRequest="400"

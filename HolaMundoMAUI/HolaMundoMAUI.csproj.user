@@ -4,7 +4,7 @@
     <ActiveDebugFramework>net6.0-windows10.0.19041</ActiveDebugFramework>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
-    <SelectedPlatformGroup>LocalDevice</SelectedPlatformGroup>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <SelectedDevice>Dispositivo local</SelectedDevice>
     <DefaultDevice>pixel_5_-_api_30</DefaultDevice>
   </PropertyGroup>
