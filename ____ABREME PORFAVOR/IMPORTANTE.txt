@@ -1,0 +1,10 @@
+Para usar la aplicacion son necesarios XAMPP para la base de datos y
+Visual studio 2022 community edition preview para maui, en la intefaz de instalacion
+seleccionaremos el paquete de maui para poder abrir y usar la app
+
+Por defecto la app posee un metodo por el cual genera un usuario admin con las credenciales
+de user: "Nimex" y password "1" en caso de no realizarse esta accion podremos insertar
+uno desde el gestor de php myadmin o desde la consola mediante la sentencia:
+
+USE TFGJESUSMATEOS;
+INSERT INTO USERS(USERNAME,PASSWORD,ESADMIN) VALUES("Nimex","1",1);
