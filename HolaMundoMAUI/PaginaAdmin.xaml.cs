@@ -1,13 +1,13 @@
 using ClassLibray;
 using HolaMundoMAUI;
-using iText.Kernel.Colors;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 using System.Diagnostics;
 using Color = Microsoft.Maui.Graphics.Color;
+using iText.Kernel.Colors;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 
 namespace HolaMundoMAUI;
 
@@ -23,6 +23,7 @@ public partial class PaginaAdmin : ContentPage
     WorkGroup WorkGroup;
     Calendar Calendar;
     Day Day;
+    Issue Issues;
     bool activeWorker, activeWorkShift, activePlace, activeWorkTask, activeWorkGroup, activeDay, activePayroll, activeIssue, activeVacationsRequest;
     Db db = new Db();
     public PaginaAdmin(string username)
@@ -100,7 +101,9 @@ public partial class PaginaAdmin : ContentPage
                 LabelTitulo7.Text = "Listado de dias libres";
                 break;
             case 8:
-
+                ListViewIssues.IsVisible = true;
+                activeIssue = true;
+                LabelTitulo8.Text = "Listado de incidencias";
                 break;
             case 9:
 
@@ -667,7 +670,7 @@ public partial class PaginaAdmin : ContentPage
     /// <param EventArgs="e"></param>
     private void AddDaysButton_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 0, Day));
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Worker, 0, Day));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'A�adir dias al calendario" + " - " + dt), p);
 
     }
@@ -822,7 +825,7 @@ public partial class PaginaAdmin : ContentPage
     /// <param EventArgs="e"></param>
     private void ModifyDaysButton_Clicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Calendar, 1, Day));
+        App.Current.MainPage = new NavigationPage(new AnadeDiaCalendario(Username, Worker, 1, Day));
         db.InsertLog(new Log("Acceso", Username + " Accede a 'Añadir dias al calendario" + " - " + dt),p);
 
     }
@@ -998,6 +1001,22 @@ public partial class PaginaAdmin : ContentPage
             }
         }
     }
+
+    private void BotonAceptarIncidencia_Clicked(object sender, EventArgs e)
+    {
+        Issues.Justified = true;
+        p.Issues.Update(Issues);
+        p.SaveChanges();
+        App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username,8));
+
+    }
+
+    private void OnItemSelectedIssue(object sender, SelectedItemChangedEventArgs e)
+    {
+        Issue item = e.SelectedItem as Issue;
+        Issues = item;
+    }
+
     /// <summary>
     /// Method to enable the calendar UI
     /// </summary>
@@ -1251,7 +1270,7 @@ public partial class PaginaAdmin : ContentPage
             PieNomina3[5, 2].SetText("1475.00");
             PieNomina3[5, 3].SetText("0.62");
             PieNomina3[5, 4].SetText("5.85");
-            PieNomina3[6, 0].SetText("3. Cotizaci�n horas extraordinarias");
+            PieNomina3[6, 0].SetText("3. Cotización horas extraordinarias");
             PieNomina3[6, 1].SetText(".................");
             PieNomina3[6, 2].SetText(".................");
             PieNomina3[6, 3].SetText(".................");

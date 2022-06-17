@@ -169,7 +169,7 @@ public partial class PaginaFichar : ContentPage
 	private async void BotonPlegar_Clicked(object sender, EventArgs e)
 		{
 			var worker = p.Workers.Where(x => x.User.Username == Username).Include(x => x.WorkGroup).FirstOrDefault();
-			db.InsertSigning(new Signing(worker, Now, "Entrada"), p);
+			db.InsertSigning(new Signing(worker, Now, "Salida"), p);
 			var SignedWorker = p.SignedWorkers.Where(x => x.Worker == worker).FirstOrDefault();
 			db.DeleteSignedWorker(SignedWorker, p);
 			CheckInButton.IsVisible = true;
@@ -238,20 +238,26 @@ public partial class PaginaFichar : ContentPage
 		}
 	private void BotonAcabarTarea_Clicked(object sender, EventArgs e)
 	{
-		WorkTaskEndButton.IsVisible = false;
-		WorkTaskStartButton.IsVisible = true;
-		var searchWorkTask = WorkTaskSelector.SelectedItem.ToString();
-		var workTask = p.WorkTasks.Where(x => x.Name == searchWorkTask).FirstOrDefault();
-		var startedWorkTask = p.StartedTasks.Where(x => x.Task.Name == workTask.Name).Where(x => x.TastStart.Date == Now.Date).OrderBy(x => x.TastStart).Last();
-		var totalHours = (DateTime.Now - startedWorkTask.TastStart).TotalHours;
-		bool onTime = false;
-		if (totalHours <= workTask.ElapsedTime)
+		try
 		{
-			onTime = true;
-		}
-		db.InsertEndedTask(new EndedTask(workTask, Worker, startedWorkTask.TastStart, Now, totalHours, onTime), p);
-		db.DeleteStartedTask(startedWorkTask,p);
-		db.InsertLog(new Log("Tareas", Username + " ha finalizado tarea " + workTask.Name + " - " + Now), p);
+			WorkTaskEndButton.IsVisible = false;
+			WorkTaskStartButton.IsVisible = true;
+			var searchWorkTask = WorkTaskSelector.SelectedItem.ToString();
+			var workTask = p.WorkTasks.Where(x => x.Name == searchWorkTask).FirstOrDefault();
+			var startedWorkTask = p.StartedTasks.Where(x => x.Task.Name == workTask.Name).Where(x => x.TastStart.Date == Now.Date).OrderBy(x => x.TastStart).Last();
+			var totalHours = (DateTime.Now - startedWorkTask.TastStart).TotalHours;
+			bool onTime = false;
+			if (totalHours <= workTask.ElapsedTime)
+			{
+				onTime = true;
+			}
+			db.InsertEndedTask(new EndedTask(workTask, Worker, startedWorkTask.TastStart, Now, totalHours, onTime), p);
+			db.DeleteStartedTask(startedWorkTask, p);
+			db.InsertLog(new Log("Tareas", Username + " ha finalizado tarea " + workTask.Name + " - " + Now), p);
+		}catch(Exception ex)
+        {
+
+        }
 	}
     private void DayListView_Selected(object sender, SelectedItemChangedEventArgs e)
     {

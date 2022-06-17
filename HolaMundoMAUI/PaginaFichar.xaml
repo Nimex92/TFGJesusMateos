@@ -102,7 +102,6 @@
                         HeightRequest="150"
                         HorizontalOptions="Center"
                         Margin="0,20,0,0"
-                        IsEnabled="True"
                         IsVisible="True"/>
             <Button
                         x:Name="CheckOutButton"
@@ -116,7 +115,6 @@
                         HeightRequest="150"
                         HorizontalOptions="Center"
                         Margin="0,20,0,0"
-                        IsEnabled="False"
                         IsVisible="False"/>
             <VerticalStackLayout
                     HorizontalOptions="Center"
@@ -129,7 +127,6 @@
                         x:Name="WorkTaskSelector"
                         BackgroundColor="Black"
                         WidthRequest="300"
-                        IsEnabled="False"
                         IsVisible="False"
                        />
             </VerticalStackLayout>
@@ -141,7 +138,6 @@
                         Text="Iniciar"
                         BackgroundColor="Green"
                         WidthRequest="100"
-                        IsEnabled="False"
                         IsVisible="False"
                         Clicked="BotonIniciarTarea_Clicked"
                         Margin="130,0,0,0"/>
@@ -150,7 +146,6 @@
                         Text="Acabar"
                         BackgroundColor="Red"
                         WidthRequest="100"
-                        IsEnabled="False"
                         IsVisible="False"
                         Clicked="BotonAcabarTarea_Clicked"
                         Margin="130,0,0,0"/>

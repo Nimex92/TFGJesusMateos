@@ -10,11 +10,13 @@ public partial class AnadeDiaCalendario : ContentPage
     Calendar Calendar;
     Worker Worker;
     string Username;
-    public AnadeDiaCalendario(string username, Calendar calendar, int option, Day day)
+    public AnadeDiaCalendario(string username, Worker worker, int option, Day day)
 	{
 		InitializeComponent();
         //Set the Calendar to a global local use
+        var calendar = p.Calendars.Where(x => x.Worker == worker).Include(x=>x.Worker).FirstOrDefault();
         Calendar = calendar;
+        Worker = worker;
         //Set the Username to a global local use
         Username = username;
         //Set the UI pickers with data
@@ -25,7 +27,7 @@ public partial class AnadeDiaCalendario : ContentPage
             case 0:
                 RegisterButton.IsVisible = true;
                 UpdateButton.IsVisible = false;
-                CalendarSelector.Items.Add(calendar.Worker.Name);
+                CalendarSelector.Items.Add(Calendar.Worker.Name);
                 break;
             //In this case enable the update UI
             case 1:
@@ -58,20 +60,27 @@ public partial class AnadeDiaCalendario : ContentPage
     /// </summary>
     private void VacationSetPicker()
     {
-        CalendarSelector.Items.Add(Worker.Name);
-        CalendarSelector.SelectedIndex = 0;
-        List<string> reason = new List<string>();
-        reason.Add("Festivo");
-        reason.Add("Festivo nocturno");
-        reason.Add("Festivo nacional");
-        reason.Add("Festivo nacional nocturno");
-        reason.Add("Dia de asuntos propios");
-        reason.Add("Baja laboral");
-        reason.Add("Baja médica");
-        reason.Add("Baja por maternidad");
-        reason.Add("Vacaciones");
-        ReasonSelector.Items.Add("-- Selecciona motivo");
-        ReasonSelector.ItemsSource = reason;
+        try
+        {
+            
+            CalendarSelector.Items.Add(Worker.Name);
+            CalendarSelector.SelectedIndex = 0;
+            List<string> reason = new List<string>();
+            reason.Add("Festivo");
+            reason.Add("Festivo nocturno");
+            reason.Add("Festivo nacional");
+            reason.Add("Festivo nacional nocturno");
+            reason.Add("Dia de asuntos propios");
+            reason.Add("Baja laboral");
+            reason.Add("Baja médica");
+            reason.Add("Baja por maternidad");
+            reason.Add("Vacaciones");
+            ReasonSelector.Items.Add("-- Selecciona motivo");
+            ReasonSelector.ItemsSource = reason;
+        }catch(Exception ex)
+        {
+
+        }
     }
     /// <summary>
     /// Method to add a new Day to the worker's calendar

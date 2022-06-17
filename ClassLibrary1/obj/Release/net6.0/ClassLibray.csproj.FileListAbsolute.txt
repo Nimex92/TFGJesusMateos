@@ -1,0 +1,14 @@
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\bin\Release\net6.0\ClassLibray.deps.json
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\bin\Release\net6.0\ClassLibray.runtimeconfig.json
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\bin\Release\net6.0\ClassLibray.dll
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\bin\Release\net6.0\ClassLibray.pdb
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.csproj.AssemblyReference.cache
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.AssemblyInfoInputs.cache
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.AssemblyInfo.cs
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.csproj.CoreCompileInputs.cache
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.dll
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\refint\ClassLibray.dll
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.pdb
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ClassLibray.genruntimeconfig.cache
+C:\Users\jesus\Documents\GitHub\TFGJesusMateos\ClassLibrary1\obj\Release\net6.0\ref\ClassLibray.dll

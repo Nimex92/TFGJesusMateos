@@ -59,10 +59,12 @@ public partial class AltaTrabajador : ContentPage
 			//Enable the update UI
 			case 1:
 				//Set the update button visible
+				LabelTitulo.Text = "Modificar trabajador";
 				UpdateButton.IsVisible = true;
 				RegisterButton.IsVisible = false;
 				WorkGroupSelector.IsEnabled = false;
 				NameField.Text = user;
+				NameField.IsEnabled = false;
 				//Find a worker than march with the user than constructor receives
 				var worker = p.Workers.Where(x => x.Name == user).Include(x=>x.User).Include(x => x.WorkGroup).FirstOrDefault();
 				//foreach Workgroup than worker belongs it will be added to the List
@@ -98,7 +100,7 @@ public partial class AltaTrabajador : ContentPage
 			//p.SaveChanges();
 			var workers = p.Workers.Where(x => x.Name == name).FirstOrDefault();
 			try {workers.BelongstoWorkGroups = workers.WorkGroup.ToString(); } catch (NullReferenceException ex) { Debug.WriteLine(ex.StackTrace); }
-			db.InsertLog(new Log("A�adir", Username + " ha a�adido trabajador " + name + " - " + dt), p);
+			db.InsertLog(new Log("Añadir", Username + " ha a�adido trabajador " + name + " - " + dt), p);
 			if (inserta == true)
 			{
 				await DisplayAlert("Success", "Se ha insertado correctamente el trabajador " + name, "OK");

@@ -61,13 +61,13 @@ public partial class AnadeTareasGrupoTrabajo : ContentPage
         {
 			await DisplayAlert("Success", "Se ha a�adido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
 			db.AddWorkTaskTOWorkGroup(workGroup, workTask, p);
-			db.InsertLog(new Log("A�adir", Username + " ha a�adido " + workTask.Name + " a grupo " + workGroup.Name + " - " + Now),p);
-			await DisplayAlert("Success", "Se ha a�adido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
+			db.InsertLog(new Log("A�adir", Username + " ha añadido " + workTask.Name + " a grupo " + workGroup.Name + " - " + Now),p);
+			await DisplayAlert("Success", "Se ha añadido '" + workTask.Name + "' a grupo: "+workGroup.Name, "OK");
 			App.Current.MainPage = new NavigationPage(new PaginaAdmin(Username, 5));
 		}
         else
         {
-			await DisplayAlert("Error", "Error al a�adir tareas.", "OK");
+			await DisplayAlert("Error", "Error al añadir tareas.", "OK");
 		}
 
     }

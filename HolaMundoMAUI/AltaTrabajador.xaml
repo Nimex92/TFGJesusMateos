@@ -9,8 +9,8 @@
                 Background="White"
                 WidthRequest="400"
                 HeightRequest="510">
-            
-            <Label  
+
+            <Label  x:Name="LabelTitulo"
                 Text="Alta de Trabajador"
                 FontSize="30"
                 FontAttributes="Bold"

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolaMundoMAUI.AltaZona"
              BackgroundColor="#A29FA0">
-    <StackLayout WidthRequest="400" HeightRequest="400" BackgroundColor="White">
+    <StackLayout WidthRequest="400" HeightRequest="230" BackgroundColor="White">
         <Label 
                 Text="Alta zona de trabajo"
                 TextColor="Black"

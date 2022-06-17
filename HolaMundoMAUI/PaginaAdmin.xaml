@@ -123,14 +123,13 @@
 
             </StackLayout>
             <StackLayout x:Name="ListViewWorkers" 
-                HorizontalOptions="Center" Margin="-350,0,0,0" 
+                HorizontalOptions="Center" Margin="-100,0,0,0" 
                          IsEnabled="False" IsVisible="False">
                 <Label x:Name="LabelTitulo2"
                     Text="Tech Talent &#10; Página de administracion &#10;de trabajadores"
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="20"
                     HorizontalOptions="Center"
                     Margin="100,30,0,0"/>
@@ -265,16 +264,15 @@
                          IsVisible="False" IsEnabled="False"
                          Margin="00,0,0,0">
                 <Label 
-                Text="Tech Talent &#10; Gestion de turnos"
+                Text="Gestion de turnos"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="20"
                 HorizontalOptions="Center"
                 Margin="-50,10,0,0"
                 x:Name="LabelTitulo3"/>
-                <HorizontalStackLayout x:Name="BarraDeTitulosTabla" Margin="245,0,0,0">
+                <HorizontalStackLayout x:Name="BarraDeTitulosTabla" Margin="350,0,0,0">
                     <Label 
                                        Text="Turno:" 
                                        FontSize="16"
@@ -321,11 +319,11 @@
                 </HorizontalStackLayout>
                 <StackLayout BackgroundColor="Black"
                      HeightRequest="2"
-                     WidthRequest="1200"
+                     WidthRequest="1000"
                      HorizontalOptions="Center"/>
                 <StackLayout HorizontalOptions="Center" Margin="0,10,0,0">
-                    <ListView 
-                        x:Name="ListViewGrupos" 
+                    <ListView x:Name="ListViewGrupos" Margin="-50,0,0,0"
+                        WidthRequest="1000"
                         ItemSelected="OnItemSelectedWorkShifts"
                         SeparatorColor="Black"
                         SeparatorVisibility="Default"> 
@@ -432,7 +430,7 @@
                 </StackLayout>
                 <StackLayout BackgroundColor="Black"
                      HeightRequest="2"
-                     WidthRequest="1200"
+                     WidthRequest="1000"
                      HorizontalOptions="Center"/>
                 <HorizontalStackLayout Margin="430,0,0,0">
                     <ImageButton x:Name="AddGrupos"
@@ -451,19 +449,19 @@
 
             </StackLayout>
             <StackLayout x:Name="ListViewZones"
-                         IsVisible="False" IsEnabled="False" Margin="-320,0,0,0">
+                         IsVisible="False" IsEnabled="False" Margin="0,0,0,0">
                 <Label 
-                Text="Tech Talent &#10; Gestion de zonas"
+                Text="Gestion de zonas"
                 TextColor="Black"
                 FontAttributes="Bold"
                 HorizontalTextAlignment="Center"
-                SemanticProperties.Description="Tech Talent Fiching System"
                 FontSize="20"
                 HorizontalOptions="Center"
                 x:Name="LabelTitulo4"/>
-                <HorizontalStackLayout x:Name="NombresColumnas">
+                <HorizontalStackLayout x:Name="NombresColumnas" WidthRequest="400" >
                     <Label Text="Nombre Zona:"
-                           Margin="485,0,0,0"
+                           Margin="-100,0,0,0"
+                           HorizontalOptions="Center"
                            FontAttributes="Bold"/>
                 </HorizontalStackLayout>
                 <StackLayout BackgroundColor="Black"
@@ -551,13 +549,12 @@
             </StackLayout>
             <StackLayout x:Name="ListViewTasks" 
                          IsEnabled="False" IsVisible="False"
-                HorizontalOptions="Center" Margin="-320,0,0,0">
+                HorizontalOptions="Center" Margin="0,0,0,0">
                 <Label 
-                    Text="Tech Talent &#10; Gestion de tareas"
+                    Text="Gestion de tareas"
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="20"
                     HorizontalOptions="Center"
                     Margin="-25,0,0,0"
@@ -672,18 +669,17 @@
             </StackLayout>
             <StackLayout x:Name="ListViewTeams" 
                          IsEnabled="False" IsVisible="False"
-                HorizontalOptions="Center" Margin="-320,0,0,0">
+                HorizontalOptions="Center" Margin="0,0,0,0">
                 <Label 
-                    Text="Tech Talent &#10; Gestion de equipos de trabajo"
+                    Text="Gestion de equipos de trabajo"
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="20"
                     HorizontalOptions="Center"
                     Margin="0,10,0,0"
                     x:Name="LabelTitulo6"/>
-                <HorizontalStackLayout Margin="250,0,0,0" VerticalOptions="Center"
+                <HorizontalStackLayout Margin="300,0,0,0" VerticalOptions="Center"
                              HeightRequest="20" WidthRequest="800">
                     <Label 
                         Text="Nombre equipo"
@@ -912,7 +908,6 @@
                     TextColor="Black"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
-                    SemanticProperties.Description="Tech Talent Fiching System"
                     FontSize="20"
                     HorizontalOptions="Center"
                     Margin="0,10,0,0"
@@ -940,9 +935,10 @@
                 <StackLayout HorizontalOptions="Center" Margin="0,5,0,0">
                     <ListView 
                         x:Name="ListViewIncidencias" 
-                        WidthRequest="720"
+                        WidthRequest="730"
+                        Margin="0,0,0,0"
                         HorizontalOptions="Center" 
-                        ItemSelected="OnItemSelectedCalendar"
+                        ItemSelected="OnItemSelectedIssue"
                         SeparatorColor="Black">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -960,29 +956,31 @@
                                            WidthRequest="150"
                                            VerticalOptions="Center"
                                            Text="{Binding Worker.Name}" 
-                                           Margin="-380,0,0,0" 
+                                           Margin="-500,0,0,0" 
                                            FontSize="16"
                                            HeightRequest="30"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
                                            Text="{Binding IssueReason}" 
-                                           Margin="40,0,0,0" 
+                                           Margin="-60,0,0,0" 
                                            FontSize="16"/>
                                         <Label 
                                            WidthRequest="150"
                                            VerticalOptions="Center"
                                            Text="{Binding IssueDate}" 
-                                           Margin="470,0,0,0" 
+                                           Margin="350,0,0,0" 
                                            FontSize="16"/>
 
                                         <ImageButton
-                                           Source="editar.png"  
+                                           Source="aceptar.png"  
                                            WidthRequest="50"
                                            HeightRequest="50"
                                            VerticalOptions="Center"
-                                           Margin="580,0,0,0"
-                                           x:Name="BotonAceptarIncidencia"/>
+                                           Margin="670,0,0,0"
+                                           x:Name="BotonAceptarIncidencia"
+                                            Clicked="BotonAceptarIncidencia_Clicked"/>
+                                      
                                         
                                     </Grid>
                                 </ViewCell>

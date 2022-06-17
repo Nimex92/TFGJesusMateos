@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HUlIrg569HEHMpbUrpzv7kZFTGppDN3Oiy11JWNC8CIeRNluWtXbHcIhLOFpS1YTxnPti/t8C7t0IR4lvD/1Yw==",
+  "dgSpecHash": "JYckKA8B/mwihckjVXqIvIUdOlZTsKzuZNOwZ4/6s8qlib1p93kLuntT7GKpCjC19AzYvdDzcCfO+fccSpBHug==",
   "success": true,
   "projectFilePath": "C:\\Users\\jesus\\Documents\\GitHub\\TFGJesusMateos\\HolaMundoMAUI\\HolaMundoMAUI.csproj",
   "expectedPackageFiles": [
@@ -225,13 +225,19 @@
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.6.20.1\\xamarin.kotlin.stdlib.jdk8.1.6.20.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.0.1\\xamarin.kotlinx.coroutines.android.1.6.0.1.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.0.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.0.1.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.5\\microsoft.netcore.app.host.linux-x64.6.0.5.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm64\\6.0.5\\microsoft.netcore.app.host.linux-arm64.6.0.5.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.6\\microsoft.netcore.app.host.linux-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.android-x64\\6.0.6\\microsoft.netcore.app.runtime.mono.android-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.android-x86\\6.0.6\\microsoft.netcore.app.runtime.mono.android-x86.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm64\\6.0.6\\microsoft.netcore.app.host.linux-arm64.6.0.6.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.android.ref.31\\31.0.101-preview.11.117\\microsoft.android.ref.31.31.0.101-preview.11.117.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm\\6.0.5\\microsoft.netcore.app.host.linux-arm.6.0.5.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.5\\microsoft.netcore.app.runtime.win-x64.6.0.5.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.5\\microsoft.aspnetcore.app.runtime.win-x64.6.0.5.nupkg.sha512",
-    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.5\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.5.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm\\6.0.6\\microsoft.netcore.app.host.linux-arm.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.android-arm64\\6.0.6\\microsoft.netcore.app.runtime.mono.android-arm64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.android-arm\\6.0.6\\microsoft.netcore.app.runtime.mono.android-arm.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.ios-arm64\\6.0.6\\microsoft.netcore.app.runtime.mono.ios-arm64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.maccatalyst-x64\\6.0.6\\microsoft.netcore.app.runtime.mono.maccatalyst-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.6\\microsoft.netcore.app.runtime.win-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.6\\microsoft.aspnetcore.app.runtime.win-x64.6.0.6.nupkg.sha512",
+    "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.6.nupkg.sha512",
     "C:\\Users\\jesus\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.25\\microsoft.windows.sdk.net.ref.10.0.19041.25.nupkg.sha512"
   ],
   "logs": []
