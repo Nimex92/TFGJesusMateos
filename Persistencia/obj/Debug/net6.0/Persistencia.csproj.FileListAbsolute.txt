@@ -117,3 +117,20 @@ C:\Users\jesus\Documents\GitHub\TFGJesusMateos\Persistencia\obj\Debug\net6.0\ref
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.pdb
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.genruntimeconfig.cache
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\Persistencia\obj\Debug\net6.0\ref\Persistencia.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\Persistencia.deps.json
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\Persistencia.runtimeconfig.json
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\Persistencia.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\Persistencia.pdb
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\ClassLibray.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\bin\Debug\net6.0\ClassLibray.pdb
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.csproj.AssemblyReference.cache
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.AssemblyInfoInputs.cache
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.AssemblyInfo.cs
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.csproj.CoreCompileInputs.cache
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.csproj.CopyComplete
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\refint\Persistencia.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.pdb
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\Persistencia.genruntimeconfig.cache
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\Persistencia\obj\Debug\net6.0\ref\Persistencia.dll

@@ -1785,3 +1785,6 @@ C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-wi
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\qualifiers.txt.intermediate
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\jesus\Documents\GitHub\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\ProjectArchitectures.txt
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\refint\HolaMundoMAUI.dll
+Z:\05.Jesus Mateos\AccessControlV2\Demos\AccessDemo2s\TFGJesusMateos\HolaMundoMAUI\obj\Debug\net6.0-windows10.0.19041\win10-x64\HolaMundoMAUI.pdb
